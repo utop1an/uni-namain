@@ -1,0 +1,76 @@
+{
+  "sources": [
+    "SOUP"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 26,
+    "predicates": 13,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "SOUP": {
+      "anointed": "anointed",
+      "at": "at",
+      "captured": "captured",
+      "escaped": "escaped",
+      "has_feeling": "has_feeling",
+      "has_imagination": "has_imagination",
+      "has_understanding": "has_understanding",
+      "holds": "holds",
+      "in_cage": "in_cage",
+      "is_poet": "is_poet",
+      "is_queen": "is_queen",
+      "king_tail_stirred": "king_tail_stirred",
+      "soup_effect_created": "soup_effect_created"
+    }
+  },
+  "constant_maps": {
+    "SOUP": {
+      "ant_queen": "ant_queen",
+      "castle": "castle",
+      "crape_skewer": "crape_skewer",
+      "elf_chief": "elf_chief",
+      "first_traveler_mouse": "first_traveler_mouse",
+      "forest": "forest",
+      "fourth_traveler_mouse": "fourth_traveler_mouse",
+      "jailer": "jailer",
+      "jailer_granddaughter": "jailer_granddaughter",
+      "kitchen": "kitchen",
+      "library": "library",
+      "maypole": "maypole",
+      "mouse_king": "mouse_king",
+      "north": "north",
+      "oak_dryad": "oak_dryad",
+      "old_lady_mouse": "old_lady_mouse",
+      "old_owl": "old_owl",
+      "phantaesus": "phantaesus",
+      "sausage_skewer": "sausage_skewer",
+      "sea": "sea",
+      "second_traveler_mouse": "second_traveler_mouse",
+      "ship": "ship",
+      "third_traveler_mouse": "third_traveler_mouse",
+      "violet": "violet",
+      "watchman": "watchman",
+      "young_lady_mouse": "young_lady_mouse"
+    }
+  },
+  "action_maps": {
+    "SOUP": {
+      "travel_to": "travel_to",
+      "give_skewer_to_elves": "give_skewer_to_elves",
+      "receive_anointed_skewer": "receive_anointed_skewer",
+      "receive_feather": "receive_feather",
+      "learn_wisdom_from_ants": "learn_wisdom_from_ants",
+      "read_and_digest_books": "read_and_digest_books",
+      "escape_jail": "escape_jail",
+      "run_in_cage": "run_in_cage",
+      "prepare_soup_by_elf_effect": "prepare_soup_by_elf_effect",
+      "prepare_soup_by_poet_imagination": "prepare_soup_by_poet_imagination",
+      "prepare_soup_by_king_tail": "prepare_soup_by_king_tail",
+      "claim_queenhood": "claim_queenhood"
+    }
+  },
+  "decisions": []
+}

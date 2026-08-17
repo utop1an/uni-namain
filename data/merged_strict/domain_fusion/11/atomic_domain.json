@@ -1,0 +1,59 @@
+{
+  "sources": [
+    "REMA_NP"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 16,
+    "predicates": 6,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "REMA_NP": {
+      "at": "at",
+      "grandmother_mangle_spoken": "grandmother_mangle_spoken",
+      "has": "has",
+      "married": "married",
+      "price_of_butter_spoken": "price_of_butter_spoken",
+      "with_all_my_heart_spoken": "with_all_my_heart_spoken"
+    }
+  },
+  "constant_maps": {
+    "REMA_NP": {
+      "back_door": "back_door",
+      "back_stairs": "back_stairs",
+      "bag_of_rubies": "bag_of_rubies",
+      "bag_of_sapphires": "bag_of_sapphires",
+      "city": "city",
+      "crown": "crown",
+      "father_king": "father_king",
+      "forest": "forest",
+      "impostor_butterman": "impostor_butterman",
+      "king_at_palace": "king_at_palace",
+      "market_place": "market_place",
+      "oak_tree": "oak_tree",
+      "palace": "palace",
+      "princess": "princess",
+      "robber_chief": "robber_chief",
+      "sceptre": "sceptre"
+    }
+  },
+  "action_maps": {
+    "REMA_NP": {
+      "run_away_from_palace": "run_away_from_palace",
+      "encounter_impostor_king": "encounter_impostor_king",
+      "utter_phrase_price_of_butter": "utter_phrase_price_of_butter",
+      "receive_rubies_from_impostor": "receive_rubies_from_impostor",
+      "encounter_robbers_in_forest": "encounter_robbers_in_forest",
+      "utter_phrase_grandmother_mangle": "utter_phrase_grandmother_mangle",
+      "receive_sapphires_from_robber_chief": "receive_sapphires_from_robber_chief",
+      "arrive_at_marble_palace": "arrive_at_marble_palace",
+      "king_requests_information_and_gifts": "king_requests_information_and_gifts",
+      "king_proposes_marriage": "king_proposes_marriage",
+      "princess_accepts_with_heart": "princess_accepts_with_heart",
+      "suitors_retire_due_to_phrase": "suitors_retire_due_to_phrase"
+    }
+  },
+  "decisions": []
+}

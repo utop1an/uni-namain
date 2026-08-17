@@ -1,0 +1,89 @@
+{
+  "sources": [
+    "HANS_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 3,
+    "constants": 34,
+    "predicates": 15,
+    "operators": 15
+  },
+  "predicate_maps": {
+    "HANS_NP": {
+      "at": "at",
+      "bird_heard": "bird_heard",
+      "bread_given": "bread_given",
+      "captured": "captured",
+      "collected": "collected",
+      "crossed_lake": "crossed_lake",
+      "crumb_on_path": "crumb_on_path",
+      "dead": "dead",
+      "duck_helped": "duck_helped",
+      "fire_lit": "fire_lit",
+      "has": "has",
+      "locked": "locked",
+      "lost": "lost",
+      "pebble_on_path": "pebble_on_path",
+      "reunited_with_father": "reunited_with_father"
+    }
+  },
+  "constant_maps": {
+    "HANS_NP": {
+      "apple": "apple",
+      "bird": "bird",
+      "branch": "branch",
+      "bread_piece": "bread_piece",
+      "brushwood": "brushwood",
+      "cake": "cake",
+      "cottage": "cottage",
+      "crumb": "crumb",
+      "dead_tree": "dead_tree",
+      "door": "door",
+      "duck": "duck",
+      "father": "father",
+      "father_house": "father_house",
+      "forest": "forest",
+      "grettel": "grettel",
+      "hansel": "hansel",
+      "hill": "hill",
+      "kettle": "kettle",
+      "lake": "lake",
+      "milk": "milk",
+      "mother": "mother",
+      "nut": "nut",
+      "oven": "oven",
+      "pancake": "pancake",
+      "path": "path",
+      "pearl": "pearl",
+      "pebble": "pebble",
+      "precious_stone": "precious_stone",
+      "roof": "roof",
+      "room": "room",
+      "stable_location": "stable_location",
+      "sugar_window": "sugar_window",
+      "window": "window",
+      "witch": "witch"
+    }
+  },
+  "action_maps": {
+    "HANS_NP": {
+      "abandon_children_in_forest": "abandon_children_in_forest",
+      "leave_children_at_fire": "leave_children_at_fire",
+      "drop_pebble_on_path": "drop_pebble_on_path",
+      "follow_pebbles_home": "follow_pebbles_home",
+      "drop_breadcrumb_on_path": "drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "wander_forest_seeking_way_out",
+      "hear_bird_and_follow_to_witch_house": "hear_bird_and_follow_to_witch_house",
+      "enter_witch_house": "enter_witch_house",
+      "witch_captures_children": "witch_captures_children",
+      "push_witch_into_oven": "push_witch_into_oven",
+      "escape_from_stable": "escape_from_stable",
+      "collect_treasure": "collect_treasure",
+      "call_duck_for_crossing": "call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "return_home_and_reunite_with_father"
+    }
+  },
+  "decisions": []
+}

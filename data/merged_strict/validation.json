@@ -1,0 +1,23 @@
+{
+  "valid": true,
+  "errors": [],
+  "root_node": 28,
+  "requirements": 6,
+  "types": 3,
+  "constants": 319,
+  "predicates": 198,
+  "operators": 221,
+  "problem_files": 15,
+  "llm_network_calls": 8709,
+  "llm_cache_hits": 7952,
+  "llm_duration_seconds": 17550.44007829734,
+  "algorithm": {
+    "name": "UniDomain Binary Tree Fusion",
+    "predicate_threshold": 0.3,
+    "operator_threshold": 0.3,
+    "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+    "llm_provider": "Ollama",
+    "node_workers": 4,
+    "llm_model": "gemma3:4b"
+  }
+}

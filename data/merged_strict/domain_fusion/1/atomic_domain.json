@@ -1,0 +1,80 @@
+{
+  "sources": [
+    "BIRT"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 25,
+    "predicates": 18,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "BIRT": {
+      "at": "at",
+      "boat_available": "boat_available",
+      "corridor_reached": "corridor_reached",
+      "door_open": "door_open",
+      "gloomy": "gloomy",
+      "gold_star_on": "gold_star_on",
+      "has": "has",
+      "inside": "inside",
+      "invitation_offered": "invitation_offered",
+      "joyful": "joyful",
+      "kissed_by": "kissed_by",
+      "knighted": "knighted",
+      "lantern_carried": "lantern_carried",
+      "pellet_eaten": "pellet_eaten",
+      "shrunk": "shrunk",
+      "sound_heard": "sound_heard",
+      "stairs_descended": "stairs_descended",
+      "story_shared": "story_shared"
+    }
+  },
+  "constant_maps": {
+    "BIRT": {
+      "beech_tree": "beech_tree",
+      "bench": "bench",
+      "boat": "boat",
+      "corridor": "corridor",
+      "cottage": "cottage",
+      "door": "door",
+      "dryad": "dryad",
+      "fairy_queen": "fairy_queen",
+      "fairyland": "fairyland",
+      "gnome": "gnome",
+      "gold_star": "gold_star",
+      "grandmother": "grandmother",
+      "grandmotherkin": "grandmotherkin",
+      "key": "key",
+      "lantern": "lantern",
+      "mother": "mother",
+      "mothereen": "mothereen",
+      "nora": "nora",
+      "palace": "palace",
+      "pellet": "pellet",
+      "pond": "pond",
+      "silver_salver": "silver_salver",
+      "spring": "spring",
+      "stairs": "stairs",
+      "stream": "stream"
+    }
+  },
+  "action_maps": {
+    "BIRT": {
+      "travel_to_trysting_place": "travel_to_trysting_place",
+      "hear_tapping_on_beech": "hear_tapping_on_beech",
+      "approach_beech_tree": "approach_beech_tree",
+      "turn_key_on_beech": "turn_key_on_beech",
+      "accept_dryad_invitation": "accept_dryad_invitation",
+      "receive_pellet_from_gnome": "receive_pellet_from_gnome",
+      "eat_pellet_and_shrink": "eat_pellet_and_shrink",
+      "enter_tree_and_descend_stairs": "enter_tree_and_descend_stairs",
+      "travel_by_leaf_boat_under_pond": "travel_by_leaf_boat_under_pond",
+      "witness_queen_birthday_ceremony": "witness_queen_birthday_ceremony",
+      "receive_queen_kiss": "receive_queen_kiss",
+      "return_to_bench_and_share_story": "return_to_bench_and_share_story"
+    }
+  },
+  "decisions": []
+}

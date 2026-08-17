@@ -1,0 +1,76 @@
+{
+  "sources": [
+    "JACK_NP"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 24,
+    "predicates": 15,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "JACK_NP": {
+      "asleep": "asleep",
+      "at": "at",
+      "at_item": "at_item",
+      "beanstalk_grown": "beanstalk_grown",
+      "climbing_down": "climbing_down",
+      "dead": "dead",
+      "distracted": "distracted",
+      "empty": "empty",
+      "has": "has",
+      "has_breakfast": "has_breakfast",
+      "inside": "inside",
+      "intact": "intact",
+      "offers": "offers",
+      "on": "on",
+      "planted": "planted"
+    }
+  },
+  "constant_maps": {
+    "JACK_NP": {
+      "axe": "axe",
+      "beanstalk": "beanstalk",
+      "brown_hen": "brown_hen",
+      "butcher": "butcher",
+      "castle_road": "castle_road",
+      "cottage": "cottage",
+      "fairy_maiden": "fairy_maiden",
+      "garden": "garden",
+      "giant": "giant",
+      "giant_castle": "giant_castle",
+      "giant_dog": "giant_dog",
+      "giant_wife": "giant_wife",
+      "gold_bag_1": "gold_bag_1",
+      "gold_bag_2": "gold_bag_2",
+      "golden_harp": "golden_harp",
+      "jack": "jack",
+      "jack_mother": "jack_mother",
+      "kettle": "kettle",
+      "magic_beans": "magic_beans",
+      "market": "market",
+      "milky_white": "milky_white",
+      "oak_tree_club": "oak_tree_club",
+      "oven": "oven",
+      "window": "window"
+    }
+  },
+  "action_maps": {
+    "JACK_NP": {
+      "sell_cow_for_beans": "sell_cow_for_beans",
+      "plant_beans": "plant_beans",
+      "grow_beanstalk": "grow_beanstalk",
+      "climb_beanstalk": "climb_beanstalk",
+      "ask_giant_wife_for_breakfast": "ask_giant_wife_for_breakfast",
+      "hide_in_kettle": "hide_in_kettle",
+      "steal_gold_bags": "steal_gold_bags",
+      "return_down_beanstalk": "return_down_beanstalk",
+      "hide_in_oven": "hide_in_oven",
+      "steal_hen": "steal_hen",
+      "steal_harp": "steal_harp",
+      "cut_beanstalk": "cut_beanstalk"
+    }
+  },
+  "decisions": []
+}

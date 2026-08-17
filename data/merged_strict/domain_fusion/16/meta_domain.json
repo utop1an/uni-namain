@@ -1,0 +1,93 @@
+{
+  "sources": [
+    "BUFF",
+    "CHIC_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 3,
+    "constants": 22,
+    "predicates": 24,
+    "operators": 15
+  },
+  "predicate_maps": {
+    "BUFF": {
+      "applause_given": "applause_given",
+      "audience_calls_for_kickout": "audience_calls_for_kickout",
+      "audience_demands_shake_cloak": "audience_demands_shake_cloak",
+      "cloak_shaken": "cloak_shaken",
+      "countryman_declares_intent": "countryman_declares_intent",
+      "countryman_performs_with_real_pig": "countryman_performs_with_real_pig",
+      "crowd_present": "crowd_present",
+      "imitates_pig": "imitates_pig",
+      "on_platform": "on_platform",
+      "partiality_prevalent": "partiality_prevalent",
+      "performs_without_apparatus": "performs_without_apparatus",
+      "pig_found": "pig_found",
+      "pig_revealed": "pig_revealed",
+      "reward_announced": "reward_announced",
+      "theater_opened": "theater_opened"
+    },
+    "CHIC_NP": {
+      "at": "at",
+      "decided_to_tell_king": "decided_to_tell_king",
+      "eaten_by_fox": "eaten_by_fox",
+      "following_fox": "following_fox",
+      "going_to_wood": "going_to_wood",
+      "informed_about_sky_fall": "informed_about_sky_fall",
+      "met": "met",
+      "sky_fell_on_head": "sky_fell_on_head",
+      "turned_back": "turned_back"
+    }
+  },
+  "constant_maps": {
+    "BUFF": {
+      "audience": "audience",
+      "buffoon": "buffoon",
+      "cloak": "cloak",
+      "countryman": "countryman",
+      "little_pig": "little_pig",
+      "platform": "platform",
+      "rich_nobleman": "rich_nobleman",
+      "theater": "theater"
+    },
+    "CHIC_NP": {
+      "Acorn": "Acorn",
+      "Chicken-licken": "Chicken-licken",
+      "Cock-lock": "Cock-lock",
+      "Drake-lake": "Drake-lake",
+      "Duck-luck": "Duck-luck",
+      "Fox-lox": "Fox-lox",
+      "FoxHole": "FoxHole",
+      "Gander-lander": "Gander-lander",
+      "Goose-loose": "Goose-loose",
+      "Hen-len": "Hen-len",
+      "King": "King",
+      "Sky": "Sky",
+      "Turkey-lurkey": "Turkey-lurkey",
+      "Wood": "Wood"
+    }
+  },
+  "action_maps": {
+    "BUFF": {
+      "open_theater_and_announce_reward": "open_theater_and_announce_reward",
+      "perform_pig_imitation_without_apparatus": "perform_pig_imitation_without_apparatus",
+      "audience_demand_shake_cloak_for_pig": "audience_demand_shake_cloak_for_pig",
+      "audience_applaud_performance": "audience_applaud_performance",
+      "countryman_declare_intent_to_repeat_trick": "countryman_declare_intent_to_repeat_trick",
+      "countryman_perform_pig_imitation_with_real_pig": "countryman_perform_pig_imitation_with_real_pig",
+      "audience_criticize_countryman_and_call_for_kickout": "audience_criticize_countryman_and_call_for_kickout",
+      "countryman_reveal_real_pig": "countryman_reveal_real_pig"
+    },
+    "CHIC_NP": {
+      "go_to_wood": "go_to_wood",
+      "turn_back": "turn_back",
+      "meet_character": "meet_character",
+      "inform_about_sky_fall": "inform_about_sky_fall",
+      "decide_to_tell_king": "decide_to_tell_king",
+      "follow_fox": "follow_fox",
+      "be_eaten_by_fox": "be_eaten_by_fox"
+    }
+  },
+  "decisions": []
+}
