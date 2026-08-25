@@ -1,0 +1,2677 @@
+[
+  {
+    "source": "ACCO",
+    "predicate": "airborne",
+    "category": "status",
+    "relation": "has-status",
+    "value": "airborne",
+    "argument_types": [
+      "item"
+    ],
+    "key": "status:has-status:airborne/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "badger_form",
+    "category": "attribute",
+    "relation": "badger-form",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:badger-form/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "captured",
+    "category": "status",
+    "relation": "has-status",
+    "value": "captured",
+    "argument_types": [
+      "item"
+    ],
+    "key": "status:has-status:captured/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "contained_in",
+    "category": "relation",
+    "relation": "contained-in",
+    "value": null,
+    "argument_types": [
+      "item",
+      "item"
+    ],
+    "key": "relation:contained-in/2"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "exhibition_ready",
+    "category": "attribute",
+    "relation": "exhibition-ready",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:exhibition-ready/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "four_legged",
+    "category": "attribute",
+    "relation": "four-legged",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:four-legged/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "furred",
+    "category": "attribute",
+    "relation": "furred",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:furred/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "hanging",
+    "category": "attribute",
+    "relation": "hanging",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:hanging/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "located",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "object",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "night",
+    "category": "plot",
+    "relation": "night",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:night/0"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "owned_by",
+    "category": "possession",
+    "relation": "owned-by",
+    "value": null,
+    "argument_types": [
+      "item",
+      "entity"
+    ],
+    "key": "possession:owned-by/2"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "performing_show",
+    "category": "attribute",
+    "relation": "performing-show",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:performing-show/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "reputation_widespread",
+    "category": "plot",
+    "relation": "reputation-widespread",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:reputation-widespread/0"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "treasured",
+    "category": "attribute",
+    "relation": "treasured",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:treasured/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "wealthy",
+    "category": "status",
+    "relation": "has-status",
+    "value": "wealthy",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:wealthy/1"
+  },
+  {
+    "source": "ACCO",
+    "predicate": "worshipped",
+    "category": "social",
+    "relation": "worshipped",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "social:worshipped/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "boat_available",
+    "category": "relation",
+    "relation": "boat-available",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "relation:boat-available/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "corridor_reached",
+    "category": "plot",
+    "relation": "corridor-reached",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:corridor-reached/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "door_open",
+    "category": "status",
+    "relation": "has-status",
+    "value": "open",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:open/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "gloomy",
+    "category": "status",
+    "relation": "has-status",
+    "value": "gloomy",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:gloomy/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "gold_star_on",
+    "category": "relation",
+    "relation": "gold-star-on",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:gold-star-on/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "inside",
+    "category": "relation",
+    "relation": "inside",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:inside/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "invitation_offered",
+    "category": "social",
+    "relation": "offered",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "social:offered/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "joyful",
+    "category": "status",
+    "relation": "has-status",
+    "value": "joyful",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:joyful/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "kissed_by",
+    "category": "social",
+    "relation": "by",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "social:by/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "knighted",
+    "category": "social",
+    "relation": "knighted",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "social:knighted/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "lantern_carried",
+    "category": "relation",
+    "relation": "lantern-carried",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:lantern-carried/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "pellet_eaten",
+    "category": "attribute",
+    "relation": "pellet-eaten",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:pellet-eaten/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "shrunk",
+    "category": "status",
+    "relation": "has-status",
+    "value": "shrunk",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:shrunk/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "sound_heard",
+    "category": "communication",
+    "relation": "heard",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "communication:heard/2"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "stairs_descended",
+    "category": "attribute",
+    "relation": "stairs-descended",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:stairs-descended/1"
+  },
+  {
+    "source": "BIRT",
+    "predicate": "story_shared",
+    "category": "communication",
+    "relation": "shared",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "communication:shared/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "applause_given",
+    "category": "relation",
+    "relation": "applause-given",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:applause-given/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "audience_calls_for_kickout",
+    "category": "communication",
+    "relation": "kickout",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "communication:kickout/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "audience_demands_shake_cloak",
+    "category": "relation",
+    "relation": "audience-demands-shake-cloak",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity",
+      "item"
+    ],
+    "key": "relation:audience-demands-shake-cloak/3"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "cloak_shaken",
+    "category": "relation",
+    "relation": "cloak-shaken",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:cloak-shaken/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "countryman_declares_intent",
+    "category": "communication",
+    "relation": "intent",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "communication:intent/1"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "countryman_performs_with_real_pig",
+    "category": "relation",
+    "relation": "countryman-performs-with-real-pig",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:countryman-performs-with-real-pig/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "crowd_present",
+    "category": "relation",
+    "relation": "crowd-present",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:crowd-present/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "imitates_pig",
+    "category": "attribute",
+    "relation": "imitates-pig",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:imitates-pig/1"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "on_platform",
+    "category": "relation",
+    "relation": "on-platform",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:on-platform/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "partiality_prevalent",
+    "category": "plot",
+    "relation": "partiality-prevalent",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:partiality-prevalent/0"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "performs_without_apparatus",
+    "category": "attribute",
+    "relation": "performs-without-apparatus",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:performs-without-apparatus/1"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "pig_found",
+    "category": "relation",
+    "relation": "pig-found",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:pig-found/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "pig_revealed",
+    "category": "plot",
+    "relation": "pig-revealed",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "plot:pig-revealed/2"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "reward_announced",
+    "category": "social",
+    "relation": "announced",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "social:announced/1"
+  },
+  {
+    "source": "BUFF",
+    "predicate": "theater_opened",
+    "category": "plot",
+    "relation": "theater-opened",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "plot:theater-opened/2"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "decided_to_tell_king",
+    "category": "attribute",
+    "relation": "decided-to-tell-king",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:decided-to-tell-king/1"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "eaten_by_fox",
+    "category": "attribute",
+    "relation": "eaten-by-fox",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:eaten-by-fox/1"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "following_fox",
+    "category": "attribute",
+    "relation": "following-fox",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:following-fox/1"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "going_to_wood",
+    "category": "attribute",
+    "relation": "going-to-wood",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:going-to-wood/1"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "informed_about_sky_fall",
+    "category": "communication",
+    "relation": "fall",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "communication:fall/2"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "met",
+    "category": "relation",
+    "relation": "met",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:met/2"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "sky_fell_on_head",
+    "category": "attribute",
+    "relation": "sky-fell-on-head",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:sky-fell-on-head/1"
+  },
+  {
+    "source": "CHIC_NP",
+    "predicate": "turned_back",
+    "category": "attribute",
+    "relation": "turned-back",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:turned-back/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "dragon_dead",
+    "category": "status",
+    "relation": "has-status",
+    "value": "dead",
+    "argument_types": [],
+    "key": "status:has-status:dead/0"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "eggs_fetched",
+    "category": "plot",
+    "relation": "eggs-fetched",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:eggs-fetched/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "eggs_sewn",
+    "category": "plot",
+    "relation": "eggs-sewn",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:eggs-sewn/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "eggs_shot",
+    "category": "plot",
+    "relation": "eggs-shot",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:eggs-shot/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "entity_at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "half_kingdom",
+    "category": "relation",
+    "relation": "half-kingdom",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:half-kingdom/2"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "is_astronomer",
+    "category": "attribute",
+    "relation": "is-astronomer",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-astronomer/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "is_hunter",
+    "category": "attribute",
+    "relation": "is-hunter",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-hunter/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "is_tailor",
+    "category": "attribute",
+    "relation": "is-tailor",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-tailor/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "is_thief",
+    "category": "attribute",
+    "relation": "is-thief",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-thief/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "item_at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "princess_rescued",
+    "category": "status",
+    "relation": "has-status",
+    "value": "rescued",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:rescued/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "reward_received",
+    "category": "social",
+    "relation": "received",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "social:received/1"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "ship_broken",
+    "category": "plot",
+    "relation": "ship-broken",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:ship-broken/0"
+  },
+  {
+    "source": "FOUR_NP",
+    "predicate": "ship_repaired",
+    "category": "plot",
+    "relation": "ship-repaired",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:ship-repaired/0"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "bird_heard",
+    "category": "communication",
+    "relation": "heard",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "communication:heard/2"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "bread_given",
+    "category": "attribute",
+    "relation": "bread-given",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:bread-given/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "captured",
+    "category": "status",
+    "relation": "has-status",
+    "value": "captured",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:captured/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "collected",
+    "category": "plot",
+    "relation": "collected",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "plot:collected/2"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "crossed_lake",
+    "category": "plot",
+    "relation": "crossed-lake",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:crossed-lake/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "crumb_on_path",
+    "category": "attribute",
+    "relation": "crumb-on-path",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:crumb-on-path/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "dead",
+    "category": "status",
+    "relation": "has-status",
+    "value": "dead",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:dead/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "duck_helped",
+    "category": "relation",
+    "relation": "duck-helped",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:duck-helped/2"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "fire_lit",
+    "category": "attribute",
+    "relation": "fire-lit",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:fire-lit/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "locked",
+    "category": "status",
+    "relation": "has-status",
+    "value": "locked",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:locked/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "lost",
+    "category": "status",
+    "relation": "has-status",
+    "value": "lost",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:lost/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "pebble_on_path",
+    "category": "attribute",
+    "relation": "pebble-on-path",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:pebble-on-path/1"
+  },
+  {
+    "source": "HANS_NP",
+    "predicate": "reunited_with_father",
+    "category": "social",
+    "relation": "father",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "social:father/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "asleep",
+    "category": "status",
+    "relation": "has-status",
+    "value": "asleep",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:asleep/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "at_item",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "beanstalk_grown",
+    "category": "plot",
+    "relation": "beanstalk-grown",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:beanstalk-grown/0"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "climbing_down",
+    "category": "attribute",
+    "relation": "climbing-down",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:climbing-down/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "dead",
+    "category": "status",
+    "relation": "has-status",
+    "value": "dead",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:dead/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "distracted",
+    "category": "attribute",
+    "relation": "distracted",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:distracted/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "empty",
+    "category": "status",
+    "relation": "has-status",
+    "value": "empty",
+    "argument_types": [
+      "item"
+    ],
+    "key": "status:has-status:empty/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "has_breakfast",
+    "category": "attribute",
+    "relation": "has-breakfast",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-breakfast/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "inside",
+    "category": "relation",
+    "relation": "inside",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:inside/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "intact",
+    "category": "status",
+    "relation": "has-status",
+    "value": "intact",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:intact/1"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "offers",
+    "category": "relation",
+    "relation": "offers",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:offers/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "on",
+    "category": "relation",
+    "relation": "on",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "relation:on/2"
+  },
+  {
+    "source": "JACK_NP",
+    "predicate": "planted",
+    "category": "attribute",
+    "relation": "planted",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:planted/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "agreed",
+    "category": "social",
+    "relation": "agreed",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "social:agreed/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "ate_all",
+    "category": "attribute",
+    "relation": "ate-all",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:ate-all/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "attacked",
+    "category": "relation",
+    "relation": "attacked",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:attacked/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "attempt_light",
+    "category": "attribute",
+    "relation": "attempt-light",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:attempt-light/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "bite",
+    "category": "relation",
+    "relation": "bite",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:bite/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "crowed",
+    "category": "attribute",
+    "relation": "crowed",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:crowed/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "fled",
+    "category": "relation",
+    "relation": "fled",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:fled/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "invited",
+    "category": "status",
+    "relation": "has-status",
+    "value": "invited",
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "status:has-status:invited/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "kick",
+    "category": "relation",
+    "relation": "kick",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:kick/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "light_off",
+    "category": "attribute",
+    "relation": "light-off",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:light-off/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "light_on",
+    "category": "attribute",
+    "relation": "light-on",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:light-on/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "making_noise",
+    "category": "attribute",
+    "relation": "making-noise",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:making-noise/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "moving_towards",
+    "category": "relation",
+    "relation": "moving-towards",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:moving-towards/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "resting",
+    "category": "attribute",
+    "relation": "resting",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:resting/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "retreated",
+    "category": "attribute",
+    "relation": "retreated",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:retreated/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "sees_light",
+    "category": "attribute",
+    "relation": "sees-light",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:sees-light/1"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "sleeping_at",
+    "category": "relation",
+    "relation": "sleeping-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:sleeping-at/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "stacked_on",
+    "category": "relation",
+    "relation": "stacked-on",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:stacked-on/2"
+  },
+  {
+    "source": "MUSI",
+    "predicate": "window_shattered",
+    "category": "plot",
+    "relation": "window-shattered",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:window-shattered/0"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "arrested",
+    "category": "relation",
+    "relation": "arrested",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:arrested/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "avoid",
+    "category": "relation",
+    "relation": "avoid",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:avoid/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "burned",
+    "category": "status",
+    "relation": "has-status",
+    "value": "burned",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:burned/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "crossed_out",
+    "category": "plot",
+    "relation": "crossed-out",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "plot:crossed-out/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "delivered",
+    "category": "relation",
+    "relation": "delivered",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:delivered/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "detained",
+    "category": "attribute",
+    "relation": "detained",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:detained/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "gate_open",
+    "category": "status",
+    "relation": "has-status",
+    "value": "open",
+    "argument_types": [],
+    "key": "status:has-status:open/0"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "has_mission",
+    "category": "attribute",
+    "relation": "has-mission",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-mission/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "left_turn_rule",
+    "category": "attribute",
+    "relation": "left-turn-rule",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:left-turn-rule/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "near",
+    "category": "relation",
+    "relation": "near",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:near/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "on_list",
+    "category": "attribute",
+    "relation": "on-list",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:on-list/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "prohibit_speak",
+    "category": "attribute",
+    "relation": "prohibit-speak",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:prohibit-speak/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "punished",
+    "category": "attribute",
+    "relation": "punished",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:punished/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "rule_violation",
+    "category": "attribute",
+    "relation": "rule-violation",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:rule-violation/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "speaks_to",
+    "category": "relation",
+    "relation": "speaks-to",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:speaks-to/2"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "summoned",
+    "category": "attribute",
+    "relation": "summoned",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:summoned/1"
+  },
+  {
+    "source": "NAUG",
+    "predicate": "traveling",
+    "category": "attribute",
+    "relation": "traveling",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:traveling/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "alive",
+    "category": "status",
+    "relation": "has-status",
+    "value": "alive",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:alive/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "boiling",
+    "category": "attribute",
+    "relation": "boiling",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:boiling/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "dead",
+    "category": "status",
+    "relation": "has-status",
+    "value": "dead",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:dead/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "door_closed",
+    "category": "status",
+    "relation": "has-status",
+    "value": "closed",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:closed/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "entry_denied",
+    "category": "relation",
+    "relation": "entry-denied",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:entry-denied/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "entry_requested",
+    "category": "relation",
+    "relation": "entry-requested",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:entry-requested/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "escaped",
+    "category": "status",
+    "relation": "has-status",
+    "value": "escaped",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:escaped/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "has_bundle",
+    "category": "relation",
+    "relation": "has-bundle",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:has-bundle/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "house",
+    "category": "relation",
+    "relation": "house",
+    "value": null,
+    "argument_types": [
+      "location",
+      "item"
+    ],
+    "key": "relation:house/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "house_destroyed",
+    "category": "attribute",
+    "relation": "house-destroyed",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:house-destroyed/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "house_intact",
+    "category": "status",
+    "relation": "has-status",
+    "value": "intact",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:intact/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "huffed",
+    "category": "attribute",
+    "relation": "huffed",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:huffed/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "inside",
+    "category": "relation",
+    "relation": "inside",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:inside/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "material_requested",
+    "category": "relation",
+    "relation": "material-requested",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:material-requested/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "over",
+    "category": "relation",
+    "relation": "over",
+    "value": null,
+    "argument_types": [
+      "item",
+      "item"
+    ],
+    "key": "relation:over/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "plan",
+    "category": "relation",
+    "relation": "plan",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:plan/2"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "puffed",
+    "category": "attribute",
+    "relation": "puffed",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:puffed/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "rolling",
+    "category": "attribute",
+    "relation": "rolling",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:rolling/1"
+  },
+  {
+    "source": "PIGS_NP",
+    "predicate": "under",
+    "category": "relation",
+    "relation": "under",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "relation:under/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "alive",
+    "category": "status",
+    "relation": "has-status",
+    "value": "alive",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:alive/1"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "at_item",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "castle_owned_by",
+    "category": "social",
+    "relation": "by",
+    "value": null,
+    "argument_types": [
+      "location",
+      "entity"
+    ],
+    "key": "social:by/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "contains",
+    "category": "relation",
+    "relation": "contains",
+    "value": null,
+    "argument_types": [
+      "item",
+      "item"
+    ],
+    "key": "relation:contains/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "drowning",
+    "category": "attribute",
+    "relation": "drowning",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:drowning/1"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "gate_open",
+    "category": "status",
+    "relation": "has-status",
+    "value": "open",
+    "argument_types": [
+      "location"
+    ],
+    "key": "status:has-status:open/1"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "gift_delivered",
+    "category": "relation",
+    "relation": "gift-delivered",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity",
+      "item"
+    ],
+    "key": "relation:gift-delivered/3"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "married",
+    "category": "status",
+    "relation": "has-status",
+    "value": "married",
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "status:has-status:married/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "obedient",
+    "category": "attribute",
+    "relation": "obedient",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:obedient/1"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "promised_to_serve",
+    "category": "relation",
+    "relation": "promised-to-serve",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:promised-to-serve/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "rescued_by",
+    "category": "status",
+    "relation": "has-status",
+    "value": "rescued",
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "status:has-status:rescued/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "transformed_into",
+    "category": "relation",
+    "relation": "transformed-into",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:transformed-into/2"
+  },
+  {
+    "source": "PUSS",
+    "predicate": "wearing",
+    "category": "relation",
+    "relation": "wearing",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:wearing/2"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "grandmother_mangle_spoken",
+    "category": "communication",
+    "relation": "spoken",
+    "value": null,
+    "argument_types": [],
+    "key": "communication:spoken/0"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "married",
+    "category": "status",
+    "relation": "has-status",
+    "value": "married",
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "status:has-status:married/2"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "price_of_butter_spoken",
+    "category": "communication",
+    "relation": "spoken",
+    "value": null,
+    "argument_types": [],
+    "key": "communication:spoken/0"
+  },
+  {
+    "source": "REMA_NP",
+    "predicate": "with_all_my_heart_spoken",
+    "category": "communication",
+    "relation": "spoken",
+    "value": null,
+    "argument_types": [],
+    "key": "communication:spoken/0"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "alive",
+    "category": "status",
+    "relation": "has-status",
+    "value": "alive",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:alive/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "at_item",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "awake",
+    "category": "status",
+    "relation": "has-status",
+    "value": "awake",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:awake/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "dead",
+    "category": "status",
+    "relation": "has-status",
+    "value": "dead",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:dead/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "disguised_as",
+    "category": "relation",
+    "relation": "disguised-as",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:disguised-as/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "envious",
+    "category": "attribute",
+    "relation": "envious",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:envious/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "fair",
+    "category": "attribute",
+    "relation": "fair",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:fair/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "fairest",
+    "category": "attribute",
+    "relation": "fairest",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:fairest/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "in_coffin",
+    "category": "attribute",
+    "relation": "in-coffin",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:in-coffin/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "laced",
+    "category": "relation",
+    "relation": "laced",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:laced/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "poisoned",
+    "category": "status",
+    "relation": "has-status",
+    "value": "poisoned",
+    "argument_types": [
+      "item"
+    ],
+    "key": "status:has-status:poisoned/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "sleeping",
+    "category": "attribute",
+    "relation": "sleeping",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:sleeping/1"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "visited",
+    "category": "relation",
+    "relation": "visited",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:visited/2"
+  },
+  {
+    "source": "SNOW",
+    "predicate": "wearing",
+    "category": "relation",
+    "relation": "wearing",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "relation:wearing/2"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "anointed",
+    "category": "attribute",
+    "relation": "anointed",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:anointed/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "captured",
+    "category": "status",
+    "relation": "has-status",
+    "value": "captured",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:captured/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "escaped",
+    "category": "status",
+    "relation": "has-status",
+    "value": "escaped",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:escaped/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "has_feeling",
+    "category": "attribute",
+    "relation": "has-feeling",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-feeling/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "has_imagination",
+    "category": "attribute",
+    "relation": "has-imagination",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-imagination/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "has_understanding",
+    "category": "attribute",
+    "relation": "has-understanding",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-understanding/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "holds",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "in_cage",
+    "category": "attribute",
+    "relation": "in-cage",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:in-cage/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "is_poet",
+    "category": "attribute",
+    "relation": "is-poet",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-poet/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "is_queen",
+    "category": "attribute",
+    "relation": "is-queen",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:is-queen/1"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "king_tail_stirred",
+    "category": "plot",
+    "relation": "king-tail-stirred",
+    "value": null,
+    "argument_types": [],
+    "key": "plot:king-tail-stirred/0"
+  },
+  {
+    "source": "SOUP",
+    "predicate": "soup_effect_created",
+    "category": "attribute",
+    "relation": "soup-effect-created",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:soup-effect-created/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "at",
+    "category": "spatial",
+    "relation": "located-at",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "spatial:located-at/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "banquet_at",
+    "category": "attribute",
+    "relation": "banquet-at",
+    "value": null,
+    "argument_types": [
+      "location"
+    ],
+    "key": "attribute:banquet-at/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "bowed",
+    "category": "relation",
+    "relation": "bowed",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:bowed/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "concealed",
+    "category": "status",
+    "relation": "has-status",
+    "value": "concealed",
+    "argument_types": [
+      "item"
+    ],
+    "key": "status:has-status:concealed/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "drunk",
+    "category": "status",
+    "relation": "has-status",
+    "value": "drunk",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:drunk/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "employed",
+    "category": "social",
+    "relation": "employed",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "social:employed/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "gold_at",
+    "category": "relation",
+    "relation": "gold-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "relation:gold-at/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "guest_present",
+    "category": "relation",
+    "relation": "guest-present",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "location"
+    ],
+    "key": "relation:guest-present/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "has",
+    "category": "possession",
+    "relation": "possesses",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "item"
+    ],
+    "key": "possession:possesses/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "has_fatigue",
+    "category": "attribute",
+    "relation": "has-fatigue",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-fatigue/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "has_strength",
+    "category": "attribute",
+    "relation": "has-strength",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:has-strength/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "invitation_sent",
+    "category": "social",
+    "relation": "sent",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "social:sent/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "invited",
+    "category": "status",
+    "relation": "has-status",
+    "value": "invited",
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "status:has-status:invited/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "need_help",
+    "category": "attribute",
+    "relation": "need-help",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:need-help/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "poor",
+    "category": "status",
+    "relation": "has-status",
+    "value": "poor",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:poor/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "rich",
+    "category": "status",
+    "relation": "has-status",
+    "value": "rich",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:rich/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "singing",
+    "category": "attribute",
+    "relation": "singing",
+    "value": null,
+    "argument_types": [
+      "entity"
+    ],
+    "key": "attribute:singing/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "stone_at",
+    "category": "relation",
+    "relation": "stone-at",
+    "value": null,
+    "argument_types": [
+      "item",
+      "location"
+    ],
+    "key": "relation:stone-at/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "stone_moved",
+    "category": "attribute",
+    "relation": "stone-moved",
+    "value": null,
+    "argument_types": [
+      "item"
+    ],
+    "key": "attribute:stone-moved/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "trapped",
+    "category": "status",
+    "relation": "has-status",
+    "value": "trapped",
+    "argument_types": [
+      "entity"
+    ],
+    "key": "status:has-status:trapped/1"
+  },
+  {
+    "source": "WOE",
+    "predicate": "woe_on_shoulder",
+    "category": "relation",
+    "relation": "woe-on-shoulder",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:woe-on-shoulder/2"
+  },
+  {
+    "source": "WOE",
+    "predicate": "work_done",
+    "category": "relation",
+    "relation": "work-done",
+    "value": null,
+    "argument_types": [
+      "entity",
+      "entity"
+    ],
+    "key": "relation:work-done/2"
+  }
+]

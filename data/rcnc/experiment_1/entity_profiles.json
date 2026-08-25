@@ -1,0 +1,4706 @@
+[
+  {
+    "source": "ACCO",
+    "name": "badger",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "box",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "copper_coins",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "friend",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "jhosiu",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "located"
+    ],
+    "actions": [
+      "kettle_transform_to_fur_badger",
+      "tinker_carry_home"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "ACCO",
+    "name": "lady_of_court",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "morinji",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "located"
+    ],
+    "actions": [
+      "call_novices",
+      "return_kettle_to_temple"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "ACCO",
+    "name": "pack",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "priest",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "prince",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "princess",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "showman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "teakettle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "temple_treasure",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "tight_rope",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "ACCO",
+    "name": "tinker",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "beech_tree",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "bench",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "approach_beech_tree",
+      "hear_tapping_on_beech"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "BIRT",
+    "name": "boat",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "corridor",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "cottage",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "door",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "change-state"
+    ],
+    "predicates": [
+      "door_open"
+    ],
+    "actions": [
+      "enter_tree_and_descend_stairs",
+      "turn_key_on_beech"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "BIRT",
+    "name": "dryad",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [
+      "participate-socially"
+    ],
+    "predicates": [
+      "inside",
+      "invitation_offered"
+    ],
+    "actions": [
+      "turn_key_on_beech"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "BIRT",
+    "name": "fairy_queen",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "fairyland",
+    "base_type": "location",
+    "roles": [
+      "helper-candidate",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "gnome",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "gold_star",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "grandmother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "grandmotherkin",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "key",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "lantern",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "mother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "mothereen",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "nora",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "palace",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "receive_queen_kiss",
+      "return_to_bench_and_share_story"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "BIRT",
+    "name": "pellet",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "pond",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "silver_salver",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "spring",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "stairs",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BIRT",
+    "name": "stream",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "audience",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "buffoon",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "cloak",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "countryman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "little_pig",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "platform",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "rich_nobleman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "BUFF",
+    "name": "theater",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Acorn",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Chicken-licken",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "sky_fell_on_head"
+    ],
+    "actions": [
+      "inform_about_sky_fall"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Cock-lock",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Drake-lake",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Duck-luck",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Fox-lox",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "FoxHole",
+    "base_type": "location",
+    "roles": [
+      "animal-character",
+      "antagonist-candidate",
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "be_eaten_by_fox"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Gander-lander",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Goose-loose",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Hen-len",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "King",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Sky",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Turkey-lurkey",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "CHIC_NP",
+    "name": "Wood",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "go_to_wood"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "brother_astronomer",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "brother_hunter",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "eggs_shot"
+    ],
+    "actions": [
+      "sew_eggs"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "brother_tailor",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "eggs_sewn"
+    ],
+    "actions": [
+      "return_eggs_to_nest"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "brother_thief",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "eggs_fetched"
+    ],
+    "actions": [
+      "shoot_eggs"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "chaffinch",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "cross_way",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "learn_astronomer_trade",
+      "learn_hunter_trade",
+      "learn_tailor_trade",
+      "learn_thief_trade",
+      "reunite_at_crossroads",
+      "separate_at_crossroads"
+    ],
+    "fixed_action_occurrences": 7
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "dragon",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [
+      "move"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "shoot_dragon",
+      "steal_princess"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "eggs",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed",
+      "move"
+    ],
+    "predicates": [
+      "has",
+      "item_at"
+    ],
+    "actions": [
+      "count_eggs",
+      "fetch_eggs",
+      "return_eggs_to_nest"
+    ],
+    "fixed_action_occurrences": 7
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "father",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "gun",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "learn_hunter_trade",
+      "shoot_dragon",
+      "shoot_eggs"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "leave_home",
+      "return_home_with_princess",
+      "reunite_at_crossroads",
+      "sail_to_rock"
+    ],
+    "fixed_action_occurrences": 7
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "king",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "kingdom",
+    "base_type": "location",
+    "roles": [
+      "authority",
+      "place",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "half_kingdom"
+    ],
+    "actions": [
+      "receive_reward"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "mentor_astronomer",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "mentor_hunter",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "mentor_tailor",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "mentor_thief",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "needle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "learn_tailor_trade",
+      "repair_ship",
+      "sew_eggs"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "planks",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "princess",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [
+      "move"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "locate_princess",
+      "return_home_with_princess",
+      "steal_princess"
+    ],
+    "fixed_action_occurrences": 5
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "rock_sea",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "locate_princess",
+      "sail_to_rock",
+      "shoot_dragon",
+      "steal_princess"
+    ],
+    "fixed_action_occurrences": 8
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "sea",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "return_home_with_princess",
+      "steal_princess",
+      "swim_after_ship_break"
+    ],
+    "fixed_action_occurrences": 4
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "ship",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "obtain_ship",
+      "sail_to_rock"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "sticks",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "separate_at_crossroads"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "telescope",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "count_eggs",
+      "learn_astronomer_trade",
+      "locate_princess"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "town_gate",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at"
+    ],
+    "actions": [
+      "leave_home"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "FOUR_NP",
+    "name": "tree",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "entity_at",
+      "item_at"
+    ],
+    "actions": [
+      "count_eggs",
+      "fetch_eggs",
+      "return_eggs_to_nest"
+    ],
+    "fixed_action_occurrences": 6
+  },
+  {
+    "source": "HANS_NP",
+    "name": "apple",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "bird",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "branch",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "bread_piece",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "brushwood",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "cake",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "enter_witch_house"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "HANS_NP",
+    "name": "cottage",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "crumb",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "dead_tree",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "door",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "duck",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "father",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "father_house",
+    "base_type": "location",
+    "roles": [
+      "family",
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "grettel",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "hansel",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "hill",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "kettle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "lake",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "milk",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "mother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "nut",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "oven",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "danger-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "pancake",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "path",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "pearl",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "pebble",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "precious_stone",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "roof",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "room",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "stable_location",
+    "base_type": "location",
+    "roles": [
+      "animal-character",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "sugar_window",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "enter_witch_house"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "HANS_NP",
+    "name": "window",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "HANS_NP",
+    "name": "witch",
+    "base_type": "entity",
+    "roles": [
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "axe",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "beanstalk",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "change-state",
+      "host-location"
+    ],
+    "predicates": [
+      "at",
+      "intact"
+    ],
+    "actions": [
+      "climb_beanstalk",
+      "cut_beanstalk",
+      "grow_beanstalk"
+    ],
+    "fixed_action_occurrences": 5
+  },
+  {
+    "source": "JACK_NP",
+    "name": "brown_hen",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "butcher",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "castle_road",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "cottage",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "return_down_beanstalk"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "JACK_NP",
+    "name": "fairy_maiden",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "garden",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "giant",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [
+      "change-state"
+    ],
+    "predicates": [
+      "asleep"
+    ],
+    "actions": [
+      "steal_gold_bags"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "JACK_NP",
+    "name": "giant_castle",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at",
+      "at_item",
+      "on"
+    ],
+    "actions": [
+      "ask_giant_wife_for_breakfast",
+      "climb_beanstalk",
+      "hide_in_kettle",
+      "hide_in_oven",
+      "return_down_beanstalk",
+      "steal_gold_bags",
+      "steal_harp",
+      "steal_hen"
+    ],
+    "fixed_action_occurrences": 17
+  },
+  {
+    "source": "JACK_NP",
+    "name": "giant_dog",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "giant_wife",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "gold_bag_1",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "gold_bag_2",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "golden_harp",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "jack",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "jack_mother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "kettle",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "magic_beans",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "market",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "milky_white",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "oak_tree_club",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "oven",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "JACK_NP",
+    "name": "window",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "ass",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "beam",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "cock_crow_alert"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "MUSI",
+    "name": "bremen",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "captain",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "cat",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "cock",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "drinks",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "hearth",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "cat_attack_messenger"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "MUSI",
+    "name": "hound",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "kettledrums",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "lute",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "man",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "meat",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "messenger",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "road_to_bremen",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "robber",
+    "base_type": "entity",
+    "roles": [
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "robbers_cottage",
+    "base_type": "location",
+    "roles": [
+      "antagonist-candidate",
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "straw",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "table",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "MUSI",
+    "name": "window",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "bungo",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "avoid",
+      "delivered"
+    ],
+    "actions": [
+      "deliver_meteor_to_bungo",
+      "give_order",
+      "punish_meteor"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "NAUG",
+    "name": "chalk",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "comet_house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "comet_master",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "courtyard",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "call_comet_forward",
+      "give_order",
+      "start_travel"
+    ],
+    "fixed_action_occurrences": 5
+  },
+  {
+    "source": "NAUG",
+    "name": "earth",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "avoid"
+    ],
+    "actions": [
+      "give_order"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "NAUG",
+    "name": "gate",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "long_tail_45",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "meteor",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "meteor_keeper",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "no1_express",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "short_tail_73",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "slate",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "NAUG",
+    "name": "sun",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "avoid",
+      "near"
+    ],
+    "actions": [
+      "approach_sun",
+      "burn_up",
+      "give_order"
+    ],
+    "fixed_action_occurrences": 4
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "apple",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "brick_house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "bricks",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "butter_churn",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "chimney",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "under"
+    ],
+    "actions": [
+      "pig_prepares_boiling_pot_and_fire"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "farmer",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "fire",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "furze_bundle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "furze_house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "hearth",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "hill",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "man_bricks",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "man_furze",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "man_straw",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "mortar",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "mother_pig",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "oak_forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "pig1",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "pig2",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "pig3",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "pig_home",
+    "base_type": "location",
+    "roles": [
+      "animal-character",
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "send_sons_on_journey"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "pot_of_water",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "sack",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "squire",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "squire_orchard",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "straw_bundle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "straw_house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "town_fair",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "pig_buys_butter_churn_and_hides"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "trowel",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "turnip_field",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "turnips_load",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PIGS_NP",
+    "name": "wolf",
+    "base_type": "entity",
+    "roles": [
+      "animal-character",
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "ass",
+    "base_type": "item",
+    "roles": [
+      "animal-character",
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "bag",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "boots",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "coachman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "eldest_son",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "field_of_corn",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "field_of_wheat",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "groom",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "hare",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "jack",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "promised_to_serve"
+    ],
+    "actions": [
+      "cat_disentchant_prisoners"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "PUSS",
+    "name": "king",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "mill",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "miller",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "ogre",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "ogre_castle",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "cat_ogre_transform_lion"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "PUSS",
+    "name": "palace",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "master_marry_princess"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "PUSS",
+    "name": "partridge",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "princess",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "puss",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "rabbit",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "river",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "royal_wardrobe",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "second_son",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "suit",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "PUSS",
+    "name": "warren",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "back_door",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "back_stairs",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "run_away_from_palace"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "REMA_NP",
+    "name": "bag_of_rubies",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "bag_of_sapphires",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "city",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "encounter_impostor_king",
+      "run_away_from_palace"
+    ],
+    "fixed_action_occurrences": 3
+  },
+  {
+    "source": "REMA_NP",
+    "name": "crown",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "father_king",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "encounter_robbers_in_forest"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "REMA_NP",
+    "name": "impostor_butterman",
+    "base_type": "entity",
+    "roles": [
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "king_at_palace",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "market_place",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "encounter_impostor_king",
+      "receive_rubies_from_impostor",
+      "utter_phrase_price_of_butter"
+    ],
+    "fixed_action_occurrences": 4
+  },
+  {
+    "source": "REMA_NP",
+    "name": "oak_tree",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "arrive_at_marble_palace",
+      "encounter_robbers_in_forest",
+      "receive_sapphires_from_robber_chief",
+      "utter_phrase_grandmother_mangle"
+    ],
+    "fixed_action_occurrences": 5
+  },
+  {
+    "source": "REMA_NP",
+    "name": "palace",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "arrive_at_marble_palace",
+      "king_proposes_marriage",
+      "king_requests_information_and_gifts",
+      "suitors_retire_due_to_phrase"
+    ],
+    "fixed_action_occurrences": 6
+  },
+  {
+    "source": "REMA_NP",
+    "name": "princess",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [
+      "change-state"
+    ],
+    "predicates": [
+      "married"
+    ],
+    "actions": [
+      "suitors_retire_due_to_phrase"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "REMA_NP",
+    "name": "robber_chief",
+    "base_type": "entity",
+    "roles": [
+      "antagonist-candidate",
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "REMA_NP",
+    "name": "sceptre",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "apple",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "bed",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "blood_drop",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "boar",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "boar_heart",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "candle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "coffin",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "comb",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "cottage",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dove",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf1",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf2",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf3",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf4",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf5",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf6",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "dwarf7",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "helper-candidate"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "fork",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "golden_letter",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "huntsman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "iron_slippers",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "king",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "knife",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "lace",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "looking_glass",
+    "base_type": "item",
+    "roles": [
+      "animal-character",
+      "artifact",
+      "authority"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "mountain",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "mug",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "needle",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "has"
+    ],
+    "actions": [
+      "queen_sews_at_window"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "SNOW",
+    "name": "owl",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "plate",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "prince",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "queen",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "raven",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "red_hot_shoes",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "salt",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "snow_white",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SNOW",
+    "name": "spoon",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "ant_queen",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "castle",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "crape_skewer",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "elf_chief",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "first_traveler_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "fourth_traveler_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "jailer",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "danger-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "jailer_granddaughter",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "danger-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "kitchen",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "prepare_soup_by_elf_effect",
+      "prepare_soup_by_king_tail"
+    ],
+    "fixed_action_occurrences": 2
+  },
+  {
+    "source": "SOUP",
+    "name": "library",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [
+      "host-location"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "read_and_digest_books"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "SOUP",
+    "name": "maypole",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "mouse_king",
+    "base_type": "entity",
+    "roles": [
+      "authority",
+      "character"
+    ],
+    "capabilities": [
+      "move"
+    ],
+    "predicates": [
+      "at"
+    ],
+    "actions": [
+      "prepare_soup_by_king_tail"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "SOUP",
+    "name": "north",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "oak_dryad",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "old_lady_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "old_owl",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "phantaesus",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "sausage_skewer",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "anointed",
+      "holds"
+    ],
+    "actions": [
+      "give_skewer_to_elves",
+      "prepare_soup_by_elf_effect",
+      "receive_anointed_skewer",
+      "travel_to"
+    ],
+    "fixed_action_occurrences": 8
+  },
+  {
+    "source": "SOUP",
+    "name": "sea",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "second_traveler_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "ship",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "third_traveler_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "violet",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [
+      "be-possessed"
+    ],
+    "predicates": [
+      "holds"
+    ],
+    "actions": [
+      "receive_anointed_skewer"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "SOUP",
+    "name": "watchman",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "SOUP",
+    "name": "young_lady_mouse",
+    "base_type": "entity",
+    "roles": [
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "big_house",
+    "base_type": "location",
+    "roles": [
+      "place",
+      "social-place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "bitter_woe",
+    "base_type": "entity",
+    "roles": [
+      "antagonist-candidate",
+      "character"
+    ],
+    "capabilities": [],
+    "predicates": [
+      "woe_on_shoulder"
+    ],
+    "actions": [
+      "rich_brother_attempt_to_move_stone"
+    ],
+    "fixed_action_occurrences": 1
+  },
+  {
+    "source": "WOE",
+    "name": "cattle",
+    "base_type": "item",
+    "roles": [
+      "animal-character",
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "children",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "copecks_25",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "forest",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "gold_pot",
+    "base_type": "item",
+    "roles": [
+      "artifact",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "grove",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "harrow",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "honey",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "izba",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "kabak",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "large_town",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "loaf_bread",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "new_home",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "plow",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "poor_brother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "rich_brother",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "sledge",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "stone",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "telega",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "treasure_pit",
+    "base_type": "location",
+    "roles": [
+      "danger-place",
+      "place",
+      "reward-object"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "village",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "well",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "wife",
+    "base_type": "entity",
+    "roles": [
+      "character",
+      "family"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "wine",
+    "base_type": "item",
+    "roles": [
+      "artifact"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  },
+  {
+    "source": "WOE",
+    "name": "yard",
+    "base_type": "location",
+    "roles": [
+      "place"
+    ],
+    "capabilities": [],
+    "predicates": [],
+    "actions": [],
+    "fixed_action_occurrences": 0
+  }
+]

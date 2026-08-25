@@ -65,3 +65,8 @@ python merge_domains.py
 It writes to `data/merged/` and uses reviewed, dataset-specific semantic groups
 instead of the paper's embedding-plus-LLM candidate verification. It is useful
 as an offline fallback but is not the strict UniDomain reproduction.
+
+## Project notes
+
+- [Work summary and handoff](docs/dev-notes/2026-08-21-unidomain-local-fusion-handoff.md)
+- [Merged-result diagnostics](docs/dev-notes/2026-08-18-domain-fusion-diagnostics.md)
