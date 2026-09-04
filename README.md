@@ -68,5 +68,14 @@ as an offline fallback but is not the strict UniDomain reproduction.
 
 ## Project notes
 
+- [RCNC discussion summary and next steps](docs/dev-notes/2026-09-05-rcnc-discussion-handoff.md)
+- [RCNC Experiment 1](docs/dev-notes/2026-08-24-rcnc-experiment-1.md)
+
+RCNC is an independent experimental path, run with
+`python run_rcnc_experiment.py`. Its current outputs are heuristic cross-story
+candidate skeletons, not planner-validated plans. It does not call an LLM or
+modify the UniDomain prompts. The latest handoff distinguishes implemented
+behavior from the proposed fixed-initial-state planning workflow.
+
 - [Work summary and handoff](docs/dev-notes/2026-08-21-unidomain-local-fusion-handoff.md)
 - [Merged-result diagnostics](docs/dev-notes/2026-08-18-domain-fusion-diagnostics.md)

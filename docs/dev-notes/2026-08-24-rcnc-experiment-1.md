@@ -2,6 +2,12 @@
 
 Date: 2026-08-24
 
+> Validity clarification (2026-09-05): this is a historical candidate-graph
+> experiment, not proof of executable plans. Edge construction does not filter
+> negative preconditions, and output validity flags do not perform state replay.
+> Read the [latest handoff](2026-09-05-rcnc-discussion-handoff.md) for corrected
+> implementation boundaries and the proposed next experiment.
+
 ## Objective
 
 This experiment tests the first hypothesis of Role-Causal Narrative
