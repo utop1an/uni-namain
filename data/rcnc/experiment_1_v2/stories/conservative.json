@@ -1,0 +1,972 @@
+[
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_prepare_glass_coffin_for_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:wolf_fails_to_blow_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?w"
+        ],
+        "bindings": {
+          "?w": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_prepare_glass_coffin_for_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:wolf_fails_to_blow_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?w"
+        ],
+        "bindings": {
+          "?w": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_prepare_glass_coffin_for_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:build_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_prepare_glass_coffin_for_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:build_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:wolf_fails_to_blow_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?w"
+        ],
+        "bindings": {
+          "?w": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_prepare_glass_coffin_for_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:wolf_fails_to_blow_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?w"
+        ],
+        "bindings": {
+          "?w": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_prepare_glass_coffin_for_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:wolf_fails_to_blow_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?w"
+        ],
+        "bindings": {
+          "?w": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:build_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_prepare_glass_coffin_for_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:build_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_prepare_glass_coffin_for_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "HANS_NP:push_witch_into_oven",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white"
+    ],
+    "sources": [
+      "HANS_NP",
+      "SNOW",
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW"
+    ],
+    "distinct_sources": 4,
+    "score": 32.627126,
+    "connectors": [
+      {
+        "producer": "HANS_NP:push_witch_into_oven",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "HANS_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?witch"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?witch"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:build_house",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  }
+]

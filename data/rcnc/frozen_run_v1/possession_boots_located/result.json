@@ -1,0 +1,757 @@
+{
+  "status": "solved",
+  "assignment_space_exhausted": true,
+  "all_searches_complete": true,
+  "best": {
+    "assignment": {
+      "guide": "helper",
+      "portal": "home"
+    },
+    "status": "solved",
+    "plan_length": 2,
+    "directory": "assignment_000",
+    "external_validation": {
+      "status": "VALID",
+      "engine": "sequential_plan_validator",
+      "version": "1.3.0",
+      "details": "status: VALID\nengine: sequential_plan_validator"
+    },
+    "lifted_validation": {
+      "status": "VALID",
+      "engine": "sequential_plan_validator",
+      "version": "1.3.0",
+      "details": "status: VALID\nengine: sequential_plan_validator"
+    },
+    "source_removal_controls": [
+      {
+        "removed_source": "BIRT",
+        "status": "solved",
+        "states": 8,
+        "necessary_within_fixed_assignment": false,
+        "plan_length": 2,
+        "validation": {
+          "valid": true,
+          "missing_goals": [],
+          "forbidden_goals": [],
+          "final_state": [
+            [
+              "birt__at",
+              "hero",
+              "tree"
+            ],
+            [
+              "puss__wearing",
+              "hero",
+              "artifact"
+            ]
+          ],
+          "trace": [
+            {
+              "step": 0,
+              "action": "PUSS:buy_boots",
+              "ground_action": "a00102",
+              "binding": {
+                "?jack": "hero",
+                "?puss": "hero",
+                "?boots": "artifact"
+              },
+              "before": [
+                [
+                  "birt__at",
+                  "hero",
+                  "tree"
+                ]
+              ],
+              "after": [
+                [
+                  "birt__at",
+                  "hero",
+                  "tree"
+                ],
+                [
+                  "shared_has",
+                  "hero",
+                  "artifact"
+                ]
+              ],
+              "added": [
+                [
+                  "shared_has",
+                  "hero",
+                  "artifact"
+                ]
+              ],
+              "deleted": []
+            },
+            {
+              "step": 1,
+              "action": "PUSS:master_wear_suit",
+              "ground_action": "a00168",
+              "binding": {
+                "?jack": "hero",
+                "?suit": "artifact"
+              },
+              "before": [
+                [
+                  "birt__at",
+                  "hero",
+                  "tree"
+                ],
+                [
+                  "shared_has",
+                  "hero",
+                  "artifact"
+                ]
+              ],
+              "after": [
+                [
+                  "birt__at",
+                  "hero",
+                  "tree"
+                ],
+                [
+                  "puss__wearing",
+                  "hero",
+                  "artifact"
+                ]
+              ],
+              "added": [
+                [
+                  "puss__wearing",
+                  "hero",
+                  "artifact"
+                ]
+              ],
+              "deleted": [
+                [
+                  "shared_has",
+                  "hero",
+                  "artifact"
+                ]
+              ]
+            }
+          ]
+        },
+        "external_validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      {
+        "removed_source": "PUSS",
+        "status": "unsolvable",
+        "states": 1,
+        "necessary_within_fixed_assignment": true
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "status": "solved",
+      "plan_length": 2,
+      "directory": "assignment_000",
+      "external_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "lifted_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "source_removal_controls": [
+        {
+          "removed_source": "BIRT",
+          "status": "solved",
+          "states": 8,
+          "necessary_within_fixed_assignment": false,
+          "plan_length": 2,
+          "validation": {
+            "valid": true,
+            "missing_goals": [],
+            "forbidden_goals": [],
+            "final_state": [
+              [
+                "birt__at",
+                "hero",
+                "tree"
+              ],
+              [
+                "puss__wearing",
+                "hero",
+                "artifact"
+              ]
+            ],
+            "trace": [
+              {
+                "step": 0,
+                "action": "PUSS:buy_boots",
+                "ground_action": "a00102",
+                "binding": {
+                  "?jack": "hero",
+                  "?puss": "hero",
+                  "?boots": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": []
+              },
+              {
+                "step": 1,
+                "action": "PUSS:master_wear_suit",
+                "ground_action": "a00168",
+                "binding": {
+                  "?jack": "hero",
+                  "?suit": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ]
+              }
+            ]
+          },
+          "external_validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          }
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "states": 1,
+          "necessary_within_fixed_assignment": true
+        }
+      ]
+    },
+    {
+      "assignment": {
+        "guide": "helper",
+        "portal": "tree"
+      },
+      "status": "solved",
+      "plan_length": 2,
+      "directory": "assignment_001",
+      "external_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "lifted_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "source_removal_controls": [
+        {
+          "removed_source": "BIRT",
+          "status": "solved",
+          "states": 8,
+          "necessary_within_fixed_assignment": false,
+          "plan_length": 2,
+          "validation": {
+            "valid": true,
+            "missing_goals": [],
+            "forbidden_goals": [],
+            "final_state": [
+              [
+                "birt__at",
+                "hero",
+                "tree"
+              ],
+              [
+                "puss__wearing",
+                "hero",
+                "artifact"
+              ]
+            ],
+            "trace": [
+              {
+                "step": 0,
+                "action": "PUSS:buy_boots",
+                "ground_action": "a00102",
+                "binding": {
+                  "?jack": "hero",
+                  "?puss": "hero",
+                  "?boots": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": []
+              },
+              {
+                "step": 1,
+                "action": "PUSS:master_wear_suit",
+                "ground_action": "a00168",
+                "binding": {
+                  "?jack": "hero",
+                  "?suit": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ]
+              }
+            ]
+          },
+          "external_validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          }
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "states": 1,
+          "necessary_within_fixed_assignment": true
+        }
+      ]
+    },
+    {
+      "assignment": {
+        "guide": "hero",
+        "portal": "home"
+      },
+      "status": "solved",
+      "plan_length": 2,
+      "directory": "assignment_002",
+      "external_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "lifted_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "source_removal_controls": [
+        {
+          "removed_source": "BIRT",
+          "status": "solved",
+          "states": 8,
+          "necessary_within_fixed_assignment": false,
+          "plan_length": 2,
+          "validation": {
+            "valid": true,
+            "missing_goals": [],
+            "forbidden_goals": [],
+            "final_state": [
+              [
+                "birt__at",
+                "hero",
+                "tree"
+              ],
+              [
+                "puss__wearing",
+                "hero",
+                "artifact"
+              ]
+            ],
+            "trace": [
+              {
+                "step": 0,
+                "action": "PUSS:buy_boots",
+                "ground_action": "a00102",
+                "binding": {
+                  "?jack": "hero",
+                  "?puss": "hero",
+                  "?boots": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": []
+              },
+              {
+                "step": 1,
+                "action": "PUSS:master_wear_suit",
+                "ground_action": "a00168",
+                "binding": {
+                  "?jack": "hero",
+                  "?suit": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ]
+              }
+            ]
+          },
+          "external_validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          }
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "states": 1,
+          "necessary_within_fixed_assignment": true
+        }
+      ]
+    },
+    {
+      "assignment": {
+        "guide": "hero",
+        "portal": "tree"
+      },
+      "status": "solved",
+      "plan_length": 2,
+      "directory": "assignment_003",
+      "external_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "lifted_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "source_removal_controls": [
+        {
+          "removed_source": "BIRT",
+          "status": "solved",
+          "states": 8,
+          "necessary_within_fixed_assignment": false,
+          "plan_length": 2,
+          "validation": {
+            "valid": true,
+            "missing_goals": [],
+            "forbidden_goals": [],
+            "final_state": [
+              [
+                "birt__at",
+                "hero",
+                "tree"
+              ],
+              [
+                "puss__wearing",
+                "hero",
+                "artifact"
+              ]
+            ],
+            "trace": [
+              {
+                "step": 0,
+                "action": "PUSS:buy_boots",
+                "ground_action": "a00102",
+                "binding": {
+                  "?jack": "hero",
+                  "?puss": "hero",
+                  "?boots": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": []
+              },
+              {
+                "step": 1,
+                "action": "PUSS:master_wear_suit",
+                "ground_action": "a00168",
+                "binding": {
+                  "?jack": "hero",
+                  "?suit": "artifact"
+                },
+                "before": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "after": [
+                  [
+                    "birt__at",
+                    "hero",
+                    "tree"
+                  ],
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "added": [
+                  [
+                    "puss__wearing",
+                    "hero",
+                    "artifact"
+                  ]
+                ],
+                "deleted": [
+                  [
+                    "shared_has",
+                    "hero",
+                    "artifact"
+                  ]
+                ]
+              }
+            ]
+          },
+          "external_validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          }
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "states": 1,
+          "necessary_within_fixed_assignment": true
+        }
+      ]
+    }
+  ],
+  "role_domains": {
+    "guide": [
+      "helper",
+      "hero"
+    ],
+    "portal": [
+      "home",
+      "tree"
+    ]
+  },
+  "source_necessity_across_assignments": [
+    {
+      "source": "BIRT",
+      "necessary_across_declared_assignments": false
+    },
+    {
+      "source": "PUSS",
+      "necessary_across_declared_assignments": true
+    }
+  ],
+  "shortest_plan_proven_within_declared_assignment_space": true,
+  "elapsed_seconds": 2.333661500015296,
+  "query_sha256": "23b5960f9698f365816cafdce8bf96f5cf8cef024d56e19d288fd3d0c8d84e24",
+  "implementation_sha256": "587bef767641a161057b97b14f390bcd84fa75777357216e9897012ed24b1974",
+  "scope": "Bounded global role-assignment enumeration; explicit capability claims; no inferred identity or narrative-quality guarantee."
+}

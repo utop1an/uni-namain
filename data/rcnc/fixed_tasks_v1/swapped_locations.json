@@ -1,0 +1,57 @@
+{
+  "description": "Development task fixed before matrix execution; not held-out. Variant: swapped_locations",
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "bench": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:bench": "bench",
+    "CHIC_NP:Chicken-licken": "hero"
+  },
+  "interfaces": {
+    "BIRT:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    },
+    "CHIC_NP:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    }
+  },
+  "initial": [
+    [
+      "shared_at",
+      "hero",
+      "tree"
+    ],
+    [
+      "shared_at",
+      "helper",
+      "bench"
+    ],
+    [
+      "chic_np__sky_fell_on_head",
+      "hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 10,
+  "max_states": 10000,
+  "max_ground_actions": 1000,
+  "sources": [
+    "BIRT",
+    "CHIC_NP"
+  ],
+  "require_external_validation": true
+}

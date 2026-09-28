@@ -1,0 +1,36 @@
+{
+  "candidate_id": "pair_e407aa03097509b9",
+  "refs": [
+    "BIRT:predicate:door_open",
+    "PUSS:predicate:gate_open"
+  ],
+  "response": {
+    "candidate_id": "pair_e407aa03097509b9",
+    "decision": "uncertain",
+    "relation": "equivalent",
+    "alignment": "unknown",
+    "rationale": "The predicates `door_open` and `gate_open` both relate to the state of an opening mechanism (door or gate) at a location. The BIRT action `enter_tree_and_descend_stairs` preconditions `door_open door` and the PUSS action `cat_open_castle_gates` effects `gate_open castle`. The arguments are similar, representing a location. However, the source domains (BIRT and PUSS) and specific objects involved (door vs. castle gates) differ. There is no direct evidence to confirm equivalence, and the alignment is uncertain due to the different contexts and objects. The `name_overlap` is low, suggesting a different conceptualization of the relation, but not definitive proof of difference. The `same_name` field is false, further supporting this uncertainty.",
+    "evidence": [
+      {
+        "ref": "BIRT:predicate:door_open",
+        "quote": "(door_open ?d - location)"
+      },
+      {
+        "ref": "PUSS:predicate:gate_open",
+        "quote": "(gate_open ?castle - location)"
+      },
+      {
+        "ref": "BIRT:action:enter_tree_and_descend_stairs",
+        "quote": "(:action enter_tree_and_descend_stairs ... door_open door)"
+      },
+      {
+        "ref": "PUSS:action:cat_open_castle_gates",
+        "quote": "(:action cat_open_castle_gates ... gate_open ?castle)"
+      }
+    ]
+  },
+  "structural_errors": [
+    "quote_not_in_source"
+  ],
+  "status": "invalid"
+}

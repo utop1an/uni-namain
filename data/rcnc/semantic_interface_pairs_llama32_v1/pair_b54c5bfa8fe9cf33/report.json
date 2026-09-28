@@ -1,0 +1,34 @@
+{
+  "candidate_id": "pair_b54c5bfa8fe9cf33",
+  "refs": [
+    "BIRT:predicate:kissed_by",
+    "PUSS:predicate:rescued_by"
+  ],
+  "response": {
+    "candidate_id": "pair_b54c5bfa8fe9cf33",
+    "decision": "accept",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both relations 'kissed_by' and 'rescued_by' have the same argument structure, with two entities as arguments. The literal expressions for both relations are also similar, with a verb followed by two entities. The context of the relations is different, but the structure is equivalent. The evidence from the records supports this equivalence, with similar parameter definitions and effect expressions for both relations. The only difference is the negation of the precondition in the 'rescued_by' relation, but this does not change the overall structure of the relation. Therefore, the relations are equivalent and have the same order of arguments.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(kissed_by ?n ?q)"
+      },
+      {
+        "ref": "PUSS:action:cat_call_for_help",
+        "quote": "(rescued_by ?jack ?king)"
+      },
+      {
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(kissed_by ?n ?q)"
+      },
+      {
+        "ref": "PUSS:action:cat_call_for_help",
+        "quote": "(rescued_by ?jack ?king)"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

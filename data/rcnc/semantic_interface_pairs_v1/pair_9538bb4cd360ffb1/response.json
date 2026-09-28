@@ -1,0 +1,17 @@
+{
+  "candidate_id": "pair_9538bb4cd360ffb1",
+  "decision": "uncertain",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The predicates `BIRT:predicate:corridor_reached` and `PUSS:predicate:drowning` represent different concepts. `BIRT:predicate:corridor_reached` indicates a state of being in a corridor, while `PUSS:predicate:drowning` describes a state of being submerged in water. The arguments and their roles are distinct. `BIRT:predicate:corridor_reached` takes an entity as an argument, while `PUSS:predicate:drowning` takes an entity as well. The preconditions and effects are also unrelated. The usage of `PUSS:predicate:drowning` is tied to a `cat_call_for_help` action, which is a precondition for drowning, and an effect of rescuing someone. The `BIRT:predicate:corridor_reached` is associated with entering a tree and descending stairs. There is no direct relationship between these predicates. The types are both 'entity', but this does not establish equivalence. The arguments are in different orders, and the predicates represent different concepts. Evidence: BIRT:action:enter_tree_and_descend_stairs describes a location and stairs descent, while PUSS:action:cat_call_for_help describes a drowning precondition and effect. The arguments are not aligned.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(:action enter_tree_and_descend_stairs :parameters (?d ?n ?corridor ?door ?stairs ?t - location) :precondition (and (inside ?n ?t) (inside ?d ?t) (door_open door)) :effect (and (stairs_descended ?n) (stairs_descended ?d) (corridor_reached ?n)))"
+    },
+    {
+      "ref": "PUSS:action:cat_call_for_help",
+      "quote": "(:action cat_call_for_help :parameters (?jack ?king ?puss - entity) :precondition (drowning ?jack) :effect (and (rescued_by ?jack ?king) (not (drowning ?jack))))"
+    }
+  ]
+}

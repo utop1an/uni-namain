@@ -1,0 +1,1 @@
+(define (problem rcnc-query-problem) (:domain rcnc-query) (:init (birt__at helper tree) (birt__at hero bench) (chic_np__at helper tree) (chic_np__at hero bench)) (:goal (and (chic_np__informed_about_sky_fall hero helper))))

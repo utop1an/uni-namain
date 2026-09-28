@@ -1,0 +1,17 @@
+{
+  "candidate_id": "pair_5f71d5163e5a59d0",
+  "decision": "uncertain",
+  "relation": "equivalent",
+  "alignment": "unknown",
+  "rationale": "The predicate `PUSS:predicate:alive` asserts that an entity is alive, while `BIRT:predicate:corridor_reached` asserts that an entity has reached a corridor. The arguments are both entities. The `PUSS:predicate:alive` predicate has preconditions related to the existence of other entities (ogre, puss), while `BIRT:predicate:corridor_reached` has preconditions related to location. There is no direct relationship between being alive and reaching a corridor. The predicates share the same argument type ('entity'). However, the preconditions and effects are distinct, and the core meaning of the predicates is different. The evidence is insufficient to determine equivalence. The order of arguments is the same. The action contexts are different, so alignment is unknown.",
+  "evidence": [
+    {
+      "ref": "BIRT:predicate:corridor_reached",
+      "quote": "corridor_reached ?e - entity"
+    },
+    {
+      "ref": "PUSS:predicate:alive",
+      "quote": "alive ?x - entity"
+    }
+  ]
+}

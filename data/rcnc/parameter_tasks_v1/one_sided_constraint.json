@@ -1,0 +1,100 @@
+{
+  "description": "Explicit author assumptions for a development sensitivity study. Capabilities are not independently established source facts.",
+  "sources": [
+    "BIRT",
+    "PUSS"
+  ],
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "cloak": "item",
+    "home": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {},
+  "lifted_constants": {
+    "BIRT:door": {
+      "role": "portal",
+      "allowed_objects": [
+        "home",
+        "tree"
+      ],
+      "required_capabilities": [
+        "portal"
+      ],
+      "evidence": "Task author permits the declared portal role at either location."
+    },
+    "BIRT:dryad": {
+      "role": "guide",
+      "allowed_objects": [
+        "hero",
+        "helper"
+      ],
+      "required_capabilities": [
+        "guide"
+      ],
+      "evidence": "Task author permits either character to fill the guide role."
+    }
+  },
+  "object_capabilities": {
+    "home": [
+      "portal"
+    ],
+    "tree": [
+      "portal"
+    ],
+    "hero": [
+      "guide"
+    ],
+    "helper": [
+      "guide"
+    ],
+    "cloak": [
+      "wearable"
+    ]
+  },
+  "interfaces": {
+    "BIRT:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "PUSS:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    }
+  },
+  "initial": [
+    [
+      "birt__at",
+      "hero",
+      "tree"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 8,
+  "max_states": 10000,
+  "max_ground_actions": 2000,
+  "max_role_assignments": 16,
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true,
+  "source_removal_scope": "all_solved",
+  "parameter_constraints": {
+    "PUSS:buy_boots": {
+      "?boots": {
+        "required_capabilities": [
+          "footwear"
+        ],
+        "evidence": "Author assumption for this study: buy_boots accepts footwear; source PDDL only declares item."
+      }
+    }
+  }
+}

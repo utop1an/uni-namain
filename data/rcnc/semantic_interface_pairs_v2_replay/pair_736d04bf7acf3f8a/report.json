@@ -1,0 +1,44 @@
+{
+  "candidate_id": "pair_736d04bf7acf3f8a",
+  "refs": [
+    "BIRT:predicate:has",
+    "PUSS:predicate:has"
+  ],
+  "response": {
+    "candidate_id": "pair_736d04bf7acf3f8a",
+    "decision": "reject",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both predicates, BIRT:predicate:has and PUSS:predicate:has, represent the same relation: an entity possesses an item. The argument slots (entity, item) and their order are identical in both predicates. The usage examples in both records (BIRT and PUSS) confirm this. The precondition and effect descriptions are also consistent. There are no contradictory elements or changes in meaning. The action contexts and literal expressions support the equivalence. The names and types are also identical. The arguments are consistent across both predicates.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:eat_pellet_and_shrink",
+        "quote": "(has ?n ?p)"
+      },
+      {
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(has ?puss ?boots)"
+      },
+      {
+        "ref": "BIRT:action:receive_pellet_from_gnome",
+        "quote": "(has ?n ?p)"
+      },
+      {
+        "ref": "PUSS:action:cat_catch_rabbits",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "ref": "BIRT:action:turn_key_on_beech",
+        "quote": "(has ?n ?k)"
+      },
+      {
+        "ref": "PUSS:action:give_bag_to_cat",
+        "quote": "(has ?jack ?bag)"
+      }
+    ]
+  },
+  "structural_errors": [
+    "reject_requires_difference"
+  ],
+  "status": "invalid"
+}

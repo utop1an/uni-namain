@@ -1,0 +1,28 @@
+{
+  "scope": "4 development anchors and 12 prospectively frozen variants from known source models; no independent-domain or independently annotated claim.",
+  "tasks": [
+    "possession_cloak_located.json",
+    "possession_cloak_unlocated.json",
+    "possession_key_cloak_located.json",
+    "possession_key_cloak_unlocated.json",
+    "possession_boots_located.json",
+    "possession_boots_unlocated.json",
+    "possession_key_located.json",
+    "possession_key_unlocated.json",
+    "witness_hero_apart.json",
+    "witness_hero_together.json",
+    "witness_helper_apart.json",
+    "witness_helper_together.json",
+    "witness_absent_apart.json",
+    "witness_absent_together.json",
+    "witness_both_apart.json",
+    "witness_both_together.json"
+  ],
+  "registry": "registry.json",
+  "annotation_queue": "annotation_queue.json",
+  "generation_rules": {
+    "possession": "4 capability profiles x presence/absence of location",
+    "witness": "4 sky-event settings x colocated/separated initial locations"
+  },
+  "selection_policy": "All Cartesian-product variants included before any planning execution."
+}

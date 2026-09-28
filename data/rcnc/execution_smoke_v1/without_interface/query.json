@@ -1,0 +1,49 @@
+{
+  "description": "Synthetic fixed-initial-state smoke fixture using four real BIRT/CHIC_NP actions. Hand-declared interfaces and role substitution, not a held-out benchmark.",
+  "actions": [
+    "BIRT:hear_tapping_on_beech",
+    "BIRT:approach_beech_tree",
+    "CHIC_NP:meet_character",
+    "CHIC_NP:inform_about_sky_fall"
+  ],
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "bench": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:bench": "bench",
+    "CHIC_NP:Chicken-licken": "hero"
+  },
+  "interfaces": {},
+  "initial": [
+    [
+      "birt__at",
+      "hero",
+      "bench"
+    ],
+    [
+      "chic_np__at",
+      "helper",
+      "tree"
+    ],
+    [
+      "chic_np__sky_fell_on_head",
+      "hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 20,
+  "max_states": 10000,
+  "max_ground_actions": 1000
+}

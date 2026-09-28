@@ -1,0 +1,97 @@
+{
+  "description": "Rule-generated fixed variant. Same known source models; not a held-out domain benchmark.",
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "bench": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:bench": "tree",
+    "CHIC_NP:Chicken-licken": "hero"
+  },
+  "interfaces": {
+    "BIRT:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    },
+    "CHIC_NP:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    }
+  },
+  "initial": [
+    [
+      "shared_at",
+      "hero",
+      "bench"
+    ],
+    [
+      "shared_at",
+      "helper",
+      "tree"
+    ],
+    [
+      "chic_np__sky_fell_on_head",
+      "hero"
+    ],
+    [
+      "chic_np__sky_fell_on_head",
+      "helper"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 6,
+  "max_states": 10000,
+  "max_ground_actions": 1000,
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true,
+  "object_capabilities": {
+    "bench": [
+      "standing_place"
+    ],
+    "tree": [
+      "standing_place"
+    ],
+    "hero": [
+      "witness"
+    ],
+    "helper": [
+      "witness"
+    ]
+  },
+  "max_role_assignments": 16,
+  "evaluation_split": "prospective_variant",
+  "annotation_status": "author_hypothesis_not_independently_reviewed",
+  "source_removal_scope": "all_solved",
+  "parameter_constraints": {
+    "BIRT:turn_key_on_beech": {
+      "?k": {
+        "required_capabilities": [
+          "key"
+        ],
+        "evidence": "Author assumption: turn_key uses a key-capable object; not established by the original item type."
+      }
+    }
+  },
+  "actions": [
+    "BIRT:accept_dryad_invitation",
+    "BIRT:approach_beech_tree",
+    "BIRT:hear_tapping_on_beech",
+    "BIRT:travel_to_trysting_place",
+    "BIRT:witness_queen_birthday_ceremony",
+    "CHIC_NP:follow_fox",
+    "CHIC_NP:inform_about_sky_fall",
+    "CHIC_NP:meet_character",
+    "CHIC_NP:turn_back"
+  ]
+}

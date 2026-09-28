@@ -1,0 +1,38 @@
+{
+  "status": "model_hypothesis_not_semantically_validated",
+  "interfaces": {
+    "BIRT:at": {
+      "target": "shared_pair_e1b09dad788fc21c",
+      "evidence": "pair_e1b09dad788fc21c: Both relations are defined as (at ?e ?l) with the same argument roles (entity and location). The only difference is in the usage records, but the effects and preconditions are similar. The relations are used in similar contexts, such as in actions involving entities and locations. The usage records do not provide enough evidence to conclude that the relations are different. Therefore, the relations are considered equivalent and have the same order of arguments."
+    },
+    "PUSS:at": {
+      "target": "shared_pair_e1b09dad788fc21c",
+      "evidence": "pair_e1b09dad788fc21c: Both relations are defined as (at ?e ?l) with the same argument roles (entity and location). The only difference is in the usage records, but the effects and preconditions are similar. The relations are used in similar contexts, such as in actions involving entities and locations. The usage records do not provide enough evidence to conclude that the relations are different. Therefore, the relations are considered equivalent and have the same order of arguments."
+    },
+    "BIRT:has": {
+      "target": "shared_pair_736d04bf7acf3f8a",
+      "evidence": "pair_736d04bf7acf3f8a: Both BIRT and PUSS predicates have the same structure and usage, with the same argument roles and positions. The predicates are equivalent in meaning, as they both express the concept of 'has' or 'possesses'. The same-order alignment is supported by the fact that the argument order is the same in both predicates, with the entity as the first argument and the item as the second argument. The evidence for this comes from the provided records and literal excerpts, which show the same structure and usage for both predicates."
+    },
+    "PUSS:has": {
+      "target": "shared_pair_736d04bf7acf3f8a",
+      "evidence": "pair_736d04bf7acf3f8a: Both BIRT and PUSS predicates have the same structure and usage, with the same argument roles and positions. The predicates are equivalent in meaning, as they both express the concept of 'has' or 'possesses'. The same-order alignment is supported by the fact that the argument order is the same in both predicates, with the entity as the first argument and the item as the second argument. The evidence for this comes from the provided records and literal excerpts, which show the same structure and usage for both predicates."
+    },
+    "BIRT:kissed_by": {
+      "target": "shared_pair_b54c5bfa8fe9cf33",
+      "evidence": "pair_b54c5bfa8fe9cf33: Both relations 'kissed_by' and 'rescued_by' have the same argument structure, with two entities as arguments. The literal expressions for both relations are also similar, with a verb followed by two entities. The context of the relations is different, but the structure is equivalent. The evidence from the records supports this equivalence, with similar parameter definitions and effect expressions for both relations. The only difference is the negation of the precondition in the 'rescued_by' relation, but this does not change the overall structure of the relation. Therefore, the relations are equivalent and have the same order of arguments."
+    },
+    "PUSS:rescued_by": {
+      "target": "shared_pair_b54c5bfa8fe9cf33",
+      "evidence": "pair_b54c5bfa8fe9cf33: Both relations 'kissed_by' and 'rescued_by' have the same argument structure, with two entities as arguments. The literal expressions for both relations are also similar, with a verb followed by two entities. The context of the relations is different, but the structure is equivalent. The evidence from the records supports this equivalence, with similar parameter definitions and effect expressions for both relations. The only difference is the negation of the precondition in the 'rescued_by' relation, but this does not change the overall structure of the relation. Therefore, the relations are equivalent and have the same order of arguments."
+    },
+    "BIRT:boat_available": {
+      "target": "shared_pair_ca6818e432ebc9c3",
+      "evidence": "pair_ca6818e432ebc9c3: Both predicates have the same argument roles (item and location) and usage in the context of traveling by leaf boat under pond and cat catching rabbits. The literal expressions are also similar, indicating the same relation. The only difference is in the negation of the effect in the PUSS action, but this does not change the overall equivalence of the relation. The usage of the predicates in the context of the actions supports the equivalence of the relation."
+    },
+    "PUSS:at_item": {
+      "target": "shared_pair_ca6818e432ebc9c3",
+      "evidence": "pair_ca6818e432ebc9c3: Both predicates have the same argument roles (item and location) and usage in the context of traveling by leaf boat under pond and cat catching rabbits. The literal expressions are also similar, indicating the same relation. The only difference is in the negation of the effect in the PUSS action, but this does not change the overall equivalence of the relation. The usage of the predicates in the context of the actions supports the equivalence of the relation."
+    }
+  },
+  "withheld": []
+}

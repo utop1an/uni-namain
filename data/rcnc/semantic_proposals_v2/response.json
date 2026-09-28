@@ -1,0 +1,110 @@
+{
+  "proposals": [
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "entity_location",
+      "confidence": "medium",
+      "rationale": "To track the location of entities, crucial for understanding movement and interactions.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?c"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?l - location"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "location_entity",
+      "confidence": "medium",
+      "rationale": "To track the location of entities, crucial for understanding movement and interactions.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?e - entity ?l - location"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?x - entity ?l - location"
+        }
+      ]
+    },
+    {
+      "kind": "parameter",
+      "refs": [
+        "BIRT:action:hear_tapping_on_beech"
+      ],
+      "parameter": "?n",
+      "label": "tapping_entity",
+      "confidence": "high",
+      "rationale": "The action ‘hear_tapping_on_beech’ requires an entity to be tapped on.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:hear_tapping_on_beech",
+          "quote": "(:action hear_tapping_on_beech :parameters (?n - entity ?t - location)"
+        }
+      ]
+    },
+    {
+      "kind": "parameter",
+      "refs": [
+        "BIRT:action:approach_beech_tree"
+      ],
+      "parameter": "?t",
+      "label": "beech_location",
+      "confidence": "high",
+      "rationale": "The action ‘approach_beech_tree’ requires a location to be approached.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:approach_beech_tree",
+          "quote": "(:action approach_beech_tree :parameters (?n - entity ?t - location)"
+        }
+      ]
+    },
+    {
+      "kind": "parameter",
+      "refs": [
+        "BIRT:action:turn_key_on_beech"
+      ],
+      "parameter": "?k",
+      "label": "key_item",
+      "confidence": "medium",
+      "rationale": "The action ‘turn_key_on_beech’ requires an item to be turned on.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:turn_key_on_beech",
+          "quote": "(:action turn_key_on_beech :parameters (?n - entity ?k - item ?t - location)"
+        }
+      ]
+    },
+    {
+      "kind": "parameter",
+      "refs": [
+        "BIRT:action:receive_pellet_from_gnome"
+      ],
+      "parameter": "?p",
+      "label": "pellet_item",
+      "confidence": "high",
+      "rationale": "The action ‘receive_pellet_from_gnome’ requires an item to be received.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:receive_pellet_from_gnome",
+          "quote": "(:action receive_pellet_from_gnome :parameters (?g ?n - entity ?p ?s - item ?t - location)"
+        }
+      ]
+    }
+  ]
+}

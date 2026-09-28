@@ -1,0 +1,1 @@
+(define (problem warn-original) (:domain warn) (:objects hero - person) (:init (rumor_known hero)) (:goal (warning_delivered hero)))

@@ -1,0 +1,34 @@
+{
+  "candidate_id": "pair_ca6818e432ebc9c3",
+  "refs": [
+    "BIRT:predicate:boat_available",
+    "PUSS:predicate:at_item"
+  ],
+  "response": {
+    "candidate_id": "pair_ca6818e432ebc9c3",
+    "decision": "accept",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both predicates have the same argument roles (item and location) and usage in the context of traveling by leaf boat under pond and cat catching rabbits. The literal expressions are also similar, indicating the same relation. The only difference is in the negation of the effect in the PUSS action, but this does not change the overall equivalence of the relation. The usage of the predicates in the context of the actions supports the equivalence of the relation.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+        "quote": "(boat_available ?b ?pond)"
+      },
+      {
+        "ref": "PUSS:action:cat_catch_rabbits",
+        "quote": "(at_item ?rabbit ?warren)"
+      },
+      {
+        "ref": "PUSS:action:king_send_groom_fetch_suit",
+        "quote": "(at_item ?suit ?wardrobe)"
+      },
+      {
+        "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+        "quote": "(boat_available ?b ?pond)"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

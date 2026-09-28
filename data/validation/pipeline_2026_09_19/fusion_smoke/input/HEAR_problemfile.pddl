@@ -1,0 +1,1 @@
+(define (problem hear-original) (:domain hear) (:objects hero - person) (:init (messenger_present hero)) (:goal (rumor_known hero)))

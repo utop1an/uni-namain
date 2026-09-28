@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_27c248ece321200e",
+  "decision": "reject",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The predicates `BIRT:predicate:corridor_reached` and `PUSS:predicate:obedient` represent distinct concepts. `BIRT:predicate:corridor_reached` describes a state of being in a corridor, while `PUSS:predicate:obedient` describes a behavioral trait. The arguments and preconditions are also different. `BIRT:predicate:corridor_reached` has arguments like `?n` (entity), `?corridor` (location), and `?door` (location), indicating a location and a door state. `PUSS:predicate:obedient` has only `?e` (entity), representing an entity's obedience. The order of arguments is also different. BIRT's effect describes a state change, while PUSS's predicate is a simple assertion. Evidence: Record ID `BIRT:action:enter_tree_and_descend_stairs` defines `corridor_reached` as an effect of entering a tree and descending stairs, implying a spatial relationship. Record ID `PUSS:predicate:obedient` simply states that an entity is obedient, without any spatial or contextual information. Therefore, the predicates are fundamentally different in meaning and usage, and the argument order is different.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(:action enter_tree_and_descend_stairs :parameters (?d ?n - entity ?corridor ?door ?stairs ?t - location) :precondition (and (inside ?n ?t) (inside ?d ?t) (door_open door)) :effect (and (stairs_descended ?n) (stairs_descended ?d) (corridor_reached ?n)))"
+    },
+    {
+      "ref": "BIRT:predicate:corridor_reached",
+      "quote": "(corridor_reached ?e - entity)"
+    },
+    {
+      "ref": "PUSS:predicate:obedient",
+      "quote": "(obedient ?e - entity)"
+    }
+  ]
+}

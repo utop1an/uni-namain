@@ -1,0 +1,84 @@
+{
+  "scope": "Six fixed development tasks, two source pairs BIRT/CHIC_NP and BIRT/PUSS; no held-out claim.",
+  "manifest_sha256": "f67383c23917071fb04da2bcaa7c46068560e18c2556fa33fee90e90a2d679fb",
+  "rows": [
+    {
+      "task": "witness_hero.json",
+      "task_sha256": "cc188498b92a5e3032b877a3a03625afb43494e9ee0acd368cd0ab1032ff3dd1",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 2,
+      "plan_length": 3,
+      "best_assignment": {
+        "origin": "bench",
+        "witness": "hero"
+      },
+      "all_searches_complete": true,
+      "reason": null
+    },
+    {
+      "task": "witness_helper.json",
+      "task_sha256": "bd234ca6fc28360f9bc64c704a4d319d49363790720df328c745958267d8fa92",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 2,
+      "plan_length": 3,
+      "best_assignment": {
+        "origin": "bench",
+        "witness": "helper"
+      },
+      "all_searches_complete": true,
+      "reason": null
+    },
+    {
+      "task": "missing_witness_fact.json",
+      "task_sha256": "6201a5ee7bbae4a1a1967af2c8907fa8c667b8d52d11de79ff8c193e303b523e",
+      "status": "unsolvable",
+      "attempts": 4,
+      "solved_assignments": 0,
+      "plan_length": null,
+      "best_assignment": null,
+      "all_searches_complete": true,
+      "reason": null
+    },
+    {
+      "task": "assignment_budget.json",
+      "task_sha256": "6b9eb8f396dd0da8c2950c39421fd635d975fb2d978cbad339728cc1495c444a",
+      "status": "inconclusive",
+      "attempts": 1,
+      "solved_assignments": 0,
+      "plan_length": null,
+      "best_assignment": null,
+      "all_searches_complete": false,
+      "reason": null
+    },
+    {
+      "task": "possession_to_wearing.json",
+      "task_sha256": "2005fb4d369d561283e0bc12ca8eddd92ee2b1899027bace9958570a2a601b11",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 4,
+      "plan_length": 2,
+      "best_assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "all_searches_complete": true,
+      "reason": null
+    },
+    {
+      "task": "missing_location.json",
+      "task_sha256": "3af957fc3d22270af0ed20d221b187cf016ac0f8fc6ea85d8dd12f5f30cecc48",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 4,
+      "plan_length": 2,
+      "best_assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "all_searches_complete": true,
+      "reason": null
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "schemas": [
+    {
+      "name": "s00000",
+      "source_action": "BIRT:accept_dryad_invitation",
+      "parameters": {
+        "?d": "entity",
+        "?n": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00001",
+      "source_action": "BIRT:eat_pellet_and_shrink",
+      "parameters": {
+        "?n": "entity",
+        "?p": "item"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00002",
+      "source_action": "BIRT:enter_tree_and_descend_stairs",
+      "parameters": {
+        "?d": "entity",
+        "?n": "entity",
+        "?corridor": "location",
+        "?door": "location",
+        "?stairs": "location",
+        "?t": "location",
+        "?lifted_portal": "location"
+      },
+      "constant_substitutions": {
+        "door": "?lifted_portal"
+      },
+      "role_parameters": {
+        "portal": "?lifted_portal"
+      },
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00003",
+      "source_action": "BIRT:receive_pellet_from_gnome",
+      "parameters": {
+        "?g": "entity",
+        "?n": "entity",
+        "?p": "item",
+        "?s": "item",
+        "?t": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00004",
+      "source_action": "BIRT:travel_by_leaf_boat_under_pond",
+      "parameters": {
+        "?n": "entity",
+        "?b": "item",
+        "?palace": "location",
+        "?pond": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00005",
+      "source_action": "BIRT:travel_to_trysting_place",
+      "parameters": {
+        "?n": "entity",
+        "?b": "location",
+        "?c": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00006",
+      "source_action": "BIRT:turn_key_on_beech",
+      "parameters": {
+        "?n": "entity",
+        "?k": "item",
+        "?t": "location",
+        "?lifted_portal": "location",
+        "?lifted_guide": "entity"
+      },
+      "constant_substitutions": {
+        "door": "?lifted_portal",
+        "dryad": "?lifted_guide"
+      },
+      "role_parameters": {
+        "portal": "?lifted_portal",
+        "guide": "?lifted_guide"
+      },
+      "parameter_constraints": {
+        "?k": {
+          "required_capabilities": [
+            "key"
+          ],
+          "evidence": "Author assumption: turn_key uses a key-capable object; not established by the original item type."
+        }
+      },
+      "allowed_parameter_objects": {
+        "?k": []
+      }
+    },
+    {
+      "name": "s00007",
+      "source_action": "BIRT:witness_queen_birthday_ceremony",
+      "parameters": {
+        "?n": "entity",
+        "?q": "entity",
+        "?palace": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00008",
+      "source_action": "PUSS:buy_boots",
+      "parameters": {
+        "?jack": "entity",
+        "?puss": "entity",
+        "?boots": "item"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {
+        "?boots": {
+          "required_capabilities": [
+            "footwear"
+          ],
+          "evidence": "Author assumption for this study: buy_boots accepts footwear; source PDDL only declares item."
+        }
+      },
+      "allowed_parameter_objects": {
+        "?boots": [
+          "artifact"
+        ]
+      }
+    },
+    {
+      "name": "s00009",
+      "source_action": "PUSS:cat_call_for_help",
+      "parameters": {
+        "?jack": "entity",
+        "?king": "entity",
+        "?puss": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00010",
+      "source_action": "PUSS:cat_catch_rabbits",
+      "parameters": {
+        "?puss": "entity",
+        "?bag": "item",
+        "?rabbit": "item",
+        "?warren": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00011",
+      "source_action": "PUSS:cat_deliver_gifts_to_king",
+      "parameters": {
+        "?king": "entity",
+        "?puss": "entity",
+        "?bag": "item",
+        "?rabbit": "item",
+        "?palace": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00012",
+      "source_action": "PUSS:cat_eat_mouse",
+      "parameters": {
+        "?mouse": "entity",
+        "?ogre": "entity",
+        "?puss": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00013",
+      "source_action": "PUSS:cat_ogre_transform_mouse",
+      "parameters": {
+        "?mouse": "entity",
+        "?ogre": "entity",
+        "?puss": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00014",
+      "source_action": "PUSS:cat_open_castle_gates",
+      "parameters": {
+        "?king": "entity",
+        "?puss": "entity",
+        "?castle": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00015",
+      "source_action": "PUSS:cat_persuade_master_to_bathe",
+      "parameters": {
+        "?jack": "entity",
+        "?puss": "entity",
+        "?river": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00016",
+      "source_action": "PUSS:give_bag_to_cat",
+      "parameters": {
+        "?jack": "entity",
+        "?puss": "entity",
+        "?bag": "item"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00017",
+      "source_action": "PUSS:king_send_groom_fetch_suit",
+      "parameters": {
+        "?groom": "entity",
+        "?king": "entity",
+        "?suit": "item",
+        "?wardrobe": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00018",
+      "source_action": "PUSS:master_wear_suit",
+      "parameters": {
+        "?jack": "entity",
+        "?suit": "item"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {
+        "?suit": {
+          "required_capabilities": [
+            "wearable"
+          ],
+          "evidence": "Author assumption: the worn object is wearable."
+        }
+      },
+      "allowed_parameter_objects": {
+        "?suit": [
+          "artifact"
+        ]
+      }
+    }
+  ],
+  "role_assignment": {
+    "guide": "hero",
+    "portal": "tree"
+  },
+  "administrative_initial_facts": [
+    [
+      "rcnc_role_guide",
+      "hero"
+    ],
+    [
+      "rcnc_role_portal",
+      "tree"
+    ],
+    [
+      "rcnc_allowed_0e1d60cc3bd1bea5",
+      "artifact"
+    ],
+    [
+      "rcnc_allowed_33cce1e0ef4bdd94",
+      "artifact"
+    ]
+  ],
+  "narrative_initial": [
+    [
+      "birt__at",
+      "hero",
+      "tree"
+    ]
+  ],
+  "initial_projection_unchanged": true
+}

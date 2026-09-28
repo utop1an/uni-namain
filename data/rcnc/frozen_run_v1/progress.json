@@ -1,0 +1,243 @@
+[
+  {
+    "task": "possession_cloak_located.json",
+    "split": "development",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "possession_cloak_unlocated.json",
+    "split": "prospective_variant",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "possession_key_cloak_located.json",
+    "split": "development",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 4,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": true
+      },
+      {
+        "source": "PUSS",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "possession_key_cloak_unlocated.json",
+    "split": "prospective_variant",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "possession_boots_located.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 4,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": false
+      },
+      {
+        "source": "PUSS",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "possession_boots_unlocated.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 4,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": false
+      },
+      {
+        "source": "PUSS",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "possession_key_located.json",
+    "split": "prospective_variant",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "possession_key_unlocated.json",
+    "split": "prospective_variant",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "witness_hero_apart.json",
+    "split": "development",
+    "status": "solved",
+    "plan_length": 3,
+    "assignments": 4,
+    "solved_assignments": 2,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": true
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "witness_hero_together.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 2,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": false
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "witness_helper_apart.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 3,
+    "assignments": 4,
+    "solved_assignments": 2,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": true
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "witness_helper_together.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 2,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": false
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "witness_absent_apart.json",
+    "split": "development",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "witness_absent_together.json",
+    "split": "prospective_variant",
+    "status": "unsolvable",
+    "plan_length": null,
+    "assignments": 4,
+    "solved_assignments": 0,
+    "source_necessity": [],
+    "reason": null
+  },
+  {
+    "task": "witness_both_apart.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 3,
+    "assignments": 4,
+    "solved_assignments": 4,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": true
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  },
+  {
+    "task": "witness_both_together.json",
+    "split": "prospective_variant",
+    "status": "solved",
+    "plan_length": 2,
+    "assignments": 4,
+    "solved_assignments": 4,
+    "source_necessity": [
+      {
+        "source": "BIRT",
+        "necessary_across_declared_assignments": false
+      },
+      {
+        "source": "CHIC_NP",
+        "necessary_across_declared_assignments": true
+      }
+    ],
+    "reason": null
+  }
+]

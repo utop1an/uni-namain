@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_ca6818e432ebc9c3",
+  "decision": "reject",
+  "relation": "unknown",
+  "alignment": "different_order",
+  "rationale": "The predicates `boat_available` and `at_item` have different argument roles and directions. `boat_available` describes the availability of a boat at a location, while `at_item` describes the location of an item. The arguments are also different: `boat_available` takes an item and a location, while `at_item` takes an item and a location. The usage examples in the records further highlight this difference. BIRT uses `boat_available` as a precondition for travel, while PUSS uses `at_item` as a precondition for catching rabbits. The literal expressions also differ: `(boat_available ?b ?pond)` versus `(at_item ?rabbit ?warren)`. Therefore, the predicates are not equivalent, and the argument order is different.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+      "quote": "(boat_available ?b ?pond)"
+    },
+    {
+      "ref": "PUSS:action:cat_catch_rabbits",
+      "quote": "(at_item ?rabbit ?warren)"
+    },
+    {
+      "ref": "PUSS:action:king_send_groom_fetch_suit",
+      "quote": "(at_item ?suit ?wardrobe)"
+    }
+  ]
+}

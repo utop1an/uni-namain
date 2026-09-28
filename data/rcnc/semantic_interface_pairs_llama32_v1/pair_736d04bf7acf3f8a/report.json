@@ -1,0 +1,34 @@
+{
+  "candidate_id": "pair_736d04bf7acf3f8a",
+  "refs": [
+    "BIRT:predicate:has",
+    "PUSS:predicate:has"
+  ],
+  "response": {
+    "candidate_id": "pair_736d04bf7acf3f8a",
+    "decision": "accept",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both BIRT and PUSS predicates have the same structure and usage, with the same argument roles and positions. The predicates are equivalent in meaning, as they both express the concept of 'has' or 'possesses'. The same-order alignment is supported by the fact that the argument order is the same in both predicates, with the entity as the first argument and the item as the second argument. The evidence for this comes from the provided records and literal excerpts, which show the same structure and usage for both predicates.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:eat_pellet_and_shrink",
+        "quote": "(has ?n ?p)"
+      },
+      {
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(not (has ?puss ?boots))"
+      },
+      {
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(has ?puss ?boots)"
+      },
+      {
+        "ref": "BIRT:action:turn_key_on_beech",
+        "quote": "(has ?n ?k)"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "name": "a00000",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00001",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00002",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00003",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00004",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "hero",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00005",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "hero",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00006",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "helper",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00007",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "helper",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00008",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "hero",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00009",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "hero",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00010",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "helper",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00011",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "helper",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00012",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "hero",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00013",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "hero",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00014",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "helper",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00015",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "helper",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00016",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "hero",
+      "?listener": "hero"
+    }
+  },
+  {
+    "name": "a00017",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "hero",
+      "?listener": "helper"
+    }
+  },
+  {
+    "name": "a00018",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "helper",
+      "?listener": "hero"
+    }
+  },
+  {
+    "name": "a00019",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "helper",
+      "?listener": "helper"
+    }
+  }
+]

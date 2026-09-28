@@ -279,22 +279,20 @@ def merge_domains(left: Domain, right: Domain) -> Domain:
     types = {**left.types, **right.types}
     decisions = left.decisions + right.decisions
 
+    from pddl_checks import rename_constant, safe_name
     constants = dict(left.constants)
-    for name, value_type in list(right.constants.items()):
-        if name not in constants:
-            constants[name] = value_type
-        elif constants[name] != value_type:
-            new_name = unique_name(name, set(constants), source_label)
-            right.actions = {
-                action_name: rewrite_expr(action, symbols={name: new_name})
-                for action_name, action in right.actions.items()
-            }
-            replace_current_name(right.constant_maps, name, new_name)
-            constants[new_name] = value_type
-            decisions.append(
-                {"kind": "constant", "left": name, "right": name, "result": new_name,
-                 "reason": "same name with incompatible types"}
-            )
+    occupied=set(constants) | set(left.predicates) | set(right.predicates) | set(left.actions) | set(right.actions)
+    for name in list(right.constants):
+        if name.lower() in {n.lower() for n in occupied}:
+            new_name=safe_name(source_label+'__c_'+name,occupied)
+            rename_constant(right,name,new_name)
+            decisions.append({'kind':'constant','left':name,'right':name,'result':new_name,'reason':'preserve distinct source identity and avoid name collision'})
+            name=new_name
+        constants[name]=right.constants[name];occupied.add(name)
+    for name in list(left.constants):
+        if name.lower() in {n.lower() for n in set(left.predicates)|set(right.predicates)|set(left.actions)|set(right.actions)}:
+            new_name=safe_name('source__c_'+name,occupied)
+            rename_constant(left,name,new_name);constants.pop(name);constants[new_name]=left.constants[new_name];occupied.add(new_name)
 
     predicates = deepcopy(left.predicates)
     for name, right_pred in list(right.predicates.items()):
@@ -429,7 +427,14 @@ def rewrite_problem(path: Path, domain: Domain, output_path: Path) -> None:
         raise ValueError(f"{path}: invalid problem root")
     pred_map = domain.predicate_maps[source]
     constant_map = domain.constant_maps[source]
-    rewritten = rewrite_expr(root, predicate_names=pred_map, symbols=constant_map)
+    def formula(expr):
+        if not isinstance(expr,list) or not expr:return expr
+        head=expr[0]
+        if head in ('and','or','not','imply','when'):return [head,*[formula(x) for x in expr[1:]]]
+        if head in ('exists','forall'):return [head,expr[1],formula(expr[2])]
+        return [pred_map.get(head,head),*[constant_map.get(x,x) if isinstance(x,str) else formula(x) for x in expr[1:]]]
+    # Rename constants only in term positions, never a same-spelled predicate or type.
+    rewritten = [root[0],root[1],*[([part[0],*[formula(x) for x in part[1:]]] if part[0] in (':init',':goal') else part) for part in root[2:]]]
     assert isinstance(rewritten, list)
     domain_decl = section(rewritten, ":domain")
     if domain_decl is None:
@@ -456,17 +461,8 @@ def called_predicates(expr: SExpr) -> set[str]:
 
 
 def validate_domain(domain: Domain) -> list[str]:
-    errors: list[str] = []
-    declared = set(domain.predicates)
-    for action_name, action in domain.actions.items():
-        for key in (":precondition", ":effect"):
-            if key not in action:
-                continue
-            value = action[action.index(key) + 1]
-            missing = called_predicates(value) - declared
-            if missing:
-                errors.append(f"action {action_name} {key} uses undeclared predicates: {sorted(missing)}")
-    return errors
+    from pddl_checks import check_domain
+    return check_domain(domain)
 
 
 def validate_problem(path: Path, domain: Domain) -> list[str]:

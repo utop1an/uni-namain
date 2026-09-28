@@ -1,0 +1,80 @@
+{
+  "description": "Development task over BIRT/PUSS with an explicitly permitted object-possession interface.",
+  "sources": [
+    "BIRT",
+    "PUSS"
+  ],
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "cloak": "item",
+    "home": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {},
+  "lifted_constants": {
+    "BIRT:door": {
+      "role": "portal",
+      "allowed_objects": [
+        "home",
+        "tree"
+      ],
+      "required_capabilities": [
+        "portal"
+      ],
+      "evidence": "Task author permits the declared portal role at either location."
+    },
+    "BIRT:dryad": {
+      "role": "guide",
+      "allowed_objects": [
+        "hero",
+        "helper"
+      ],
+      "required_capabilities": [
+        "guide"
+      ],
+      "evidence": "Task author permits either character to fill the guide role."
+    }
+  },
+  "object_capabilities": {
+    "home": [
+      "portal"
+    ],
+    "tree": [
+      "portal"
+    ],
+    "hero": [
+      "guide"
+    ],
+    "helper": [
+      "guide"
+    ]
+  },
+  "interfaces": {
+    "BIRT:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "PUSS:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    }
+  },
+  "initial": [],
+  "goal": {
+    "positive": [
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 8,
+  "max_states": 10000,
+  "max_ground_actions": 2000,
+  "max_role_assignments": 16,
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true
+}

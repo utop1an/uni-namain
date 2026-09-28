@@ -1,0 +1,146 @@
+{
+  "checked": [
+    {
+      "id": "p000",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:beech_tree"
+        ],
+        "parameter": "",
+        "label": "beech_tree",
+        "confidence": "medium",
+        "rationale": "The action `hear_tapping_on_beech` specifies a beech tree as the location of the tapping sound. This is a grounded observation.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:beech_tree",
+            "quote": "beech_tree - location; used in actions: "
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    },
+    {
+      "id": "p001",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:dryad"
+        ],
+        "parameter": "",
+        "label": "dryad",
+        "confidence": "medium",
+        "rationale": "The action `turn_key_on_beech` requires a dryad to be present at the beech tree, suggesting the dryad is a relevant entity.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:dryad",
+            "quote": "dryad - entity; used in actions: turn_key_on_beech"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    },
+    {
+      "id": "p002",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:palace"
+        ],
+        "parameter": "",
+        "label": "palace",
+        "confidence": "medium",
+        "rationale": "The action `travel_by_leaf_boat_under_pond` requires the boat to arrive at the palace, indicating the palace is a destination.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:palace",
+            "quote": "palace - location; used in actions: receive_queen_kiss, return_to_bench_and_share_story"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    },
+    {
+      "id": "p003",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:pellet"
+        ],
+        "parameter": "",
+        "label": "pellets",
+        "confidence": "low",
+        "rationale": "The action `receive_pellet_from_gnome` involves receiving a pellet, suggesting pellets are a relevant object.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:pellet",
+            "quote": "pellet - item; used in actions: "
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    },
+    {
+      "id": "p004",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:nora"
+        ],
+        "parameter": "",
+        "label": "nora",
+        "confidence": "low",
+        "rationale": "The action `return_to_bench_and_share_story` requires a speaker, and `nora` is a name.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:nora",
+            "quote": "nora - entity; used in actions: "
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    },
+    {
+      "id": "p005",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:constant:fairy_queen"
+        ],
+        "parameter": "",
+        "label": "fairy_queen",
+        "confidence": "low",
+        "rationale": "The action `witness_queen_birthday_ceremony` involves a queen, and `fairy_queen` is a name.",
+        "evidence": [
+          {
+            "ref": "BIRT:constant:fairy_queen",
+            "quote": "fairy_queen - entity; used in actions: "
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "structurally_valid_hypothesis"
+    }
+  ],
+  "summary": {
+    "proposed": 6,
+    "structurally_valid": 6,
+    "semantically_verified": 0
+  },
+  "status": "completed",
+  "run": {
+    "model": "gemma3:4b",
+    "proposal_kind": "role",
+    "timestamp_utc": "2026-09-13T16:11:46.324539+00:00",
+    "mode": "ollama",
+    "prompt_sha256": "810c67156faa560d57f5cd6d9140014873670c02d269027e1dbbc9a342c6ae94",
+    "implementation_sha256": "d66170450b256facc67ab750a2a695f14e985a5ad3890780a6f3f5ff82980a99",
+    "model_digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a"
+  },
+  "elapsed_seconds": 9.641633199993521
+}

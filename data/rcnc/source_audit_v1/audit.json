@@ -1,0 +1,1125 @@
+{
+  "scope": "Syntactic/type/STRIPS-subset audit and independent source problem parsing; no semantic truth or solvability claim.",
+  "domains": 15,
+  "actions": 234,
+  "actions_with_issues": 4,
+  "issue_counts": {
+    "unsupported_logic:exists": 2,
+    "unsupported_logic:when": 1,
+    "unsupported_logic:or": 1
+  },
+  "parse_counts": {
+    "PARSED": 15
+  },
+  "rows": [
+    {
+      "source": "ACCO",
+      "source_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "action_count": 17,
+      "actions": [
+        {
+          "action": "hang_kettle",
+          "issues": []
+        },
+        {
+          "action": "kettle_transform_to_badger",
+          "issues": []
+        },
+        {
+          "action": "call_novices",
+          "issues": []
+        },
+        {
+          "action": "kettle_jump_and_fly",
+          "issues": []
+        },
+        {
+          "action": "pursue_kettle",
+          "issues": []
+        },
+        {
+          "action": "knock_down_kettle",
+          "issues": []
+        },
+        {
+          "action": "force_kettle_into_box",
+          "issues": []
+        },
+        {
+          "action": "sell_kettle_to_tinker",
+          "issues": []
+        },
+        {
+          "action": "tinker_carry_home",
+          "issues": []
+        },
+        {
+          "action": "kettle_transform_to_fur_badger",
+          "issues": []
+        },
+        {
+          "action": "kettle_revert_shape",
+          "issues": []
+        },
+        {
+          "action": "show_kettle_to_friend",
+          "issues": []
+        },
+        {
+          "action": "arrange_exhibition",
+          "issues": []
+        },
+        {
+          "action": "perform_show",
+          "issues": []
+        },
+        {
+          "action": "receive_orders_from_nobility",
+          "issues": []
+        },
+        {
+          "action": "return_kettle_to_temple",
+          "issues": []
+        },
+        {
+          "action": "worship_kettle_as_saint",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "BIRT",
+      "source_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "action_count": 12,
+      "actions": [
+        {
+          "action": "travel_to_trysting_place",
+          "issues": []
+        },
+        {
+          "action": "hear_tapping_on_beech",
+          "issues": []
+        },
+        {
+          "action": "approach_beech_tree",
+          "issues": []
+        },
+        {
+          "action": "turn_key_on_beech",
+          "issues": []
+        },
+        {
+          "action": "accept_dryad_invitation",
+          "issues": []
+        },
+        {
+          "action": "receive_pellet_from_gnome",
+          "issues": []
+        },
+        {
+          "action": "eat_pellet_and_shrink",
+          "issues": []
+        },
+        {
+          "action": "enter_tree_and_descend_stairs",
+          "issues": []
+        },
+        {
+          "action": "travel_by_leaf_boat_under_pond",
+          "issues": []
+        },
+        {
+          "action": "witness_queen_birthday_ceremony",
+          "issues": []
+        },
+        {
+          "action": "receive_queen_kiss",
+          "issues": []
+        },
+        {
+          "action": "return_to_bench_and_share_story",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "BUFF",
+      "source_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "action_count": 8,
+      "actions": [
+        {
+          "action": "open_theater_and_announce_reward",
+          "issues": []
+        },
+        {
+          "action": "perform_pig_imitation_without_apparatus",
+          "issues": []
+        },
+        {
+          "action": "audience_demand_shake_cloak_for_pig",
+          "issues": []
+        },
+        {
+          "action": "audience_applaud_performance",
+          "issues": []
+        },
+        {
+          "action": "countryman_declare_intent_to_repeat_trick",
+          "issues": []
+        },
+        {
+          "action": "countryman_perform_pig_imitation_with_real_pig",
+          "issues": []
+        },
+        {
+          "action": "audience_criticize_countryman_and_call_for_kickout",
+          "issues": []
+        },
+        {
+          "action": "countryman_reveal_real_pig",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "CHIC_NP",
+      "source_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "action_count": 7,
+      "actions": [
+        {
+          "action": "go_to_wood",
+          "issues": []
+        },
+        {
+          "action": "turn_back",
+          "issues": []
+        },
+        {
+          "action": "meet_character",
+          "issues": []
+        },
+        {
+          "action": "inform_about_sky_fall",
+          "issues": []
+        },
+        {
+          "action": "decide_to_tell_king",
+          "issues": [
+            "unsupported_logic:exists"
+          ]
+        },
+        {
+          "action": "follow_fox",
+          "issues": []
+        },
+        {
+          "action": "be_eaten_by_fox",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "FOUR_NP",
+      "source_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "action_count": 21,
+      "actions": [
+        {
+          "action": "leave_home",
+          "issues": []
+        },
+        {
+          "action": "separate_at_crossroads",
+          "issues": []
+        },
+        {
+          "action": "learn_thief_trade",
+          "issues": []
+        },
+        {
+          "action": "learn_astronomer_trade",
+          "issues": []
+        },
+        {
+          "action": "learn_hunter_trade",
+          "issues": []
+        },
+        {
+          "action": "learn_tailor_trade",
+          "issues": []
+        },
+        {
+          "action": "reunite_at_crossroads",
+          "issues": []
+        },
+        {
+          "action": "count_eggs",
+          "issues": []
+        },
+        {
+          "action": "fetch_eggs",
+          "issues": []
+        },
+        {
+          "action": "shoot_eggs",
+          "issues": []
+        },
+        {
+          "action": "sew_eggs",
+          "issues": []
+        },
+        {
+          "action": "return_eggs_to_nest",
+          "issues": []
+        },
+        {
+          "action": "locate_princess",
+          "issues": []
+        },
+        {
+          "action": "obtain_ship",
+          "issues": []
+        },
+        {
+          "action": "sail_to_rock",
+          "issues": []
+        },
+        {
+          "action": "steal_princess",
+          "issues": []
+        },
+        {
+          "action": "shoot_dragon",
+          "issues": []
+        },
+        {
+          "action": "swim_after_ship_break",
+          "issues": []
+        },
+        {
+          "action": "repair_ship",
+          "issues": []
+        },
+        {
+          "action": "return_home_with_princess",
+          "issues": []
+        },
+        {
+          "action": "receive_reward",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "HANS_NP",
+      "source_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "action_count": 15,
+      "actions": [
+        {
+          "action": "abandon_children_in_forest",
+          "issues": []
+        },
+        {
+          "action": "leave_children_at_fire",
+          "issues": []
+        },
+        {
+          "action": "drop_pebble_on_path",
+          "issues": []
+        },
+        {
+          "action": "follow_pebbles_home",
+          "issues": []
+        },
+        {
+          "action": "drop_breadcrumb_on_path",
+          "issues": []
+        },
+        {
+          "action": "follow_breadcrumbs_home",
+          "issues": [
+            "unsupported_logic:when"
+          ]
+        },
+        {
+          "action": "wander_forest_seeking_way_out",
+          "issues": []
+        },
+        {
+          "action": "hear_bird_and_follow_to_witch_house",
+          "issues": []
+        },
+        {
+          "action": "enter_witch_house",
+          "issues": []
+        },
+        {
+          "action": "witch_captures_children",
+          "issues": []
+        },
+        {
+          "action": "push_witch_into_oven",
+          "issues": []
+        },
+        {
+          "action": "escape_from_stable",
+          "issues": []
+        },
+        {
+          "action": "collect_treasure",
+          "issues": []
+        },
+        {
+          "action": "call_duck_for_crossing",
+          "issues": []
+        },
+        {
+          "action": "return_home_and_reunite_with_father",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "JACK_NP",
+      "source_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "action_count": 12,
+      "actions": [
+        {
+          "action": "sell_cow_for_beans",
+          "issues": []
+        },
+        {
+          "action": "plant_beans",
+          "issues": []
+        },
+        {
+          "action": "grow_beanstalk",
+          "issues": []
+        },
+        {
+          "action": "climb_beanstalk",
+          "issues": []
+        },
+        {
+          "action": "ask_giant_wife_for_breakfast",
+          "issues": []
+        },
+        {
+          "action": "hide_in_kettle",
+          "issues": []
+        },
+        {
+          "action": "steal_gold_bags",
+          "issues": []
+        },
+        {
+          "action": "return_down_beanstalk",
+          "issues": []
+        },
+        {
+          "action": "hide_in_oven",
+          "issues": []
+        },
+        {
+          "action": "steal_hen",
+          "issues": []
+        },
+        {
+          "action": "steal_harp",
+          "issues": []
+        },
+        {
+          "action": "cut_beanstalk",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "MUSI",
+      "source_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "action_count": 24,
+      "actions": [
+        {
+          "action": "run_away",
+          "issues": []
+        },
+        {
+          "action": "invite_hound",
+          "issues": []
+        },
+        {
+          "action": "hound_agrees",
+          "issues": []
+        },
+        {
+          "action": "invite_cat",
+          "issues": []
+        },
+        {
+          "action": "cat_agrees",
+          "issues": []
+        },
+        {
+          "action": "invite_cock",
+          "issues": []
+        },
+        {
+          "action": "cock_agrees",
+          "issues": []
+        },
+        {
+          "action": "travel_together",
+          "issues": []
+        },
+        {
+          "action": "rest_in_forest",
+          "issues": []
+        },
+        {
+          "action": "spot_light",
+          "issues": []
+        },
+        {
+          "action": "approach_cottage",
+          "issues": []
+        },
+        {
+          "action": "plan_scaring_robbers",
+          "issues": []
+        },
+        {
+          "action": "stack_animals",
+          "issues": []
+        },
+        {
+          "action": "signal_and_make_noise",
+          "issues": []
+        },
+        {
+          "action": "robbers_flee",
+          "issues": []
+        },
+        {
+          "action": "eat_feast",
+          "issues": []
+        },
+        {
+          "action": "extinguish_light",
+          "issues": []
+        },
+        {
+          "action": "choose_sleep_spot",
+          "issues": []
+        },
+        {
+          "action": "messenger_attempt_light",
+          "issues": []
+        },
+        {
+          "action": "cat_attack_messenger",
+          "issues": []
+        },
+        {
+          "action": "dog_bite_messenger",
+          "issues": []
+        },
+        {
+          "action": "donkey_kick_messenger",
+          "issues": []
+        },
+        {
+          "action": "cock_crow_alert",
+          "issues": []
+        },
+        {
+          "action": "robbers_retreat",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "NAUG",
+      "source_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "action_count": 13,
+      "actions": [
+        {
+          "action": "give_order",
+          "issues": []
+        },
+        {
+          "action": "start_travel",
+          "issues": []
+        },
+        {
+          "action": "avoid_body",
+          "issues": []
+        },
+        {
+          "action": "turn_left_on_meeting",
+          "issues": []
+        },
+        {
+          "action": "prohibit_speaking_to_meteor",
+          "issues": []
+        },
+        {
+          "action": "speak_to_meteor",
+          "issues": []
+        },
+        {
+          "action": "approach_sun",
+          "issues": []
+        },
+        {
+          "action": "burn_up",
+          "issues": []
+        },
+        {
+          "action": "cross_out_comet",
+          "issues": []
+        },
+        {
+          "action": "call_comet_forward",
+          "issues": []
+        },
+        {
+          "action": "arrest_meteor",
+          "issues": []
+        },
+        {
+          "action": "deliver_meteor_to_bungo",
+          "issues": []
+        },
+        {
+          "action": "punish_meteor",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "PIGS_NP",
+      "source_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "action_count": 21,
+      "actions": [
+        {
+          "action": "send_sons_on_journey",
+          "issues": []
+        },
+        {
+          "action": "ask_for_material",
+          "issues": []
+        },
+        {
+          "action": "receive_material",
+          "issues": []
+        },
+        {
+          "action": "build_house",
+          "issues": []
+        },
+        {
+          "action": "wolf_knocks_and_requests_entry",
+          "issues": []
+        },
+        {
+          "action": "pig_refuses_entry",
+          "issues": []
+        },
+        {
+          "action": "wolf_huff_and_puff",
+          "issues": []
+        },
+        {
+          "action": "wolf_blows_house_down",
+          "issues": []
+        },
+        {
+          "action": "wolf_eats_pig",
+          "issues": []
+        },
+        {
+          "action": "wolf_fails_to_blow_house",
+          "issues": []
+        },
+        {
+          "action": "wolf_promises_turnip_field",
+          "issues": []
+        },
+        {
+          "action": "pig_collects_turnips",
+          "issues": []
+        },
+        {
+          "action": "wolf_promises_apple_orchard",
+          "issues": []
+        },
+        {
+          "action": "pig_collects_apples_and_escapes",
+          "issues": []
+        },
+        {
+          "action": "wolf_promises_fair_trip",
+          "issues": []
+        },
+        {
+          "action": "pig_buys_butter_churn_and_hides",
+          "issues": []
+        },
+        {
+          "action": "pig_rolls_churn_down_hill",
+          "issues": []
+        },
+        {
+          "action": "wolf_flees_from_rolling_object",
+          "issues": []
+        },
+        {
+          "action": "wolf_attempts_chimney_entry",
+          "issues": []
+        },
+        {
+          "action": "pig_prepares_boiling_pot_and_fire",
+          "issues": []
+        },
+        {
+          "action": "wolf_falls_into_pot_and_is_boiled",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "PUSS",
+      "source_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "action_count": 14,
+      "actions": [
+        {
+          "action": "buy_boots",
+          "issues": []
+        },
+        {
+          "action": "give_bag_to_cat",
+          "issues": []
+        },
+        {
+          "action": "cat_catch_rabbits",
+          "issues": []
+        },
+        {
+          "action": "cat_deliver_gifts_to_king",
+          "issues": []
+        },
+        {
+          "action": "cat_persuade_master_to_bathe",
+          "issues": []
+        },
+        {
+          "action": "cat_call_for_help",
+          "issues": []
+        },
+        {
+          "action": "king_send_groom_fetch_suit",
+          "issues": []
+        },
+        {
+          "action": "master_wear_suit",
+          "issues": []
+        },
+        {
+          "action": "cat_ogre_transform_lion",
+          "issues": []
+        },
+        {
+          "action": "cat_ogre_transform_mouse",
+          "issues": []
+        },
+        {
+          "action": "cat_eat_mouse",
+          "issues": []
+        },
+        {
+          "action": "cat_disentchant_prisoners",
+          "issues": []
+        },
+        {
+          "action": "cat_open_castle_gates",
+          "issues": []
+        },
+        {
+          "action": "master_marry_princess",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "REMA_NP",
+      "source_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "action_count": 12,
+      "actions": [
+        {
+          "action": "run_away_from_palace",
+          "issues": []
+        },
+        {
+          "action": "encounter_impostor_king",
+          "issues": []
+        },
+        {
+          "action": "utter_phrase_price_of_butter",
+          "issues": []
+        },
+        {
+          "action": "receive_rubies_from_impostor",
+          "issues": []
+        },
+        {
+          "action": "encounter_robbers_in_forest",
+          "issues": []
+        },
+        {
+          "action": "utter_phrase_grandmother_mangle",
+          "issues": []
+        },
+        {
+          "action": "receive_sapphires_from_robber_chief",
+          "issues": []
+        },
+        {
+          "action": "arrive_at_marble_palace",
+          "issues": []
+        },
+        {
+          "action": "king_requests_information_and_gifts",
+          "issues": []
+        },
+        {
+          "action": "king_proposes_marriage",
+          "issues": []
+        },
+        {
+          "action": "princess_accepts_with_heart",
+          "issues": []
+        },
+        {
+          "action": "suitors_retire_due_to_phrase",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "SNOW",
+      "source_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "action_count": 29,
+      "actions": [
+        {
+          "action": "queen_sews_at_window",
+          "issues": []
+        },
+        {
+          "action": "queen_pricks_finger",
+          "issues": []
+        },
+        {
+          "action": "queen_wishes_child_white_red_black",
+          "issues": []
+        },
+        {
+          "action": "child_is_born_and_queen_dies",
+          "issues": []
+        },
+        {
+          "action": "king_marries_stepmother",
+          "issues": []
+        },
+        {
+          "action": "stepmother_asks_looking_glass_fairest",
+          "issues": []
+        },
+        {
+          "action": "stepmother_becomes_envious_of_snow_white",
+          "issues": []
+        },
+        {
+          "action": "stepmother_orders_huntsman_to_kill_snow_white",
+          "issues": []
+        },
+        {
+          "action": "huntsman_spares_snow_white_and_brings_boar_heart",
+          "issues": []
+        },
+        {
+          "action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+          "issues": []
+        },
+        {
+          "action": "snow_white_flees_into_forest",
+          "issues": []
+        },
+        {
+          "action": "snow_white_finds_dwarfs_cottage",
+          "issues": []
+        },
+        {
+          "action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+          "issues": []
+        },
+        {
+          "action": "snow_white_sleeps_in_seventh_bed",
+          "issues": []
+        },
+        {
+          "action": "dwarfs_return_and_discover_snow_white",
+          "issues": []
+        },
+        {
+          "action": "dwarfs_offer_snow_white_to_maintain_house",
+          "issues": []
+        },
+        {
+          "action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+          "issues": []
+        },
+        {
+          "action": "stepmother_laces_snow_white_tightly",
+          "issues": []
+        },
+        {
+          "action": "dwarfs_cut_laces_rescue_snow_white",
+          "issues": []
+        },
+        {
+          "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+          "issues": []
+        },
+        {
+          "action": "stepmother_comb_poison_snow_white",
+          "issues": []
+        },
+        {
+          "action": "dwarfs_remove_comb_rescue_snow_white",
+          "issues": []
+        },
+        {
+          "action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+          "issues": []
+        },
+        {
+          "action": "snow_white_eats_poisoned_apple_and_dies",
+          "issues": []
+        },
+        {
+          "action": "dwarfs_prepare_glass_coffin_for_snow_white",
+          "issues": []
+        },
+        {
+          "action": "prince_discovers_coffin_and_moves_it",
+          "issues": []
+        },
+        {
+          "action": "apple_piece_falls_out_reviving_snow_white",
+          "issues": []
+        },
+        {
+          "action": "prince_marries_snow_white",
+          "issues": []
+        },
+        {
+          "action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "SOUP",
+      "source_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "action_count": 12,
+      "actions": [
+        {
+          "action": "travel_to",
+          "issues": []
+        },
+        {
+          "action": "give_skewer_to_elves",
+          "issues": []
+        },
+        {
+          "action": "receive_anointed_skewer",
+          "issues": []
+        },
+        {
+          "action": "receive_feather",
+          "issues": []
+        },
+        {
+          "action": "learn_wisdom_from_ants",
+          "issues": []
+        },
+        {
+          "action": "read_and_digest_books",
+          "issues": []
+        },
+        {
+          "action": "escape_jail",
+          "issues": []
+        },
+        {
+          "action": "run_in_cage",
+          "issues": []
+        },
+        {
+          "action": "prepare_soup_by_elf_effect",
+          "issues": []
+        },
+        {
+          "action": "prepare_soup_by_poet_imagination",
+          "issues": []
+        },
+        {
+          "action": "prepare_soup_by_king_tail",
+          "issues": []
+        },
+        {
+          "action": "claim_queenhood",
+          "issues": [
+            "unsupported_logic:or"
+          ]
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    },
+    {
+      "source": "WOE",
+      "source_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "action_count": 17,
+      "actions": [
+        {
+          "action": "request_help_from_rich_brother",
+          "issues": []
+        },
+        {
+          "action": "perform_work_for_rich_brother",
+          "issues": []
+        },
+        {
+          "action": "receive_payment",
+          "issues": []
+        },
+        {
+          "action": "stay_for_banquet",
+          "issues": []
+        },
+        {
+          "action": "bow_to_guests",
+          "issues": [
+            "unsupported_logic:exists"
+          ]
+        },
+        {
+          "action": "sing_cheerful_song",
+          "issues": []
+        },
+        {
+          "action": "encounter_bitter_woe",
+          "issues": []
+        },
+        {
+          "action": "make_sign_of_cross",
+          "issues": []
+        },
+        {
+          "action": "allow_woe_to_ride_on_shoulder",
+          "issues": []
+        },
+        {
+          "action": "spend_money_on_drink",
+          "issues": []
+        },
+        {
+          "action": "trade_assets_for_money",
+          "issues": []
+        },
+        {
+          "action": "move_heavy_stone",
+          "issues": []
+        },
+        {
+          "action": "hide_woe_under_stone",
+          "issues": []
+        },
+        {
+          "action": "take_gold_pot_and_hide",
+          "issues": []
+        },
+        {
+          "action": "invite_rich_brother_to_feast",
+          "issues": []
+        },
+        {
+          "action": "rich_brother_attempt_to_move_stone",
+          "issues": []
+        },
+        {
+          "action": "accept_woe_as_burden",
+          "issues": []
+        }
+      ],
+      "independent_problem_parse": {
+        "status": "PARSED",
+        "version": "1.3.0"
+      }
+    }
+  ]
+}

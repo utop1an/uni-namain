@@ -1,0 +1,115 @@
+{
+  "request_contract": [
+    {
+      "case": "goal_only",
+      "status": "needs_initial_state",
+      "reason": "Please supply an explicit initial state before planning. No initial facts were generated.",
+      "planner_called": false
+    },
+    {
+      "case": "initial_only",
+      "status": "rejected",
+      "reason": "'goal'",
+      "planner_called": false
+    }
+  ],
+  "fusion_smoke": {
+    "scope": "Synthetic wiring test of existing deterministic same-name merger, not learned-domain or LLM evidence",
+    "merged_before_planning": true,
+    "merged_domain_unchanged": true,
+    "domain_sha256": "6b3c898fa06250f0aac0cd6e9bc216103d0db93dbf508b2680e1b647a522c313",
+    "rows": [
+      {
+        "case": "HEAR",
+        "source": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    hear_report(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        },
+        "mapped": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    hear_report(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        }
+      },
+      {
+        "case": "WARN",
+        "source": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        },
+        "mapped": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        }
+      },
+      {
+        "case": "cross_source",
+        "result": {
+          "status": "solved",
+          "length": 2,
+          "plan": "SequentialPlan:\n    hear_report(hero)\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 3
+        }
+      },
+      {
+        "case": "second_object",
+        "result": {
+          "status": "solved",
+          "length": 2,
+          "plan": "SequentialPlan:\n    hear_report(helper)\n    warn_village(helper)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 3
+        }
+      },
+      {
+        "case": "missing_initial_fact",
+        "result": {
+          "status": "unsolvable",
+          "states": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,374 @@
+[
+  {
+    "name": "a00000",
+    "source_action": "BIRT:accept_dryad_invitation",
+    "binding": {
+      "?d": "hero",
+      "?n": "hero"
+    }
+  },
+  {
+    "name": "a00001",
+    "source_action": "BIRT:accept_dryad_invitation",
+    "binding": {
+      "?d": "hero",
+      "?n": "helper"
+    }
+  },
+  {
+    "name": "a00002",
+    "source_action": "BIRT:accept_dryad_invitation",
+    "binding": {
+      "?d": "helper",
+      "?n": "hero"
+    }
+  },
+  {
+    "name": "a00003",
+    "source_action": "BIRT:accept_dryad_invitation",
+    "binding": {
+      "?d": "helper",
+      "?n": "helper"
+    }
+  },
+  {
+    "name": "a00004",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "hero",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00005",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "hero",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00006",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "helper",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00007",
+    "source_action": "BIRT:approach_beech_tree",
+    "binding": {
+      "?n": "helper",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00008",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00009",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00010",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?t": "bench"
+    }
+  },
+  {
+    "name": "a00011",
+    "source_action": "BIRT:hear_tapping_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00012",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "bench",
+      "?c": "bench"
+    }
+  },
+  {
+    "name": "a00013",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "bench",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00014",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "tree",
+      "?c": "bench"
+    }
+  },
+  {
+    "name": "a00015",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "tree",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00016",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "bench",
+      "?c": "bench"
+    }
+  },
+  {
+    "name": "a00017",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "bench",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00018",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "tree",
+      "?c": "bench"
+    }
+  },
+  {
+    "name": "a00019",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "tree",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00020",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "hero",
+      "?q": "hero",
+      "?palace": "bench"
+    }
+  },
+  {
+    "name": "a00021",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "hero",
+      "?q": "hero",
+      "?palace": "tree"
+    }
+  },
+  {
+    "name": "a00022",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "hero",
+      "?q": "helper",
+      "?palace": "bench"
+    }
+  },
+  {
+    "name": "a00023",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "hero",
+      "?q": "helper",
+      "?palace": "tree"
+    }
+  },
+  {
+    "name": "a00024",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "helper",
+      "?q": "hero",
+      "?palace": "bench"
+    }
+  },
+  {
+    "name": "a00025",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "helper",
+      "?q": "hero",
+      "?palace": "tree"
+    }
+  },
+  {
+    "name": "a00026",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "helper",
+      "?q": "helper",
+      "?palace": "bench"
+    }
+  },
+  {
+    "name": "a00027",
+    "source_action": "BIRT:witness_queen_birthday_ceremony",
+    "binding": {
+      "?n": "helper",
+      "?q": "helper",
+      "?palace": "tree"
+    }
+  },
+  {
+    "name": "a00028",
+    "source_action": "CHIC_NP:follow_fox",
+    "binding": {
+      "?e": "hero"
+    }
+  },
+  {
+    "name": "a00029",
+    "source_action": "CHIC_NP:follow_fox",
+    "binding": {
+      "?e": "helper"
+    }
+  },
+  {
+    "name": "a00030",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "hero",
+      "?listener": "hero"
+    }
+  },
+  {
+    "name": "a00031",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "hero",
+      "?listener": "helper"
+    }
+  },
+  {
+    "name": "a00032",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "helper",
+      "?listener": "hero"
+    }
+  },
+  {
+    "name": "a00033",
+    "source_action": "CHIC_NP:inform_about_sky_fall",
+    "binding": {
+      "?informer": "helper",
+      "?listener": "helper"
+    }
+  },
+  {
+    "name": "a00034",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "hero",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00035",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "hero",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00036",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "helper",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00037",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "hero",
+      "?e2": "helper",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00038",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "hero",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00039",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "hero",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00040",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "helper",
+      "?l": "bench"
+    }
+  },
+  {
+    "name": "a00041",
+    "source_action": "CHIC_NP:meet_character",
+    "binding": {
+      "?e1": "helper",
+      "?e2": "helper",
+      "?l": "tree"
+    }
+  },
+  {
+    "name": "a00042",
+    "source_action": "CHIC_NP:turn_back",
+    "binding": {
+      "?e": "hero"
+    }
+  },
+  {
+    "name": "a00043",
+    "source_action": "CHIC_NP:turn_back",
+    "binding": {
+      "?e": "helper"
+    }
+  }
+]

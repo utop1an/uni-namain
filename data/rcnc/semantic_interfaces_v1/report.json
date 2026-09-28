@@ -1,0 +1,205 @@
+{
+  "checked": [
+    {
+      "id": "p000",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:at",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "location_of_entity",
+        "confidence": "medium",
+        "rationale": "The action `travel_to_trysting_place` requires knowing the entity's location, and `hear_tapping_on_beech` requires knowing the location of the bench. This interface allows for consistent location tracking.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?c"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n bench"
+          }
+        ]
+      },
+      "structural_errors": [
+        "duplicate_references",
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p001",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:at",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "location_of_entity",
+        "confidence": "medium",
+        "rationale": "The action `approach_beech_tree` requires knowing the location of the tree, and `turn_key_on_beech` requires knowing the location of the key. This interface allows for consistent location tracking.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?t"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n bench"
+          }
+        ]
+      },
+      "structural_errors": [
+        "duplicate_references",
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p002",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:sound_heard",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "sound_at_location",
+        "confidence": "low",
+        "rationale": "The action `approach_beech_tree` preconditions on `sound_heard` at a location. This interface allows for representing this relationship.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:sound_heard",
+            "quote": "sound_heard ?n ?t"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?c"
+          }
+        ]
+      },
+      "structural_errors": [
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p003",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:at",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "location_of_item",
+        "confidence": "medium",
+        "rationale": "The action `turn_key_on_beech` requires knowing the location of the key and the location of the tree. This interface allows for consistent location tracking.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?t"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?b"
+          }
+        ]
+      },
+      "structural_errors": [
+        "duplicate_references",
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p004",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:invitation_offered",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "invitation_at_location",
+        "confidence": "medium",
+        "rationale": "The action `accept_dryad_invitation` preconditions on `invitation_offered` at a location. This interface allows for representing this relationship.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:invitation_offered",
+            "quote": "invitation_offered ?d ?n"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?c"
+          }
+        ]
+      },
+      "structural_errors": [
+        "incompatible_ordered_types",
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p005",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:predicate:at",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "",
+        "label": "location_of_item",
+        "confidence": "medium",
+        "rationale": "The action `receive_pellet_from_gnome` requires knowing the location of the gnome and the location of the pellet. This interface allows for consistent location tracking.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?n ?t"
+          },
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "at ?g ?t"
+          }
+        ]
+      },
+      "structural_errors": [
+        "duplicate_references",
+        "not_cross_source",
+        "quote_not_in_source",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    }
+  ],
+  "summary": {
+    "proposed": 6,
+    "structurally_valid": 0,
+    "semantically_verified": 0
+  },
+  "status": "completed",
+  "run": {
+    "model": "gemma3:4b",
+    "proposal_kind": "interface",
+    "timestamp_utc": "2026-09-13T16:11:35.488981+00:00",
+    "mode": "ollama",
+    "prompt_sha256": "3a619646f6805848fad58e33ae0ed3687b7ba78b387baf6e173b5aaddcef18b6",
+    "implementation_sha256": "d66170450b256facc67ab750a2a695f14e985a5ad3890780a6f3f5ff82980a99",
+    "model_digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a"
+  },
+  "elapsed_seconds": 10.65694600000279
+}

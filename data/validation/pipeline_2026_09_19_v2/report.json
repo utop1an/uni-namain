@@ -1,0 +1,520 @@
+{
+  "scope": "Validation of current components against corrected pipeline; no production algorithm edits",
+  "implementation_sha256": {
+    "validate_narrative_pipeline.py": "ed56aaf731b233d4dc30935184a42c6020bb232e773dcde9280f05cef6018315",
+    "merge_domains.py": "0c0875751e2cfb2d57413cf607b51d9c227317a5e46b9db3e1ae165e52e56186",
+    "unidomain_ollama_fusion.py": "262a9373a7f295773ed0e86aa2ede887ed04da8adb2478ade5bdf57877e24e6a",
+    "rcnc\\planning.py": "d383fcab6ffa1e286a586292d4535a8bab5376f1362f1199c746ff339c5c8582",
+    "rcnc\\validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  },
+  "historical_fusion": {
+    "scope": "Existing historical artifact; no fresh LLM inference or semantic preservation proof",
+    "snapshot_sha256": {
+      "fusion_tree.json": "e1cf830a5a127413857a100863fd8b5d51961c4754d289de7bc0cdb20fb6edc1",
+      "mapping_table.json": "109dceb46da2bc6b325e90a945d42035010988536313e5ef281fa8e0b9e7d08c",
+      "meta_domain.json": "d35bcd186a1f4350c0ae6556cf247ab7cedf1803a14abd554145c3996ef059db",
+      "validation.json": "75bad3eb2e19bcbe73469433153ebd95a6230106874094debac51e2b09c6e80e"
+    },
+    "domain_sha256": "6eb972ec22d7819d7e48da4932de8c7cbe52c5b211c5bbf6678875e43c415e3f",
+    "rows": [
+      {
+        "source": "ACCO",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 17
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "BIRT",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 12
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "BUFF",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 8
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "CHIC_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 7
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "FOUR_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 21
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "HANS_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 15
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "JACK_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 12
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "MUSI",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 24
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "NAUG",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 13
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "PIGS_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 21
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "PUSS",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 14
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "REMA_NP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 12
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "SNOW",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 29
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "SOUP",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 12
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      },
+      {
+        "source": "WOE",
+        "mapping_issues": [],
+        "rewritten_problem_matches_snapshot": true,
+        "original_parse": {
+          "status": "PASS",
+          "actions": 17
+        },
+        "merged_parse": {
+          "status": "FAIL",
+          "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+        }
+      }
+    ],
+    "case_insensitive_collisions": {
+      "king": [
+        {
+          "category": "constants",
+          "name": "King"
+        },
+        {
+          "category": "constants",
+          "name": "king"
+        }
+      ],
+      "house": [
+        {
+          "category": "constants",
+          "name": "house"
+        },
+        {
+          "category": "predicates",
+          "name": "house"
+        }
+      ]
+    },
+    "action_audit": [
+      {
+        "action": "bow_to_guests",
+        "reasons": [
+          "unsupported_logic:exists"
+        ]
+      },
+      {
+        "action": "claim_queenhood",
+        "reasons": [
+          "unsupported_logic:or"
+        ]
+      },
+      {
+        "action": "decide_to_tell_king",
+        "reasons": [
+          "unsupported_logic:exists"
+        ]
+      },
+      {
+        "action": "eat_dragon",
+        "reasons": [
+          "undeclared_symbol:?h",
+          "wrong_arity:dead"
+        ]
+      },
+      {
+        "action": "follow_breadcrumbs_home",
+        "reasons": [
+          "unsupported_logic:when"
+        ]
+      },
+      {
+        "action": "force_kettle_into_box",
+        "reasons": [
+          "ill_typed:captured:?k:item->entity"
+        ]
+      },
+      {
+        "action": "invite",
+        "reasons": [
+          "ill_typed:invited:?donkey:object->entity",
+          "ill_typed:invited:?hound:object->entity"
+        ]
+      },
+      {
+        "action": "knock_down_kettle",
+        "reasons": [
+          "ill_typed:captured:?k:item->entity"
+        ]
+      },
+      {
+        "action": "remove_poisoned_comet",
+        "reasons": [
+          "undeclared_symbol:?d"
+        ]
+      },
+      {
+        "action": "reverse_direction",
+        "reasons": [
+          "undeclared_symbol:wood"
+        ]
+      }
+    ],
+    "source_to_merged_regressions": [
+      {
+        "source_action": "ACCO:knock_down_kettle",
+        "merged_action": "knock_down_kettle",
+        "source_audit": [],
+        "merged_errors": [
+          "ill_typed:captured:?k:item->entity"
+        ]
+      },
+      {
+        "source_action": "ACCO:force_kettle_into_box",
+        "merged_action": "force_kettle_into_box",
+        "source_audit": [],
+        "merged_errors": [
+          "ill_typed:captured:?k:item->entity"
+        ]
+      },
+      {
+        "source_action": "CHIC_NP:turn_back",
+        "merged_action": "reverse_direction",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:wood"
+        ]
+      },
+      {
+        "source_action": "FOUR_NP:shoot_dragon",
+        "merged_action": "eat_dragon",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:?h",
+          "wrong_arity:dead"
+        ]
+      },
+      {
+        "source_action": "HANS_NP:return_home_and_reunite_with_father",
+        "merged_action": "reverse_direction",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:wood"
+        ]
+      },
+      {
+        "source_action": "MUSI:invite_hound",
+        "merged_action": "invite",
+        "source_audit": [],
+        "merged_errors": [
+          "ill_typed:invited:?donkey:object->entity",
+          "ill_typed:invited:?hound:object->entity"
+        ]
+      },
+      {
+        "source_action": "NAUG:cross_out_comet",
+        "merged_action": "remove_poisoned_comet",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:?d"
+        ]
+      },
+      {
+        "source_action": "PIGS_NP:wolf_eats_pig",
+        "merged_action": "eat_dragon",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:?h",
+          "wrong_arity:dead"
+        ]
+      },
+      {
+        "source_action": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "merged_action": "remove_poisoned_comet",
+        "source_audit": [],
+        "merged_errors": [
+          "undeclared_symbol:?d"
+        ]
+      },
+      {
+        "source_action": "WOE:invite_rich_brother_to_feast",
+        "merged_action": "invite",
+        "source_audit": [],
+        "merged_errors": [
+          "ill_typed:invited:?donkey:object->entity",
+          "ill_typed:invited:?hound:object->entity"
+        ]
+      }
+    ]
+  },
+  "fusion_smoke": {
+    "scope": "Synthetic wiring test of existing deterministic same-name merger, not learned-domain or LLM evidence",
+    "merged_before_planning": true,
+    "merged_domain_unchanged": true,
+    "domain_sha256": "6b3c898fa06250f0aac0cd6e9bc216103d0db93dbf508b2680e1b647a522c313",
+    "rows": [
+      {
+        "case": "HEAR",
+        "source": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    hear_report(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        },
+        "mapped": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    hear_report(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        }
+      },
+      {
+        "case": "WARN",
+        "source": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        },
+        "mapped": {
+          "status": "solved",
+          "length": 1,
+          "plan": "SequentialPlan:\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 2
+        }
+      },
+      {
+        "case": "cross_source",
+        "result": {
+          "status": "solved",
+          "length": 2,
+          "plan": "SequentialPlan:\n    hear_report(hero)\n    warn_village(hero)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 3
+        }
+      },
+      {
+        "case": "second_object",
+        "result": {
+          "status": "solved",
+          "length": 2,
+          "plan": "SequentialPlan:\n    hear_report(helper)\n    warn_village(helper)",
+          "validation": {
+            "status": "VALID",
+            "engine": "sequential_plan_validator",
+            "version": "1.3.0",
+            "details": "status: VALID\nengine: sequential_plan_validator"
+          },
+          "states": 3
+        }
+      },
+      {
+        "case": "missing_initial_fact",
+        "result": {
+          "status": "unsolvable",
+          "states": 1
+        }
+      }
+    ]
+  },
+  "request_contract": [
+    {
+      "case": "goal_only",
+      "status": "rejected",
+      "reason": "'initial'",
+      "planner_called": false
+    },
+    {
+      "case": "initial_only",
+      "status": "rejected",
+      "reason": "'goal'",
+      "planner_called": false
+    }
+  ],
+  "acceptance": {
+    "status": "NOT_READY",
+    "checks": {
+      "source_problem_parsing": true,
+      "source_mapping_coverage": true,
+      "problem_rewrite_reproduction": true,
+      "historical_merged_problem_parsing": false,
+      "historical_supported_action_structure": false,
+      "synthetic_merged_domain_preexists_and_unchanged": true,
+      "synthetic_source_regressions": true,
+      "synthetic_cross_source_plans": true,
+      "synthetic_missing_fact_control": true,
+      "incomplete_requests_do_not_plan": true,
+      "goal_only_user_request_status": false,
+      "initial_only_mode_available": false
+    },
+    "note": "Even a passing smoke test is not an evaluation of narrative quality or automatic domain selection."
+  }
+}

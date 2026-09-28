@@ -1,0 +1,25 @@
+{
+  "candidate_id": "pair_e1b09dad788fc21c",
+  "decision": "reject",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The predicates `BIRT:predicate:at` and `PUSS:predicate:at` both express the spatial relationship 'at' between an entity and a location. However, the arguments and their roles differ significantly. `BIRT:predicate:at` uses `?n` as the entity and `?t` as the location, with preconditions related to sounds and effects involving actions like 'approach' and 'share story'.  `PUSS:predicate:at` uses `?x` as the entity and `?l` as the location, and its preconditions and effects are tied to cat actions like delivering gifts, transforming, and opening gates, alongside human actions like marriage. The preconditions and effects are entirely distinct, reflecting the different contexts and narratives of the two source records. The argument order is also different: `BIRT` uses `entity, location` while `PUSS` uses `entity, location`. Therefore, despite sharing the same predicate name, the predicates are not equivalent.",
+  "evidence": [
+    {
+      "ref": "BIRT:predicate:at",
+      "quote": "(at ?e - entity ?l - location)"
+    },
+    {
+      "ref": "PUSS:predicate:at",
+      "quote": "(at ?x - entity ?l - location)"
+    },
+    {
+      "ref": "BIRT:action:approach_beech_tree",
+      "quote": "(:action approach_beech_tree :parameters (?n - entity ?t - location) :precondition (sound_heard ?n ?t) :effect (and (at ?n ?t) (not (at ?n bench))))"
+    },
+    {
+      "ref": "PUSS:action:cat_deliver_gifts_to_king",
+      "quote": "(:action cat_deliver_gifts_to_king :parameters (?king ?puss - entity ?bag ?rabbit - item ?palace - location) :precondition (and (contains ?bag ?rabbit) (at ?puss ?palace)) :effect (and (gift_delivered ?puss ?king ?rabbit) (not (contains ?bag ?rabbit))))"
+    }
+  ]
+}

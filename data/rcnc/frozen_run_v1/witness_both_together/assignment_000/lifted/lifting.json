@@ -1,0 +1,163 @@
+{
+  "schemas": [
+    {
+      "name": "s00000",
+      "source_action": "BIRT:accept_dryad_invitation",
+      "parameters": {
+        "?d": "entity",
+        "?n": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00001",
+      "source_action": "BIRT:approach_beech_tree",
+      "parameters": {
+        "?n": "entity",
+        "?t": "location",
+        "?lifted_origin": "location"
+      },
+      "constant_substitutions": {
+        "bench": "?lifted_origin"
+      },
+      "role_parameters": {
+        "origin": "?lifted_origin"
+      },
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00002",
+      "source_action": "BIRT:hear_tapping_on_beech",
+      "parameters": {
+        "?n": "entity",
+        "?t": "location",
+        "?lifted_origin": "location"
+      },
+      "constant_substitutions": {
+        "bench": "?lifted_origin"
+      },
+      "role_parameters": {
+        "origin": "?lifted_origin"
+      },
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00003",
+      "source_action": "BIRT:travel_to_trysting_place",
+      "parameters": {
+        "?n": "entity",
+        "?b": "location",
+        "?c": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00004",
+      "source_action": "BIRT:witness_queen_birthday_ceremony",
+      "parameters": {
+        "?n": "entity",
+        "?q": "entity",
+        "?palace": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00005",
+      "source_action": "CHIC_NP:follow_fox",
+      "parameters": {
+        "?e": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00006",
+      "source_action": "CHIC_NP:inform_about_sky_fall",
+      "parameters": {
+        "?informer": "entity",
+        "?listener": "entity",
+        "?lifted_witness": "entity"
+      },
+      "constant_substitutions": {
+        "Chicken-licken": "?lifted_witness"
+      },
+      "role_parameters": {
+        "witness": "?lifted_witness"
+      },
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00007",
+      "source_action": "CHIC_NP:meet_character",
+      "parameters": {
+        "?e1": "entity",
+        "?e2": "entity",
+        "?l": "location"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    },
+    {
+      "name": "s00008",
+      "source_action": "CHIC_NP:turn_back",
+      "parameters": {
+        "?e": "entity"
+      },
+      "constant_substitutions": {},
+      "role_parameters": {},
+      "parameter_constraints": {},
+      "allowed_parameter_objects": {}
+    }
+  ],
+  "role_assignment": {
+    "origin": "bench",
+    "witness": "helper"
+  },
+  "administrative_initial_facts": [
+    [
+      "rcnc_role_origin",
+      "bench"
+    ],
+    [
+      "rcnc_role_witness",
+      "helper"
+    ]
+  ],
+  "narrative_initial": [
+    [
+      "chic_np__sky_fell_on_head",
+      "helper"
+    ],
+    [
+      "chic_np__sky_fell_on_head",
+      "hero"
+    ],
+    [
+      "shared_at",
+      "helper",
+      "bench"
+    ],
+    [
+      "shared_at",
+      "hero",
+      "bench"
+    ]
+  ],
+  "initial_projection_unchanged": true
+}

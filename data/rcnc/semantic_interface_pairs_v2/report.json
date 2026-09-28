@@ -1,0 +1,320 @@
+{
+  "status": "completed",
+  "summary": {
+    "total_compatible_pairs": 44,
+    "evaluated_pairs": 8,
+    "omitted_pairs": 36,
+    "structurally_valid": 6,
+    "invalid": 2,
+    "failed": 0,
+    "decisions": {
+      "accept": 3,
+      "uncertain": 2,
+      "reject": 1
+    },
+    "draft_pairs": 3,
+    "withheld_pairs": 0,
+    "semantically_verified": 0
+  },
+  "rows": [
+    {
+      "candidate_id": "pair_e1b09dad788fc21c",
+      "refs": [
+        "BIRT:predicate:at",
+        "PUSS:predicate:at"
+      ],
+      "response": {
+        "candidate_id": "pair_e1b09dad788fc21c",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "The predicate ‘at’ is identical in both the BIRT and PUSS sets. The arguments are also identical in both predicates, namely an entity and a location. The argument order is the same. The usage examples in both sets demonstrate the same meaning: indicating the spatial location of an entity. There are no contradictory examples or changes in argument roles/direction. The literal expressions are identical. The action contexts and preconditions support the equivalence. The records BIRT:action:approach_beech_tree, BIRT:action:hear_tapping_on_beech, BIRT:action:receive_queen_kiss, BIRT:action:return_to_bench_and_share_story, BIRT:action:travel_by_leaf_boat_under_pond, BIRT:action:travel_to_trysting_place, BIRT:action:turn_key_on_beech, BIRT:action:witness_queen_birthday_ceremony all use the predicate ‘at’ with the same arguments. Similarly, the PUSS actions cat_deliver_gifts_to_king, cat_ogre_transform_lion, cat_open_castle_gates, cat_persuade_master_to_bathe, master_marry_princess all use the predicate ‘at’ with the same arguments. The types are also the same (entity, location).",
+        "evidence": [
+          {
+            "ref": "BIRT:action:approach_beech_tree",
+            "quote": "(at ?n ?t)"
+          },
+          {
+            "ref": "PUSS:action:cat_deliver_gifts_to_king",
+            "quote": "(at ?puss ?palace)"
+          },
+          {
+            "ref": "BIRT:action:hear_tapping_on_beech",
+            "quote": "(at ?n bench)"
+          },
+          {
+            "ref": "PUSS:action:cat_ogre_transform_lion",
+            "quote": "(at ?puss ogre_castle)"
+          },
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(at ?n palace)"
+          },
+          {
+            "ref": "PUSS:action:cat_open_castle_gates",
+            "quote": "(at ?king ?castle)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_736d04bf7acf3f8a",
+      "refs": [
+        "BIRT:predicate:has",
+        "PUSS:predicate:has"
+      ],
+      "response": {
+        "candidate_id": "pair_736d04bf7acf3f8a",
+        "decision": "reject",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both predicates, BIRT:predicate:has and PUSS:predicate:has, represent the same relation: an entity possesses an item. The argument slots (entity, item) and their order are identical in both predicates. The usage examples in both records (BIRT and PUSS) confirm this. The precondition and effect descriptions are also consistent. There are no contradictory elements or changes in meaning. The action contexts and literal expressions support the equivalence. The names and types are also identical. The arguments are consistent across both predicates.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:eat_pellet_and_shrink",
+            "quote": "(has ?n ?p)"
+          },
+          {
+            "ref": "PUSS:action:buy_boots",
+            "quote": "(has ?puss ?boots)"
+          },
+          {
+            "ref": "BIRT:action:receive_pellet_from_gnome",
+            "quote": "(has ?n ?p)"
+          },
+          {
+            "ref": "PUSS:action:cat_catch_rabbits",
+            "quote": "(has ?puss ?bag)"
+          },
+          {
+            "ref": "BIRT:action:turn_key_on_beech",
+            "quote": "(has ?n ?k)"
+          },
+          {
+            "ref": "PUSS:action:give_bag_to_cat",
+            "quote": "(has ?jack ?bag)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "reject_requires_difference"
+      ],
+      "status": "invalid"
+    },
+    {
+      "candidate_id": "pair_e407aa03097509b9",
+      "refs": [
+        "BIRT:predicate:door_open",
+        "PUSS:predicate:gate_open"
+      ],
+      "response": {
+        "candidate_id": "pair_e407aa03097509b9",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "The predicates `door_open` and `gate_open` both represent the state of an opening mechanism (door or gate) at a location. The arguments are consistent across both predicates: both take a location as input. The preconditions and effects are similar, describing the opening of a door or gate at a specific location. Specifically, `BIRT:predicate:door_open` is used in preconditions and effects related to entering a tree and descending stairs, while `PUSS:predicate:gate_open` is used in the effect of opening castle gates. The argument order is the same (location as the first argument). The literal expressions are also equivalent: `(door_open door)` and `(gate_open ?castle)`.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(door_open door)"
+          },
+          {
+            "ref": "BIRT:action:turn_key_on_beech",
+            "quote": "(door_open door)"
+          },
+          {
+            "ref": "PUSS:action:cat_open_castle_gates",
+            "quote": "(gate_open ?castle)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(door_open door)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_b54c5bfa8fe9cf33",
+      "refs": [
+        "BIRT:predicate:kissed_by",
+        "PUSS:predicate:rescued_by"
+      ],
+      "response": {
+        "candidate_id": "pair_b54c5bfa8fe9cf33",
+        "decision": "uncertain",
+        "relation": "different",
+        "alignment": "different_order",
+        "rationale": "The predicates `kissed_by` and `rescued_by` describe distinct events. `kissed_by` indicates a receiving entity (e.g., queen) is affected by a kissing action, while `rescued_by` describes an entity (e.g., cat) being rescued by another entity (e.g., king). The arguments and their roles are different. The preconditions and effects are also distinct. The arguments are in different order. Evidence: BIRT:predicate:kissed_by describes the relationship between entities, while PUSS:predicate:rescued_by describes a rescue event. The arguments are in different positions (kissing vs. rescuing). The literal expressions are different: `(kissed_by ?n ?q)` vs. `(rescued_by ?jack ?king)`. The records themselves define different actions and their effects. The `BIRT:action:receive_queen_kiss` describes a kissing event, while `PUSS:action:cat_call_for_help` describes a rescue event. The arguments are different, and the predicates are different. There is no evidence to support a direct equivalence between these predicates.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(kissed_by ?n ?q)"
+          },
+          {
+            "ref": "PUSS:action:cat_call_for_help",
+            "quote": "(rescued_by ?jack ?king)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_ca6818e432ebc9c3",
+      "refs": [
+        "BIRT:predicate:boat_available",
+        "PUSS:predicate:at_item"
+      ],
+      "response": {
+        "candidate_id": "pair_ca6818e432ebc9c3",
+        "decision": "reject",
+        "relation": "unknown",
+        "alignment": "different_order",
+        "rationale": "The predicates `boat_available` and `at_item` have different argument roles and directions. `boat_available` describes the availability of a boat at a location, while `at_item` describes the location of an item. The arguments are also different: `boat_available` takes an item and a location, while `at_item` takes an item and a location. The usage examples in the records further highlight this difference. BIRT uses `boat_available` as a precondition for travel, while PUSS uses `at_item` as a precondition for catching rabbits. The literal expressions also differ: `(boat_available ?b ?pond)` versus `(at_item ?rabbit ?warren)`. Therefore, the predicates are not equivalent, and the argument order is different.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+            "quote": "(boat_available ?b ?pond)"
+          },
+          {
+            "ref": "PUSS:action:cat_catch_rabbits",
+            "quote": "(at_item ?rabbit ?warren)"
+          },
+          {
+            "ref": "PUSS:action:king_send_groom_fetch_suit",
+            "quote": "(at_item ?suit ?wardrobe)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_5f71d5163e5a59d0",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:alive"
+      ],
+      "response": {
+        "candidate_id": "pair_5f71d5163e5a59d0",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both predicates share the same argument type ('entity') and position (slot 0). The BIRT predicate 'corridor_reached' describes a state achieved by entering a corridor, while the PUSS predicate 'alive' describes a state of being alive. The arguments are used in preconditions and effects respectively. The literal expressions are identical: `(corridor_reached ?n)` and `(alive ?puss)`. The evidence is provided by the records BIRT:action:enter_tree_and_descend_stairs and PUSS:predicate:alive, where the arguments are used in similar contexts. The relation is equivalent and the argument order is the same.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "PUSS:action:cat_disentchant_prisoners",
+            "quote": "(alive ?puss)"
+          },
+          {
+            "ref": "PUSS:action:cat_ogre_transform_lion",
+            "quote": "(alive ?ogre)"
+          },
+          {
+            "ref": "PUSS:action:cat_ogre_transform_mouse",
+            "quote": "(alive ?ogre)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "PUSS:action:cat_disentchant_prisoners",
+            "quote": "(alive ?puss)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_9538bb4cd360ffb1",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:drowning"
+      ],
+      "response": {
+        "candidate_id": "pair_9538bb4cd360ffb1",
+        "decision": "uncertain",
+        "relation": "different",
+        "alignment": "different_order",
+        "rationale": "The predicate `corridor_reached` in BIRT describes a state achieved after entering a corridor, while `drowning` in PUSS describes a state of being submerged in water. The arguments are entities, but the predicates represent fundamentally different concepts. The usage of `drowning` in PUSS has preconditions and effects related to rescue and bathing, which are not present in the BIRT predicate. The arguments are in different order, and the predicates have different meanings. Evidence: BIRT:action:enter_tree_and_descend_stairs - `corridor_reached ?n` describes a state achieved after entering a corridor. PUSS:predicate:drowning - `drowning ?jack` describes a state of being submerged in water. The predicates are not equivalent due to their different meanings and usages.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "PUSS:action:cat_call_for_help",
+            "quote": "(drowning ?jack)"
+          },
+          {
+            "ref": "PUSS:action:cat_persuade_master_to_bathe",
+            "quote": "(drowning ?jack)"
+          },
+          {
+            "ref": "PUSS:action:cat_call_for_help",
+            "quote": "(not (drowning ?jack))"
+          },
+          {
+            "ref": "PUSS:action:cat_persuade_master_to_bathe",
+            "quote": "(drowning ?jack)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_27c248ece321200e",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:obedient"
+      ],
+      "response": {
+        "candidate_id": "pair_27c248ece321200e",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "The candidate predicate `BIRT:predicate:corridor_reached` and the reference predicate `PUSS:predicate:obedient` share the same argument slot (position 0) and argument type (`entity`). Both predicates are defined as `(corridor_reached ?e - entity)` and `(obedient ?e - entity)` respectively. The `BIRT:action:enter_tree_and_descend_stairs` record shows that `corridor_reached` is an effect of descending stairs within a corridor. The `PUSS:predicate:obedient` describes an entity being obedient, which can be interpreted as reaching a desired state or location (like a corridor). Therefore, the predicates are equivalent and share the same order of arguments.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "missing_action_evidence:PUSS:predicate:obedient"
+      ],
+      "status": "invalid"
+    }
+  ],
+  "run": {
+    "mode": "ollama",
+    "requested_model": "gemma3:4b",
+    "timestamp_utc": "2026-09-19T03:21:55.689621+00:00",
+    "prompt_sha256": "84592ba4279af78a7c79be28398994cce0fb382c0a4252d3c7ca253d3c09dcab",
+    "manifest_sha256": "4ec6f04276c48860115e5458b9c474c80341df8ac58dd967f62d670ab84895ef",
+    "implementation_sha256": {
+      "interface_proposals.py": "4c30fdb4ec8e327712aee376c8b64c9d40dade429b2fc9ce66a03cf98388cd23",
+      "semantic_proposals.py": "d66170450b256facc67ab750a2a695f14e985a5ad3890780a6f3f5ff82980a99",
+      "experiment.py": "517b2521f6c8c985624d540f84bac1536b2661b87dc6b2a7c83cd799bc365263",
+      "merge_domains.py": "0c0875751e2cfb2d57413cf607b51d9c227317a5e46b9db3e1ae165e52e56186"
+    },
+    "model_digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a"
+  },
+  "elapsed_seconds": 48.84045600000536
+}

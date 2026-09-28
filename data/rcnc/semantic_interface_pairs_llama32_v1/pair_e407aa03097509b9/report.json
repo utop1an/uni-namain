@@ -1,0 +1,24 @@
+{
+  "candidate_id": "pair_e407aa03097509b9",
+  "refs": [
+    "BIRT:predicate:door_open",
+    "PUSS:predicate:gate_open"
+  ],
+  "response": {
+    "candidate_id": "pair_e407aa03097509b9",
+    "decision": "accept",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both relations describe the state of a location being open (door_open and gate_open). The argument slots for location are in the same position (0) in both relations. The usage of these relations in the context of actions (enter_tree_and_descend_stairs, turn_key_on_beech, cat_open_castle_gates) also support this equivalence. The text excerpts for both relations are '(door_open ?d - location)' and '(gate_open ?castle - location)', respectively, which further reinforce the equivalence. The only difference is the predicate name, but this is not a significant difference in the context of the relations. Therefore, the relations are equivalent and have the same order of arguments.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:enter_tree_and_descend_stairs",
+        "quote": "(door_open door)"
+      }
+    ]
+  },
+  "structural_errors": [
+    "missing_action_evidence:PUSS:predicate:gate_open"
+  ],
+  "status": "invalid"
+}

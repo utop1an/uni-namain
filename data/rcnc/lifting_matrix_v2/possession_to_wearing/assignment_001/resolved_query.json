@@ -1,0 +1,82 @@
+{
+  "description": "Development task over BIRT/PUSS with an explicitly permitted object-possession interface.",
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "cloak": "item",
+    "home": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:door": "tree",
+    "BIRT:dryad": "helper"
+  },
+  "object_capabilities": {
+    "home": [
+      "portal"
+    ],
+    "tree": [
+      "portal"
+    ],
+    "hero": [
+      "guide"
+    ],
+    "helper": [
+      "guide"
+    ]
+  },
+  "interfaces": {
+    "BIRT:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "PUSS:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    }
+  },
+  "initial": [
+    [
+      "birt__at",
+      "hero",
+      "tree"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 8,
+  "max_states": 10000,
+  "max_ground_actions": 2000,
+  "max_role_assignments": 16,
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true,
+  "actions": [
+    "BIRT:accept_dryad_invitation",
+    "BIRT:eat_pellet_and_shrink",
+    "BIRT:enter_tree_and_descend_stairs",
+    "BIRT:receive_pellet_from_gnome",
+    "BIRT:travel_by_leaf_boat_under_pond",
+    "BIRT:travel_to_trysting_place",
+    "BIRT:turn_key_on_beech",
+    "BIRT:witness_queen_birthday_ceremony",
+    "PUSS:buy_boots",
+    "PUSS:cat_call_for_help",
+    "PUSS:cat_catch_rabbits",
+    "PUSS:cat_deliver_gifts_to_king",
+    "PUSS:cat_eat_mouse",
+    "PUSS:cat_ogre_transform_mouse",
+    "PUSS:cat_open_castle_gates",
+    "PUSS:cat_persuade_master_to_bathe",
+    "PUSS:give_bag_to_cat",
+    "PUSS:king_send_groom_fetch_suit",
+    "PUSS:master_wear_suit"
+  ]
+}

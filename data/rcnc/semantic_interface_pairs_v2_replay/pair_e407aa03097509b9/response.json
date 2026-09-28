@@ -1,0 +1,25 @@
+{
+  "candidate_id": "pair_e407aa03097509b9",
+  "decision": "accept",
+  "relation": "equivalent",
+  "alignment": "same_order",
+  "rationale": "The predicates `door_open` and `gate_open` both represent the state of an opening mechanism (door or gate) at a location. The arguments are consistent across both predicates: both take a location as input. The preconditions and effects are similar, describing the opening of a door or gate at a specific location. Specifically, `BIRT:predicate:door_open` is used in preconditions and effects related to entering a tree and descending stairs, while `PUSS:predicate:gate_open` is used in the effect of opening castle gates. The argument order is the same (location as the first argument). The literal expressions are also equivalent: `(door_open door)` and `(gate_open ?castle)`.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(door_open door)"
+    },
+    {
+      "ref": "BIRT:action:turn_key_on_beech",
+      "quote": "(door_open door)"
+    },
+    {
+      "ref": "PUSS:action:cat_open_castle_gates",
+      "quote": "(gate_open ?castle)"
+    },
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(door_open door)"
+    }
+  ]
+}

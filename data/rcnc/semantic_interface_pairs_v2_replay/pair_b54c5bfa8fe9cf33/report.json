@@ -1,0 +1,26 @@
+{
+  "candidate_id": "pair_b54c5bfa8fe9cf33",
+  "refs": [
+    "BIRT:predicate:kissed_by",
+    "PUSS:predicate:rescued_by"
+  ],
+  "response": {
+    "candidate_id": "pair_b54c5bfa8fe9cf33",
+    "decision": "uncertain",
+    "relation": "different",
+    "alignment": "different_order",
+    "rationale": "The predicates `kissed_by` and `rescued_by` describe distinct events. `kissed_by` indicates a receiving entity (e.g., queen) is affected by a kissing action, while `rescued_by` describes an entity (e.g., cat) being rescued by another entity (e.g., king). The arguments and their roles are different. The preconditions and effects are also distinct. The arguments are in different order. Evidence: BIRT:predicate:kissed_by describes the relationship between entities, while PUSS:predicate:rescued_by describes a rescue event. The arguments are in different positions (kissing vs. rescuing). The literal expressions are different: `(kissed_by ?n ?q)` vs. `(rescued_by ?jack ?king)`. The records themselves define different actions and their effects. The `BIRT:action:receive_queen_kiss` describes a kissing event, while `PUSS:action:cat_call_for_help` describes a rescue event. The arguments are different, and the predicates are different. There is no evidence to support a direct equivalence between these predicates.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(kissed_by ?n ?q)"
+      },
+      {
+        "ref": "PUSS:action:cat_call_for_help",
+        "quote": "(rescued_by ?jack ?king)"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

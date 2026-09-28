@@ -1,0 +1,17 @@
+{
+  "scope": "Six predetermined development tasks from BIRT/CHIC_NP; no held-out or novelty claims.",
+  "tasks": [
+    "separated.json",
+    "swapped_locations.json",
+    "already_colocated.json",
+    "missing_sky_fact.json",
+    "missing_helper_location.json",
+    "negative_location_goal.json"
+  ],
+  "methods": [
+    "all",
+    "goal_relevance",
+    "isolated"
+  ],
+  "isolated_initial_semantics": "Each shared initial fact is copied to every source predicate that maps to it. Positive shared goals become conjunctions over source predicates, as do negative shared goals; such goal rewrites change task semantics and are flagged per case."
+}

@@ -1,0 +1,25 @@
+{
+  "candidate_id": "pair_5f71d5163e5a59d0",
+  "refs": [
+    "BIRT:predicate:corridor_reached",
+    "PUSS:predicate:alive"
+  ],
+  "response": {
+    "candidate_id": "pair_5f71d5163e5a59d0",
+    "decision": "accept",
+    "relation": "different",
+    "alignment": "same_order",
+    "rationale": "The relation 'corridor_reached' and 'alive' have the same argument role (entity) but different relation meanings. 'corridor_reached' implies a specific action of reaching a corridor, while 'alive' is a general state of being alive. The context of the two relations is different, with 'corridor_reached' being part of a specific action (enter_tree_and_descend_stairs) and 'alive' being a precondition in multiple actions (cat_disentchant_prisoners, cat_ogre_transform_lion, cat_ogre_transform_mouse). The alignment of the argument order is the same (entity as the first argument), but the relation meanings are different. Therefore, the relation is considered different despite having the same argument order.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:enter_tree_and_descend_stairs",
+        "quote": "(corridor_reached ?n)"
+      }
+    ]
+  },
+  "structural_errors": [
+    "accept_requires_equivalence_and_same_order",
+    "missing_action_evidence:PUSS:predicate:alive"
+  ],
+  "status": "invalid"
+}

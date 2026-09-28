@@ -1,0 +1,132 @@
+[
+  {
+    "name": "a00004",
+    "source_action": "BIRT:eat_pellet_and_shrink",
+    "binding": {
+      "?n": "hero",
+      "?p": "cloak"
+    }
+  },
+  {
+    "name": "a00005",
+    "source_action": "BIRT:eat_pellet_and_shrink",
+    "binding": {
+      "?n": "helper",
+      "?p": "cloak"
+    }
+  },
+  {
+    "name": "a00154",
+    "source_action": "PUSS:give_bag_to_cat",
+    "binding": {
+      "?jack": "hero",
+      "?puss": "helper",
+      "?bag": "cloak"
+    }
+  },
+  {
+    "name": "a00155",
+    "source_action": "PUSS:give_bag_to_cat",
+    "binding": {
+      "?jack": "helper",
+      "?puss": "hero",
+      "?bag": "cloak"
+    }
+  },
+  {
+    "name": "a00156",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "hero",
+      "?suit": "cloak",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00157",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "hero",
+      "?suit": "cloak",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00158",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "helper",
+      "?suit": "cloak",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00159",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "helper",
+      "?suit": "cloak",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00160",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "hero",
+      "?suit": "cloak",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00161",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "hero",
+      "?suit": "cloak",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00162",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "helper",
+      "?suit": "cloak",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00163",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "helper",
+      "?suit": "cloak",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00164",
+    "source_action": "PUSS:master_wear_suit",
+    "binding": {
+      "?jack": "hero",
+      "?suit": "cloak"
+    }
+  },
+  {
+    "name": "a00165",
+    "source_action": "PUSS:master_wear_suit",
+    "binding": {
+      "?jack": "helper",
+      "?suit": "cloak"
+    }
+  }
+]

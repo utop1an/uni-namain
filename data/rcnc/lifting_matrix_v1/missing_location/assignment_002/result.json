@@ -1,0 +1,281 @@
+{
+  "status": "solved",
+  "ground_actions": 38,
+  "states_discovered": 13,
+  "provenance": [
+    {
+      "action": "BIRT:accept_dryad_invitation",
+      "constant_bindings": {}
+    },
+    {
+      "action": "BIRT:eat_pellet_and_shrink",
+      "constant_bindings": {}
+    },
+    {
+      "action": "BIRT:enter_tree_and_descend_stairs",
+      "constant_bindings": {
+        "door": "home"
+      }
+    },
+    {
+      "action": "BIRT:receive_pellet_from_gnome",
+      "constant_bindings": {}
+    },
+    {
+      "action": "BIRT:travel_by_leaf_boat_under_pond",
+      "constant_bindings": {}
+    },
+    {
+      "action": "BIRT:travel_to_trysting_place",
+      "constant_bindings": {}
+    },
+    {
+      "action": "BIRT:turn_key_on_beech",
+      "constant_bindings": {
+        "door": "home",
+        "dryad": "hero"
+      }
+    },
+    {
+      "action": "BIRT:witness_queen_birthday_ceremony",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:buy_boots",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_call_for_help",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_catch_rabbits",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_deliver_gifts_to_king",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_eat_mouse",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_ogre_transform_mouse",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_open_castle_gates",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:cat_persuade_master_to_bathe",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:give_bag_to_cat",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:king_send_groom_fetch_suit",
+      "constant_bindings": {}
+    },
+    {
+      "action": "PUSS:master_wear_suit",
+      "constant_bindings": {}
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "missing_goals": [],
+    "forbidden_goals": [],
+    "final_state": [
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "trace": [
+      {
+        "step": 0,
+        "action": "PUSS:buy_boots",
+        "ground_action": "a00106",
+        "binding": {
+          "?jack": "hero",
+          "?puss": "hero",
+          "?boots": "cloak"
+        },
+        "before": [],
+        "after": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "added": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "deleted": []
+      },
+      {
+        "step": 1,
+        "action": "PUSS:master_wear_suit",
+        "ground_action": "a00172",
+        "binding": {
+          "?jack": "hero",
+          "?suit": "cloak"
+        },
+        "before": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "after": [
+          [
+            "puss__wearing",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "added": [
+          [
+            "puss__wearing",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "deleted": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ]
+      }
+    ]
+  },
+  "sources_used": [
+    "PUSS"
+  ],
+  "plan_length": 2,
+  "reduction": {
+    "before": 174,
+    "after_static_pruning": 134,
+    "after_goal_relevance": 38
+  },
+  "external_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "selection": {
+    "source_actions": 26,
+    "eligible_actions": 19,
+    "selected_actions": [
+      "BIRT:accept_dryad_invitation",
+      "BIRT:eat_pellet_and_shrink",
+      "BIRT:enter_tree_and_descend_stairs",
+      "BIRT:receive_pellet_from_gnome",
+      "BIRT:travel_by_leaf_boat_under_pond",
+      "BIRT:travel_to_trysting_place",
+      "BIRT:turn_key_on_beech",
+      "BIRT:witness_queen_birthday_ceremony",
+      "PUSS:buy_boots",
+      "PUSS:cat_call_for_help",
+      "PUSS:cat_catch_rabbits",
+      "PUSS:cat_deliver_gifts_to_king",
+      "PUSS:cat_eat_mouse",
+      "PUSS:cat_ogre_transform_mouse",
+      "PUSS:cat_open_castle_gates",
+      "PUSS:cat_persuade_master_to_bathe",
+      "PUSS:give_bag_to_cat",
+      "PUSS:king_send_groom_fetch_suit",
+      "PUSS:master_wear_suit"
+    ],
+    "excluded": [
+      {
+        "action": "BIRT:approach_beech_tree",
+        "reasons": [
+          "missing_constant_binding:BIRT:bench"
+        ]
+      },
+      {
+        "action": "BIRT:hear_tapping_on_beech",
+        "reasons": [
+          "missing_constant_binding:BIRT:bench"
+        ]
+      },
+      {
+        "action": "BIRT:receive_queen_kiss",
+        "reasons": [
+          "missing_constant_binding:BIRT:palace"
+        ]
+      },
+      {
+        "action": "BIRT:return_to_bench_and_share_story",
+        "reasons": [
+          "missing_constant_binding:BIRT:palace"
+        ]
+      },
+      {
+        "action": "PUSS:cat_disentchant_prisoners",
+        "reasons": [
+          "missing_constant_binding:PUSS:jack"
+        ]
+      },
+      {
+        "action": "PUSS:cat_ogre_transform_lion",
+        "reasons": [
+          "missing_constant_binding:PUSS:ogre_castle"
+        ]
+      },
+      {
+        "action": "PUSS:master_marry_princess",
+        "reasons": [
+          "missing_constant_binding:PUSS:palace"
+        ]
+      }
+    ],
+    "scope": "Completeness is relative to eligible actions and explicit constant bindings."
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "implementation_sha256": {
+    "planning.py": "335eca6333d016eb022d890a4a14b7edd1a1350d7e16d0ca6f866101076a9b2d",
+    "experiment.py": "517b2521f6c8c985624d540f84bac1536b2661b87dc6b2a7c83cd799bc365263",
+    "merge_domains.py": "0c0875751e2cfb2d57413cf607b51d9c227317a5e46b9db3e1ae165e52e56186",
+    "selection.py": "ace55f853eb5b49af92d4e5445fd06755fa91d878158baa1288d31869dd730d6",
+    "validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  },
+  "elapsed_seconds": 0.2365643999655731,
+  "query_sha256": "26a114f3ab000f1ec98f7dbd19a7ec32aaefae15cbf18a7eec21e34f292e0f71",
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "scope": "Explicit-interface typed STRIPS; independent validation status is reported separately. No narrative-quality evidence."
+}

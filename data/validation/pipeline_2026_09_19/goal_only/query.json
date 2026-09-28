@@ -1,0 +1,42 @@
+{
+  "description": "Source-pool development fixture. Same fixed initial state as smoke; no manually selected actions.",
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "bench": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:bench": "bench",
+    "CHIC_NP:Chicken-licken": "hero"
+  },
+  "interfaces": {
+    "BIRT:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    },
+    "CHIC_NP:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    }
+  },
+  "goal": {
+    "positive": [
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 6,
+  "max_states": 10000,
+  "max_ground_actions": 1000,
+  "sources": [
+    "BIRT",
+    "CHIC_NP"
+  ],
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true
+}

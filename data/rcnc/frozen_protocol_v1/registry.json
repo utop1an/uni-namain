@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "review_status": "author_hypothesis_not_independently_reviewed",
+  "unreviewed_policy": "Retain source typing; absence of a registry constraint does not certify semantic adequacy.",
+  "parameter_constraints": {
+    "PUSS:buy_boots": {
+      "?boots": {
+        "required_capabilities": [
+          "footwear"
+        ],
+        "evidence": "Author assumption for this study: buy_boots accepts footwear; source PDDL only declares item."
+      }
+    },
+    "BIRT:turn_key_on_beech": {
+      "?k": {
+        "required_capabilities": [
+          "key"
+        ],
+        "evidence": "Author assumption: turn_key uses a key-capable object; not established by the original item type."
+      }
+    },
+    "PUSS:master_wear_suit": {
+      "?suit": {
+        "required_capabilities": [
+          "wearable"
+        ],
+        "evidence": "Author assumption: the worn object is wearable."
+      }
+    }
+  },
+  "interfaces": {
+    "BIRT:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "PUSS:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "BIRT:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    },
+    "CHIC_NP:at": {
+      "target": "shared_at",
+      "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+    }
+  },
+  "capability_definitions": {
+    "footwear": "Object explicitly allowed as footwear in this authored world.",
+    "wearable": "Object explicitly allowed as clothing in this authored world.",
+    "key": "Object explicitly allowed to operate the key action in this authored world.",
+    "portal": "Location permitted to fill the lifted portal role.",
+    "guide": "Character permitted to fill the lifted guide role.",
+    "standing_place": "Location permitted to fill the origin role.",
+    "witness": "Character permitted to fill the lifted witness role; does not assert any event occurred."
+  },
+  "object_profiles": {
+    "cloak": [
+      "wearable"
+    ],
+    "key_cloak": [
+      "key",
+      "wearable"
+    ],
+    "boots": [
+      "footwear",
+      "wearable"
+    ],
+    "key": [
+      "key"
+    ]
+  },
+  "template_queries": {
+    "possession": {
+      "description": "Explicit author assumptions for a development sensitivity study. Capabilities are not independently established source facts.",
+      "sources": [
+        "BIRT",
+        "PUSS"
+      ],
+      "objects": {
+        "hero": "entity",
+        "helper": "entity",
+        "cloak": "item",
+        "home": "location",
+        "tree": "location"
+      },
+      "constant_bindings": {},
+      "lifted_constants": {
+        "BIRT:door": {
+          "role": "portal",
+          "allowed_objects": [
+            "home",
+            "tree"
+          ],
+          "required_capabilities": [
+            "portal"
+          ],
+          "evidence": "Task author permits the declared portal role at either location."
+        },
+        "BIRT:dryad": {
+          "role": "guide",
+          "allowed_objects": [
+            "hero",
+            "helper"
+          ],
+          "required_capabilities": [
+            "guide"
+          ],
+          "evidence": "Task author permits either character to fill the guide role."
+        }
+      },
+      "object_capabilities": {
+        "home": [
+          "portal"
+        ],
+        "tree": [
+          "portal"
+        ],
+        "hero": [
+          "guide"
+        ],
+        "helper": [
+          "guide"
+        ],
+        "cloak": [
+          "wearable"
+        ]
+      },
+      "interfaces": {
+        "BIRT:has": {
+          "target": "shared_has",
+          "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+        },
+        "PUSS:has": {
+          "target": "shared_has",
+          "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+        }
+      },
+      "initial": [
+        [
+          "birt__at",
+          "hero",
+          "tree"
+        ]
+      ],
+      "goal": {
+        "positive": [
+          [
+            "puss__wearing",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "negative": []
+      },
+      "max_depth": 8,
+      "max_states": 10000,
+      "max_ground_actions": 2000,
+      "max_role_assignments": 16,
+      "selection_mode": "goal_relevance",
+      "require_external_validation": true,
+      "source_removal_scope": "all_solved",
+      "parameter_constraints": {
+        "PUSS:buy_boots": {
+          "?boots": {
+            "required_capabilities": [
+              "footwear"
+            ],
+            "evidence": "Author assumption for this study: buy_boots accepts footwear; source PDDL only declares item."
+          }
+        },
+        "BIRT:turn_key_on_beech": {
+          "?k": {
+            "required_capabilities": [
+              "key"
+            ],
+            "evidence": "Author assumption: turn_key uses a key-capable object; not established by the original item type."
+          }
+        },
+        "PUSS:master_wear_suit": {
+          "?suit": {
+            "required_capabilities": [
+              "wearable"
+            ],
+            "evidence": "Author assumption: the worn object is wearable."
+          }
+        }
+      }
+    },
+    "witness": {
+      "description": "Bounded lifting development fixture: fixed narrative facts, two source roles with two candidates each.",
+      "objects": {
+        "hero": "entity",
+        "helper": "entity",
+        "bench": "location",
+        "tree": "location"
+      },
+      "constant_bindings": {},
+      "interfaces": {
+        "BIRT:at": {
+          "target": "shared_at",
+          "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+        },
+        "CHIC_NP:at": {
+          "target": "shared_at",
+          "evidence": "Explicit smoke-fixture assumption: both declarations mean entity location with the same argument order and types."
+        }
+      },
+      "initial": [
+        [
+          "shared_at",
+          "hero",
+          "bench"
+        ],
+        [
+          "shared_at",
+          "helper",
+          "tree"
+        ],
+        [
+          "chic_np__sky_fell_on_head",
+          "hero"
+        ]
+      ],
+      "goal": {
+        "positive": [
+          [
+            "chic_np__informed_about_sky_fall",
+            "hero",
+            "helper"
+          ]
+        ],
+        "negative": []
+      },
+      "max_depth": 6,
+      "max_states": 10000,
+      "max_ground_actions": 1000,
+      "sources": [
+        "BIRT",
+        "CHIC_NP"
+      ],
+      "selection_mode": "goal_relevance",
+      "require_external_validation": true,
+      "lifted_constants": {
+        "BIRT:bench": {
+          "role": "origin",
+          "allowed_objects": [
+            "bench",
+            "tree"
+          ],
+          "required_capabilities": [
+            "standing_place"
+          ],
+          "evidence": "Development fixture author permits either declared location as the story origin."
+        },
+        "CHIC_NP:Chicken-licken": {
+          "role": "witness",
+          "allowed_objects": [
+            "hero",
+            "helper"
+          ],
+          "required_capabilities": [
+            "witness"
+          ],
+          "evidence": "Development fixture role may be occupied by either declared character; observed sky facts stay fixed."
+        }
+      },
+      "object_capabilities": {
+        "bench": [
+          "standing_place"
+        ],
+        "tree": [
+          "standing_place"
+        ],
+        "hero": [
+          "witness"
+        ],
+        "helper": [
+          "witness"
+        ]
+      },
+      "max_role_assignments": 16
+    }
+  },
+  "review_fields": [
+    "annotator_id",
+    "evidence_source",
+    "accept_reject_uncertain",
+    "rationale"
+  ],
+  "independent_annotator_id": null,
+  "coverage": {
+    "ordinary_parameter_slots": 571,
+    "proposed_constraints": 3,
+    "independently_reviewed": 0
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "removed_source": "BIRT",
+  "status": "solved",
+  "states": 8,
+  "necessary_within_fixed_assignment": false,
+  "plan_length": 2,
+  "validation": {
+    "valid": true,
+    "missing_goals": [],
+    "forbidden_goals": [],
+    "final_state": [
+      [
+        "birt__at",
+        "hero",
+        "tree"
+      ],
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "trace": [
+      {
+        "step": 0,
+        "action": "PUSS:buy_boots",
+        "ground_action": "a00106",
+        "binding": {
+          "?jack": "hero",
+          "?puss": "hero",
+          "?boots": "cloak"
+        },
+        "before": [
+          [
+            "birt__at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "after": [
+          [
+            "birt__at",
+            "hero",
+            "tree"
+          ],
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "added": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "deleted": []
+      },
+      {
+        "step": 1,
+        "action": "PUSS:master_wear_suit",
+        "ground_action": "a00172",
+        "binding": {
+          "?jack": "hero",
+          "?suit": "cloak"
+        },
+        "before": [
+          [
+            "birt__at",
+            "hero",
+            "tree"
+          ],
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "after": [
+          [
+            "birt__at",
+            "hero",
+            "tree"
+          ],
+          [
+            "puss__wearing",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "added": [
+          [
+            "puss__wearing",
+            "hero",
+            "cloak"
+          ]
+        ],
+        "deleted": [
+          [
+            "shared_has",
+            "hero",
+            "cloak"
+          ]
+        ]
+      }
+    ]
+  },
+  "external_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

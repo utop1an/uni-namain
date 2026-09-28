@@ -1,0 +1,64 @@
+{
+  "status": "unsolvable",
+  "assignment_space_exhausted": true,
+  "all_searches_complete": true,
+  "best": null,
+  "attempts": [
+    {
+      "assignment": {
+        "origin": "bench",
+        "witness": "helper"
+      },
+      "status": "unsolvable",
+      "plan_length": null,
+      "directory": "assignment_000",
+      "external_validation": null
+    },
+    {
+      "assignment": {
+        "origin": "bench",
+        "witness": "hero"
+      },
+      "status": "unsolvable",
+      "plan_length": null,
+      "directory": "assignment_001",
+      "external_validation": null
+    },
+    {
+      "assignment": {
+        "origin": "tree",
+        "witness": "helper"
+      },
+      "status": "unsolvable",
+      "plan_length": null,
+      "directory": "assignment_002",
+      "external_validation": null
+    },
+    {
+      "assignment": {
+        "origin": "tree",
+        "witness": "hero"
+      },
+      "status": "unsolvable",
+      "plan_length": null,
+      "directory": "assignment_003",
+      "external_validation": null
+    }
+  ],
+  "role_domains": {
+    "origin": [
+      "bench",
+      "tree"
+    ],
+    "witness": [
+      "helper",
+      "hero"
+    ]
+  },
+  "source_necessity_across_assignments": [],
+  "shortest_plan_proven_within_declared_assignment_space": false,
+  "elapsed_seconds": 0.07092050003120676,
+  "query_sha256": "0126000008ac68b514c2725b30f4623d615642d98b0ec6299a0a5d1ebbe0d9a1",
+  "implementation_sha256": "587bef767641a161057b97b14f390bcd84fa75777357216e9897012ed24b1974",
+  "scope": "Bounded global role-assignment enumeration; explicit capability claims; no inferred identity or narrative-quality guarantee."
+}

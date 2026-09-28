@@ -1,0 +1,296 @@
+{
+  "status": "completed",
+  "summary": {
+    "total_compatible_pairs": 44,
+    "evaluated_pairs": 8,
+    "omitted_pairs": 36,
+    "structurally_valid": 4,
+    "invalid": 4,
+    "failed": 0,
+    "decisions": {
+      "accept": 4
+    },
+    "draft_pairs": 4,
+    "withheld_pairs": 0,
+    "semantically_verified": 0
+  },
+  "rows": [
+    {
+      "candidate_id": "pair_e1b09dad788fc21c",
+      "refs": [
+        "BIRT:predicate:at",
+        "PUSS:predicate:at"
+      ],
+      "response": {
+        "candidate_id": "pair_e1b09dad788fc21c",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both relations are defined as (at ?e ?l) with the same argument roles (entity and location). The only difference is in the usage records, but the effects and preconditions are similar. The relations are used in similar contexts, such as in actions involving entities and locations. The usage records do not provide enough evidence to conclude that the relations are different. Therefore, the relations are considered equivalent and have the same order of arguments.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:approach_beech_tree",
+            "quote": "(at ?n ?t)"
+          },
+          {
+            "ref": "PUSS:action:cat_deliver_gifts_to_king",
+            "quote": "(at ?puss ?palace)"
+          },
+          {
+            "ref": "BIRT:action:turn_key_on_beech",
+            "quote": "(at ?n ?t)"
+          },
+          {
+            "ref": "PUSS:action:cat_open_castle_gates",
+            "quote": "(at ?king ?castle)"
+          },
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(at ?n palace)"
+          },
+          {
+            "ref": "PUSS:action:cat_persuade_master_to_bathe",
+            "quote": "(at ?jack ?river)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_736d04bf7acf3f8a",
+      "refs": [
+        "BIRT:predicate:has",
+        "PUSS:predicate:has"
+      ],
+      "response": {
+        "candidate_id": "pair_736d04bf7acf3f8a",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both BIRT and PUSS predicates have the same structure and usage, with the same argument roles and positions. The predicates are equivalent in meaning, as they both express the concept of 'has' or 'possesses'. The same-order alignment is supported by the fact that the argument order is the same in both predicates, with the entity as the first argument and the item as the second argument. The evidence for this comes from the provided records and literal excerpts, which show the same structure and usage for both predicates.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:eat_pellet_and_shrink",
+            "quote": "(has ?n ?p)"
+          },
+          {
+            "ref": "PUSS:action:buy_boots",
+            "quote": "(not (has ?puss ?boots))"
+          },
+          {
+            "ref": "PUSS:action:buy_boots",
+            "quote": "(has ?puss ?boots)"
+          },
+          {
+            "ref": "BIRT:action:turn_key_on_beech",
+            "quote": "(has ?n ?k)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_e407aa03097509b9",
+      "refs": [
+        "BIRT:predicate:door_open",
+        "PUSS:predicate:gate_open"
+      ],
+      "response": {
+        "candidate_id": "pair_e407aa03097509b9",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both relations describe the state of a location being open (door_open and gate_open). The argument slots for location are in the same position (0) in both relations. The usage of these relations in the context of actions (enter_tree_and_descend_stairs, turn_key_on_beech, cat_open_castle_gates) also support this equivalence. The text excerpts for both relations are '(door_open ?d - location)' and '(gate_open ?castle - location)', respectively, which further reinforce the equivalence. The only difference is the predicate name, but this is not a significant difference in the context of the relations. Therefore, the relations are equivalent and have the same order of arguments.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(door_open door)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "missing_action_evidence:PUSS:predicate:gate_open"
+      ],
+      "status": "invalid"
+    },
+    {
+      "candidate_id": "pair_b54c5bfa8fe9cf33",
+      "refs": [
+        "BIRT:predicate:kissed_by",
+        "PUSS:predicate:rescued_by"
+      ],
+      "response": {
+        "candidate_id": "pair_b54c5bfa8fe9cf33",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both relations 'kissed_by' and 'rescued_by' have the same argument structure, with two entities as arguments. The literal expressions for both relations are also similar, with a verb followed by two entities. The context of the relations is different, but the structure is equivalent. The evidence from the records supports this equivalence, with similar parameter definitions and effect expressions for both relations. The only difference is the negation of the precondition in the 'rescued_by' relation, but this does not change the overall structure of the relation. Therefore, the relations are equivalent and have the same order of arguments.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(kissed_by ?n ?q)"
+          },
+          {
+            "ref": "PUSS:action:cat_call_for_help",
+            "quote": "(rescued_by ?jack ?king)"
+          },
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(kissed_by ?n ?q)"
+          },
+          {
+            "ref": "PUSS:action:cat_call_for_help",
+            "quote": "(rescued_by ?jack ?king)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_ca6818e432ebc9c3",
+      "refs": [
+        "BIRT:predicate:boat_available",
+        "PUSS:predicate:at_item"
+      ],
+      "response": {
+        "candidate_id": "pair_ca6818e432ebc9c3",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both predicates have the same argument roles (item and location) and usage in the context of traveling by leaf boat under pond and cat catching rabbits. The literal expressions are also similar, indicating the same relation. The only difference is in the negation of the effect in the PUSS action, but this does not change the overall equivalence of the relation. The usage of the predicates in the context of the actions supports the equivalence of the relation.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+            "quote": "(boat_available ?b ?pond)"
+          },
+          {
+            "ref": "PUSS:action:cat_catch_rabbits",
+            "quote": "(at_item ?rabbit ?warren)"
+          },
+          {
+            "ref": "PUSS:action:king_send_groom_fetch_suit",
+            "quote": "(at_item ?suit ?wardrobe)"
+          },
+          {
+            "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+            "quote": "(boat_available ?b ?pond)"
+          }
+        ]
+      },
+      "structural_errors": [],
+      "status": "checked"
+    },
+    {
+      "candidate_id": "pair_5f71d5163e5a59d0",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:alive"
+      ],
+      "response": {
+        "candidate_id": "pair_5f71d5163e5a59d0",
+        "decision": "accept",
+        "relation": "different",
+        "alignment": "same_order",
+        "rationale": "The relation 'corridor_reached' and 'alive' have the same argument role (entity) but different relation meanings. 'corridor_reached' implies a specific action of reaching a corridor, while 'alive' is a general state of being alive. The context of the two relations is different, with 'corridor_reached' being part of a specific action (enter_tree_and_descend_stairs) and 'alive' being a precondition in multiple actions (cat_disentchant_prisoners, cat_ogre_transform_lion, cat_ogre_transform_mouse). The alignment of the argument order is the same (entity as the first argument), but the relation meanings are different. Therefore, the relation is considered different despite having the same argument order.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "accept_requires_equivalence_and_same_order",
+        "missing_action_evidence:PUSS:predicate:alive"
+      ],
+      "status": "invalid"
+    },
+    {
+      "candidate_id": "pair_9538bb4cd360ffb1",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:drowning"
+      ],
+      "response": {
+        "candidate_id": "pair_9538bb4cd360ffb1",
+        "decision": "accept",
+        "relation": "different",
+        "alignment": "different_order",
+        "rationale": "The relation 'corridor_reached' and 'drowning' have the same argument role (entity), but they have different effects and preconditions. The 'corridor_reached' relation is used in the context of a character (cat) entering a tree and descending stairs, while the 'drowning' relation is used in the context of a cat calling for help or persuading a master to bathe. The preconditions and effects of these relations are also different. Therefore, I conclude that these relations are different, even though they have the same argument role.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "accept_requires_equivalence_and_same_order",
+        "missing_action_evidence:PUSS:predicate:drowning"
+      ],
+      "status": "invalid"
+    },
+    {
+      "candidate_id": "pair_27c248ece321200e",
+      "refs": [
+        "BIRT:predicate:corridor_reached",
+        "PUSS:predicate:obedient"
+      ],
+      "response": {
+        "candidate_id": "pair_27c248ece321200e",
+        "decision": "accept",
+        "relation": "equivalent",
+        "alignment": "same_order",
+        "rationale": "Both relations involve an entity as the argument slot at position 0. The relation 'corridor_reached' indicates that the entity has reached a corridor, while the relation 'obedient' indicates that the entity is obedient. The context of the action 'enter_tree_and_descend_stairs' suggests that the entity is a character that is entering a tree and descending stairs, which implies that the entity is in a corridor. Therefore, the relations are equivalent in this context. Additionally, the argument order is the same, with the entity as the first argument slot. The only difference is that 'corridor_reached' has a literal expression, while 'obedient' does not. However, this does not affect the equivalence of the relations. The evidence for this decision is the record ID 'BIRT:action:enter_tree_and_descend_stairs' and the literal excerpts '(corridor_reached ?n)' and '(obedient ?e - entity)' from the 'BIRT:predicate:corridor_reached' and 'PUSS:predicate:obedient' predicates, respectively.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          },
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(corridor_reached ?n)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "missing_action_evidence:PUSS:predicate:obedient"
+      ],
+      "status": "invalid"
+    }
+  ],
+  "run": {
+    "mode": "ollama",
+    "requested_model": "llama3.2:latest",
+    "timestamp_utc": "2026-09-19T03:23:30.807382+00:00",
+    "prompt_sha256": "84592ba4279af78a7c79be28398994cce0fb382c0a4252d3c7ca253d3c09dcab",
+    "manifest_sha256": "4ec6f04276c48860115e5458b9c474c80341df8ac58dd967f62d670ab84895ef",
+    "implementation_sha256": {
+      "interface_proposals.py": "4c30fdb4ec8e327712aee376c8b64c9d40dade429b2fc9ce66a03cf98388cd23",
+      "semantic_proposals.py": "d66170450b256facc67ab750a2a695f14e985a5ad3890780a6f3f5ff82980a99",
+      "experiment.py": "517b2521f6c8c985624d540f84bac1536b2661b87dc6b2a7c83cd799bc365263",
+      "merge_domains.py": "0c0875751e2cfb2d57413cf607b51d9c227317a5e46b9db3e1ae165e52e56186"
+    },
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72"
+  },
+  "elapsed_seconds": 41.96413239999674
+}

@@ -1,0 +1,127 @@
+{
+  "scope": "Four predeclared development sensitivity settings; assumptions change across settings, not an algorithm-performance comparison.",
+  "manifest_sha256": "786174552edf3cd1db4e8273e013d4108dc73628735707c97e40f74a9799a092",
+  "rows": [
+    {
+      "task": "raw.json",
+      "task_sha256": "5744b80e977ea7c9a9d62086a3f48e00fe9547a12834fd80b70f93cb6f783d39",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 4,
+      "plan_length": 2,
+      "best_assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "source_necessity": [
+        {
+          "removed_source": "BIRT",
+          "status": "solved",
+          "necessary_within_fixed_assignment": false
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "necessary_within_fixed_assignment": true
+        }
+      ],
+      "all_searches_complete": true,
+      "reason": null,
+      "source_necessity_across_assignments": [
+        {
+          "source": "BIRT",
+          "necessary_across_declared_assignments": false
+        },
+        {
+          "source": "PUSS",
+          "necessary_across_declared_assignments": true
+        }
+      ]
+    },
+    {
+      "task": "one_sided_constraint.json",
+      "task_sha256": "cb400d0ef460080d19e0baa3bf2ac89a7baf82d31c396d8055f0e4c6a3c4aed9",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 4,
+      "plan_length": 2,
+      "best_assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "source_necessity": [
+        {
+          "removed_source": "BIRT",
+          "status": "unsolvable",
+          "necessary_within_fixed_assignment": true
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "necessary_within_fixed_assignment": true
+        }
+      ],
+      "all_searches_complete": true,
+      "reason": null,
+      "source_necessity_across_assignments": [
+        {
+          "source": "BIRT",
+          "necessary_across_declared_assignments": true
+        },
+        {
+          "source": "PUSS",
+          "necessary_across_declared_assignments": true
+        }
+      ]
+    },
+    {
+      "task": "consistent_constraints.json",
+      "task_sha256": "5eaacd56faeb13388c625a4356ca72deaa71b92c2c657153b0b5a83fa48950c5",
+      "status": "unsolvable",
+      "attempts": 4,
+      "solved_assignments": 0,
+      "plan_length": null,
+      "best_assignment": null,
+      "source_necessity": [],
+      "all_searches_complete": true,
+      "reason": null,
+      "source_necessity_across_assignments": []
+    },
+    {
+      "task": "explicit_multifunction_object.json",
+      "task_sha256": "ec4683f2feee2f7dd26dadd0dcb726e02a63992b21d76258d82af51367fb5d80",
+      "status": "solved",
+      "attempts": 4,
+      "solved_assignments": 4,
+      "plan_length": 2,
+      "best_assignment": {
+        "guide": "helper",
+        "portal": "home"
+      },
+      "source_necessity": [
+        {
+          "removed_source": "BIRT",
+          "status": "unsolvable",
+          "necessary_within_fixed_assignment": true
+        },
+        {
+          "removed_source": "PUSS",
+          "status": "unsolvable",
+          "necessary_within_fixed_assignment": true
+        }
+      ],
+      "all_searches_complete": true,
+      "reason": null,
+      "source_necessity_across_assignments": [
+        {
+          "source": "BIRT",
+          "necessary_across_declared_assignments": true
+        },
+        {
+          "source": "PUSS",
+          "necessary_across_declared_assignments": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-09-13T16:11:55.9627523Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n\"proposals\": [\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:beech_tree\"],\n        \"parameter\": \"\",\"label\": \"beech_tree\",\n        \"confidence\": \"medium\",\n        \"rationale\": \"The action `hear_tapping_on_beech` specifies a beech tree as the location of the tapping sound. This is a grounded observation.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:beech_tree\", \"quote\": \"beech_tree - location; used in actions: \"}\n        ]\n    },\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:dryad\"],\n        \"parameter\": \"\",\n        \"label\": \"dryad\",\n        \"confidence\": \"medium\",\n        \"rationale\": \"The action `turn_key_on_beech` requires a dryad to be present at the beech tree, suggesting the dryad is a relevant entity.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:dryad\", \"quote\": \"dryad - entity; used in actions: turn_key_on_beech\"}\n        ]\n    },\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:palace\"],\n        \"parameter\": \"\",\n        \"label\": \"palace\",\n        \"confidence\": \"medium\",\n        \"rationale\": \"The action `travel_by_leaf_boat_under_pond` requires the boat to arrive at the palace, indicating the palace is a destination.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:palace\", \"quote\": \"palace - location; used in actions: receive_queen_kiss, return_to_bench_and_share_story\"}\n        ]\n    },\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:pellet\"],\n        \"parameter\": \"\",\n        \"label\": \"pellets\",\n        \"confidence\": \"low\",\n        \"rationale\": \"The action `receive_pellet_from_gnome` involves receiving a pellet, suggesting pellets are a relevant object.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:pellet\", \"quote\": \"pellet - item; used in actions: \"}\n        ]\n    },\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:nora\"],\n        \"parameter\": \"\",\n        \"label\": \"nora\",\n        \"confidence\": \"low\",\n        \"rationale\": \"The action `return_to_bench_and_share_story` requires a speaker, and `nora` is a name.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:nora\", \"quote\": \"nora - entity; used in actions: \"}\n        ]\n    },\n    {\n        \"kind\": \"role\",\n        \"refs\": [\"BIRT:constant:fairy_queen\"],\n        \"parameter\": \"\",\n        \"label\": \"fairy_queen\",\n        \"confidence\": \"low\",\n        \"rationale\": \"The action `witness_queen_birthday_ceremony` involves a queen, and `fairy_queen` is a name.\",\n        \"evidence\": [\n            {\"ref\": \"BIRT:constant:fairy_queen\", \"quote\": \"fairy_queen - entity; used in actions: \"}\n        ]\n    }\n]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9611822200,
+  "load_duration": 2743600,
+  "prompt_eval_count": 5469,
+  "prompt_eval_duration": 765347000,
+  "eval_count": 805,
+  "eval_duration": 8653189000
+}

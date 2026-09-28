@@ -1,0 +1,1022 @@
+[
+  {
+    "action_ids": [
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 35.275097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 35.275097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 35.13224,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 0.8571428571428572,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 35.13224,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 0.8571428571428572,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.875097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:apple_piece_falls_out_reviving_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:receive_pellet_from_gnome"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.875097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:apple_piece_falls_out_reviving_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:receive_pellet_from_gnome",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:enter_tree_and_descend_stairs"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.875097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:enter_tree_and_descend_stairs",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:enter_tree_and_descend_stairs"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.875097,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:enter_tree_and_descend_stairs",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:wolf_fails_to_blow_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:enter_tree_and_descend_stairs"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.73224,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:wolf_fails_to_blow_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 0.8571428571428572,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:enter_tree_and_descend_stairs",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  },
+  {
+    "action_ids": [
+      "PIGS_NP:build_house",
+      "JACK_NP:cut_beanstalk",
+      "SNOW:dwarfs_cut_laces_rescue_snow_white",
+      "PIGS_NP:pig_buys_butter_churn_and_hides",
+      "BIRT:enter_tree_and_descend_stairs"
+    ],
+    "sources": [
+      "PIGS_NP",
+      "JACK_NP",
+      "SNOW",
+      "PIGS_NP",
+      "BIRT"
+    ],
+    "distinct_sources": 4,
+    "score": 34.73224,
+    "connectors": [
+      {
+        "producer": "PIGS_NP:build_house",
+        "consumer": "JACK_NP:cut_beanstalk",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "JACK_NP",
+        "frame_key": "status:has-status:intact/1",
+        "producer_literal": [
+          "?h"
+        ],
+        "consumer_literal": [
+          "beanstalk"
+        ],
+        "bindings": {
+          "beanstalk": "?h"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "JACK_NP:cut_beanstalk",
+        "consumer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "producer_source": "JACK_NP",
+        "consumer_source": "SNOW",
+        "frame_key": "status:has-status:dead/1",
+        "producer_literal": [
+          "?giant"
+        ],
+        "consumer_literal": [
+          "?c"
+        ],
+        "bindings": {
+          "?c": "?giant"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 0.8571428571428572,
+        "cross_domain": true
+      },
+      {
+        "producer": "SNOW:dwarfs_cut_laces_rescue_snow_white",
+        "consumer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "producer_source": "SNOW",
+        "consumer_source": "PIGS_NP",
+        "frame_key": "status:has-status:alive/1",
+        "producer_literal": [
+          "?c"
+        ],
+        "consumer_literal": [
+          "?p"
+        ],
+        "bindings": {
+          "?p": "?c"
+        },
+        "required_adapters": [],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      },
+      {
+        "producer": "PIGS_NP:pig_buys_butter_churn_and_hides",
+        "consumer": "BIRT:enter_tree_and_descend_stairs",
+        "producer_source": "PIGS_NP",
+        "consumer_source": "BIRT",
+        "frame_key": "relation:inside/2",
+        "producer_literal": [
+          "?p",
+          "?c"
+        ],
+        "consumer_literal": [
+          "?n",
+          "?t"
+        ],
+        "bindings": {
+          "?n": "?p",
+          "?t": "?c"
+        },
+        "required_adapters": [
+          "adapt-type:item->location"
+        ],
+        "lexical_novelty": 1.0,
+        "cross_domain": true
+      }
+    ],
+    "candidate_graph_connected": true
+  }
+]

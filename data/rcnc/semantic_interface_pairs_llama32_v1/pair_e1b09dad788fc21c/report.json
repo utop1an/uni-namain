@@ -1,0 +1,42 @@
+{
+  "candidate_id": "pair_e1b09dad788fc21c",
+  "refs": [
+    "BIRT:predicate:at",
+    "PUSS:predicate:at"
+  ],
+  "response": {
+    "candidate_id": "pair_e1b09dad788fc21c",
+    "decision": "accept",
+    "relation": "equivalent",
+    "alignment": "same_order",
+    "rationale": "Both relations are defined as (at ?e ?l) with the same argument roles (entity and location). The only difference is in the usage records, but the effects and preconditions are similar. The relations are used in similar contexts, such as in actions involving entities and locations. The usage records do not provide enough evidence to conclude that the relations are different. Therefore, the relations are considered equivalent and have the same order of arguments.",
+    "evidence": [
+      {
+        "ref": "BIRT:action:approach_beech_tree",
+        "quote": "(at ?n ?t)"
+      },
+      {
+        "ref": "PUSS:action:cat_deliver_gifts_to_king",
+        "quote": "(at ?puss ?palace)"
+      },
+      {
+        "ref": "BIRT:action:turn_key_on_beech",
+        "quote": "(at ?n ?t)"
+      },
+      {
+        "ref": "PUSS:action:cat_open_castle_gates",
+        "quote": "(at ?king ?castle)"
+      },
+      {
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(at ?n palace)"
+      },
+      {
+        "ref": "PUSS:action:cat_persuade_master_to_bathe",
+        "quote": "(at ?jack ?river)"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

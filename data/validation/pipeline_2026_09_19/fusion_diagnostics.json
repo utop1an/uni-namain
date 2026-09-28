@@ -1,0 +1,182 @@
+{
+  "predicate_constant_collisions": [
+    "house"
+  ],
+  "action_audit": [
+    {
+      "action": "bow_to_guests",
+      "reasons": [
+        "unsupported_logic:exists"
+      ]
+    },
+    {
+      "action": "claim_queenhood",
+      "reasons": [
+        "unsupported_logic:or"
+      ]
+    },
+    {
+      "action": "decide_to_tell_king",
+      "reasons": [
+        "unsupported_logic:exists"
+      ]
+    },
+    {
+      "action": "eat_dragon",
+      "reasons": [
+        "undeclared_symbol:?h",
+        "wrong_arity:dead"
+      ]
+    },
+    {
+      "action": "follow_breadcrumbs_home",
+      "reasons": [
+        "unsupported_logic:when"
+      ]
+    },
+    {
+      "action": "force_kettle_into_box",
+      "reasons": [
+        "ill_typed:captured:?k:item->entity"
+      ]
+    },
+    {
+      "action": "invite",
+      "reasons": [
+        "ill_typed:invited:?donkey:object->entity",
+        "ill_typed:invited:?hound:object->entity"
+      ]
+    },
+    {
+      "action": "knock_down_kettle",
+      "reasons": [
+        "ill_typed:captured:?k:item->entity"
+      ]
+    },
+    {
+      "action": "remove_poisoned_comet",
+      "reasons": [
+        "undeclared_symbol:?d"
+      ]
+    },
+    {
+      "action": "reverse_direction",
+      "reasons": [
+        "undeclared_symbol:wood"
+      ]
+    }
+  ],
+  "relaxed_name_diagnostic": {
+    "status": "FAILED",
+    "scope": "Diagnostic only: cross-category name collisions allowed",
+    "error": "UPProblemDefinitionError: Name king already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+  },
+  "case_insensitive_collisions": {
+    "king": [
+      [
+        "constants",
+        "King"
+      ],
+      [
+        "constants",
+        "king"
+      ]
+    ],
+    "house": [
+      [
+        "constants",
+        "house"
+      ],
+      [
+        "predicates",
+        "house"
+      ]
+    ]
+  },
+  "source_to_merged_regressions": [
+    {
+      "source_action": "ACCO:knock_down_kettle",
+      "merged_action": "knock_down_kettle",
+      "source_audit": [],
+      "merged_audit": [
+        "ill_typed:captured:?k:item->entity"
+      ]
+    },
+    {
+      "source_action": "ACCO:force_kettle_into_box",
+      "merged_action": "force_kettle_into_box",
+      "source_audit": [],
+      "merged_audit": [
+        "ill_typed:captured:?k:item->entity"
+      ]
+    },
+    {
+      "source_action": "CHIC_NP:turn_back",
+      "merged_action": "reverse_direction",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:wood"
+      ]
+    },
+    {
+      "source_action": "FOUR_NP:shoot_dragon",
+      "merged_action": "eat_dragon",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:?h",
+        "wrong_arity:dead"
+      ]
+    },
+    {
+      "source_action": "HANS_NP:return_home_and_reunite_with_father",
+      "merged_action": "reverse_direction",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:wood"
+      ]
+    },
+    {
+      "source_action": "MUSI:invite_hound",
+      "merged_action": "invite",
+      "source_audit": [],
+      "merged_audit": [
+        "ill_typed:invited:?donkey:object->entity",
+        "ill_typed:invited:?hound:object->entity"
+      ]
+    },
+    {
+      "source_action": "NAUG:cross_out_comet",
+      "merged_action": "remove_poisoned_comet",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:?d"
+      ]
+    },
+    {
+      "source_action": "PIGS_NP:wolf_eats_pig",
+      "merged_action": "eat_dragon",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:?h",
+        "wrong_arity:dead"
+      ]
+    },
+    {
+      "source_action": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "merged_action": "remove_poisoned_comet",
+      "source_audit": [],
+      "merged_audit": [
+        "undeclared_symbol:?d"
+      ]
+    },
+    {
+      "source_action": "WOE:invite_rich_brother_to_feast",
+      "merged_action": "invite",
+      "source_audit": [],
+      "merged_audit": [
+        "ill_typed:invited:?donkey:object->entity",
+        "ill_typed:invited:?hound:object->entity"
+      ]
+    }
+  ]
+}

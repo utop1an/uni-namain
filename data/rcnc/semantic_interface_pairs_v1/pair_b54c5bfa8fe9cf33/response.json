@@ -1,0 +1,17 @@
+{
+  "candidate_id": "pair_b54c5bfa8fe9cf33",
+  "decision": "uncertain",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The predicates `kissed_by` and `rescued_by` describe fundamentally different events. `kissed_by` represents a direct interaction where one entity (the kisser) affects another (the kissed), while `rescued_by` describes a situation where one entity (the rescuer) intervenes to save another (the victim). The arguments and preconditions also differ significantly. `kissed_by` involves a queen and a subject, with preconditions related to location and effects related to joy and lack of gloom. `rescued_by` involves a drowning cat, a king, and a rescue, with preconditions related to drowning and effects related to no longer drowning. The order of arguments is different: `kissed_by` has arguments `?n` and `?q`, while `rescued_by` has arguments `?jack` and `?king`. Therefore, despite sharing similar argument types, the predicates are fundamentally different and the argument order is different, leading to an uncertain decision. There is no evidence to support equivalence.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:receive_queen_kiss",
+      "quote": "and (kissed_by ?n ?q)"
+    },
+    {
+      "ref": "PUSS:action:cat_call_for_help",
+      "quote": "(rescued_by ?jack ?king)"
+    }
+  ]
+}

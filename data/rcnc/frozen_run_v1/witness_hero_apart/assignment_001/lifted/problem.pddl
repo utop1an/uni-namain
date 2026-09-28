@@ -1,0 +1,1 @@
+(define (problem rcnc-lifted-problem) (:domain rcnc-lifted) (:objects hero - entity helper - entity bench - location tree - location) (:init (chic_np__sky_fell_on_head hero) (shared_at helper tree) (shared_at hero bench) (rcnc_role_origin bench) (rcnc_role_witness hero)) (:goal (and (chic_np__informed_about_sky_fall hero helper))))

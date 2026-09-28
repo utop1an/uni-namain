@@ -200,7 +200,7 @@ class StoryCandidate:
             "distinct_sources": len(set(self.sources)),
             "score": round(self.score, 6),
             "connectors": [edge.to_dict() for edge in self.connectors],
-            "causally_valid": all(
+            "candidate_graph_connected": len(self.connectors) == len(self.action_ids) - 1 and all(
                 edge.producer == self.action_ids[index]
                 and edge.consumer == self.action_ids[index + 1]
                 for index, edge in enumerate(self.connectors)
@@ -256,7 +256,10 @@ def action_parameters(action: list[SExpr]) -> dict[str, str]:
 
 
 def iter_raw_literals(expr: SExpr, *, negated: bool = False) -> Iterator[tuple[str, tuple[str, ...], bool]]:
-    if isinstance(expr, str) or not expr:
+    reasons = unsupported_logic(expr)
+    if reasons:
+        raise ValueError(f"Unsupported logic: {reasons}")
+    if not expr:
         return
     head = atom(expr[0]) if isinstance(expr[0], str) else ""
     if head == "not":
@@ -274,6 +277,28 @@ def iter_raw_literals(expr: SExpr, *, negated: bool = False) -> Iterator[tuple[s
         return
     args = tuple(atom(value) for value in expr[1:] if isinstance(value, str))
     yield head, args, negated
+
+
+def unsupported_logic(expr: SExpr) -> list[str]:
+    """Accept conjunctions of signed atoms; reject unsupported syntax explicitly."""
+    if not isinstance(expr, list):
+        return ["malformed-expression"]
+    if not expr:
+        return []
+    head = expr[0]
+    if not isinstance(head, str):
+        return ["malformed-expression"]
+    if head == "and":
+        return sorted({reason for child in expr[1:] for reason in unsupported_logic(child)})
+    if head == "not":
+        if len(expr) != 2 or not isinstance(expr[1], list) or not expr[1] or not isinstance(expr[1][0], str) or expr[1][0] in BUILT_INS:
+            return ["non-atomic-negation"]
+        return unsupported_logic(expr[1])
+    if head in BUILT_INS:
+        return [head]
+    if head.startswith(":") or any(not isinstance(arg, str) for arg in expr[1:]):
+        return ["malformed-atom"]
+    return []
 
 
 def literal_from_raw(
@@ -364,6 +389,9 @@ def extract_domain_frames(domain: Domain) -> tuple[list[PredicateFrame], list[Ac
     actions: list[ActionFrame] = []
 
     for action_name, action in domain.actions.items():
+        if any(unsupported_logic(action[action.index(key) + 1])
+               for key in (":precondition", ":effect") if key in action):
+            continue
         parameters = action_parameters(action)
         preconditions: list[Literal] = []
         add_effects: list[Literal] = []
@@ -443,6 +471,8 @@ def build_causal_edges(actions: list[ActionFrame]) -> list[CausalEdge]:
                 continue
             for effect in producer.add_effects:
                 for precondition in consumer.preconditions:
+                    if precondition.negated:
+                        continue
                     if effect.frame_key != precondition.frame_key:
                         continue
                     if len(effect.arguments) != len(precondition.arguments):
@@ -585,8 +615,14 @@ def run_experiment(
     predicate_frames: list[PredicateFrame] = []
     action_frames: list[ActionFrame] = []
     constant_profiles: list[ConstantProfile] = []
+    quarantined: list[dict[str, Any]] = []
     for path in paths:
         domain = parse_domain(path, apply_reviewed_semantics=False)
+        for name, action in domain.actions.items():
+            reasons = sorted({reason for key in (":precondition", ":effect") if key in action
+                              for reason in unsupported_logic(action[action.index(key) + 1])})
+            if reasons:
+                quarantined.append({"source": next(iter(domain.sources)), "action": name, "reasons": reasons})
         frames, actions, profiles = extract_domain_frames(domain)
         predicate_frames.extend(frames)
         action_frames.extend(actions)
@@ -611,11 +647,14 @@ def run_experiment(
     lifted_occurrences = sum(profile.fixed_action_occurrences for profile in constant_profiles)
     summary = {
         "method": "Role-Causal Narrative Composition",
+        "representation_version": 2,
+        "quarantined_actions": quarantined,
         "experiment": "RCNC Experiment 1: deterministic representation and causal composition",
         "input": {
             "domains": len(paths),
             "predicates": len(predicate_frames),
-            "actions": len(action_frames),
+            "actions": len(action_frames) + len(quarantined),
+            "eligible_actions": len(action_frames),
             "constant_profiles": len(constant_profiles),
         },
         "lifting": {
@@ -646,14 +685,14 @@ def run_experiment(
                 "count": len(values),
                 "length": story_length,
                 "max_distinct_sources": max((len(set(value.sources)) for value in values), default=0),
-                "all_causally_connected": all(len(value.connectors) == story_length - 1 for value in values),
+                "all_candidate_graph_connected": bool(values) and all(len(value.connectors) == story_length - 1 for value in values),
             }
             for level, values in stories.items()
         },
         "limitations": [
             "Experiment 1 validates abstract effect-to-precondition connectivity, not full grounded PDDL execution.",
             "Role and event labels are deterministic lexical/structural heuristics.",
-            "Bindings are validated per causal edge; global object-binding consistency is deferred to PDDL compilation.",
+            "Bindings are positional candidate annotations; they are not globally validated. Use the separate explicit-query planner for execution checks.",
         ],
     }
 

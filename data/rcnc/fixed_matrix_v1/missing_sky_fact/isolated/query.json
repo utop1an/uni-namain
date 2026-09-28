@@ -1,0 +1,55 @@
+{
+  "description": "Development task fixed before matrix execution; not held-out. Variant: missing_sky_fact",
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "bench": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:bench": "bench",
+    "CHIC_NP:Chicken-licken": "hero"
+  },
+  "interfaces": {},
+  "initial": [
+    [
+      "birt__at",
+      "hero",
+      "bench"
+    ],
+    [
+      "chic_np__at",
+      "hero",
+      "bench"
+    ],
+    [
+      "birt__at",
+      "helper",
+      "tree"
+    ],
+    [
+      "chic_np__at",
+      "helper",
+      "tree"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 10,
+  "max_states": 10000,
+  "max_ground_actions": 1000,
+  "sources": [
+    "BIRT",
+    "CHIC_NP"
+  ],
+  "require_external_validation": true,
+  "selection_mode": "all"
+}

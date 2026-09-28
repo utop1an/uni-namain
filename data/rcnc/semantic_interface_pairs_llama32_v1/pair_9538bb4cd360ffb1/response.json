@@ -1,0 +1,13 @@
+{
+  "candidate_id": "pair_9538bb4cd360ffb1",
+  "decision": "accept",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The relation 'corridor_reached' and 'drowning' have the same argument role (entity), but they have different effects and preconditions. The 'corridor_reached' relation is used in the context of a character (cat) entering a tree and descending stairs, while the 'drowning' relation is used in the context of a cat calling for help or persuading a master to bathe. The preconditions and effects of these relations are also different. Therefore, I conclude that these relations are different, even though they have the same argument role.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(corridor_reached ?n)"
+    }
+  ]
+}

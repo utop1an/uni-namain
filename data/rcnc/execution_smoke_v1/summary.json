@@ -1,0 +1,54 @@
+{
+  "purpose": "Designed engineering controls, not a success-rate benchmark",
+  "cases": [
+    {
+      "case": "cross_source",
+      "expected": "solved",
+      "status": "solved",
+      "matches_expected": true,
+      "plan_length": 4,
+      "sources_used": [
+        "BIRT",
+        "CHIC_NP"
+      ],
+      "reason": null
+    },
+    {
+      "case": "missing_initial_fact",
+      "expected": "unsolvable",
+      "status": "unsolvable",
+      "matches_expected": true,
+      "plan_length": null,
+      "sources_used": [],
+      "reason": null
+    },
+    {
+      "case": "without_interface",
+      "expected": "unsolvable",
+      "status": "unsolvable",
+      "matches_expected": true,
+      "plan_length": null,
+      "sources_used": [],
+      "reason": null
+    },
+    {
+      "case": "wrong_role_type",
+      "expected": "rejected",
+      "status": "rejected",
+      "matches_expected": true,
+      "plan_length": null,
+      "sources_used": null,
+      "reason": "Invalid constant binding: BIRT:bench -> hero"
+    },
+    {
+      "case": "conditional_effect",
+      "expected": "rejected",
+      "status": "rejected",
+      "matches_expected": true,
+      "plan_length": null,
+      "sources_used": null,
+      "reason": "HANS_NP:follow_breadcrumbs_home: unsupported logic ['when']"
+    }
+  ],
+  "all_expected": true
+}

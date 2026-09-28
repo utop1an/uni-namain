@@ -411,6 +411,10 @@ def update_actions_for_predicate(
             )
             new_action = parse_action(result["updated_action"])
         new_action_name = atom(new_action[1])
+        if new_action_name != action_name and new_action_name in domain.actions:
+            raise ValueError('Action update would overwrite another source action')
+        if new_action_name in updated_actions:
+            raise ValueError('Action update name collision')
         updated_actions[new_action_name] = new_action
         if new_action_name != action_name:
             replace_current_name(domain.action_maps, action_name, new_action_name)
@@ -425,6 +429,7 @@ def merge_predicates_with_llm(
 ) -> None:
     merged_left: set[str] = set()
     merged_right: set[str] = set()
+    approved_names: set[str] = set()
 
     for left_name in list(left.predicates):
         if left_name not in left.predicates or left_name in merged_left:
@@ -456,16 +461,28 @@ def merge_predicates_with_llm(
             if not result["merge_flag"]:
                 continue
 
-            new_predicate = parse_predicate(result["new_predicate"][0])
-            update_actions_for_predicate(left, left_predicate, new_predicate, runtime)
-            update_actions_for_predicate(right, right_predicate, new_predicate, runtime)
-
-            del left.predicates[left_name]
-            del right.predicates[right_name]
-            left.predicates[new_predicate.name] = deepcopy(new_predicate)
-            right.predicates[new_predicate.name] = deepcopy(new_predicate)
-            replace_current_name(left.predicate_maps, left_name, new_predicate.name)
-            replace_current_name(right.predicate_maps, right_name, new_predicate.name)
+            # Stage both sides; a failed update must not partially mutate the domains.
+            try:
+                new_predicate = parse_predicate(result["new_predicate"][0])
+                if new_predicate.arity != left_predicate.arity or new_predicate.arity != right_predicate.arity:
+                    raise ValueError('Arity-changing predicate merges require an explicit problem mapping')
+                for side,old in ((left,left_name),(right,right_name)):
+                    if any(n.lower()==new_predicate.name.lower() and n!=old for n in side.predicates):
+                        raise ValueError('Proposed predicate overwrites an unrelated declaration')
+                staged_left,staged_right=deepcopy(left),deepcopy(right)
+                for side,old in ((staged_left,left_predicate),(staged_right,right_predicate)):
+                    update_actions_for_predicate(side,old,new_predicate,runtime)
+                    del side.predicates[old.name]
+                    side.predicates[new_predicate.name]=deepcopy(new_predicate)
+                    replace_current_name(side.predicate_maps,old.name,new_predicate.name)
+                    errors=validate_domain(side)
+                    if errors:raise ValueError('; '.join(errors))
+            except (ValueError,KeyError,TypeError,IndexError) as exc:
+                left.decisions.append({'kind':'rejected_predicate_merge','left':left_name,'right':right_name,'reason':str(exc)})
+                continue
+            left.__dict__.update(staged_left.__dict__)
+            right.__dict__.update(staged_right.__dict__)
+            approved_names.add(new_predicate.name)
 
             decision = {
                 "kind": "predicate",
@@ -481,6 +498,16 @@ def merge_predicates_with_llm(
             merged_left.add(new_predicate.name)
             merged_right.add(new_predicate.name)
             break
+
+    # A declined same-name candidate must remain two distinct predicates.
+    from pddl_checks import safe_name
+    for name in list(right.predicates):
+        if name not in approved_names and name.lower() in {n.lower() for n in left.predicates}:
+            target=safe_name(sorted(right.sources)[0]+'__p_'+name,set(left.predicates)|set(right.predicates))
+            pred=right.predicates.pop(name);pred.name=target;right.predicates[target]=pred
+            right.actions={n:rewrite_expr(a,predicate_names={name:target}) for n,a in right.actions.items()}
+            replace_current_name(right.predicate_maps,name,target)
+
 
 
 def merge_operators_with_llm(
@@ -514,8 +541,23 @@ def merge_operators_with_llm(
             if not result["merge_flag"]:
                 continue
 
-            new_name = result["new_operator_name"]
-            new_action = parse_action(result["new_operator"])
+            try:
+                new_name = result["new_operator_name"]
+                new_action = parse_action(result["new_operator"])
+                if not isinstance(new_name,str) or new_name != new_action[1]:
+                    raise ValueError('Operator name disagrees with action AST')
+                if any(n.lower()==new_name.lower() and n!=left_name for n in final_actions):
+                    raise ValueError('Operator merge would overwrite another action')
+                check=deepcopy(left)
+                check.types={**left.types,**right.types}
+                check.constants={**left.constants,**right.constants}
+                check.predicates={**left.predicates,**right.predicates}
+                check.actions={new_name:new_action}
+                errors=validate_domain(check)
+                if errors:raise ValueError('; '.join(errors))
+            except (ValueError,KeyError,TypeError,IndexError) as exc:
+                left.decisions.append({'kind':'rejected_operator_merge','left':left_name,'right':right_name,'reason':str(exc)})
+                continue
             final_actions.pop(left_name, None)
             final_actions[new_name] = new_action
             replace_current_name(left.action_maps, left_name, new_name)
@@ -536,36 +578,29 @@ def merge_operators_with_llm(
             break
 
         if not merged:
-            final_actions[right_name] = deepcopy(right_action)
+            from pddl_checks import safe_name
+            target=safe_name(right_name,final_actions)
+            action=deepcopy(right_action);action[1]=target;final_actions[target]=action
+            replace_current_name(right.action_maps,right_name,target)
 
     return final_actions
 
 
 def merge_metadata(left: Domain, right: Domain) -> tuple[dict[str, str], list[dict[str, Any]]]:
-    constants = dict(left.constants)
-    decisions: list[dict[str, Any]] = []
-    source_label = sorted(right.sources, key=str.lower)[0]
-    for name, value_type in list(right.constants.items()):
-        if name not in constants:
-            constants[name] = value_type
-        elif constants[name] != value_type:
-            new_name = unique_name(name, set(constants), source_label)
-            right.actions = {
-                action_name: rewrite_expr(action, symbols={name: new_name})
-                for action_name, action in right.actions.items()
-            }
-            replace_current_name(right.constant_maps, name, new_name)
-            constants[new_name] = value_type
-            decisions.append(
-                {
-                    "kind": "constant",
-                    "left": name,
-                    "right": name,
-                    "result": new_name,
-                    "reason": "same name with incompatible types",
-                }
-            )
-    return constants, decisions
+    from pddl_checks import rename_constant, safe_name
+    decisions=[]
+    for name,parent in right.types.items():
+        if name in left.types and left.types[name]!=parent:
+            raise ValueError(f'Conflicting type hierarchy: {name}')
+    occupied=set(left.constants)|set(left.predicates)|set(right.predicates)|set(left.actions)|set(right.actions)
+    for name in list(right.constants):
+        if name.lower() in {n.lower() for n in occupied}:
+            target=safe_name(sorted(right.sources)[0]+'__c_'+name,occupied)
+            rename_constant(right,name,target)
+            decisions.append({'kind':'constant','left':name,'right':name,'result':target,'reason':'preserve distinct source identity and avoid case-insensitive collisions'})
+            name=target
+        occupied.add(name)
+    return {**left.constants,**right.constants},decisions
 
 
 def fuse_pair(left: Domain, right: Domain, runtime: FusionRuntime) -> Domain:
@@ -596,6 +631,12 @@ def fuse_pair(left: Domain, right: Domain, runtime: FusionRuntime) -> Domain:
             decision for decision in right.decisions if decision not in left.decisions
         ] + metadata_decisions,
     )
+    from pddl_checks import rename_constant, safe_name
+    occupied=set(merged.constants)|set(merged.predicates)|set(merged.actions)
+    for name in list(merged.constants):
+        if name.lower() in {n.lower() for n in set(merged.predicates)|set(merged.actions)}:
+            target=safe_name('source__c_'+name,occupied)
+            rename_constant(merged,name,target);occupied.add(target)
     errors = validate_domain(merged)
     if errors:
         raise ValueError("invalid fused node: " + "; ".join(errors))
@@ -613,8 +654,8 @@ def run(
     if not paths:
         raise ValueError(f"No domain files found in {input_dir}")
 
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
+    if output_dir.exists() and any(output_dir.iterdir()):
+        raise ValueError('Use an empty output directory; historical fusion artifacts are preserved')
     tree_dir = output_dir / "domain_fusion"
     tree_dir.mkdir(parents=True)
 
@@ -657,7 +698,9 @@ def run(
     write_domain(merged, output_dir / "meta_domain.pddl")
     summary = domain_summary(merged)
     summary["algorithm"] = {
-        "name": "UniDomain Binary Tree Fusion",
+        "name": "UniDomain Binary Tree Fusion with structural safety guards",
+        "constant_identity_policy": "preserve distinct source identities",
+        "invalid_proposal_policy": "rollback and retain source variants",
         "predicate_threshold": runtime.predicate_threshold,
         "operator_threshold": runtime.operator_threshold,
         "embedding_model": runtime.embedding_model,
@@ -685,6 +728,11 @@ def run(
     errors = validate_domain(merged)
     for problem in problem_dir.glob("*_problemfile.pddl"):
         errors.extend(validate_problem(problem, merged))
+        from unified_planning.io import PDDLReader
+        try:
+            PDDLReader().parse_problem(str(output_dir/'meta_domain.pddl'),str(problem))
+        except Exception as exc:
+            errors.append(f'{problem.name}: independent parse failed: {exc}')
     validation = {
         "valid": not errors,
         "errors": errors,

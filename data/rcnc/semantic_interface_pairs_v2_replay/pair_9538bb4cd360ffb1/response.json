@@ -1,0 +1,29 @@
+{
+  "candidate_id": "pair_9538bb4cd360ffb1",
+  "decision": "uncertain",
+  "relation": "different",
+  "alignment": "different_order",
+  "rationale": "The predicate `corridor_reached` in BIRT describes a state achieved after entering a corridor, while `drowning` in PUSS describes a state of being submerged in water. The arguments are entities, but the predicates represent fundamentally different concepts. The usage of `drowning` in PUSS has preconditions and effects related to rescue and bathing, which are not present in the BIRT predicate. The arguments are in different order, and the predicates have different meanings. Evidence: BIRT:action:enter_tree_and_descend_stairs - `corridor_reached ?n` describes a state achieved after entering a corridor. PUSS:predicate:drowning - `drowning ?jack` describes a state of being submerged in water. The predicates are not equivalent due to their different meanings and usages.",
+  "evidence": [
+    {
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(corridor_reached ?n)"
+    },
+    {
+      "ref": "PUSS:action:cat_call_for_help",
+      "quote": "(drowning ?jack)"
+    },
+    {
+      "ref": "PUSS:action:cat_persuade_master_to_bathe",
+      "quote": "(drowning ?jack)"
+    },
+    {
+      "ref": "PUSS:action:cat_call_for_help",
+      "quote": "(not (drowning ?jack))"
+    },
+    {
+      "ref": "PUSS:action:cat_persuade_master_to_bathe",
+      "quote": "(drowning ?jack)"
+    }
+  ]
+}

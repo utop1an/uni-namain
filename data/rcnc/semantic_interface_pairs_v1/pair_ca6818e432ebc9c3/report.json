@@ -1,0 +1,26 @@
+{
+  "candidate_id": "pair_ca6818e432ebc9c3",
+  "refs": [
+    "BIRT:predicate:boat_available",
+    "PUSS:predicate:at_item"
+  ],
+  "response": {
+    "candidate_id": "pair_ca6818e432ebc9c3",
+    "decision": "uncertain",
+    "relation": "equivalent",
+    "alignment": "unknown",
+    "rationale": "The predicates `BIRT:predicate:boat_available` and `PUSS:predicate:at_item` both express a spatial relationship between an item and a location. `BIRT:predicate:boat_available` states that a boat is available at a pond, while `PUSS:predicate:at_item` states that an item is at a location. The arguments are similar: `?b` (boat) and `?pond` (pond) in the first predicate, and `?i` (item) and `?l` (location) in the second. However, the predicates have different contexts and usages. `BIRT:predicate:boat_available` is a precondition for a travel action, while `PUSS:predicate:at_item` is used in preconditions and effects of various actions. The preconditions and effects are different, and the arguments are not directly interchangeable. Evidence: BIRT:action:travel_by_leaf_boat_under_pond uses `boat_available` with arguments `?b` and `?pond`, while PUSS:predicate:at_item uses `at_item` with arguments `?i` and `?l`. There is no direct evidence to support equivalence, and the different usages and contexts make a definitive judgment uncertain. Limitations: The predicates have different contexts and usages, and the arguments are not directly interchangeable. No action-context evidence supports a direct mapping between the predicates.",
+    "evidence": [
+      {
+        "ref": "BIRT:predicate:boat_available",
+        "quote": "boat_available ?b - item ?l - location"
+      },
+      {
+        "ref": "PUSS:predicate:at_item",
+        "quote": "at_item ?i - item ?l - location"
+      }
+    ]
+  },
+  "structural_errors": [],
+  "status": "checked"
+}

@@ -1,0 +1,384 @@
+{
+  "status": "solved",
+  "ground_actions": 20,
+  "states_discovered": 69,
+  "provenance": [
+    {
+      "action": "BIRT:hear_tapping_on_beech",
+      "constant_bindings": {
+        "bench": "bench"
+      }
+    },
+    {
+      "action": "BIRT:approach_beech_tree",
+      "constant_bindings": {
+        "bench": "bench"
+      }
+    },
+    {
+      "action": "CHIC_NP:meet_character",
+      "constant_bindings": {}
+    },
+    {
+      "action": "CHIC_NP:inform_about_sky_fall",
+      "constant_bindings": {
+        "Chicken-licken": "hero"
+      }
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "missing_goals": [],
+    "forbidden_goals": [],
+    "final_state": [
+      [
+        "birt__sound_heard",
+        "hero",
+        "tree"
+      ],
+      [
+        "chic_np__informed_about_sky_fall",
+        "hero",
+        "helper"
+      ],
+      [
+        "chic_np__met",
+        "helper",
+        "hero"
+      ],
+      [
+        "chic_np__met",
+        "hero",
+        "helper"
+      ],
+      [
+        "chic_np__sky_fell_on_head",
+        "hero"
+      ],
+      [
+        "shared_at",
+        "helper",
+        "tree"
+      ],
+      [
+        "shared_at",
+        "hero",
+        "tree"
+      ]
+    ],
+    "trace": [
+      {
+        "step": 0,
+        "action": "BIRT:hear_tapping_on_beech",
+        "ground_action": "a00001",
+        "binding": {
+          "?n": "hero",
+          "?t": "tree"
+        },
+        "before": [
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "bench"
+          ]
+        ],
+        "after": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "bench"
+          ]
+        ],
+        "added": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ]
+        ],
+        "deleted": []
+      },
+      {
+        "step": 1,
+        "action": "BIRT:approach_beech_tree",
+        "ground_action": "a00005",
+        "binding": {
+          "?n": "hero",
+          "?t": "tree"
+        },
+        "before": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "bench"
+          ]
+        ],
+        "after": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "added": [
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "deleted": [
+          [
+            "shared_at",
+            "hero",
+            "bench"
+          ]
+        ]
+      },
+      {
+        "step": 2,
+        "action": "CHIC_NP:meet_character",
+        "ground_action": "a00011",
+        "binding": {
+          "?e1": "hero",
+          "?e2": "helper",
+          "?l": "tree"
+        },
+        "before": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "after": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__met",
+            "helper",
+            "hero"
+          ],
+          [
+            "chic_np__met",
+            "hero",
+            "helper"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "added": [
+          [
+            "chic_np__met",
+            "helper",
+            "hero"
+          ],
+          [
+            "chic_np__met",
+            "hero",
+            "helper"
+          ]
+        ],
+        "deleted": []
+      },
+      {
+        "step": 3,
+        "action": "CHIC_NP:inform_about_sky_fall",
+        "ground_action": "a00017",
+        "binding": {
+          "?informer": "hero",
+          "?listener": "helper"
+        },
+        "before": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__met",
+            "helper",
+            "hero"
+          ],
+          [
+            "chic_np__met",
+            "hero",
+            "helper"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "after": [
+          [
+            "birt__sound_heard",
+            "hero",
+            "tree"
+          ],
+          [
+            "chic_np__informed_about_sky_fall",
+            "hero",
+            "helper"
+          ],
+          [
+            "chic_np__met",
+            "helper",
+            "hero"
+          ],
+          [
+            "chic_np__met",
+            "hero",
+            "helper"
+          ],
+          [
+            "chic_np__sky_fell_on_head",
+            "hero"
+          ],
+          [
+            "shared_at",
+            "helper",
+            "tree"
+          ],
+          [
+            "shared_at",
+            "hero",
+            "tree"
+          ]
+        ],
+        "added": [
+          [
+            "chic_np__informed_about_sky_fall",
+            "hero",
+            "helper"
+          ]
+        ],
+        "deleted": []
+      }
+    ]
+  },
+  "sources_used": [
+    "BIRT",
+    "CHIC_NP"
+  ],
+  "plan_length": 4,
+  "runtime": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "implementation_sha256": {
+    "planning.py": "211fb0bb93169d058a6dfc692f5d6f25b53a3e387fd4e6bdcdaabfec50c81eeb",
+    "experiment.py": "517b2521f6c8c985624d540f84bac1536b2661b87dc6b2a7c83cd799bc365263",
+    "merge_domains.py": "0c0875751e2cfb2d57413cf607b51d9c227317a5e46b9db3e1ae165e52e56186"
+  },
+  "elapsed_seconds": 0.08479360002093017,
+  "query_sha256": "1c4ff2f64bbf74e3788436c041427f5bda202568d61696b8020efcf4359438ef",
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "scope": "Explicit-interface typed STRIPS smoke test; internal BFS and replay, no external validator or narrative-quality evidence."
+}

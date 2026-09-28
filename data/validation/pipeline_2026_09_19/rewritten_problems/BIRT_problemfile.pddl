@@ -1,0 +1,1 @@
+(define (problem The_Birthday_Honors_Of_The_Fairy_Queen_problem) (:domain unified_narrative_domain) (:init (at nora cottage) (gloomy nora)) (:goal (and (at nora bench) (has nora key) (shrunk nora) (joyful nora) (not (gloomy nora)) (kissed_by nora fairy_queen) (story_shared nora mother) (story_shared nora grandmother))))

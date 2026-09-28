@@ -1,0 +1,96 @@
+{
+  "description": "Separate hypothetical world: the cloak is explicitly allowed to serve as a key and as clothing. This changes capability assumptions.",
+  "sources": [
+    "BIRT",
+    "PUSS"
+  ],
+  "objects": {
+    "hero": "entity",
+    "helper": "entity",
+    "cloak": "item",
+    "home": "location",
+    "tree": "location"
+  },
+  "constant_bindings": {
+    "BIRT:door": "tree",
+    "BIRT:dryad": "hero"
+  },
+  "object_capabilities": {
+    "home": [
+      "portal"
+    ],
+    "tree": [
+      "portal"
+    ],
+    "hero": [
+      "guide"
+    ],
+    "helper": [
+      "guide"
+    ],
+    "cloak": [
+      "wearable",
+      "key"
+    ]
+  },
+  "interfaces": {
+    "BIRT:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    },
+    "PUSS:has": {
+      "target": "shared_has",
+      "evidence": "Explicit development assumption: same entity/item possession relation and argument order."
+    }
+  },
+  "initial": [
+    [
+      "birt__at",
+      "hero",
+      "tree"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "puss__wearing",
+        "hero",
+        "cloak"
+      ]
+    ],
+    "negative": []
+  },
+  "max_depth": 8,
+  "max_states": 10000,
+  "max_ground_actions": 2000,
+  "max_role_assignments": 16,
+  "selection_mode": "goal_relevance",
+  "require_external_validation": true,
+  "source_removal_scope": "all_solved",
+  "parameter_constraints": {
+    "PUSS:buy_boots": {
+      "?boots": {
+        "required_capabilities": [
+          "footwear"
+        ],
+        "evidence": "Author assumption for this study: buy_boots accepts footwear; source PDDL only declares item."
+      }
+    },
+    "BIRT:turn_key_on_beech": {
+      "?k": {
+        "required_capabilities": [
+          "key"
+        ],
+        "evidence": "Author assumption: turn_key uses a key-capable object; not established by the original item type."
+      }
+    },
+    "PUSS:master_wear_suit": {
+      "?suit": {
+        "required_capabilities": [
+          "wearable"
+        ],
+        "evidence": "Author assumption: the worn object is wearable."
+      }
+    }
+  }
+}

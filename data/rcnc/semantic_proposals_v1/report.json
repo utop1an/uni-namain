@@ -1,0 +1,331 @@
+{
+  "checked": [
+    {
+      "id": "p000",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:hear_tapping_on_beech",
+          "BIRT:predicate:sound_heard"
+        ],
+        "parameter": "?n",
+        "label": "sound detection",
+        "confidence": "medium",
+        "rationale": "To identify the source of a tapping sound, potentially indicating a relevant object or location.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:hear_tapping_on_beech",
+            "quote": "(:action hear_tapping_on_beech :parameters (?n - entity ?t - location) :precondition (at ?n bench) :effect (sound_heard ?n ?t))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p001",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:action:approach_beech_tree",
+          "BIRT:predicate:at"
+        ],
+        "parameter": "at ?n ?t",
+        "label": "proximity to beech",
+        "confidence": "high",
+        "rationale": "To move closer to the beech tree, a key element of the scene.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:approach_beech_tree",
+            "quote": "(:action approach_beech_tree :parameters (?n - entity ?t - location) :precondition (sound_heard ?n ?t) :effect (and (at ?n ?t) (not (at ?n bench))))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_predicates",
+        "invalid_label",
+        "uncited_reference",
+        "unexpected_parameter"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p002",
+      "proposal": {
+        "kind": "role",
+        "refs": [
+          "BIRT:predicate:at"
+        ],
+        "parameter": "beech_tree",
+        "label": "beech_tree",
+        "confidence": "high",
+        "rationale": "Designating the beech tree as a constant simplifies reasoning about its location.",
+        "evidence": [
+          {
+            "ref": "BIRT:predicate:at",
+            "quote": "(at ?e - entity ?l - location)"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_constant",
+        "unexpected_parameter"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p003",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:turn_key_on_beech",
+          "BIRT:predicate:door_open"
+        ],
+        "parameter": "door_open",
+        "label": "door access",
+        "confidence": "medium",
+        "rationale": "To open the door to the dryad's room.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:turn_key_on_beech",
+            "quote": "(:action turn_key_on_beech :parameters (?n - entity ?k - item ?t - location) :precondition (at ?n ?t) :effect (and (door_open door) (inside dryad ?t) (invitation_offered dryad ?n) (has ?n ?k)))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p004",
+      "proposal": {
+        "kind": "interface",
+        "refs": [
+          "BIRT:action:accept_dryad_invitation",
+          "BIRT:predicate:invitation_offered"
+        ],
+        "parameter": "invitation_offered",
+        "label": "dryad invitation",
+        "confidence": "high",
+        "rationale": "To accept the dryad's invitation, a crucial step in the interaction.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:accept_dryad_invitation",
+            "quote": "(:action accept_dryad_invitation :parameters (?d ?n - entity) :precondition (invitation_offered ?d ?n) :effect (not (invitation_offered ?d ?n)))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_predicates",
+        "invalid_label",
+        "uncited_reference",
+        "unexpected_parameter"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p005",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:receive_pellet_from_gnome",
+          "BIRT:predicate:has"
+        ],
+        "parameter": "?p",
+        "label": "pellet acquisition",
+        "confidence": "medium",
+        "rationale": "To obtain a pellet from the gnome, a necessary item for the shrinking process.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:receive_pellet_from_gnome",
+            "quote": "(:action receive_pellet_from_gnome :parameters (?g ?n - entity ?p ?s - item ?t - location) :precondition (and (inside ?n ?t) (inside ?g ?t)) :effect (has ?n ?p))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p006",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:eat_pellet_and_shrink",
+          "BIRT:predicate:shrunk"
+        ],
+        "parameter": "?n",
+        "label": "shrinking action",
+        "confidence": "high",
+        "rationale": "To perform the shrinking action on the entity.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:eat_pellet_and_shrink",
+            "quote": "(:action eat_pellet_and_shrink :parameters (?n - entity ?p - item) :precondition (has ?n ?p) :effect (and (pellet_eaten ?n) (shrunk ?n) (not (has ?n ?p))))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p007",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:enter_tree_and_descend_stairs",
+          "BIRT:predicate:stairs_descended"
+        ],
+        "parameter": "?n",
+        "label": "tree entry",
+        "confidence": "high",
+        "rationale": "To enter the tree and descend the stairs.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:enter_tree_and_descend_stairs",
+            "quote": "(:action enter_tree_and_descend_stairs :parameters (?d ?n - entity ?corridor ?door ?stairs ?t - location) :precondition (and (inside ?n ?t) (inside ?d ?t) (door_open door)) :effect (and (stairs_descended ?n) (stairs_descended ?d) (corridor_reached ?n)))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p008",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:travel_by_leaf_boat_under_pond",
+          "BIRT:predicate:stairs_descended"
+        ],
+        "parameter": "?n",
+        "label": "boat travel",
+        "confidence": "medium",
+        "rationale": "To travel by leaf boat under the pond after descending the stairs.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+            "quote": "(:action travel_by_leaf_boat_under_pond :parameters (?n - entity ?b - item ?palace ?pond - location) :precondition (and (stairs_descended ?n) (boat_available ?b ?pond)) :effect (at ?n ?palace))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p009",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:witness_queen_birthday_ceremony",
+          "BIRT:predicate:joyful"
+        ],
+        "parameter": "?n",
+        "label": "ceremony observation",
+        "confidence": "medium",
+        "rationale": "To observe the queen's birthday ceremony, a key event in the story.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:witness_queen_birthday_ceremony",
+            "quote": "(:action witness_queen_birthday_ceremony :parameters (?n ?q - entity ?palace - location) :precondition (at ?n ?palace) :effect (and (joyful ?n) (story_shared ?q ?n)))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p010",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:receive_queen_kiss",
+          "BIRT:predicate:kissed_by"
+        ],
+        "parameter": "?n",
+        "label": "queen's kiss",
+        "confidence": "high",
+        "rationale": "To receive a kiss from the queen, a significant interaction.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:receive_queen_kiss",
+            "quote": "(:action receive_queen_kiss :parameters (?n ?q - entity) :precondition (at ?n palace) :effect (and (kissed_by ?n ?q) (joyful ?n) (not (gloomy ?n))))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    },
+    {
+      "id": "p011",
+      "proposal": {
+        "kind": "parameter",
+        "refs": [
+          "BIRT:action:return_to_bench_and_share_story",
+          "BIRT:predicate:story_shared"
+        ],
+        "parameter": "?n",
+        "label": "story sharing",
+        "confidence": "medium",
+        "rationale": "To return to the bench and share the story with someone.",
+        "evidence": [
+          {
+            "ref": "BIRT:action:return_to_bench_and_share_story",
+            "quote": "(:action return_to_bench_and_share_story :parameters (?g ?m ?n - entity ?bench - location) :precondition (at ?n palace) :effect (and (at ?n ?bench) (story_shared ?n ?m) (story_shared ?n ?g) (not (at ?n palace))))"
+          }
+        ]
+      },
+      "structural_errors": [
+        "expected_one_action",
+        "invalid_label",
+        "uncited_reference"
+      ],
+      "status": "rejected"
+    }
+  ],
+  "summary": {
+    "proposed": 12,
+    "structurally_valid": 0,
+    "semantically_verified": 0
+  },
+  "status": "completed",
+  "run": {
+    "model": "gemma3:4b",
+    "timestamp_utc": "2026-09-13T16:08:17.403377+00:00",
+    "mode": "ollama",
+    "prompt_sha256": "284de53ef21ddb6d91e228b1695d44c5278ade0f178ac184f706d472003ffa04",
+    "implementation_sha256": "1d457107ce0fc965ab2ea5d1e155ffa54225a03fc560181414a4a8ba69dcdbfd",
+    "model_digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a"
+  },
+  "elapsed_seconds": 28.37688799999887
+}

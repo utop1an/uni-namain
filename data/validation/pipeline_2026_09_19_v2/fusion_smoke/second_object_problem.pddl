@@ -1,0 +1,1 @@
+(define (problem second_object) (:domain unified_narrative_domain) (:objects helper - person) (:init (messenger_present helper)) (:goal (warning_delivered helper)))

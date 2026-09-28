@@ -1,0 +1,1 @@
+(define (problem rcnc-lifted-problem) (:domain rcnc-lifted) (:objects hero - entity helper - entity home - location tree - location artifact - item) (:init (birt__at hero tree) (rcnc_role_guide helper) (rcnc_role_portal tree) (rcnc_allowed_0e1d60cc3bd1bea5 artifact) (rcnc_allowed_33cce1e0ef4bdd94 artifact)) (:goal (and (puss__wearing hero artifact))))

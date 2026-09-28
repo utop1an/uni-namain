@@ -1,0 +1,250 @@
+[
+  {
+    "candidate_id": "pair_e1b09dad788fc21c",
+    "refs": [
+      "BIRT:predicate:at",
+      "PUSS:predicate:at"
+    ],
+    "response": {
+      "candidate_id": "pair_e1b09dad788fc21c",
+      "decision": "reject",
+      "relation": "different",
+      "alignment": "different_order",
+      "rationale": "The predicates `BIRT:predicate:at` and `PUSS:predicate:at` both express the spatial relationship 'at' between an entity and a location. However, the arguments and their roles differ significantly. `BIRT:predicate:at` uses `?n` as the entity and `?t` as the location, with preconditions related to sounds and effects involving actions like 'approach' and 'share story'.  `PUSS:predicate:at` uses `?x` as the entity and `?l` as the location, and its preconditions and effects are tied to cat actions like delivering gifts, transforming, and opening gates, alongside human actions like marriage. The preconditions and effects are entirely distinct, reflecting the different contexts and narratives of the two source records. The argument order is also different: `BIRT` uses `entity, location` while `PUSS` uses `entity, location`. Therefore, despite sharing the same predicate name, the predicates are not equivalent.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "(at ?e - entity ?l - location)"
+        },
+        {
+          "ref": "PUSS:predicate:at",
+          "quote": "(at ?x - entity ?l - location)"
+        },
+        {
+          "ref": "BIRT:action:approach_beech_tree",
+          "quote": "(:action approach_beech_tree :parameters (?n - entity ?t - location) :precondition (sound_heard ?n ?t) :effect (and (at ?n ?t) (not (at ?n bench))))"
+        },
+        {
+          "ref": "PUSS:action:cat_deliver_gifts_to_king",
+          "quote": "(:action cat_deliver_gifts_to_king :parameters (?king ?puss - entity ?bag ?rabbit - item ?palace - location) :precondition (and (contains ?bag ?rabbit) (at ?puss ?palace)) :effect (and (gift_delivered ?puss ?king ?rabbit) (not (contains ?bag ?rabbit))))"
+        }
+      ]
+    },
+    "structural_errors": [],
+    "status": "checked"
+  },
+  {
+    "candidate_id": "pair_736d04bf7acf3f8a",
+    "refs": [
+      "BIRT:predicate:has",
+      "PUSS:predicate:has"
+    ],
+    "response": {
+      "candidate_id": "pair_736d04bf7acf3f8a",
+      "decision": "reject",
+      "relation": "different",
+      "alignment": "different_order",
+      "rationale": "The predicates `BIRT:predicate:has` and `PUSS:predicate:has` both express the relationship of ‘has’ between an entity and an item. However, the usages differ significantly. `BIRT:predicate:has` is used in preconditions and effects related to actions like eating, receiving, and turning keys on, focusing on internal state changes within a system (e.g., shrinking an entity).  `PUSS:predicate:has` is used in preconditions and effects related to cat actions like buying, catching rabbits, and giving bags, focusing on the cat’s interactions with the environment and objects. The arguments and their roles are distinct. `BIRT` uses parameters like `?n` and `?p` representing entities and items, while `PUSS` uses `?jack` and `?puss` representing the cat and its owner. The preconditions and effects also differ in their specific details, reflecting the different contexts of the actions.  The types are the same, but the specific actions and their associated parameters demonstrate a different semantic interpretation of ‘has’.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:has",
+          "quote": "(has ?e - entity ?i - item)"
+        },
+        {
+          "ref": "PUSS:predicate:has",
+          "quote": "(has ?e - entity ?i - item)"
+        },
+        {
+          "ref": "BIRT:action:eat_pellet_and_shrink",
+          "quote": "(:action eat_pellet_and_shrink :parameters (?n - entity ?p - item) :precondition (has ?n ?p) :effect (and (pellet_eaten ?n) (shrunk ?n) (not (has ?n ?p))))"
+        },
+        {
+          "ref": "PUSS:action:buy_boots",
+          "quote": "(:action buy_boots :parameters (?jack ?puss - entity ?boots - item) :precondition (not (has ?puss ?boots)) :effect (has ?puss ?boots))"
+        },
+        {
+          "ref": "PUSS:predicate:has",
+          "quote": "(has ?puss ?boots)"
+        }
+      ]
+    },
+    "structural_errors": [
+      "quote_not_in_source"
+    ],
+    "status": "invalid"
+  },
+  {
+    "candidate_id": "pair_e407aa03097509b9",
+    "refs": [
+      "BIRT:predicate:door_open",
+      "PUSS:predicate:gate_open"
+    ],
+    "response": {
+      "candidate_id": "pair_e407aa03097509b9",
+      "decision": "uncertain",
+      "relation": "equivalent",
+      "alignment": "unknown",
+      "rationale": "The predicates `door_open` and `gate_open` both relate to the state of an opening mechanism (door or gate) at a location. The BIRT action `enter_tree_and_descend_stairs` preconditions `door_open door` and the PUSS action `cat_open_castle_gates` effects `gate_open castle`. The arguments are similar, representing a location. However, the source domains (BIRT and PUSS) and specific objects involved (door vs. castle gates) differ. There is no direct evidence to confirm equivalence, and the alignment is uncertain due to the different contexts and objects. The `name_overlap` is low, suggesting a different conceptualization of the relation, but not definitive proof of difference. The `same_name` field is false, further supporting this uncertainty.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:door_open",
+          "quote": "(door_open ?d - location)"
+        },
+        {
+          "ref": "PUSS:predicate:gate_open",
+          "quote": "(gate_open ?castle - location)"
+        },
+        {
+          "ref": "BIRT:action:enter_tree_and_descend_stairs",
+          "quote": "(:action enter_tree_and_descend_stairs ... door_open door)"
+        },
+        {
+          "ref": "PUSS:action:cat_open_castle_gates",
+          "quote": "(:action cat_open_castle_gates ... gate_open ?castle)"
+        }
+      ]
+    },
+    "structural_errors": [
+      "quote_not_in_source"
+    ],
+    "status": "invalid"
+  },
+  {
+    "candidate_id": "pair_b54c5bfa8fe9cf33",
+    "refs": [
+      "BIRT:predicate:kissed_by",
+      "PUSS:predicate:rescued_by"
+    ],
+    "response": {
+      "candidate_id": "pair_b54c5bfa8fe9cf33",
+      "decision": "uncertain",
+      "relation": "different",
+      "alignment": "different_order",
+      "rationale": "The predicates `kissed_by` and `rescued_by` describe fundamentally different events. `kissed_by` represents a direct interaction where one entity (the kisser) affects another (the kissed), while `rescued_by` describes a situation where one entity (the rescuer) intervenes to save another (the victim). The arguments and preconditions also differ significantly. `kissed_by` involves a queen and a subject, with preconditions related to location and effects related to joy and lack of gloom. `rescued_by` involves a drowning cat, a king, and a rescue, with preconditions related to drowning and effects related to no longer drowning. The order of arguments is different: `kissed_by` has arguments `?n` and `?q`, while `rescued_by` has arguments `?jack` and `?king`. Therefore, despite sharing similar argument types, the predicates are fundamentally different and the argument order is different, leading to an uncertain decision. There is no evidence to support equivalence.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:receive_queen_kiss",
+          "quote": "and (kissed_by ?n ?q)"
+        },
+        {
+          "ref": "PUSS:action:cat_call_for_help",
+          "quote": "(rescued_by ?jack ?king)"
+        }
+      ]
+    },
+    "structural_errors": [],
+    "status": "checked"
+  },
+  {
+    "candidate_id": "pair_ca6818e432ebc9c3",
+    "refs": [
+      "BIRT:predicate:boat_available",
+      "PUSS:predicate:at_item"
+    ],
+    "response": {
+      "candidate_id": "pair_ca6818e432ebc9c3",
+      "decision": "uncertain",
+      "relation": "equivalent",
+      "alignment": "unknown",
+      "rationale": "The predicates `BIRT:predicate:boat_available` and `PUSS:predicate:at_item` both express a spatial relationship between an item and a location. `BIRT:predicate:boat_available` states that a boat is available at a pond, while `PUSS:predicate:at_item` states that an item is at a location. The arguments are similar: `?b` (boat) and `?pond` (pond) in the first predicate, and `?i` (item) and `?l` (location) in the second. However, the predicates have different contexts and usages. `BIRT:predicate:boat_available` is a precondition for a travel action, while `PUSS:predicate:at_item` is used in preconditions and effects of various actions. The preconditions and effects are different, and the arguments are not directly interchangeable. Evidence: BIRT:action:travel_by_leaf_boat_under_pond uses `boat_available` with arguments `?b` and `?pond`, while PUSS:predicate:at_item uses `at_item` with arguments `?i` and `?l`. There is no direct evidence to support equivalence, and the different usages and contexts make a definitive judgment uncertain. Limitations: The predicates have different contexts and usages, and the arguments are not directly interchangeable. No action-context evidence supports a direct mapping between the predicates.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:boat_available",
+          "quote": "boat_available ?b - item ?l - location"
+        },
+        {
+          "ref": "PUSS:predicate:at_item",
+          "quote": "at_item ?i - item ?l - location"
+        }
+      ]
+    },
+    "structural_errors": [],
+    "status": "checked"
+  },
+  {
+    "candidate_id": "pair_5f71d5163e5a59d0",
+    "refs": [
+      "BIRT:predicate:corridor_reached",
+      "PUSS:predicate:alive"
+    ],
+    "response": {
+      "candidate_id": "pair_5f71d5163e5a59d0",
+      "decision": "uncertain",
+      "relation": "equivalent",
+      "alignment": "unknown",
+      "rationale": "The predicate `PUSS:predicate:alive` asserts that an entity is alive, while `BIRT:predicate:corridor_reached` asserts that an entity has reached a corridor. The arguments are both entities. The `PUSS:predicate:alive` predicate has preconditions related to the existence of other entities (ogre, puss), while `BIRT:predicate:corridor_reached` has preconditions related to location. There is no direct relationship between being alive and reaching a corridor. The predicates share the same argument type ('entity'). However, the preconditions and effects are distinct, and the core meaning of the predicates is different. The evidence is insufficient to determine equivalence. The order of arguments is the same. The action contexts are different, so alignment is unknown.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:corridor_reached",
+          "quote": "corridor_reached ?e - entity"
+        },
+        {
+          "ref": "PUSS:predicate:alive",
+          "quote": "alive ?x - entity"
+        }
+      ]
+    },
+    "structural_errors": [],
+    "status": "checked"
+  },
+  {
+    "candidate_id": "pair_9538bb4cd360ffb1",
+    "refs": [
+      "BIRT:predicate:corridor_reached",
+      "PUSS:predicate:drowning"
+    ],
+    "response": {
+      "candidate_id": "pair_9538bb4cd360ffb1",
+      "decision": "uncertain",
+      "relation": "different",
+      "alignment": "different_order",
+      "rationale": "The predicates `BIRT:predicate:corridor_reached` and `PUSS:predicate:drowning` represent different concepts. `BIRT:predicate:corridor_reached` indicates a state of being in a corridor, while `PUSS:predicate:drowning` describes a state of being submerged in water. The arguments and their roles are distinct. `BIRT:predicate:corridor_reached` takes an entity as an argument, while `PUSS:predicate:drowning` takes an entity as well. The preconditions and effects are also unrelated. The usage of `PUSS:predicate:drowning` is tied to a `cat_call_for_help` action, which is a precondition for drowning, and an effect of rescuing someone. The `BIRT:predicate:corridor_reached` is associated with entering a tree and descending stairs. There is no direct relationship between these predicates. The types are both 'entity', but this does not establish equivalence. The arguments are in different orders, and the predicates represent different concepts. Evidence: BIRT:action:enter_tree_and_descend_stairs describes a location and stairs descent, while PUSS:action:cat_call_for_help describes a drowning precondition and effect. The arguments are not aligned.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:enter_tree_and_descend_stairs",
+          "quote": "(:action enter_tree_and_descend_stairs :parameters (?d ?n ?corridor ?door ?stairs ?t - location) :precondition (and (inside ?n ?t) (inside ?d ?t) (door_open door)) :effect (and (stairs_descended ?n) (stairs_descended ?d) (corridor_reached ?n)))"
+        },
+        {
+          "ref": "PUSS:action:cat_call_for_help",
+          "quote": "(:action cat_call_for_help :parameters (?jack ?king ?puss - entity) :precondition (drowning ?jack) :effect (and (rescued_by ?jack ?king) (not (drowning ?jack))))"
+        }
+      ]
+    },
+    "structural_errors": [
+      "quote_not_in_source"
+    ],
+    "status": "invalid"
+  },
+  {
+    "candidate_id": "pair_27c248ece321200e",
+    "refs": [
+      "BIRT:predicate:corridor_reached",
+      "PUSS:predicate:obedient"
+    ],
+    "response": {
+      "candidate_id": "pair_27c248ece321200e",
+      "decision": "reject",
+      "relation": "different",
+      "alignment": "different_order",
+      "rationale": "The predicates `BIRT:predicate:corridor_reached` and `PUSS:predicate:obedient` represent distinct concepts. `BIRT:predicate:corridor_reached` describes a state of being in a corridor, while `PUSS:predicate:obedient` describes a behavioral trait. The arguments and preconditions are also different. `BIRT:predicate:corridor_reached` has arguments like `?n` (entity), `?corridor` (location), and `?door` (location), indicating a location and a door state. `PUSS:predicate:obedient` has only `?e` (entity), representing an entity's obedience. The order of arguments is also different. BIRT's effect describes a state change, while PUSS's predicate is a simple assertion. Evidence: Record ID `BIRT:action:enter_tree_and_descend_stairs` defines `corridor_reached` as an effect of entering a tree and descending stairs, implying a spatial relationship. Record ID `PUSS:predicate:obedient` simply states that an entity is obedient, without any spatial or contextual information. Therefore, the predicates are fundamentally different in meaning and usage, and the argument order is different.",
+      "evidence": [
+        {
+          "ref": "BIRT:action:enter_tree_and_descend_stairs",
+          "quote": "(:action enter_tree_and_descend_stairs :parameters (?d ?n - entity ?corridor ?door ?stairs ?t - location) :precondition (and (inside ?n ?t) (inside ?d ?t) (door_open door)) :effect (and (stairs_descended ?n) (stairs_descended ?d) (corridor_reached ?n)))"
+        },
+        {
+          "ref": "BIRT:predicate:corridor_reached",
+          "quote": "(corridor_reached ?e - entity)"
+        },
+        {
+          "ref": "PUSS:predicate:obedient",
+          "quote": "(obedient ?e - entity)"
+        }
+      ]
+    },
+    "structural_errors": [
+      "missing_action_evidence:PUSS:predicate:obedient"
+    ],
+    "status": "invalid"
+  }
+]

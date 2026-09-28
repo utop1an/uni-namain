@@ -1,0 +1,37 @@
+{
+  "status": "model_hypothesis_not_semantically_validated",
+  "parameter_constraints": {},
+  "interfaces": {},
+  "role_proposals": [
+    {
+      "source_constant": "BIRT:beech_tree",
+      "role": "beech_tree",
+      "evidence": "Model proposal p000: The action `hear_tapping_on_beech` specifies a beech tree as the location of the tapping sound. This is a grounded observation."
+    },
+    {
+      "source_constant": "BIRT:dryad",
+      "role": "dryad",
+      "evidence": "Model proposal p001: The action `turn_key_on_beech` requires a dryad to be present at the beech tree, suggesting the dryad is a relevant entity."
+    },
+    {
+      "source_constant": "BIRT:palace",
+      "role": "palace",
+      "evidence": "Model proposal p002: The action `travel_by_leaf_boat_under_pond` requires the boat to arrive at the palace, indicating the palace is a destination."
+    },
+    {
+      "source_constant": "BIRT:pellet",
+      "role": "pellets",
+      "evidence": "Model proposal p003: The action `receive_pellet_from_gnome` involves receiving a pellet, suggesting pellets are a relevant object."
+    },
+    {
+      "source_constant": "BIRT:nora",
+      "role": "nora",
+      "evidence": "Model proposal p004: The action `return_to_bench_and_share_story` requires a speaker, and `nora` is a name."
+    },
+    {
+      "source_constant": "BIRT:fairy_queen",
+      "role": "fairy_queen",
+      "evidence": "Model proposal p005: The action `witness_queen_birthday_ceremony` involves a queen, and `fairy_queen` is a name."
+    }
+  ]
+}

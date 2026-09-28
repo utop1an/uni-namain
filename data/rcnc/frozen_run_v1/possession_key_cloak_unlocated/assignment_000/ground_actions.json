@@ -1,0 +1,328 @@
+[
+  {
+    "name": "a00004",
+    "source_action": "BIRT:eat_pellet_and_shrink",
+    "binding": {
+      "?n": "hero",
+      "?p": "artifact"
+    }
+  },
+  {
+    "name": "a00005",
+    "source_action": "BIRT:eat_pellet_and_shrink",
+    "binding": {
+      "?n": "helper",
+      "?p": "artifact"
+    }
+  },
+  {
+    "name": "a00070",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "hero",
+      "?n": "hero",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00071",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "hero",
+      "?n": "hero",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00072",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "hero",
+      "?n": "helper",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00073",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "hero",
+      "?n": "helper",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00074",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "helper",
+      "?n": "hero",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00075",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "helper",
+      "?n": "hero",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00076",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "helper",
+      "?n": "helper",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00077",
+    "source_action": "BIRT:receive_pellet_from_gnome",
+    "binding": {
+      "?g": "helper",
+      "?n": "helper",
+      "?p": "artifact",
+      "?s": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00086",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "home",
+      "?c": "home"
+    }
+  },
+  {
+    "name": "a00087",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "home",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00088",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "tree",
+      "?c": "home"
+    }
+  },
+  {
+    "name": "a00089",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "hero",
+      "?b": "tree",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00090",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "home",
+      "?c": "home"
+    }
+  },
+  {
+    "name": "a00091",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "home",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00092",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "tree",
+      "?c": "home"
+    }
+  },
+  {
+    "name": "a00093",
+    "source_action": "BIRT:travel_to_trysting_place",
+    "binding": {
+      "?n": "helper",
+      "?b": "tree",
+      "?c": "tree"
+    }
+  },
+  {
+    "name": "a00094",
+    "source_action": "BIRT:turn_key_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?k": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00095",
+    "source_action": "BIRT:turn_key_on_beech",
+    "binding": {
+      "?n": "hero",
+      "?k": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00096",
+    "source_action": "BIRT:turn_key_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?k": "artifact",
+      "?t": "home"
+    }
+  },
+  {
+    "name": "a00097",
+    "source_action": "BIRT:turn_key_on_beech",
+    "binding": {
+      "?n": "helper",
+      "?k": "artifact",
+      "?t": "tree"
+    }
+  },
+  {
+    "name": "a00158",
+    "source_action": "PUSS:give_bag_to_cat",
+    "binding": {
+      "?jack": "hero",
+      "?puss": "helper",
+      "?bag": "artifact"
+    }
+  },
+  {
+    "name": "a00159",
+    "source_action": "PUSS:give_bag_to_cat",
+    "binding": {
+      "?jack": "helper",
+      "?puss": "hero",
+      "?bag": "artifact"
+    }
+  },
+  {
+    "name": "a00160",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "hero",
+      "?suit": "artifact",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00161",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "hero",
+      "?suit": "artifact",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00162",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "helper",
+      "?suit": "artifact",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00163",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "hero",
+      "?king": "helper",
+      "?suit": "artifact",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00164",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "hero",
+      "?suit": "artifact",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00165",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "hero",
+      "?suit": "artifact",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00166",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "helper",
+      "?suit": "artifact",
+      "?wardrobe": "home"
+    }
+  },
+  {
+    "name": "a00167",
+    "source_action": "PUSS:king_send_groom_fetch_suit",
+    "binding": {
+      "?groom": "helper",
+      "?king": "helper",
+      "?suit": "artifact",
+      "?wardrobe": "tree"
+    }
+  },
+  {
+    "name": "a00168",
+    "source_action": "PUSS:master_wear_suit",
+    "binding": {
+      "?jack": "hero",
+      "?suit": "artifact"
+    }
+  },
+  {
+    "name": "a00169",
+    "source_action": "PUSS:master_wear_suit",
+    "binding": {
+      "?jack": "helper",
+      "?suit": "artifact"
+    }
+  }
+]

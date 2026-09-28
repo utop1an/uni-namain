@@ -1,0 +1,36 @@
+{
+  "sources": [
+    "HEAR",
+    "WARN"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 1,
+    "constants": 0,
+    "predicates": 3,
+    "operators": 2
+  },
+  "predicate_maps": {
+    "HEAR": {
+      "messenger_present": "messenger_present",
+      "rumor_known": "rumor_known"
+    },
+    "WARN": {
+      "rumor_known": "rumor_known",
+      "warning_delivered": "warning_delivered"
+    }
+  },
+  "constant_maps": {
+    "HEAR": {},
+    "WARN": {}
+  },
+  "action_maps": {
+    "HEAR": {
+      "hear_report": "hear_report"
+    },
+    "WARN": {
+      "warn_village": "warn_village"
+    }
+  },
+  "decisions": []
+}

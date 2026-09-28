@@ -1,0 +1,39 @@
+{
+  "status": "model_hypothesis_not_semantically_validated",
+  "parameter_constraints": {
+    "BIRT:hear_tapping_on_beech": {
+      "?n": {
+        "required_capabilities": [
+          "tapping_entity"
+        ],
+        "evidence": "Model proposal p002: The action ‘hear_tapping_on_beech’ requires an entity to be tapped on."
+      }
+    },
+    "BIRT:approach_beech_tree": {
+      "?t": {
+        "required_capabilities": [
+          "beech_location"
+        ],
+        "evidence": "Model proposal p003: The action ‘approach_beech_tree’ requires a location to be approached."
+      }
+    },
+    "BIRT:turn_key_on_beech": {
+      "?k": {
+        "required_capabilities": [
+          "key_item"
+        ],
+        "evidence": "Model proposal p004: The action ‘turn_key_on_beech’ requires an item to be turned on."
+      }
+    },
+    "BIRT:receive_pellet_from_gnome": {
+      "?p": {
+        "required_capabilities": [
+          "pellet_item"
+        ],
+        "evidence": "Model proposal p005: The action ‘receive_pellet_from_gnome’ requires an item to be received."
+      }
+    }
+  },
+  "interfaces": {},
+  "role_proposals": []
+}

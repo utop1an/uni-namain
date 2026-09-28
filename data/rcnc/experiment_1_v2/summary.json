@@ -1,0 +1,109 @@
+{
+  "method": "Role-Causal Narrative Composition",
+  "representation_version": 2,
+  "quarantined_actions": [
+    {
+      "source": "CHIC_NP",
+      "action": "decide_to_tell_king",
+      "reasons": [
+        "exists"
+      ]
+    },
+    {
+      "source": "HANS_NP",
+      "action": "follow_breadcrumbs_home",
+      "reasons": [
+        "when"
+      ]
+    },
+    {
+      "source": "SOUP",
+      "action": "claim_queenhood",
+      "reasons": [
+        "or"
+      ]
+    },
+    {
+      "source": "WOE",
+      "action": "bow_to_guests",
+      "reasons": [
+        "exists"
+      ]
+    }
+  ],
+  "experiment": "RCNC Experiment 1: deterministic representation and causal composition",
+  "input": {
+    "domains": 15,
+    "predicates": 236,
+    "actions": 234,
+    "eligible_actions": 230,
+    "constant_profiles": 347
+  },
+  "lifting": {
+    "fixed_constant_occurrences_in_actions": 167,
+    "actions_with_lifted_constants": 79
+  },
+  "predicate_frames": {
+    "unique_frame_keys": 190,
+    "cross_source_frame_keys": 14,
+    "categories": {
+      "attribute": 73,
+      "communication": 9,
+      "plot": 17,
+      "possession": 12,
+      "relation": 54,
+      "social": 11,
+      "spatial": 18,
+      "status": 42
+    }
+  },
+  "action_frames": {
+    "families": {
+      "ACQUIRE": 18,
+      "COMMUNICATE": 16,
+      "CONTAIN": 4,
+      "DISCOVER": 7,
+      "ESCAPE": 8,
+      "HARM": 15,
+      "MOVE": 66,
+      "PLOT_EVENT": 56,
+      "RESCUE": 6,
+      "SOCIAL_COMMITMENT": 10,
+      "SOCIAL_EVENT": 6,
+      "TRANSFER": 12,
+      "TRANSFORM": 6
+    }
+  },
+  "causal_graph": {
+    "cross_domain_edges": 4749,
+    "direct_edges": 4138,
+    "role_adapter_edges": 611,
+    "producer_actions": 97,
+    "consumer_actions": 153
+  },
+  "stories": {
+    "conservative": {
+      "count": 10,
+      "length": 5,
+      "max_distinct_sources": 4,
+      "all_candidate_graph_connected": true
+    },
+    "creative": {
+      "count": 10,
+      "length": 5,
+      "max_distinct_sources": 4,
+      "all_candidate_graph_connected": true
+    },
+    "surreal": {
+      "count": 10,
+      "length": 5,
+      "max_distinct_sources": 4,
+      "all_candidate_graph_connected": true
+    }
+  },
+  "limitations": [
+    "Experiment 1 validates abstract effect-to-precondition connectivity, not full grounded PDDL execution.",
+    "Role and event labels are deterministic lexical/structural heuristics.",
+    "Bindings are positional candidate annotations; they are not globally validated. Use the separate explicit-query planner for execution checks."
+  ]
+}

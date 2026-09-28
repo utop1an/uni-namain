@@ -2,6 +2,8 @@
 
 日期：2026-09-05
 
+> 2026-09-19 定位更新：当前主线是输入前置方法学习到的 narrative domains，进行 domain 选取与合并，再从初态或目标生成 narrative plans。本文保留为历史记录；后续优先级以[当前开发计划](../research/narrative-domain-fusion-plan.md)为准。
+
 ## 用户目标与方法定位
 
 目标不是只压缩等价的 domestic/indoor/household actions，而是组合不相关的 narrative domains，创造奇特、有因果结构的故事。RCNC（Role-Causal Narrative Composition）因此被提出为独立方法：保留源模型，通过常量提升、状态接口、事件模板和角色重绑定进行组合；UniDomain 保留为独立复现/比较路径。

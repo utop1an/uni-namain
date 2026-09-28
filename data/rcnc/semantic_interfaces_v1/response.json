@@ -1,0 +1,130 @@
+{
+  "proposals": [
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "location_of_entity",
+      "confidence": "medium",
+      "rationale": "The action `travel_to_trysting_place` requires knowing the entity's location, and `hear_tapping_on_beech` requires knowing the location of the bench. This interface allows for consistent location tracking.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?c"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n bench"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "location_of_entity",
+      "confidence": "medium",
+      "rationale": "The action `approach_beech_tree` requires knowing the location of the tree, and `turn_key_on_beech` requires knowing the location of the key. This interface allows for consistent location tracking.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?t"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n bench"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:sound_heard",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "sound_at_location",
+      "confidence": "low",
+      "rationale": "The action `approach_beech_tree` preconditions on `sound_heard` at a location. This interface allows for representing this relationship.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:sound_heard",
+          "quote": "sound_heard ?n ?t"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?c"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "location_of_item",
+      "confidence": "medium",
+      "rationale": "The action `turn_key_on_beech` requires knowing the location of the key and the location of the tree. This interface allows for consistent location tracking.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?t"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?b"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:invitation_offered",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "invitation_at_location",
+      "confidence": "medium",
+      "rationale": "The action `accept_dryad_invitation` preconditions on `invitation_offered` at a location. This interface allows for representing this relationship.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:invitation_offered",
+          "quote": "invitation_offered ?d ?n"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?c"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "refs": [
+        "BIRT:predicate:at",
+        "BIRT:predicate:at"
+      ],
+      "parameter": "",
+      "label": "location_of_item",
+      "confidence": "medium",
+      "rationale": "The action `receive_pellet_from_gnome` requires knowing the location of the gnome and the location of the pellet. This interface allows for consistent location tracking.",
+      "evidence": [
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?n ?t"
+        },
+        {
+          "ref": "BIRT:predicate:at",
+          "quote": "at ?g ?t"
+        }
+      ]
+    }
+  ]
+}

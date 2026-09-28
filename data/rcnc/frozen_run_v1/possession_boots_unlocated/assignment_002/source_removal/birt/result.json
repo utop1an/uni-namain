@@ -1,0 +1,90 @@
+{
+  "removed_source": "BIRT",
+  "status": "solved",
+  "states": 8,
+  "necessary_within_fixed_assignment": false,
+  "plan_length": 2,
+  "validation": {
+    "valid": true,
+    "missing_goals": [],
+    "forbidden_goals": [],
+    "final_state": [
+      [
+        "puss__wearing",
+        "hero",
+        "artifact"
+      ]
+    ],
+    "trace": [
+      {
+        "step": 0,
+        "action": "PUSS:buy_boots",
+        "ground_action": "a00102",
+        "binding": {
+          "?jack": "hero",
+          "?puss": "hero",
+          "?boots": "artifact"
+        },
+        "before": [],
+        "after": [
+          [
+            "shared_has",
+            "hero",
+            "artifact"
+          ]
+        ],
+        "added": [
+          [
+            "shared_has",
+            "hero",
+            "artifact"
+          ]
+        ],
+        "deleted": []
+      },
+      {
+        "step": 1,
+        "action": "PUSS:master_wear_suit",
+        "ground_action": "a00168",
+        "binding": {
+          "?jack": "hero",
+          "?suit": "artifact"
+        },
+        "before": [
+          [
+            "shared_has",
+            "hero",
+            "artifact"
+          ]
+        ],
+        "after": [
+          [
+            "puss__wearing",
+            "hero",
+            "artifact"
+          ]
+        ],
+        "added": [
+          [
+            "puss__wearing",
+            "hero",
+            "artifact"
+          ]
+        ],
+        "deleted": [
+          [
+            "shared_has",
+            "hero",
+            "artifact"
+          ]
+        ]
+      }
+    ]
+  },
+  "external_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

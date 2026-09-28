@@ -1,0 +1,30 @@
+{
+  "status": "model_hypothesis_not_semantically_validated",
+  "interfaces": {
+    "BIRT:at": {
+      "target": "shared_pair_e1b09dad788fc21c",
+      "evidence": "pair_e1b09dad788fc21c: The predicate ‘at’ is identical in both the BIRT and PUSS sets. The arguments are also identical in both predicates, namely an entity and a location. The argument order is the same. The usage examples in both sets demonstrate the same meaning: indicating the spatial location of an entity. There are no contradictory examples or changes in argument roles/direction. The literal expressions are identical. The action contexts and preconditions support the equivalence. The records BIRT:action:approach_beech_tree, BIRT:action:hear_tapping_on_beech, BIRT:action:receive_queen_kiss, BIRT:action:return_to_bench_and_share_story, BIRT:action:travel_by_leaf_boat_under_pond, BIRT:action:travel_to_trysting_place, BIRT:action:turn_key_on_beech, BIRT:action:witness_queen_birthday_ceremony all use the predicate ‘at’ with the same arguments. Similarly, the PUSS actions cat_deliver_gifts_to_king, cat_ogre_transform_lion, cat_open_castle_gates, cat_persuade_master_to_bathe, master_marry_princess all use the predicate ‘at’ with the same arguments. The types are also the same (entity, location)."
+    },
+    "PUSS:at": {
+      "target": "shared_pair_e1b09dad788fc21c",
+      "evidence": "pair_e1b09dad788fc21c: The predicate ‘at’ is identical in both the BIRT and PUSS sets. The arguments are also identical in both predicates, namely an entity and a location. The argument order is the same. The usage examples in both sets demonstrate the same meaning: indicating the spatial location of an entity. There are no contradictory examples or changes in argument roles/direction. The literal expressions are identical. The action contexts and preconditions support the equivalence. The records BIRT:action:approach_beech_tree, BIRT:action:hear_tapping_on_beech, BIRT:action:receive_queen_kiss, BIRT:action:return_to_bench_and_share_story, BIRT:action:travel_by_leaf_boat_under_pond, BIRT:action:travel_to_trysting_place, BIRT:action:turn_key_on_beech, BIRT:action:witness_queen_birthday_ceremony all use the predicate ‘at’ with the same arguments. Similarly, the PUSS actions cat_deliver_gifts_to_king, cat_ogre_transform_lion, cat_open_castle_gates, cat_persuade_master_to_bathe, master_marry_princess all use the predicate ‘at’ with the same arguments. The types are also the same (entity, location)."
+    },
+    "BIRT:door_open": {
+      "target": "shared_pair_e407aa03097509b9",
+      "evidence": "pair_e407aa03097509b9: The predicates `door_open` and `gate_open` both represent the state of an opening mechanism (door or gate) at a location. The arguments are consistent across both predicates: both take a location as input. The preconditions and effects are similar, describing the opening of a door or gate at a specific location. Specifically, `BIRT:predicate:door_open` is used in preconditions and effects related to entering a tree and descending stairs, while `PUSS:predicate:gate_open` is used in the effect of opening castle gates. The argument order is the same (location as the first argument). The literal expressions are also equivalent: `(door_open door)` and `(gate_open ?castle)`."
+    },
+    "PUSS:gate_open": {
+      "target": "shared_pair_e407aa03097509b9",
+      "evidence": "pair_e407aa03097509b9: The predicates `door_open` and `gate_open` both represent the state of an opening mechanism (door or gate) at a location. The arguments are consistent across both predicates: both take a location as input. The preconditions and effects are similar, describing the opening of a door or gate at a specific location. Specifically, `BIRT:predicate:door_open` is used in preconditions and effects related to entering a tree and descending stairs, while `PUSS:predicate:gate_open` is used in the effect of opening castle gates. The argument order is the same (location as the first argument). The literal expressions are also equivalent: `(door_open door)` and `(gate_open ?castle)`."
+    },
+    "BIRT:corridor_reached": {
+      "target": "shared_pair_5f71d5163e5a59d0",
+      "evidence": "pair_5f71d5163e5a59d0: Both predicates share the same argument type ('entity') and position (slot 0). The BIRT predicate 'corridor_reached' describes a state achieved by entering a corridor, while the PUSS predicate 'alive' describes a state of being alive. The arguments are used in preconditions and effects respectively. The literal expressions are identical: `(corridor_reached ?n)` and `(alive ?puss)`. The evidence is provided by the records BIRT:action:enter_tree_and_descend_stairs and PUSS:predicate:alive, where the arguments are used in similar contexts. The relation is equivalent and the argument order is the same."
+    },
+    "PUSS:alive": {
+      "target": "shared_pair_5f71d5163e5a59d0",
+      "evidence": "pair_5f71d5163e5a59d0: Both predicates share the same argument type ('entity') and position (slot 0). The BIRT predicate 'corridor_reached' describes a state achieved by entering a corridor, while the PUSS predicate 'alive' describes a state of being alive. The arguments are used in preconditions and effects respectively. The literal expressions are identical: `(corridor_reached ?n)` and `(alive ?puss)`. The evidence is provided by the records BIRT:action:enter_tree_and_descend_stairs and PUSS:predicate:alive, where the arguments are used in similar contexts. The relation is equivalent and the argument order is the same."
+    }
+  },
+  "withheld": []
+}
