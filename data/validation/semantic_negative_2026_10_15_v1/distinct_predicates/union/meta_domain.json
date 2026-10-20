@@ -1,0 +1,161 @@
+{
+  "sources": [
+    "BURIAL",
+    "CAPTURE"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 0,
+    "constants": 2,
+    "predicates": 8,
+    "operators": 2
+  },
+  "predicate_maps": {
+    "BURIAL": {
+      "dead": "d000__p_dead",
+      "buried": "d000__p_buried"
+    },
+    "CAPTURE": {
+      "alive": "d001__p_alive",
+      "captured": "d001__p_captured"
+    }
+  },
+  "constant_maps": {
+    "BURIAL": {
+      "corpse": "d000__c_corpse"
+    },
+    "CAPTURE": {
+      "prisoner": "d001__c_prisoner"
+    }
+  },
+  "action_maps": {
+    "BURIAL": {
+      "bury": "d000__a_bury"
+    },
+    "CAPTURE": {
+      "capture_alive": "d001__a_capture_alive"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "BURIAL": {
+      "types": {
+        "person": "d000__t_person",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    },
+    "CAPTURE": {
+      "types": {
+        "person": "d001__t_person",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001",
+      "objects": {}
+    }
+  },
+  "source_type_parents": {
+    "d000__t_person": "d000__t_object",
+    "d001__t_person": "d001__t_object",
+    "d000__t_object": "object",
+    "d001__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_person": "typeguard__d000__t_person",
+    "d001__t_person": "typeguard__d001__t_person",
+    "d000__t_object": "typeguard__d000__t_object",
+    "d001__t_object": "typeguard__d001__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_person",
+      "d000__c_corpse"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_corpse"
+    ],
+    [
+      "typeguard__d001__t_person",
+      "d001__c_prisoner"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_prisoner"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_corpse": "d000__t_person",
+    "d001__c_prisoner": "d001__t_person"
+  },
+  "predicate_orders": {
+    "BURIAL": {
+      "dead": [
+        0
+      ],
+      "buried": [
+        0
+      ]
+    },
+    "CAPTURE": {
+      "alive": [
+        0
+      ],
+      "captured": [
+        0
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "BURIAL": {
+      "dead": [
+        "d000__t_person"
+      ],
+      "buried": [
+        "d000__t_person"
+      ]
+    },
+    "CAPTURE": {
+      "alive": [
+        "d001__t_person"
+      ],
+      "captured": [
+        "d001__t_person"
+      ]
+    }
+  },
+  "source_sha256": {
+    "BURIAL_domainfile.pddl": "6e9df4f516ef07dfafe486a29c1a479824050afd1ca20a88617f53e697f4df64",
+    "BURIAL_problemfile.pddl": "c2e24375cb458cf3961e8399e4e5aa6e294c889df6170f3518a237755972f1a1",
+    "CAPTURE_domainfile.pddl": "725c1f7af6b10fdaceb758795d743270177ceff4d9854350590f16d513a514f6",
+    "CAPTURE_problemfile.pddl": "63c6076953156d11bc209e20c18208082496aed26f7808b07efb4a3161da3f2f"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "BURIAL_domainfile.pddl": "6e9df4f516ef07dfafe486a29c1a479824050afd1ca20a88617f53e697f4df64",
+      "CAPTURE_domainfile.pddl": "725c1f7af6b10fdaceb758795d743270177ceff4d9854350590f16d513a514f6"
+    },
+    "type_groups": [
+      {
+        "members": [
+          "CAPTURE:person",
+          "BURIAL:person"
+        ],
+        "evidence": "Synthetic shared participant type"
+      }
+    ],
+    "predicate_groups": []
+  },
+  "implementation_sha256": {
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

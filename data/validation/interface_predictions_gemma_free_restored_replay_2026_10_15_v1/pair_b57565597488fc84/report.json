@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_b57565597488fc84",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_b57565597488fc84",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'reward_announced' describes a positive event (announcement of a reward) related to a nobleman, while 'distracted' describes a negative state (being distracted) related to a giant. These predicates represent distinct aspects of the situation and do not directly relate to each other. One indicates a positive action, the other a negative state. The action contexts further support this by describing distinct actions and preconditions. The 'reward_announced' predicate is associated with opening a theater and announcing a reward, while 'distracted' is a precondition for stealing a hen. The types 'entity' are shared, but the predicates themselves describe different concepts. The 'occurrences' within the action contexts confirm this distinction.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BUFF:action:open_theater_and_announce_reward",
+        "quote": "(reward_announced ?nobleman)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_hen",
+        "quote": "(distracted ?giant)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_b57565597488fc84"
+  ]
+}

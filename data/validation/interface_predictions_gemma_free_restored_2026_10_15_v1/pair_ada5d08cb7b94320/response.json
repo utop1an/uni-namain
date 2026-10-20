@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_ada5d08cb7b94320",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicates `owned_by` and `has` describe different relationships between entities. `owned_by` indicates ownership (a thing belongs to an entity), while `has` indicates possession (an entity holds an item). These relationships are complementary because one describes a hierarchical relationship (ownership) and the other describes a direct relationship (possession). The action contexts further support this by showing how `owned_by` is used to establish ownership and `has` is used to represent possession within a system of actions. The `action_contexts` for `PIGS_NP` demonstrate that `has` is frequently used to represent the possession of items by entities, while `owned_by` is not directly present in those actions. The different parameter names and types further reinforce the distinction. The use of `?i` and `?e` in `owned_by` versus `?e` and `?i` in `has` highlights the different roles these variables play in each predicate. The fact that `owned_by` is used to establish a hierarchical relationship (an item belongs to an entity) while `has` is used to represent a more direct relationship (an entity holds an item) makes them complementary. The different action contexts and parameter names further support this conclusion. The use of `?p` and `?i` in `has` versus `?i` and `?p` in `owned_by` highlights the different roles these variables play in each predicate.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(has ?p ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(has ?p ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_collects_apples_and_escapes",
+      "quote": "(has ?p ?a)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_collects_turnips",
+      "quote": "(has ?p ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(has ?p ?pot)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:receive_material",
+      "quote": "(has ?p ?i)"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "979c862913f5084a692ed422fab412a8e0a1dafa34707c6653e5b6617c877625",
+  "budget": {
+    "wall_seconds": 60,
+    "overall_cpu_seconds": 60,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "ACCO",
+      "source": "ACCO",
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4"
+    },
+    {
+      "id": "BIRT",
+      "source": "BIRT",
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8"
+    },
+    {
+      "id": "BUFF",
+      "source": "BUFF",
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672"
+    },
+    {
+      "id": "CHIC_NP",
+      "source": "CHIC_NP",
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2"
+    },
+    {
+      "id": "FOUR_NP",
+      "source": "FOUR_NP",
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba"
+    },
+    {
+      "id": "HANS_NP",
+      "source": "HANS_NP",
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88"
+    },
+    {
+      "id": "JACK_NP",
+      "source": "JACK_NP",
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83"
+    },
+    {
+      "id": "MUSI",
+      "source": "MUSI",
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24"
+    },
+    {
+      "id": "NAUG",
+      "source": "NAUG",
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd"
+    },
+    {
+      "id": "PIGS_NP",
+      "source": "PIGS_NP",
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc"
+    },
+    {
+      "id": "PUSS",
+      "source": "PUSS",
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a"
+    },
+    {
+      "id": "REMA_NP",
+      "source": "REMA_NP",
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09"
+    },
+    {
+      "id": "SNOW",
+      "source": "SNOW",
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78"
+    },
+    {
+      "id": "SOUP",
+      "source": "SOUP",
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e"
+    },
+    {
+      "id": "WOE",
+      "source": "WOE",
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6"
+    }
+  ],
+  "task_count": 15,
+  "mode": "original_source_tasks",
+  "composed_origin": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

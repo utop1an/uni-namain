@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:33:28.953258Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_f07cae9822f5c3ab\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicates `crowd_present` and `castle_owned_by` describe fundamentally different aspects of a scene. `crowd_present` indicates the presence of a crowd in a location, while `castle_owned_by` specifies the owner of a castle. These predicates represent distinct properties and cannot be interchangeable. The declaration syntax further reinforces this distinction by using different argument roles (`audience` vs. `castle`, `theater` vs. `owner`) and types (`entity` vs. `location`). The action contexts are empty, so we rely solely on the predicate declarations and types. There is no evidence to suggest equivalence.\", \"evidence\": [\n    ] }"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2063760900,
+  "load_duration": 2049700,
+  "prompt_eval_count": 452,
+  "prompt_eval_duration": 117194000,
+  "eval_count": 185,
+  "eval_duration": 1847094000
+}

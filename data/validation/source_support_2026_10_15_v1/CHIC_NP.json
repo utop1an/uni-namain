@@ -1,0 +1,244 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "going_to_wood",
+    "sky_fell_on_head"
+  ],
+  "reachable_predicates": [
+    "at",
+    "decided_to_tell_king",
+    "eaten_by_fox",
+    "following_fox",
+    "going_to_wood",
+    "informed_about_sky_fall",
+    "met",
+    "sky_fell_on_head",
+    "turned_back"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "go_to_wood",
+        "meet_character",
+        "turn_back"
+      ],
+      "new_predicates": [
+        "met",
+        "turned_back"
+      ]
+    },
+    {
+      "actions": [
+        "inform_about_sky_fall"
+      ],
+      "new_predicates": [
+        "informed_about_sky_fall"
+      ]
+    },
+    {
+      "actions": [
+        "decide_to_tell_king"
+      ],
+      "new_predicates": [
+        "decided_to_tell_king"
+      ]
+    },
+    {
+      "actions": [
+        "follow_fox"
+      ],
+      "new_predicates": [
+        "following_fox"
+      ]
+    },
+    {
+      "actions": [
+        "be_eaten_by_fox"
+      ],
+      "new_predicates": [
+        "eaten_by_fox"
+      ]
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "be_eaten_by_fox",
+      "condition": [
+        "and",
+        [
+          "following_fox",
+          "?e"
+        ],
+        [
+          "at",
+          "?e",
+          "?l"
+        ],
+        [
+          "not",
+          [
+            "eaten_by_fox",
+            "?e"
+          ]
+        ]
+      ],
+      "adds": [
+        "at",
+        "eaten_by_fox"
+      ]
+    },
+    {
+      "action": "decide_to_tell_king",
+      "condition": [
+        "and",
+        [
+          "exists",
+          [
+            "?inf",
+            "-",
+            "entity"
+          ],
+          [
+            "informed_about_sky_fall",
+            "?inf",
+            "?e"
+          ]
+        ],
+        [
+          "not",
+          [
+            "decided_to_tell_king",
+            "?e"
+          ]
+        ]
+      ],
+      "adds": [
+        "decided_to_tell_king"
+      ]
+    },
+    {
+      "action": "follow_fox",
+      "condition": [
+        "and",
+        [
+          "decided_to_tell_king",
+          "?e"
+        ],
+        [
+          "not",
+          [
+            "following_fox",
+            "?e"
+          ]
+        ]
+      ],
+      "adds": [
+        "following_fox"
+      ]
+    },
+    {
+      "action": "go_to_wood",
+      "condition": [
+        "and",
+        [
+          "not",
+          [
+            "at",
+            "?e",
+            "Wood"
+          ]
+        ],
+        [
+          "not",
+          [
+            "going_to_wood",
+            "?e"
+          ]
+        ]
+      ],
+      "adds": [
+        "going_to_wood"
+      ]
+    },
+    {
+      "action": "inform_about_sky_fall",
+      "condition": [
+        "and",
+        [
+          "met",
+          "?informer",
+          "?listener"
+        ],
+        [
+          "sky_fell_on_head",
+          "Chicken-licken"
+        ],
+        [
+          "not",
+          [
+            "informed_about_sky_fall",
+            "?informer",
+            "?listener"
+          ]
+        ]
+      ],
+      "adds": [
+        "informed_about_sky_fall"
+      ]
+    },
+    {
+      "action": "meet_character",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?e1",
+          "?l"
+        ],
+        [
+          "at",
+          "?e2",
+          "?l"
+        ],
+        [
+          "not",
+          [
+            "met",
+            "?e1",
+            "?e2"
+          ]
+        ]
+      ],
+      "adds": [
+        "met"
+      ]
+    },
+    {
+      "action": "turn_back",
+      "condition": [
+        "and",
+        [
+          "going_to_wood",
+          "?e"
+        ],
+        [
+          "not",
+          [
+            "turned_back",
+            "?e"
+          ]
+        ]
+      ],
+      "adds": [
+        "turned_back"
+      ]
+    }
+  ],
+  "source_domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+  "source_problem_sha256": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

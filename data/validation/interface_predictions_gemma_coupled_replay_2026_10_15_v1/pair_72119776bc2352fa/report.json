@@ -1,0 +1,23 @@
+{
+  "candidate_id": "pair_72119776bc2352fa",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_72119776bc2352fa",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates 'contained_in' and 'sleeping_at' describe different aspects of objects and entities. 'contained_in' specifies a spatial relationship (one item is within another), while 'sleeping_at' specifies a location where an entity is resting. These predicates represent distinct properties of the world, and thus are complementary. The action contexts further support this by describing actions that relate to these properties: 'force_kettle_into_box' involves placing an item within a box, and 'choose_sleep_spot' involves an entity resting at a location. The predicates capture different kinds of relationships, and cannot be considered interchangeable. The 'type_hierarchy' confirms that both predicates operate on 'entity' and 'location' types, but the predicates themselves represent different relationships. The action contexts provide evidence for this complementary relationship by describing actions that utilize these predicates in distinct ways. The 'story_or_learner_provenance' is not supplied, so we cannot rely on any specific source information to confirm this relationship.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:force_kettle_into_box",
+        "quote": "(contained_in ?k ?b)"
+      },
+      {
+        "side": 1,
+        "ref": "MUSI:action:choose_sleep_spot",
+        "quote": "(sleeping_at ?cat ?hearth)"
+      }
+    ]
+  },
+  "errors": []
+}

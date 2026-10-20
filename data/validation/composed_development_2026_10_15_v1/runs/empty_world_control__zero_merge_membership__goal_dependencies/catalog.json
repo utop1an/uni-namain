@@ -1,0 +1,4750 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "source": "ACCO",
+      "sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "badger": "entity",
+        "box": "item",
+        "copper_coins": "item",
+        "friend": "entity",
+        "jhosiu": "location",
+        "lady_of_court": "entity",
+        "morinji": "location",
+        "pack": "item",
+        "priest": "entity",
+        "prince": "entity",
+        "princess": "entity",
+        "showman": "entity",
+        "teakettle": "item",
+        "temple_treasure": "item",
+        "tight_rope": "location",
+        "tinker": "entity"
+      },
+      "predicates": {
+        "airborne": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "badger_form": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "captured": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "contained_in": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?c",
+            "item"
+          ]
+        ],
+        "exhibition_ready": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "four_legged": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "furred": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "hanging": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "located": [
+          [
+            "?obj",
+            "object"
+          ],
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "night": [],
+        "owned_by": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "performing_show": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "reputation_widespread": [],
+        "treasured": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "wealthy": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "worshipped": [
+          [
+            "?i",
+            "item"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "hang_kettle",
+          "requires": [
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:hanging"
+          ]
+        },
+        {
+          "name": "kettle_transform_to_badger",
+          "requires": [
+            "ACCO:hanging"
+          ],
+          "effects": [
+            "ACCO:badger_form"
+          ]
+        },
+        {
+          "name": "call_novices",
+          "requires": [
+            "ACCO:badger_form"
+          ],
+          "effects": [
+            "ACCO:located"
+          ]
+        },
+        {
+          "name": "kettle_jump_and_fly",
+          "requires": [
+            "ACCO:badger_form"
+          ],
+          "effects": [
+            "ACCO:airborne"
+          ]
+        },
+        {
+          "name": "pursue_kettle",
+          "requires": [
+            "ACCO:airborne"
+          ],
+          "effects": [
+            "ACCO:airborne",
+            "ACCO:captured"
+          ]
+        },
+        {
+          "name": "knock_down_kettle",
+          "requires": [
+            "ACCO:airborne"
+          ],
+          "effects": [
+            "ACCO:airborne",
+            "ACCO:captured"
+          ]
+        },
+        {
+          "name": "force_kettle_into_box",
+          "requires": [
+            "ACCO:captured"
+          ],
+          "effects": [
+            "ACCO:contained_in"
+          ]
+        },
+        {
+          "name": "sell_kettle_to_tinker",
+          "requires": [
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:has"
+          ]
+        },
+        {
+          "name": "tinker_carry_home",
+          "requires": [
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:located"
+          ]
+        },
+        {
+          "name": "kettle_transform_to_fur_badger",
+          "requires": [
+            "ACCO:has",
+            "ACCO:located",
+            "ACCO:night"
+          ],
+          "effects": [
+            "ACCO:badger_form",
+            "ACCO:four_legged",
+            "ACCO:furred"
+          ]
+        },
+        {
+          "name": "kettle_revert_shape",
+          "requires": [
+            "ACCO:badger_form",
+            "ACCO:furred"
+          ],
+          "effects": [
+            "ACCO:badger_form",
+            "ACCO:four_legged",
+            "ACCO:furred"
+          ]
+        },
+        {
+          "name": "show_kettle_to_friend",
+          "requires": [
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:has"
+          ]
+        },
+        {
+          "name": "arrange_exhibition",
+          "requires": [
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:exhibition_ready"
+          ]
+        },
+        {
+          "name": "perform_show",
+          "requires": [
+            "ACCO:exhibition_ready",
+            "ACCO:has"
+          ],
+          "effects": [
+            "ACCO:performing_show",
+            "ACCO:reputation_widespread"
+          ]
+        },
+        {
+          "name": "receive_orders_from_nobility",
+          "requires": [
+            "ACCO:reputation_widespread"
+          ],
+          "effects": [
+            "ACCO:wealthy"
+          ]
+        },
+        {
+          "name": "return_kettle_to_temple",
+          "requires": [
+            "ACCO:has",
+            "ACCO:wealthy"
+          ],
+          "effects": [
+            "ACCO:has",
+            "ACCO:located",
+            "ACCO:treasured"
+          ]
+        },
+        {
+          "name": "worship_kettle_as_saint",
+          "requires": [
+            "ACCO:treasured"
+          ],
+          "effects": [
+            "ACCO:worshipped"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "BIRT",
+      "sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "beech_tree": "location",
+        "bench": "location",
+        "boat": "item",
+        "corridor": "location",
+        "cottage": "location",
+        "door": "location",
+        "dryad": "entity",
+        "fairy_queen": "entity",
+        "fairyland": "location",
+        "gnome": "entity",
+        "gold_star": "item",
+        "grandmother": "entity",
+        "grandmotherkin": "entity",
+        "key": "item",
+        "lantern": "item",
+        "mother": "entity",
+        "mothereen": "entity",
+        "nora": "entity",
+        "palace": "location",
+        "pellet": "item",
+        "pond": "location",
+        "silver_salver": "item",
+        "spring": "location",
+        "stairs": "location",
+        "stream": "location"
+      },
+      "predicates": {
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "boat_available": [
+          [
+            "?b",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "corridor_reached": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "door_open": [
+          [
+            "?d",
+            "location"
+          ]
+        ],
+        "gloomy": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "gold_star_on": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?s",
+            "item"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "inside": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "invitation_offered": [
+          [
+            "?from",
+            "entity"
+          ],
+          [
+            "?to",
+            "entity"
+          ]
+        ],
+        "joyful": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "kissed_by": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?k",
+            "entity"
+          ]
+        ],
+        "knighted": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "lantern_carried": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "item"
+          ]
+        ],
+        "pellet_eaten": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "shrunk": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "sound_heard": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "stairs_descended": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "story_shared": [
+          [
+            "?speaker",
+            "entity"
+          ],
+          [
+            "?listener",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "travel_to_trysting_place",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:at"
+          ]
+        },
+        {
+          "name": "hear_tapping_on_beech",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:sound_heard"
+          ]
+        },
+        {
+          "name": "approach_beech_tree",
+          "requires": [
+            "BIRT:sound_heard"
+          ],
+          "effects": [
+            "BIRT:at"
+          ]
+        },
+        {
+          "name": "turn_key_on_beech",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:door_open",
+            "BIRT:has",
+            "BIRT:inside",
+            "BIRT:invitation_offered"
+          ]
+        },
+        {
+          "name": "accept_dryad_invitation",
+          "requires": [
+            "BIRT:invitation_offered"
+          ],
+          "effects": [
+            "BIRT:invitation_offered"
+          ]
+        },
+        {
+          "name": "receive_pellet_from_gnome",
+          "requires": [
+            "BIRT:inside"
+          ],
+          "effects": [
+            "BIRT:has"
+          ]
+        },
+        {
+          "name": "eat_pellet_and_shrink",
+          "requires": [
+            "BIRT:has"
+          ],
+          "effects": [
+            "BIRT:has",
+            "BIRT:pellet_eaten",
+            "BIRT:shrunk"
+          ]
+        },
+        {
+          "name": "enter_tree_and_descend_stairs",
+          "requires": [
+            "BIRT:door_open",
+            "BIRT:inside"
+          ],
+          "effects": [
+            "BIRT:corridor_reached",
+            "BIRT:stairs_descended"
+          ]
+        },
+        {
+          "name": "travel_by_leaf_boat_under_pond",
+          "requires": [
+            "BIRT:boat_available",
+            "BIRT:stairs_descended"
+          ],
+          "effects": [
+            "BIRT:at"
+          ]
+        },
+        {
+          "name": "witness_queen_birthday_ceremony",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:joyful",
+            "BIRT:story_shared"
+          ]
+        },
+        {
+          "name": "receive_queen_kiss",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:gloomy",
+            "BIRT:joyful",
+            "BIRT:kissed_by"
+          ]
+        },
+        {
+          "name": "return_to_bench_and_share_story",
+          "requires": [
+            "BIRT:at"
+          ],
+          "effects": [
+            "BIRT:at",
+            "BIRT:story_shared"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "BUFF",
+      "sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "audience": "entity",
+        "buffoon": "entity",
+        "cloak": "item",
+        "countryman": "entity",
+        "little_pig": "entity",
+        "platform": "location",
+        "rich_nobleman": "entity",
+        "theater": "location"
+      },
+      "predicates": {
+        "applause_given": [
+          [
+            "?audience",
+            "entity"
+          ],
+          [
+            "?performer",
+            "entity"
+          ]
+        ],
+        "audience_calls_for_kickout": [
+          [
+            "?audience",
+            "entity"
+          ],
+          [
+            "?countryman",
+            "entity"
+          ]
+        ],
+        "audience_demands_shake_cloak": [
+          [
+            "?audience",
+            "entity"
+          ],
+          [
+            "?performer",
+            "entity"
+          ],
+          [
+            "?cloak",
+            "item"
+          ]
+        ],
+        "cloak_shaken": [
+          [
+            "?performer",
+            "entity"
+          ],
+          [
+            "?cloak",
+            "item"
+          ]
+        ],
+        "countryman_declares_intent": [
+          [
+            "?countryman",
+            "entity"
+          ]
+        ],
+        "countryman_performs_with_real_pig": [
+          [
+            "?countryman",
+            "entity"
+          ],
+          [
+            "?pig",
+            "entity"
+          ]
+        ],
+        "crowd_present": [
+          [
+            "?audience",
+            "entity"
+          ],
+          [
+            "?theater",
+            "location"
+          ]
+        ],
+        "imitates_pig": [
+          [
+            "?performer",
+            "entity"
+          ]
+        ],
+        "on_platform": [
+          [
+            "?performer",
+            "entity"
+          ],
+          [
+            "?platform",
+            "location"
+          ]
+        ],
+        "partiality_prevalent": [],
+        "performs_without_apparatus": [
+          [
+            "?performer",
+            "entity"
+          ]
+        ],
+        "pig_found": [
+          [
+            "?performer",
+            "entity"
+          ],
+          [
+            "?pig",
+            "entity"
+          ]
+        ],
+        "pig_revealed": [
+          [
+            "?countryman",
+            "entity"
+          ],
+          [
+            "?pig",
+            "entity"
+          ]
+        ],
+        "reward_announced": [
+          [
+            "?nobleman",
+            "entity"
+          ]
+        ],
+        "theater_opened": [
+          [
+            "?nobleman",
+            "entity"
+          ],
+          [
+            "?theater",
+            "location"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "open_theater_and_announce_reward",
+          "requires": [],
+          "effects": [
+            "BUFF:reward_announced",
+            "BUFF:theater_opened"
+          ]
+        },
+        {
+          "name": "perform_pig_imitation_without_apparatus",
+          "requires": [
+            "BUFF:on_platform"
+          ],
+          "effects": [
+            "BUFF:imitates_pig",
+            "BUFF:performs_without_apparatus"
+          ]
+        },
+        {
+          "name": "audience_demand_shake_cloak_for_pig",
+          "requires": [],
+          "effects": [
+            "BUFF:audience_demands_shake_cloak"
+          ]
+        },
+        {
+          "name": "audience_applaud_performance",
+          "requires": [
+            "BUFF:cloak_shaken",
+            "BUFF:pig_found"
+          ],
+          "effects": [
+            "BUFF:applause_given"
+          ]
+        },
+        {
+          "name": "countryman_declare_intent_to_repeat_trick",
+          "requires": [],
+          "effects": [
+            "BUFF:countryman_declares_intent"
+          ]
+        },
+        {
+          "name": "countryman_perform_pig_imitation_with_real_pig",
+          "requires": [
+            "BUFF:countryman_declares_intent",
+            "BUFF:on_platform"
+          ],
+          "effects": [
+            "BUFF:countryman_performs_with_real_pig"
+          ]
+        },
+        {
+          "name": "audience_criticize_countryman_and_call_for_kickout",
+          "requires": [
+            "BUFF:countryman_performs_with_real_pig"
+          ],
+          "effects": [
+            "BUFF:audience_calls_for_kickout"
+          ]
+        },
+        {
+          "name": "countryman_reveal_real_pig",
+          "requires": [
+            "BUFF:audience_calls_for_kickout"
+          ],
+          "effects": [
+            "BUFF:pig_revealed"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "CHIC_NP",
+      "sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "Acorn": "item",
+        "Chicken-licken": "entity",
+        "Cock-lock": "entity",
+        "Drake-lake": "entity",
+        "Duck-luck": "entity",
+        "Fox-lox": "entity",
+        "FoxHole": "location",
+        "Gander-lander": "entity",
+        "Goose-loose": "entity",
+        "Hen-len": "entity",
+        "King": "entity",
+        "Sky": "item",
+        "Turkey-lurkey": "entity",
+        "Wood": "location"
+      },
+      "predicates": {
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "decided_to_tell_king": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "eaten_by_fox": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "following_fox": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "going_to_wood": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "informed_about_sky_fall": [
+          [
+            "?informer",
+            "entity"
+          ],
+          [
+            "?listener",
+            "entity"
+          ]
+        ],
+        "met": [
+          [
+            "?e1",
+            "entity"
+          ],
+          [
+            "?e2",
+            "entity"
+          ]
+        ],
+        "sky_fell_on_head": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "turned_back": [
+          [
+            "?e",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "go_to_wood",
+          "requires": [
+            "CHIC_NP:at",
+            "CHIC_NP:going_to_wood"
+          ],
+          "effects": [
+            "CHIC_NP:going_to_wood"
+          ]
+        },
+        {
+          "name": "turn_back",
+          "requires": [
+            "CHIC_NP:going_to_wood",
+            "CHIC_NP:turned_back"
+          ],
+          "effects": [
+            "CHIC_NP:going_to_wood",
+            "CHIC_NP:turned_back"
+          ]
+        },
+        {
+          "name": "meet_character",
+          "requires": [
+            "CHIC_NP:at",
+            "CHIC_NP:met"
+          ],
+          "effects": [
+            "CHIC_NP:met"
+          ]
+        },
+        {
+          "name": "inform_about_sky_fall",
+          "requires": [
+            "CHIC_NP:informed_about_sky_fall",
+            "CHIC_NP:met",
+            "CHIC_NP:sky_fell_on_head"
+          ],
+          "effects": [
+            "CHIC_NP:informed_about_sky_fall"
+          ]
+        },
+        {
+          "name": "decide_to_tell_king",
+          "requires": [
+            "CHIC_NP:decided_to_tell_king",
+            "CHIC_NP:informed_about_sky_fall"
+          ],
+          "effects": [
+            "CHIC_NP:decided_to_tell_king"
+          ]
+        },
+        {
+          "name": "follow_fox",
+          "requires": [
+            "CHIC_NP:decided_to_tell_king",
+            "CHIC_NP:following_fox"
+          ],
+          "effects": [
+            "CHIC_NP:following_fox"
+          ]
+        },
+        {
+          "name": "be_eaten_by_fox",
+          "requires": [
+            "CHIC_NP:at",
+            "CHIC_NP:eaten_by_fox",
+            "CHIC_NP:following_fox"
+          ],
+          "effects": [
+            "CHIC_NP:at",
+            "CHIC_NP:eaten_by_fox",
+            "CHIC_NP:following_fox"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "FOUR_NP",
+      "sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "brother_astronomer": "entity",
+        "brother_hunter": "entity",
+        "brother_tailor": "entity",
+        "brother_thief": "entity",
+        "chaffinch": "entity",
+        "cross_way": "location",
+        "dragon": "entity",
+        "eggs": "item",
+        "father": "entity",
+        "gun": "item",
+        "house": "location",
+        "king": "entity",
+        "kingdom": "location",
+        "mentor_astronomer": "entity",
+        "mentor_hunter": "entity",
+        "mentor_tailor": "entity",
+        "mentor_thief": "entity",
+        "needle": "item",
+        "planks": "item",
+        "princess": "entity",
+        "rock_sea": "location",
+        "sea": "location",
+        "ship": "item",
+        "sticks": "item",
+        "telescope": "item",
+        "town_gate": "location",
+        "tree": "location"
+      },
+      "predicates": {
+        "dragon_dead": [],
+        "eggs_fetched": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "eggs_sewn": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "eggs_shot": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "entity_at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "half_kingdom": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?k",
+            "location"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "is_astronomer": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "is_hunter": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "is_tailor": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "is_thief": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "item_at": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "princess_rescued": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "reward_received": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "ship_broken": [],
+        "ship_repaired": []
+      },
+      "actions": [
+        {
+          "name": "leave_home",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "separate_at_crossroads",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:has"
+          ]
+        },
+        {
+          "name": "learn_thief_trade",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:is_thief"
+          ]
+        },
+        {
+          "name": "learn_astronomer_trade",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:has",
+            "FOUR_NP:is_astronomer"
+          ]
+        },
+        {
+          "name": "learn_hunter_trade",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:has",
+            "FOUR_NP:is_hunter"
+          ]
+        },
+        {
+          "name": "learn_tailor_trade",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:has",
+            "FOUR_NP:is_tailor"
+          ]
+        },
+        {
+          "name": "reunite_at_crossroads",
+          "requires": [
+            "FOUR_NP:entity_at"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "count_eggs",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:has",
+            "FOUR_NP:is_astronomer"
+          ],
+          "effects": [
+            "FOUR_NP:has"
+          ]
+        },
+        {
+          "name": "fetch_eggs",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:is_thief",
+            "FOUR_NP:item_at"
+          ],
+          "effects": [
+            "FOUR_NP:eggs_fetched",
+            "FOUR_NP:has",
+            "FOUR_NP:item_at"
+          ]
+        },
+        {
+          "name": "shoot_eggs",
+          "requires": [
+            "FOUR_NP:eggs_fetched",
+            "FOUR_NP:has",
+            "FOUR_NP:is_hunter"
+          ],
+          "effects": [
+            "FOUR_NP:eggs_shot"
+          ]
+        },
+        {
+          "name": "sew_eggs",
+          "requires": [
+            "FOUR_NP:eggs_shot",
+            "FOUR_NP:has",
+            "FOUR_NP:is_tailor"
+          ],
+          "effects": [
+            "FOUR_NP:eggs_sewn"
+          ]
+        },
+        {
+          "name": "return_eggs_to_nest",
+          "requires": [
+            "FOUR_NP:eggs_sewn",
+            "FOUR_NP:entity_at",
+            "FOUR_NP:has",
+            "FOUR_NP:is_thief"
+          ],
+          "effects": [
+            "FOUR_NP:has",
+            "FOUR_NP:item_at"
+          ]
+        },
+        {
+          "name": "locate_princess",
+          "requires": [
+            "FOUR_NP:has",
+            "FOUR_NP:is_astronomer"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "obtain_ship",
+          "requires": [
+            "FOUR_NP:is_astronomer"
+          ],
+          "effects": [
+            "FOUR_NP:has"
+          ]
+        },
+        {
+          "name": "sail_to_rock",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:has"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "steal_princess",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:is_thief"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:princess_rescued"
+          ]
+        },
+        {
+          "name": "shoot_dragon",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:has",
+            "FOUR_NP:is_hunter"
+          ],
+          "effects": [
+            "FOUR_NP:dragon_dead",
+            "FOUR_NP:entity_at",
+            "FOUR_NP:ship_broken"
+          ]
+        },
+        {
+          "name": "swim_after_ship_break",
+          "requires": [
+            "FOUR_NP:ship_broken"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "repair_ship",
+          "requires": [
+            "FOUR_NP:has",
+            "FOUR_NP:is_tailor",
+            "FOUR_NP:ship_broken"
+          ],
+          "effects": [
+            "FOUR_NP:ship_broken",
+            "FOUR_NP:ship_repaired"
+          ]
+        },
+        {
+          "name": "return_home_with_princess",
+          "requires": [
+            "FOUR_NP:entity_at",
+            "FOUR_NP:ship_repaired"
+          ],
+          "effects": [
+            "FOUR_NP:entity_at"
+          ]
+        },
+        {
+          "name": "receive_reward",
+          "requires": [
+            "FOUR_NP:princess_rescued"
+          ],
+          "effects": [
+            "FOUR_NP:half_kingdom",
+            "FOUR_NP:reward_received"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "HANS_NP",
+      "sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "apple": "item",
+        "bird": "entity",
+        "branch": "location",
+        "bread_piece": "item",
+        "brushwood": "item",
+        "cake": "item",
+        "cottage": "location",
+        "crumb": "item",
+        "dead_tree": "location",
+        "door": "location",
+        "duck": "entity",
+        "father": "entity",
+        "father_house": "location",
+        "forest": "location",
+        "grettel": "entity",
+        "hansel": "entity",
+        "hill": "location",
+        "kettle": "item",
+        "lake": "location",
+        "milk": "item",
+        "mother": "entity",
+        "nut": "item",
+        "oven": "item",
+        "pancake": "item",
+        "path": "location",
+        "pearl": "item",
+        "pebble": "item",
+        "precious_stone": "item",
+        "roof": "location",
+        "room": "location",
+        "stable_location": "location",
+        "sugar_window": "item",
+        "window": "location",
+        "witch": "entity"
+      },
+      "predicates": {
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "bird_heard": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "bread_given": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "captured": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "collected": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "crossed_lake": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "crumb_on_path": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "dead": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "duck_helped": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?d",
+            "entity"
+          ]
+        ],
+        "fire_lit": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "locked": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "lost": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "pebble_on_path": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "reunited_with_father": [
+          [
+            "?c",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "abandon_children_in_forest",
+          "requires": [],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:bread_given",
+            "HANS_NP:fire_lit",
+            "HANS_NP:lost"
+          ]
+        },
+        {
+          "name": "leave_children_at_fire",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:bread_given",
+            "HANS_NP:fire_lit"
+          ],
+          "effects": [
+            "HANS_NP:lost"
+          ]
+        },
+        {
+          "name": "drop_pebble_on_path",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:has"
+          ],
+          "effects": [
+            "HANS_NP:has",
+            "HANS_NP:pebble_on_path"
+          ]
+        },
+        {
+          "name": "follow_pebbles_home",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:pebble_on_path"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:lost"
+          ]
+        },
+        {
+          "name": "drop_breadcrumb_on_path",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:has"
+          ],
+          "effects": [
+            "HANS_NP:crumb_on_path",
+            "HANS_NP:has"
+          ]
+        },
+        {
+          "name": "follow_breadcrumbs_home",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:crumb_on_path"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:lost"
+          ]
+        },
+        {
+          "name": "wander_forest_seeking_way_out",
+          "requires": [
+            "HANS_NP:at"
+          ],
+          "effects": [
+            "HANS_NP:lost"
+          ]
+        },
+        {
+          "name": "hear_bird_and_follow_to_witch_house",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:bird_heard"
+          ],
+          "effects": [
+            "HANS_NP:at"
+          ]
+        },
+        {
+          "name": "enter_witch_house",
+          "requires": [
+            "HANS_NP:at"
+          ],
+          "effects": [
+            "HANS_NP:has"
+          ]
+        },
+        {
+          "name": "witch_captures_children",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:locked"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:captured",
+            "HANS_NP:locked"
+          ]
+        },
+        {
+          "name": "push_witch_into_oven",
+          "requires": [
+            "HANS_NP:at"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:dead"
+          ]
+        },
+        {
+          "name": "escape_from_stable",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:captured",
+            "HANS_NP:locked"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:captured",
+            "HANS_NP:locked"
+          ]
+        },
+        {
+          "name": "collect_treasure",
+          "requires": [
+            "HANS_NP:at"
+          ],
+          "effects": [
+            "HANS_NP:collected",
+            "HANS_NP:has"
+          ]
+        },
+        {
+          "name": "call_duck_for_crossing",
+          "requires": [
+            "HANS_NP:at"
+          ],
+          "effects": [
+            "HANS_NP:crossed_lake",
+            "HANS_NP:duck_helped"
+          ]
+        },
+        {
+          "name": "return_home_and_reunite_with_father",
+          "requires": [
+            "HANS_NP:at",
+            "HANS_NP:crossed_lake"
+          ],
+          "effects": [
+            "HANS_NP:at",
+            "HANS_NP:lost",
+            "HANS_NP:reunited_with_father"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "JACK_NP",
+      "sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "axe": "item",
+        "beanstalk": "location",
+        "brown_hen": "entity",
+        "butcher": "entity",
+        "castle_road": "location",
+        "cottage": "location",
+        "fairy_maiden": "entity",
+        "garden": "location",
+        "giant": "entity",
+        "giant_castle": "location",
+        "giant_dog": "entity",
+        "giant_wife": "entity",
+        "gold_bag_1": "item",
+        "gold_bag_2": "item",
+        "golden_harp": "item",
+        "jack": "entity",
+        "jack_mother": "entity",
+        "kettle": "location",
+        "magic_beans": "item",
+        "market": "location",
+        "milky_white": "entity",
+        "oak_tree_club": "item",
+        "oven": "location",
+        "window": "location"
+      },
+      "predicates": {
+        "asleep": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "at_item": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "beanstalk_grown": [],
+        "climbing_down": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "dead": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "distracted": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "empty": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "has_breakfast": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "inside": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "intact": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "offers": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "on": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "planted": [
+          [
+            "?i",
+            "item"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "sell_cow_for_beans",
+          "requires": [
+            "JACK_NP:at",
+            "JACK_NP:offers"
+          ],
+          "effects": [
+            "JACK_NP:at_item",
+            "JACK_NP:has",
+            "JACK_NP:offers"
+          ]
+        },
+        {
+          "name": "plant_beans",
+          "requires": [
+            "JACK_NP:at_item"
+          ],
+          "effects": [
+            "JACK_NP:at_item",
+            "JACK_NP:planted"
+          ]
+        },
+        {
+          "name": "grow_beanstalk",
+          "requires": [
+            "JACK_NP:planted"
+          ],
+          "effects": [
+            "JACK_NP:beanstalk_grown",
+            "JACK_NP:intact"
+          ]
+        },
+        {
+          "name": "climb_beanstalk",
+          "requires": [
+            "JACK_NP:at",
+            "JACK_NP:beanstalk_grown"
+          ],
+          "effects": [
+            "JACK_NP:at"
+          ]
+        },
+        {
+          "name": "ask_giant_wife_for_breakfast",
+          "requires": [
+            "JACK_NP:at"
+          ],
+          "effects": [
+            "JACK_NP:has_breakfast"
+          ]
+        },
+        {
+          "name": "hide_in_kettle",
+          "requires": [
+            "JACK_NP:at",
+            "JACK_NP:empty"
+          ],
+          "effects": [
+            "JACK_NP:at",
+            "JACK_NP:inside"
+          ]
+        },
+        {
+          "name": "steal_gold_bags",
+          "requires": [
+            "JACK_NP:asleep",
+            "JACK_NP:at_item"
+          ],
+          "effects": [
+            "JACK_NP:at_item",
+            "JACK_NP:has"
+          ]
+        },
+        {
+          "name": "return_down_beanstalk",
+          "requires": [
+            "JACK_NP:at"
+          ],
+          "effects": [
+            "JACK_NP:at"
+          ]
+        },
+        {
+          "name": "hide_in_oven",
+          "requires": [
+            "JACK_NP:at"
+          ],
+          "effects": [
+            "JACK_NP:at",
+            "JACK_NP:inside"
+          ]
+        },
+        {
+          "name": "steal_hen",
+          "requires": [
+            "JACK_NP:distracted",
+            "JACK_NP:on"
+          ],
+          "effects": [
+            "JACK_NP:has",
+            "JACK_NP:on"
+          ]
+        },
+        {
+          "name": "steal_harp",
+          "requires": [
+            "JACK_NP:asleep",
+            "JACK_NP:on"
+          ],
+          "effects": [
+            "JACK_NP:has",
+            "JACK_NP:on"
+          ]
+        },
+        {
+          "name": "cut_beanstalk",
+          "requires": [
+            "JACK_NP:climbing_down",
+            "JACK_NP:intact"
+          ],
+          "effects": [
+            "JACK_NP:dead",
+            "JACK_NP:intact"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "MUSI",
+      "sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "ass": "entity",
+        "beam": "location",
+        "bremen": "location",
+        "captain": "entity",
+        "cat": "entity",
+        "cock": "entity",
+        "drinks": "item",
+        "forest": "location",
+        "hearth": "location",
+        "hound": "entity",
+        "kettledrums": "item",
+        "lute": "item",
+        "man": "entity",
+        "meat": "item",
+        "messenger": "entity",
+        "road_to_bremen": "location",
+        "robber": "entity",
+        "robbers_cottage": "location",
+        "straw": "item",
+        "table": "item",
+        "window": "location"
+      },
+      "predicates": {
+        "agreed": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?inviter",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "ate_all": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "attacked": [
+          [
+            "?attacker",
+            "entity"
+          ],
+          [
+            "?target",
+            "entity"
+          ]
+        ],
+        "attempt_light": [
+          [
+            "?messenger",
+            "entity"
+          ]
+        ],
+        "bite": [
+          [
+            "?dog",
+            "entity"
+          ],
+          [
+            "?target",
+            "entity"
+          ]
+        ],
+        "crowed": [
+          [
+            "?cock",
+            "entity"
+          ]
+        ],
+        "fled": [
+          [
+            "?robber",
+            "entity"
+          ],
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "invited": [
+          [
+            "?inviter",
+            "entity"
+          ],
+          [
+            "?invitee",
+            "entity"
+          ]
+        ],
+        "kick": [
+          [
+            "?donkey",
+            "entity"
+          ],
+          [
+            "?target",
+            "entity"
+          ]
+        ],
+        "light_off": [
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "light_on": [
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "making_noise": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "moving_towards": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "resting": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "retreated": [
+          [
+            "?robber",
+            "entity"
+          ]
+        ],
+        "sees_light": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "sleeping_at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?loc",
+            "location"
+          ]
+        ],
+        "stacked_on": [
+          [
+            "?top",
+            "entity"
+          ],
+          [
+            "?bottom",
+            "entity"
+          ]
+        ],
+        "window_shattered": []
+      },
+      "actions": [
+        {
+          "name": "run_away",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:at",
+            "MUSI:moving_towards"
+          ]
+        },
+        {
+          "name": "invite_hound",
+          "requires": [],
+          "effects": [
+            "MUSI:invited"
+          ]
+        },
+        {
+          "name": "hound_agrees",
+          "requires": [
+            "MUSI:invited"
+          ],
+          "effects": [
+            "MUSI:agreed"
+          ]
+        },
+        {
+          "name": "invite_cat",
+          "requires": [],
+          "effects": [
+            "MUSI:invited"
+          ]
+        },
+        {
+          "name": "cat_agrees",
+          "requires": [
+            "MUSI:invited"
+          ],
+          "effects": [
+            "MUSI:agreed"
+          ]
+        },
+        {
+          "name": "invite_cock",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:invited"
+          ]
+        },
+        {
+          "name": "cock_agrees",
+          "requires": [
+            "MUSI:invited"
+          ],
+          "effects": [
+            "MUSI:agreed"
+          ]
+        },
+        {
+          "name": "travel_together",
+          "requires": [
+            "MUSI:agreed",
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:at",
+            "MUSI:moving_towards"
+          ]
+        },
+        {
+          "name": "rest_in_forest",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:resting"
+          ]
+        },
+        {
+          "name": "spot_light",
+          "requires": [
+            "MUSI:at",
+            "MUSI:resting"
+          ],
+          "effects": [
+            "MUSI:moving_towards",
+            "MUSI:sees_light"
+          ]
+        },
+        {
+          "name": "approach_cottage",
+          "requires": [
+            "MUSI:at",
+            "MUSI:sees_light"
+          ],
+          "effects": [
+            "MUSI:at",
+            "MUSI:moving_towards"
+          ]
+        },
+        {
+          "name": "plan_scaring_robbers",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:making_noise"
+          ]
+        },
+        {
+          "name": "stack_animals",
+          "requires": [
+            "MUSI:making_noise"
+          ],
+          "effects": [
+            "MUSI:stacked_on"
+          ]
+        },
+        {
+          "name": "signal_and_make_noise",
+          "requires": [
+            "MUSI:stacked_on"
+          ],
+          "effects": [
+            "MUSI:making_noise",
+            "MUSI:window_shattered"
+          ]
+        },
+        {
+          "name": "robbers_flee",
+          "requires": [
+            "MUSI:at",
+            "MUSI:window_shattered"
+          ],
+          "effects": [
+            "MUSI:at",
+            "MUSI:fled"
+          ]
+        },
+        {
+          "name": "eat_feast",
+          "requires": [
+            "MUSI:at",
+            "MUSI:window_shattered"
+          ],
+          "effects": [
+            "MUSI:ate_all"
+          ]
+        },
+        {
+          "name": "extinguish_light",
+          "requires": [
+            "MUSI:light_on"
+          ],
+          "effects": [
+            "MUSI:light_off",
+            "MUSI:light_on"
+          ]
+        },
+        {
+          "name": "choose_sleep_spot",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:sleeping_at"
+          ]
+        },
+        {
+          "name": "messenger_attempt_light",
+          "requires": [
+            "MUSI:light_off"
+          ],
+          "effects": [
+            "MUSI:attempt_light"
+          ]
+        },
+        {
+          "name": "cat_attack_messenger",
+          "requires": [
+            "MUSI:at",
+            "MUSI:attempt_light"
+          ],
+          "effects": [
+            "MUSI:attacked"
+          ]
+        },
+        {
+          "name": "dog_bite_messenger",
+          "requires": [
+            "MUSI:at",
+            "MUSI:attempt_light"
+          ],
+          "effects": [
+            "MUSI:bite"
+          ]
+        },
+        {
+          "name": "donkey_kick_messenger",
+          "requires": [
+            "MUSI:attempt_light"
+          ],
+          "effects": [
+            "MUSI:kick"
+          ]
+        },
+        {
+          "name": "cock_crow_alert",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:crowed"
+          ]
+        },
+        {
+          "name": "robbers_retreat",
+          "requires": [
+            "MUSI:at"
+          ],
+          "effects": [
+            "MUSI:at",
+            "MUSI:retreated"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "NAUG",
+      "sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "bungo": "entity",
+        "chalk": "item",
+        "comet_house": "location",
+        "comet_master": "entity",
+        "courtyard": "location",
+        "earth": "entity",
+        "gate": "location",
+        "long_tail_45": "entity",
+        "meteor": "entity",
+        "meteor_keeper": "entity",
+        "no1_express": "entity",
+        "short_tail_73": "entity",
+        "slate": "item",
+        "sun": "entity"
+      },
+      "predicates": {
+        "arrested": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?m",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "avoid": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?b",
+            "entity"
+          ]
+        ],
+        "burned": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "crossed_out": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "delivered": [
+          [
+            "?m",
+            "entity"
+          ],
+          [
+            "?p",
+            "entity"
+          ]
+        ],
+        "detained": [
+          [
+            "?m",
+            "entity"
+          ]
+        ],
+        "gate_open": [],
+        "has_mission": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "left_turn_rule": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "near": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?b",
+            "entity"
+          ]
+        ],
+        "on_list": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "prohibit_speak": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "punished": [
+          [
+            "?m",
+            "entity"
+          ]
+        ],
+        "rule_violation": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "speaks_to": [
+          [
+            "?c",
+            "entity"
+          ],
+          [
+            "?m",
+            "entity"
+          ]
+        ],
+        "summoned": [
+          [
+            "?c",
+            "entity"
+          ]
+        ],
+        "traveling": [
+          [
+            "?c",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "give_order",
+          "requires": [
+            "NAUG:at",
+            "NAUG:has_mission"
+          ],
+          "effects": [
+            "NAUG:avoid",
+            "NAUG:has_mission",
+            "NAUG:left_turn_rule",
+            "NAUG:prohibit_speak"
+          ]
+        },
+        {
+          "name": "start_travel",
+          "requires": [
+            "NAUG:gate_open",
+            "NAUG:has_mission"
+          ],
+          "effects": [
+            "NAUG:at",
+            "NAUG:traveling"
+          ]
+        },
+        {
+          "name": "avoid_body",
+          "requires": [
+            "NAUG:avoid",
+            "NAUG:near",
+            "NAUG:traveling"
+          ],
+          "effects": [
+            "NAUG:near"
+          ]
+        },
+        {
+          "name": "turn_left_on_meeting",
+          "requires": [
+            "NAUG:left_turn_rule",
+            "NAUG:near",
+            "NAUG:traveling"
+          ],
+          "effects": [
+            "NAUG:left_turn_rule"
+          ]
+        },
+        {
+          "name": "prohibit_speaking_to_meteor",
+          "requires": [
+            "NAUG:has_mission"
+          ],
+          "effects": [
+            "NAUG:prohibit_speak"
+          ]
+        },
+        {
+          "name": "speak_to_meteor",
+          "requires": [
+            "NAUG:near",
+            "NAUG:prohibit_speak",
+            "NAUG:traveling"
+          ],
+          "effects": [
+            "NAUG:rule_violation",
+            "NAUG:speaks_to"
+          ]
+        },
+        {
+          "name": "approach_sun",
+          "requires": [
+            "NAUG:avoid",
+            "NAUG:traveling"
+          ],
+          "effects": [
+            "NAUG:near"
+          ]
+        },
+        {
+          "name": "burn_up",
+          "requires": [
+            "NAUG:near"
+          ],
+          "effects": [
+            "NAUG:burned",
+            "NAUG:has_mission",
+            "NAUG:traveling"
+          ]
+        },
+        {
+          "name": "cross_out_comet",
+          "requires": [
+            "NAUG:burned"
+          ],
+          "effects": [
+            "NAUG:crossed_out",
+            "NAUG:on_list"
+          ]
+        },
+        {
+          "name": "call_comet_forward",
+          "requires": [
+            "NAUG:at"
+          ],
+          "effects": [
+            "NAUG:summoned"
+          ]
+        },
+        {
+          "name": "arrest_meteor",
+          "requires": [
+            "NAUG:near",
+            "NAUG:traveling"
+          ],
+          "effects": [
+            "NAUG:arrested",
+            "NAUG:detained"
+          ]
+        },
+        {
+          "name": "deliver_meteor_to_bungo",
+          "requires": [
+            "NAUG:detained"
+          ],
+          "effects": [
+            "NAUG:delivered"
+          ]
+        },
+        {
+          "name": "punish_meteor",
+          "requires": [
+            "NAUG:delivered"
+          ],
+          "effects": [
+            "NAUG:punished"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "PIGS_NP",
+      "sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "apple": "item",
+        "brick_house": "location",
+        "bricks": "item",
+        "butter_churn": "item",
+        "chimney": "location",
+        "farmer": "entity",
+        "fire": "item",
+        "furze_bundle": "item",
+        "furze_house": "location",
+        "hearth": "location",
+        "hill": "location",
+        "man_bricks": "entity",
+        "man_furze": "entity",
+        "man_straw": "entity",
+        "mortar": "item",
+        "mother_pig": "entity",
+        "oak_forest": "location",
+        "pig1": "entity",
+        "pig2": "entity",
+        "pig3": "entity",
+        "pig_home": "location",
+        "pot_of_water": "item",
+        "sack": "item",
+        "squire": "entity",
+        "squire_orchard": "location",
+        "straw_bundle": "item",
+        "straw_house": "location",
+        "town_fair": "location",
+        "trowel": "item",
+        "turnip_field": "location",
+        "turnips_load": "item",
+        "wolf": "entity"
+      },
+      "predicates": {
+        "alive": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "boiling": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "dead": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "door_closed": [
+          [
+            "?h",
+            "location"
+          ]
+        ],
+        "entry_denied": [
+          [
+            "?w",
+            "entity"
+          ],
+          [
+            "?h",
+            "location"
+          ]
+        ],
+        "entry_requested": [
+          [
+            "?w",
+            "entity"
+          ],
+          [
+            "?h",
+            "location"
+          ]
+        ],
+        "escaped": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "has_bundle": [
+          [
+            "?m",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "house": [
+          [
+            "?h",
+            "location"
+          ],
+          [
+            "?m",
+            "item"
+          ]
+        ],
+        "house_destroyed": [
+          [
+            "?h",
+            "location"
+          ]
+        ],
+        "house_intact": [
+          [
+            "?h",
+            "location"
+          ]
+        ],
+        "huffed": [
+          [
+            "?w",
+            "entity"
+          ]
+        ],
+        "inside": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?c",
+            "item"
+          ]
+        ],
+        "material_requested": [
+          [
+            "?p",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "over": [
+          [
+            "?i1",
+            "item"
+          ],
+          [
+            "?i2",
+            "item"
+          ]
+        ],
+        "plan": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "puffed": [
+          [
+            "?w",
+            "entity"
+          ]
+        ],
+        "rolling": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "under": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "send_sons_on_journey",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at"
+          ],
+          "effects": [
+            "PIGS_NP:at",
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "ask_for_material",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:has_bundle"
+          ],
+          "effects": [
+            "PIGS_NP:material_requested"
+          ]
+        },
+        {
+          "name": "receive_material",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:has_bundle",
+            "PIGS_NP:material_requested"
+          ],
+          "effects": [
+            "PIGS_NP:has",
+            "PIGS_NP:has_bundle",
+            "PIGS_NP:material_requested"
+          ]
+        },
+        {
+          "name": "build_house",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at",
+            "PIGS_NP:has"
+          ],
+          "effects": [
+            "PIGS_NP:door_closed",
+            "PIGS_NP:has",
+            "PIGS_NP:house",
+            "PIGS_NP:house_intact"
+          ]
+        },
+        {
+          "name": "wolf_knocks_and_requests_entry",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at",
+            "PIGS_NP:door_closed"
+          ],
+          "effects": [
+            "PIGS_NP:entry_requested"
+          ]
+        },
+        {
+          "name": "pig_refuses_entry",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:entry_requested"
+          ],
+          "effects": [
+            "PIGS_NP:entry_denied",
+            "PIGS_NP:entry_requested"
+          ]
+        },
+        {
+          "name": "wolf_huff_and_puff",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:entry_denied"
+          ],
+          "effects": [
+            "PIGS_NP:huffed",
+            "PIGS_NP:puffed"
+          ]
+        },
+        {
+          "name": "wolf_blows_house_down",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:door_closed",
+            "PIGS_NP:house",
+            "PIGS_NP:huffed",
+            "PIGS_NP:puffed"
+          ],
+          "effects": [
+            "PIGS_NP:door_closed",
+            "PIGS_NP:house_destroyed",
+            "PIGS_NP:house_intact"
+          ]
+        },
+        {
+          "name": "wolf_eats_pig",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at",
+            "PIGS_NP:house_destroyed"
+          ],
+          "effects": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at",
+            "PIGS_NP:dead"
+          ]
+        },
+        {
+          "name": "wolf_fails_to_blow_house",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:house",
+            "PIGS_NP:huffed",
+            "PIGS_NP:puffed"
+          ],
+          "effects": [
+            "PIGS_NP:house_intact"
+          ]
+        },
+        {
+          "name": "wolf_promises_turnip_field",
+          "requires": [
+            "PIGS_NP:alive"
+          ],
+          "effects": [
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "pig_collects_turnips",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:plan"
+          ],
+          "effects": [
+            "PIGS_NP:has",
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "wolf_promises_apple_orchard",
+          "requires": [
+            "PIGS_NP:alive"
+          ],
+          "effects": [
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "pig_collects_apples_and_escapes",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:plan"
+          ],
+          "effects": [
+            "PIGS_NP:escaped",
+            "PIGS_NP:has",
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "wolf_promises_fair_trip",
+          "requires": [
+            "PIGS_NP:alive"
+          ],
+          "effects": [
+            "PIGS_NP:plan"
+          ]
+        },
+        {
+          "name": "pig_buys_butter_churn_and_hides",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at"
+          ],
+          "effects": [
+            "PIGS_NP:has",
+            "PIGS_NP:inside"
+          ]
+        },
+        {
+          "name": "pig_rolls_churn_down_hill",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:inside"
+          ],
+          "effects": [
+            "PIGS_NP:inside",
+            "PIGS_NP:rolling"
+          ]
+        },
+        {
+          "name": "wolf_flees_from_rolling_object",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:rolling"
+          ],
+          "effects": [
+            "PIGS_NP:escaped"
+          ]
+        },
+        {
+          "name": "wolf_attempts_chimney_entry",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:house_intact"
+          ],
+          "effects": [
+            "PIGS_NP:entry_requested"
+          ]
+        },
+        {
+          "name": "pig_prepares_boiling_pot_and_fire",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:at",
+            "PIGS_NP:has"
+          ],
+          "effects": [
+            "PIGS_NP:boiling",
+            "PIGS_NP:over",
+            "PIGS_NP:under"
+          ]
+        },
+        {
+          "name": "wolf_falls_into_pot_and_is_boiled",
+          "requires": [
+            "PIGS_NP:alive",
+            "PIGS_NP:boiling"
+          ],
+          "effects": [
+            "PIGS_NP:alive",
+            "PIGS_NP:dead"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "PUSS",
+      "sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "ass": "item",
+        "bag": "item",
+        "boots": "item",
+        "coachman": "entity",
+        "eldest_son": "entity",
+        "field_of_corn": "location",
+        "field_of_wheat": "location",
+        "groom": "entity",
+        "hare": "item",
+        "jack": "entity",
+        "king": "entity",
+        "mill": "item",
+        "miller": "entity",
+        "ogre": "entity",
+        "ogre_castle": "location",
+        "palace": "location",
+        "partridge": "item",
+        "princess": "entity",
+        "puss": "entity",
+        "rabbit": "item",
+        "river": "location",
+        "royal_wardrobe": "location",
+        "second_son": "entity",
+        "suit": "item",
+        "warren": "location"
+      },
+      "predicates": {
+        "alive": [
+          [
+            "?x",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?x",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "at_item": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "castle_owned_by": [
+          [
+            "?castle",
+            "location"
+          ],
+          [
+            "?owner",
+            "entity"
+          ]
+        ],
+        "contains": [
+          [
+            "?c",
+            "item"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "drowning": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "gate_open": [
+          [
+            "?castle",
+            "location"
+          ]
+        ],
+        "gift_delivered": [
+          [
+            "?giver",
+            "entity"
+          ],
+          [
+            "?receiver",
+            "entity"
+          ],
+          [
+            "?item",
+            "item"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "married": [
+          [
+            "?e1",
+            "entity"
+          ],
+          [
+            "?e2",
+            "entity"
+          ]
+        ],
+        "obedient": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "promised_to_serve": [
+          [
+            "?servant",
+            "entity"
+          ],
+          [
+            "?master",
+            "entity"
+          ]
+        ],
+        "rescued_by": [
+          [
+            "?victim",
+            "entity"
+          ],
+          [
+            "?rescuer",
+            "entity"
+          ]
+        ],
+        "transformed_into": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?form",
+            "entity"
+          ]
+        ],
+        "wearing": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "buy_boots",
+          "requires": [
+            "PUSS:has"
+          ],
+          "effects": [
+            "PUSS:has"
+          ]
+        },
+        {
+          "name": "give_bag_to_cat",
+          "requires": [
+            "PUSS:has"
+          ],
+          "effects": [
+            "PUSS:has"
+          ]
+        },
+        {
+          "name": "cat_catch_rabbits",
+          "requires": [
+            "PUSS:at_item",
+            "PUSS:contains",
+            "PUSS:has"
+          ],
+          "effects": [
+            "PUSS:at_item",
+            "PUSS:contains"
+          ]
+        },
+        {
+          "name": "cat_deliver_gifts_to_king",
+          "requires": [
+            "PUSS:at",
+            "PUSS:contains"
+          ],
+          "effects": [
+            "PUSS:contains",
+            "PUSS:gift_delivered"
+          ]
+        },
+        {
+          "name": "cat_persuade_master_to_bathe",
+          "requires": [
+            "PUSS:at"
+          ],
+          "effects": [
+            "PUSS:drowning"
+          ]
+        },
+        {
+          "name": "cat_call_for_help",
+          "requires": [
+            "PUSS:drowning"
+          ],
+          "effects": [
+            "PUSS:drowning",
+            "PUSS:rescued_by"
+          ]
+        },
+        {
+          "name": "king_send_groom_fetch_suit",
+          "requires": [
+            "PUSS:at_item"
+          ],
+          "effects": [
+            "PUSS:at_item",
+            "PUSS:has"
+          ]
+        },
+        {
+          "name": "master_wear_suit",
+          "requires": [
+            "PUSS:has"
+          ],
+          "effects": [
+            "PUSS:has",
+            "PUSS:wearing"
+          ]
+        },
+        {
+          "name": "cat_ogre_transform_lion",
+          "requires": [
+            "PUSS:alive",
+            "PUSS:at"
+          ],
+          "effects": [
+            "PUSS:transformed_into"
+          ]
+        },
+        {
+          "name": "cat_ogre_transform_mouse",
+          "requires": [
+            "PUSS:alive"
+          ],
+          "effects": [
+            "PUSS:transformed_into"
+          ]
+        },
+        {
+          "name": "cat_eat_mouse",
+          "requires": [
+            "PUSS:transformed_into"
+          ],
+          "effects": [
+            "PUSS:transformed_into"
+          ]
+        },
+        {
+          "name": "cat_disentchant_prisoners",
+          "requires": [
+            "PUSS:alive"
+          ],
+          "effects": [
+            "PUSS:promised_to_serve"
+          ]
+        },
+        {
+          "name": "cat_open_castle_gates",
+          "requires": [
+            "PUSS:at"
+          ],
+          "effects": [
+            "PUSS:gate_open"
+          ]
+        },
+        {
+          "name": "master_marry_princess",
+          "requires": [
+            "PUSS:at",
+            "PUSS:married"
+          ],
+          "effects": [
+            "PUSS:married"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "REMA_NP",
+      "sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "back_door": "location",
+        "back_stairs": "location",
+        "bag_of_rubies": "item",
+        "bag_of_sapphires": "item",
+        "city": "location",
+        "crown": "item",
+        "father_king": "entity",
+        "forest": "location",
+        "impostor_butterman": "entity",
+        "king_at_palace": "entity",
+        "market_place": "location",
+        "oak_tree": "location",
+        "palace": "location",
+        "princess": "entity",
+        "robber_chief": "entity",
+        "sceptre": "item"
+      },
+      "predicates": {
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "grandmother_mangle_spoken": [],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "married": [
+          [
+            "?p1",
+            "entity"
+          ],
+          [
+            "?p2",
+            "entity"
+          ]
+        ],
+        "price_of_butter_spoken": [],
+        "with_all_my_heart_spoken": []
+      },
+      "actions": [
+        {
+          "name": "run_away_from_palace",
+          "requires": [
+            "REMA_NP:at"
+          ],
+          "effects": [
+            "REMA_NP:at"
+          ]
+        },
+        {
+          "name": "encounter_impostor_king",
+          "requires": [
+            "REMA_NP:at"
+          ],
+          "effects": [
+            "REMA_NP:at"
+          ]
+        },
+        {
+          "name": "utter_phrase_price_of_butter",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:price_of_butter_spoken"
+          ],
+          "effects": [
+            "REMA_NP:price_of_butter_spoken"
+          ]
+        },
+        {
+          "name": "receive_rubies_from_impostor",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:has",
+            "REMA_NP:price_of_butter_spoken"
+          ],
+          "effects": [
+            "REMA_NP:has"
+          ]
+        },
+        {
+          "name": "encounter_robbers_in_forest",
+          "requires": [
+            "REMA_NP:at"
+          ],
+          "effects": [
+            "REMA_NP:at"
+          ]
+        },
+        {
+          "name": "utter_phrase_grandmother_mangle",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:grandmother_mangle_spoken"
+          ],
+          "effects": [
+            "REMA_NP:grandmother_mangle_spoken"
+          ]
+        },
+        {
+          "name": "receive_sapphires_from_robber_chief",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:grandmother_mangle_spoken",
+            "REMA_NP:has"
+          ],
+          "effects": [
+            "REMA_NP:has"
+          ]
+        },
+        {
+          "name": "arrive_at_marble_palace",
+          "requires": [
+            "REMA_NP:at"
+          ],
+          "effects": [
+            "REMA_NP:at"
+          ]
+        },
+        {
+          "name": "king_requests_information_and_gifts",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:has"
+          ],
+          "effects": [
+            "REMA_NP:has"
+          ]
+        },
+        {
+          "name": "king_proposes_marriage",
+          "requires": [
+            "REMA_NP:at"
+          ],
+          "effects": [
+            "REMA_NP:married"
+          ]
+        },
+        {
+          "name": "princess_accepts_with_heart",
+          "requires": [
+            "REMA_NP:married",
+            "REMA_NP:with_all_my_heart_spoken"
+          ],
+          "effects": [
+            "REMA_NP:with_all_my_heart_spoken"
+          ]
+        },
+        {
+          "name": "suitors_retire_due_to_phrase",
+          "requires": [
+            "REMA_NP:at",
+            "REMA_NP:grandmother_mangle_spoken"
+          ],
+          "effects": [
+            "REMA_NP:married"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "SNOW",
+      "sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "apple": "item",
+        "bed": "item",
+        "blood_drop": "item",
+        "boar": "entity",
+        "boar_heart": "item",
+        "candle": "item",
+        "coffin": "item",
+        "comb": "item",
+        "cottage": "location",
+        "dove": "entity",
+        "dwarf1": "entity",
+        "dwarf2": "entity",
+        "dwarf3": "entity",
+        "dwarf4": "entity",
+        "dwarf5": "entity",
+        "dwarf6": "entity",
+        "dwarf7": "entity",
+        "forest": "location",
+        "fork": "item",
+        "golden_letter": "item",
+        "huntsman": "entity",
+        "iron_slippers": "item",
+        "king": "entity",
+        "knife": "item",
+        "lace": "item",
+        "looking_glass": "item",
+        "mountain": "location",
+        "mug": "item",
+        "needle": "item",
+        "owl": "entity",
+        "plate": "item",
+        "prince": "entity",
+        "queen": "entity",
+        "raven": "entity",
+        "red_hot_shoes": "item",
+        "salt": "item",
+        "snow_white": "entity",
+        "spoon": "item"
+      },
+      "predicates": {
+        "alive": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "at_item": [
+          [
+            "?i",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "awake": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "dead": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "disguised_as": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?d",
+            "entity"
+          ]
+        ],
+        "envious": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "fair": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "fairest": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "in_coffin": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "laced": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "poisoned": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "sleeping": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "visited": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "wearing": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "queen_sews_at_window",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:at"
+          ],
+          "effects": [
+            "SNOW:has"
+          ]
+        },
+        {
+          "name": "queen_pricks_finger",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:has"
+          ],
+          "effects": [
+            "SNOW:has"
+          ]
+        },
+        {
+          "name": "queen_wishes_child_white_red_black",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:fair"
+          ]
+        },
+        {
+          "name": "child_is_born_and_queen_dies",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead"
+          ]
+        },
+        {
+          "name": "king_marries_stepmother",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:fair"
+          ]
+        },
+        {
+          "name": "stepmother_asks_looking_glass_fairest",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:has"
+          ],
+          "effects": [
+            "SNOW:fairest"
+          ]
+        },
+        {
+          "name": "stepmother_becomes_envious_of_snow_white",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:fair",
+            "SNOW:fairest"
+          ],
+          "effects": [
+            "SNOW:envious"
+          ]
+        },
+        {
+          "name": "stepmother_orders_huntsman_to_kill_snow_white",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:envious"
+          ],
+          "effects": [
+            "SNOW:fair"
+          ]
+        },
+        {
+          "name": "huntsman_spares_snow_white_and_brings_boar_heart",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:dead",
+            "SNOW:has"
+          ]
+        },
+        {
+          "name": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+          "requires": [
+            "SNOW:has"
+          ],
+          "effects": [
+            "SNOW:has"
+          ]
+        },
+        {
+          "name": "snow_white_flees_into_forest",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:at"
+          ]
+        },
+        {
+          "name": "snow_white_finds_dwarfs_cottage",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:at"
+          ]
+        },
+        {
+          "name": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:has"
+          ]
+        },
+        {
+          "name": "snow_white_sleeps_in_seventh_bed",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:sleeping"
+          ]
+        },
+        {
+          "name": "dwarfs_return_and_discover_snow_white",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:sleeping"
+          ],
+          "effects": [
+            "SNOW:awake"
+          ]
+        },
+        {
+          "name": "dwarfs_offer_snow_white_to_maintain_house",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:sleeping"
+          ],
+          "effects": [
+            "SNOW:awake",
+            "SNOW:sleeping"
+          ]
+        },
+        {
+          "name": "stepmother_disguises_as_old_woman_and_visits_cottage",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:disguised_as",
+            "SNOW:visited"
+          ]
+        },
+        {
+          "name": "stepmother_laces_snow_white_tightly",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:has"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead",
+            "SNOW:laced",
+            "SNOW:sleeping"
+          ]
+        },
+        {
+          "name": "dwarfs_cut_laces_rescue_snow_white",
+          "requires": [
+            "SNOW:dead",
+            "SNOW:laced"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:awake",
+            "SNOW:dead",
+            "SNOW:laced"
+          ]
+        },
+        {
+          "name": "stepmother_makes_poisonous_comb_and_visits_cottage",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:has",
+            "SNOW:poisoned",
+            "SNOW:visited"
+          ]
+        },
+        {
+          "name": "stepmother_comb_poison_snow_white",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:has",
+            "SNOW:poisoned"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead"
+          ]
+        },
+        {
+          "name": "dwarfs_remove_comb_rescue_snow_white",
+          "requires": [
+            "SNOW:dead",
+            "SNOW:has",
+            "SNOW:poisoned"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead",
+            "SNOW:poisoned"
+          ]
+        },
+        {
+          "name": "stepmother_makes_poisonous_apple_and_visits_cottage",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:has",
+            "SNOW:poisoned",
+            "SNOW:visited"
+          ]
+        },
+        {
+          "name": "snow_white_eats_poisoned_apple_and_dies",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:poisoned"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead"
+          ]
+        },
+        {
+          "name": "dwarfs_prepare_glass_coffin_for_snow_white",
+          "requires": [
+            "SNOW:dead"
+          ],
+          "effects": [
+            "SNOW:has",
+            "SNOW:in_coffin"
+          ]
+        },
+        {
+          "name": "prince_discovers_coffin_and_moves_it",
+          "requires": [
+            "SNOW:alive",
+            "SNOW:in_coffin"
+          ],
+          "effects": [
+            "SNOW:at_item"
+          ]
+        },
+        {
+          "name": "apple_piece_falls_out_reviving_snow_white",
+          "requires": [
+            "SNOW:dead",
+            "SNOW:poisoned"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead",
+            "SNOW:poisoned"
+          ]
+        },
+        {
+          "name": "prince_marries_snow_white",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:fair"
+          ]
+        },
+        {
+          "name": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+          "requires": [
+            "SNOW:alive"
+          ],
+          "effects": [
+            "SNOW:alive",
+            "SNOW:dead",
+            "SNOW:wearing"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "SOUP",
+      "sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "ant_queen": "entity",
+        "castle": "location",
+        "crape_skewer": "item",
+        "elf_chief": "entity",
+        "first_traveler_mouse": "entity",
+        "forest": "location",
+        "fourth_traveler_mouse": "entity",
+        "jailer": "entity",
+        "jailer_granddaughter": "entity",
+        "kitchen": "location",
+        "library": "location",
+        "maypole": "item",
+        "mouse_king": "entity",
+        "north": "location",
+        "oak_dryad": "entity",
+        "old_lady_mouse": "entity",
+        "old_owl": "entity",
+        "phantaesus": "entity",
+        "sausage_skewer": "item",
+        "sea": "location",
+        "second_traveler_mouse": "entity",
+        "ship": "location",
+        "third_traveler_mouse": "entity",
+        "violet": "item",
+        "watchman": "entity",
+        "young_lady_mouse": "entity"
+      },
+      "predicates": {
+        "anointed": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "captured": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "escaped": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has_feeling": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has_imagination": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has_understanding": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "holds": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "in_cage": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "is_poet": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "is_queen": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "king_tail_stirred": [],
+        "soup_effect_created": [
+          [
+            "?e",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "travel_to",
+          "requires": [
+            "SOUP:at",
+            "SOUP:holds"
+          ],
+          "effects": [
+            "SOUP:at"
+          ]
+        },
+        {
+          "name": "give_skewer_to_elves",
+          "requires": [
+            "SOUP:holds"
+          ],
+          "effects": [
+            "SOUP:holds"
+          ]
+        },
+        {
+          "name": "receive_anointed_skewer",
+          "requires": [
+            "SOUP:holds"
+          ],
+          "effects": [
+            "SOUP:anointed"
+          ]
+        },
+        {
+          "name": "receive_feather",
+          "requires": [
+            "SOUP:at",
+            "SOUP:holds"
+          ],
+          "effects": [
+            "SOUP:has_imagination",
+            "SOUP:holds"
+          ]
+        },
+        {
+          "name": "learn_wisdom_from_ants",
+          "requires": [
+            "SOUP:at"
+          ],
+          "effects": [
+            "SOUP:has_understanding"
+          ]
+        },
+        {
+          "name": "read_and_digest_books",
+          "requires": [
+            "SOUP:at"
+          ],
+          "effects": [
+            "SOUP:has_feeling"
+          ]
+        },
+        {
+          "name": "escape_jail",
+          "requires": [
+            "SOUP:captured"
+          ],
+          "effects": [
+            "SOUP:captured",
+            "SOUP:escaped",
+            "SOUP:in_cage"
+          ]
+        },
+        {
+          "name": "run_in_cage",
+          "requires": [
+            "SOUP:captured"
+          ],
+          "effects": [
+            "SOUP:in_cage"
+          ]
+        },
+        {
+          "name": "prepare_soup_by_elf_effect",
+          "requires": [
+            "SOUP:anointed",
+            "SOUP:at",
+            "SOUP:holds"
+          ],
+          "effects": [
+            "SOUP:soup_effect_created"
+          ]
+        },
+        {
+          "name": "prepare_soup_by_poet_imagination",
+          "requires": [
+            "SOUP:has_feeling",
+            "SOUP:has_imagination",
+            "SOUP:has_understanding"
+          ],
+          "effects": [
+            "SOUP:is_poet",
+            "SOUP:soup_effect_created"
+          ]
+        },
+        {
+          "name": "prepare_soup_by_king_tail",
+          "requires": [
+            "SOUP:at"
+          ],
+          "effects": [
+            "SOUP:king_tail_stirred"
+          ]
+        },
+        {
+          "name": "claim_queenhood",
+          "requires": [
+            "SOUP:king_tail_stirred",
+            "SOUP:soup_effect_created"
+          ],
+          "effects": [
+            "SOUP:is_queen"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "WOE",
+      "sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "entity": "object",
+        "item": "object",
+        "location": "object"
+      },
+      "constants": {
+        "big_house": "location",
+        "bitter_woe": "entity",
+        "cattle": "item",
+        "children": "entity",
+        "copecks_25": "item",
+        "forest": "location",
+        "gold_pot": "item",
+        "grove": "item",
+        "harrow": "item",
+        "honey": "item",
+        "izba": "location",
+        "kabak": "location",
+        "large_town": "location",
+        "loaf_bread": "item",
+        "new_home": "location",
+        "plow": "item",
+        "poor_brother": "entity",
+        "rich_brother": "entity",
+        "sledge": "item",
+        "stone": "item",
+        "telega": "item",
+        "treasure_pit": "location",
+        "village": "location",
+        "well": "location",
+        "wife": "entity",
+        "wine": "item",
+        "yard": "location"
+      },
+      "predicates": {
+        "at": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "banquet_at": [
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "bowed": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "concealed": [
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "drunk": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "employed": [
+          [
+            "?worker",
+            "entity"
+          ],
+          [
+            "?employer",
+            "entity"
+          ]
+        ],
+        "gold_at": [
+          [
+            "?g",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "guest_present": [
+          [
+            "?guest",
+            "entity"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "has": [
+          [
+            "?e",
+            "entity"
+          ],
+          [
+            "?i",
+            "item"
+          ]
+        ],
+        "has_fatigue": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "has_strength": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "invitation_sent": [
+          [
+            "?sender",
+            "entity"
+          ],
+          [
+            "?receiver",
+            "entity"
+          ]
+        ],
+        "invited": [
+          [
+            "?invitee",
+            "entity"
+          ],
+          [
+            "?host",
+            "entity"
+          ]
+        ],
+        "need_help": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "poor": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "rich": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "singing": [
+          [
+            "?e",
+            "entity"
+          ]
+        ],
+        "stone_at": [
+          [
+            "?s",
+            "item"
+          ],
+          [
+            "?l",
+            "location"
+          ]
+        ],
+        "stone_moved": [
+          [
+            "?s",
+            "item"
+          ]
+        ],
+        "trapped": [
+          [
+            "?m",
+            "entity"
+          ]
+        ],
+        "woe_on_shoulder": [
+          [
+            "?monster",
+            "entity"
+          ],
+          [
+            "?carrier",
+            "entity"
+          ]
+        ],
+        "work_done": [
+          [
+            "?worker",
+            "entity"
+          ],
+          [
+            "?employer",
+            "entity"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "request_help_from_rich_brother",
+          "requires": [
+            "WOE:need_help",
+            "WOE:rich"
+          ],
+          "effects": [
+            "WOE:employed",
+            "WOE:need_help"
+          ]
+        },
+        {
+          "name": "perform_work_for_rich_brother",
+          "requires": [
+            "WOE:employed",
+            "WOE:has_strength"
+          ],
+          "effects": [
+            "WOE:has_fatigue",
+            "WOE:work_done"
+          ]
+        },
+        {
+          "name": "receive_payment",
+          "requires": [
+            "WOE:has",
+            "WOE:work_done"
+          ],
+          "effects": [
+            "WOE:has"
+          ]
+        },
+        {
+          "name": "stay_for_banquet",
+          "requires": [
+            "WOE:at",
+            "WOE:banquet_at",
+            "WOE:invited"
+          ],
+          "effects": [
+            "WOE:guest_present"
+          ]
+        },
+        {
+          "name": "bow_to_guests",
+          "requires": [
+            "WOE:at",
+            "WOE:guest_present"
+          ],
+          "effects": [
+            "WOE:bowed"
+          ]
+        },
+        {
+          "name": "sing_cheerful_song",
+          "requires": [
+            "WOE:at"
+          ],
+          "effects": [
+            "WOE:singing"
+          ]
+        },
+        {
+          "name": "encounter_bitter_woe",
+          "requires": [
+            "WOE:at"
+          ],
+          "effects": [
+            "WOE:has_fatigue"
+          ]
+        },
+        {
+          "name": "make_sign_of_cross",
+          "requires": [
+            "WOE:at"
+          ],
+          "effects": [
+            "WOE:has_fatigue"
+          ]
+        },
+        {
+          "name": "allow_woe_to_ride_on_shoulder",
+          "requires": [
+            "WOE:at",
+            "WOE:has_fatigue"
+          ],
+          "effects": [
+            "WOE:woe_on_shoulder"
+          ]
+        },
+        {
+          "name": "spend_money_on_drink",
+          "requires": [
+            "WOE:at",
+            "WOE:has"
+          ],
+          "effects": [
+            "WOE:drunk",
+            "WOE:has"
+          ]
+        },
+        {
+          "name": "trade_assets_for_money",
+          "requires": [
+            "WOE:has"
+          ],
+          "effects": [
+            "WOE:has"
+          ]
+        },
+        {
+          "name": "move_heavy_stone",
+          "requires": [
+            "WOE:has_strength",
+            "WOE:stone_at"
+          ],
+          "effects": [
+            "WOE:stone_at",
+            "WOE:stone_moved"
+          ]
+        },
+        {
+          "name": "hide_woe_under_stone",
+          "requires": [
+            "WOE:stone_at",
+            "WOE:woe_on_shoulder"
+          ],
+          "effects": [
+            "WOE:stone_at",
+            "WOE:stone_moved",
+            "WOE:trapped",
+            "WOE:woe_on_shoulder"
+          ]
+        },
+        {
+          "name": "take_gold_pot_and_hide",
+          "requires": [
+            "WOE:at",
+            "WOE:gold_at"
+          ],
+          "effects": [
+            "WOE:concealed",
+            "WOE:gold_at",
+            "WOE:has"
+          ]
+        },
+        {
+          "name": "invite_rich_brother_to_feast",
+          "requires": [
+            "WOE:at"
+          ],
+          "effects": [
+            "WOE:invitation_sent",
+            "WOE:invited"
+          ]
+        },
+        {
+          "name": "rich_brother_attempt_to_move_stone",
+          "requires": [
+            "WOE:rich",
+            "WOE:stone_at"
+          ],
+          "effects": [
+            "WOE:stone_at",
+            "WOE:stone_moved",
+            "WOE:woe_on_shoulder"
+          ]
+        },
+        {
+          "name": "accept_woe_as_burden",
+          "requires": [
+            "WOE:woe_on_shoulder"
+          ],
+          "effects": [
+            "WOE:has_fatigue"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Structural local-file catalog; upstream learning provenance not inferred"
+}

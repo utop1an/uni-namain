@@ -1,0 +1,232 @@
+{
+  "status": "complete",
+  "scope": "intermediate_node_not_final_reference_result",
+  "node_sources": 7,
+  "original_source_pool": 15,
+  "rows": [
+    {
+      "source": "ACCO",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+        "problem.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+        "plan.txt": "6368c4c03033c883f3a7f4820d333ef313aae412a3971c7539f2405ab750f6b2"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "arrange_exhibition",
+          "mapped_action": "perform_and_applaud",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "perform_show",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "return_kettle_to_temple",
+          "mapped_action": "transport_item",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    },
+    {
+      "source": "BIRT",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+        "problem.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+        "plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "travel_to_trysting_place",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "travel_to_trysting_place",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "receive_queen_kiss",
+          "mapped_action": "interact",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "receive_queen_kiss",
+          "mapped_action": "interact",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "return_to_bench_and_share_story",
+          "mapped_action": "return_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "travel_to_trysting_place",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "travel_to_trysting_place",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "return_to_bench_and_share_story",
+          "mapped_action": "return_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "travel_to_trysting_place",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    },
+    {
+      "source": "BUFF",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "CHIC_NP",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+        "problem.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+        "plan.txt": "bf3c1c87d98ba83b4fe9f8fe8ee1a1dafe70ce3163ea79fa0741f3a6fa09b9b9"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "decide_to_tell_king",
+          "mapped_action": "prepare_to_show",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    },
+    {
+      "source": "FOUR_NP",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "HANS_NP",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+        "problem.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+        "plan.txt": "31638e9b78337e12a76363b23d0fb897c78692396b94ce57e8792f72f1b2fe1a"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "return_home_and_reunite_with_father",
+          "mapped_action": "move_to_destination_and_resolve_state",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "collect_treasure",
+          "mapped_action": "open_door",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "return_home_and_reunite_with_father",
+          "mapped_action": "move_to_destination_and_resolve_state",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "collect_treasure",
+          "mapped_action": "open_door",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    },
+    {
+      "source": "WOE",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    }
+  ],
+  "transport_contract": "Diagnostic of native adapter positional export, not an inferred semantic/permutation map",
+  "audit_report_sha256": "5a1ef72945f537779ff7afd6678da8f9df3f3e2caa799d6d747e9995c8e30d83",
+  "source_report_sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+  "compiled_domain_sha256": "9ac2eb14928ac0a38421895f3e0134124597bdb386bfe260f429c533439a5766",
+  "counts": {
+    "unverified_parameter_transport": 4,
+    "no_original_plan_evidence": 3
+  },
+  "transported_validation_counts": {},
+  "model_unchanged": true,
+  "mappings_unchanged": true,
+  "limit": "Missing parameter maps are not failed plans; invalid transported traces are not proof that no alternative plan exists",
+  "implementation_sha256": {
+    "probe_fusion_source_plans.py": "4065b207413cee224c5aeb2cdfb854649717cc183a1aad650e8891f74fc8e6f6",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  }
+}

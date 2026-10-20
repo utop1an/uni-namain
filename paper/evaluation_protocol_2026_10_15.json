@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "status": "development_protocol_and_prospective_admission_rules_not_independent_results",
+  "local_source_audit": "data/validation/source_provenance_2026_10_15_v1/report.json",
+  "development_sources": {
+    "count": 15,
+    "role": "observed_development",
+    "upstream_verified": 0,
+    "relabel_as_independent_test": false
+  },
+  "semantic_annotation": {
+    "packet": "data/annotation/interface_development_2026_10_15_v1/packet.json",
+    "pairs": 100,
+    "annotators_required": 2,
+    "completed_independent_files": 0,
+    "blind_to": [
+      "model_predictions",
+      "plans",
+      "solver_status",
+      "other_annotator_judgments"
+    ],
+    "labels": [
+      "equivalent",
+      "permuted_equivalent",
+      "abstraction",
+      "complementary",
+      "incompatible",
+      "uncertain"
+    ],
+    "raw_agreement": "six-label confusion matrix and Cohen kappa on paired completed judgments; report full coverage and undefined constant-marginal kappa as null",
+    "argument_maps": "exact permutation agreement among pairs both judged equivalent or permuted-equivalent",
+    "missing": "unreviewed/missing judgments excluded from paired denominator, retained in coverage; uncertain is retained as a substantive label",
+    "adjudication": "preserve both original files; third decision in separate versioned file; disagreements and uncertainty remain visible",
+    "independence_limit": "distinct IDs and declarations do not establish actual independence",
+    "population_limit": "current stratified 100-pair sample is not an unweighted prevalence estimate; different-arity pairs are outside scope",
+    "agreement_tool": "summarize_interface_agreement.py",
+    "current_readiness": "data/validation/annotation_readiness_2026_10_15_v1/report.json"
+  },
+  "prospective_source_admission": [
+    "Record upstream project, author, release/commit, original representation, usage attribution and exact file hashes before method development on the candidate.",
+    "Record learner/training provenance when learned; use explicit unknowns otherwise and avoid claims about learned-model generalization.",
+    "Check overlap with observed 15 stories and other candidate families; freeze source-family split before observing model predictions or solver outcomes.",
+    "Freeze explicit worlds, objects/memberships and goals independently of model success; keep initial-only and goal-directed conditions separate.",
+    "Preserve all supported semantics during translation; intentional, epistemic, numeric or temporal features cannot silently be removed and still claimed preserved.",
+    "Any inspected case used to modify the method becomes development; create a fresh untouched evaluation partition for subsequent test claims.",
+    "Predefine candidate universe, all inclusion/exclusion rules, paired solver wall/memory budgets, model digest/prompt/seed settings and required ablations.",
+    "Report every frozen task including invalid outputs, parse failures, uncertain judgments, unsolvable tasks and resource cutoffs."
+  ],
+  "unresolved_before_independent_evaluation": [
+    "verified candidate artifact release",
+    "source-family overlap audit",
+    "translation semantic support",
+    "frozen test task and label set",
+    "analysis weighting/uncertainty protocol suited to source-family dependencies"
+  ],
+  "no_claims": [
+    "No semantic accuracy score without independent judged references",
+    "No narrative-quality claim from plan validity",
+    "No independent-domain generalization from known-source variants"
+  ],
+  "external_candidates": [
+    {
+      "name": "Sabre benchmark collection",
+      "url": "https://github.com/sgware/sabre-benchmarks",
+      "verified_on": "2026-10-15",
+      "evidence": "Maintainer README identifies multiple source authors, a provenance/translation report and original representations where available.",
+      "status": "six_families_inspected_Basketball_adapted_for_external_development_validation",
+      "compatibility_gate": "Narrative/intention features require explicit representation audit; do not silently project them into classical PDDL.",
+      "commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+      "admission_audit": "data/validation/external_source_admission_2026_10_15_v1/admission_decision.json",
+      "packaged_problem_count": 10,
+      "external_family_count": 1,
+      "independent_held_out_claim": false,
+      "scope": "One external development family after explicit header-only packaging; no intentionality features stripped; other five inspected families remain unadmitted"
+    },
+    {
+      "name": "MicroTales",
+      "url": "https://cs.uky.edu/~sgware/projects/microtales/",
+      "verified_on": "2026-10-15",
+      "evidence": "Maintainer describes modular characters, goals, locations and connectivity for scalable story games.",
+      "status": "candidate_not_imported_or_evaluated",
+      "compatibility_gate": "Shared modular vocabulary is a different setting from independently supplied source action models; any transfer claim must state this distinction."
+    },
+    {
+      "name": "Narrative Planning Model Acquisition from Text Summaries and Descriptions",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/5534",
+      "verified_on": "2026-10-15",
+      "evidence": "AAAI 2020 article describes acquisition of PDDL models from text summaries.",
+      "status": "literature_lead_not_verified_origin_of_local_files",
+      "compatibility_gate": "No matching upstream release or artifact hashes established; do not attribute local files to this paper."
+    }
+  ],
+  "source_action_reachability": {
+    "status": "complete_with_full_denominator",
+    "bundle": "data/validation/source_action_reachability_tasks_2026_10_15_v1/manifest.json",
+    "task_count": 234,
+    "selection": "every declared source action, deterministic source/name order, no outcome-based exclusion",
+    "world": "exact original source objects and initial state",
+    "intervention": "fresh nullary initially false observer, unconditional effect on exactly the target action, observer goal replaces original goal",
+    "resources": {
+      "planner": "Fast Downward 26.6 lama-first",
+      "seconds_per_task": 20,
+      "memory_mb": 4096,
+      "workers": 1
+    },
+    "audits": [
+      "AST inversion recovers complete source domain/problem",
+      "fresh validation of instrumented plan",
+      "target action invocation",
+      "all source ground atom values along original/instrumented traces",
+      "fixed compiled-model replay with all source ground atom comparisons"
+    ],
+    "interpretation": "action invocation reachability under bounded search; not original-goal success, conditional-effect branch coverage, semantic interface quality or exhaustive state-space preservation",
+    "reporting": "retain all 234 tasks, separate solved/unsolvable/resource cutoffs; no aggregate with original-goal or auxiliary-effect-goal denominators",
+    "results": {
+      "solved": 146,
+      "solver_unsolvable": 50,
+      "wall_time_limit": 38,
+      "each_model_replay_pass": 146,
+      "each_model_states": 459,
+      "each_model_truth_comparisons": 354757,
+      "mismatches": 0,
+      "combined_solver_bundle_witnessed_actions": 166,
+      "remaining_unresolved_in_bundles": 18
+    }
+  },
+  "schema_intervention_runtime_boundary": {
+    "interruption": "localservicewasstopped; firstcoupled attempt processed0 and retained asfailed",
+    "completed_coupled_run": "data/validation/interface_predictions_gemma_coupled_2026_10_15_v2",
+    "same_service_free_control": "data/validation/interface_predictions_gemma_free_restored_2026_10_15_v1",
+    "runtime": "Ollama0.33.2; modeldigestfixed; originalbaseline serviceversionunknown",
+    "interpretation": "Output contract and citation format only, not semantic accuracy; fresh control needed to match restored runtime"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_1fe4656a9e924488",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `has` in HANS_NP describes possession of an item, while the predicate `offers` in JACK_NP describes a willingness to give an item. These predicates represent distinct relationships: `has` indicates ownership, while `offers` indicates a potential exchange. The action contexts further support this distinction. In HANS_NP, `has` is used to describe the state of an entity holding an item (e.g., `(has ?h ?pearl)`), while in JACK_NP, `offers` is used to describe an entity's willingness to provide an item (e.g., `(offers ?b ?beans)`). The different preconditions and effects associated with each predicate highlight their separate roles. Therefore, the predicates are complementary because they both relate to items, but one describes possession and the other describes a willingness to give, representing different aspects of interaction and exchange. The action contexts provide evidence for this complementary relationship by showing how `has` is used to describe the state of an entity holding an item, and `offers` is used to describe an entity's willingness to provide an item. The different action contexts and parameters further reinforce the distinct roles of the predicates. The use of `?e` and `?i` as parameters in both predicates further emphasizes their distinct roles. The `at` and `location` parameters in the action contexts also highlight the spatial aspects of the predicates, further differentiating their roles. The fact that the predicates are used in different action contexts (collect_treasure vs. sell_cow_for_beans) further supports the complementary relationship. The `not` effects in the action contexts (e.g., `(not (offers ?b ?beans))`) also highlight the distinct roles of the predicates. The different parameter names (e.g., `?pearl` vs. `?beans`) further reinforce the distinct roles of the predicates. The use of `?h` and `?g` as parameters in the action contexts also highlights the different entities involved in the predicates. The fact that the predicates are used in different action contexts (enter_witch_house vs. sell_cow_for_beans) further supports the complementary relationship.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(offers ?b ?beans)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:collect_treasure",
+      "quote": "(has ?h ?pearl)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:drop_breadcrumb_on_path",
+      "quote": "(has ?h ?crumb)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:drop_pebble_on_path",
+      "quote": "(has ?h ?peb)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:enter_witch_house",
+      "quote": "(has ?h cake)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:enter_witch_house",
+      "quote": "(has ?g sugar_window)"
+    }
+  ]
+}

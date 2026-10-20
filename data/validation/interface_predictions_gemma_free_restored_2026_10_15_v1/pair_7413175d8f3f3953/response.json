@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_7413175d8f3f3953",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates 'turned_back' and 'reward_received' describe distinct events related to an entity. 'turned_back' indicates a change in direction or orientation, while 'reward_received' signifies the acquisition of a reward. These events are not directly linked in the provided action contexts. The 'turned_back' action requires preconditions like 'going_to_wood' and 'not (turned_back ?e)', while the 'reward_received' action depends on 'princess_rescued ?e'. The predicates describe different aspects of an entity's state or activity. The action contexts further support this by having different preconditions and effects. The 'turned_back' action involves a change in movement, whereas 'reward_received' describes a positive outcome. Therefore, they are complementary predicates.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:turn_back",
+      "quote": "(turned_back ?e)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:receive_reward",
+      "quote": "(reward_received ?e)"
+    }
+  ]
+}

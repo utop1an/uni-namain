@@ -1,0 +1,106 @@
+{
+  "selection": {
+    "policy": "goal_dependencies",
+    "selected": [
+      "ACCO",
+      "BIRT"
+    ],
+    "excluded": [
+      "BUFF",
+      "CHIC_NP",
+      "FOUR_NP",
+      "HANS_NP",
+      "JACK_NP",
+      "MUSI",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "SNOW",
+      "SOUP",
+      "WOE"
+    ],
+    "source_reasons": {
+      "ACCO": [
+        "goal_dependency_producer",
+        "preserve_query_vocabulary_and_world"
+      ],
+      "BIRT": [
+        "preserve_query_vocabulary_and_world"
+      ],
+      "BUFF": [
+        "outside_query_and_dependency_closure"
+      ],
+      "CHIC_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "FOUR_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "HANS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "JACK_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "MUSI": [
+        "outside_query_and_dependency_closure"
+      ],
+      "NAUG": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PIGS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PUSS": [
+        "outside_query_and_dependency_closure"
+      ],
+      "REMA_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SNOW": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SOUP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "WOE": [
+        "outside_query_and_dependency_closure"
+      ]
+    },
+    "relevant_action_references_for_explanation_only": [
+      "ACCO:arrange_exhibition",
+      "ACCO:perform_show",
+      "ACCO:receive_orders_from_nobility",
+      "ACCO:return_kettle_to_temple",
+      "ACCO:sell_kettle_to_tinker",
+      "ACCO:show_kettle_to_friend"
+    ],
+    "action_subset_selection": false,
+    "optimal_or_minimal_subset_claim": false,
+    "scope": "Unsigned predicate dependency over-approximation; no reachability or semantic-equivalence claim",
+    "omitted_alignment_groups": []
+  },
+  "solver": "pyperplan",
+  "catalog_sha256": "2f0bb32ececa826fc85a8a9fb12fb1f9a960eff12bbb9a410d25c3ba0ac5ad83",
+  "budget": {
+    "seconds": 60.0
+  },
+  "merged_before_planning": true,
+  "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+  "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+  "implementation_sha256": {
+    "run_narrative_pipeline.py": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+    "rcnc/narrative_pipeline.py": "6057f317b3c224c5e6310092f1cba612552207fcc42adfc0ac5091cc0efd0a39",
+    "rcnc/merged_planning.py": "3ec67dd62cbcc9ad62033fad6bad7298d9fb9cca894212a567772d8d8adf9f20",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "rcnc/outcome_planning.py": "a8b0eaa039bf80236f781aca59c40ff6a930d51e36c3d74c0a1dfa23d1a542b6",
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "rcnc/domain_catalog.py": "83ceba2120bdabc863ff1e26773b740994e5ee8c5349e835593203bf40417e8a",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931"
+  }
+}

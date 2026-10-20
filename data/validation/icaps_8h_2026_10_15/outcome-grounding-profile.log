@@ -1,0 +1,26 @@
+starting explore
+Timeout (0:00:10)!
+Thread 0x000052e0 (most recent call first):
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\expression.py", line 101 in auto_promote
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\walkers\substituter.py", line 112 in substitute
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\fnode.py", line 258 in substitute
+Timeout (0:00:10)!
+Thread 0x000052e0 (most recent call first):
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\expression.py", line 124 in auto_promote
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\walkers\substituter.py", line 114 in substitute
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\fnode.py", line 258 in substitute
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\utils.py", line 140 in create_effect_with_given_subs
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\utils.py", line 170 in create_action_with_given_subs
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\grounder.py", line 148 in ground_action
+  File "C:\anu\uninamain\rcnc\outcome_planning.py", line 56 in explore
+  File "C:\anu\uninamain\.tmp\profile_outcomes.py", line 7 in <module>
+Timeout (0:00:10)!
+Thread 0x000052e0 (most recent call first):
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\fnode.py", line 134 in type
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\walkers\substituter.py", line 119 in substitute
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\model\fnode.py", line 258 in substitute
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\utils.py", line 140 in create_effect_with_given_subs
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\utils.py", line 170 in create_action_with_given_subs
+  File "C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\engines\compilers\grounder.py", line 148 in ground_action
+  File "C:\anu\uninamain\rcnc\outcome_planning.py", line 56 in explore
+  File "C:\anu\uninamain\.tmp\profile_outcomes.py", line 7 in <module>

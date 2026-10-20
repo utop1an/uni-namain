@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_5af390b5bc641c70",
+  "label": "equivalent",
+  "right_from_left": [
+    5,
+    1
+  ],
+  "rationale": "The predicates `at` on both sides of the pair express the same spatial relationship: the location of an entity. In the HANS_NP actions, `at ?e ?l` indicates that entity `?e` is located at location `?l`. Similarly, in the WOE actions, `at ?e ?l` indicates the same spatial relationship. The arguments `?e` and `?l` represent the entity and location respectively, and their roles are interchangeable. The action contexts demonstrate this by using the same predicate to describe the location of entities in different scenarios. The exact excerpts confirm this: `(at ?h ?forest)` and `(at ?poor ?loc)` both represent the location of an entity at a specific location. The predicates are used identically to express the same spatial relationship, making them equivalent.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:bow_to_guests",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:encounter_bitter_woe",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:invite_rich_brother_to_feast",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:make_sign_of_cross",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:sing_cheerful_song",
+      "quote": "(at ?poor ?loc)"
+    }
+  ]
+}

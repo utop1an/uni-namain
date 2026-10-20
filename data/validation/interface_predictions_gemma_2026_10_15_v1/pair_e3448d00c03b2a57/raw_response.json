@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:29:48.569923Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_e3448d00c03b2a57\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicates `at` in BIRT and NAUG represent location, but their usage differs significantly. BIRT's `at` is primarily used to describe the spatial position of entities within a narrative context, often related to actions like approaching, hearing, or returning. The action contexts demonstrate this with actions like `approach_beech_tree`, `hear_tapping_on_beech`, and `return_to_bench_and_share_story`, where the `at` predicate is consistently used to specify the location of an entity. Conversely, NAUG's `at` is used within the context of a more abstract, rule-based system, primarily to define the location of entities within a courtyard. The `call_comet_forward` and `give_order` actions rely on `at` to determine the location of entities relative to the courtyard. The core difference lies in the application: BIRT's `at` is narrative-driven, while NAUG's `at` is rule-driven. Therefore, they represent complementary predicates – both describe location, but in fundamentally different contexts and with different implications for the system's behavior. The action contexts and their associated excerpts confirm this distinction. BIRT's excerpts consistently use `at` to describe the spatial relationships of entities within a story, while NAUG's excerpts use `at` to define spatial constraints within a rule-based system.\", \"evidence\": [ {\"side\": 1, \"ref\": \"NAUG:action:call_comet_forward\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 1, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 1, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"BIRT:action:approach_beech_tree\", \"quote\": \"(at ?n ?t)\"}, {\"side\": 0, \"ref\": \"BIRT:action:hear_tapping_on_beech\", \"quote\": \"(at ?n bench)\"}, {\"side\": 0, \"ref\": \"BIRT:action:return_to_bench_and_share_story\", \"quote\": \"(at ?n ?bench)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6311347100,
+  "load_duration": 2263900,
+  "prompt_eval_count": 1704,
+  "prompt_eval_duration": 307392000,
+  "eval_count": 547,
+  "eval_duration": 5881570000
+}

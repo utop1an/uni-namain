@@ -1,0 +1,96 @@
+{
+  "status": "complete",
+  "source_count": 15,
+  "counts": {
+    "not_proved_unreachable": 12,
+    "predicate_relaxation_proves_unreachable": 3
+  },
+  "rows": [
+    {
+      "source": "ACCO",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "BIRT",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "BUFF",
+      "status": "predicate_relaxation_proves_unreachable",
+      "unreachable_goal_atoms": [
+        "(cloak_shaken buffoon cloak)",
+        "(applause_given audience buffoon)"
+      ]
+    },
+    {
+      "source": "CHIC_NP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "FOUR_NP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "HANS_NP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "JACK_NP",
+      "status": "predicate_relaxation_proves_unreachable",
+      "unreachable_goal_atoms": [
+        "(dead giant)"
+      ]
+    },
+    {
+      "source": "MUSI",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "NAUG",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "PIGS_NP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "PUSS",
+      "status": "predicate_relaxation_proves_unreachable",
+      "unreachable_goal_atoms": [
+        "(married jack princess)",
+        "(at jack palace)",
+        "(gate_open ogre_castle)"
+      ]
+    },
+    {
+      "source": "REMA_NP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "SNOW",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "SOUP",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    },
+    {
+      "source": "WOE",
+      "status": "not_proved_unreachable",
+      "unreachable_goal_atoms": []
+    }
+  ],
+  "implementation_sha256": "ccec80823f0a7aadbc7d7e69e1652fa642d0dfad75a56746301cc7bd6c321df1",
+  "limits": "Development diagnostic; does not infer missing initial facts, modify sources, or prove source narrative intent"
+}

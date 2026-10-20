@@ -1,0 +1,10 @@
+Annotate packet.json independently. Do not consult plans, solver outcomes, model predictions, or another annotator.
+Copy annotation_template.json to a new file; never overwrite the packet. Fill your identifier and independence declaration.
+Use completed only after judgment; unreviewed means missing, not uncertain. Missing story evidence may justify uncertain.
+equivalent: interchangeable relation in the supplied context, same argument positions.
+permuted_equivalent: equivalent after an explicit nonidentity bijection.
+abstraction: one concept is broader; complementary: related but noninterchangeable; incompatible: cannot share a predicate.
+uncertain: evidence does not support a definite judgment. No judgment here approves an executable alignment.
+For equivalence give right_from_left (e.g. [1,0] maps right slot 0 to left slot 1). Explain each participant role and type scope.
+Cite evidence as {side: 0 or 1, ref: supplied action ref, quote: exact nonempty excerpt}. Cite both sides for definite labels.
+Retain separate original annotation files. Discuss disagreements only after both files are frozen.

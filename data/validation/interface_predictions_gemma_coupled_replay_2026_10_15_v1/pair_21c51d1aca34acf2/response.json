@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_21c51d1aca34acf2",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'boiling' appears in both sources, but its usage and context differ significantly. In 'PIGS_NP', 'boiling' describes a state of the pot, directly related to the pig's actions and the preparation of food. The action 'pig_prepares_boiling_pot_and_fire' explicitly sets the pot to 'boiling'. Conversely, in 'WOE', 'stone_moved' describes the movement of a stone, and 'boiling' is only present as a precondition for the 'wolf_falls_into_pot_and_is_boiled' action, indicating the pot is already boiling. The 'boiling' predicate in 'WOE' is a necessary condition for the wolf's demise, not a description of a process. Therefore, they represent distinct concepts related to different scenarios – one concerning food preparation and the other concerning a dangerous situation. The action contexts highlight this difference: 'boiling' is an effect of the pig's actions in 'PIGS_NP', while it's a precondition for the wolf's death in 'WOE'.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:hide_woe_under_stone",
+      "quote": "(stone_moved ?stone)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:move_heavy_stone",
+      "quote": "(stone_moved ?stone)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:rich_brother_attempt_to_move_stone",
+      "quote": "(stone_moved ?stone)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(boiling ?pot)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:wolf_falls_into_pot_and_is_boiled",
+      "quote": "(boiling ?pot)"
+    }
+  ]
+}

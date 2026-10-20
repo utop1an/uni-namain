@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "task_count": 18,
+  "checks": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair__remove_none",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair__remove_BIRT",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair__remove_none",
+      "status": "solved",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true,
+      "fresh_plan_validation": "VALID"
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair__remove_BIRT",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair__remove_none",
+      "status": "solved",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true,
+      "fresh_plan_validation": "VALID"
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair__remove_BIRT",
+      "status": "solved",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true,
+      "fresh_plan_validation": "VALID"
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair__remove_none",
+      "status": "solved",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true,
+      "fresh_plan_validation": "VALID"
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair__remove_BIRT",
+      "status": "solved",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true,
+      "fresh_plan_validation": "VALID"
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair__remove_none",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair__remove_BIRT",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair__remove_none",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair__remove_ACCO",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair__remove_BIRT",
+      "status": "unsolvable",
+      "origin_unchanged": true,
+      "problem_identical": true,
+      "frozen_inputs_unchanged": true,
+      "only_declared_actions_removed": true
+    }
+  ],
+  "condition_results": {
+    "bridge_needed__zero_merge_membership__explicit_pair": {
+      "none": "unsolvable",
+      "ACCO": "unsolvable",
+      "BIRT": "unsolvable"
+    },
+    "bridge_needed__authored_possession_interface__explicit_pair": {
+      "none": "solved",
+      "ACCO": "unsolvable",
+      "BIRT": "unsolvable"
+    },
+    "source_ready_control__zero_merge_membership__explicit_pair": {
+      "none": "solved",
+      "ACCO": "unsolvable",
+      "BIRT": "solved"
+    },
+    "source_ready_control__authored_possession_interface__explicit_pair": {
+      "none": "solved",
+      "ACCO": "unsolvable",
+      "BIRT": "solved"
+    },
+    "empty_world_control__zero_merge_membership__explicit_pair": {
+      "none": "unsolvable",
+      "ACCO": "unsolvable",
+      "BIRT": "unsolvable"
+    },
+    "empty_world_control__authored_possession_interface__explicit_pair": {
+      "none": "unsolvable",
+      "ACCO": "unsolvable",
+      "BIRT": "unsolvable"
+    }
+  },
+  "scope": "Necessity of source actions for these exact authored tasks only; no narrative-quality inference"
+}

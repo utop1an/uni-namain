@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "graph_report_sha256": "4a44f8a7c6ae9f84bd6a89e140480158e1c95f73f6cbae4f3e7c58e310e514d3",
+  "components": [
+    {
+      "members": [
+        "BIRT:at",
+        "PUSS:at"
+      ],
+      "edges": 1,
+      "vertices": 2,
+      "cycle_rank": 0
+    },
+    {
+      "members": [
+        "BIRT:has",
+        "JACK_NP:has",
+        "PIGS_NP:has"
+      ],
+      "edges": 2,
+      "vertices": 3,
+      "cycle_rank": 0
+    },
+    {
+      "members": [
+        "CHIC_NP:at",
+        "HANS_NP:at"
+      ],
+      "edges": 1,
+      "vertices": 2,
+      "cycle_rank": 0
+    },
+    {
+      "members": [
+        "JACK_NP:at",
+        "WOE:at"
+      ],
+      "edges": 1,
+      "vertices": 2,
+      "cycle_rank": 0
+    },
+    {
+      "members": [
+        "NAUG:at",
+        "PIGS_NP:at",
+        "REMA_NP:at"
+      ],
+      "edges": 2,
+      "vertices": 3,
+      "cycle_rank": 0
+    }
+  ],
+  "total_cycle_rank": 0,
+  "scope": "Acyclic predicted equivalence components do not exercise cycle-consistency rejection; finite triangle controls provide separate engineering coverage."
+}

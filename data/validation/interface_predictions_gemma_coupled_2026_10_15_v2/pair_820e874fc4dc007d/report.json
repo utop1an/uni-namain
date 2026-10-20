@@ -1,0 +1,43 @@
+{
+  "candidate_id": "pair_820e874fc4dc007d",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_820e874fc4dc007d",
+    "label": "uncertain",
+    "right_from_left": null,
+    "rationale": "The predicate `attempt_light` appears in both sources, but its usage and context differ significantly. In `MUSI`, it's a precondition for actions involving animals attempting to light something (cat, dog, donkey), suggesting an action where an agent tries to initiate a light source. In `SOUP`, it's an effect of actions related to preparing soup, indicating the creation of a 'soup effect'. The preconditions and effects are entirely different, and the arguments are different entities. Therefore, while both predicates share the same name and type, they do not represent the same concept or relationship. The `MUSI` actions involve animals and light attempts, while the `SOUP` actions involve entities creating a 'soup effect'. The shared predicate name is a superficial similarity, not a basis for equivalence. The action contexts provide distinct meanings for the predicate. The `MUSI` actions are about animal behavior, while the `SOUP` actions are about magical effects.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "MUSI:action:cat_attack_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:dog_bite_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:donkey_kick_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:messenger_attempt_light",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:claim_queenhood",
+        "quote": "(soup_effect_created ?m)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(soup_effect_created ?m)"
+      }
+    ]
+  },
+  "errors": []
+}

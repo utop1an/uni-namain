@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_e2697e615aa24da1",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The `invited` predicate in MUSI describes an invitation offered by one entity to another, while the `at_item` predicate in PUSS describes the location of an item. The `invited` predicate requires two entities, whereas `at_item` requires an item and a location. The actions involving `invited` relate to social interactions and agreements, while the actions involving `at_item` relate to spatial relationships and object possession. The `invite_cat` and `invite_cock` actions in MUSI use `invited` to establish a relationship between a donkey and another entity, whereas the `at_item` actions in PUSS use `at_item` to describe the location of an item. These predicates describe different aspects of the world, and therefore are complementary. The use of `?inviter` and `?invitee` in `invited` contrasts with `?i` and `?l` in `at_item`, indicating distinct roles for the predicates. The action contexts further highlight this difference: `invited` focuses on establishing relationships, while `at_item` focuses on spatial positioning. The provided action records demonstrate this distinction: `invite_cat` and `invite_cock` use `invited` to create a relationship, while `cat_catch_rabbits` and `king_send_groom_fetch_suit` use `at_item` to describe the location of objects.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_catch_rabbits",
+      "quote": "(at_item ?rabbit ?warren)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:king_send_groom_fetch_suit",
+      "quote": "(at_item ?suit ?wardrobe)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:cat_agrees",
+      "quote": "(invited ?donkey ?cat)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:cock_agrees",
+      "quote": "(invited ?donkey ?cock)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:hound_agrees",
+      "quote": "(invited ?donkey ?hound)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:invite_cat",
+      "quote": "(invited ?donkey ?cat)"
+    }
+  ]
+}

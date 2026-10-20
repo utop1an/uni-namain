@@ -1,0 +1,123 @@
+{
+  "sources": [
+    "PIGS_NP"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 4,
+    "constants": 32,
+    "predicates": 21,
+    "operators": 21
+  },
+  "predicate_maps": {
+    "PIGS_NP": {
+      "alive": "d000__p_alive",
+      "at": "d000__p_at",
+      "boiling": "d000__p_boiling",
+      "dead": "d000__p_dead",
+      "door_closed": "d000__p_door_closed",
+      "entry_denied": "d000__p_entry_denied",
+      "entry_requested": "d000__p_entry_requested",
+      "escaped": "d000__p_escaped",
+      "has": "d000__p_has",
+      "has_bundle": "d000__p_has_bundle",
+      "house": "d000__p_house",
+      "house_destroyed": "d000__p_house_destroyed",
+      "house_intact": "d000__p_house_intact",
+      "huffed": "d000__p_huffed",
+      "inside": "d000__p_inside",
+      "material_requested": "d000__p_material_requested",
+      "over": "d000__p_over",
+      "plan": "d000__p_plan",
+      "puffed": "d000__p_puffed",
+      "rolling": "d000__p_rolling",
+      "under": "d000__p_under"
+    }
+  },
+  "constant_maps": {
+    "PIGS_NP": {
+      "apple": "d000__c_apple",
+      "brick_house": "d000__c_brick_house",
+      "bricks": "d000__c_bricks",
+      "butter_churn": "d000__c_butter_churn",
+      "chimney": "d000__c_chimney",
+      "farmer": "d000__c_farmer",
+      "fire": "d000__c_fire",
+      "furze_bundle": "d000__c_furze_bundle",
+      "furze_house": "d000__c_furze_house",
+      "hearth": "d000__c_hearth",
+      "hill": "d000__c_hill",
+      "man_bricks": "d000__c_man_bricks",
+      "man_furze": "d000__c_man_furze",
+      "man_straw": "d000__c_man_straw",
+      "mortar": "d000__c_mortar",
+      "mother_pig": "d000__c_mother_pig",
+      "oak_forest": "d000__c_oak_forest",
+      "pig1": "d000__c_pig1",
+      "pig2": "d000__c_pig2",
+      "pig3": "d000__c_pig3",
+      "pig_home": "d000__c_pig_home",
+      "pot_of_water": "d000__c_pot_of_water",
+      "sack": "d000__c_sack",
+      "squire": "d000__c_squire",
+      "squire_orchard": "d000__c_squire_orchard",
+      "straw_bundle": "d000__c_straw_bundle",
+      "straw_house": "d000__c_straw_house",
+      "town_fair": "d000__c_town_fair",
+      "trowel": "d000__c_trowel",
+      "turnip_field": "d000__c_turnip_field",
+      "turnips_load": "d000__c_turnips_load",
+      "wolf": "d000__c_wolf"
+    }
+  },
+  "action_maps": {
+    "PIGS_NP": {
+      "send_sons_on_journey": "d000__a_send_sons_on_journey",
+      "ask_for_material": "d000__a_ask_for_material",
+      "receive_material": "d000__a_receive_material",
+      "build_house": "d000__a_build_house",
+      "wolf_knocks_and_requests_entry": "d000__a_wolf_knocks_and_requests_entry",
+      "pig_refuses_entry": "d000__a_pig_refuses_entry",
+      "wolf_huff_and_puff": "d000__a_wolf_huff_and_puff",
+      "wolf_blows_house_down": "d000__a_wolf_blows_house_down",
+      "wolf_eats_pig": "d000__a_wolf_eats_pig",
+      "wolf_fails_to_blow_house": "d000__a_wolf_fails_to_blow_house",
+      "wolf_promises_turnip_field": "d000__a_wolf_promises_turnip_field",
+      "pig_collects_turnips": "d000__a_pig_collects_turnips",
+      "wolf_promises_apple_orchard": "d000__a_wolf_promises_apple_orchard",
+      "pig_collects_apples_and_escapes": "d000__a_pig_collects_apples_and_escapes",
+      "wolf_promises_fair_trip": "d000__a_wolf_promises_fair_trip",
+      "pig_buys_butter_churn_and_hides": "d000__a_pig_buys_butter_churn_and_hides",
+      "pig_rolls_churn_down_hill": "d000__a_pig_rolls_churn_down_hill",
+      "wolf_flees_from_rolling_object": "d000__a_wolf_flees_from_rolling_object",
+      "wolf_attempts_chimney_entry": "d000__a_wolf_attempts_chimney_entry",
+      "pig_prepares_boiling_pot_and_fire": "d000__a_pig_prepares_boiling_pot_and_fire",
+      "wolf_falls_into_pot_and_is_boiled": "d000__a_wolf_falls_into_pot_and_is_boiled"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "PIGS_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PIGS_NP_problemfile.pddl": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

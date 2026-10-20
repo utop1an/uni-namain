@@ -1,0 +1,122 @@
+(define (domain narrative_aligned)
+  (:requirements :adl :strips :typing)
+  (:constants
+    d000__c_badger d000__c_box d000__c_copper_coins d000__c_friend d000__c_jhosiu d000__c_lady_of_court d000__c_morinji d000__c_pack d000__c_priest d000__c_prince d000__c_princess d000__c_showman d000__c_teakettle d000__c_temple_treasure d000__c_tight_rope d000__c_tinker d001__c_beech_tree d001__c_bench d001__c_boat d001__c_corridor d001__c_cottage d001__c_door d001__c_dryad d001__c_fairy_queen d001__c_fairyland d001__c_gnome d001__c_gold_star d001__c_grandmother d001__c_grandmotherkin d001__c_key d001__c_lantern d001__c_mother d001__c_mothereen d001__c_nora d001__c_palace d001__c_pellet d001__c_pond d001__c_silver_salver d001__c_spring d001__c_stairs d001__c_stream - object
+  )
+  (:predicates
+    (d000__p_airborne ?a0 - object)
+    (d000__p_badger_form ?a0 - object)
+    (d000__p_captured ?a0 - object)
+    (d000__p_contained_in ?a0 - object ?a1 - object)
+    (d000__p_exhibition_ready ?a0 - object)
+    (d000__p_four_legged ?a0 - object)
+    (d000__p_furred ?a0 - object)
+    (d000__p_hanging ?a0 - object)
+    (d000__p_located ?a0 - object ?a1 - object)
+    (d000__p_night)
+    (d000__p_owned_by ?a0 - object ?a1 - object)
+    (d000__p_performing_show ?a0 - object)
+    (d000__p_reputation_widespread)
+    (d000__p_treasured ?a0 - object)
+    (d000__p_wealthy ?a0 - object)
+    (d000__p_worshipped ?a0 - object)
+    (d001__p_at ?a0 - object ?a1 - object)
+    (d001__p_boat_available ?a0 - object ?a1 - object)
+    (d001__p_corridor_reached ?a0 - object)
+    (d001__p_door_open ?a0 - object)
+    (d001__p_gloomy ?a0 - object)
+    (d001__p_gold_star_on ?a0 - object ?a1 - object)
+    (d001__p_inside ?a0 - object ?a1 - object)
+    (d001__p_invitation_offered ?a0 - object ?a1 - object)
+    (d001__p_joyful ?a0 - object)
+    (d001__p_kissed_by ?a0 - object ?a1 - object)
+    (d001__p_knighted ?a0 - object)
+    (d001__p_lantern_carried ?a0 - object ?a1 - object)
+    (d001__p_pellet_eaten ?a0 - object)
+    (d001__p_shrunk ?a0 - object)
+    (d001__p_sound_heard ?a0 - object ?a1 - object)
+    (d001__p_stairs_descended ?a0 - object)
+    (d001__p_story_shared ?a0 - object ?a1 - object)
+    (shared__p_possession ?a0 - object ?a1 - object)
+    (typeguard__d000__t_entity ?member - object)
+    (typeguard__d000__t_item ?member - object)
+    (typeguard__d000__t_location ?member - object)
+    (typeguard__d000__t_object ?member - object)
+    (typeguard__d001__t_entity ?member - object)
+    (typeguard__d001__t_item ?member - object)
+    (typeguard__d001__t_location ?member - object)
+    (typeguard__d001__t_object ?member - object)
+  )
+
+  (:action d001__a_accept_dryad_invitation
+    :parameters (?d - object ?n - object)
+    :precondition (and (typeguard__d001__t_entity ?d) (typeguard__d001__t_entity ?n) (d001__p_invitation_offered ?d ?n))
+    :effect (not (d001__p_invitation_offered ?d ?n))
+  )
+
+  (:action d001__a_approach_beech_tree
+    :parameters (?n - object ?t - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_location ?t) (d001__p_sound_heard ?n ?t))
+    :effect (and (d001__p_at ?n ?t) (not (d001__p_at ?n d001__c_bench)))
+  )
+
+  (:action d001__a_eat_pellet_and_shrink
+    :parameters (?n - object ?p - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_item ?p) (shared__p_possession ?n ?p))
+    :effect (and (d001__p_pellet_eaten ?n) (d001__p_shrunk ?n) (not (shared__p_possession ?n ?p)))
+  )
+
+  (:action d001__a_enter_tree_and_descend_stairs
+    :parameters (?d - object ?n - object ?corridor - object ?door - object ?stairs - object ?t - object)
+    :precondition (and (typeguard__d001__t_entity ?d) (typeguard__d001__t_entity ?n) (typeguard__d001__t_location ?corridor) (typeguard__d001__t_location ?door) (typeguard__d001__t_location ?stairs) (typeguard__d001__t_location ?t) (and (d001__p_inside ?n ?t) (d001__p_inside ?d ?t) (d001__p_door_open d001__c_door)))
+    :effect (and (d001__p_stairs_descended ?n) (d001__p_stairs_descended ?d) (d001__p_corridor_reached ?n))
+  )
+
+  (:action d001__a_hear_tapping_on_beech
+    :parameters (?n - object ?t - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_location ?t) (d001__p_at ?n d001__c_bench))
+    :effect (d001__p_sound_heard ?n ?t)
+  )
+
+  (:action d001__a_receive_pellet_from_gnome
+    :parameters (?g - object ?n - object ?p - object ?s - object ?t - object)
+    :precondition (and (typeguard__d001__t_entity ?g) (typeguard__d001__t_entity ?n) (typeguard__d001__t_item ?p) (typeguard__d001__t_item ?s) (typeguard__d001__t_location ?t) (and (d001__p_inside ?n ?t) (d001__p_inside ?g ?t)))
+    :effect (shared__p_possession ?n ?p)
+  )
+
+  (:action d001__a_receive_queen_kiss
+    :parameters (?n - object ?q - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_entity ?q) (d001__p_at ?n d001__c_palace))
+    :effect (and (d001__p_kissed_by ?n ?q) (d001__p_joyful ?n) (not (d001__p_gloomy ?n)))
+  )
+
+  (:action d001__a_return_to_bench_and_share_story
+    :parameters (?g - object ?m - object ?n - object ?bench - object)
+    :precondition (and (typeguard__d001__t_entity ?g) (typeguard__d001__t_entity ?m) (typeguard__d001__t_entity ?n) (typeguard__d001__t_location ?bench) (d001__p_at ?n d001__c_palace))
+    :effect (and (d001__p_at ?n ?bench) (d001__p_story_shared ?n ?m) (d001__p_story_shared ?n ?g) (not (d001__p_at ?n d001__c_palace)))
+  )
+
+  (:action d001__a_travel_by_leaf_boat_under_pond
+    :parameters (?n - object ?b - object ?palace - object ?pond - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_item ?b) (typeguard__d001__t_location ?palace) (typeguard__d001__t_location ?pond) (and (d001__p_stairs_descended ?n) (d001__p_boat_available ?b ?pond)))
+    :effect (d001__p_at ?n ?palace)
+  )
+
+  (:action d001__a_travel_to_trysting_place
+    :parameters (?n - object ?b - object ?c - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_location ?b) (typeguard__d001__t_location ?c) (d001__p_at ?n ?c))
+    :effect (and (d001__p_at ?n ?b) (not (d001__p_at ?n ?c)))
+  )
+
+  (:action d001__a_turn_key_on_beech
+    :parameters (?n - object ?k - object ?t - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_item ?k) (typeguard__d001__t_location ?t) (d001__p_at ?n ?t))
+    :effect (and (d001__p_door_open d001__c_door) (d001__p_inside d001__c_dryad ?t) (d001__p_invitation_offered d001__c_dryad ?n) (shared__p_possession ?n ?k))
+  )
+
+  (:action d001__a_witness_queen_birthday_ceremony
+    :parameters (?n - object ?q - object ?palace - object)
+    :precondition (and (typeguard__d001__t_entity ?n) (typeguard__d001__t_entity ?q) (typeguard__d001__t_location ?palace) (d001__p_at ?n ?palace))
+    :effect (and (d001__p_joyful ?n) (d001__p_story_shared ?q ?n))
+  )
+)

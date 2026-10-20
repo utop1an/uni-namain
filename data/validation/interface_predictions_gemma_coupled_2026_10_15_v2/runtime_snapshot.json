@@ -1,0 +1,9 @@
+{
+  "server": {
+    "version": "0.33.2"
+  },
+  "client_binary_sha256": "c79df1e0c1bfa10ed813c7030ac4c3ba38bb0e350bd7322d9bb58320343235c6",
+  "capture": "after service restoration during coupled run",
+  "prior_original_baseline_server_version": "not recorded; do not assert identical service environment",
+  "planned_control": "fresh free_fields100 run after coupled run on this restored service, same model digest/prompt/options/packet"
+}

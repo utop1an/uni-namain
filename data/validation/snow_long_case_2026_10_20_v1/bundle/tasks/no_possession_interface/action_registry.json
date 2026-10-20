@@ -1,0 +1,1365 @@
+{
+  "d000__a_abandon_children_in_forest": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "abandon_children_in_forest",
+    "additional_context": []
+  },
+  "d000__a_leave_children_at_fire": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "leave_children_at_fire",
+    "additional_context": []
+  },
+  "d000__a_drop_pebble_on_path": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "drop_pebble_on_path",
+    "additional_context": []
+  },
+  "d000__a_follow_pebbles_home": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "follow_pebbles_home",
+    "additional_context": []
+  },
+  "d000__a_drop_breadcrumb_on_path": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "drop_breadcrumb_on_path",
+    "additional_context": []
+  },
+  "d000__a_follow_breadcrumbs_home": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "follow_breadcrumbs_home",
+    "additional_context": []
+  },
+  "d000__a_wander_forest_seeking_way_out": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "wander_forest_seeking_way_out",
+    "additional_context": []
+  },
+  "d000__a_hear_bird_and_follow_to_witch_house": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "hear_bird_and_follow_to_witch_house",
+    "additional_context": []
+  },
+  "d000__a_enter_witch_house": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "enter_witch_house",
+    "additional_context": []
+  },
+  "d000__a_witch_captures_children": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "witch_captures_children",
+    "additional_context": []
+  },
+  "d000__a_push_witch_into_oven": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "push_witch_into_oven",
+    "additional_context": []
+  },
+  "d000__a_escape_from_stable": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "escape_from_stable",
+    "additional_context": []
+  },
+  "d000__a_collect_treasure": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "collect_treasure",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?g",
+          "?cottage"
+        ],
+        [
+          "scene_at",
+          "?h",
+          "?cottage"
+        ],
+        [
+          "scene_comb_on_shelf",
+          "?pearl",
+          "?cottage"
+        ]
+      ],
+      "effects": [
+        [
+          "not",
+          [
+            "scene_comb_on_shelf",
+            "?pearl",
+            "?cottage"
+          ]
+        ]
+      ],
+      "before": [
+        ":action",
+        "d000__a_collect_treasure",
+        ":parameters",
+        [
+          "?g",
+          "-",
+          "object",
+          "?h",
+          "-",
+          "object",
+          "?pearl",
+          "-",
+          "object",
+          "?precious_stone",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d000__t_entity",
+              "?g"
+            ],
+            [
+              "typeguard__d000__t_entity",
+              "?h"
+            ],
+            [
+              "typeguard__d000__t_item",
+              "?pearl"
+            ],
+            [
+              "typeguard__d000__t_item",
+              "?precious_stone"
+            ],
+            [
+              "typeguard__d000__t_location",
+              "?cottage"
+            ],
+            [
+              "and",
+              [
+                "d000__p_at",
+                "?h",
+                "?cottage"
+              ],
+              [
+                "d000__p_at",
+                "?g",
+                "?cottage"
+              ]
+            ]
+          ],
+          [
+            "case_role_companion",
+            "?g"
+          ],
+          [
+            "case_role_rescuer",
+            "?h"
+          ],
+          [
+            "case_role_comb",
+            "?pearl"
+          ],
+          [
+            "case_role_gem",
+            "?precious_stone"
+          ],
+          [
+            "case_role_hut",
+            "?cottage"
+          ],
+          [
+            "d002__p_alive",
+            "?g"
+          ],
+          [
+            "d002__p_alive",
+            "?h"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "d000__p_has",
+            "?h",
+            "?pearl"
+          ],
+          [
+            "d000__p_has",
+            "?g",
+            "?precious_stone"
+          ],
+          [
+            "d000__p_collected",
+            "?h",
+            "?pearl"
+          ],
+          [
+            "d000__p_collected",
+            "?g",
+            "?precious_stone"
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d000__a_collect_treasure",
+        ":parameters",
+        [
+          "?g",
+          "-",
+          "object",
+          "?h",
+          "-",
+          "object",
+          "?pearl",
+          "-",
+          "object",
+          "?precious_stone",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d000__t_entity",
+                "?g"
+              ],
+              [
+                "typeguard__d000__t_entity",
+                "?h"
+              ],
+              [
+                "typeguard__d000__t_item",
+                "?pearl"
+              ],
+              [
+                "typeguard__d000__t_item",
+                "?precious_stone"
+              ],
+              [
+                "typeguard__d000__t_location",
+                "?cottage"
+              ],
+              [
+                "and",
+                [
+                  "d000__p_at",
+                  "?h",
+                  "?cottage"
+                ],
+                [
+                  "d000__p_at",
+                  "?g",
+                  "?cottage"
+                ]
+              ]
+            ],
+            [
+              "case_role_companion",
+              "?g"
+            ],
+            [
+              "case_role_rescuer",
+              "?h"
+            ],
+            [
+              "case_role_comb",
+              "?pearl"
+            ],
+            [
+              "case_role_gem",
+              "?precious_stone"
+            ],
+            [
+              "case_role_hut",
+              "?cottage"
+            ],
+            [
+              "d002__p_alive",
+              "?g"
+            ],
+            [
+              "d002__p_alive",
+              "?h"
+            ]
+          ],
+          [
+            "scene_at",
+            "?g",
+            "?cottage"
+          ],
+          [
+            "scene_at",
+            "?h",
+            "?cottage"
+          ],
+          [
+            "scene_comb_on_shelf",
+            "?pearl",
+            "?cottage"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "d000__p_has",
+              "?h",
+              "?pearl"
+            ],
+            [
+              "d000__p_has",
+              "?g",
+              "?precious_stone"
+            ],
+            [
+              "d000__p_collected",
+              "?h",
+              "?pearl"
+            ],
+            [
+              "d000__p_collected",
+              "?g",
+              "?precious_stone"
+            ]
+          ],
+          [
+            "not",
+            [
+              "scene_comb_on_shelf",
+              "?pearl",
+              "?cottage"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "d000__a_call_duck_for_crossing": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "call_duck_for_crossing",
+    "additional_context": []
+  },
+  "d000__a_return_home_and_reunite_with_father": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "return_home_and_reunite_with_father",
+    "additional_context": []
+  },
+  "d001__a_sell_cow_for_beans": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "sell_cow_for_beans",
+    "additional_context": []
+  },
+  "d001__a_plant_beans": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "plant_beans",
+    "additional_context": []
+  },
+  "d001__a_grow_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "grow_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_climb_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "climb_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_ask_giant_wife_for_breakfast": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "ask_giant_wife_for_breakfast",
+    "additional_context": []
+  },
+  "d001__a_hide_in_kettle": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "hide_in_kettle",
+    "additional_context": []
+  },
+  "d001__a_steal_gold_bags": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_gold_bags",
+    "additional_context": []
+  },
+  "d001__a_return_down_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "return_down_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_hide_in_oven": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "hide_in_oven",
+    "additional_context": []
+  },
+  "d001__a_steal_hen": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_hen",
+    "additional_context": []
+  },
+  "d001__a_steal_harp": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_harp",
+    "additional_context": []
+  },
+  "d001__a_cut_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "cut_beanstalk",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?mother",
+          "d001__c_beanstalk"
+        ],
+        [
+          "d001__p_has",
+          "?mother",
+          "?axe"
+        ]
+      ],
+      "effects": [
+        [
+          "scene_at",
+          "?giant",
+          "d001__c_cottage"
+        ],
+        [
+          "not",
+          [
+            "scene_at",
+            "?giant",
+            "d001__c_beanstalk"
+          ]
+        ],
+        [
+          "d001__p_at",
+          "?giant",
+          "d001__c_cottage"
+        ],
+        [
+          "not",
+          [
+            "d001__p_at",
+            "?giant",
+            "d001__c_beanstalk"
+          ]
+        ]
+      ],
+      "before": [
+        ":action",
+        "d001__a_cut_beanstalk",
+        ":parameters",
+        [
+          "?giant",
+          "-",
+          "object",
+          "?mother",
+          "-",
+          "object",
+          "?axe",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d001__t_entity",
+              "?giant"
+            ],
+            [
+              "typeguard__d001__t_entity",
+              "?mother"
+            ],
+            [
+              "typeguard__d001__t_item",
+              "?axe"
+            ],
+            [
+              "and",
+              [
+                "d001__p_intact",
+                "d001__c_beanstalk"
+              ],
+              [
+                "d001__p_climbing_down",
+                "?giant"
+              ]
+            ]
+          ],
+          [
+            "case_role_giant",
+            "?giant"
+          ],
+          [
+            "case_role_cutter",
+            "?mother"
+          ],
+          [
+            "case_role_axe",
+            "?axe"
+          ],
+          [
+            "d002__p_alive",
+            "?mother"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "shared__p_death",
+                "?giant"
+              ],
+              [
+                "not",
+                [
+                  "d002__p_alive",
+                  "?giant"
+                ]
+              ]
+            ],
+            [
+              "not",
+              [
+                "d001__p_intact",
+                "d001__c_beanstalk"
+              ]
+            ]
+          ],
+          [
+            "not",
+            [
+              "d001__p_climbing_down",
+              "?giant"
+            ]
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d001__a_cut_beanstalk",
+        ":parameters",
+        [
+          "?giant",
+          "-",
+          "object",
+          "?mother",
+          "-",
+          "object",
+          "?axe",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d001__t_entity",
+                "?giant"
+              ],
+              [
+                "typeguard__d001__t_entity",
+                "?mother"
+              ],
+              [
+                "typeguard__d001__t_item",
+                "?axe"
+              ],
+              [
+                "and",
+                [
+                  "d001__p_intact",
+                  "d001__c_beanstalk"
+                ],
+                [
+                  "d001__p_climbing_down",
+                  "?giant"
+                ]
+              ]
+            ],
+            [
+              "case_role_giant",
+              "?giant"
+            ],
+            [
+              "case_role_cutter",
+              "?mother"
+            ],
+            [
+              "case_role_axe",
+              "?axe"
+            ],
+            [
+              "d002__p_alive",
+              "?mother"
+            ]
+          ],
+          [
+            "scene_at",
+            "?mother",
+            "d001__c_beanstalk"
+          ],
+          [
+            "d001__p_has",
+            "?mother",
+            "?axe"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "and",
+                [
+                  "shared__p_death",
+                  "?giant"
+                ],
+                [
+                  "not",
+                  [
+                    "d002__p_alive",
+                    "?giant"
+                  ]
+                ]
+              ],
+              [
+                "not",
+                [
+                  "d001__p_intact",
+                  "d001__c_beanstalk"
+                ]
+              ]
+            ],
+            [
+              "not",
+              [
+                "d001__p_climbing_down",
+                "?giant"
+              ]
+            ]
+          ],
+          [
+            "scene_at",
+            "?giant",
+            "d001__c_cottage"
+          ],
+          [
+            "not",
+            [
+              "scene_at",
+              "?giant",
+              "d001__c_beanstalk"
+            ]
+          ],
+          [
+            "d001__p_at",
+            "?giant",
+            "d001__c_cottage"
+          ],
+          [
+            "not",
+            [
+              "d001__p_at",
+              "?giant",
+              "d001__c_beanstalk"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "d002__a_queen_sews_at_window": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "queen_sews_at_window",
+    "additional_context": []
+  },
+  "d002__a_queen_pricks_finger": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "queen_pricks_finger",
+    "additional_context": []
+  },
+  "d002__a_queen_wishes_child_white_red_black": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "queen_wishes_child_white_red_black",
+    "additional_context": []
+  },
+  "d002__a_child_is_born_and_queen_dies": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "child_is_born_and_queen_dies",
+    "additional_context": []
+  },
+  "d002__a_king_marries_stepmother": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "king_marries_stepmother",
+    "additional_context": []
+  },
+  "d002__a_stepmother_asks_looking_glass_fairest": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_asks_looking_glass_fairest",
+    "additional_context": []
+  },
+  "d002__a_stepmother_becomes_envious_of_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_becomes_envious_of_snow_white",
+    "additional_context": []
+  },
+  "d002__a_stepmother_orders_huntsman_to_kill_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_orders_huntsman_to_kill_snow_white",
+    "additional_context": []
+  },
+  "d002__a_huntsman_spares_snow_white_and_brings_boar_heart": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+    "additional_context": []
+  },
+  "d002__a_stepmother_eats_boar_heart_thinking_it_is_snow_white_heart": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+    "additional_context": []
+  },
+  "d002__a_snow_white_flees_into_forest": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "snow_white_flees_into_forest",
+    "additional_context": []
+  },
+  "d002__a_snow_white_finds_dwarfs_cottage": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "snow_white_finds_dwarfs_cottage",
+    "additional_context": []
+  },
+  "d002__a_snow_white_eats_vegetables_and_bread_and_drinks_wine": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+    "additional_context": []
+  },
+  "d002__a_snow_white_sleeps_in_seventh_bed": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "snow_white_sleeps_in_seventh_bed",
+    "additional_context": []
+  },
+  "d002__a_dwarfs_return_and_discover_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "dwarfs_return_and_discover_snow_white",
+    "additional_context": []
+  },
+  "d002__a_dwarfs_offer_snow_white_to_maintain_house": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "dwarfs_offer_snow_white_to_maintain_house",
+    "additional_context": []
+  },
+  "d002__a_stepmother_disguises_as_old_woman_and_visits_cottage": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+    "additional_context": []
+  },
+  "d002__a_stepmother_laces_snow_white_tightly": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_laces_snow_white_tightly",
+    "additional_context": []
+  },
+  "d002__a_dwarfs_cut_laces_rescue_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "dwarfs_cut_laces_rescue_snow_white",
+    "additional_context": []
+  },
+  "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?s",
+          "?cottage"
+        ],
+        [
+          "d002__p_has",
+          "?s",
+          "?comb"
+        ]
+      ],
+      "effects": [],
+      "before": [
+        ":action",
+        "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage",
+        ":parameters",
+        [
+          "?s",
+          "-",
+          "object",
+          "?comb",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d002__t_entity",
+              "?s"
+            ],
+            [
+              "typeguard__d002__t_item",
+              "?comb"
+            ],
+            [
+              "typeguard__d002__t_location",
+              "?cottage"
+            ],
+            [
+              "d002__p_alive",
+              "?s"
+            ]
+          ],
+          [
+            "case_role_witch",
+            "?s"
+          ],
+          [
+            "case_role_comb",
+            "?comb"
+          ],
+          [
+            "case_role_hut",
+            "?cottage"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "d002__p_poisoned",
+            "?comb"
+          ],
+          [
+            "d002__p_has",
+            "?s",
+            "?comb"
+          ],
+          [
+            "d002__p_visited",
+            "?s",
+            "?cottage"
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage",
+        ":parameters",
+        [
+          "?s",
+          "-",
+          "object",
+          "?comb",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d002__t_entity",
+                "?s"
+              ],
+              [
+                "typeguard__d002__t_item",
+                "?comb"
+              ],
+              [
+                "typeguard__d002__t_location",
+                "?cottage"
+              ],
+              [
+                "d002__p_alive",
+                "?s"
+              ]
+            ],
+            [
+              "case_role_witch",
+              "?s"
+            ],
+            [
+              "case_role_comb",
+              "?comb"
+            ],
+            [
+              "case_role_hut",
+              "?cottage"
+            ]
+          ],
+          [
+            "scene_at",
+            "?s",
+            "?cottage"
+          ],
+          [
+            "d002__p_has",
+            "?s",
+            "?comb"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "d002__p_poisoned",
+              "?comb"
+            ],
+            [
+              "d002__p_has",
+              "?s",
+              "?comb"
+            ],
+            [
+              "d002__p_visited",
+              "?s",
+              "?cottage"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "d002__a_stepmother_comb_poison_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_comb_poison_snow_white",
+    "additional_context": []
+  },
+  "d002__a_dwarfs_remove_comb_rescue_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "dwarfs_remove_comb_rescue_snow_white",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?d",
+          "d001__c_cottage"
+        ],
+        [
+          "scene_at",
+          "?c",
+          "d001__c_cottage"
+        ],
+        [
+          "scene_comb_applied",
+          "?c",
+          "?comb"
+        ]
+      ],
+      "effects": [
+        [
+          "not",
+          [
+            "scene_comb_applied",
+            "?c",
+            "?comb"
+          ]
+        ]
+      ],
+      "before": [
+        ":action",
+        "d002__a_dwarfs_remove_comb_rescue_snow_white",
+        ":parameters",
+        [
+          "?c",
+          "-",
+          "object",
+          "?d",
+          "-",
+          "object",
+          "?comb",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d002__t_entity",
+              "?c"
+            ],
+            [
+              "typeguard__d002__t_entity",
+              "?d"
+            ],
+            [
+              "typeguard__d002__t_item",
+              "?comb"
+            ],
+            [
+              "and",
+              [
+                "shared__p_death",
+                "?c"
+              ],
+              [
+                "d002__p_poisoned",
+                "?comb"
+              ],
+              [
+                "d002__p_has",
+                "?d",
+                "?comb"
+              ]
+            ]
+          ],
+          [
+            "case_role_snow_white",
+            "?c"
+          ],
+          [
+            "case_role_rescuer",
+            "?d"
+          ],
+          [
+            "case_role_comb",
+            "?comb"
+          ],
+          [
+            "d002__p_alive",
+            "?d"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "d002__p_alive",
+              "?c"
+            ],
+            [
+              "not",
+              [
+                "shared__p_death",
+                "?c"
+              ]
+            ],
+            [
+              "not",
+              [
+                "d002__p_poisoned",
+                "?comb"
+              ]
+            ]
+          ],
+          [
+            "case_rescued_with_comb",
+            "?c"
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d002__a_dwarfs_remove_comb_rescue_snow_white",
+        ":parameters",
+        [
+          "?c",
+          "-",
+          "object",
+          "?d",
+          "-",
+          "object",
+          "?comb",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d002__t_entity",
+                "?c"
+              ],
+              [
+                "typeguard__d002__t_entity",
+                "?d"
+              ],
+              [
+                "typeguard__d002__t_item",
+                "?comb"
+              ],
+              [
+                "and",
+                [
+                  "shared__p_death",
+                  "?c"
+                ],
+                [
+                  "d002__p_poisoned",
+                  "?comb"
+                ],
+                [
+                  "d002__p_has",
+                  "?d",
+                  "?comb"
+                ]
+              ]
+            ],
+            [
+              "case_role_snow_white",
+              "?c"
+            ],
+            [
+              "case_role_rescuer",
+              "?d"
+            ],
+            [
+              "case_role_comb",
+              "?comb"
+            ],
+            [
+              "d002__p_alive",
+              "?d"
+            ]
+          ],
+          [
+            "scene_at",
+            "?d",
+            "d001__c_cottage"
+          ],
+          [
+            "scene_at",
+            "?c",
+            "d001__c_cottage"
+          ],
+          [
+            "scene_comb_applied",
+            "?c",
+            "?comb"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "d002__p_alive",
+                "?c"
+              ],
+              [
+                "not",
+                [
+                  "shared__p_death",
+                  "?c"
+                ]
+              ],
+              [
+                "not",
+                [
+                  "d002__p_poisoned",
+                  "?comb"
+                ]
+              ]
+            ],
+            [
+              "case_rescued_with_comb",
+              "?c"
+            ]
+          ],
+          [
+            "not",
+            [
+              "scene_comb_applied",
+              "?c",
+              "?comb"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "d002__a_stepmother_makes_poisonous_apple_and_visits_cottage": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+    "additional_context": []
+  },
+  "d002__a_snow_white_eats_poisoned_apple_and_dies": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "snow_white_eats_poisoned_apple_and_dies",
+    "additional_context": []
+  },
+  "d002__a_dwarfs_prepare_glass_coffin_for_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+    "additional_context": []
+  },
+  "d002__a_prince_discovers_coffin_and_moves_it": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "prince_discovers_coffin_and_moves_it",
+    "additional_context": []
+  },
+  "d002__a_apple_piece_falls_out_reviving_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "apple_piece_falls_out_reviving_snow_white",
+    "additional_context": []
+  },
+  "d002__a_prince_marries_snow_white": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "prince_marries_snow_white",
+    "additional_context": []
+  },
+  "d002__a_stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies": {
+    "kind": "source",
+    "source": "SNOW",
+    "original_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+    "additional_context": []
+  },
+  "scene__enter_hut": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "enter_hut",
+    "meaning": "Two companions enter the hut before collecting objects."
+  },
+  "scene__hand_comb_to_witch": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "hand_comb_to_witch",
+    "meaning": "Transfer the unique comb from rescuer to witch."
+  },
+  "scene__take_comb_back": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_comb_back",
+    "meaning": "Recover the poisoned comb before the witch departs."
+  },
+  "scene__take_axe": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_axe",
+    "meaning": "Take the axe from the workshop rack."
+  },
+  "scene__approach_beanstalk": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "approach_beanstalk",
+    "meaning": "Bring the axe to the beanstalk."
+  },
+  "scene__begin_descent": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "begin_descent",
+    "meaning": "After handing back the comb, the giant witch leaves the hut and starts descent."
+  },
+  "scene__reach_fallen": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "reach_fallen",
+    "meaning": "Carry the comb to the fallen Snow White."
+  },
+  "scene__apply_comb": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "apply_comb",
+    "meaning": "Prepare comb-based revival by applying the held comb to the fallen target."
+  }
+}

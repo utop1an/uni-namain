@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "reports": {
+    "original_source_planning": {
+      "path": "data\\validation\\downward_sources_2026_10_15_v1\\report.json",
+      "sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Original local source worlds and goals",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "auxiliary_probe_planning": {
+      "path": "data\\validation\\downward_probes_2026_10_15_v1\\report.json",
+      "sha256": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Auxiliary goals; original initial worlds retained",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "current_source_trace_replay": {
+      "path": "data\\validation\\downward_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "ecc682fab4396e48965ad852f517c0fd9d9a32f8ca720173c7ce74f921cbbf9e",
+      "terminal_status": "complete",
+      "metrics": [
+        "source_plan_count",
+        "valid_translations",
+        "counts"
+      ],
+      "scope": "Post-capture-fix membership compilation; availability remains 6/15",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "current_probe_trace_replay": {
+      "path": "data\\validation\\probe_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "4841039fe26215a90d52c8f2843d90c63d5edb316b682eaa24500d5ba2d2e019",
+      "terminal_status": "complete",
+      "metrics": [
+        "probe_count",
+        "available_probe_plans",
+        "validated_probe_plans",
+        "counts"
+      ],
+      "scope": "Post-capture-fix membership compilation; auxiliary probe denominator 45",
+      "denominator": "probe_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "current_probe_state_equivalence": {
+      "path": "data\\validation\\probe_type_states_2026_10_15_v2\\report.json",
+      "sha256": "7448e8682cacbebef2c1704c01356bac1ee07a26f7faffea88a575f4dadddc76",
+      "terminal_status": "complete",
+      "metrics": [
+        "probe_count",
+        "counts",
+        "truth_comparisons",
+        "states_compared"
+      ],
+      "scope": "All source atoms along available probe trajectories, not all reachable states",
+      "denominator": "probe_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "goal_directed_development": {
+      "path": "data\\validation\\downward_composed_2026_10_15_v1\\report.json",
+      "sha256": "6a7e363b8be0ff3e63a399730c285d5f48fa71eca55427e4bff4b8065c65f566",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Authored worlds/interfaces; same-export solver comparison",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "initial_only_development": {
+      "path": "data\\validation\\initial_only_development_2026_10_15_v2\\report.json",
+      "sha256": "5f5cf8df93bdf799a3b79c05397c48a25d3cbb06bdd62fd99164f067af333906",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "counts"
+      ],
+      "scope": "Historical state-projection run before capture fix; 12 validated generated outcomes",
+      "denominator": "task_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "frozen_tasks_unchanged",
+        "implementation_unchanged",
+        "sources_unchanged"
+      ]
+    },
+    "finite_transition_control": {
+      "path": "data\\validation\\exhaustive_preservation_2026_10_15_v2\\report.json",
+      "sha256": "814e9f791745358f412783a7aafed840a7839606afa833e551eb0e833c88e6fa",
+      "terminal_status": "PASS",
+      "metrics": [
+        "counts"
+      ],
+      "scope": "Authored 256-state control after capture fix",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "capture_control": {
+      "path": "data\\validation\\quantifier_capture_2026_10_15_v1\\exhaustive_report.json",
+      "sha256": "5404eb86c3e37825c6bf40282b59592a17b7357464d25e0c62142ac495586a5e",
+      "terminal_status": "PASS",
+      "metrics": [
+        "states",
+        "action_bindings_checked",
+        "before_mismatches",
+        "after_mismatches"
+      ],
+      "scope": "Authored 16-state capture regression",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": []
+    }
+  },
+  "excluded_pending": [
+    "Full fresh UniDomain reference still running",
+    "Coupled-schema live intervention not started",
+    "Independent semantic annotation files absent",
+    "Independent-source evaluation absent"
+  ]
+}

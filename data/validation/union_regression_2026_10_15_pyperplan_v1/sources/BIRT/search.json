@@ -1,0 +1,28 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [
+    {
+      "engine": "up_negative_conditions_remover",
+      "actions": 12,
+      "fluents": 19
+    }
+  ],
+  "engine_status": "SOLVED_SATISFICING",
+  "status": "solved",
+  "length": 8,
+  "plan": "SequentialPlan:\n    turn_key_on_beech(nora, key, cottage)\n    travel_to_trysting_place(nora, bench, cottage)\n    witness_queen_birthday_ceremony(nora, grandmotherkin, bench)\n    travel_to_trysting_place(nora, palace, bench)\n    receive_queen_kiss(nora, fairy_queen)\n    return_to_bench_and_share_story(grandmother, mother, nora, bench)\n    turn_key_on_beech(nora, lantern, bench)\n    eat_pellet_and_shrink(nora, lantern)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

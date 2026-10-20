@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:41:18.6658372Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_6340089a043f86dd\", \"label\": \"equivalent\", \"right_from_left\": [\n    1,\n    2\n], \"rationale\": \"The predicate 'at' appears in both PIGS_NP and REMA_NP narratives with identical syntax and semantic meaning: indicating the location of an entity. The parameters are also identical: both take an 'entity' and a 'location'. The action contexts demonstrate this shared usage. In PIGS_NP, 'at' is used to describe the location of pigs, wolves, and other entities within various locations. In REMA_NP, 'at' is used to describe the location of entities like the king, impostor, and robbers within palaces, markets, and forests. The identical predicate declaration and parameter types confirm that 'at' represents the same concept in both narratives. The differing source narratives do not alter this equivalence.\", \"evidence\": [\n    {\"side\": 1, \"ref\": \"REMA_NP:action:arrive_at_marble_palace\", \"quote\": \"(at ?p oak_tree)\"},\n    {\"side\": 1, \"ref\": \"REMA_NP:action:encounter_impostor_king\", \"quote\": \"(at ?p city)\"},\n    {\"side\": 1, \"ref\": \"REMA_NP:action:encounter_robbers_in_forest\", \"quote\": \"(at ?p forest)\"},\n    {\"side\": 1, \"ref\": \"REMA_NP:action:king_proposes_marriage\", \"quote\": \"(at ?p palace)\"},\n    {\"side\": 1, \"ref\": \"REMA_NP:action:king_requests_information_and_gifts\", \"quote\": \"(at ?p palace)\"},\n    {\"side\": 1, \"ref\": \"REMA_NP:action:receive_rubies_from_impostor\", \"quote\": \"(at ?p market_place)\"}\n] }"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5054735900,
+  "load_duration": 2705200,
+  "prompt_eval_count": 2650,
+  "prompt_eval_duration": 391989000,
+  "eval_count": 444,
+  "eval_duration": 4512109000
+}

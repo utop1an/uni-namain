@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:47:09.173301Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_73b1d3651d9d6bf1\", \"label\": \"equivalent\", \"right_from_left\": [\n    5,\n    5\n], \"rationale\": \"The predicate 'at' is used to express location in both narratives. In HANS_NP, it's used to describe the location of children, objects, and locations relative to each other. In PIGS_NP, it's used to describe the location of pigs, items, and locations relative to each other. The arguments of 'at' are also similar: an entity or location. The action contexts demonstrate that 'at' is used to specify the location of an entity within a given location. The exact same literal `(at ?e - entity ?l - location)` is used in both narratives, indicating an interchangeable relation. The order of arguments is different, but the meaning is identical. The predicates are used in similar contexts, and the action contexts demonstrate that the same literal is used to express the same relationship. Therefore, the predicates are equivalent.\", \"evidence\": [\n    {\"side\": 0, \"ref\": \"HANS_NP:action:abandon_children_in_forest\", \"quote\": \"(at ?h ?forest)\"},\n    {\"side\": 0, \"ref\": \"HANS_NP:action:call_duck_for_crossing\", \"quote\": \"(at ?h ?lake)\"},\n    {\"side\": 0, \"ref\": \"HANS_NP:action:collect_treasure\", \"quote\": \"(at ?h ?cottage)\"},\n    {\"side\": 0, \"ref\": \"HANS_NP:action:drop_breadcrumb_on_path\", \"quote\": \"(at ?h ?path_loc)\"},\n    {\"side\": 0, \"ref\": \"HANS_NP:action:drop_pebble_on_path\", \"quote\": \"(at ?h ?path_loc)\"},\n    {\"side\": 0, \"ref\": \"HANS_NP:action:enter_witch_house\", \"quote\": \"(at ?h ?cottage)\"}\n]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5496582900,
+  "load_duration": 2268300,
+  "prompt_eval_count": 3973,
+  "prompt_eval_duration": 578698000,
+  "eval_count": 469,
+  "eval_duration": 4824343000
+}

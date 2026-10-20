@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_ea045e070b42f32a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_ea045e070b42f32a",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicates `at` are used to express location. In JACK_NP, `at` is used to describe the location of entities like `giant_castle`, `beanstalk`, `giant_castle`, `giant_castle`, `cottage`, and `giant_castle`. In REMA_NP, `at` is used to describe the location of entities like `oak_tree`, `palace`, `market_place`, `forest`, `oak_tree`, `back_stairs`, and `oak_tree`. The predicates share the same semantic meaning – indicating the spatial position of an entity – and are used in similar contexts within the narratives. The arguments `?e` and `?l` represent the entity and location respectively, and their roles are interchangeable in both narratives. The action contexts demonstrate this equivalence, as both narratives use `at` to specify the location of objects and characters within their respective scenes. The exact excerpts confirm this: JACK_NP: `(at ?j giant_castle)` and REMA_NP: `(at ?p palace)`.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:climb_beanstalk",
+        "quote": "(at ?j beanstalk)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_kettle",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_oven",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:return_down_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(at ?j ?l)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_ea045e070b42f32a",
+    "missing_both_side_evidence:pair_ea045e070b42f32a"
+  ]
+}

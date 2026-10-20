@@ -2,6 +2,8 @@
 
 Date: 2026-09-19. This is the active project direction, superseding the method priorities in the 2026-09-05 RCNC handoff. Historical experiments and their results remain unchanged.
 
+Progress update (2026-10-15): the research objective below remains active. Use the [latest handoff](../dev-notes/2026-10-15-icaps-submission-progress.md) and [submission milestones](../../paper/submission_workplan.json) for current execution status and dated priorities. Mechanical preservation evidence has expanded, but independent semantic evaluation and the complete fusion comparison remain open; the requested eight continuous hours were interrupted and are not recorded as completed.
+
 ## Research objective
 
 Given a collection of narrative planning domains produced by upstream learning methods, select and merge suitable domains so that the resulting planning domain can generate narrative plans under supplied initial states and/or goals.
@@ -67,8 +69,9 @@ LLM proposals are optional assistance to alignment. They must not rewrite a doma
 
 | Component | Actual current behavior | Role after correction |
 | --- | --- | --- |
-| unidomain_ollama_fusion.py | Existing predicate-first/operator-second binary-tree fusion; local provider adaptation | Separate UniDomain-style reference implementation/baseline; retain its original behavior |
-| merge_domains.py | Parser/export helpers plus dataset-specific offline semantic groups | Reuse parser/export helpers with reviewed semantic overrides disabled; offline semantic groups remain a labeled fallback |
+| unidomain/ (unidomain_ollama_fusion.py CLI) | Predicate-first/operator-second binary-tree fusion; model interface separated from fusion and batch execution | Separate UniDomain-style reference implementation/baseline; retain its original behavior |
+| rcnc/pddl.py | Shared source-model parser, export and structural helpers | Raw parsing only; no built-in semantic aliases |
+| archive/domain_merge.py | Historical authored aliases and offline binary merge baseline | Separate fallback; merge_domains.py retains its CLI |
 | rcnc/interface_proposals.py | Budgeted pairwise interface judgments from action context | Alignment candidate subsystem; not the main method and not a trusted registry |
 | rcnc/semantic_proposals.py | Parameter/interface/role hypotheses | Optional proposal subsystem; do not automatically apply constraints |
 | rcnc/planning.py, selection.py | Explicit-query grounding, signed relevance pruning and bounded BFS | Execution/reference planner infrastructure; its source eligibility filtering is not the new domain-selection algorithm |
@@ -77,13 +80,13 @@ LLM proposals are optional assistance to alignment. They must not rewrite a doma
 | parameter_tasks_v1, frozen_protocol_v1 | Authored capabilities and variants of two known task templates | Development/sensitivity diagnostics only; no primary benchmark or automatic promotion to held-out data |
 | rcnc/experiment.py | Lexical frame graph and heuristic skeleton ranking | Historical exploration; no default narrative ontology or verified novelty metric |
 
-There is currently no single completed entry point implementing the target pipeline. In particular, narrative-specific automatic domain selection, pre-search merged-domain integration, initial-only outcome generation and goal-only initial-state request handling are not implemented as one end-to-end path. Existing prototype commands must not be relabeled to imply otherwise.
+Implementation status checked against code on 2026-10-18: `run_narrative_pipeline.py` now integrates pre-search union or explicit alignment, deterministic dependency selection, explicit initial+goal planning, initial-only bounded outcome generation and `needs_initial_state` handling. The earlier statement that these modes lacked a unified entry point is superseded. Automatic semantic alignment, independent semantic evaluation and narrative comparison/ranking remain open. M1–M4 below describe acceptance criteria and implementation order, not a current completion checklist; use `paper/submission_workplan.json` and the latest research handoff for outstanding research milestones.
 
 ## Revised implementation order and acceptance criteria
 
 ### M1: Establish the pre-search domain artifact
 
-Progress (2026-09-19): `build_narrative_union.py` implements the source-preserving namespaced union baseline. All 15 mapped source problems independently parse; small source-plan regression fixtures pass. Broad source-plan solvability/trace regression remains to be established. See [safety fixes](../dev-notes/2026-09-19-fusion-safety-fixes.md).
+Progress (2026-09-19): `rcnc/domain_union.py` (the `build_narrative_union.py` CLI) implements the source-preserving namespaced union baseline. All 15 mapped source problems independently parse; small source-plan regression fixtures pass. Broad source-plan solvability/trace regression remains to be established. See [safety fixes](../dev-notes/2026-09-19-fusion-safety-fixes.md).
 
 Build an explicit catalog/manifest of the supplied domain pool. Implement a conservative source-preserving union baseline with namespaced constants/predicates/actions and full reverse mappings. Expose accepted alignment decisions as versioned inputs; default to no unverified merges. Export parameterized domain PDDL before any plan search. Reuse the existing UniDomain runner as a separate comparison, not as an already validated narrative solution.
 
@@ -115,4 +118,4 @@ Report separately: source isolated, namespaced union, UniDomain reference, narra
 
 Primary evidence concerns whether selection/fusion yields usable merged models and valid, coherent narrative plans while preserving documented source behavior. Compression, structural proposal acceptance, source counts and source-removal necessity are secondary diagnostics.
 
-Freeze source pool, split, task/context generation rules, mappings, model/prompt versions, ranking criteria and implementation dependencies before independent evaluation. Include the parser (merge_domains.py) and relevant runtime configuration in the new manifest. The historical frozen-v1 manifest is retained unchanged and is not retroactively claimed to freeze this new pipeline.
+Freeze source pool, split, task/context generation rules, mappings, model/prompt versions, ranking criteria and implementation dependencies before independent evaluation. Include the parser (rcnc/pddl.py) and relevant runtime configuration in the new manifest. The historical frozen-v1 manifest is retained unchanged and is not retroactively claimed to freeze this new pipeline.

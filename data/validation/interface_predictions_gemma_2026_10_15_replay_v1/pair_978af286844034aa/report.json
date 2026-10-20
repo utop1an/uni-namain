@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_978af286844034aa",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_978af286844034aa",
+    "label": "equivalent",
+    "right_from_left": [
+      7,
+      1
+    ],
+    "rationale": "The predicate 'has' is used identically in both sources, referring to the possession of an entity by another entity. The arguments are also identical: the first argument is an entity and the second is an item. The action contexts demonstrate this usage consistently. Specifically, in JACK_NP, 'has ?j ?beans' and 'has ?j ?bag1' and 'has ?j ?bag2' and 'has ?j ?harp' and 'has ?j ?hen' are used. In PIGS_NP, 'has ?p ?i', 'has ?p ?c', 'has ?p ?a', 'has ?p ?i', 'has ?p ?i', 'has ?p ?pot' and 'has ?p ?i' are used. The identical syntax and usage across the action contexts confirm that the predicate 'has' represents the same relationship in both narratives. The argument roles are identical, and the action contexts provide evidence for this equivalence. The exact occurrences are identical, confirming the same relationship is being described.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:build_house",
+        "quote": "(has ?p ?i)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+        "quote": "(has ?p ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_collects_apples_and_escapes",
+        "quote": "(has ?p ?a)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_collects_turnips",
+        "quote": "(has ?p ?i)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+        "quote": "(has ?p ?pot)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:receive_material",
+        "quote": "(has ?p ?i)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_978af286844034aa",
+    "nonbijective_argument_map:pair_978af286844034aa"
+  ]
+}

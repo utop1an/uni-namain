@@ -1,0 +1,117 @@
+{
+  "initial": {
+    "BIRT:at(hero,stage)": true,
+    "shared:has(hero,token)": false,
+    "ACCO:exhibition_ready(hero)": false,
+    "ACCO:performing_show(hero)": false,
+    "ACCO:reputation_widespread": false,
+    "ACCO:wealthy(hero)": false
+  },
+  "steps": [
+    {
+      "step": 1,
+      "source": "BIRT",
+      "action": "turn_key_on_beech",
+      "instance": "d001__a_turn_key_on_beech(q__hero, q__token, q__stage)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": false,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d001__t_entity(n) and typeguard__d001__t_item(k) and typeguard__d001__t_location(t) and d001__p_at(n, t))"
+      ]
+    },
+    {
+      "step": 2,
+      "source": "ACCO",
+      "action": "arrange_exhibition",
+      "instance": "d000__a_arrange_exhibition(d000__c_badger, q__hero, q__token)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(s) and typeguard__d000__t_entity(t) and typeguard__d000__t_item(k) and shared__p_possession(t, k))"
+      ]
+    },
+    {
+      "step": 3,
+      "source": "ACCO",
+      "action": "perform_show",
+      "instance": "d000__a_perform_show(q__hero, q__token)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(t) and typeguard__d000__t_item(k) and (d000__p_exhibition_ready(t) and shared__p_possession(t, k)))"
+      ]
+    },
+    {
+      "step": 4,
+      "source": "ACCO",
+      "action": "receive_orders_from_nobility",
+      "instance": "d000__a_receive_orders_from_nobility(q__hero)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": true
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(t) and d000__p_reputation_widespread)"
+      ]
+    }
+  ],
+  "scope": "Causal facts along the actual plan, not a full-state enumeration"
+}

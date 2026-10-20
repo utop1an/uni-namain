@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_ea045e070b42f32a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_ea045e070b42f32a",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'at' is used identically in both narratives, describing the location of entities. JACK_NP uses 'at' to specify the location of characters and objects within the giant castle and beanstalk, while REMA_NP uses 'at' to describe the location of characters and objects within the marble palace, forest, and market. The arguments 'entity' and 'location' are used consistently across both narratives, representing the same conceptual roles. The action contexts demonstrate that the predicate 'at' is consistently used to express spatial relationships, indicating that the predicate is interchangeable between the two narratives. The exact excerpts confirm this equivalence: JACK_NP: 'at ?j giant_castle' and REMA_NP: 'at ?p palace'.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:climb_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_kettle",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_oven",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:return_down_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(at ?j ?l)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_ea045e070b42f32a",
+    "missing_both_side_evidence:pair_ea045e070b42f32a"
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "sources": [
+    "ACCO",
+    "BIRT"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 41,
+    "predicates": 32,
+    "operators": 28
+  },
+  "predicate_maps": {
+    "ACCO": {
+      "airborne": "airborne",
+      "badger_form": "badger_form",
+      "captured": "captured",
+      "contained_in": "contained_in",
+      "exhibition_ready": "exhibition_ready",
+      "four_legged": "four_legged",
+      "furred": "furred",
+      "hanging": "hanging",
+      "has": "has",
+      "located": "located",
+      "night": "night",
+      "owned_by": "carried_item",
+      "performing_show": "state",
+      "reputation_widespread": "reputation_widespread",
+      "treasured": "treasured",
+      "wealthy": "wealthy",
+      "worshipped": "worshipped"
+    },
+    "BIRT": {
+      "at": "at",
+      "boat_available": "boat_available",
+      "corridor_reached": "corridor_reached",
+      "door_open": "door_open",
+      "gloomy": "gloomy",
+      "gold_star_on": "gold_star_on",
+      "has": "has",
+      "inside": "inside",
+      "invitation_offered": "invitation_offered",
+      "joyful": "joyful",
+      "kissed_by": "kissed_by",
+      "knighted": "knighted",
+      "lantern_carried": "carried_item",
+      "pellet_eaten": "pellet_eaten",
+      "shrunk": "state",
+      "sound_heard": "sound_heard",
+      "stairs_descended": "stairs_descended",
+      "story_shared": "story_shared"
+    }
+  },
+  "constant_maps": {
+    "ACCO": {
+      "badger": "badger",
+      "box": "box",
+      "copper_coins": "copper_coins",
+      "friend": "friend",
+      "jhosiu": "jhosiu",
+      "lady_of_court": "lady_of_court",
+      "morinji": "morinji",
+      "pack": "pack",
+      "priest": "priest",
+      "prince": "prince",
+      "princess": "princess",
+      "showman": "showman",
+      "teakettle": "teakettle",
+      "temple_treasure": "temple_treasure",
+      "tight_rope": "tight_rope",
+      "tinker": "tinker"
+    },
+    "BIRT": {
+      "beech_tree": "beech_tree",
+      "bench": "bench",
+      "boat": "boat",
+      "corridor": "corridor",
+      "cottage": "cottage",
+      "door": "door",
+      "dryad": "dryad",
+      "fairy_queen": "fairy_queen",
+      "fairyland": "fairyland",
+      "gnome": "gnome",
+      "gold_star": "gold_star",
+      "grandmother": "grandmother",
+      "grandmotherkin": "grandmotherkin",
+      "key": "key",
+      "lantern": "lantern",
+      "mother": "mother",
+      "mothereen": "mothereen",
+      "nora": "nora",
+      "palace": "palace",
+      "pellet": "pellet",
+      "pond": "pond",
+      "silver_salver": "silver_salver",
+      "spring": "spring",
+      "stairs": "stairs",
+      "stream": "stream"
+    }
+  },
+  "action_maps": {
+    "ACCO": {
+      "hang_kettle": "hang_kettle",
+      "kettle_transform_to_badger": "kettle_transform_to_badger",
+      "call_novices": "call_novices",
+      "kettle_jump_and_fly": "kettle_jump_and_fly",
+      "pursue_kettle": "pursue_kettle",
+      "knock_down_kettle": "knock_down_kettle",
+      "force_kettle_into_box": "force_kettle_into_box",
+      "sell_kettle_to_tinker": "sell_kettle_to_tinker",
+      "tinker_carry_home": "activate_beech",
+      "kettle_transform_to_fur_badger": "kettle_transform_to_fur_badger",
+      "kettle_revert_shape": "kettle_revert_shape",
+      "show_kettle_to_friend": "show_kettle_to_friend",
+      "arrange_exhibition": "arrange_exhibition",
+      "perform_show": "perform_show",
+      "receive_orders_from_nobility": "receive_orders_from_nobility",
+      "return_kettle_to_temple": "return_kettle_to_temple",
+      "worship_kettle_as_saint": "worship_kettle_as_saint"
+    },
+    "BIRT": {
+      "travel_to_trysting_place": "travel_to_trysting_place",
+      "hear_tapping_on_beech": "hear_tapping_on_beech",
+      "approach_beech_tree": "approach_beech_tree",
+      "turn_key_on_beech": "activate_beech",
+      "accept_dryad_invitation": "accept_dryad_invitation",
+      "receive_pellet_from_gnome": "receive_pellet_from_gnome",
+      "eat_pellet_and_shrink": "eat_pellet_and_shrink",
+      "enter_tree_and_descend_stairs": "enter_tree_and_descend_stairs",
+      "travel_by_leaf_boat_under_pond": "travel_by_leaf_boat_under_pond",
+      "witness_queen_birthday_ceremony": "witness_queen_birthday_ceremony",
+      "receive_queen_kiss": "receive_queen_kiss",
+      "return_to_bench_and_share_story": "return_to_bench_and_share_story"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item) ; relation 'has' holds`, appear to be almost identical in their definition and usage. Both predicates describe the existence of an entity `?e` that possesses an item `?i`. The only difference is the domain they belong to (domain_1 and domain_2).  The 'has' relation is explicitly stated in both predicates, indicating a possession relationship.  Merging these predicates would simplify the domain description and avoid redundancy. The predicates are not containing relationships, and the semantics are very similar.  We can merge them into a single predicate representing the 'has' relationship.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "located",
+      "right": "at",
+      "reason": "action place_at :precondition: ill-typed badger_form:?pr:entity->item; action return_item_to_location :effect: undeclared predicate located; action transform_to_fur_badger :precondition: ill-typed at:?k:item->entity"
+    },
+    {
+      "kind": "predicate",
+      "left": "(owned_by ?i - item ?e - entity)",
+      "right": "(lantern_carried ?e - entity ?l - item)",
+      "result": "(carried_item ?e - entity ?l - item)",
+      "reason": "The two predicates represent similar concepts: ownership and carrying a lantern. Predicate `(owned_by ?i - item ?e - entity)` describes ownership, while `(lantern_carried ?e - entity ?l - item)` describes carrying a lantern. The entities `?e` are the same in both predicates, representing the person or object carrying the lantern. The predicates are not semantically equivalent in a general sense, but they share a common element – an entity.  We can merge them into a single predicate that captures the essence of both, focusing on the entity and the relationship it has with an item.  The core idea is that an entity can be 'owned by' something or 'carry' something.",
+      "similarity": 0.4631039798259735,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(performing_show ?e - entity)",
+      "right": "(shrunk ?e - entity)",
+      "result": "(state ?e - entity)",
+      "reason": "The two predicates, `(performing_show ?e - entity)` and `(shrunk ?e - entity)`, both relate to an entity `?e` and indicate a state of being. The first predicate signifies that the entity is 'performing show', while the second signifies that the entity is 'shrunk'. Although they describe different states, they share the same structure: `(predicate_name ?e - entity)`.  The predicates are effects of different operators, but the core relationship is that an entity can be in one of these states.  We can merge them into a more general predicate that captures the essence of an entity being in a specific state.  Since the predicates are used as effects of different operators, we can create a new predicate that represents the general state of an entity. The predicates are semantically equivalent in that they both describe a state an entity can be in. We can create a new predicate that represents the general state of an entity. The predicates are effects of different operators, but the core relationship is that an entity can be in one of these states.",
+      "similarity": 0.4087008833885193,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "wealthy",
+      "right": "knighted",
+      "reason": "action return_item_to_temple :effect: ill-typed has:?t:object->entity; action return_item_to_temple :precondition: ill-typed has:?t:object->entity"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "wealthy",
+      "right": "gloomy",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "call_novices",
+      "right": "approach_beech_tree",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "operator",
+      "left": "tinker_carry_home",
+      "right": "turn_key_on_beech",
+      "result": "activate_beech",
+      "reason": "The action `tinker_carry_home` in domain_1 involves carrying an item (`k`) to a location (`jhosiu`). The action `turn_key_on_beech` in domain_2 involves being at a location (`t`) and having an item (`k`), and it has effects like `door_open` and `inside dryad`. These two actions are not directly equivalent. However, we can consider a scenario where the `tinker_carry_home` action is used to move an item to a specific location, and the `turn_key_on_beech` action is used to activate something at that location. We can merge these actions into a new action that combines the effects of both. The new action will involve being at a location and having an item, and it will have effects like `door_open` and `inside dryad`.",
+      "similarity": 0.34736311435699463,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_orders_from_nobility",
+      "right": "receive_queen_kiss",
+      "reason": "Expected one PDDL root expression, got 3"
+    }
+  ]
+}

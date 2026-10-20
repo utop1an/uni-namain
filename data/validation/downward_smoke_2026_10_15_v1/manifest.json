@@ -1,0 +1,35 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "979c862913f5084a692ed422fab412a8e0a1dafa34707c6653e5b6617c877625",
+  "budget": {
+    "wall_seconds": 30,
+    "overall_cpu_seconds": 30,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "ACCO",
+      "source": "ACCO",
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4"
+    },
+    {
+      "id": "SOUP",
+      "source": "SOUP",
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e"
+    }
+  ],
+  "task_count": 2,
+  "mode": "original_source_tasks",
+  "composed_origin": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

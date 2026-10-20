@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_ea19ed64190bcd16",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_ea19ed64190bcd16",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The `making_noise` predicate appears in both the `MUSI` and `NAUG` sources, but with distinct contexts. In `MUSI`, it's an effect of various actions (scaring robbers, signaling, stacking animals), representing a physical event. In `NAUG`, it's a result of the `punish_meteor` action, representing a consequence or state change. These contexts are related (noise can be a result of actions), but not interchangeable. The `MUSI` source describes the *cause* of the noise, while the `NAUG` source describes the *effect* of a punishment. Therefore, they are complementary predicates. The action contexts provide the specific details of each predicate's usage, further supporting this complementary relationship. Specifically, `MUSI` uses `making_noise` as an effect, while `NAUG` uses `punished` as a result of an action.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "MUSI:action:plan_scaring_robbers",
+        "quote": "(making_noise ?donkey)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:plan_scaring_robbers",
+        "quote": "(making_noise ?hound)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:plan_scaring_robbers",
+        "quote": "(making_noise ?cat)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:plan_scaring_robbers",
+        "quote": "(making_noise ?cock)"
+      },
+      {
+        "side": 1,
+        "ref": "NAUG:action:punish_meteor",
+        "quote": "(punished ?m)"
+      }
+    ]
+  },
+  "errors": []
+}

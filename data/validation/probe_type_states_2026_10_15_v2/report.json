@@ -1,0 +1,636 @@
+{
+  "status": "complete",
+  "probe_count": 45,
+  "max_atoms": 200000,
+  "input_and_implementation_sha256": {
+    "data\\validation\\downward_probes_2026_10_15_v1\\report.json": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+    "data\\validation\\probe_type_replay_2026_10_15_v2\\report.json": "4841039fe26215a90d52c8f2843d90c63d5edb316b682eaa24500d5ba2d2e019",
+    "audit_probe_trace_states.py": "5b1d6dba0ece51d75690d57acda741c0049e19e8e1acdc8ce066d6a151b795a0",
+    "rcnc/trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b"
+  },
+  "scope": "Every mapped ground source atom along available auxiliary probe traces; no exhaustive state-space or semantic-interface guarantee",
+  "rows": [
+    {
+      "id": "ACCO__probe_0",
+      "source": "ACCO",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\problem.pddl": "e71d36255508e6c33b88a65d45c2cc7b3bf75d62f9e3e7f3a7afe479e974c661",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\plan.txt": "7bc846c6e1d863120284cbfb2725fdb2a0c70e181593af10aed7c7961f1112ea",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\ACCO__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\ACCO__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\ACCO__probe_0\\validation\\problem.pddl": "b31f7a226102b35e8d308564d71523307961f734c8a09041681f8d78838346be",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\ACCO__probe_0\\validation\\plan.txt": "a13a87a6d14a295bf09347b63f8c3028326a27fa9cbb661c43d6a3cb9bfb6652"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "ACCO__probe_1",
+      "source": "ACCO",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "ACCO__probe_2",
+      "source": "ACCO",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "BIRT__probe_0",
+      "source": "BIRT",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "BIRT__probe_1",
+      "source": "BIRT",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "BIRT__probe_2",
+      "source": "BIRT",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\problem.pddl": "dca88eb5ca9de4844f6606524aba5bccd5cdc5f14bcd627a9496fe0cc04eede5",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\plan.txt": "38140d1e5c8fa77ec0f89b9a4950860bbbc61035850db68a9b1905e1decaa756",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BIRT__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BIRT__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BIRT__probe_2\\validation\\problem.pddl": "afb85c92cc9de96d6093278c6c81d6a966ca2ab61cc55230fe924de53ccc8cf1",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BIRT__probe_2\\validation\\plan.txt": "a8a0704aafb3eb94e652c2bbee663c24fa43c21dc6c02f6c0c61832f15ca5772"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 2,
+      "truth_comparisons": 1466,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "BUFF__probe_0",
+      "source": "BUFF",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\problem.pddl": "432e029159c80adc6bb38e2092865be129e30615a2b032ec0ec48fb5e65bba54",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\plan.txt": "cc48b423cbf6f71ef7b57bb33502be2913137a33603c4a763fa7feef0aa55f3a",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_0\\validation\\problem.pddl": "2840dca142c129520ba4725fbb83b5caa571b3debdc427acd72699369569da64",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_0\\validation\\plan.txt": "337bcc67429217c9e94b507a44a2d2aa5d8aec190a86cbb6bbc81ca50875260e"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 3,
+      "truth_comparisons": 618,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "BUFF__probe_1",
+      "source": "BUFF",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\problem.pddl": "9f60c6a60831c22fd474cb5473c3fa00953a580cd90fcc21c34297c80fcc7dc0",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\plan.txt": "4ec1b6d3f855d66341bbf1753b8ab239a7920b9aa6c5f4d9330946c7906ec379",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_1\\validation\\problem.pddl": "b1f82e02ac2777b2f676f67bd29b01f8a63d485bf5dec3439ac6ad38bddc9e1c",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\BUFF__probe_1\\validation\\plan.txt": "b6c78d6439873fe017606de95d25aa5a4e8e0721b1e32089ab382303f3573adb"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 2,
+      "truth_comparisons": 412,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "BUFF__probe_2",
+      "source": "BUFF",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "CHIC_NP__probe_0",
+      "source": "CHIC_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\problem.pddl": "e7af7cbbd2e12c169c825fa25859869eb4ef436fb10c537e2279aa6ce67c861b",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\plan.txt": "cdfc6349e117f0b695e8efabc7432e307cea879d22b2e2fd9cf555b27fbfe816",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_0\\validation\\problem.pddl": "f69f201b715273eb078129f1f86c59a10a2639a13d80bb47d3a989e72488c24e",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_0\\validation\\plan.txt": "2ea4ffdde8e1f10643b3438fcf5bce0c20b1e37aefb28a3cf00c6cdf18ccbcf7"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 2,
+      "truth_comparisons": 560,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__probe_1",
+      "source": "CHIC_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\problem.pddl": "1cb334873966ce13dd15639abe1a8bfe48cfc6c0bdfed4cc37bd14c4174d3586",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\plan.txt": "545857e846a69cc8fbd447904395f47f88e6f8fcaf2147d41186b6ba7fd78329",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_1\\validation\\problem.pddl": "4e982e9c1141376e74bf033c7480ee8397de6fb64b3f65c7d7e93b531a462fe3",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_1\\validation\\plan.txt": "f5aaf6edbce7d834837d5866cba5715a47463e8d244db7ba7adff8986f169089"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 5,
+      "truth_comparisons": 1400,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__probe_2",
+      "source": "CHIC_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\problem.pddl": "2a131274d7518740a1791a41cb27c58ed8c714013b974232e2381d5e26696e30",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\plan.txt": "cdfc6349e117f0b695e8efabc7432e307cea879d22b2e2fd9cf555b27fbfe816",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_2\\validation\\problem.pddl": "301c1b1017444e6f50d9c6629b4ca9925c3f111b39b6186a4a55894aae4851c6",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\CHIC_NP__probe_2\\validation\\plan.txt": "2ea4ffdde8e1f10643b3438fcf5bce0c20b1e37aefb28a3cf00c6cdf18ccbcf7"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 2,
+      "truth_comparisons": 560,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__probe_0",
+      "source": "FOUR_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "FOUR_NP__probe_1",
+      "source": "FOUR_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "FOUR_NP__probe_2",
+      "source": "FOUR_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "HANS_NP__probe_0",
+      "source": "HANS_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\problem.pddl": "5490d71c79af9326f4ed7077dc1d472034c666f11fcd8d73bf7c65f02924b284",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\plan.txt": "a6657714f3e54bd28791ab5e12cc6e291a29fc3d31fb78062b12dab80116e739",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_0\\validation\\problem.pddl": "a368a523b46ca6e8b2b5a0b228e515c1d0435a3ad54c118bcda1e5cf10d47f2b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_0\\validation\\plan.txt": "fc97358e9649fde22ab8d8b805fc0a9a293e5e7d4779425e5611c73788a210d0"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 521,
+      "states_compared": 3,
+      "truth_comparisons": 1563,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "HANS_NP__probe_1",
+      "source": "HANS_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\problem.pddl": "5c90cdf8e5f5f9424d523a0c68bddbabf03307ae78bea4e347fd3359f4bdf3be",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\plan.txt": "fbc71f67c08999a8df7d4c16410d3b27d9a6fd808783f2726079a682aca1030f",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_1\\validation\\problem.pddl": "1ce581edbd962cdcc743dbc56f270be7e4ed8c477a623e6768969da7fc6a2c9b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_1\\validation\\plan.txt": "39104c4349f546b322b037496614c34d021c5054dae2788c3c115645c2b3a46f"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 521,
+      "states_compared": 2,
+      "truth_comparisons": 1042,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "HANS_NP__probe_2",
+      "source": "HANS_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\problem.pddl": "810816cf7de7d7bccf3787832e6117cf7a74692c0fcddef6fb7c5a325cd93971",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\plan.txt": "6175fa82f6abca71e3ed87a881e144f3eb9c4a39cbdf60d1befe1b689c836522",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_2\\validation\\problem.pddl": "4657c8ccf604a1b1355c0b45a68bf8f05f336e0dfa526593b26eba53d6aa5d33",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\HANS_NP__probe_2\\validation\\plan.txt": "b3f0d565aa9f587a59bcff888299acd268fbe86c0072e7890a5d9d826929c828"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 521,
+      "states_compared": 2,
+      "truth_comparisons": 1042,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "JACK_NP__probe_0",
+      "source": "JACK_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "JACK_NP__probe_1",
+      "source": "JACK_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "JACK_NP__probe_2",
+      "source": "JACK_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "MUSI__probe_0",
+      "source": "MUSI",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\problem.pddl": "10992f0633f22ddc6aaf96842a0cdb746c626364553820fab6f4d05a14c87104",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\plan.txt": "abe64f717ced1c8ac4ae2b3977f42f7fe9c6b4bcd9f1023bb859610092201ef9",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_0\\validation\\problem.pddl": "157d72dd53a862da92660aabd066bd94fa5b673edf6b2b0ec0ce91191a7b5b2f",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_0\\validation\\plan.txt": "63693e1c8cfef8734fb6058648047141beb9e01e4b3168109fb45a3fa76e97dc"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 679,
+      "states_compared": 4,
+      "truth_comparisons": 2716,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "MUSI__probe_1",
+      "source": "MUSI",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\problem.pddl": "31cc20c9f9abc2a118938b9070a0deacebe3b80dbfadaeaba2ae4d9ec84be63f",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\plan.txt": "4799c61879d711fc2f6bc9dd043f696f1bacaff06b6894cfa207d59691ed8985",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_1\\validation\\problem.pddl": "740d58753da47c68d236e936656ce72ea8ad04a1e968af18bdd0155454edf4f2",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_1\\validation\\plan.txt": "a197f3a9481bab2d2af256ef6bef8182a3ebe2a79de1b108ae9d2c0fde7ab38c"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 679,
+      "states_compared": 3,
+      "truth_comparisons": 2037,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "MUSI__probe_2",
+      "source": "MUSI",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\problem.pddl": "ced4c280a6ba64fde6a1f70143665fb5088d2515cb1d3a4a4c7a3e15f33044b4",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\plan.txt": "11deb9f1715238de7e10bc194f81d1a8700b6f3ac7cf250ca555f27f4d5e1825",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_2\\validation\\problem.pddl": "5b2b67bc989650c7b09ca500da07ea1fcfd572ad47d4376f55a43fb3f5690d3e",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\MUSI__probe_2\\validation\\plan.txt": "81a94c7b094a09da305b6b62075f002d2cfcd27225561b1075f62193b0439b5d"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 679,
+      "states_compared": 2,
+      "truth_comparisons": 1358,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "NAUG__probe_0",
+      "source": "NAUG",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "NAUG__probe_1",
+      "source": "NAUG",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "NAUG__probe_2",
+      "source": "NAUG",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\domain.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\problem.pddl": "8d70d15f8cdc4c8b29d4fb56e9e955449393b5d981c0e8284c1add0251f7cb51",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\plan.txt": "f39b61668131323f74874ad698d664a359f8499e1e5b0857962c4e0410818e82",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\NAUG__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\NAUG__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\NAUG__probe_2\\validation\\problem.pddl": "4a6b034bbfcfa5d62461b044819acac18bf5e1575ae6a4cee289000944548d72",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\NAUG__probe_2\\validation\\plan.txt": "de7865c82493b87d247f7a731d122a842aece4b045b4b63321540e9c41644f40"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 3,
+      "truth_comparisons": 1596,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__probe_0",
+      "source": "PIGS_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\problem.pddl": "b0e2566e6dcfd7f8f22137902d1d2aa1291bc0823699fffc759e318e3aa472e7",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\plan.txt": "0f437eef3d52b9b27a711d5329061c2ef1d1c5a5d69c0d9097f9b77b3e34cca1",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_0\\validation\\problem.pddl": "0b174870a70d256fd339280c881bf9b76a36337bbd472939bf58a91002671920",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_0\\validation\\plan.txt": "79ff507d031860134ed627c192764f2da81e0fbfe1e107ad126f2803592811b5"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 7,
+      "truth_comparisons": 9436,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__probe_1",
+      "source": "PIGS_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "PIGS_NP__probe_2",
+      "source": "PIGS_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\problem.pddl": "41d5d78edab08752cad836a31d6b244379323683f43388917ce8a6774f0794e4",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\plan.txt": "0f437eef3d52b9b27a711d5329061c2ef1d1c5a5d69c0d9097f9b77b3e34cca1",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_2\\validation\\problem.pddl": "8f95a6e358edb1f4c31906ea58288f8e268c5cfb2d6753464c7aaa6c658b6216",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PIGS_NP__probe_2\\validation\\plan.txt": "79ff507d031860134ed627c192764f2da81e0fbfe1e107ad126f2803592811b5"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 7,
+      "truth_comparisons": 9436,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "PUSS__probe_0",
+      "source": "PUSS",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\domain.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\problem.pddl": "5f0bd05f493a7646a57f1e1b965e6979c4f39759627a8dd5118745fd252876c3",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\plan.txt": "34bdbb2a846aff8b577614825d9151a4a3555e4a8f29201946e6c31b02a317f3",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PUSS__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PUSS__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PUSS__probe_0\\validation\\problem.pddl": "4995b9a4e8e9dc541f0edcc17c0602a5be95de1083228af8beeec4ba560804e9",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\PUSS__probe_0\\validation\\plan.txt": "a270963bcb69ac907667b9ac6dfc05e7678af0c08a1e06634fa6eac32f7113ee"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "PUSS__probe_1",
+      "source": "PUSS",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "PUSS__probe_2",
+      "source": "PUSS",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "REMA_NP__probe_0",
+      "source": "REMA_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\problem.pddl": "f42c1687e0c0b18b06218c423e6d12c22b3b7ce23755a2d18fe29045e8b9d3ab",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\plan.txt": "c438776e2f43652ae3caa29fa22da3a72a0a571d4a3e89b7ce1f8b4f5f6992f6",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_0\\validation\\problem.pddl": "8153c80f34fcf854beae90bc22abc0994303b8ef1e6a90efb33dec89557a703d",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_0\\validation\\plan.txt": "34184393623dd4dc811f3b18fdf7207555b72d78ffaceb322c8530ebdb4aee78"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "REMA_NP__probe_1",
+      "source": "REMA_NP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\problem.pddl": "a94db9f3462222289ddb4b8ea665ab2f60dc05ff95a2949e69455f40d896ed61",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\plan.txt": "9830d943eab2f53ba3fb556296ce37a60079553b90d3e0f6eac8479c471c9f9f",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_1\\validation\\problem.pddl": "eeea71b18c6c7c287c9b3e0ca1157d9247d8759e58d6010934f57416f8d2f9dd",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\REMA_NP__probe_1\\validation\\plan.txt": "06829c6401f6d622c806cfe0b5cd3a367894559505bb8a8fd938af6ffaf42175"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "REMA_NP__probe_2",
+      "source": "REMA_NP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "SNOW__probe_0",
+      "source": "SNOW",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\problem.pddl": "c2686d217bc9b0f57140bb5d9acbc3ff4f8ca098d549509b59a003971daffdd4",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\plan.txt": "2c6ac8d3a452f6d0bb0f9f7447c82f16655f358422d2c8167557ca16cbd58424",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_0\\validation\\problem.pddl": "b2083021ad4b8f2e0f1163d174ca5c213556ca52746c8a524f9fb32a6eb311cf",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_0\\validation\\plan.txt": "f591b3e620f292c1bbbaedc8cc25107bab7316edcee718f6bd89abae273a9e28"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "SNOW__probe_1",
+      "source": "SNOW",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\problem.pddl": "dd37cf250bbba7330d759a83cb381cfa8415acd9e974d236d5166c919689d5dd",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\plan.txt": "a2cf693266b26c4948083affb090cebe21dea66d770c3bf407e7f62dd861d0a1",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_1\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_1\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_1\\validation\\problem.pddl": "1090c8f3997a25acc5a80e9755eb1a415eb959e9b10d998256d227125d37d0ac",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_1\\validation\\plan.txt": "98f6efc2669efe5cda30ce10da8d7b6affc8d55897de61a2739c768d42a7b3b8"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "SNOW__probe_2",
+      "source": "SNOW",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\problem.pddl": "999dceb3510457f087536a221d547a2c0edd57c67c74134813da68126d36789c",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\plan.txt": "802222638fd4d8f436634724e7c2021e5052ef3244ddc2e4009e8a8680e6a391",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_2\\validation\\problem.pddl": "fe96d7cf7090ccc416c6cbbaa375c3faff3585b2eafbe1f63c34ebf2fb36eaac",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SNOW__probe_2\\validation\\plan.txt": "d225b660a8ab3faa720cf98b245e23e43eafa73cad6ec9ea9ee08f24a80aa9cf"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "SOUP__probe_0",
+      "source": "SOUP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\problem.pddl": "76162b1c0fee730268f4af0593bdcbf274d48e248f27e40fab4933c2937f3821",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\plan.txt": "61bb3211fa8c0abe62bdb09631561c0e8ee8a69e36cffa46d56e66c26b1d946a",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_0\\validation\\problem.pddl": "87dad134e00671401a0f87523671709af682075d3cbed51563cca9a832c4a657",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_0\\validation\\plan.txt": "7cb9555e42386c0884d1df38e13e0dbeade067c157b8e3138ebbf21a86fcc055"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "SOUP__probe_1",
+      "source": "SOUP",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "SOUP__probe_2",
+      "source": "SOUP",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\problem.pddl": "c3286fb4fc9a43db2c11b801a8a80ab466adaf3781d23415b0b3ae610de47b94",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\plan.txt": "cfa845cd5063c2b0eaa443cc7b7cd400d11da4c216f9c46009ac1955818b2d1d",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_2\\validation\\problem.pddl": "ad632c24d205dab8a5935e62c13d45c402e80d3447062f08b7308a1a5ef883e7",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\SOUP__probe_2\\validation\\plan.txt": "0099370e43a96552ec5210038cc7249230ae437b9b11bd064c53d80b1c5a6213"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "WOE__probe_0",
+      "source": "WOE",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\problem.pddl": "12b5f5db03eb10b11b654bcfb761468531018a6a7489cedd1d66bd6322b61d49",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\plan.txt": "f586cd2ea0ab9c96f648a886ae76226f66ae2466da3aeb9ba3187824e963305d",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_0\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_0\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_0\\validation\\problem.pddl": "efb863069b012dd435290df3a885956120e097864cd83f9d4d9d4ff10a729469",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_0\\validation\\plan.txt": "1cd9c66c2c23e4e605b16e595f4016bff85eb92e783f0429022687ea4cfc70d9"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    },
+    {
+      "id": "WOE__probe_1",
+      "source": "WOE",
+      "status": "no_valid_probe_trace"
+    },
+    {
+      "id": "WOE__probe_2",
+      "source": "WOE",
+      "artifact_sha256": {
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\problem.pddl": "c9aff9b1b94159eb8ed31b8422c6a057b4522bedb02bfbb7cf549ea1d279863b",
+        "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\plan.txt": "2fdea0fca6c58bb6cf09bcad5916a74f92b2e09235749d6465abb0fd85347694",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_2\\compiled_view\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_2\\validation\\domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_2\\validation\\problem.pddl": "58d74c21a177b5f544d8a868d45bf3270b721e01f13aaa953010e8b5638e900d",
+        "data\\validation\\probe_type_replay_2026_10_15_v2\\probes\\WOE__probe_2\\validation\\plan.txt": "19734ac03b2b04178a4223f78e59895252bde8141cf8d93c47c6a6ac966275fe"
+      },
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "artifacts_unchanged": true
+    }
+  ],
+  "hashes_unchanged": true,
+  "counts": {
+    "PASS": 26,
+    "no_valid_probe_trace": 19
+  },
+  "truth_comparisons": 52116,
+  "states_compared": 73
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:32:55.3927052Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_73cad6872aa0f288\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicates `owned_by` and `offers` describe different relationships between entities. `owned_by` indicates ownership of an item, while `offers` indicates a willingness to sell an item. These relationships represent distinct aspects of a transaction or possession, and cannot be directly interchangeable. The `owned_by` predicate requires an item, while the `offers` predicate requires an entity offering an item. The action contexts further highlight this difference: `owned_by` relates to possession, while `offers` relates to a proposed transaction. The `JACK_NP` action `sell_cow_for_beans` exemplifies this distinction, where a cow is offered for beans, and the cow is subsequently owned by the buyer. The `ACCO` predicate `owned_by` describes a state of ownership, while the `JACK_NP` predicate `offers` describes a potential transaction. These predicates are complementary because they represent different facets of the same situation – one describes the current state of ownership, and the other describes a potential action to change that state.\", \"evidence\": [ {\"side\": 1, \"ref\": \"JACK_NP:action:sell_cow_for_beans\", \"quote\": \"(offers ?b ?beans)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:sell_cow_for_beans\", \"quote\": \"(offers ?b ?beans)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3404264300,
+  "load_duration": 2054900,
+  "prompt_eval_count": 605,
+  "prompt_eval_duration": 128490000,
+  "eval_count": 336,
+  "eval_duration": 3193877000
+}

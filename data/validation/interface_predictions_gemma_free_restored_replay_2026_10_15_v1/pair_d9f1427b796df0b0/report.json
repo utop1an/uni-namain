@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_d9f1427b796df0b0",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_d9f1427b796df0b0",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'arrested' describes a state of being detained by authorities, while 'has' describes possession of an item. Arresting an entity (arrested ?c) is a restrictive action, whereas 'has' is a general statement of ownership. The action contexts for 'arrested' involve law enforcement and confinement, while 'has' describes a simple relationship between two entities. Therefore, they represent complementary concepts: one involving legal constraints and the other simply denoting ownership. The action contexts for 'arrested' involve travel and proximity, while 'has' does not have any such preconditions. The parameters are also different: 'arrested' takes entities as arguments, while 'has' takes entities and items. The use of 'entity' in the type hierarchy further supports this distinction.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(has ?puss ?boots)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_catch_rabbits",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:give_bag_to_cat",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:king_send_groom_fetch_suit",
+        "quote": "(has ?groom ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(has ?jack ?suit)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:arrest_meteor",
+        "quote": "(arrested ?c ?m)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_d9f1427b796df0b0"
+  ]
+}

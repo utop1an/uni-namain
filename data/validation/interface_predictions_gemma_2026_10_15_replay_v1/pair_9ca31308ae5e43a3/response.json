@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_9ca31308ae5e43a3",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'met' appears in both narratives, but its usage differs significantly. In 'CHIC_NP', 'met' describes a communicative interaction between two entities, specifically an 'inform' action where one entity informs another about a sky fall. The precondition explicitly states 'not (met ?e1 ?e2)' to prevent repeated reporting. In 'SNOW', 'disguised_as' describes a transformation of one entity into another, represented as a state change. The 'met' predicate here is used to represent the state of being disguised, not a communicative relationship. The two predicates describe fundamentally different relationships: one about communication and the other about appearance. Therefore, they are complementary, related but not interchangeable. The action contexts further highlight this difference: 'inform_about_sky_fall' involves conveying information, while 'meet_character' establishes a direct interaction, and 'disguised_as' describes a change in form. The exact excerpts supporting this are: 'CHIC_NP:action:inform_about_sky_fall' with 'met ?informer ?listener' and 'SNOW:action:stepmother_disguises_as_old_woman_and_visits_cottage' with 'disguised_as ?s ?old_woman'.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:inform_about_sky_fall",
+      "quote": "(met ?informer ?listener)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_disguises_as_old_woman_and_visits_cottage",
+      "quote": "(disguised_as ?s ?old_woman)"
+    }
+  ]
+}

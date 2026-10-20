@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_ef7430c5f466eb2f",
+  "label": "incompatible",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates 'wearing' and their associated declarations are nearly identical, but the contexts of their use are drastically different. PUSS's 'wearing' predicate is associated with the action 'master_wear_suit', which describes the act of a person (jack) wearing an item (suit). The precondition and effect of this action explicitly state that the person is wearing the item and that the item is no longer being worn. SNOW's 'wearing' predicate, on the other hand, is part of the action 'stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies', which describes the act of a person (stepmother) wearing an item (slippers) *and* subsequently dying. The effect of this action explicitly states that the person is wearing the item *and* is dead. The core predicate 'wearing' describes a state of having an item on, while the SNOW action's effect includes a state of death, indicating a fundamentally different situation. Therefore, the predicates are incompatible because they describe different scenarios and have different implications. The action contexts provide the definitive evidence for this incompatibility.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "PUSS:action:master_wear_suit",
+      "quote": "(wearing ?jack ?suit)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "quote": "(wearing ?s ?slippers)"
+    }
+  ]
+}

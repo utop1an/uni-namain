@@ -1,0 +1,28 @@
+{
+  "status": "checked_with_limits",
+  "checks": {
+    "blank_row_rejected": true,
+    "completed_row_survives_navigation": true,
+    "editing_reverts_to_unreviewed": true,
+    "draft_content_survives_navigation": true,
+    "export_contains100rows": true,
+    "packet_digest_preserved": true,
+    "independence_unchecked_by_default": true,
+    "synthetic_draft_import_successful": true,
+    "initial_layout_screenshot_inspected": true,
+    "html_delimiter_escape_unit_test": true
+  },
+  "download_file_confirmed": false,
+  "fallback": "Visible complete JSON can be copied and saved; export content generation does not claim a saved file",
+  "synthetic_fixture": ".tmp/annotation-ui-test.json",
+  "backend_synthetic_errors": [
+    "independence_not_declared"
+  ],
+  "independent_human_labels_created": 0,
+  "artifact_sha256": {
+    "annotation_viewer.html": "328138f07b01bef6f347c34e5f3afeb737a38d1b50783ff8086f6f1bb3357303",
+    "build_annotation_viewer.py": "353b351e60d59913526a02e57a9fa792a4772c8552812ff698092a0f880550ab",
+    "data\\annotation\\interface_viewer_2026_10_15_v2\\index.html": "88a5065f312ad3e36fdabda05d6e2604a66b2642f1474e896ca9beddf9a1546f",
+    "data\\annotation\\interface_development_2026_10_15_v1\\packet.json": "a18a764717da39bcc1b62df0d104b03486ebc87346b5452c93c961cd8f167fbf"
+  }
+}

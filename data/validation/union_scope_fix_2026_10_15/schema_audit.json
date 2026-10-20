@@ -1,0 +1,271 @@
+{
+  "status": "FAIL",
+  "scope": "Complete source schema and problem recovery under injective renaming; not narrative quality, learned-model truth, or arbitrary semantic fusion",
+  "merged_domain_sha256": "5b3e303c8f9ff31b097b1c0c53cd8a992049805d27fafe982d8919e9bbee4e41",
+  "implementation_sha256": {
+    "audit_union_preservation.py": "49d8fa680d449d34dbbffab50f89c56030fec4a0dcf9883eb7f43d9a54019e33",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9"
+  },
+  "global_issues": [],
+  "rows": [
+    {
+      "source": "ACCO",
+      "actions_checked": 17,
+      "predicates_checked": 17,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: force_kettle_into_box",
+        "Action expression changed: sell_kettle_to_tinker",
+        "Action expression changed: show_kettle_to_friend",
+        "Action expression changed: arrange_exhibition"
+      ]
+    },
+    {
+      "source": "BIRT",
+      "actions_checked": 12,
+      "predicates_checked": 18,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: travel_to_trysting_place",
+        "Action expression changed: accept_dryad_invitation",
+        "Action expression changed: receive_pellet_from_gnome",
+        "Action expression changed: enter_tree_and_descend_stairs",
+        "Action expression changed: travel_by_leaf_boat_under_pond",
+        "Action expression changed: witness_queen_birthday_ceremony",
+        "Action expression changed: receive_queen_kiss",
+        "Action expression changed: return_to_bench_and_share_story"
+      ]
+    },
+    {
+      "source": "BUFF",
+      "actions_checked": 8,
+      "predicates_checked": 15,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: audience_demand_shake_cloak_for_pig",
+        "Action expression changed: audience_applaud_performance",
+        "Action expression changed: countryman_perform_pig_imitation_with_real_pig",
+        "Action expression changed: audience_criticize_countryman_and_call_for_kickout",
+        "Action expression changed: countryman_reveal_real_pig"
+      ]
+    },
+    {
+      "source": "CHIC_NP",
+      "actions_checked": 7,
+      "predicates_checked": 9,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: meet_character",
+        "Action expression changed: inform_about_sky_fall"
+      ]
+    },
+    {
+      "source": "FOUR_NP",
+      "actions_checked": 21,
+      "predicates_checked": 16,
+      "problem": "checked",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "source": "HANS_NP",
+      "actions_checked": 15,
+      "predicates_checked": 15,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: abandon_children_in_forest",
+        "Action expression changed: leave_children_at_fire",
+        "Action expression changed: follow_pebbles_home",
+        "Action expression changed: follow_breadcrumbs_home",
+        "Action expression changed: wander_forest_seeking_way_out",
+        "Action expression changed: hear_bird_and_follow_to_witch_house",
+        "Action expression changed: enter_witch_house",
+        "Action expression changed: witch_captures_children",
+        "Action expression changed: push_witch_into_oven",
+        "Action expression changed: escape_from_stable",
+        "Action expression changed: collect_treasure",
+        "Action expression changed: call_duck_for_crossing",
+        "Action expression changed: return_home_and_reunite_with_father"
+      ]
+    },
+    {
+      "source": "JACK_NP",
+      "actions_checked": 12,
+      "predicates_checked": 15,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: sell_cow_for_beans",
+        "Action expression changed: ask_giant_wife_for_breakfast",
+        "Action expression changed: steal_gold_bags",
+        "Action expression changed: steal_hen",
+        "Action expression changed: steal_harp",
+        "Action expression changed: cut_beanstalk"
+      ]
+    },
+    {
+      "source": "MUSI",
+      "actions_checked": 24,
+      "predicates_checked": 20,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: run_away",
+        "Action expression changed: invite_hound",
+        "Action expression changed: hound_agrees",
+        "Action expression changed: invite_cat",
+        "Action expression changed: cat_agrees",
+        "Action expression changed: invite_cock",
+        "Action expression changed: cock_agrees",
+        "Action expression changed: travel_together",
+        "Action expression changed: rest_in_forest",
+        "Action expression changed: spot_light",
+        "Action expression changed: approach_cottage",
+        "Action expression changed: plan_scaring_robbers",
+        "Action expression changed: stack_animals",
+        "Action expression changed: signal_and_make_noise",
+        "Action expression changed: robbers_flee",
+        "Action expression changed: eat_feast",
+        "Action expression changed: choose_sleep_spot",
+        "Action expression changed: cat_attack_messenger",
+        "Action expression changed: dog_bite_messenger",
+        "Action expression changed: donkey_kick_messenger"
+      ]
+    },
+    {
+      "source": "NAUG",
+      "actions_checked": 13,
+      "predicates_checked": 18,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: give_order",
+        "Action expression changed: avoid_body",
+        "Action expression changed: turn_left_on_meeting",
+        "Action expression changed: speak_to_meteor",
+        "Action expression changed: call_comet_forward",
+        "Action expression changed: arrest_meteor"
+      ]
+    },
+    {
+      "source": "PIGS_NP",
+      "actions_checked": 21,
+      "predicates_checked": 21,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: send_sons_on_journey",
+        "Action expression changed: ask_for_material",
+        "Action expression changed: receive_material",
+        "Action expression changed: wolf_eats_pig",
+        "Action expression changed: wolf_promises_turnip_field",
+        "Action expression changed: wolf_promises_apple_orchard",
+        "Action expression changed: wolf_promises_fair_trip",
+        "Action expression changed: pig_prepares_boiling_pot_and_fire"
+      ]
+    },
+    {
+      "source": "PUSS",
+      "actions_checked": 14,
+      "predicates_checked": 15,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: buy_boots",
+        "Action expression changed: give_bag_to_cat",
+        "Action expression changed: cat_catch_rabbits",
+        "Action expression changed: cat_deliver_gifts_to_king",
+        "Action expression changed: cat_persuade_master_to_bathe",
+        "Action expression changed: cat_call_for_help",
+        "Action expression changed: king_send_groom_fetch_suit",
+        "Action expression changed: cat_ogre_transform_lion",
+        "Action expression changed: cat_ogre_transform_mouse",
+        "Action expression changed: cat_eat_mouse",
+        "Action expression changed: cat_disentchant_prisoners",
+        "Action expression changed: cat_open_castle_gates",
+        "Action expression changed: master_marry_princess"
+      ]
+    },
+    {
+      "source": "REMA_NP",
+      "actions_checked": 12,
+      "predicates_checked": 6,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: encounter_impostor_king",
+        "Action expression changed: receive_rubies_from_impostor",
+        "Action expression changed: receive_sapphires_from_robber_chief",
+        "Action expression changed: king_requests_information_and_gifts",
+        "Action expression changed: king_proposes_marriage",
+        "Action expression changed: princess_accepts_with_heart"
+      ]
+    },
+    {
+      "source": "SNOW",
+      "actions_checked": 29,
+      "predicates_checked": 16,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: queen_pricks_finger",
+        "Action expression changed: queen_wishes_child_white_red_black",
+        "Action expression changed: child_is_born_and_queen_dies",
+        "Action expression changed: king_marries_stepmother",
+        "Action expression changed: stepmother_becomes_envious_of_snow_white",
+        "Action expression changed: stepmother_orders_huntsman_to_kill_snow_white",
+        "Action expression changed: huntsman_spares_snow_white_and_brings_boar_heart",
+        "Action expression changed: snow_white_eats_vegetables_and_bread_and_drinks_wine",
+        "Action expression changed: dwarfs_return_and_discover_snow_white",
+        "Action expression changed: dwarfs_offer_snow_white_to_maintain_house",
+        "Action expression changed: stepmother_disguises_as_old_woman_and_visits_cottage",
+        "Action expression changed: stepmother_laces_snow_white_tightly",
+        "Action expression changed: dwarfs_cut_laces_rescue_snow_white",
+        "Action expression changed: stepmother_comb_poison_snow_white",
+        "Action expression changed: dwarfs_remove_comb_rescue_snow_white",
+        "Action expression changed: dwarfs_prepare_glass_coffin_for_snow_white",
+        "Action expression changed: prince_discovers_coffin_and_moves_it",
+        "Action expression changed: prince_marries_snow_white"
+      ]
+    },
+    {
+      "source": "SOUP",
+      "actions_checked": 12,
+      "predicates_checked": 13,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: travel_to",
+        "Action expression changed: give_skewer_to_elves",
+        "Action expression changed: receive_anointed_skewer",
+        "Action expression changed: receive_feather"
+      ]
+    },
+    {
+      "source": "WOE",
+      "actions_checked": 17,
+      "predicates_checked": 22,
+      "problem": "checked",
+      "status": "FAIL",
+      "issues": [
+        "Action expression changed: request_help_from_rich_brother",
+        "Action expression changed: perform_work_for_rich_brother",
+        "Action expression changed: receive_payment",
+        "Action expression changed: stay_for_banquet",
+        "Action expression changed: encounter_bitter_woe",
+        "Action expression changed: make_sign_of_cross",
+        "Action expression changed: allow_woe_to_ride_on_shoulder",
+        "Action expression changed: spend_money_on_drink",
+        "Action expression changed: trade_assets_for_money",
+        "Action expression changed: hide_woe_under_stone",
+        "Action expression changed: invite_rich_brother_to_feast",
+        "Action expression changed: accept_woe_as_burden"
+      ]
+    }
+  ]
+}

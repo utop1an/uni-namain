@@ -1,0 +1,1 @@
+(define (problem p) (:domain narrative_aligned) (:init (d000__p_p d000__c_a) (typeguard__d000__t_item d000__c_a) (typeguard__d000__t_object d000__c_a) (typeguard__d000__t_item d000__c_b) (typeguard__d000__t_object d000__c_b)) (:goal (and (d000__p_q d000__c_a) (d000__p_q d000__c_b))))

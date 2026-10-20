@@ -1,5 +1,4 @@
-"""Role-Causal Narrative Composition (RCNC)."""
+"""Current narrative domain compilation, planning and validation components.
 
-from .experiment import ExperimentResult, run_experiment
-
-__all__ = ["ExperimentResult", "run_experiment"]
+Historical RCNC experiments are available explicitly from archive.rcnc.
+"""

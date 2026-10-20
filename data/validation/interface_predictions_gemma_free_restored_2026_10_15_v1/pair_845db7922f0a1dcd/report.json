@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_845db7922f0a1dcd",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_845db7922f0a1dcd",
+    "label": "incompatible",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'four_legged' in ACCO describes a physical property of an item, specifically its locomotion. The predicate 'decided_to_tell_king' in CHIC_NP describes an action or intention related to communication with a king. These predicates represent fundamentally different concepts: one is a physical characteristic, and the other is a behavioral or communicative state. The action contexts further reinforce this distinction. ACCO's actions involve transforming objects based on their physical properties (e.g., 'kettle_transform_to_fur_badger'), while CHIC_NP's actions relate to decisions and following entities. The presence of 'four_legged ?k' in both contexts does not imply any relationship between the two predicates. The predicates are incompatible because they describe distinct aspects of the world. The occurrences in both sources use the same variable name 'k' but in entirely different contexts, making a simple equivalence impossible. The action contexts provide no mechanism for relating these predicates. The type hierarchies for both predicates are also distinct, further solidifying the incompatibility.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:kettle_transform_to_fur_badger",
+        "quote": "(four_legged ?k)"
+      },
+      {
+        "side": 1,
+        "ref": "CHIC_NP:action:decide_to_tell_king",
+        "quote": "(decided_to_tell_king ?e)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_845db7922f0a1dcd"
+  ]
+}

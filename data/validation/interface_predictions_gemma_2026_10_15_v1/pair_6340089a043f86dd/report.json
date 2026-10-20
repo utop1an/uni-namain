@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_6340089a043f86dd",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_6340089a043f86dd",
+    "label": "equivalent",
+    "right_from_left": [
+      5,
+      1
+    ],
+    "rationale": "The predicate 'at' appears in both PIGS_NP and REMA_NP narratives with identical syntax and parameters: `(at ?e - entity ?l - location)`.  The action contexts demonstrate that 'at' is used to specify the location of entities within each narrative. The arguments `?e` and `?l` represent the same concept – a location – regardless of the source narrative. The occurrences of `(at ?p ?h)` in the PIGS_NP actions and `(at ?p palace)` in the REMA_NP actions confirm this. The action contexts show that the predicate is used to describe the spatial relationship between entities and locations, and the arguments represent the same entities and locations in both narratives. Therefore, the predicate 'at' is interchangeable between the two sources.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:arrive_at_marble_palace",
+        "quote": "(at ?p oak_tree)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:encounter_impostor_king",
+        "quote": "(at ?p city)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:encounter_robbers_in_forest",
+        "quote": "(at ?p forest)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:king_proposes_marriage",
+        "quote": "(at ?p palace)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:king_requests_information_and_gifts",
+        "quote": "(at ?p palace)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_rubies_from_impostor",
+        "quote": "(at ?p market_place)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_6340089a043f86dd",
+    "nonbijective_argument_map:pair_6340089a043f86dd"
+  ]
+}

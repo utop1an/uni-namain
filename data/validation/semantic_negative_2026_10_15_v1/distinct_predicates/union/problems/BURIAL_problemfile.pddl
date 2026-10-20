@@ -1,0 +1,1 @@
+(define (problem burial_problem) (:domain narrative_aligned) (:init (d000__p_dead d000__c_corpse) (typeguard__d000__t_person d000__c_corpse) (typeguard__d000__t_object d000__c_corpse) (typeguard__d001__t_person d001__c_prisoner) (typeguard__d001__t_object d001__c_prisoner)) (:goal (d000__p_buried d000__c_corpse)))

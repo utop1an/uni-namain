@@ -1,0 +1,79 @@
+{
+  "sources": [
+    "PUSS"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 25,
+    "predicates": 15,
+    "operators": 14
+  },
+  "predicate_maps": {
+    "PUSS": {
+      "alive": "alive",
+      "at": "at",
+      "at_item": "at_item",
+      "castle_owned_by": "castle_owned_by",
+      "contains": "contains",
+      "drowning": "drowning",
+      "gate_open": "gate_open",
+      "gift_delivered": "gift_delivered",
+      "has": "has",
+      "married": "married",
+      "obedient": "obedient",
+      "promised_to_serve": "promised_to_serve",
+      "rescued_by": "rescued_by",
+      "transformed_into": "transformed_into",
+      "wearing": "wearing"
+    }
+  },
+  "constant_maps": {
+    "PUSS": {
+      "ass": "ass",
+      "bag": "bag",
+      "boots": "boots",
+      "coachman": "coachman",
+      "eldest_son": "eldest_son",
+      "field_of_corn": "field_of_corn",
+      "field_of_wheat": "field_of_wheat",
+      "groom": "groom",
+      "hare": "hare",
+      "jack": "jack",
+      "king": "king",
+      "mill": "mill",
+      "miller": "miller",
+      "ogre": "ogre",
+      "ogre_castle": "ogre_castle",
+      "palace": "palace",
+      "partridge": "partridge",
+      "princess": "princess",
+      "puss": "puss",
+      "rabbit": "rabbit",
+      "river": "river",
+      "royal_wardrobe": "royal_wardrobe",
+      "second_son": "second_son",
+      "suit": "suit",
+      "warren": "warren"
+    }
+  },
+  "action_maps": {
+    "PUSS": {
+      "buy_boots": "buy_boots",
+      "give_bag_to_cat": "give_bag_to_cat",
+      "cat_catch_rabbits": "cat_catch_rabbits",
+      "cat_deliver_gifts_to_king": "cat_deliver_gifts_to_king",
+      "cat_persuade_master_to_bathe": "cat_persuade_master_to_bathe",
+      "cat_call_for_help": "cat_call_for_help",
+      "king_send_groom_fetch_suit": "king_send_groom_fetch_suit",
+      "master_wear_suit": "master_wear_suit",
+      "cat_ogre_transform_lion": "cat_ogre_transform_lion",
+      "cat_ogre_transform_mouse": "cat_ogre_transform_mouse",
+      "cat_eat_mouse": "cat_eat_mouse",
+      "cat_disentchant_prisoners": "cat_disentchant_prisoners",
+      "cat_open_castle_gates": "cat_open_castle_gates",
+      "master_marry_princess": "master_marry_princess"
+    }
+  },
+  "decisions": []
+}

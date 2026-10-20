@@ -1,0 +1,50 @@
+Parsing...
+Parsing: [0.020s CPU, 0.017s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.020s CPU, 0.080s wall-clock]
+Preparing model... [0.000s CPU, 0.004s wall-clock]
+Generated 213 rules.
+Computing model... [2.470s CPU, 2.474s wall-clock]
+292968 relevant atoms
+11553 auxiliary atoms
+304521 final queue length
+1378141 total queue pushes
+Completing instantiation... [8.540s CPU, 8.543s wall-clock]
+Instantiating: [11.080s CPU, 11.150s wall-clock]
+Computing fact groups...
+Finding invariants...
+48 initial candidates
+Finding invariants: [0.070s CPU, 0.079s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+657 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.080s CPU, 0.082s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.420s CPU, 0.423s wall-clock]
+Translating task: [7.260s CPU, 7.258s wall-clock]
+180690 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+Traceback (most recent call last):
+  File "/mnt/c/anu/uninamain/scripts/experiments/sample_downward_translation.py", line 82, in <module>
+    run(args.package_dir, args.seconds, args.output)
+  File "/mnt/c/anu/uninamain/scripts/experiments/sample_downward_translation.py", line 59, in run
+    signal.setitimer(signal.ITIMER_REAL, 0)
+  File "/mnt/c/anu/uninamain/scripts/experiments/sample_downward_translation.py", line 36, in sample
+    raise DiagnosticDeadline()
+__main__.DiagnosticDeadline
+timeout: the monitored command dumped core

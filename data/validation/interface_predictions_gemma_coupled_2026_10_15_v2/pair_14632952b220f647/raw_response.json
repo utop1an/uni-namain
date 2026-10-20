@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:32:27.5254025Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_14632952b220f647\", \"label\": \"equivalent\", \"right_from_left\": [0,1], \"rationale\": \"The predicate 'has' appears in both ACCO and JACK_NP with the same argument types ('entity' and 'item'). Across all action contexts, the predicate is consistently used to express possession or presence of an item. The pre- and post-conditions of the actions involving 'has' are identical in form, indicating interchangeable roles. The arguments '?e' and '?i' are used identically in both sources, further supporting this equivalence. The action contexts demonstrate that 'has' is used to describe the state of an item's location or ownership, regardless of the source system. The exact excerpts containing the predicate occurrence on both sides confirm this.\", \"evidence\": [{\"side\": 0, \"ref\": \"ACCO:action:arrange_exhibition\", \"quote\": \"(has ?t ?k)\"}, {\"side\": 0, \"ref\": \"ACCO:action:hang_kettle\", \"quote\": \"(has ?pr ?k)\"}, {\"side\": 0, \"ref\": \"ACCO:action:kettle_transform_to_fur_badger\", \"quote\": \"(has ?t ?k)\"}, {\"side\": 0, \"ref\": \"ACCO:action:perform_show\", \"quote\": \"(has ?t ?k)\"}, {\"side\": 0, \"ref\": \"ACCO:action:return_kettle_to_temple\", \"quote\": \"(has ?t ?k)\"}, {\"side\": 0, \"ref\": \"ACCO:action:sell_kettle_to_tinker\", \"quote\": \"(has ?pr ?k)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4169654600,
+  "load_duration": 2592700,
+  "prompt_eval_count": 1876,
+  "prompt_eval_duration": 303641000,
+  "eval_count": 385,
+  "eval_duration": 3764227000
+}

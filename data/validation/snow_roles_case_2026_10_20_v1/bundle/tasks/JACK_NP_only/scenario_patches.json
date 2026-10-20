@@ -1,0 +1,630 @@
+[
+  {
+    "source": "JACK_NP",
+    "action": "sell_cow_for_beans",
+    "parameter_guards": [
+      [
+        "case_role_butcher",
+        "?b"
+      ],
+      [
+        "case_role_cow",
+        "?cow"
+      ],
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_beans",
+        "?beans"
+      ],
+      [
+        "case_role_place_l",
+        "?l"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?beans"
+      ],
+      [
+        "not",
+        [
+          "d001__p_offers",
+          "?b",
+          "?beans"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?beans",
+          "?l"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?beans"
+      ],
+      [
+        "not",
+        [
+          "d001__p_offers",
+          "?b",
+          "?beans"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?beans",
+          "?l"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "plant_beans",
+    "parameter_guards": [
+      [
+        "case_role_prop_beans",
+        "?beans"
+      ],
+      [
+        "case_role_place_loc",
+        "?loc"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_planted",
+        "?beans"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?beans",
+          "?loc"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_planted",
+        "?beans"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?beans",
+          "?loc"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "grow_beanstalk",
+    "parameter_guards": [
+      [
+        "case_role_prop_beans",
+        "?beans"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_beanstalk_grown"
+      ],
+      [
+        "d001__p_intact",
+        "d001__c_beanstalk"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_beanstalk_grown"
+      ],
+      [
+        "d001__p_intact",
+        "d001__c_beanstalk"
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "climb_beanstalk",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_at",
+        "?j",
+        "d001__c_giant_castle"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_beanstalk"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_at",
+        "?j",
+        "d001__c_giant_castle"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_beanstalk"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "ask_giant_wife_for_breakfast",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_giant_wife",
+        "?wife"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "d001__p_has_breakfast",
+      "?j"
+    ],
+    "effect_after": [
+      "d001__p_has_breakfast",
+      "?j"
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "hide_in_kettle",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_kettle",
+        "?kettle"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_inside",
+        "?j",
+        "?kettle"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_inside",
+        "?j",
+        "?kettle"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "steal_gold_bags",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_bag1",
+        "?bag1"
+      ],
+      [
+        "case_role_prop_bag2",
+        "?bag2"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?bag1"
+      ],
+      [
+        "d001__p_has",
+        "?j",
+        "?bag2"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?bag1",
+          "d001__c_giant_castle"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?bag2",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?bag1"
+      ],
+      [
+        "d001__p_has",
+        "?j",
+        "?bag2"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?bag1",
+          "d001__c_giant_castle"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d001__p_at_item",
+          "?bag2",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "return_down_beanstalk",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_at",
+        "?j",
+        "d001__c_cottage"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_at",
+        "?j",
+        "d001__c_cottage"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "hide_in_oven",
+    "parameter_guards": [
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_oven",
+        "?oven"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_inside",
+        "?j",
+        "?oven"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_inside",
+        "?j",
+        "?oven"
+      ],
+      [
+        "not",
+        [
+          "d001__p_at",
+          "?j",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "steal_hen",
+    "parameter_guards": [
+      [
+        "case_role_giant",
+        "?giant"
+      ],
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_hen",
+        "?hen"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?hen"
+      ],
+      [
+        "not",
+        [
+          "d001__p_on",
+          "?hen",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?hen"
+      ],
+      [
+        "not",
+        [
+          "d001__p_on",
+          "?hen",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "steal_harp",
+    "parameter_guards": [
+      [
+        "case_role_giant",
+        "?giant"
+      ],
+      [
+        "case_role_cutter",
+        "?j"
+      ],
+      [
+        "case_role_prop_harp",
+        "?harp"
+      ],
+      [
+        "d002__p_alive",
+        "?j"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?harp"
+      ],
+      [
+        "not",
+        [
+          "d001__p_on",
+          "?harp",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d001__p_has",
+        "?j",
+        "?harp"
+      ],
+      [
+        "not",
+        [
+          "d001__p_on",
+          "?harp",
+          "d001__c_giant_castle"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "JACK_NP",
+    "action": "cut_beanstalk",
+    "parameter_guards": [
+      [
+        "case_role_giant",
+        "?giant"
+      ],
+      [
+        "case_role_cutter",
+        "?mother"
+      ],
+      [
+        "case_role_axe",
+        "?axe"
+      ],
+      [
+        "d002__p_alive",
+        "?mother"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "shared__p_death",
+        "?giant"
+      ],
+      [
+        "not",
+        [
+          "d001__p_intact",
+          "d001__c_beanstalk"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "and",
+        [
+          "and",
+          [
+            "shared__p_death",
+            "?giant"
+          ],
+          [
+            "not",
+            [
+              "d002__p_alive",
+              "?giant"
+            ]
+          ]
+        ],
+        [
+          "not",
+          [
+            "d001__p_intact",
+            "d001__c_beanstalk"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d001__p_climbing_down",
+          "?giant"
+        ]
+      ]
+    ]
+  }
+]

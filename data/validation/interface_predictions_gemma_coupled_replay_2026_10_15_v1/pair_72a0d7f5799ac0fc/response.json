@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_72a0d7f5799ac0fc",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The `fled` predicate in MUSI describes the action of a robber escaping to a location, while the `has` predicate in SNOW describes possession of an item. The `fled` predicate indicates a change of state (robber moving), whereas the `has` predicate describes a static relationship (object possessed by entity). The two predicates describe different aspects of the story: one about movement and the other about ownership. The action contexts show that `fled` is used in the context of a robber escaping, while `has` is used in various contexts of possession and interaction with objects. Because they describe fundamentally different relationships, they are complementary. The parameters of the predicates also differ significantly, indicating distinct concepts. The `fled` predicate requires a robber and a location, while the `has` predicate requires an entity and an item. The exact excerpts confirm this: `(fled ?robber ?forest)` and `(has ?d ?coffin)`.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "SNOW:action:dwarfs_prepare_glass_coffin_for_snow_white",
+      "quote": "(has ?d ?coffin)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:dwarfs_remove_comb_rescue_snow_white",
+      "quote": "(has ?d ?comb)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:huntsman_spares_snow_white_and_brings_boar_heart",
+      "quote": "(has ?h ?heart)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_pricks_finger",
+      "quote": "(has ?q ?needle)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_sews_at_window",
+      "quote": "(has ?q needle)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "quote": "(has ?c ?plate)"
+    }
+  ]
+}

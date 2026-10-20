@@ -1,0 +1,358 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newcommand{\enc}{\Phi}
+\title{Source-Preserving Composition of Narrative Planning Domains\\
+\large Working Method and Evidence Draft for ICAPS 2027}
+\author{Anonymous working draft}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Draft status.} This is a research working document, not a submission-ready manuscript or the final AAAI-format paper. Automatic semantic alignment, independent semantic assessment, and narrative-quality evaluation remain incomplete. The terminology and results below describe the current implementation; the novelty claim remains to be established against prior work.
+
+\begin{abstract}
+We study the composition of narrative planning domains into a reusable model before plan search. Predicate correspondences can connect events across sources, but they can also reverse participant roles, conflate entities, or change the object universe of a quantified condition. We describe a conservative compilation that preserves source action variants, records explicit argument permutations, and represents source type membership as immutable predicates. A supplied world determines entity membership; source problem facts are not pooled. We state a source-local preservation property and distinguish it from the semantic correctness of cross-source interfaces. Current development evidence comprises complete schema recovery for 15 local domains and translation of six available original-goal plans and 146 separately generated action-invocation prefixes into fixed compiled models. These results establish a baseline for execution preservation, not an evaluation of narrative quality or independent-domain generalization.
+\end{abstract}
+
+\section{Research question and scope}
+\paragraph{Opening: reusable models.}
+The target artifact is a parameterized merged domain that exists before a planner searches for a solution. Given a pool of source domains and a supplied initial world, the system selects complete domains, applies recorded interface assumptions, constructs a problem, and searches in the resulting model. The same model can serve multiple problems. Reconstructing a domain from one successful grounded plan would not satisfy this objective.
+
+\paragraph{Challenge: distinct meanings of correctness.}
+Three questions must be evaluated separately: whether compilation preserves source-local behavior, whether an asserted interface relates the intended concepts, and whether a resulting event sequence is a coherent narrative. An executable plan answers neither of the latter two questions by itself. A false interface can create an executable but semantically unwarranted cross-source transition while leaving every isolated source trace intact.
+
+\paragraph{Positioning.}
+UniDomain retrieves and fuses atomic robot-planning domains into task-relevant meta-domains~\cite{ye2025unidomain}. It motivates the pre-search domain-level workflow here; its empirical claims do not transfer to the local narrative pool. Narrative planning also addresses character motivation and other story properties~\cite{riedl2010narrative,rivera2024story}. Classical compilation can express some intentionality constraints~\cite{haslum2012compilations}, but the present implementation does not yet encode that intentionality model. We therefore call its outputs validated event plans, rather than intentional or high-quality narratives.
+
+\paragraph{Closest narrative-model reuse work.}
+THYPE extends narrative domains with candidate character and object types obtained from linguistic resources, and evaluates their plausibility and robustness~\cite{porteous2020thype}. Narrative blending also reuses and adapts episodes from stories sharing a narrative structure~\cite{lima2021blending}. These works rule out a broad novelty claim based only on extending models or recombining stories. The intended distinction to evaluate is pre-search composition of separately supplied action models with explicit source-local preservation conditions and independently assessed interfaces. That distinction is a research hypothesis, not an established comparative result.
+
+\paragraph{Acquisition and benchmark boundaries.}
+Acquiring narrative PDDL models from text is already an established research direction~\cite{hayton2020acquisition}; the present work takes supplied models as inputs. MicroTales combines modular elements into scalable narrative environments and deliberately leaves story-quality criteria open~\cite{siler2025microtales}. It is a useful evaluation lead, but testing modules designed together would not alone establish fusion of independently supplied models. Neither paper is currently verified as the origin of the local PDDL files.
+
+\paragraph{Modularity and consistency checking.}
+Lindsay~\cite{lindsay2023modularity} compiles explicitly declared PDDL module dependencies and action inheritance into ordinary PDDL. Accordingly, pre-search flattening of reusable modules is established prior work. Our intended evaluation concerns interfaces between separately supplied models, with source-local behavior preserved under stated assumptions. Smirnov et al.~\cite{smirnov2024consistent} combine structured generation, consistency checks, and reachability analysis for LLM-generated planning models, while leaving semantic correctness outside their evaluation. Structural checking and executable output alone are therefore insufficient novelty claims here as well.
+
+Casciani et al.~\cite{casciani2025requirements} refine generated models through syntax checks, state progression, and invariant analysis. They also use static unary predicates for typing and multiple type membership. These mechanisms are established ingredients, not claimed contributions here. Our evaluation must instead test the behavior and usefulness of interfaces between separately supplied models under explicit preservation assumptions.
+
+\section{Problem definition}
+\paragraph{Setting.}
+Let $\mathcal D=\{D_1,\ldots,D_m\}$ be finite typed planning domains with Boolean predicates, parameterized instantaneous actions, and source-specific constants. The implemented fragment includes conjunction, disjunction, negation, equality conditions, existential/universal conditions, and conditional/universal effects, subject to the independent parser's supported combinations. In particular, nested universal effects are currently rejected by UP 1.3.0. Numeric fluents, temporal actions, derived predicates, and partial-observation semantics are outside this contract. Unsupported constructs must be rejected, rather than silently removed.
+
+\paragraph{World contract.}
+A request supplies an explicit closed-world initial state $I$, objects with declared source type memberships, and optionally a goal $G$. A missing initial state produces a request for that state before model construction or search. An explicitly empty initial state is a legitimate, distinct input. Multiple worlds are separate instances. Source problem initial facts are retained for regression but never silently added to $I$.
+
+\paragraph{Correspondence contract.}
+For source $i$, an object renaming $\eta_i$ is injective, and source constants remain distinct. Each source predicate $p$ maps to a target predicate $\mu_i(p)$ and a bijection $\pi_{i,p}$ over its argument positions. Two predicates within the same source cannot map to the same target. A shared target may have members from several sources. Correspondences record file hashes, evidence, a decision basis, role-type assumptions, and permutations. These records are input assumptions; their structural acceptance is not an independent semantic label.
+
+\section{Pre-search construction}
+\begin{figure}[t]
+\centering
+\fbox{\parbox{0.92\linewidth}{\centering
+Source domains + file provenance + explicit world\\[3pt]
+$\downarrow$\\[3pt]
+Catalog and whole-domain selection $\rightarrow$ versioned interface assumptions\\[3pt]
+$\downarrow$\\[3pt]
+Source action variants + argument maps + type membership guards\\[3pt]
+$\downarrow$\\[3pt]
+\textbf{Saved parameterized domain and mappings}\\[3pt]
+$\downarrow$\\[3pt]
+Problem mapping $\rightarrow$ bounded search $\rightarrow$ independent plan validation}}
+\caption{Implemented construction order. The merged domain and manifest are written before search. Independent semantic and narrative assessment are additional evaluation stages, not implied by the final validation box.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Whole-domain selection}
+\paragraph{Design.}
+The deterministic selector starts from goal predicates and follows backward predicate dependencies through actions. It ignores argument bindings and polarity during this relevance calculation, producing an over-approximation. Query-referenced sources are retained to preserve the supplied vocabulary and world. If a selected source participates in an asserted predicate group, all sources in that group are retained. The resulting domain includes every action in every selected source, including actions absent from any discovered plan.
+
+\paragraph{Boundary.}
+Selection records reasons for included and excluded sources, but makes no minimum-subset, reachability, or semantic-correctness claim. The dependency-selection policy falls back to all sources for initial-only requests because no target outcome has been specified; explicit-source selection remains available. All-domain, explicit-source, and dependency-selection policies are separate conditions for evaluation. The dependency baseline is not presented as a learned retrieval method.
+
+\subsection{Argument-preserving predicate interfaces}
+\paragraph{Design.}
+For a source atom, define
+\begin{equation}
+\enc_i\bigl(p(x_1,\ldots,x_k)\bigr)
+=\mu_i(p)\bigl(\eta_i(x_{\pi_{i,p}(1)}),\ldots,
+\eta_i(x_{\pi_{i,p}(k)})\bigr).
+\end{equation}
+The same mapping applies to initial facts, goals, positive and negative conditions, and effects. The compiler preserves each action variant and its parameter order; it does not union unrelated preconditions or effects into a new action. Missing or non-bijective argument maps, stale source hashes, and missing role-type correspondences are rejected.
+
+Before moving conditional-effect guards under universal binders, bound variables receive fresh names that avoid all variables already present in the action. This capture-avoiding step preserves references to action parameters or outer binders when an inner quantifier uses the same spelling. Argument permutations and type guards alone do not provide this scope guarantee.
+
+\paragraph{Motivation and limit.}
+The distinction between $r(a,b)$ and $r(b,a)$ represents participant roles, not a cosmetic naming choice. A synthetic direction-sensitive fixture admits a two-step composition under the intended permutation and becomes unsolvable under the reversed control. This verifies consistent rewriting, not the correctness of an automatically inferred real-world correspondence.
+
+\subsection{Source object universes and explicit shared entities}
+\paragraph{Motivation.}
+Renaming predicates and constants alone does not preserve a quantified source condition if the root object type remains global. For example, a source with $\forall x\,ready(x)$ can lose applicability when a second source contributes an object for which its namespaced $ready$ fact is false. The namespaced baseline now isolates each source root type; the alignment compilation uses explicit membership predicates to preserve this distinction even when objects participate in several sources.
+
+\paragraph{Design.}
+For each source type $T$, create an immutable predicate $M_{i,T}(x)$. Declared constants and problem objects receive membership facts for their source type and its ancestors. Type facts are recorded as compiler-generated representation facts, separately from narrative initial facts. Action parameters are represented using the common object sort and guarded by their original memberships. Quantified conditions become
+\begin{align}
+\enc_i(\forall x{:}T\;\varphi)&=
+\forall x{:}object\;\bigl(M_{i,T}(x)\Rightarrow\enc_i(\varphi)\bigr),\\
+\enc_i(\exists x{:}T\;\varphi)&=
+\exists x{:}object\;\bigl(M_{i,T}(x)\land\enc_i(\varphi)\bigr).
+\end{align}
+Universal effects are guarded by the same memberships; nested conditional-effect guards are conjoined. Negation and effect polarity are retained. No source action changes a membership predicate.
+
+\paragraph{Identity boundary.}
+A request may explicitly declare one object as a member of types from two sources. This supplies a stable shared entity for both sources' actions. A type correspondence alone does not equate source constants or grant such additional membership. Type-to-predicate compilation is a representation technique; its novelty is not claimed here. Its purpose is to make the assumptions and preservation boundary explicit and testable.
+
+\subsection{Search, validation, and initial-only outcomes}
+\paragraph{Goal-directed mode.}
+The default reference search uses bounded BFS and static-positive parameter projection. The latter restricts candidate domains only with conjunctive static Boolean atoms having false defaults; remaining correlations and dynamic conditions are checked by the simulator. State, depth, grounding, and subprocess time limits are reported distinctly. The optional Pyperplan reference uses greedy best-first search with hFF after recorded UP compilations; its adapter enforces only a subprocess time budget. Every returned plan is independently checked in the original exported model after compiler plan lifting.
+
+\paragraph{Initial-only mode.}
+Without a goal, bounded BFS returns the first distinct noninitial states in discovery order. Each candidate records its positive and negative changes from $I$, a nonempty plan, and validation against the corresponding generated endpoint condition. This is a declared outcome-generation policy, not narrative ranking or success against independently specified goals. Resource cutoffs remain visible even when some outcomes have been generated.
+
+For false-default Boolean states, the implementation maintains the complete set of true ground atoms. Conjunctive positive preconditions project parameter choices against this current-state index; remaining conditions are checked by simulation. All expanded effect targets update the index from the successor state, including deletions and conditional or quantified effects. Endpoint differences are the symmetric difference of the initial and successor true-atom sets. Grounding and fluent budgets count unique visited projected bindings and effect targets on visited state-changing transitions, respectively. These counters differ from eager enumeration. Authored finite controls agree with unpruned Cartesian BFS on result order, plans, and complete changes; they do not establish corpus-wide scaling.
+
+\section{A source-local preservation property}
+\begin{proposition}[Source-local trace preservation]
+Fix a finite source problem $P_i$ in the supported fragment. Assume that (i) $\eta_i$ and the source-local predicate map are injective; (ii) each argument map is a bijection; (iii) $M_{i,T}$ denotes exactly the image of the original source type extension, remains immutable, and guards all parameter and quantified occurrences; and (iv) the initial state and goal are transformed consistently. Then every valid source-only trace in $P_i$ has a valid action-wise translation in the compiled domain, with the same truth values for mapped source atoms after each step. The statement is independent of whether the asserted cross-source correspondence has the intended narrative meaning.
+\end{proposition}
+\begin{proof}
+With capture-avoiding bound-variable renaming, use induction over formulas to establish equivalence between a source valuation and its projection through $\enc_i$. Atomic truth is preserved by injectivity and the bijective argument ordering. Boolean connectives commute with the translation, and equality is preserved by injective object renaming. The membership guards restrict quantified variables to exactly the original type extensions, so the induction extends to universal and existential conditions. Parameter guards preserve the admissible source bindings. For effects, corresponding literal updates have the same polarity; conditional guards have the same pre-state truth values; and universal updates range over the same objects. Therefore, one source transition commutes with state projection. Induction over trace length gives the result, including goal truth. This argument assumes the ordinary well-defined simultaneous-effect semantics of a valid source trace.
+\end{proof}
+
+\paragraph{What the proposition does not establish.}
+The proposition concerns translations of source-only traces under the specified source embeddings. It does not establish equivalence of arbitrary mixed-source executions, semantic truth of the input models, narrative intention, or completeness under a search budget. In particular, an incorrect shared predicate can preserve all source traces and still authorize a misleading composition. Source regression is consequently necessary execution evidence, not a semantic oracle. The proof should receive independent technical review before submission.
+
+\paragraph{World compatibility.}
+Source regressions translate each source problem into a separate target problem. They do not assert that one common initial state simultaneously realizes every source problem. If two source atoms map to the same target atom but have opposite closed-world truth values, no target state can agree with both projections. The supplied-world contract avoids silently reconciling this conflict: composition uses the explicitly supplied world, while original source worlds remain separate regression instances. Any preservation claim relative to an original source problem still requires its stated initial-state and membership assumptions.
+
+\section{Current development evidence}
+\paragraph{Data boundary.}
+The current pool contains 15 local narrative domain/problem pairs, 234 actions, and 236 predicates. Complete schema/problem recovery passes for the corrected source-preserving union. Upstream learner versions and training provenance have not been supplied for this pool. These models and previously examined examples are development material; they do not establish independent-domain generalization.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Completed source-search run & Valid plans & Incomplete & Limits & Errors\\
+\midrule
+Legacy BFS, 60 s/source & 0 & 0 & 10 & 3\\
+Static-projection BFS, 60 s/source & 0 & 0 & 13 & 0\\
+Pyperplan GBFS+hFF, 120 s/source & 4 & 8 & 3 & 0\\
+Fast Downward LAMA-first, 60 s/source & 6 & 0 & 1 & 0\\
+\bottomrule
+\end{tabular}
+\caption{Development coverage across 15 sources per row. The remaining two cases in each BFS row and eight Fast Downward cases were reported unsolvable. Legacy limits comprise four state limits and six time limits. Static-projection limits comprise five state limits, three grounding limits, and five timeouts; Pyperplan limits are timeouts. Fast Downward 26.6 uses LAMA-first with a 4 GiB memory budget; its one cutoff is a memory limit. Different engines and budgets prevent treating this table as a controlled method comparison.}
+\end{table}
+
+\paragraph{Conditional preservation evidence.}
+The original Pyperplan run supplies four source plans, all valid after translation. A subsequent Fast Downward 26.6 LAMA-first run~\cite{helmert2006downward} supplies six: ACCO (6 steps), BIRT (12), CHIC\_NP (40), HANS\_NP (8), MUSI (14), and SOUP (2). All six validate in the same fixed namespaced union and after zero-merge type-membership compilation. The current measured result is consequently $6/6$ among available source plans, with source availability $6/15$. The remaining sources comprise eight solver-reported unsolvable tasks and one memory cutoff (SNOW), not nine failed plan translations. Domain hashes remain unchanged during replay; no source-goal repair is performed.
+
+\paragraph{Auxiliary source-effect probes.}
+To broaden trace coverage without repairing the original goals, a separate frozen bundle contains three sampled positive effect targets per source (45 probes, seed 20261015). Full source domains, objects, and initial facts remain unchanged; only each probe goal is replaced. Fast Downward returns 26 valid nonempty plans and reports 19 probes unsolvable. All 26 available plans validate after translation into each of the same fixed union and zero-merge membership models, covering 13 source domains. A separate stepwise audit compares all mapped ground source atoms along each available trace: both models pass 52,116 truth comparisons across 73 states, without mismatches or atom-budget cutoffs. This covers these trajectories, not all reachable states. These auxiliary targets are development probes, not original-goal successes, independent domains, or semantic annotations. The complete denominator remains 45, and sources without an available probe trace remain uncovered.
+
+\paragraph{Trace-coverage boundary.}
+Fresh validation of the six original-goal plans and 26 auxiliary plans reveals 61 distinct source action schemas across 234 declared actions. Original plans cover 31 schemas and auxiliary plans cover 38, with overlap; 173 remain unvisited. The only source action declaring a conditional effect is unvisited. Visiting an action schema would still not establish coverage of all its bindings or conditional branches. Thus domain coverage and large ground-atom comparison counts must not be interpreted as comprehensive action coverage; quantified-effect implementation evidence currently comes from authored controls.
+
+Separately authored HANS prefixes exercise the unvisited conditional action with its guard false and true, starting from the unchanged original initial state. Both prefixes execute, and 2,605 mapped-atom comparisons over five states agree after compilation. They are not original-goal solutions and do not change the frozen probe denominator or its reported coverage. The true-guard prefix uses an initially possessed pebble in an action named for dropping breadcrumbs: the source action accepts any item. This retained source-model generality limits narrative interpretation even when transition preservation succeeds.
+
+\paragraph{Action-invocation probes.}
+A further bundle freezes one task for each of the 234 source action schemas before search. For target action $a$, introduce a fresh nullary Boolean $m_a$, initially false, and conjoin $m_a$ to the action's original effect; no precondition or original effect subtree changes. Replace only the problem goal by $m_a$. Projection onto the original fluents preserves the initial state, action applicability, and every transition: the observer occurs in no original condition and writes no original fluent. Consequently, a solution supplies an executable original-world prefix containing an invocation of $a$, while any such prefix satisfies the monitor goal. This statement concerns action invocation, including when an original conditional-effect guard is false; it does not establish effect-branch coverage or attainment of the original goal. Each task receives a 20-second, 4-GiB LAMA-first budget. Returned traces require independent plan validation, target-occurrence checking, and full source-atom comparison before fixed-model replay. The complete run returns 146 independently valid plans, reports 50 tasks unsolvable, and reaches 38 wall-time limits. Instrumentation inversion and target-occurrence checks pass. All 146 prefixes execute in each fixed union and membership model; each comparison covers 459 states and 354,757 source-atom truth values with zero mismatches. No returned trace is omitted from these audits.
+
+Across the invocation traces and the previously validated original-goal and auxiliary-goal traces, 166 distinct source actions have execution witnesses. Twenty of these witnesses resolve actions whose own invocation task timed out; the 146/50/38 target-task outcome counts remain unchanged. Fifty actions are solver-reported unreachable and 18 remain unresolved, with no witness contradicting a reported unsolvability result. Among the witnessed schemas, 67 declare delete effects and 15 declare negative conditions. The conditional-effect schema still has no witness in these three frozen solver bundles; the two separately authored branch controls above remain separate evidence. These counts characterize the supplied source worlds, not all possible instances of the domains.
+
+\paragraph{Source-problem diagnostics.}
+A conservative predicate-symbol relaxation provides independently inspectable reachability obstructions for three of the eight solver-reported unsolvable source problems (BUFF, JACK\_NP, PUSS). The diagnostic ignores argument bindings, negative conditions, universal preconditions, and conditional-effect guards, thereby enlarging the set of potentially reachable predicates. Failure to support the relaxed goal implies an obstruction; support does not establish concrete solvability. For example, BUFF requires \texttt{cloak\_shaken} in its goal, but no initial fact or action effect establishes that predicate. The other five unsolvability results are not explained by this coarse diagnostic. No initial facts or actions are added as repairs, and an unsolvable source problem does not imply that its parameterized domain is unusable with another explicitly supplied world.
+
+\paragraph{External development validation.}
+An admission inspection considers six original-format families from the Sabre benchmark archive~\cite{ware2026collection}. Basketball's ten problems require an explicit packaging adapter: add the missing domain-reference header and remove problem-level requirements already declared by the unchanged domain. All other problem sections and domain bytes are preserved. The remaining five inspected families are not admitted because their original files require additional declaration handling or unsupported intentionality semantics; no intention features are stripped. Fast Downward finds independently valid plans for all ten packaged Basketball tasks. Each plan also validates in a fixed 16-source namespaced union and a fixed zero-merge membership model. Each representation passes 38,560 mapped-atom comparisons over 80 states, with unchanged model hashes. These are ten problems from one external development family, not ten independent domains or a blinded semantic-generalization test. Each problem retains its own initial world; other sources' narrative facts are not imported.
+
+\paragraph{Engineering controls.}
+The saved test checkpoint contains 124 passing component tests. Additional persistent synthetic mode checks cover initial+goal, initial-only, goal-only rejection, an explicitly empty state, a second object, and explicit source selection. Synthetic alignment controls test permutation direction, type assumptions, shared-entity declarations, quantified universe preservation, and retention of all actions after domain selection. These controls are not an independent narrative benchmark.
+
+A raw-declaration guard additionally rejects duplicate sections, symbols and variables before dictionary-based parsing can overwrite them. An authored duplicate-action input previously lost one action while its generated output passed parsing; it is now rejected before domain export. Rebuilding the 15 local sources after this input-validation change yields byte-identical compiled domain and problem PDDL to the preceding fixed compiler version. Legal variable shadowing in separate scopes remains supported.
+
+\paragraph{Matched-world development comparison.}
+An additional frozen comparison uses intact ACCO and BIRT action models, three explicitly authored worlds, two interface conditions, and three selection policies (18 conditions total). Both interface conditions use identical source-membership encoding and shared entities; they differ only in whether an authored possession correspondence is present. Pair-only and dependency selection retain the same two domains here, so these are not independent retrieval successes. All-domain selection retains all 15 domains. Every search receives a 60-second Pyperplan subprocess budget. Six plans validate independently, six searches are incomplete, and six reach the time limit. Input, model and source hashes pass the post-run audit.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+Authored world & Zero merge: pair/dep. & Interface: pair/dep. & All: zero/interface\\
+\midrule
+Initial BIRT location & I / I & S4 / S4 & T / T\\
+Initial ACCO possession & S3 / S3 & S3 / S3 & T / T\\
+Empty narrative state & I / I & I / I & T / T\\
+\bottomrule
+\end{tabular}
+\caption{All 18 matched development conditions. S$k$: independently valid $k$-step plan; I: incomplete search; T: time limit. No I or T is classified as proven unsolvable. The worlds and interface are authored hypotheses, not independently annotated test cases.}
+\end{table}
+
+\paragraph{Same-export stronger-planner check.}
+Fast Downward 26.6 with LAMA-first subsequently solves the same 18 exported PDDL tasks under a 60-second wall budget and an additional 4 GiB memory limit. It returns nine valid plans and reports the other nine tasks unsolvable; every returned plan passes fresh independent validation. The audit checks byte-for-byte equality of both domain and problem inputs across solvers. All three authored-interface bridge conditions solve in four steps; all six source-ready controls solve in three steps. The three zero-merge bridge conditions and six empty-world conditions are reported unsolvable. Thus the Pyperplan cutoffs do not establish failure of the full-domain representation. This is a solver-coverage result on authored development cases, not a narrative-quality comparison or a controlled runtime speedup.
+
+\paragraph{Interpretation limit.}
+The four-step bridge plan uses one BIRT action to obtain possession, then three ACCO actions to arrange a performance and gain wealth. The BIRT model allows the first action to produce possession of an arbitrary typed item; this source-model generality is retained and disclosed, not repaired using the desired outcome. The example therefore demonstrates execution through an explicit interface, not narrative plausibility. Concurrent workstation workloads also prevent treating these durations as controlled performance measurements. A stronger planner comparison must reuse the exact exported domain/problem bytes.
+
+\paragraph{Source-action necessity control.}
+For each of the six explicit-pair world/interface conditions, a further frozen comparison retains all actions, removes all ACCO actions, or removes all BIRT actions (18 tasks). Vocabulary, entity memberships, initial facts, goals, and interfaces remain unchanged. Fast Downward returns five independently valid plans and reports 13 tasks unsolvable, without resource cutoffs. The authored-interface bridge is solved with both sources but reported unsolvable after either action removal. Both source-ready conditions remain solvable after BIRT action removal and become unsolvable after ACCO action removal. All empty-world and zero-interface bridge conditions remain unsolvable. Independent structural comparison confirms that only the declared actions changed. This establishes action-source necessity for the specific authored bridge task under the recorded solver result, not a general property of the domain pool or evidence of narrative quality.
+
+\paragraph{Initial-only development comparison.}
+Removing the goal from the six explicit-pair world/interface conditions yields a separate complete initial-only run. All six searches reach the 60-second wall limit with no returned outcomes, while frozen source, query, and implementation hashes remain unchanged. Sparse effect-target comparison alone therefore does not establish a practical outcome-generation method on these cases. A bounded stack-sampling diagnostic locates ongoing work in eager action grounding; this is an engineering diagnosis, not a controlled performance attribution.
+
+A subsequent current-state projection run uses byte-identical queries and PDDL, with the same 60-second wall budget and separately documented visited-binding counters. Each of the four nonempty-world conditions returns three outcomes; the two empty-world conditions exhaust their reachable state space without an outcome. Independent revalidation confirms all 12 plans and their complete endpoint differences. An omitted-change negative control remains plan-valid but fails the difference audit. These results support coverage of the declared outcome-generation policy on the six development cases, not narrative quality or a controlled runtime speedup.
+
+\paragraph{Intermediate reference diagnostic.}
+The full fresh adapter run terminated with a worker error after 10,285.9 seconds during a host interruption, with 6,460 cached responses and 13 completed fusion nodes. Source snapshots and implementation hashes remained unchanged; there is no completed final root. A separately frozen completed ACCO/BIRT fusion node maps 29 source actions to 28 actions. Under the adapter's positional problem export and unchanged ordered action formals, the available ACCO source trace remains valid, whereas the BIRT trace fails at step five: the rewritten action adds \texttt{has(nora,key)} as a precondition, which the original action instead establishes as an effect. The first four steps execute in both models. This is a trace-preservation counterexample for that intermediate node, not the final reference result, evidence of unsolvability, or a judgment that the original action is more narratively plausible.
+
+A later frozen intermediate frontier consists of three disjoint completed nodes covering all 15 sources once. Of 234 source actions, 166 match after positional predicate/constant renaming and 68 do not. All three target domains parse independently. Each of the six available source plans encounters an action without verified parameter transport: across 14 distinct encountered mappings, ten change arity, one changes ordered types, and three change formal names or order. The last category may include benign renaming; it is not classified as execution failure. This frontier is still incomplete fusion, and these mapping limitations cannot substitute for a final-root comparison.
+
+At termination, a further eight-source node maps 137 source actions to 109 actions: 87 are equal after literal renaming and 50 are rewritten. Its independent UP 1.3.0 parse fails under the default global name-uniqueness policy because type and fluent names overlap (\texttt{entity} and \texttt{location}). The same unchanged PDDL parses when that parser policy permits cross-category name reuse. This is therefore a parser interoperability diagnostic, not evidence that the PDDL is inherently invalid. The two available source traces still lack verified parameter transport. The earlier three-node frontier and this later node are separate snapshots; their counts must not be pooled.
+
+\paragraph{Finite-state preservation and checker sensitivity.}
+An authored two-source fixture covers argument reversal, subtype membership, existential and universal conditions, conditional effects, universal additions and deletions, and a foreign object. Exhaustive enumeration of its 256 source valuations checks 4,352 action applications, 2,048 applicable transitions, and 256 goal evaluations with no mismatch. Four deliberately corrupted outputs separately remove a universal-effect guard, reverse an effect polarity, reverse action arguments, and admit a foreign object into source membership. The same checker detects all four. This finite fixture tests the implementation and the checker's sensitivity to these errors; it is not a proof for arbitrary domains.
+
+An additional finite fixture checks 14 condition forms, including negated quantifiers, implication, disjunction, equality/inequality, alternating quantifiers, variable shadowing, and quantification over an empty declared type. Across 128 valuations and 28 ground action instances, all 3,584 applicability comparisons, 1,984 applicable transitions, and 128 goal comparisons agree. Removing quantified condition membership guards while retaining parameter guards yields 1,024 mismatches. These bounded authored controls exercise formula translation and checker sensitivity; they do not extend the semantic-interface or empirical source-domain claims.
+
+\paragraph{Variable-capture regression.}
+An additional authored fixture exposed a defect in the earlier compiler: an inner universal variable shadowed an action parameter after a conditional guard was moved inward. The original one-step plan was valid but its compiled counterpart missed a goal. Fresh bound-variable renaming repairs this case. Exhaustive comparison over the fixture's 16 valuations and 32 action bindings finds eight source-atom mismatches before the repair and none afterwards. The original 256-state control and all four mutation controls also pass after the change. These controls establish their finite coverage, not a general correctness proof.
+
+\paragraph{Semantic-negative control.}
+An authored capture domain distinguishes being captured alive from being dead in a burial domain. With identical supplied initial facts and goal, the distinct-predicate baseline is unsolvable, whereas an intentionally false correspondence between captured and dead permits a two-step capture--bury plan. The plan validates in the resulting model, and both original one-step source plans still validate after translation. Thus execution preservation and plan validation can both pass despite a semantically incompatible interface. The incompatibility is known by construction, not an independently annotated real-domain label or an estimate of real-world error prevalence.
+
+\begin{figure}[t]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\textbf{Authored source rules}\par\smallskip
+\(\mathit{capture\_alive}(x):\quad \mathit{alive}(x)\longrightarrow\mathit{captured}(x)\)\\
+\(\mathit{bury}(x):\quad \mathit{dead}(x)\longrightarrow\mathit{buried}(x)\)
+\par\medskip
+\textbf{Same supplied world and goal}\quad
+\(I=\{\mathit{alive}(h)\},\quad G=\mathit{buried}(h)\)
+\par\medskip
+\begin{tabular}{@{}p{0.42\linewidth}p{0.50\linewidth}@{}}
+Distinct predicates & False interface: \(\mathit{captured}\equiv\mathit{dead}\)\\[3pt]
+No action establishes \(\mathit{dead}(h)\). & \(\mathit{capture\_alive}(h)\rightarrow\mathit{bury}(h)\)\\[3pt]
+Goal is unreachable. & Two-step plan independently validates.\\
+\end{tabular}
+\par\medskip
+\textbf{Both isolated source plans still validate after translation.}
+\end{minipage}}
+\caption{Execution checks cannot certify interface meaning. The false predicate correspondence creates a causal connection absent from the authored source models. Source-specific regression worlds remain separate from the composed world shown here. Static type-membership facts are omitted for readability. This is a controlled counterexample, not an estimate of error prevalence.}
+\label{fig:semantic-negative}
+\end{figure}
+
+\section{Evaluation required for a submission}
+\paragraph{Semantic evidence.}
+Freeze candidate generation, source/context hashes, decision schemas, and evaluation splits before an independent annotation round. Annotators should see declarations and action usage but not solver outcomes. Retain equivalent, permuted-equivalent, abstraction, complementary, incompatible, and uncertain judgments separately. Report annotation coverage and disagreement; do not use model acceptance or solver success as gold labels. Current independent semantic-annotation coverage is unestablished.
+
+\paragraph{Prepared annotation sample.}
+A frozen development packet samples 100 pairs from 11,410 equal-arity cross-source pairs, within 25,868 total cross-source pairs. Sampling is deterministic within predicate-name and type-spelling strata; it includes permuted type-name signatures and unequal type names, without asserting their compatibility. Complete relevant actions retain conditional and quantified contexts. The 14,458 different-arity pairs are outside this packet's scope. No model predictions or solver outcomes appear in the packet, and no independent labels have been completed. Stratified sample proportions must not be reported as unweighted population prevalence.
+
+The prepared agreement tool retains all six labels, reports paired coverage separately from missing judgments, and computes descriptive raw agreement and Cohen's kappa before adjudication. Argument-map agreement has its own denominator. Identical constant marginals yield undefined kappa, not an artificial perfect score. The current readiness report contains zero annotation files and null agreement scores; declared annotator independence and agreement would not themselves prove semantic truth.
+
+\paragraph{Proposal output-contract diagnostics.}
+A local Gemma 3 4B run processed all 100 packet pairs with fixed options. None passed the current structural response contract: 95 responses failed field or evidence checks, and five reached the response-token limit. Overlapping diagnostics include 75 non-equivalence labels with a non-null argument map, 42 missing two-sided evidence records, 12 non-bijective maps, and eight label/map disagreements. Offline replay reproduces all 100 result statuses after an explicit UTF-8 decoding fix. These are output-contract failures, not a measured zero semantic accuracy. A schema intervention would be a new development condition and could not by itself demonstrate improved semantic judgment.
+
+An offline intervention audit validates 100 coupled schemas with 1,340 synthetic label/map controls. All 95 saved complete responses satisfy the original free-field schema but violate the coupled schema. This identifies a format-constraint gap; it does not measure how the model will respond under the new schema. A prepared paired-run checker requires identical model digests, prompts, options, packet contents and requests except for the schema, retaining all failures in the denominator.
+
+A completed coupled-schema run on the same 100-pair packet yields 52 structurally checked responses, 46 responses missing evidence from both sides, and two token-truncated responses. Offline replay reproduces these statuses. After restoring the local service, a fresh free-field control on the identical packet yields zero checked, 96 invalid, and four token-truncated responses; offline replay reproduces these counts. The paired requests match except for the output schema, and both runs record the same service version and client binary hash. Thus the observed checked-output difference is 52 of 100 under this single paired development condition. It is not a repeated-run estimate, a controlled timing comparison, or a semantic accuracy result. Independent semantic correctness remains unmeasured.
+
+\paragraph{Joint proposal consistency.}
+A separate prepared check composes argument permutations across connected equivalence proposals. It withholds an entire component if a cycle assigns conflicting argument positions, two different predicates from the same source become identified, or a definite non-equivalence judgment occurs inside the component. No edge is silently discarded to repair a conflict. Exhaustive three-argument triangle controls cover all 216 combinations of edge permutations. These checks establish structural consistency only: they infer neither type correspondences nor semantic truth, and they do not approve executable alignments. The original prediction run supplies no structurally checked edges, so its empty graph is an absence of usable proposals, not successful consistency coverage. The coupled-schema run supplies seven equivalence edges in five structurally consistent components. All five components are acyclic; thus these predictions do not exercise cycle-conflict rejection. Their semantic equivalence is unverified, and none is automatically adopted.
+
+\paragraph{Controlled comparisons.}
+Compare source-isolated models, the namespaced union, a fresh UniDomain-style reference, explicit alignment, and domain-selection ablations on identical supplied worlds and goals. Separately ablate argument permutations, source-universe guards, explicit entity membership, and action-variant preservation. Report the full denominator, invalid plans, unsupported cases, and each cutoff category. Fresh reference outputs must not be replaced with a historically invalid artifact.
+
+\paragraph{Narrative evidence and scaling.}
+Add a declared candidate/ranking policy and independent assessments of event progression, entity continuity, redundancy, and coherence. Cross-source counts or source-removal necessity are diagnostics, not definitions of narrative quality. Measure compilation size, grounding overhead, planning time, and source preservation separately: membership encoding can enlarge the ground fluent space even while protecting semantics. Planner scaling analysis and broader independently sourced models remain priorities.
+
+\section{Claim--evidence map and reviewer checklist}
+\begin{description}
+\item[Supported: pre-search artifact.] The entry point saves the parameterized model and manifest before subprocess search; persistent mode checks use identical domain hashes across multiple problems.
+\item[Supported, conditional: execution preservation.] Complete namespaced schema recovery covers 15 sources; plan translation covers six available Fast Downward source plans. The zero-merge type-encoding replay validates all six.
+\item[Supported only on fixtures: direction and identity controls.] Synthetic tests show the intended compilation behavior and explicit rejection conditions.
+\item[Needs evidence: semantic inference and narrative quality.] No current result establishes accurate automatic real-domain alignment, superior stories, or independent-domain transfer.
+\item[Contribution review: unresolved.] Establish what new scientific result goes beyond standard compilation, domain matching, and validation practice. Do not present routine encoding as novel by itself.
+\item[Clarity review: addressed in this draft.] Separate source-local preservation, interface assumptions, and narrative interpretation; maintain these terms across method and experiments.
+\item[Experimental strength: unresolved.] Current evidence is developmental and coverage-limited. No controlled improvement over a current strong baseline is established.
+\item[Evaluation completeness: unresolved.] Independent annotations, frozen comparative tasks, ablations, and narrative judgments are required.
+\item[Design soundness: partly addressed.] Type/identity counterexamples and source replays support the representation contract; mixed-source semantics and scaling still require evaluation.
+\end{description}
+
+\begin{thebibliography}{99}
+\bibitem{ware2026collection}
+Stephen G. Ware and Rachelyn Farrell.
+\newblock A Collection of Benchmark Problems for the Sabre Narrative Planner, Version 1.1.
+\newblock Technical report, Narrative Intelligence Lab, University of Kentucky, 2026.
+\newblock Original-format Basketball files from repository commit \texttt{d9327b3}.
+\newblock \url{https://github.com/sgware/sabre-benchmarks/tree/d9327b3ec2706a468c580c332d3f848ffb4c47fc}.
+
+\bibitem{lindsay2023modularity}
+Alan Lindsay.
+\newblock On Using Action Inheritance and Modularity in PDDL Domain Modelling.
+\newblock \emph{Proceedings of ICAPS}, 33(1):259--267, 2023.
+\newblock \url{https://doi.org/10.1609/icaps.v33i1.27203}.
+
+\bibitem{casciani2025requirements}
+Angelo Casciani, Giuseppe De Giacomo, Andrea Marrella, and Christoph Weinhuber.
+\newblock A Requirements Engineering-Driven Methodology for Planning Domain Generation via LLMs with Invariant-Based Refinement.
+\newblock ICAPS 2025 Workshop on Planning in the Era of LLMs (LM4Plan), 2025.
+\newblock \url{https://www.diag.uniroma1.it/degiacomo/papers/2025/LM4Plan@ICAPS25cdmw.pdf}.
+
+\bibitem{smirnov2024consistent}
+Pavel Smirnov, Frank Joublin, Antonello Ceravola, and Michael Gienger.
+\newblock Generating consistent PDDL domains with Large Language Models.
+\newblock arXiv:2404.07751, 2024.
+\newblock \url{https://arxiv.org/abs/2404.07751v1}.
+
+\bibitem{hayton2020acquisition}
+Thomas Hayton, Julie Porteous, Joao Ferreira, and Alan Lindsay.
+\newblock Narrative Planning Model Acquisition from Text Summaries and Descriptions.
+\newblock \emph{Proceedings of AAAI}, 34(2):1709--1716, 2020.
+\newblock \url{https://doi.org/10.1609/aaai.v34i02.5534}.
+
+\bibitem{siler2025microtales}
+Molly Siler, Stephen G. Ware, Gage Birchmeier, Mira Fisher, and Lasantha Senanayake.
+\newblock Designing a Modular, Scalable Benchmark for Narrative Experience Management.
+\newblock Joint AIIDE Workshop on Experimental Artificial Intelligence in Games and Intelligent Narrative Technologies, 2025.
+\newblock \url{https://ceur-ws.org/Vol-4090/paper13.pdf}.
+
+\bibitem{helmert2006downward}
+Malte Helmert.
+\newblock The Fast Downward Planning System.
+\newblock \emph{Journal of Artificial Intelligence Research}, 26:191--246, 2006.
+\newblock Experiments use release 26.6: \url{https://www.fast-downward.org/latest/releases/26.6/}.
+
+\bibitem{ye2025unidomain}
+Haoming Ye, Yunxiao Xiao, Cewu Lu, and Panpan Cai.
+\newblock UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Robot Task Planning.
+\newblock NeurIPS, 2025. Current author version: \url{https://arxiv.org/abs/2507.21545v3}.
+\bibitem{riedl2010narrative}
+Mark Owen Riedl and Robert Michael Young.
+\newblock Narrative Planning: Balancing Plot and Character.
+\newblock \emph{Journal of Artificial Intelligence Research}, 39:217--268, 2010.
+\newblock \url{https://doi.org/10.1613/jair.2989}.
+\bibitem{haslum2012compilations}
+Patrik Haslum.
+\newblock Narrative Planning: Compilations to Classical Planning.
+\newblock \emph{Journal of Artificial Intelligence Research}, 44:383--395, 2012.
+\newblock \url{https://doi.org/10.1613/jair.3602}.
+\bibitem{rivera2024story}
+Rogelio E. Cardona Rivera, Arnav Jhala, Julie Porteous, and R. Michael Young.
+\newblock The Story So Far on Narrative Planning.
+\newblock \emph{Proceedings of ICAPS}, 34(1):489--499, 2024.
+\newblock \url{https://doi.org/10.1609/icaps.v34i1.31509}.
+\bibitem{porteous2020thype}
+Julie Porteous, Jo\~ao F. Ferreira, Alan Lindsay, and Marc Cavazza.
+\newblock Extending Narrative Planning Domains with Linguistic Resources.
+\newblock \emph{Proceedings of AAMAS}, 2020.
+\newblock \url{https://joaoff.com/publication/2020/AAMAS/aamas20-thype.pdf}.
+\bibitem{lima2021blending}
+Edirlei Soares de Lima, Bruno Feij\'o, and Ant\'onio L. Furtado.
+\newblock Computational Narrative Blending Based on Planning.
+\newblock \emph{Entertainment Computing---ICEC 2021}, LNCS 13056:289--303, 2021.
+\newblock \url{https://doi.org/10.1007/978-3-030-89394-1_22}.
+\end{thebibliography}
+\end{document}

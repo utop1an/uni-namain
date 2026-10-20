@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "decision_basis": "authored_assumption",
+  "source_sha256": {
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e"
+  },
+  "type_groups": [
+    {
+      "members": [
+        "HANS_NP:entity",
+        "JACK_NP:entity",
+        "SNOW:entity"
+      ],
+      "evidence": "Explicit shared character roles"
+    },
+    {
+      "members": [
+        "HANS_NP:item",
+        "SNOW:item"
+      ],
+      "evidence": "Explicit shared comb prop"
+    }
+  ],
+  "predicate_groups": []
+}

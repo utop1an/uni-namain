@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_d4f67b9f31fa4d81",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'kissed_by' describes a specific interaction (being kissed), while 'at' describes a location. The 'kissed_by' predicate requires two entities, one doing the kissing and one being kissed, whereas 'at' describes the location of an entity. They represent different aspects of the story's events and do not share a common argument role. The 'kissed_by' predicate is about an interaction, while 'at' is about spatial location. The action contexts further support this distinction: 'kissed_by' is used in an action where an entity is kissed by another, while 'at' is used to specify the location of an entity. The 'at' predicate is a fundamental property of objects, while 'kissed_by' is a relation between objects. The two predicates are complementary because they describe different properties of the entities involved in the story. The action contexts provide evidence for this complementary relationship. Specifically, 'BIRT:action:receive_queen_kiss' uses 'kissed_by' to describe a specific interaction, and 'SNOW:action:queen_sews_at_window' and 'SNOW:action:snow_white_finds_dwarfs_cottage' and 'SNOW:action:snow_white_flees_into_forest' use 'at' to describe the location of entities.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_queen_kiss",
+      "quote": "(kissed_by ?n ?q)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_sews_at_window",
+      "quote": "(at ?q ?l)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_finds_dwarfs_cottage",
+      "quote": "(at ?c ?cottage)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_flees_into_forest",
+      "quote": "(at ?c ?f)"
+    }
+  ]
+}

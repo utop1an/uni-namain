@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "reports": {
+    "acco_birt_search": {
+      "path": "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "abc7d8662fc8c8b5890cade2378ebe15b34a3af9c61848abfa0355ddd0559d62",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "One authored bridge world x five conditions; 20-second matched search or offline audit, not independent semantic evaluation"
+    },
+    "acco_birt_case_audit": {
+      "path": "data\\validation\\acco_birt_case_audit_2026_10_20_v1\\report.json",
+      "sha256": "9ba58b20e53a5a955491dc0a64acb2eb85a8fdde71be946e432759e2a8b9aac9",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "hashes_unchanged",
+        "primary_problem_bytes_identical",
+        "selector_keeps_both_sources"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts",
+        "plan_sources",
+        "independent_semantic_labels",
+        "semantic_review"
+      ],
+      "scope": "One authored bridge world x five conditions; 20-second matched search or offline audit, not independent semantic evaluation"
+    }
+  },
+  "excluded_pending": [
+    "Independent interface labels",
+    "Narrative quality evaluation",
+    "Automatic-interface success on independent worlds"
+  ]
+}

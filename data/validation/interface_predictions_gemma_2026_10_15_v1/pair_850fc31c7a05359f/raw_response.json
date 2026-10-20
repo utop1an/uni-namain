@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:34:48.9517429Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_850fc31c7a05359f\", \"label\": \"complementary\", \"right_from_left\": [2, 1], \"rationale\": \"The predicate 'imitates_pig' describes an action performed by a 'performer' (BUFF), while 'crumb_on_path' describes a state of a location (HANS_NP). 'imitates_pig' is an action, representing a dynamic behavior, whereas 'crumb_on_path' is a static property of a location. They describe different aspects of the same scenario. The 'BUFF' side describes an action, and the 'HANS_NP' side describes a state resulting from that action or another. The predicates are complementary because one describes an action and the other describes a consequence of that action. The action contexts provide further support for this interpretation. Specifically, 'BUFF:action:perform_pig_imitation_without_apparatus' describes the action of imitating a pig, and 'HANS_NP:action:drop_breadcrumb_on_path' describes the placement of a crumb on a path, which could be a result of the pig imitation. The 'crumb_on_path' predicate is triggered by the 'perform_pig_imitation_without_apparatus' action. The 'crumb_on_path' predicate is a state, while 'imitates_pig' is an action. The predicates are not interchangeable because they represent different aspects of the same situation.\", \"evidence\": [ {\"side\": 1, \"ref\": \"HANS_NP:action:drop_breadcrumb_on_path\", \"quote\": \"(crumb_on_path ?path_loc)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:follow_breadcrumbs_home\", \"quote\": \"(crumb_on_path ?path_loc)\"}, {\"side\": 0, \"ref\": \"BUFF:action:perform_pig_imitation_without_apparatus\", \"quote\": \"(imitates_pig ?performer)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4388593800,
+  "load_duration": 4295300,
+  "prompt_eval_count": 835,
+  "prompt_eval_duration": 162804000,
+  "eval_count": 445,
+  "eval_duration": 4096991000
+}

@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_e3448d00c03b2a57",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_e3448d00c03b2a57",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicates `at` in BIRT and NAUG represent location, but their usage differs significantly. BIRT's `at` is primarily used to describe the spatial position of entities within a narrative context, often related to actions like approaching, hearing, or returning. The action contexts demonstrate this with actions like `approach_beech_tree`, `hear_tapping_on_beech`, and `return_to_bench_and_share_story`, where the `at` predicate is consistently used to specify the location of an entity. Conversely, NAUG's `at` is used within the context of a more abstract, rule-based system, primarily to define the location of entities within a courtyard. The `call_comet_forward` and `give_order` actions rely on `at` to determine the location of entities relative to the courtyard. The core difference lies in the application: BIRT's `at` is narrative-driven, while NAUG's `at` is rule-driven. Therefore, they represent complementary predicates – both describe location, but in fundamentally different contexts and with different implications for the system's behavior. The action contexts and their associated excerpts confirm this distinction. BIRT's excerpts consistently use `at` to describe the spatial relationships of entities within a story, while NAUG's excerpts use `at` to define spatial constraints within a rule-based system.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "NAUG:action:call_comet_forward",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 1,
+        "ref": "NAUG:action:give_order",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 1,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:approach_beech_tree",
+        "quote": "(at ?n ?t)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:hear_tapping_on_beech",
+        "quote": "(at ?n bench)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:return_to_bench_and_share_story",
+        "quote": "(at ?n ?bench)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_e3448d00c03b2a57"
+  ]
+}

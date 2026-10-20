@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_9b3cda35ad31c6e1",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `item_at` (FOUR_NP) and `house` (PIGS_NP) both relate an item to a location, but they represent fundamentally different concepts. `item_at` describes the spatial location of an item, while `house` describes a structure that contains items. The action contexts further highlight this difference: `item_at` is used for fetching and returning items, while `house` is used for building, destroying, and describing houses. The `house` predicate requires a location (`?h - location ?m - item`), whereas `item_at` simply requires an item and a location. Therefore, they are complementary because they both deal with spatial relationships but represent distinct entities and actions. The use of `?h` and `?i` in the `house` predicate and `?i` in the `item_at` predicate, respectively, further emphasizes this distinction. The action contexts demonstrate this difference in usage and preconditions/effects. Specifically, `(item_at eggs tree)` is used to describe the location of eggs within a tree, while `(house ?h ?i)` is used to describe a house containing an item.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_blows_house_down",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_fails_to_blow_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:fetch_eggs",
+      "quote": "(item_at eggs tree)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:return_eggs_to_nest",
+      "quote": "(item_at eggs tree)"
+    }
+  ]
+}

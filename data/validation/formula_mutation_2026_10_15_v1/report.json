@@ -1,0 +1,147 @@
+{
+  "status": "FAIL",
+  "counts": {
+    "states": 128,
+    "ground_action_instances": 28,
+    "applicability_checks": 3584,
+    "applicable_transitions": 1280,
+    "goal_checks": 128,
+    "mismatches": 1024
+  },
+  "state_atoms": [
+    "p(a)",
+    "p(b)",
+    "r(a, a)",
+    "r(b, a)",
+    "r(a, b)",
+    "r(b, b)",
+    "done"
+  ],
+  "counterexamples": [
+    {
+      "kind": "applicability",
+      "state_mask": 0,
+      "action": "vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 0,
+      "action": "vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 0,
+      "action": "negative_vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 0,
+      "action": "negative_vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 1,
+      "action": "vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 1,
+      "action": "vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 1,
+      "action": "negative_vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 1,
+      "action": "negative_vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 2,
+      "action": "vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 2,
+      "action": "vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 2,
+      "action": "negative_vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 2,
+      "action": "negative_vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "negated_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "negated_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "shadowed_parameter(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "shadowed_parameter(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "vacuous_all(b)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "negative_vacuous_all(a)",
+      "detail": null
+    },
+    {
+      "kind": "applicability",
+      "state_mask": 3,
+      "action": "negative_vacuous_all(b)",
+      "detail": null
+    }
+  ],
+  "scope": "Exhaustive states of one finite authored fixture; not a proof for all domains or semantic-alignment evaluation",
+  "mutation_detected": true,
+  "changed_action_count": 11,
+  "producer_sha256": "b1b6f8e8229dc087777053ae68237828b69240d800778117746572a16cbad697",
+  "origin_report_sha256": "f2c3cbf575ac53f2fb37b4c931e3ddf295e4273cd44ae7e6282c40473ceeae05"
+}

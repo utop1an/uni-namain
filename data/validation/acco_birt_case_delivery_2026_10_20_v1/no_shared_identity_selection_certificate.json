@@ -1,0 +1,75 @@
+{
+  "policy": "static_source_universe_components_v1",
+  "source": "ACCO",
+  "selected_sources": [
+    "ACCO"
+  ],
+  "excluded_sources": [
+    "BIRT"
+  ],
+  "source_universes": {
+    "ACCO": [
+      "d000__c_badger",
+      "d000__c_box",
+      "d000__c_copper_coins",
+      "d000__c_friend",
+      "d000__c_jhosiu",
+      "d000__c_lady_of_court",
+      "d000__c_morinji",
+      "d000__c_pack",
+      "d000__c_priest",
+      "d000__c_prince",
+      "d000__c_princess",
+      "d000__c_showman",
+      "d000__c_teakettle",
+      "d000__c_temple_treasure",
+      "d000__c_tight_rope",
+      "d000__c_tinker",
+      "q__hero",
+      "q__token"
+    ],
+    "BIRT": [
+      "d001__c_beech_tree",
+      "d001__c_bench",
+      "d001__c_boat",
+      "d001__c_corridor",
+      "d001__c_cottage",
+      "d001__c_door",
+      "d001__c_dryad",
+      "d001__c_fairy_queen",
+      "d001__c_fairyland",
+      "d001__c_gnome",
+      "d001__c_gold_star",
+      "d001__c_grandmother",
+      "d001__c_grandmotherkin",
+      "d001__c_key",
+      "d001__c_lantern",
+      "d001__c_mother",
+      "d001__c_mothereen",
+      "d001__c_nora",
+      "d001__c_palace",
+      "d001__c_pellet",
+      "d001__c_pond",
+      "d001__c_silver_salver",
+      "d001__c_spring",
+      "d001__c_stairs",
+      "d001__c_stream",
+      "q__stage"
+    ]
+  },
+  "interface_edges": [
+    {
+      "group": "possession",
+      "sources": [
+        "ACCO",
+        "BIRT"
+      ],
+      "arity": 2,
+      "overlapping_objects": [],
+      "retain_dependency": false,
+      "reason": "positive_arity_disjoint_static_source_universes"
+    }
+  ],
+  "action_subset_selection": false,
+  "scope": "Requires compiler-enforced source scopes and immutable membership; no semantic interface labels. Excluded components cannot read or write retained interface tuples. Foreign independent actions may be removed; this is a goal-reachability component reduction, not full-state trace equivalence."
+}

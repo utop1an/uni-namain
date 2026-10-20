@@ -1,0 +1,2958 @@
+{
+  "status": "complete",
+  "task_count": 234,
+  "rows": [
+    {
+      "id": "ACCO__arrange_exhibition",
+      "source": "ACCO",
+      "target_action": "arrange_exhibition",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/ACCO",
+        "ACCO__arrange_exhibition",
+        "ACCO__perform_show",
+        "ACCO__receive_orders_from_nobility",
+        "ACCO__return_kettle_to_temple",
+        "ACCO__worship_kettle_as_saint"
+      ]
+    },
+    {
+      "id": "ACCO__call_novices",
+      "source": "ACCO",
+      "target_action": "call_novices",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__call_novices"
+      ]
+    },
+    {
+      "id": "ACCO__force_kettle_into_box",
+      "source": "ACCO",
+      "target_action": "force_kettle_into_box",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__force_kettle_into_box"
+      ]
+    },
+    {
+      "id": "ACCO__hang_kettle",
+      "source": "ACCO",
+      "target_action": "hang_kettle",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__call_novices",
+        "ACCO__force_kettle_into_box",
+        "ACCO__hang_kettle",
+        "ACCO__kettle_jump_and_fly",
+        "ACCO__kettle_transform_to_badger",
+        "ACCO__knock_down_kettle",
+        "ACCO__pursue_kettle"
+      ]
+    },
+    {
+      "id": "ACCO__kettle_jump_and_fly",
+      "source": "ACCO",
+      "target_action": "kettle_jump_and_fly",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__force_kettle_into_box",
+        "ACCO__kettle_jump_and_fly",
+        "ACCO__knock_down_kettle",
+        "ACCO__pursue_kettle"
+      ]
+    },
+    {
+      "id": "ACCO__kettle_revert_shape",
+      "source": "ACCO",
+      "target_action": "kettle_revert_shape",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "ACCO__kettle_transform_to_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_badger",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__call_novices",
+        "ACCO__force_kettle_into_box",
+        "ACCO__kettle_jump_and_fly",
+        "ACCO__kettle_transform_to_badger",
+        "ACCO__knock_down_kettle",
+        "ACCO__pursue_kettle"
+      ]
+    },
+    {
+      "id": "ACCO__kettle_transform_to_fur_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_fur_badger",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "ACCO__knock_down_kettle",
+      "source": "ACCO",
+      "target_action": "knock_down_kettle",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__force_kettle_into_box",
+        "ACCO__knock_down_kettle"
+      ]
+    },
+    {
+      "id": "ACCO__perform_show",
+      "source": "ACCO",
+      "target_action": "perform_show",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/ACCO",
+        "ACCO__perform_show",
+        "ACCO__receive_orders_from_nobility",
+        "ACCO__return_kettle_to_temple",
+        "ACCO__worship_kettle_as_saint"
+      ]
+    },
+    {
+      "id": "ACCO__pursue_kettle",
+      "source": "ACCO",
+      "target_action": "pursue_kettle",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__pursue_kettle"
+      ]
+    },
+    {
+      "id": "ACCO__receive_orders_from_nobility",
+      "source": "ACCO",
+      "target_action": "receive_orders_from_nobility",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/ACCO",
+        "ACCO__receive_orders_from_nobility",
+        "ACCO__return_kettle_to_temple",
+        "ACCO__worship_kettle_as_saint"
+      ]
+    },
+    {
+      "id": "ACCO__return_kettle_to_temple",
+      "source": "ACCO",
+      "target_action": "return_kettle_to_temple",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/ACCO",
+        "ACCO__return_kettle_to_temple",
+        "ACCO__worship_kettle_as_saint"
+      ]
+    },
+    {
+      "id": "ACCO__sell_kettle_to_tinker",
+      "source": "ACCO",
+      "target_action": "sell_kettle_to_tinker",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__sell_kettle_to_tinker"
+      ]
+    },
+    {
+      "id": "ACCO__show_kettle_to_friend",
+      "source": "ACCO",
+      "target_action": "show_kettle_to_friend",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/ACCO__probe_0",
+        "ACCO__show_kettle_to_friend"
+      ]
+    },
+    {
+      "id": "ACCO__tinker_carry_home",
+      "source": "ACCO",
+      "target_action": "tinker_carry_home",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "ACCO__tinker_carry_home"
+      ]
+    },
+    {
+      "id": "ACCO__worship_kettle_as_saint",
+      "source": "ACCO",
+      "target_action": "worship_kettle_as_saint",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/ACCO",
+        "ACCO__worship_kettle_as_saint"
+      ]
+    },
+    {
+      "id": "BIRT__accept_dryad_invitation",
+      "source": "BIRT",
+      "target_action": "accept_dryad_invitation",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__accept_dryad_invitation"
+      ]
+    },
+    {
+      "id": "BIRT__approach_beech_tree",
+      "source": "BIRT",
+      "target_action": "approach_beech_tree",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__approach_beech_tree"
+      ]
+    },
+    {
+      "id": "BIRT__eat_pellet_and_shrink",
+      "source": "BIRT",
+      "target_action": "eat_pellet_and_shrink",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/BIRT",
+        "BIRT__eat_pellet_and_shrink"
+      ]
+    },
+    {
+      "id": "BIRT__enter_tree_and_descend_stairs",
+      "source": "BIRT",
+      "target_action": "enter_tree_and_descend_stairs",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__enter_tree_and_descend_stairs"
+      ]
+    },
+    {
+      "id": "BIRT__hear_tapping_on_beech",
+      "source": "BIRT",
+      "target_action": "hear_tapping_on_beech",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__approach_beech_tree",
+        "BIRT__hear_tapping_on_beech"
+      ]
+    },
+    {
+      "id": "BIRT__receive_pellet_from_gnome",
+      "source": "BIRT",
+      "target_action": "receive_pellet_from_gnome",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__receive_pellet_from_gnome"
+      ]
+    },
+    {
+      "id": "BIRT__receive_queen_kiss",
+      "source": "BIRT",
+      "target_action": "receive_queen_kiss",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/BIRT",
+        "BIRT__receive_queen_kiss"
+      ]
+    },
+    {
+      "id": "BIRT__return_to_bench_and_share_story",
+      "source": "BIRT",
+      "target_action": "return_to_bench_and_share_story",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/BIRT",
+        "BIRT__return_to_bench_and_share_story"
+      ]
+    },
+    {
+      "id": "BIRT__travel_by_leaf_boat_under_pond",
+      "source": "BIRT",
+      "target_action": "travel_by_leaf_boat_under_pond",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "BIRT__travel_to_trysting_place",
+      "source": "BIRT",
+      "target_action": "travel_to_trysting_place",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/BIRT",
+        "BIRT__approach_beech_tree",
+        "BIRT__hear_tapping_on_beech",
+        "BIRT__receive_queen_kiss",
+        "BIRT__return_to_bench_and_share_story",
+        "BIRT__travel_to_trysting_place"
+      ]
+    },
+    {
+      "id": "BIRT__turn_key_on_beech",
+      "source": "BIRT",
+      "target_action": "turn_key_on_beech",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/BIRT",
+        "prior:auxiliary/BIRT__probe_2",
+        "BIRT__accept_dryad_invitation",
+        "BIRT__eat_pellet_and_shrink",
+        "BIRT__enter_tree_and_descend_stairs",
+        "BIRT__receive_pellet_from_gnome",
+        "BIRT__turn_key_on_beech"
+      ]
+    },
+    {
+      "id": "BIRT__witness_queen_birthday_ceremony",
+      "source": "BIRT",
+      "target_action": "witness_queen_birthday_ceremony",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BIRT__witness_queen_birthday_ceremony"
+      ]
+    },
+    {
+      "id": "BUFF__audience_applaud_performance",
+      "source": "BUFF",
+      "target_action": "audience_applaud_performance",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "BUFF__audience_criticize_countryman_and_call_for_kickout",
+      "source": "BUFF",
+      "target_action": "audience_criticize_countryman_and_call_for_kickout",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BUFF__audience_criticize_countryman_and_call_for_kickout",
+        "BUFF__countryman_reveal_real_pig"
+      ]
+    },
+    {
+      "id": "BUFF__audience_demand_shake_cloak_for_pig",
+      "source": "BUFF",
+      "target_action": "audience_demand_shake_cloak_for_pig",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BUFF__audience_demand_shake_cloak_for_pig"
+      ]
+    },
+    {
+      "id": "BUFF__countryman_declare_intent_to_repeat_trick",
+      "source": "BUFF",
+      "target_action": "countryman_declare_intent_to_repeat_trick",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/BUFF__probe_0",
+        "BUFF__audience_criticize_countryman_and_call_for_kickout",
+        "BUFF__countryman_declare_intent_to_repeat_trick",
+        "BUFF__countryman_perform_pig_imitation_with_real_pig",
+        "BUFF__countryman_reveal_real_pig"
+      ]
+    },
+    {
+      "id": "BUFF__countryman_perform_pig_imitation_with_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_perform_pig_imitation_with_real_pig",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/BUFF__probe_0",
+        "BUFF__audience_criticize_countryman_and_call_for_kickout",
+        "BUFF__countryman_perform_pig_imitation_with_real_pig",
+        "BUFF__countryman_reveal_real_pig"
+      ]
+    },
+    {
+      "id": "BUFF__countryman_reveal_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_reveal_real_pig",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BUFF__countryman_reveal_real_pig"
+      ]
+    },
+    {
+      "id": "BUFF__open_theater_and_announce_reward",
+      "source": "BUFF",
+      "target_action": "open_theater_and_announce_reward",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "BUFF__open_theater_and_announce_reward"
+      ]
+    },
+    {
+      "id": "BUFF__perform_pig_imitation_without_apparatus",
+      "source": "BUFF",
+      "target_action": "perform_pig_imitation_without_apparatus",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/BUFF__probe_1",
+        "BUFF__perform_pig_imitation_without_apparatus"
+      ]
+    },
+    {
+      "id": "CHIC_NP__be_eaten_by_fox",
+      "source": "CHIC_NP",
+      "target_action": "be_eaten_by_fox",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/CHIC_NP",
+        "CHIC_NP__be_eaten_by_fox"
+      ]
+    },
+    {
+      "id": "CHIC_NP__decide_to_tell_king",
+      "source": "CHIC_NP",
+      "target_action": "decide_to_tell_king",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/CHIC_NP",
+        "prior:auxiliary/CHIC_NP__probe_1",
+        "CHIC_NP__be_eaten_by_fox",
+        "CHIC_NP__decide_to_tell_king",
+        "CHIC_NP__follow_fox"
+      ]
+    },
+    {
+      "id": "CHIC_NP__follow_fox",
+      "source": "CHIC_NP",
+      "target_action": "follow_fox",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/CHIC_NP",
+        "prior:auxiliary/CHIC_NP__probe_1",
+        "CHIC_NP__be_eaten_by_fox",
+        "CHIC_NP__follow_fox"
+      ]
+    },
+    {
+      "id": "CHIC_NP__go_to_wood",
+      "source": "CHIC_NP",
+      "target_action": "go_to_wood",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "CHIC_NP__go_to_wood"
+      ]
+    },
+    {
+      "id": "CHIC_NP__inform_about_sky_fall",
+      "source": "CHIC_NP",
+      "target_action": "inform_about_sky_fall",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/CHIC_NP",
+        "prior:auxiliary/CHIC_NP__probe_1",
+        "CHIC_NP__be_eaten_by_fox",
+        "CHIC_NP__decide_to_tell_king",
+        "CHIC_NP__follow_fox",
+        "CHIC_NP__inform_about_sky_fall"
+      ]
+    },
+    {
+      "id": "CHIC_NP__meet_character",
+      "source": "CHIC_NP",
+      "target_action": "meet_character",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/CHIC_NP",
+        "prior:auxiliary/CHIC_NP__probe_0",
+        "prior:auxiliary/CHIC_NP__probe_1",
+        "prior:auxiliary/CHIC_NP__probe_2",
+        "CHIC_NP__be_eaten_by_fox",
+        "CHIC_NP__decide_to_tell_king",
+        "CHIC_NP__follow_fox",
+        "CHIC_NP__inform_about_sky_fall",
+        "CHIC_NP__meet_character"
+      ]
+    },
+    {
+      "id": "CHIC_NP__turn_back",
+      "source": "CHIC_NP",
+      "target_action": "turn_back",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "CHIC_NP__turn_back"
+      ]
+    },
+    {
+      "id": "FOUR_NP__count_eggs",
+      "source": "FOUR_NP",
+      "target_action": "count_eggs",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__fetch_eggs",
+      "source": "FOUR_NP",
+      "target_action": "fetch_eggs",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__learn_astronomer_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_astronomer_trade",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__learn_hunter_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_hunter_trade",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__learn_tailor_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_tailor_trade",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__learn_thief_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_thief_trade",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__leave_home",
+      "source": "FOUR_NP",
+      "target_action": "leave_home",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "FOUR_NP__leave_home"
+      ]
+    },
+    {
+      "id": "FOUR_NP__locate_princess",
+      "source": "FOUR_NP",
+      "target_action": "locate_princess",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__obtain_ship",
+      "source": "FOUR_NP",
+      "target_action": "obtain_ship",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__receive_reward",
+      "source": "FOUR_NP",
+      "target_action": "receive_reward",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__repair_ship",
+      "source": "FOUR_NP",
+      "target_action": "repair_ship",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__return_eggs_to_nest",
+      "source": "FOUR_NP",
+      "target_action": "return_eggs_to_nest",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__return_home_with_princess",
+      "source": "FOUR_NP",
+      "target_action": "return_home_with_princess",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__reunite_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "reunite_at_crossroads",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__sail_to_rock",
+      "source": "FOUR_NP",
+      "target_action": "sail_to_rock",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__separate_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "separate_at_crossroads",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__sew_eggs",
+      "source": "FOUR_NP",
+      "target_action": "sew_eggs",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__shoot_dragon",
+      "source": "FOUR_NP",
+      "target_action": "shoot_dragon",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__shoot_eggs",
+      "source": "FOUR_NP",
+      "target_action": "shoot_eggs",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__steal_princess",
+      "source": "FOUR_NP",
+      "target_action": "steal_princess",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "FOUR_NP__swim_after_ship_break",
+      "source": "FOUR_NP",
+      "target_action": "swim_after_ship_break",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__abandon_children_in_forest",
+      "source": "HANS_NP",
+      "target_action": "abandon_children_in_forest",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/HANS_NP",
+        "prior:auxiliary/HANS_NP__probe_0",
+        "prior:auxiliary/HANS_NP__probe_2"
+      ]
+    },
+    {
+      "id": "HANS_NP__call_duck_for_crossing",
+      "source": "HANS_NP",
+      "target_action": "call_duck_for_crossing",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/HANS_NP"
+      ]
+    },
+    {
+      "id": "HANS_NP__collect_treasure",
+      "source": "HANS_NP",
+      "target_action": "collect_treasure",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/HANS_NP",
+        "prior:auxiliary/HANS_NP__probe_1"
+      ]
+    },
+    {
+      "id": "HANS_NP__drop_breadcrumb_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_breadcrumb_on_path",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__drop_pebble_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_pebble_on_path",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/HANS_NP__probe_0"
+      ]
+    },
+    {
+      "id": "HANS_NP__enter_witch_house",
+      "source": "HANS_NP",
+      "target_action": "enter_witch_house",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__escape_from_stable",
+      "source": "HANS_NP",
+      "target_action": "escape_from_stable",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__follow_breadcrumbs_home",
+      "source": "HANS_NP",
+      "target_action": "follow_breadcrumbs_home",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__follow_pebbles_home",
+      "source": "HANS_NP",
+      "target_action": "follow_pebbles_home",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__hear_bird_and_follow_to_witch_house",
+      "source": "HANS_NP",
+      "target_action": "hear_bird_and_follow_to_witch_house",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__leave_children_at_fire",
+      "source": "HANS_NP",
+      "target_action": "leave_children_at_fire",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__push_witch_into_oven",
+      "source": "HANS_NP",
+      "target_action": "push_witch_into_oven",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/HANS_NP"
+      ]
+    },
+    {
+      "id": "HANS_NP__return_home_and_reunite_with_father",
+      "source": "HANS_NP",
+      "target_action": "return_home_and_reunite_with_father",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/HANS_NP"
+      ]
+    },
+    {
+      "id": "HANS_NP__wander_forest_seeking_way_out",
+      "source": "HANS_NP",
+      "target_action": "wander_forest_seeking_way_out",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "HANS_NP__witch_captures_children",
+      "source": "HANS_NP",
+      "target_action": "witch_captures_children",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__ask_giant_wife_for_breakfast",
+      "source": "JACK_NP",
+      "target_action": "ask_giant_wife_for_breakfast",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__ask_giant_wife_for_breakfast"
+      ]
+    },
+    {
+      "id": "JACK_NP__climb_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "climb_beanstalk",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__cut_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "cut_beanstalk",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__grow_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "grow_beanstalk",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__grow_beanstalk"
+      ]
+    },
+    {
+      "id": "JACK_NP__hide_in_kettle",
+      "source": "JACK_NP",
+      "target_action": "hide_in_kettle",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__hide_in_oven",
+      "source": "JACK_NP",
+      "target_action": "hide_in_oven",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__hide_in_oven"
+      ]
+    },
+    {
+      "id": "JACK_NP__plant_beans",
+      "source": "JACK_NP",
+      "target_action": "plant_beans",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__grow_beanstalk",
+        "JACK_NP__plant_beans"
+      ]
+    },
+    {
+      "id": "JACK_NP__return_down_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "return_down_beanstalk",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__return_down_beanstalk"
+      ]
+    },
+    {
+      "id": "JACK_NP__sell_cow_for_beans",
+      "source": "JACK_NP",
+      "target_action": "sell_cow_for_beans",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "JACK_NP__sell_cow_for_beans"
+      ]
+    },
+    {
+      "id": "JACK_NP__steal_gold_bags",
+      "source": "JACK_NP",
+      "target_action": "steal_gold_bags",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__steal_harp",
+      "source": "JACK_NP",
+      "target_action": "steal_harp",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "JACK_NP__steal_hen",
+      "source": "JACK_NP",
+      "target_action": "steal_hen",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__approach_cottage",
+      "source": "MUSI",
+      "target_action": "approach_cottage",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__cat_agrees",
+      "source": "MUSI",
+      "target_action": "cat_agrees",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/MUSI__probe_1"
+      ]
+    },
+    {
+      "id": "MUSI__cat_attack_messenger",
+      "source": "MUSI",
+      "target_action": "cat_attack_messenger",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__choose_sleep_spot",
+      "source": "MUSI",
+      "target_action": "choose_sleep_spot",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__cock_agrees",
+      "source": "MUSI",
+      "target_action": "cock_agrees",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__cock_crow_alert",
+      "source": "MUSI",
+      "target_action": "cock_crow_alert",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__dog_bite_messenger",
+      "source": "MUSI",
+      "target_action": "dog_bite_messenger",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__donkey_kick_messenger",
+      "source": "MUSI",
+      "target_action": "donkey_kick_messenger",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/MUSI__probe_0"
+      ]
+    },
+    {
+      "id": "MUSI__eat_feast",
+      "source": "MUSI",
+      "target_action": "eat_feast",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__extinguish_light",
+      "source": "MUSI",
+      "target_action": "extinguish_light",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI",
+        "prior:auxiliary/MUSI__probe_0"
+      ]
+    },
+    {
+      "id": "MUSI__hound_agrees",
+      "source": "MUSI",
+      "target_action": "hound_agrees",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__invite_cat",
+      "source": "MUSI",
+      "target_action": "invite_cat",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/MUSI__probe_1"
+      ]
+    },
+    {
+      "id": "MUSI__invite_cock",
+      "source": "MUSI",
+      "target_action": "invite_cock",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__invite_hound",
+      "source": "MUSI",
+      "target_action": "invite_hound",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__messenger_attempt_light",
+      "source": "MUSI",
+      "target_action": "messenger_attempt_light",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/MUSI__probe_0"
+      ]
+    },
+    {
+      "id": "MUSI__plan_scaring_robbers",
+      "source": "MUSI",
+      "target_action": "plan_scaring_robbers",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__rest_in_forest",
+      "source": "MUSI",
+      "target_action": "rest_in_forest",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:auxiliary/MUSI__probe_2"
+      ]
+    },
+    {
+      "id": "MUSI__robbers_flee",
+      "source": "MUSI",
+      "target_action": "robbers_flee",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__robbers_retreat",
+      "source": "MUSI",
+      "target_action": "robbers_retreat",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__run_away",
+      "source": "MUSI",
+      "target_action": "run_away",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__signal_and_make_noise",
+      "source": "MUSI",
+      "target_action": "signal_and_make_noise",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__spot_light",
+      "source": "MUSI",
+      "target_action": "spot_light",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "MUSI__stack_animals",
+      "source": "MUSI",
+      "target_action": "stack_animals",
+      "status": "witnessed_reachable",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": [
+        "prior:original/MUSI"
+      ]
+    },
+    {
+      "id": "MUSI__travel_together",
+      "source": "MUSI",
+      "target_action": "travel_together",
+      "status": "unresolved",
+      "target_solver_status": "wall_time_limit",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "NAUG__approach_sun",
+      "source": "NAUG",
+      "target_action": "approach_sun",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__approach_sun",
+        "NAUG__arrest_meteor",
+        "NAUG__avoid_body",
+        "NAUG__burn_up",
+        "NAUG__cross_out_comet",
+        "NAUG__deliver_meteor_to_bungo",
+        "NAUG__punish_meteor",
+        "NAUG__speak_to_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__arrest_meteor",
+      "source": "NAUG",
+      "target_action": "arrest_meteor",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__arrest_meteor",
+        "NAUG__deliver_meteor_to_bungo",
+        "NAUG__punish_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__avoid_body",
+      "source": "NAUG",
+      "target_action": "avoid_body",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__avoid_body"
+      ]
+    },
+    {
+      "id": "NAUG__burn_up",
+      "source": "NAUG",
+      "target_action": "burn_up",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__burn_up",
+        "NAUG__cross_out_comet"
+      ]
+    },
+    {
+      "id": "NAUG__call_comet_forward",
+      "source": "NAUG",
+      "target_action": "call_comet_forward",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__call_comet_forward"
+      ]
+    },
+    {
+      "id": "NAUG__cross_out_comet",
+      "source": "NAUG",
+      "target_action": "cross_out_comet",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__cross_out_comet"
+      ]
+    },
+    {
+      "id": "NAUG__deliver_meteor_to_bungo",
+      "source": "NAUG",
+      "target_action": "deliver_meteor_to_bungo",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__deliver_meteor_to_bungo",
+        "NAUG__punish_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__give_order",
+      "source": "NAUG",
+      "target_action": "give_order",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/NAUG__probe_2",
+        "NAUG__approach_sun",
+        "NAUG__arrest_meteor",
+        "NAUG__avoid_body",
+        "NAUG__burn_up",
+        "NAUG__cross_out_comet",
+        "NAUG__deliver_meteor_to_bungo",
+        "NAUG__give_order",
+        "NAUG__prohibit_speaking_to_meteor",
+        "NAUG__punish_meteor",
+        "NAUG__speak_to_meteor",
+        "NAUG__start_travel"
+      ]
+    },
+    {
+      "id": "NAUG__prohibit_speaking_to_meteor",
+      "source": "NAUG",
+      "target_action": "prohibit_speaking_to_meteor",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__prohibit_speaking_to_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__punish_meteor",
+      "source": "NAUG",
+      "target_action": "punish_meteor",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__punish_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__speak_to_meteor",
+      "source": "NAUG",
+      "target_action": "speak_to_meteor",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "NAUG__speak_to_meteor"
+      ]
+    },
+    {
+      "id": "NAUG__start_travel",
+      "source": "NAUG",
+      "target_action": "start_travel",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/NAUG__probe_2",
+        "NAUG__approach_sun",
+        "NAUG__arrest_meteor",
+        "NAUG__avoid_body",
+        "NAUG__burn_up",
+        "NAUG__cross_out_comet",
+        "NAUG__deliver_meteor_to_bungo",
+        "NAUG__punish_meteor",
+        "NAUG__speak_to_meteor",
+        "NAUG__start_travel"
+      ]
+    },
+    {
+      "id": "NAUG__turn_left_on_meeting",
+      "source": "NAUG",
+      "target_action": "turn_left_on_meeting",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__ask_for_material",
+      "source": "PIGS_NP",
+      "target_action": "ask_for_material",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__build_house",
+      "source": "PIGS_NP",
+      "target_action": "build_house",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__build_house",
+        "PIGS_NP__pig_refuses_entry",
+        "PIGS_NP__wolf_attempts_chimney_entry",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_huff_and_puff",
+        "PIGS_NP__wolf_knocks_and_requests_entry"
+      ]
+    },
+    {
+      "id": "PIGS_NP__pig_buys_butter_churn_and_hides",
+      "source": "PIGS_NP",
+      "target_action": "pig_buys_butter_churn_and_hides",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__pig_collects_apples_and_escapes",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_apples_and_escapes",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__build_house",
+        "PIGS_NP__pig_collects_apples_and_escapes",
+        "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+        "PIGS_NP__pig_refuses_entry",
+        "PIGS_NP__wolf_attempts_chimney_entry",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+        "PIGS_NP__wolf_huff_and_puff",
+        "PIGS_NP__wolf_knocks_and_requests_entry"
+      ]
+    },
+    {
+      "id": "PIGS_NP__pig_collects_turnips",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_turnips",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__pig_collects_turnips"
+      ]
+    },
+    {
+      "id": "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+      "source": "PIGS_NP",
+      "target_action": "pig_prepares_boiling_pot_and_fire",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+        "PIGS_NP__wolf_falls_into_pot_and_is_boiled"
+      ]
+    },
+    {
+      "id": "PIGS_NP__pig_refuses_entry",
+      "source": "PIGS_NP",
+      "target_action": "pig_refuses_entry",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__pig_refuses_entry",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_huff_and_puff"
+      ]
+    },
+    {
+      "id": "PIGS_NP__pig_rolls_churn_down_hill",
+      "source": "PIGS_NP",
+      "target_action": "pig_rolls_churn_down_hill",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__receive_material",
+      "source": "PIGS_NP",
+      "target_action": "receive_material",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__send_sons_on_journey",
+      "source": "PIGS_NP",
+      "target_action": "send_sons_on_journey",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__send_sons_on_journey"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_attempts_chimney_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_attempts_chimney_entry",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__pig_refuses_entry",
+        "PIGS_NP__wolf_attempts_chimney_entry",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_huff_and_puff"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_blows_house_down",
+      "source": "PIGS_NP",
+      "target_action": "wolf_blows_house_down",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_eats_pig",
+      "source": "PIGS_NP",
+      "target_action": "wolf_eats_pig",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_eats_pig"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_fails_to_blow_house",
+      "source": "PIGS_NP",
+      "target_action": "wolf_fails_to_blow_house",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_fails_to_blow_house"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+      "source": "PIGS_NP",
+      "target_action": "wolf_falls_into_pot_and_is_boiled",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_falls_into_pot_and_is_boiled"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_flees_from_rolling_object",
+      "source": "PIGS_NP",
+      "target_action": "wolf_flees_from_rolling_object",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PIGS_NP__wolf_huff_and_puff",
+      "source": "PIGS_NP",
+      "target_action": "wolf_huff_and_puff",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_huff_and_puff"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_knocks_and_requests_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_knocks_and_requests_entry",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_knocks_and_requests_entry"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_apple_orchard",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_apple_orchard",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PIGS_NP__probe_0",
+        "prior:auxiliary/PIGS_NP__probe_2",
+        "PIGS_NP__build_house",
+        "PIGS_NP__pig_collects_apples_and_escapes",
+        "PIGS_NP__pig_collects_turnips",
+        "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+        "PIGS_NP__pig_refuses_entry",
+        "PIGS_NP__wolf_attempts_chimney_entry",
+        "PIGS_NP__wolf_blows_house_down",
+        "PIGS_NP__wolf_eats_pig",
+        "PIGS_NP__wolf_fails_to_blow_house",
+        "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+        "PIGS_NP__wolf_huff_and_puff",
+        "PIGS_NP__wolf_knocks_and_requests_entry",
+        "PIGS_NP__wolf_promises_apple_orchard"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_fair_trip",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_fair_trip",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_promises_fair_trip"
+      ]
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_turnip_field",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_turnip_field",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PIGS_NP__wolf_promises_turnip_field"
+      ]
+    },
+    {
+      "id": "PUSS__buy_boots",
+      "source": "PUSS",
+      "target_action": "buy_boots",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/PUSS__probe_0",
+        "PUSS__buy_boots"
+      ]
+    },
+    {
+      "id": "PUSS__cat_call_for_help",
+      "source": "PUSS",
+      "target_action": "cat_call_for_help",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__cat_catch_rabbits",
+      "source": "PUSS",
+      "target_action": "cat_catch_rabbits",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__cat_catch_rabbits"
+      ]
+    },
+    {
+      "id": "PUSS__cat_deliver_gifts_to_king",
+      "source": "PUSS",
+      "target_action": "cat_deliver_gifts_to_king",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__cat_disentchant_prisoners",
+      "source": "PUSS",
+      "target_action": "cat_disentchant_prisoners",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__cat_disentchant_prisoners"
+      ]
+    },
+    {
+      "id": "PUSS__cat_eat_mouse",
+      "source": "PUSS",
+      "target_action": "cat_eat_mouse",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__cat_eat_mouse"
+      ]
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_lion",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_lion",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_mouse",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_mouse",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__cat_eat_mouse",
+        "PUSS__cat_ogre_transform_mouse"
+      ]
+    },
+    {
+      "id": "PUSS__cat_open_castle_gates",
+      "source": "PUSS",
+      "target_action": "cat_open_castle_gates",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__cat_persuade_master_to_bathe",
+      "source": "PUSS",
+      "target_action": "cat_persuade_master_to_bathe",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__give_bag_to_cat",
+      "source": "PUSS",
+      "target_action": "give_bag_to_cat",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__give_bag_to_cat"
+      ]
+    },
+    {
+      "id": "PUSS__king_send_groom_fetch_suit",
+      "source": "PUSS",
+      "target_action": "king_send_groom_fetch_suit",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__king_send_groom_fetch_suit"
+      ]
+    },
+    {
+      "id": "PUSS__master_marry_princess",
+      "source": "PUSS",
+      "target_action": "master_marry_princess",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "PUSS__master_wear_suit",
+      "source": "PUSS",
+      "target_action": "master_wear_suit",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "PUSS__master_wear_suit"
+      ]
+    },
+    {
+      "id": "REMA_NP__arrive_at_marble_palace",
+      "source": "REMA_NP",
+      "target_action": "arrive_at_marble_palace",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__arrive_at_marble_palace",
+        "REMA_NP__king_requests_information_and_gifts"
+      ]
+    },
+    {
+      "id": "REMA_NP__encounter_impostor_king",
+      "source": "REMA_NP",
+      "target_action": "encounter_impostor_king",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__encounter_impostor_king"
+      ]
+    },
+    {
+      "id": "REMA_NP__encounter_robbers_in_forest",
+      "source": "REMA_NP",
+      "target_action": "encounter_robbers_in_forest",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/REMA_NP__probe_1",
+        "REMA_NP__arrive_at_marble_palace",
+        "REMA_NP__encounter_robbers_in_forest",
+        "REMA_NP__king_requests_information_and_gifts",
+        "REMA_NP__receive_sapphires_from_robber_chief",
+        "REMA_NP__suitors_retire_due_to_phrase",
+        "REMA_NP__utter_phrase_grandmother_mangle"
+      ]
+    },
+    {
+      "id": "REMA_NP__king_proposes_marriage",
+      "source": "REMA_NP",
+      "target_action": "king_proposes_marriage",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/REMA_NP__probe_0",
+        "REMA_NP__king_proposes_marriage",
+        "REMA_NP__princess_accepts_with_heart"
+      ]
+    },
+    {
+      "id": "REMA_NP__king_requests_information_and_gifts",
+      "source": "REMA_NP",
+      "target_action": "king_requests_information_and_gifts",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__king_requests_information_and_gifts"
+      ]
+    },
+    {
+      "id": "REMA_NP__princess_accepts_with_heart",
+      "source": "REMA_NP",
+      "target_action": "princess_accepts_with_heart",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/REMA_NP__probe_0",
+        "REMA_NP__princess_accepts_with_heart"
+      ]
+    },
+    {
+      "id": "REMA_NP__receive_rubies_from_impostor",
+      "source": "REMA_NP",
+      "target_action": "receive_rubies_from_impostor",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__receive_rubies_from_impostor"
+      ]
+    },
+    {
+      "id": "REMA_NP__receive_sapphires_from_robber_chief",
+      "source": "REMA_NP",
+      "target_action": "receive_sapphires_from_robber_chief",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__receive_sapphires_from_robber_chief"
+      ]
+    },
+    {
+      "id": "REMA_NP__run_away_from_palace",
+      "source": "REMA_NP",
+      "target_action": "run_away_from_palace",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__encounter_impostor_king",
+        "REMA_NP__run_away_from_palace"
+      ]
+    },
+    {
+      "id": "REMA_NP__suitors_retire_due_to_phrase",
+      "source": "REMA_NP",
+      "target_action": "suitors_retire_due_to_phrase",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__suitors_retire_due_to_phrase"
+      ]
+    },
+    {
+      "id": "REMA_NP__utter_phrase_grandmother_mangle",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_grandmother_mangle",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/REMA_NP__probe_1",
+        "REMA_NP__receive_sapphires_from_robber_chief",
+        "REMA_NP__suitors_retire_due_to_phrase",
+        "REMA_NP__utter_phrase_grandmother_mangle"
+      ]
+    },
+    {
+      "id": "REMA_NP__utter_phrase_price_of_butter",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_price_of_butter",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "REMA_NP__receive_rubies_from_impostor",
+        "REMA_NP__utter_phrase_price_of_butter"
+      ]
+    },
+    {
+      "id": "SNOW__apple_piece_falls_out_reviving_snow_white",
+      "source": "SNOW",
+      "target_action": "apple_piece_falls_out_reviving_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__apple_piece_falls_out_reviving_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__child_is_born_and_queen_dies",
+      "source": "SNOW",
+      "target_action": "child_is_born_and_queen_dies",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__child_is_born_and_queen_dies"
+      ]
+    },
+    {
+      "id": "SNOW__dwarfs_cut_laces_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_cut_laces_rescue_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_cut_laces_rescue_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__dwarfs_offer_snow_white_to_maintain_house",
+      "source": "SNOW",
+      "target_action": "dwarfs_offer_snow_white_to_maintain_house",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_offer_snow_white_to_maintain_house"
+      ]
+    },
+    {
+      "id": "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+        "SNOW__prince_discovers_coffin_and_moves_it"
+      ]
+    },
+    {
+      "id": "SNOW__dwarfs_remove_comb_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_remove_comb_rescue_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_remove_comb_rescue_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__dwarfs_return_and_discover_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_return_and_discover_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_return_and_discover_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__huntsman_spares_snow_white_and_brings_boar_heart",
+      "source": "SNOW",
+      "target_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/SNOW__probe_1",
+        "SNOW__apple_piece_falls_out_reviving_snow_white",
+        "SNOW__dwarfs_cut_laces_rescue_snow_white",
+        "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+        "SNOW__dwarfs_remove_comb_rescue_snow_white",
+        "SNOW__huntsman_spares_snow_white_and_brings_boar_heart",
+        "SNOW__prince_discovers_coffin_and_moves_it"
+      ]
+    },
+    {
+      "id": "SNOW__king_marries_stepmother",
+      "source": "SNOW",
+      "target_action": "king_marries_stepmother",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__king_marries_stepmother",
+        "SNOW__stepmother_becomes_envious_of_snow_white",
+        "SNOW__stepmother_orders_huntsman_to_kill_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__prince_discovers_coffin_and_moves_it",
+      "source": "SNOW",
+      "target_action": "prince_discovers_coffin_and_moves_it",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__prince_discovers_coffin_and_moves_it"
+      ]
+    },
+    {
+      "id": "SNOW__prince_marries_snow_white",
+      "source": "SNOW",
+      "target_action": "prince_marries_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__prince_marries_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__queen_pricks_finger",
+      "source": "SNOW",
+      "target_action": "queen_pricks_finger",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__queen_pricks_finger"
+      ]
+    },
+    {
+      "id": "SNOW__queen_sews_at_window",
+      "source": "SNOW",
+      "target_action": "queen_sews_at_window",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__queen_sews_at_window"
+      ]
+    },
+    {
+      "id": "SNOW__queen_wishes_child_white_red_black",
+      "source": "SNOW",
+      "target_action": "queen_wishes_child_white_red_black",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/SNOW__probe_0",
+        "SNOW__queen_wishes_child_white_red_black"
+      ]
+    },
+    {
+      "id": "SNOW__snow_white_eats_poisoned_apple_and_dies",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_poisoned_apple_and_dies",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__snow_white_eats_poisoned_apple_and_dies"
+      ]
+    },
+    {
+      "id": "SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine"
+      ]
+    },
+    {
+      "id": "SNOW__snow_white_finds_dwarfs_cottage",
+      "source": "SNOW",
+      "target_action": "snow_white_finds_dwarfs_cottage",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__queen_sews_at_window",
+        "SNOW__snow_white_finds_dwarfs_cottage"
+      ]
+    },
+    {
+      "id": "SNOW__snow_white_flees_into_forest",
+      "source": "SNOW",
+      "target_action": "snow_white_flees_into_forest",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__snow_white_flees_into_forest"
+      ]
+    },
+    {
+      "id": "SNOW__snow_white_sleeps_in_seventh_bed",
+      "source": "SNOW",
+      "target_action": "snow_white_sleeps_in_seventh_bed",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_offer_snow_white_to_maintain_house",
+        "SNOW__dwarfs_return_and_discover_snow_white",
+        "SNOW__snow_white_sleeps_in_seventh_bed"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_asks_looking_glass_fairest",
+      "source": "SNOW",
+      "target_action": "stepmother_asks_looking_glass_fairest",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_asks_looking_glass_fairest",
+        "SNOW__stepmother_becomes_envious_of_snow_white",
+        "SNOW__stepmother_orders_huntsman_to_kill_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "source": "SNOW",
+      "target_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_becomes_envious_of_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_becomes_envious_of_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_becomes_envious_of_snow_white",
+        "SNOW__stepmother_orders_huntsman_to_kill_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_comb_poison_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_comb_poison_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_comb_poison_snow_white"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_disguises_as_old_woman_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/SNOW__probe_2",
+        "SNOW__stepmother_disguises_as_old_woman_and_visits_cottage"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "source": "SNOW",
+      "target_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_laces_snow_white_tightly",
+      "source": "SNOW",
+      "target_action": "stepmother_laces_snow_white_tightly",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__dwarfs_cut_laces_rescue_snow_white",
+        "SNOW__stepmother_laces_snow_white_tightly"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_apple_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__apple_piece_falls_out_reviving_snow_white",
+        "SNOW__dwarfs_remove_comb_rescue_snow_white",
+        "SNOW__snow_white_eats_poisoned_apple_and_dies",
+        "SNOW__stepmother_comb_poison_snow_white",
+        "SNOW__stepmother_makes_poisonous_apple_and_visits_cottage"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_comb_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_makes_poisonous_comb_and_visits_cottage"
+      ]
+    },
+    {
+      "id": "SNOW__stepmother_orders_huntsman_to_kill_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_orders_huntsman_to_kill_snow_white",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SNOW__stepmother_orders_huntsman_to_kill_snow_white"
+      ]
+    },
+    {
+      "id": "SOUP__claim_queenhood",
+      "source": "SOUP",
+      "target_action": "claim_queenhood",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/SOUP",
+        "SOUP__claim_queenhood"
+      ]
+    },
+    {
+      "id": "SOUP__escape_jail",
+      "source": "SOUP",
+      "target_action": "escape_jail",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "SOUP__give_skewer_to_elves",
+      "source": "SOUP",
+      "target_action": "give_skewer_to_elves",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/SOUP__probe_2",
+        "SOUP__give_skewer_to_elves"
+      ]
+    },
+    {
+      "id": "SOUP__learn_wisdom_from_ants",
+      "source": "SOUP",
+      "target_action": "learn_wisdom_from_ants",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SOUP__learn_wisdom_from_ants",
+        "SOUP__prepare_soup_by_poet_imagination"
+      ]
+    },
+    {
+      "id": "SOUP__prepare_soup_by_elf_effect",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_elf_effect",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "SOUP__prepare_soup_by_king_tail",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_king_tail",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:original/SOUP",
+        "SOUP__claim_queenhood",
+        "SOUP__prepare_soup_by_king_tail"
+      ]
+    },
+    {
+      "id": "SOUP__prepare_soup_by_poet_imagination",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_poet_imagination",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SOUP__prepare_soup_by_poet_imagination"
+      ]
+    },
+    {
+      "id": "SOUP__read_and_digest_books",
+      "source": "SOUP",
+      "target_action": "read_and_digest_books",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SOUP__prepare_soup_by_poet_imagination",
+        "SOUP__read_and_digest_books"
+      ]
+    },
+    {
+      "id": "SOUP__receive_anointed_skewer",
+      "source": "SOUP",
+      "target_action": "receive_anointed_skewer",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "SOUP__receive_feather",
+      "source": "SOUP",
+      "target_action": "receive_feather",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/SOUP__probe_0",
+        "SOUP__prepare_soup_by_poet_imagination",
+        "SOUP__receive_feather"
+      ]
+    },
+    {
+      "id": "SOUP__run_in_cage",
+      "source": "SOUP",
+      "target_action": "run_in_cage",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "SOUP__travel_to",
+      "source": "SOUP",
+      "target_action": "travel_to",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "SOUP__prepare_soup_by_poet_imagination",
+        "SOUP__read_and_digest_books",
+        "SOUP__travel_to"
+      ]
+    },
+    {
+      "id": "WOE__accept_woe_as_burden",
+      "source": "WOE",
+      "target_action": "accept_woe_as_burden",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__accept_woe_as_burden"
+      ]
+    },
+    {
+      "id": "WOE__allow_woe_to_ride_on_shoulder",
+      "source": "WOE",
+      "target_action": "allow_woe_to_ride_on_shoulder",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__allow_woe_to_ride_on_shoulder",
+        "WOE__hide_woe_under_stone"
+      ]
+    },
+    {
+      "id": "WOE__bow_to_guests",
+      "source": "WOE",
+      "target_action": "bow_to_guests",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "WOE__encounter_bitter_woe",
+      "source": "WOE",
+      "target_action": "encounter_bitter_woe",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__allow_woe_to_ride_on_shoulder",
+        "WOE__encounter_bitter_woe",
+        "WOE__hide_woe_under_stone"
+      ]
+    },
+    {
+      "id": "WOE__hide_woe_under_stone",
+      "source": "WOE",
+      "target_action": "hide_woe_under_stone",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__hide_woe_under_stone"
+      ]
+    },
+    {
+      "id": "WOE__invite_rich_brother_to_feast",
+      "source": "WOE",
+      "target_action": "invite_rich_brother_to_feast",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/WOE__probe_0",
+        "WOE__invite_rich_brother_to_feast"
+      ]
+    },
+    {
+      "id": "WOE__make_sign_of_cross",
+      "source": "WOE",
+      "target_action": "make_sign_of_cross",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__make_sign_of_cross"
+      ]
+    },
+    {
+      "id": "WOE__move_heavy_stone",
+      "source": "WOE",
+      "target_action": "move_heavy_stone",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__move_heavy_stone"
+      ]
+    },
+    {
+      "id": "WOE__perform_work_for_rich_brother",
+      "source": "WOE",
+      "target_action": "perform_work_for_rich_brother",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__perform_work_for_rich_brother",
+        "WOE__receive_payment"
+      ]
+    },
+    {
+      "id": "WOE__receive_payment",
+      "source": "WOE",
+      "target_action": "receive_payment",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__receive_payment"
+      ]
+    },
+    {
+      "id": "WOE__request_help_from_rich_brother",
+      "source": "WOE",
+      "target_action": "request_help_from_rich_brother",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__perform_work_for_rich_brother",
+        "WOE__receive_payment",
+        "WOE__request_help_from_rich_brother"
+      ]
+    },
+    {
+      "id": "WOE__rich_brother_attempt_to_move_stone",
+      "source": "WOE",
+      "target_action": "rich_brother_attempt_to_move_stone",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__accept_woe_as_burden",
+        "WOE__rich_brother_attempt_to_move_stone"
+      ]
+    },
+    {
+      "id": "WOE__sing_cheerful_song",
+      "source": "WOE",
+      "target_action": "sing_cheerful_song",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "prior:auxiliary/WOE__probe_2",
+        "WOE__sing_cheerful_song"
+      ]
+    },
+    {
+      "id": "WOE__spend_money_on_drink",
+      "source": "WOE",
+      "target_action": "spend_money_on_drink",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__spend_money_on_drink"
+      ]
+    },
+    {
+      "id": "WOE__stay_for_banquet",
+      "source": "WOE",
+      "target_action": "stay_for_banquet",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "WOE__take_gold_pot_and_hide",
+      "source": "WOE",
+      "target_action": "take_gold_pot_and_hide",
+      "status": "solver_reported_unreachable",
+      "target_solver_status": "unsolvable",
+      "target_trace_audit_status": "no_valid_trace",
+      "witness_task_ids": []
+    },
+    {
+      "id": "WOE__trade_assets_for_money",
+      "source": "WOE",
+      "target_action": "trade_assets_for_money",
+      "status": "witnessed_reachable",
+      "target_solver_status": "solved",
+      "target_trace_audit_status": "PASS",
+      "witness_task_ids": [
+        "WOE__trade_assets_for_money"
+      ]
+    }
+  ],
+  "counts": {
+    "witnessed_reachable": 166,
+    "solver_reported_unreachable": 50,
+    "unresolved": 18
+  },
+  "target_solver_counts": {
+    "solved": 146,
+    "unsolvable": 50,
+    "wall_time_limit": 38
+  },
+  "prior_coverage": "data\\validation\\source_trace_coverage_2026_10_15_v1\\report.json",
+  "prior_witnessed_action_count": 61,
+  "consistent": true,
+  "sources": {
+    "ACCO": {
+      "witnessed_reachable": 15,
+      "solver_reported_unreachable": 2
+    },
+    "BIRT": {
+      "witnessed_reachable": 11,
+      "solver_reported_unreachable": 1
+    },
+    "BUFF": {
+      "solver_reported_unreachable": 1,
+      "witnessed_reachable": 7
+    },
+    "CHIC_NP": {
+      "witnessed_reachable": 7
+    },
+    "FOUR_NP": {
+      "solver_reported_unreachable": 20,
+      "witnessed_reachable": 1
+    },
+    "HANS_NP": {
+      "witnessed_reachable": 6,
+      "unresolved": 8,
+      "solver_reported_unreachable": 1
+    },
+    "JACK_NP": {
+      "witnessed_reachable": 6,
+      "solver_reported_unreachable": 6
+    },
+    "MUSI": {
+      "unresolved": 10,
+      "witnessed_reachable": 14
+    },
+    "NAUG": {
+      "witnessed_reachable": 12,
+      "solver_reported_unreachable": 1
+    },
+    "PIGS_NP": {
+      "solver_reported_unreachable": 5,
+      "witnessed_reachable": 16
+    },
+    "PUSS": {
+      "witnessed_reachable": 8,
+      "solver_reported_unreachable": 6
+    },
+    "REMA_NP": {
+      "witnessed_reachable": 12
+    },
+    "SNOW": {
+      "witnessed_reachable": 29
+    },
+    "SOUP": {
+      "witnessed_reachable": 8,
+      "solver_reported_unreachable": 4
+    },
+    "WOE": {
+      "witnessed_reachable": 14,
+      "solver_reported_unreachable": 3
+    }
+  },
+  "feature_coverage": {
+    "conditional_effect": {
+      "declared": 1,
+      "witnessed": 0
+    },
+    "delete_effect": {
+      "declared": 97,
+      "witnessed": 67
+    },
+    "disjunctive_condition": {
+      "declared": 1,
+      "witnessed": 1
+    },
+    "existential_condition": {
+      "declared": 2,
+      "witnessed": 1
+    },
+    "negative_condition": {
+      "declared": 18,
+      "witnessed": 15
+    }
+  },
+  "hashes_unchanged": true,
+  "frozen_sha256": {
+    "data\\validation\\action_reachability_audit_2026_10_15_v1\\report.json": "179217e9daf81532f7391c8686d3c2e6acc3ac7bfe6dc3ba46a4d96fb20eef3b",
+    "data\\validation\\source_action_reachability_tasks_2026_10_15_v1\\manifest.json": "b04b7ba8e25530f10a1575a276bf32f5af59260bef9d871b244cf24e1dfa5059",
+    "C:\\anu\\uninamain\\summarize_action_reachability.py": "db018f3a6c8a7f649d9e54b365c8ea1d98a047fd5ccd75d24e2a5e70c81ea767",
+    "data\\narra-domains\\ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\narra-domains\\ACCO_problemfile.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\narra-domains\\BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\narra-domains\\BIRT_problemfile.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\narra-domains\\BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\narra-domains\\BUFF_problemfile.pddl": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+    "data\\narra-domains\\CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\narra-domains\\CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\narra-domains\\FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\narra-domains\\FOUR_NP_problemfile.pddl": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+    "data\\narra-domains\\HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\narra-domains\\HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\narra-domains\\JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\narra-domains\\JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "data\\narra-domains\\MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\narra-domains\\MUSI_problemfile.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+    "data\\narra-domains\\NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\narra-domains\\NAUG_problemfile.pddl": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+    "data\\narra-domains\\PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\narra-domains\\PIGS_NP_problemfile.pddl": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+    "data\\narra-domains\\PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\narra-domains\\PUSS_problemfile.pddl": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+    "data\\narra-domains\\REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\narra-domains\\REMA_NP_problemfile.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+    "data\\narra-domains\\SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\narra-domains\\SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+    "data\\narra-domains\\SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\narra-domains\\SOUP_problemfile.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\narra-domains\\WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\narra-domains\\WOE_problemfile.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+    "data\\validation\\source_trace_coverage_2026_10_15_v1\\report.json": "d3c55fc1f221fe80db3eca7df40e1e1c7c4bb28de9bb515d409f18a30afc2a9f",
+    "data\\validation\\downward_sources_2026_10_15_v1\\manifest.json": "943bcf0a12cd275d35b806c7f3ce945d4e0b3a842c3be3aa6655c2503b3dcbf2",
+    "data\\validation\\downward_sources_2026_10_15_v1\\report.json": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\ACCO\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\ACCO\\problem.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\ACCO\\plan.txt": "6368c4c03033c883f3a7f4820d333ef313aae412a3971c7539f2405ab750f6b2",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\problem.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BUFF\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BUFF\\problem.pddl": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\CHIC_NP\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\CHIC_NP\\problem.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\CHIC_NP\\plan.txt": "bf3c1c87d98ba83b4fe9f8fe8ee1a1dafe70ce3163ea79fa0741f3a6fa09b9b9",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\FOUR_NP\\domain.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\FOUR_NP\\problem.pddl": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\HANS_NP\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\HANS_NP\\problem.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\HANS_NP\\plan.txt": "31638e9b78337e12a76363b23d0fb897c78692396b94ce57e8792f72f1b2fe1a",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\JACK_NP\\domain.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\JACK_NP\\problem.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\MUSI\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\MUSI\\problem.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\MUSI\\plan.txt": "da3bac82609ee09a42c50dbcfb82c2aec02acf7567f112f3d3b9d6e0f7fce68c",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\NAUG\\domain.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\NAUG\\problem.pddl": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\PIGS_NP\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\PIGS_NP\\problem.pddl": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\PUSS\\domain.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\PUSS\\problem.pddl": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\REMA_NP\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\REMA_NP\\problem.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\SNOW\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\SNOW\\problem.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\SOUP\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\SOUP\\problem.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\SOUP\\plan.txt": "77c7ee92a4a29c6c80527feb4935d318f1b01b0fa7f965e6ffe2b35faefcdaaf",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\WOE\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\WOE\\problem.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+    "data\\validation\\downward_probes_2026_10_15_v1\\manifest.json": "614161e65e6840a69f3d916cfd203163f8bc508a7532562866e11c55de610e1c",
+    "data\\validation\\downward_probes_2026_10_15_v1\\report.json": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\problem.pddl": "e71d36255508e6c33b88a65d45c2cc7b3bf75d62f9e3e7f3a7afe479e974c661",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_0\\plan.txt": "7bc846c6e1d863120284cbfb2725fdb2a0c70e181593af10aed7c7961f1112ea",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_1\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_1\\problem.pddl": "c9fd4a13f64a33a4d51e8514603fd7a11f0d4a3bbb083fd33879ca0606b9939d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_2\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\ACCO__probe_2\\problem.pddl": "06eb89f6eff7f06cc9ba79cf713f816dac20a5424f06c9a27da793510f006a18",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_0\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_0\\problem.pddl": "b923613b99ccab8baa37ad1a4bfb5a447ff1616842f6c2c8bf218a56ceeebf8e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_1\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_1\\problem.pddl": "15c147ea664c4a97c1cde4674c6d7c0dabbd382db76a3119f51dbfcba947aa24",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\problem.pddl": "dca88eb5ca9de4844f6606524aba5bccd5cdc5f14bcd627a9496fe0cc04eede5",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BIRT__probe_2\\plan.txt": "38140d1e5c8fa77ec0f89b9a4950860bbbc61035850db68a9b1905e1decaa756",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\problem.pddl": "432e029159c80adc6bb38e2092865be129e30615a2b032ec0ec48fb5e65bba54",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_0\\plan.txt": "cc48b423cbf6f71ef7b57bb33502be2913137a33603c4a763fa7feef0aa55f3a",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\problem.pddl": "9f60c6a60831c22fd474cb5473c3fa00953a580cd90fcc21c34297c80fcc7dc0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_1\\plan.txt": "4ec1b6d3f855d66341bbf1753b8ab239a7920b9aa6c5f4d9330946c7906ec379",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_2\\domain.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\BUFF__probe_2\\problem.pddl": "d9cb27ce088cded99538b4291c114ecf27f3de8d73000ca47a073409518d681b",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\problem.pddl": "e7af7cbbd2e12c169c825fa25859869eb4ef436fb10c537e2279aa6ce67c861b",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_0\\plan.txt": "cdfc6349e117f0b695e8efabc7432e307cea879d22b2e2fd9cf555b27fbfe816",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\problem.pddl": "1cb334873966ce13dd15639abe1a8bfe48cfc6c0bdfed4cc37bd14c4174d3586",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_1\\plan.txt": "545857e846a69cc8fbd447904395f47f88e6f8fcaf2147d41186b6ba7fd78329",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\problem.pddl": "2a131274d7518740a1791a41cb27c58ed8c714013b974232e2381d5e26696e30",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\CHIC_NP__probe_2\\plan.txt": "cdfc6349e117f0b695e8efabc7432e307cea879d22b2e2fd9cf555b27fbfe816",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_0\\domain.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_0\\problem.pddl": "418224b7fc275580ee816560ca65b90f92fabe33b3bf8292f36283f1cb64dfe3",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_1\\domain.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_1\\problem.pddl": "e9893e037cac0b566f4e8344179b7e6ab57bf442792978649c7920582aaa0e80",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_2\\domain.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\FOUR_NP__probe_2\\problem.pddl": "134f5d4caa992fb8ff95ce7a2f5308171c126efe1c8c25f4786b08760d031692",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\problem.pddl": "5490d71c79af9326f4ed7077dc1d472034c666f11fcd8d73bf7c65f02924b284",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_0\\plan.txt": "a6657714f3e54bd28791ab5e12cc6e291a29fc3d31fb78062b12dab80116e739",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\problem.pddl": "5c90cdf8e5f5f9424d523a0c68bddbabf03307ae78bea4e347fd3359f4bdf3be",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_1\\plan.txt": "fbc71f67c08999a8df7d4c16410d3b27d9a6fd808783f2726079a682aca1030f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\domain.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\problem.pddl": "810816cf7de7d7bccf3787832e6117cf7a74692c0fcddef6fb7c5a325cd93971",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\HANS_NP__probe_2\\plan.txt": "6175fa82f6abca71e3ed87a881e144f3eb9c4a39cbdf60d1befe1b689c836522",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_0\\domain.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_0\\problem.pddl": "d053d095f0ed2eaefe8f8d3bee5502e9cf9292af04fcebb65e445857b197e941",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_1\\domain.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_1\\problem.pddl": "53a4a2796b1fc58281bf8bad9e5c9d7f584e25b51762d70af6c7b45fb0b98c87",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_2\\domain.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\JACK_NP__probe_2\\problem.pddl": "b23fa6ac4ff68e2b3da997b7d1876a86f6d3fbae4dcbad4713acd7122879b1a5",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\problem.pddl": "10992f0633f22ddc6aaf96842a0cdb746c626364553820fab6f4d05a14c87104",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_0\\plan.txt": "abe64f717ced1c8ac4ae2b3977f42f7fe9c6b4bcd9f1023bb859610092201ef9",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\problem.pddl": "31cc20c9f9abc2a118938b9070a0deacebe3b80dbfadaeaba2ae4d9ec84be63f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_1\\plan.txt": "4799c61879d711fc2f6bc9dd043f696f1bacaff06b6894cfa207d59691ed8985",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\problem.pddl": "ced4c280a6ba64fde6a1f70143665fb5088d2515cb1d3a4a4c7a3e15f33044b4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\MUSI__probe_2\\plan.txt": "11deb9f1715238de7e10bc194f81d1a8700b6f3ac7cf250ca555f27f4d5e1825",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_0\\domain.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_0\\problem.pddl": "6fb4bc7da4cb91b2fa99d76cc9b695cd45ba27785be0a8556e6a1772d73707f0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_1\\domain.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_1\\problem.pddl": "b3fa41f38e10008c2d30e9924876d4751ab0d1d72199f5fa778caa57257c3fa6",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\domain.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\problem.pddl": "8d70d15f8cdc4c8b29d4fb56e9e955449393b5d981c0e8284c1add0251f7cb51",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\NAUG__probe_2\\plan.txt": "f39b61668131323f74874ad698d664a359f8499e1e5b0857962c4e0410818e82",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\problem.pddl": "b0e2566e6dcfd7f8f22137902d1d2aa1291bc0823699fffc759e318e3aa472e7",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_0\\plan.txt": "0f437eef3d52b9b27a711d5329061c2ef1d1c5a5d69c0d9097f9b77b3e34cca1",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_1\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_1\\problem.pddl": "f1dee44a917237fa4cc8d153f73742a4037e2f1d23b230de56e3d98d994f00db",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\domain.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\problem.pddl": "41d5d78edab08752cad836a31d6b244379323683f43388917ce8a6774f0794e4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PIGS_NP__probe_2\\plan.txt": "0f437eef3d52b9b27a711d5329061c2ef1d1c5a5d69c0d9097f9b77b3e34cca1",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\domain.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\problem.pddl": "5f0bd05f493a7646a57f1e1b965e6979c4f39759627a8dd5118745fd252876c3",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_0\\plan.txt": "34bdbb2a846aff8b577614825d9151a4a3555e4a8f29201946e6c31b02a317f3",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_1\\domain.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_1\\problem.pddl": "25f83da077021e6d03f6fd0de50f517b03d6aba5d6884e3efacf63f76fa08e7e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_2\\domain.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\PUSS__probe_2\\problem.pddl": "a1ac032be90a9626f750a82914e91471178c5a0ee27077602f274259f33c00ef",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\problem.pddl": "f42c1687e0c0b18b06218c423e6d12c22b3b7ce23755a2d18fe29045e8b9d3ab",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_0\\plan.txt": "c438776e2f43652ae3caa29fa22da3a72a0a571d4a3e89b7ce1f8b4f5f6992f6",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\problem.pddl": "a94db9f3462222289ddb4b8ea665ab2f60dc05ff95a2949e69455f40d896ed61",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_1\\plan.txt": "9830d943eab2f53ba3fb556296ce37a60079553b90d3e0f6eac8479c471c9f9f",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_2\\domain.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\REMA_NP__probe_2\\problem.pddl": "065738921849beaeed575fa17292ffbf8600d5880a9f2a5d419477faf3ac3ebc",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\problem.pddl": "c2686d217bc9b0f57140bb5d9acbc3ff4f8ca098d549509b59a003971daffdd4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_0\\plan.txt": "2c6ac8d3a452f6d0bb0f9f7447c82f16655f358422d2c8167557ca16cbd58424",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\problem.pddl": "dd37cf250bbba7330d759a83cb381cfa8415acd9e974d236d5166c919689d5dd",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_1\\plan.txt": "a2cf693266b26c4948083affb090cebe21dea66d770c3bf407e7f62dd861d0a1",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\domain.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\problem.pddl": "999dceb3510457f087536a221d547a2c0edd57c67c74134813da68126d36789c",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SNOW__probe_2\\plan.txt": "802222638fd4d8f436634724e7c2021e5052ef3244ddc2e4009e8a8680e6a391",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\problem.pddl": "76162b1c0fee730268f4af0593bdcbf274d48e248f27e40fab4933c2937f3821",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_0\\plan.txt": "61bb3211fa8c0abe62bdb09631561c0e8ee8a69e36cffa46d56e66c26b1d946a",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_1\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_1\\problem.pddl": "d61c8310890a0a1bbe474a8ada33f02579824e9b36bab80754bc34c78fe12e28",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\problem.pddl": "c3286fb4fc9a43db2c11b801a8a80ab466adaf3781d23415b0b3ae610de47b94",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\SOUP__probe_2\\plan.txt": "cfa845cd5063c2b0eaa443cc7b7cd400d11da4c216f9c46009ac1955818b2d1d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\problem.pddl": "12b5f5db03eb10b11b654bcfb761468531018a6a7489cedd1d66bd6322b61d49",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_0\\plan.txt": "f586cd2ea0ab9c96f648a886ae76226f66ae2466da3aeb9ba3187824e963305d",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_1\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_1\\problem.pddl": "8aff67d8dc7e87f686d2418a2953347a921986610eadcacf5bd5728bebc2f0f0",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\domain.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\problem.pddl": "c9aff9b1b94159eb8ed31b8422c6a057b4522bedb02bfbb7cf549ea1d279863b",
+    "data\\validation\\downward_probes_2026_10_15_v1\\tasks\\WOE__probe_2\\plan.txt": "2fdea0fca6c58bb6cf09bcad5916a74f92b2e09235749d6465abb0fd85347694"
+  },
+  "scope": "Reachability witnessed in any fully audited original-world prefix; target solver outcomes remain separate. Unsolvability is solver-reported, resource cutoffs unresolved. Schema invocation is not conditional branch coverage."
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:30:35.4131775Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_b42885efd3f3d00c\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'knighted' relates to a person receiving an honor, while 'envious' describes a feeling or state of being. These predicates represent distinct concepts: one concerning a formal action and status, the other concerning a psychological state. The 'knighted' predicate implies a specific entity ('e') is granted a title, whereas 'envious' describes a feeling experienced by an entity ('e'). The action contexts further support this distinction: 'knighted' involves a formal bestowal, while 'envious' is a state of mind. The shared parameter 'entity' indicates both predicates apply to the same type of object, but the predicates themselves represent different aspects of that object's state or role. The 'story_or_learner_provenance' is not supplied, so this judgement is based solely on the predicates and their contexts. The action contexts show that 'envious' is a precondition for the 'knighted' action, indicating a dependency, but not equivalence. The 'type_hierarchy' for both predicates is identical, further supporting the complementary relationship. The 'declaration' for both predicates is identical, but the meanings are distinct. The 'parameters' are identical, but the predicates themselves are different. The 'action_contexts' show that 'envious' is a precondition for 'knighted', indicating a dependency, but not equivalence. The 'story_or_learner_provenance' is not supplied, so this judgement is based solely on the predicates and their contexts.\", \"evidence\": [ {\"side\": 1, \"ref\": \"SNOW:action:stepmother_becomes_envious_of_snow_white\", \"quote\": \"(envious ?s)\"}, {\"side\": 1, \"ref\": \"SNOW:action:stepmother_orders_huntsman_to_kill_snow_white\", \"quote\": \"(envious ?s)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4224916900,
+  "load_duration": 2070300,
+  "prompt_eval_count": 634,
+  "prompt_eval_duration": 127424000,
+  "eval_count": 442,
+  "eval_duration": 4020446000
+}

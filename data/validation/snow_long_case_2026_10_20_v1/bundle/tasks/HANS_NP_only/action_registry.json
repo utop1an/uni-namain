@@ -1,0 +1,425 @@
+{
+  "d000__a_abandon_children_in_forest": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "abandon_children_in_forest",
+    "additional_context": []
+  },
+  "d000__a_leave_children_at_fire": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "leave_children_at_fire",
+    "additional_context": []
+  },
+  "d000__a_drop_pebble_on_path": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "drop_pebble_on_path",
+    "additional_context": []
+  },
+  "d000__a_follow_pebbles_home": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "follow_pebbles_home",
+    "additional_context": []
+  },
+  "d000__a_drop_breadcrumb_on_path": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "drop_breadcrumb_on_path",
+    "additional_context": []
+  },
+  "d000__a_follow_breadcrumbs_home": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "follow_breadcrumbs_home",
+    "additional_context": []
+  },
+  "d000__a_wander_forest_seeking_way_out": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "wander_forest_seeking_way_out",
+    "additional_context": []
+  },
+  "d000__a_hear_bird_and_follow_to_witch_house": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "hear_bird_and_follow_to_witch_house",
+    "additional_context": []
+  },
+  "d000__a_enter_witch_house": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "enter_witch_house",
+    "additional_context": []
+  },
+  "d000__a_witch_captures_children": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "witch_captures_children",
+    "additional_context": []
+  },
+  "d000__a_push_witch_into_oven": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "push_witch_into_oven",
+    "additional_context": []
+  },
+  "d000__a_escape_from_stable": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "escape_from_stable",
+    "additional_context": []
+  },
+  "d000__a_collect_treasure": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "collect_treasure",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?g",
+          "?cottage"
+        ],
+        [
+          "scene_at",
+          "?h",
+          "?cottage"
+        ],
+        [
+          "scene_comb_on_shelf",
+          "?pearl",
+          "?cottage"
+        ]
+      ],
+      "effects": [
+        [
+          "not",
+          [
+            "scene_comb_on_shelf",
+            "?pearl",
+            "?cottage"
+          ]
+        ]
+      ],
+      "before": [
+        ":action",
+        "d000__a_collect_treasure",
+        ":parameters",
+        [
+          "?g",
+          "-",
+          "object",
+          "?h",
+          "-",
+          "object",
+          "?pearl",
+          "-",
+          "object",
+          "?precious_stone",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d000__t_entity",
+              "?g"
+            ],
+            [
+              "typeguard__d000__t_entity",
+              "?h"
+            ],
+            [
+              "typeguard__d000__t_item",
+              "?pearl"
+            ],
+            [
+              "typeguard__d000__t_item",
+              "?precious_stone"
+            ],
+            [
+              "typeguard__d000__t_location",
+              "?cottage"
+            ],
+            [
+              "and",
+              [
+                "d000__p_at",
+                "?h",
+                "?cottage"
+              ],
+              [
+                "d000__p_at",
+                "?g",
+                "?cottage"
+              ]
+            ]
+          ],
+          [
+            "case_role_companion",
+            "?g"
+          ],
+          [
+            "case_role_rescuer",
+            "?h"
+          ],
+          [
+            "case_role_comb",
+            "?pearl"
+          ],
+          [
+            "case_role_gem",
+            "?precious_stone"
+          ],
+          [
+            "case_role_hut",
+            "?cottage"
+          ],
+          [
+            "d002__p_alive",
+            "?g"
+          ],
+          [
+            "d002__p_alive",
+            "?h"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "shared__p_possession",
+            "?h",
+            "?pearl"
+          ],
+          [
+            "shared__p_possession",
+            "?g",
+            "?precious_stone"
+          ],
+          [
+            "d000__p_collected",
+            "?h",
+            "?pearl"
+          ],
+          [
+            "d000__p_collected",
+            "?g",
+            "?precious_stone"
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d000__a_collect_treasure",
+        ":parameters",
+        [
+          "?g",
+          "-",
+          "object",
+          "?h",
+          "-",
+          "object",
+          "?pearl",
+          "-",
+          "object",
+          "?precious_stone",
+          "-",
+          "object",
+          "?cottage",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d000__t_entity",
+                "?g"
+              ],
+              [
+                "typeguard__d000__t_entity",
+                "?h"
+              ],
+              [
+                "typeguard__d000__t_item",
+                "?pearl"
+              ],
+              [
+                "typeguard__d000__t_item",
+                "?precious_stone"
+              ],
+              [
+                "typeguard__d000__t_location",
+                "?cottage"
+              ],
+              [
+                "and",
+                [
+                  "d000__p_at",
+                  "?h",
+                  "?cottage"
+                ],
+                [
+                  "d000__p_at",
+                  "?g",
+                  "?cottage"
+                ]
+              ]
+            ],
+            [
+              "case_role_companion",
+              "?g"
+            ],
+            [
+              "case_role_rescuer",
+              "?h"
+            ],
+            [
+              "case_role_comb",
+              "?pearl"
+            ],
+            [
+              "case_role_gem",
+              "?precious_stone"
+            ],
+            [
+              "case_role_hut",
+              "?cottage"
+            ],
+            [
+              "d002__p_alive",
+              "?g"
+            ],
+            [
+              "d002__p_alive",
+              "?h"
+            ]
+          ],
+          [
+            "scene_at",
+            "?g",
+            "?cottage"
+          ],
+          [
+            "scene_at",
+            "?h",
+            "?cottage"
+          ],
+          [
+            "scene_comb_on_shelf",
+            "?pearl",
+            "?cottage"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "shared__p_possession",
+              "?h",
+              "?pearl"
+            ],
+            [
+              "shared__p_possession",
+              "?g",
+              "?precious_stone"
+            ],
+            [
+              "d000__p_collected",
+              "?h",
+              "?pearl"
+            ],
+            [
+              "d000__p_collected",
+              "?g",
+              "?precious_stone"
+            ]
+          ],
+          [
+            "not",
+            [
+              "scene_comb_on_shelf",
+              "?pearl",
+              "?cottage"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "d000__a_call_duck_for_crossing": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "call_duck_for_crossing",
+    "additional_context": []
+  },
+  "d000__a_return_home_and_reunite_with_father": {
+    "kind": "source",
+    "source": "HANS_NP",
+    "original_action": "return_home_and_reunite_with_father",
+    "additional_context": []
+  },
+  "scene__enter_hut": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "enter_hut",
+    "meaning": "Two companions enter the hut before collecting objects."
+  },
+  "scene__hand_comb_to_witch": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "hand_comb_to_witch",
+    "meaning": "Transfer the unique comb from rescuer to witch."
+  },
+  "scene__take_comb_back": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_comb_back",
+    "meaning": "Recover the poisoned comb before the witch departs."
+  },
+  "scene__take_axe": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_axe",
+    "meaning": "Take the axe from the workshop rack."
+  },
+  "scene__approach_beanstalk": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "approach_beanstalk",
+    "meaning": "Bring the axe to the beanstalk."
+  },
+  "scene__begin_descent": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "begin_descent",
+    "meaning": "After handing back the comb, the giant witch leaves the hut and starts descent."
+  },
+  "scene__reach_fallen": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "reach_fallen",
+    "meaning": "Carry the comb to the fallen Snow White."
+  },
+  "scene__apply_comb": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "apply_comb",
+    "meaning": "Prepare comb-based revival by applying the held comb to the fallen target."
+  }
+}

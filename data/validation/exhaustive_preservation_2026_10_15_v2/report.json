@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "counts": {
+    "states": 256,
+    "ground_action_instances": 17,
+    "applicability_checks": 4352,
+    "applicable_transitions": 2048,
+    "goal_checks": 256,
+    "mismatches": 0
+  },
+  "state_atoms": [
+    "ready(a)",
+    "ready(b)",
+    "done(a)",
+    "done(b)",
+    "rel(a, a)",
+    "rel(b, a)",
+    "rel(a, b)",
+    "rel(b, b)"
+  ],
+  "counterexamples": [],
+  "scope": "Exhaustive states of one finite authored fixture; not a proof for all domains or semantic-alignment evaluation",
+  "elapsed_seconds": 5.203,
+  "compiled_domain_unchanged": true,
+  "implementation_sha256": {
+    "validate_transition_preservation.py": "6e49963b202ed45804ba4ee75ac5cfdba20645b68c520e77d0d70fc82b800152",
+    "build_aligned_domain.py": "ea0f270d44544b3ae3d317ee08c0e7f4950518aaf153f64723932e5d4e082df9"
+  }
+}

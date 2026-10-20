@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_b57565597488fc84",
+  "label": "incompatible",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'reward_announced' relates to a nobleman receiving a reward, while 'distracted' relates to a giant being distracted. These predicates describe fundamentally different states and relationships within the narrative. The 'reward_announced' predicate implies a positive event and an object of value (a nobleman), whereas 'distracted' describes a state of inattention and a subject (a giant). The action contexts further highlight this difference: 'reward_announced' is associated with announcing a reward, while 'distracted' is associated with a giant's state of distraction. There is no overlap in their meaning or the situations they describe. The action contexts provide no evidence of a connection between the two predicates. The 'parameters' are also identical in type, but this does not imply equivalence. The 'occurrences' are also identical in literal, but this does not imply equivalence. The predicates are incompatible because they describe different aspects of the story.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BUFF:action:open_theater_and_announce_reward",
+      "quote": "(reward_announced ?nobleman)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:steal_hen",
+      "quote": "(distracted ?giant)"
+    }
+  ]
+}

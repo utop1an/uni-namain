@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_e816004ef74c7c47",
+  "label": "equivalent",
+  "right_from_left": [
+    7,
+    1
+  ],
+  "rationale": "The predicate 'at' is used identically in both narratives, referring to the location of entities. In BIRT, 'at ?n ?t' describes the location of an entity 'n' at a location 't'. In JACK_NP, 'at ?j giant_castle' and 'at ?wife giant_castle' similarly specify the location of entities 'j' and 'wife' at the giant castle. The arguments 'n' and 'j' represent entities, and 't' and 'giant_castle' represent locations. The action contexts demonstrate that the predicate is used to express spatial relationships, and the arguments have the same semantic meaning. The action contexts are different, but the predicate's usage is identical, indicating interchangeability. The argument order is different, but the predicate's meaning is preserved.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:climb_beanstalk",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:hide_in_kettle",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:hide_in_oven",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:return_down_beanstalk",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(at ?j ?l)"
+    }
+  ]
+}

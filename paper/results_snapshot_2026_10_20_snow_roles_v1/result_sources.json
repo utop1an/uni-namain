@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "reports": {
+    "snow_role_search": {
+      "path": "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "8e7ae09707e76a219149cd52ddc316062a0c579d9a52399936df7b0e9b9a639b",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "One authored shared-role world x eleven conditions; explicit compiled role/life/event changes. Formal success differs from scenario-contract success."
+    },
+    "snow_role_execution": {
+      "path": "data\\validation\\snow_roles_case_audit_2026_10_20_v2\\report.json",
+      "sha256": "2696fef0d4b423e0ecc197f8979fbc8ad77bd25d11a34641a99c9aaea4ba51f4",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "hashes_unchanged",
+        "compiled_source_behavior_modified"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts",
+        "scenario_contract_pass_count",
+        "scenario_contract_fail_count",
+        "primary_plan_length",
+        "primary_trace_states",
+        "role_identity",
+        "semantic_limits"
+      ],
+      "scope": "One authored shared-role world x eleven conditions; explicit compiled role/life/event changes. Formal success differs from scenario-contract success."
+    }
+  },
+  "excluded_pending": [
+    "Independent semantic and narrative judgments",
+    "Automatic role/interface induction",
+    "Unrestricted source-model success within the same budget",
+    "Independent-domain generalization"
+  ]
+}

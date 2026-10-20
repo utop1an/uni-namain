@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_5af390b5bc641c70",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'at' is used identically across both narratives. In HANS_NP, it describes the location of entities (e.g., 'at ?h ?forest') and in WOE, it describes the location of entities (e.g., 'at ?poor ?loc'). The arguments are the same, and the action contexts use 'at' with the same entities and locations. The predicates are used in the same way, and the action contexts demonstrate this. The arguments are permuted, but the meaning is equivalent.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:abandon_children_in_forest",
+      "quote": "(at ?h ?forest)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:call_duck_for_crossing",
+      "quote": "(at ?h ?lake)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:collect_treasure",
+      "quote": "(at ?h ?cottage)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:drop_breadcrumb_on_path",
+      "quote": "(at ?h ?path_loc)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:drop_pebble_on_path",
+      "quote": "(at ?h ?path_loc)"
+    },
+    {
+      "side": 0,
+      "ref": "HANS_NP:action:enter_witch_house",
+      "quote": "(at ?h ?cottage)"
+    }
+  ]
+}

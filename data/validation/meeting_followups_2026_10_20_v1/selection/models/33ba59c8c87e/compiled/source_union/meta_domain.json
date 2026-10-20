@@ -1,0 +1,162 @@
+{
+  "sources": [
+    "CHIC_NP",
+    "HANS_NP"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 8,
+    "constants": 48,
+    "predicates": 24,
+    "operators": 22
+  },
+  "predicate_maps": {
+    "CHIC_NP": {
+      "at": "d000__p_at",
+      "decided_to_tell_king": "d000__p_decided_to_tell_king",
+      "eaten_by_fox": "d000__p_eaten_by_fox",
+      "following_fox": "d000__p_following_fox",
+      "going_to_wood": "d000__p_going_to_wood",
+      "informed_about_sky_fall": "d000__p_informed_about_sky_fall",
+      "met": "d000__p_met",
+      "sky_fell_on_head": "d000__p_sky_fell_on_head",
+      "turned_back": "d000__p_turned_back"
+    },
+    "HANS_NP": {
+      "at": "d001__p_at",
+      "bird_heard": "d001__p_bird_heard",
+      "bread_given": "d001__p_bread_given",
+      "captured": "d001__p_captured",
+      "collected": "d001__p_collected",
+      "crossed_lake": "d001__p_crossed_lake",
+      "crumb_on_path": "d001__p_crumb_on_path",
+      "dead": "d001__p_dead",
+      "duck_helped": "d001__p_duck_helped",
+      "fire_lit": "d001__p_fire_lit",
+      "has": "d001__p_has",
+      "locked": "d001__p_locked",
+      "lost": "d001__p_lost",
+      "pebble_on_path": "d001__p_pebble_on_path",
+      "reunited_with_father": "d001__p_reunited_with_father"
+    }
+  },
+  "constant_maps": {
+    "CHIC_NP": {
+      "Acorn": "d000__c_acorn",
+      "Chicken-licken": "d000__c_chicken-licken",
+      "Cock-lock": "d000__c_cock-lock",
+      "Drake-lake": "d000__c_drake-lake",
+      "Duck-luck": "d000__c_duck-luck",
+      "Fox-lox": "d000__c_fox-lox",
+      "FoxHole": "d000__c_foxhole",
+      "Gander-lander": "d000__c_gander-lander",
+      "Goose-loose": "d000__c_goose-loose",
+      "Hen-len": "d000__c_hen-len",
+      "King": "d000__c_king",
+      "Sky": "d000__c_sky",
+      "Turkey-lurkey": "d000__c_turkey-lurkey",
+      "Wood": "d000__c_wood"
+    },
+    "HANS_NP": {
+      "apple": "d001__c_apple",
+      "bird": "d001__c_bird",
+      "branch": "d001__c_branch",
+      "bread_piece": "d001__c_bread_piece",
+      "brushwood": "d001__c_brushwood",
+      "cake": "d001__c_cake",
+      "cottage": "d001__c_cottage",
+      "crumb": "d001__c_crumb",
+      "dead_tree": "d001__c_dead_tree",
+      "door": "d001__c_door",
+      "duck": "d001__c_duck",
+      "father": "d001__c_father",
+      "father_house": "d001__c_father_house",
+      "forest": "d001__c_forest",
+      "grettel": "d001__c_grettel",
+      "hansel": "d001__c_hansel",
+      "hill": "d001__c_hill",
+      "kettle": "d001__c_kettle",
+      "lake": "d001__c_lake",
+      "milk": "d001__c_milk",
+      "mother": "d001__c_mother",
+      "nut": "d001__c_nut",
+      "oven": "d001__c_oven",
+      "pancake": "d001__c_pancake",
+      "path": "d001__c_path",
+      "pearl": "d001__c_pearl",
+      "pebble": "d001__c_pebble",
+      "precious_stone": "d001__c_precious_stone",
+      "roof": "d001__c_roof",
+      "room": "d001__c_room",
+      "stable_location": "d001__c_stable_location",
+      "sugar_window": "d001__c_sugar_window",
+      "window": "d001__c_window",
+      "witch": "d001__c_witch"
+    }
+  },
+  "action_maps": {
+    "CHIC_NP": {
+      "go_to_wood": "d000__a_go_to_wood",
+      "turn_back": "d000__a_turn_back",
+      "meet_character": "d000__a_meet_character",
+      "inform_about_sky_fall": "d000__a_inform_about_sky_fall",
+      "decide_to_tell_king": "d000__a_decide_to_tell_king",
+      "follow_fox": "d000__a_follow_fox",
+      "be_eaten_by_fox": "d000__a_be_eaten_by_fox"
+    },
+    "HANS_NP": {
+      "abandon_children_in_forest": "d001__a_abandon_children_in_forest",
+      "leave_children_at_fire": "d001__a_leave_children_at_fire",
+      "drop_pebble_on_path": "d001__a_drop_pebble_on_path",
+      "follow_pebbles_home": "d001__a_follow_pebbles_home",
+      "drop_breadcrumb_on_path": "d001__a_drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "d001__a_follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "d001__a_wander_forest_seeking_way_out",
+      "hear_bird_and_follow_to_witch_house": "d001__a_hear_bird_and_follow_to_witch_house",
+      "enter_witch_house": "d001__a_enter_witch_house",
+      "witch_captures_children": "d001__a_witch_captures_children",
+      "push_witch_into_oven": "d001__a_push_witch_into_oven",
+      "escape_from_stable": "d001__a_escape_from_stable",
+      "collect_treasure": "d001__a_collect_treasure",
+      "call_duck_for_crossing": "d001__a_call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "d001__a_return_home_and_reunite_with_father"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "CHIC_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    },
+    "HANS_NP": {
+      "types": {
+        "entity": "d001__t_entity",
+        "item": "d001__t_item",
+        "location": "d001__t_location",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

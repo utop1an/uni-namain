@@ -1,0 +1,646 @@
+{
+  "sources": [
+    "PUSS",
+    "REMA_NP",
+    "SNOW",
+    "SOUP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 3,
+    "constants": 105,
+    "predicates": 43,
+    "operators": 60
+  },
+  "predicate_maps": {
+    "PUSS": {
+      "alive": "alive",
+      "at": "at",
+      "at_item": "at_item",
+      "castle_owned_by": "castle_owned_by",
+      "contains": "contains",
+      "drowning": "drowning",
+      "gate_open": "gate_open",
+      "gift_delivered": "gift_delivered",
+      "has": "has",
+      "married": "married",
+      "obedient": "obedient",
+      "promised_to_serve": "promised_to_serve",
+      "rescued_by": "rescued_by",
+      "transformed_into": "transformed_into",
+      "wearing": "wearing"
+    },
+    "REMA_NP": {
+      "at": "rema_np__p_at",
+      "grandmother_mangle_spoken": "grandmother_mangle_spoken",
+      "has": "has",
+      "married": "rema_np__p_married",
+      "price_of_butter_spoken": "price_of_butter_spoken",
+      "with_all_my_heart_spoken": "with_all_my_heart_spoken"
+    },
+    "SNOW": {
+      "alive": "snow__p_alive",
+      "at": "snow__p_at",
+      "at_item": "at_item",
+      "awake": "awake",
+      "dead": "state",
+      "disguised_as": "disguised_as",
+      "envious": "envious",
+      "fair": "fair",
+      "fairest": "fairest",
+      "has": "has",
+      "in_coffin": "in_coffin",
+      "laced": "laced",
+      "poisoned": "poisoned",
+      "sleeping": "sleeping",
+      "visited": "visited",
+      "wearing": "wearing"
+    },
+    "SOUP": {
+      "anointed": "anointed",
+      "at": "snow__p_at",
+      "captured": "captured",
+      "escaped": "state",
+      "has_feeling": "has_feeling",
+      "has_imagination": "has_imagination",
+      "has_understanding": "has_understanding",
+      "holds": "has",
+      "in_cage": "in_cage",
+      "is_poet": "is_poet",
+      "is_queen": "is_queen",
+      "king_tail_stirred": "king_tail_stirred",
+      "soup_effect_created": "soup_effect_created"
+    }
+  },
+  "constant_maps": {
+    "PUSS": {
+      "ass": "ass",
+      "bag": "bag",
+      "boots": "boots",
+      "coachman": "coachman",
+      "eldest_son": "eldest_son",
+      "field_of_corn": "field_of_corn",
+      "field_of_wheat": "field_of_wheat",
+      "groom": "groom",
+      "hare": "hare",
+      "jack": "jack",
+      "king": "king",
+      "mill": "mill",
+      "miller": "miller",
+      "ogre": "ogre",
+      "ogre_castle": "ogre_castle",
+      "palace": "palace",
+      "partridge": "partridge",
+      "princess": "princess",
+      "puss": "puss",
+      "rabbit": "rabbit",
+      "river": "river",
+      "royal_wardrobe": "royal_wardrobe",
+      "second_son": "second_son",
+      "suit": "suit",
+      "warren": "warren"
+    },
+    "REMA_NP": {
+      "back_door": "back_door",
+      "back_stairs": "back_stairs",
+      "bag_of_rubies": "bag_of_rubies",
+      "bag_of_sapphires": "bag_of_sapphires",
+      "city": "city",
+      "crown": "crown",
+      "father_king": "father_king",
+      "forest": "forest",
+      "impostor_butterman": "impostor_butterman",
+      "king_at_palace": "king_at_palace",
+      "market_place": "market_place",
+      "oak_tree": "oak_tree",
+      "palace": "rema_np__c_palace",
+      "princess": "rema_np__c_princess",
+      "robber_chief": "robber_chief",
+      "sceptre": "sceptre"
+    },
+    "SNOW": {
+      "apple": "apple",
+      "bed": "bed",
+      "blood_drop": "blood_drop",
+      "boar": "boar",
+      "boar_heart": "boar_heart",
+      "candle": "candle",
+      "coffin": "coffin",
+      "comb": "comb",
+      "cottage": "cottage",
+      "dove": "dove",
+      "dwarf1": "dwarf1",
+      "dwarf2": "dwarf2",
+      "dwarf3": "dwarf3",
+      "dwarf4": "dwarf4",
+      "dwarf5": "dwarf5",
+      "dwarf6": "dwarf6",
+      "dwarf7": "dwarf7",
+      "forest": "snow__c_forest",
+      "fork": "fork",
+      "golden_letter": "golden_letter",
+      "huntsman": "huntsman",
+      "iron_slippers": "iron_slippers",
+      "king": "snow__c_king",
+      "knife": "knife",
+      "lace": "lace",
+      "looking_glass": "looking_glass",
+      "mountain": "mountain",
+      "mug": "mug",
+      "needle": "needle",
+      "owl": "owl",
+      "plate": "plate",
+      "prince": "prince",
+      "queen": "queen",
+      "raven": "raven",
+      "red_hot_shoes": "red_hot_shoes",
+      "salt": "salt",
+      "snow_white": "snow_white",
+      "spoon": "spoon"
+    },
+    "SOUP": {
+      "ant_queen": "ant_queen",
+      "castle": "castle",
+      "crape_skewer": "crape_skewer",
+      "elf_chief": "elf_chief",
+      "first_traveler_mouse": "first_traveler_mouse",
+      "forest": "soup__c_forest",
+      "fourth_traveler_mouse": "fourth_traveler_mouse",
+      "jailer": "jailer",
+      "jailer_granddaughter": "jailer_granddaughter",
+      "kitchen": "kitchen",
+      "library": "library",
+      "maypole": "maypole",
+      "mouse_king": "mouse_king",
+      "north": "north",
+      "oak_dryad": "oak_dryad",
+      "old_lady_mouse": "old_lady_mouse",
+      "old_owl": "old_owl",
+      "phantaesus": "phantaesus",
+      "sausage_skewer": "sausage_skewer",
+      "sea": "sea",
+      "second_traveler_mouse": "second_traveler_mouse",
+      "ship": "ship",
+      "third_traveler_mouse": "third_traveler_mouse",
+      "violet": "violet",
+      "watchman": "watchman",
+      "young_lady_mouse": "young_lady_mouse"
+    }
+  },
+  "action_maps": {
+    "PUSS": {
+      "buy_boots": "buy_boots",
+      "give_bag_to_cat": "give_bag_to_cat",
+      "cat_catch_rabbits": "cat_catch_rabbits",
+      "cat_deliver_gifts_to_king": "cat_deliver_gifts_to_king",
+      "cat_persuade_master_to_bathe": "cat_persuade_master_to_bathe",
+      "cat_call_for_help": "cat_call_for_help",
+      "king_send_groom_fetch_suit": "queen_ascend_to_throne",
+      "master_wear_suit": "apply_item_to_entity",
+      "cat_ogre_transform_lion": "cat_ogre_transform_lion",
+      "cat_ogre_transform_mouse": "cat_ogre_transform_mouse",
+      "cat_eat_mouse": "cat_eat_captured_mouse",
+      "cat_disentchant_prisoners": "cat_disentchant_prisoners",
+      "cat_open_castle_gates": "cat_open_castle_gates",
+      "master_marry_princess": "master_marry_princess"
+    },
+    "REMA_NP": {
+      "run_away_from_palace": "flee_to_location",
+      "encounter_impostor_king": "encounter_impostor_king",
+      "utter_phrase_price_of_butter": "utter_phrase_price_of_butter",
+      "receive_rubies_from_impostor": "receive_rubies_from_impostor",
+      "encounter_robbers_in_forest": "encounter_robbers_in_forest",
+      "utter_phrase_grandmother_mangle": "utter_phrase_grandmother_mangle",
+      "receive_sapphires_from_robber_chief": "receive_sapphires_from_robber_chief",
+      "arrive_at_marble_palace": "place_at_location",
+      "king_requests_information_and_gifts": "king_requests_information_and_gifts",
+      "king_proposes_marriage": "declare_fairest",
+      "princess_accepts_with_heart": "princess_accepts_with_heart",
+      "suitors_retire_due_to_phrase": "suitors_retire_due_to_phrase"
+    },
+    "SNOW": {
+      "queen_sews_at_window": "queen_ascend_to_throne",
+      "queen_pricks_finger": "queen_pricks_finger",
+      "queen_wishes_child_white_red_black": "queen_wishes_child_white_red_black",
+      "child_is_born_and_queen_dies": "child_is_born_and_queen_dies",
+      "king_marries_stepmother": "king_marries_stepmother",
+      "stepmother_asks_looking_glass_fairest": "declare_fairest",
+      "stepmother_becomes_envious_of_snow_white": "stepmother_becomes_envious_of_snow_white",
+      "stepmother_orders_huntsman_to_kill_snow_white": "stepmother_orders_huntsman_to_kill_snow_white",
+      "huntsman_spares_snow_white_and_brings_boar_heart": "huntsman_spares_snow_white_and_brings_boar_heart",
+      "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "snow_white_flees_into_forest": "flee_to_location",
+      "snow_white_finds_dwarfs_cottage": "place_at_location",
+      "snow_white_eats_vegetables_and_bread_and_drinks_wine": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "snow_white_sleeps_in_seventh_bed": "snow_white_sleeps_in_seventh_bed",
+      "dwarfs_return_and_discover_snow_white": "dwarfs_return_and_discover_snow_white",
+      "dwarfs_offer_snow_white_to_maintain_house": "dwarfs_offer_snow_white_to_maintain_house",
+      "stepmother_disguises_as_old_woman_and_visits_cottage": "stepmother_disguises_as_old_woman_and_visits_cottage",
+      "stepmother_laces_snow_white_tightly": "apply_item_to_entity",
+      "dwarfs_cut_laces_rescue_snow_white": "dwarfs_cut_laces_rescue_snow_white",
+      "stepmother_makes_poisonous_comb_and_visits_cottage": "stepmother_makes_poisonous_comb_and_visits_cottage",
+      "stepmother_comb_poison_snow_white": "stepmother_comb_poison_snow_white",
+      "dwarfs_remove_comb_rescue_snow_white": "dwarfs_remove_comb_rescue_snow_white",
+      "stepmother_makes_poisonous_apple_and_visits_cottage": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "snow_white_eats_poisoned_apple_and_dies": "snow_white_eats_poisoned_apple_and_dies",
+      "dwarfs_prepare_glass_coffin_for_snow_white": "dwarfs_prepare_glass_coffin_for_snow_white",
+      "prince_discovers_coffin_and_moves_it": "prince_discovers_coffin_and_moves_it",
+      "apple_piece_falls_out_reviving_snow_white": "apple_piece_falls_out_reviving_snow_white",
+      "prince_marries_snow_white": "prince_marries_snow_white",
+      "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies"
+    },
+    "SOUP": {
+      "travel_to": "travel_to",
+      "give_skewer_to_elves": "give_skewer_to_elves",
+      "receive_anointed_skewer": "receive_anointed_skewer",
+      "receive_feather": "receive_feather",
+      "learn_wisdom_from_ants": "learn_wisdom_from_ants",
+      "read_and_digest_books": "read_and_digest_books",
+      "escape_jail": "escape_jail",
+      "run_in_cage": "cat_eat_captured_mouse",
+      "prepare_soup_by_elf_effect": "prepare_soup_by_elf_effect",
+      "prepare_soup_by_poet_imagination": "prepare_soup_by_poet_imagination",
+      "prepare_soup_by_king_tail": "prepare_soup_by_king_tail",
+      "claim_queenhood": "queen_ascend_to_throne"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at",
+      "right": "at",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at_item",
+      "right": "at",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "contains",
+      "right": "has",
+      "reason": "action cat_take_item :effect: ill-typed at_item:?item:location->item; action cat_take_item :precondition: ill-typed at_item:?item:location->item; action cat_take_item :precondition: ill-typed has:?item:location->item; action deliver_gifts :effect: ill-typed gift_delivered:?king:object->entity; action deliver_gifts :effect: ill-typed gift_delivered:?puss:object->entity; action deliver_gifts :effect: ill-typed gift_delivered:?rabbit:object->item; action deliver_gifts :precondition: ill-typed at:?palace:object->location; action deliver_gifts :precondition: ill-typed at:?puss:object->entity"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` from domain_1 and `(has ?e - entity ?i - item)` from domain_2, are identical in name and arguments. They both represent the relationship where an entity `?e` possesses an item `?i`.  The predicates are used in similar contexts (buying, receiving, etc.), suggesting they represent the same underlying concept.  Merging them would simplify the domain description without introducing ambiguity or complexity. The predicates are not containing relationships, so rule (3) does not apply.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "married",
+      "right": "married",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action transfer_item :precondition: undeclared predicate can_transfer"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "give_bag_to_cat",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action transfer_item_to_entity :effect: ill-typed has:?i:entity->item; action transfer_item_to_entity :precondition: ill-typed has:?i:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action acquire_item :effect: ill-typed has:?item:object->entity; action acquire_item :effect: ill-typed has:?item:object->item; action acquire_item :effect: ill-typed has:?source:object->entity; action acquire_item :effect: wrong arity has; action acquire_item :precondition: ill-typed has:?item:object->item; action acquire_item :precondition: ill-typed has:?source:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "encounter_robbers_in_forest",
+      "reason": "Expected one PDDL root expression, got 3"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "action transfer_item :effect: ill-typed has:?giver:entity->item; action transfer_item :effect: ill-typed has:?item:item->entity; action transfer_item :effect: ill-typed has:?receiver:entity->item; action transfer_item :precondition: ill-typed has:?giver:entity->item; action transfer_item :precondition: ill-typed has:?item:item->entity; action transfer_item :precondition: ill-typed has:?receiver:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "action receive_item :effect: ill-typed has:?s:entity->item; action receive_item :precondition: ill-typed has:?s:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "give_bag_to_cat",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "Unexpected ')' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "king_send_groom_fetch_suit",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action king_acquire_items :effect: ill-typed has:?i:entity->item; action king_acquire_items :precondition: ill-typed has:?i:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action king_receives_gifts_from_cat :effect: ill-typed contains:?r:object->item; action king_receives_gifts_from_cat :effect: ill-typed contains:?s:object->item; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?k:object->entity; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?r:object->entity; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?s:object->item; action king_receives_gifts_from_cat :effect: ill-typed has:?k:object->entity; action king_receives_gifts_from_cat :effect: ill-typed has:?r:object->item; action king_receives_gifts_from_cat :effect: ill-typed has:?s:object->item; action king_receives_gifts_from_cat :precondition: ill-typed has:?k:object->entity; action king_receives_gifts_from_cat :precondition: ill-typed has:?r:object->item; action king_receives_gifts_from_cat :precondition: ill-typed has:?s:object->item; action king_receives_gifts_from_cat :precondition: ill-typed rema_np__p_at:?k:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action request_and_marry :effect: ill-typed has:?k:object->entity; action request_and_marry :effect: ill-typed has:?p:object->entity; action request_and_marry :effect: ill-typed has:?r:object->item; action request_and_marry :effect: ill-typed has:?s:object->item; action request_and_marry :effect: ill-typed married:?k:object->entity; action request_and_marry :effect: ill-typed married:?p:object->entity; action request_and_marry :precondition: ill-typed has:?p:object->entity; action request_and_marry :precondition: ill-typed has:?r:object->item; action request_and_marry :precondition: ill-typed has:?s:object->item; action request_and_marry :precondition: ill-typed married:?k:object->entity; action request_and_marry :precondition: ill-typed married:?p:object->entity; action request_and_marry :precondition: ill-typed rema_np__p_at:?k:object->entity; action request_and_marry :precondition: ill-typed rema_np__p_at:?p:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_wear_suit",
+      "right": "king_requests_information_and_gifts",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "king_proposes_marriage",
+      "reason": "action propose_marriage :effect: ill-typed rema_np__p_married:?k:object->entity; action propose_marriage :effect: ill-typed rema_np__p_married:?p:object->entity; action propose_marriage :precondition: ill-typed rema_np__p_at:?k:object->entity; action propose_marriage :precondition: ill-typed rema_np__p_at:?p:object->entity; action propose_marriage :precondition: undeclared symbol ?jack; action propose_marriage :precondition: undeclared symbol ?princess"
+    },
+    {
+      "kind": "constant",
+      "left": "palace",
+      "right": "palace",
+      "result": "rema_np__c_palace",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "princess",
+      "right": "princess",
+      "result": "rema_np__c_princess",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "alive",
+      "right": "alive",
+      "reason": "Action update name collision"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at",
+      "right": "at",
+      "reason": "action cat_deliver_gifts_to_king :effect: ill-typed contains:?bag:object->item; action cat_deliver_gifts_to_king :effect: ill-typed contains:?rabbit:object->item; action cat_deliver_gifts_to_king :effect: ill-typed gift_delivered:?king:object->entity; action cat_deliver_gifts_to_king :effect: ill-typed gift_delivered:?puss:object->entity; action cat_deliver_gifts_to_king :effect: ill-typed gift_delivered:?rabbit:object->item; action cat_deliver_gifts_to_king :precondition: ill-typed at:?palace:object->location; action cat_deliver_gifts_to_king :precondition: ill-typed at:?puss:object->entity; action cat_deliver_gifts_to_king :precondition: ill-typed contains:?bag:object->item; action cat_deliver_gifts_to_king :precondition: ill-typed contains:?rabbit:object->item; action marry_princess :effect: ill-typed married:?jack:object->entity; action marry_princess :effect: ill-typed married:?princess:object->entity; action marry_princess :precondition: ill-typed at:?jack:object->entity; action marry_princess :precondition: ill-typed married:?jack:object->entity; action marry_princess :precondition: ill-typed married:?princess:object->entity; action open_castle_gates :precondition: ill-typed at:?king:location->entity; action transform_entity :precondition: undeclared symbol -; action transform_entity :precondition: wrong arity at"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at",
+      "right": "at_item",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "predicate",
+      "left": "(at_item ?i - item ?l - location)",
+      "right": "(at_item ?i - item ?l - location)",
+      "result": "(at_item ?i - item ?l - location)",
+      "reason": "The two predicates, `in domain_1` and `in domain_2`, both represent the same situation: an item is located at a specific location. They share the same name and arguments (`?i - item ?l - location`), indicating a direct relationship between an item and a location. The predicates are used as preconditions and/or effects in different operators, but the core meaning is identical. Merging these predicates would simplify the domain description and avoid potential conflicts or ambiguities. The predicates are not containing relationships, so we don't need to consider the rule (3). The predicates are not too general, so we don't need to consider the rule (2).",
+      "similarity": 1.000000238418579,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(wearing ?e - entity ?i - item)",
+      "right": "(wearing ?e - entity ?i - item)",
+      "result": "(wearing ?e - entity ?i - item)",
+      "reason": "The two predicates, `in domain_1: (wearing ?e - entity ?i - item)` and `in domain_2: (wearing ?e - entity ?i - item)`, have the same name and exactly the same structure and arguments. They both represent the same concept: an entity is wearing an item. The predicates are semantically equivalent. Therefore, they can be merged into one predicate. The predicates are not containing relationship, so we don't need to consider the rule (3). The predicates are simple and do not require complex logic, so merging them does not increase the complexity of the PDDL domain.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` in domain_1 and `(has ?e - entity ?i - item)` in domain_2, are identical in name and arguments. They both represent the relationship where an entity `?e` has an item `?i`.  The predicates are used in similar contexts (buying, giving, etc.), suggesting a shared semantic meaning. Merging them would simplify the domain description without introducing ambiguity or complexity. The predicates are not containing relationships, so rule (3) does not apply.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "rema_np__p_at",
+      "right": "at",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "rema_np__p_at",
+      "right": "visited",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "king_marries_stepmother",
+      "reason": "action marry_two_entities :effect: ill-typed married:?e1:object->entity; action marry_two_entities :effect: ill-typed married:?e2:object->entity; action marry_two_entities :precondition: ill-typed at:?e1:object->entity; action marry_two_entities :precondition: ill-typed married:?e1:object->entity; action marry_two_entities :precondition: ill-typed married:?e2:object->entity; action marry_two_entities :precondition: ill-typed snow__p_alive:?e1:object->entity; action marry_two_entities :precondition: ill-typed snow__p_alive:?e2:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "princess_accepts_with_heart",
+      "right": "stepmother_asks_looking_glass_fairest",
+      "reason": "action princess_becomes_fairest :effect: ill-typed fairest:?p:object->entity; action princess_becomes_fairest :precondition: ill-typed has:?g:object->item; action princess_becomes_fairest :precondition: ill-typed has:?p:object->entity; action princess_becomes_fairest :precondition: ill-typed rema_np__p_married:?p:object->entity; action princess_becomes_fairest :precondition: ill-typed snow__p_alive:?p:object->entity; action princess_becomes_fairest :precondition: undeclared symbol ?k"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "king_requests_information_and_gifts",
+      "right": "stepmother_asks_looking_glass_fairest",
+      "reason": "action ask_about_fairest :effect: ill-typed fairest:?k:object->entity; action ask_about_fairest :precondition: ill-typed has:?g:object->item; action ask_about_fairest :precondition: ill-typed has:?k:object->entity; action ask_about_fairest :precondition: ill-typed snow__p_alive:?k:object->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "king_proposes_marriage",
+      "right": "stepmother_asks_looking_glass_fairest",
+      "result": "declare_fairest",
+      "reason": "The action `king_proposes_marriage` proposes marriage between a king and a princess, setting the precondition that both are at the palace. The action `stepmother_asks_looking_glass_fairest` makes the stepmother declare the fairest entity as the fairest. These two actions are semantically different, but they both relate to the state of the fairest entity. The `king_proposes_marriage` action sets the `rema_np__p_married` relation, while `stepmother_asks_looking_glass_fairest` sets the `fairest` relation. Since they both involve determining or establishing the state of the fairest entity, we can merge them into a single action.",
+      "similarity": 0.3084903955459595,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "princess_accepts_with_heart",
+      "right": "stepmother_becomes_envious_of_snow_white",
+      "reason": "action character_reacts :effect: ill-typed envious:?s:object->entity; action character_reacts :precondition: ill-typed fair:?c:object->entity; action character_reacts :precondition: ill-typed fairest:?c:object->entity; action character_reacts :precondition: ill-typed rema_np__p_married:?c:object->entity; action character_reacts :precondition: ill-typed rema_np__p_married:?s:object->entity; action character_reacts :precondition: ill-typed snow__p_alive:?s:object->entity; action character_reacts :precondition: wrong arity with_all_my_heart_spoken"
+    },
+    {
+      "kind": "operator",
+      "left": "run_away_from_palace",
+      "right": "snow_white_flees_into_forest",
+      "result": "flee_to_location",
+      "reason": "The action `run_away_from_palace` in domain_1 and `snow_white_flees_into_forest` in domain_2 both involve an entity moving from one location to another. The `run_away_from_palace` action specifies moving from `back_stairs` to an unspecified `city`, while the `snow_white_flees_into_forest` action specifies moving from an unspecified entity `c` to a location `f`.  Since both actions describe movement, we can merge them. The preconditions and effects of the two actions are different, but the core meaning is the same: an entity moves from one place to another. We can create a new action name that reflects this general movement, such as `flee_to_location`. The new action will have the same parameters as the original actions, namely the entity and the location.",
+      "similarity": 0.4706164598464966,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "arrive_at_marble_palace",
+      "right": "snow_white_finds_dwarfs_cottage",
+      "result": "place_at_location",
+      "reason": "The two actions, `arrive_at_marble_palace` from domain_1 and `snow_white_finds_dwarfs_cottage` from domain_2, have different names and parameters. However, we can analyze their effects. The `arrive_at_marble_palace` action sets the predicate `rema_np__p_at ?p rema_np__c_palace`, which means the entity `?p` is at the palace. The `snow_white_finds_dwarfs_cottage` action sets the predicate `snow__p_at ?c ?cottage`, which means the entity `?c` (snow white) is at the cottage `?cottage`.  These two predicates represent similar concepts: an entity is located at a specific place.  Therefore, we can merge these two actions into a single action that places an entity at a location. The new action name could be `place_at_location`. The preconditions and effects would include both predicates.",
+      "similarity": 0.3712841272354126,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "princess_accepts_with_heart",
+      "right": "stepmother_laces_snow_white_tightly",
+      "reason": "action affect_entity :effect: ill-typed laced:?a:object->item; action affect_entity :effect: ill-typed laced:?e:object->entity; action affect_entity :effect: ill-typed snow__p_alive:?e:object->entity; action affect_entity :effect: ill-typed state:?e:object->entity; action affect_entity :effect: wrong arity with_all_my_heart_spoken; action affect_entity :precondition: ill-typed has:?a:object->item; action affect_entity :precondition: ill-typed has:?e:object->entity; action affect_entity :precondition: ill-typed rema_np__p_married:?e:object->entity; action affect_entity :precondition: ill-typed snow__p_alive:?e:object->entity; action affect_entity :precondition: undeclared symbol ?k; action affect_entity :precondition: wrong arity with_all_my_heart_spoken"
+    },
+    {
+      "kind": "operator",
+      "left": "master_wear_suit",
+      "right": "stepmother_laces_snow_white_tightly",
+      "result": "apply_item_to_entity",
+      "reason": "The two operators, `master_wear_suit` and `stepmother_laces_snow_white_tightly`, both involve applying an item to an entity and changing the entity's state. `master_wear_suit` applies a suit to a jack and makes him wearing the suit, while `stepmother_laces_snow_white_tightly` laces snow_white and makes her in the state 'laced'. Although the specific entities and items are different, the core action is to apply an item to an entity and change its state. Therefore, we can merge these two actions into a single action that applies an item to an entity and changes its state. The new action name could be `apply_item_to_entity`.",
+      "similarity": 0.3045111894607544,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_sapphires_from_robber_chief",
+      "right": "dwarfs_cut_laces_rescue_snow_white",
+      "reason": "action release_constraint :effect: ill-typed laced:?c:object->entity; action release_constraint :effect: ill-typed laced:?i:object->item; action release_constraint :effect: ill-typed state:?c:object->entity; action release_constraint :precondition: ill-typed laced:?c:object->entity; action release_constraint :precondition: ill-typed laced:?i:object->item; action release_constraint :precondition: ill-typed state:?c:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_persuade_master_to_bathe",
+      "right": "stepmother_comb_poison_snow_white",
+      "reason": "action poison_and_kill :effect: ill-typed snow__p_alive:?e:object->entity; action poison_and_kill :precondition: ill-typed has:?e:object->entity; action poison_and_kill :precondition: ill-typed has:?i:object->item; action poison_and_kill :precondition: ill-typed poisoned:?i:object->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "king_requests_information_and_gifts",
+      "right": "prince_discovers_coffin_and_moves_it",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "prince_marries_snow_white",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "give_bag_to_cat",
+      "right": "give_skewer_to_elves",
+      "reason": "action give_item_to_entity :effect: ill-typed has:?item:object->item; action give_item_to_entity :effect: ill-typed has:?target_entity:object->entity; action give_item_to_entity :effect: undeclared symbol ?source_entity; action give_item_to_entity :precondition: ill-typed has:?item:object->item; action give_item_to_entity :precondition: ill-typed has:?target_entity:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_rubies_from_impostor",
+      "right": "receive_feather",
+      "reason": "action receive_item :effect: ill-typed has:?i:object->entity; action receive_item :effect: ill-typed has:?r:object->item; action receive_item :effect: ill-typed has_imagination:?i:object->entity; action receive_item :precondition: ill-typed has:?i:object->entity; action receive_item :precondition: ill-typed has:?r:object->item; action receive_item :precondition: ill-typed rema_np__p_at:?i:object->entity; action receive_item :precondition: ill-typed rema_np__p_at:?l:object->location; action receive_item :precondition: ill-typed snow__p_at:?i:object->entity; action receive_item :precondition: ill-typed snow__p_at:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "receive_feather",
+      "reason": "action receive_item_at_location :effect: ill-typed has:?item:item->entity; action receive_item_at_location :effect: ill-typed has:?location:location->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_sapphires_from_robber_chief",
+      "right": "receive_feather",
+      "reason": "action receive_item :effect: ill-typed has:?e:object->entity; action receive_item :effect: ill-typed has:?i:object->item; action receive_item :effect: ill-typed has_imagination:?e:object->entity; action receive_item :precondition: ill-typed has:?e:object->entity; action receive_item :precondition: ill-typed has:?i:object->item; action receive_item :precondition: ill-typed has_imagination:?e:object->entity; action receive_item :precondition: ill-typed snow__p_at:?e:object->entity; action receive_item :precondition: ill-typed snow__p_at:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_call_for_help",
+      "right": "escape_jail",
+      "reason": "action rescue_from_danger :effect: ill-typed drowning:?victim:object->entity; action rescue_from_danger :effect: ill-typed rescued_by:?rescuer:object->entity; action rescue_from_danger :effect: ill-typed rescued_by:?victim:object->entity; action rescue_from_danger :precondition: ill-typed drowning:?victim:object->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "cat_eat_mouse",
+      "right": "run_in_cage",
+      "result": "cat_eat_captured_mouse",
+      "reason": "The action `run_in_cage` in domain_2 and the action `cat_eat_mouse` in domain_1 are semantically related. The `run_in_cage` action implies that a mouse is captured, and the `cat_eat_mouse` action requires a mouse to be transformed into an ogre.  We can merge these actions into a single action that represents the process of a captured mouse being eaten by a cat. The new action will have the same parameters as `cat_eat_mouse` and will incorporate the precondition of `captured` from domain_2 and the effect of `not (transformed_into ?ogre ?mouse)` from domain_1.",
+      "similarity": 0.34381967782974243,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "queen_becomes_queenhood",
+      "reason": "action queen_marry_master :effect: wrong arity married"
+    },
+    {
+      "kind": "operator",
+      "left": "king_send_groom_fetch_suit",
+      "right": "queen_becomes_queenhood",
+      "result": "queen_ascend_to_throne",
+      "reason": "The action `king_send_groom_fetch_suit` in domain_1 involves a king sending a groom to fetch a suit, which results in the groom having the suit and the suit no longer being at the wardrobe. The action `queen_becomes_queenhood` in domain_2 involves a queen becoming a queen, which is triggered by various conditions like the king tail stirred, snow p alive, etc. and results in the queen being in the state 'is_queen'. Although the actions have different names and involve different entities, they both relate to a change in state where an entity (groom/queen) acquires a certain item/state. The preconditions of `queen_becomes_queenhood` include `king_tail_stirred`, which is also a precondition of `king_send_groom_fetch_suit`. Therefore, we can merge these two actions into a single action that represents the process of a queen becoming a queen, potentially involving the king's actions. We can name this new action as 'queen_ascend_to_throne'.",
+      "similarity": 0.43482691049575806,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `in domain_1` and `in domain_2`, are almost identical in their definition. Both predicates specify that an entity `?e` is located at a location `?l`. The only difference is the source domain they belong to (domain_1 and domain_2 respectively).  Since they have the same structure and express the same concept – an entity being at a location – they can be merged.  The predicates are semantically equivalent, and merging them will simplify the domain description. The predicates are not containing relationship, so we can merge them without increasing complexity.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(dead ?e - entity)",
+      "right": "(escaped ?e - entity)",
+      "result": "(state ?e - entity)",
+      "reason": "The two predicates, `in domain_1` and `in domain_2`, both describe a state of an entity being 'dead' or 'escaped' respectively. The predicates are defined with similar structure: `(predicate_name ?e - entity) ; entity ?e is in the state '...'`.  The core meaning is about the state of an entity. While the states are different ('dead' vs 'escaped'), the predicates are essentially describing the same kind of state information for an entity.  Merging them would simplify the domain and reduce potential complexity in PDDL operators. The predicates are not containing each other, so rule (3) doesn't apply. The predicates are not too general, they are specific to the states 'dead' and 'escaped'.",
+      "similarity": 0.6826448440551758,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(holds ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` and `(holds ?e - entity ?i - item)`, share a very similar structure and semantics. Both predicates express the relationship between an entity and an item, using the same arguments (`?e` for entity and `?i` for item) and the same relation name (`has` and `holds` respectively). The difference lies solely in the relation name, which is a stylistic variation. Since the predicates are semantically equivalent, they can be merged into a single predicate. We can choose to use the more common and descriptive name `has` for the merged predicate.",
+      "similarity": 0.7239291667938232,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "queen_sews_at_window",
+      "right": "claim_queenhood",
+      "result": "queen_becomes_queenhood",
+      "reason": "The action `queen_sews_at_window` in domain_1 involves a queen being alive and at a location, resulting in the queen having a needle. The action `claim_queenhood` in domain_2 involves an entity becoming a queen, based on the conditions `soup_effect_created` or `king_tail_stirred`. These actions don't have a direct equivalent. However, we can interpret `claim_queenhood` as the queen taking on the role of queenhood, which is related to sewing and being at a window. We can merge these actions into a new action that combines the preconditions and effects of both. The new action will involve a queen becoming a queen, potentially through sewing at a window, and the preconditions will be related to the queen's state and the conditions that lead to her becoming a queen.",
+      "similarity": 0.48343029618263245,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "constant",
+      "left": "forest",
+      "right": "forest",
+      "result": "soup__c_forest",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "forest",
+      "right": "forest",
+      "result": "snow__c_forest",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "king",
+      "right": "king",
+      "result": "snow__c_king",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    }
+  ]
+}

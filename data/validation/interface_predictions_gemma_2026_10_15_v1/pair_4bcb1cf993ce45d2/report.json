@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_4bcb1cf993ce45d2",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_4bcb1cf993ce45d2",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicates `owned_by` and `has` describe different relationships between entities. `owned_by` indicates ownership, while `has` indicates possession or containment. The action contexts demonstrate this difference: `owned_by` is used when describing Snow White's possession of items (e.g., `snow_white_eats_vegetables_and_bread_and_drinks_wine`), while `has` is used to describe the relationships between various objects and entities (e.g., `dwarfs_prepare_glass_coffin_for_snow_white`). The use of `has` in the context of the coffin preparation and the queen's actions further highlights this distinction. Therefore, they are complementary, representing distinct ways of describing relationships within the narrative. The argument roles are swapped in the label to reflect this.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SNOW:action:snow_white_eats_vegetables_and_bread_and_drinks_wine",
+        "quote": "(has ?c ?plate)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:snow_white_eats_vegetables_and_bread_and_drinks_wine",
+        "quote": "(has ?c ?mug)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:queen_pricks_finger",
+        "quote": "(has ?q ?needle)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:queen_sews_at_window",
+        "quote": "(has ?q needle)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_asks_looking_glass_fairest",
+        "quote": "(has ?s ?g)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_comb_poison_snow_white",
+        "quote": "(has ?s ?comb)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_4bcb1cf993ce45d2",
+    "non_equivalent_has_argument_map:pair_4bcb1cf993ce45d2"
+  ]
+}

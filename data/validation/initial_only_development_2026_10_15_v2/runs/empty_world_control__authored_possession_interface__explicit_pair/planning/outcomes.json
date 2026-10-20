@@ -1,0 +1,23 @@
+{
+  "status": "no_outcomes",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "difference_basis": "complete_positive_state_symmetric_difference",
+  "grounding_basis": "unique_current_state_projected_bindings",
+  "fluent_budget_basis": "effect_targets_of_visited_applicable_bindings",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 3,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 100000,
+    "max_outcomes": 3
+  },
+  "states": 1,
+  "ground_candidates": 9,
+  "outcomes": [],
+  "ground_fluents_tracked": 0,
+  "expanded_effect_instances": 0,
+  "applicability_checks": 9,
+  "stop_reason": "reachable_space_exhausted"
+}

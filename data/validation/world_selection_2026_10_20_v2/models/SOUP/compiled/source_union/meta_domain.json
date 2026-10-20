@@ -1,0 +1,100 @@
+{
+  "sources": [
+    "SOUP"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 4,
+    "constants": 26,
+    "predicates": 13,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "SOUP": {
+      "anointed": "d000__p_anointed",
+      "at": "d000__p_at",
+      "captured": "d000__p_captured",
+      "escaped": "d000__p_escaped",
+      "has_feeling": "d000__p_has_feeling",
+      "has_imagination": "d000__p_has_imagination",
+      "has_understanding": "d000__p_has_understanding",
+      "holds": "d000__p_holds",
+      "in_cage": "d000__p_in_cage",
+      "is_poet": "d000__p_is_poet",
+      "is_queen": "d000__p_is_queen",
+      "king_tail_stirred": "d000__p_king_tail_stirred",
+      "soup_effect_created": "d000__p_soup_effect_created"
+    }
+  },
+  "constant_maps": {
+    "SOUP": {
+      "ant_queen": "d000__c_ant_queen",
+      "castle": "d000__c_castle",
+      "crape_skewer": "d000__c_crape_skewer",
+      "elf_chief": "d000__c_elf_chief",
+      "first_traveler_mouse": "d000__c_first_traveler_mouse",
+      "forest": "d000__c_forest",
+      "fourth_traveler_mouse": "d000__c_fourth_traveler_mouse",
+      "jailer": "d000__c_jailer",
+      "jailer_granddaughter": "d000__c_jailer_granddaughter",
+      "kitchen": "d000__c_kitchen",
+      "library": "d000__c_library",
+      "maypole": "d000__c_maypole",
+      "mouse_king": "d000__c_mouse_king",
+      "north": "d000__c_north",
+      "oak_dryad": "d000__c_oak_dryad",
+      "old_lady_mouse": "d000__c_old_lady_mouse",
+      "old_owl": "d000__c_old_owl",
+      "phantaesus": "d000__c_phantaesus",
+      "sausage_skewer": "d000__c_sausage_skewer",
+      "sea": "d000__c_sea",
+      "second_traveler_mouse": "d000__c_second_traveler_mouse",
+      "ship": "d000__c_ship",
+      "third_traveler_mouse": "d000__c_third_traveler_mouse",
+      "violet": "d000__c_violet",
+      "watchman": "d000__c_watchman",
+      "young_lady_mouse": "d000__c_young_lady_mouse"
+    }
+  },
+  "action_maps": {
+    "SOUP": {
+      "travel_to": "d000__a_travel_to",
+      "give_skewer_to_elves": "d000__a_give_skewer_to_elves",
+      "receive_anointed_skewer": "d000__a_receive_anointed_skewer",
+      "receive_feather": "d000__a_receive_feather",
+      "learn_wisdom_from_ants": "d000__a_learn_wisdom_from_ants",
+      "read_and_digest_books": "d000__a_read_and_digest_books",
+      "escape_jail": "d000__a_escape_jail",
+      "run_in_cage": "d000__a_run_in_cage",
+      "prepare_soup_by_elf_effect": "d000__a_prepare_soup_by_elf_effect",
+      "prepare_soup_by_poet_imagination": "d000__a_prepare_soup_by_poet_imagination",
+      "prepare_soup_by_king_tail": "d000__a_prepare_soup_by_king_tail",
+      "claim_queenhood": "d000__a_claim_queenhood"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "SOUP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "SOUP_problemfile.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

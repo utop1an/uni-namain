@@ -1,0 +1,26 @@
+{
+  "candidate_id": "pair_cd5c7db4c4c8dd1a",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates 'laced' and 'gold_at' describe different aspects of the scene. 'laced' relates to the state of being bound or fastened (specifically, with laces), while 'gold_at' describes the location of a gold item. They represent distinct properties of objects and their relationships. The 'laced' predicate is used in the context of binding a character to an item, while 'gold_at' is used to specify the location of a gold item. These predicates cannot be interchangeable because they describe fundamentally different states. The action contexts further support this by describing actions related to binding (SNOW) and locating/handling gold (WOE). The 'laced' predicate is used to describe the state of being bound, while 'gold_at' is used to describe the location of an item. These predicates are complementary because they describe different aspects of the scene.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "SNOW:action:dwarfs_cut_laces_rescue_snow_white",
+      "quote": "(laced ?c ?lace)"
+    },
+    {
+      "side": 0,
+      "ref": "SNOW:action:stepmother_laces_snow_white_tightly",
+      "quote": "(laced ?c ?lace)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:take_gold_pot_and_hide",
+      "quote": "(gold_at ?gold ?loc)"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_e3448d00c03b2a57",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_e3448d00c03b2a57",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicates `at` in BIRT and NAUG represent location, but their usage differs significantly. BIRT's `at` is primarily used to describe the spatial position of entities within a narrative context, often tied to actions like approaching, hearing, or returning. The action contexts demonstrate this with preconditions and effects directly related to physical presence and movement. NAUG's `at` is used within a more abstract, rule-based system, primarily to define the location of entities within a courtyard. The action contexts show this with commands like `call_comet_forward` and `give_order`, where location is a constraint for the actions themselves. The core difference lies in the application: BIRT's `at` is narrative-driven, while NAUG's is rule-driven. Because of this difference in application, they are complementary; one describes a scene, the other defines constraints. The parameters are different, `?e` in BIRT is an `entity` while `?e` in NAUG is an `entity`. The type hierarchies are also different, `entity` is an `object` in BIRT, while `entity` is an `object` in NAUG. The action contexts show this difference in application.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "NAUG:action:call_comet_forward",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 1,
+        "ref": "NAUG:action:give_order",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 1,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:approach_beech_tree",
+        "quote": "(at ?n ?t)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:hear_tapping_on_beech",
+        "quote": "(at ?n bench)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(at ?n palace)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_e3448d00c03b2a57"
+  ]
+}

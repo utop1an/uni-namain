@@ -1,0 +1,72 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-19T14:05:25.926146+00:00",
+  "index_sha256": "b7ee6c87b1de93ee2d51a12d905afe7f575e2bf3e5ff543735a2713373b8bb01",
+  "results": {
+    "matched_original_goal_search": {
+      "path": "data/validation/meeting_matched_2026_10_20_v1/report.json",
+      "sha256": "c17675851c2977e9ebf19ab98b751e973a00495568dee2baf8ec3612df280ea8",
+      "scope": "60 new solver calls; 15 original worlds x four representations",
+      "metrics": {
+        "task_count": 60,
+        "status_counts": {
+          "solved": 4,
+          "wall_time_limit": 24,
+          "unsolvable": 32
+        }
+      }
+    },
+    "exploratory_selection_search": {
+      "path": "data/validation/meeting_followups_2026_10_20_v1/selection/solver/report.json",
+      "sha256": "ee4060a1301f45c1c2c2c23d1b5edc3fb2cb31ed2ed8867ea2e8732367ded4fc",
+      "scope": "15 separately frozen exploratory selected-domain solver calls",
+      "metrics": {
+        "task_count": 15,
+        "status_counts": {
+          "solved": 3,
+          "unsolvable": 8,
+          "wall_time_limit": 4
+        }
+      }
+    },
+    "nonzero_interface_prefix_replay": {
+      "path": "data/validation/meeting_followups_2026_10_20_v1/machine_replay/report.json",
+      "sha256": "03e3a05435e8d450b1ac97bb640f47158093cbba457c7e73db5572cb70f23e92",
+      "scope": "New replay of 146 historical source traces; all 234 invocation rows retained; not fresh solver calls",
+      "metrics": {
+        "task_count": 234,
+        "counts": {
+          "PASS": 146,
+          "no_audited_source_trace": 88
+        },
+        "states_compared": 459,
+        "truth_comparisons": 354757,
+        "mismatch_count": 0
+      }
+    },
+    "fresh_original_goal_replay": {
+      "path": "data/validation/meeting_original_goal_replay_2026_10_20_v1/report.json",
+      "sha256": "235242979f8be37810905defd3683116e084dba7a79dfc0e06d59d0c730a7d61",
+      "scope": "All four fresh native plans replayed; 15 original source rows retained",
+      "metrics": {
+        "source_count": 15,
+        "counts": {
+          "PASS": 4,
+          "no_native_original_goal_plan": 11
+        },
+        "original_goal_plans": 4,
+        "valid_translations": 4,
+        "states_compared": 64,
+        "truth_comparisons": 23457,
+        "mismatch_count": 0
+      }
+    }
+  },
+  "excluded_pending": [
+    "Independent semantic labels remain absent",
+    "Narrative quality and independent-domain generalization unmeasured",
+    "Complete fresh UniDomain root/model comparison absent"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "e89bac77086ca897e0b0536704e7ae99f5004ba2dee6e5e1407ddb3b3b37164e"
+}

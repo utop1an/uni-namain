@@ -1,0 +1,36 @@
+{
+  "status": "inspection_complete_not_admitted",
+  "repository": "https://github.com/sgware/sabre-benchmarks",
+  "commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+  "snapshot": "snapshot_manifest.json",
+  "compatibility_report": "compatibility_report.json",
+  "families_inspected": 6,
+  "raw_parser_passes": 0,
+  "raw_union_passes": 0,
+  "external_planning_results": 0,
+  "attribution_source": "candidate_files/report/report.tex",
+  "license_notice": "Repository declares GPL-3.0 for its tool; README says problem copyrights belong to their respective authors. Per-problem reuse status is not asserted by this audit.",
+  "findings": [
+    {
+      "family": "basketball",
+      "observed": "Problem lacks :domain header and has problem-level requirements; domain passed current structural check before problem rejection",
+      "next": "Evaluate an explicit packaging-only adapter with exact diffs; do not change actions or initial facts"
+    },
+    {
+      "family": "hospital",
+      "observed": "Missing :domain header; repeated problem object; domain references level names declared only as problem objects",
+      "next": "Requires explicit modeling/admission decision; do not silently promote constants or deduplicate"
+    },
+    {
+      "families": [
+        "fantasy",
+        "raiders",
+        "space",
+        "western"
+      ],
+      "observed": "Intentionality extensions and/or duplicate declarations; raw inputs unsupported",
+      "next": "Do not strip agents, consent or intentions; a faithful supported semantics or separate baseline would be needed"
+    }
+  ],
+  "evaluation_boundary": "These are newly inspected external candidates, not an admitted independent test set. No plan or semantic accuracy has been measured. The local fifteen sources are not attributed to this collection."
+}

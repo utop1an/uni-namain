@@ -1,0 +1,36 @@
+{
+  "candidate_id": "pair_0cabe7d088bf490a",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'inside' is used in both narratives, but its application differs. In BIRT, 'inside' relates an entity to a location ('entity ?e - location ?l'), indicating the entity's spatial position within a location. In JACK_NP, 'inside' relates an entity to an item ('entity ?e - item ?i'), indicating the entity's spatial position within an item. These represent distinct spatial relationships: one describes being *within* a location, and the other describes being *within* an item. Therefore, they are complementary, as they describe different spatial contexts for the same predicate. The action contexts further support this: BIRT's actions involve navigating through locations and stairs, while JACK_NP's actions involve hiding within objects like kettles and ovens. The use of 'inside' in BIRT refers to being inside a location or corridor, while in JACK_NP, it refers to being inside the kettle or oven. The parameters also highlight this difference: BIRT uses 'location' as the second argument, while JACK_NP uses 'item'.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(inside ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_pellet_from_gnome",
+      "quote": "(inside ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:turn_key_on_beech",
+      "quote": "(inside dryad ?t)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:hide_in_kettle",
+      "quote": "(inside ?j ?kettle)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:hide_in_oven",
+      "quote": "(inside ?j ?oven)"
+    }
+  ]
+}

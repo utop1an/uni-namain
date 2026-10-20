@@ -1,0 +1,70 @@
+{
+  "sources": [
+    "NAUG"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 14,
+    "predicates": 18,
+    "operators": 13
+  },
+  "predicate_maps": {
+    "NAUG": {
+      "arrested": "arrested",
+      "at": "at",
+      "avoid": "avoid",
+      "burned": "burned",
+      "crossed_out": "crossed_out",
+      "delivered": "delivered",
+      "detained": "detained",
+      "gate_open": "gate_open",
+      "has_mission": "has_mission",
+      "left_turn_rule": "left_turn_rule",
+      "near": "near",
+      "on_list": "on_list",
+      "prohibit_speak": "prohibit_speak",
+      "punished": "punished",
+      "rule_violation": "rule_violation",
+      "speaks_to": "speaks_to",
+      "summoned": "summoned",
+      "traveling": "traveling"
+    }
+  },
+  "constant_maps": {
+    "NAUG": {
+      "bungo": "bungo",
+      "chalk": "chalk",
+      "comet_house": "comet_house",
+      "comet_master": "comet_master",
+      "courtyard": "courtyard",
+      "earth": "earth",
+      "gate": "gate",
+      "long_tail_45": "long_tail_45",
+      "meteor": "meteor",
+      "meteor_keeper": "meteor_keeper",
+      "no1_express": "no1_express",
+      "short_tail_73": "short_tail_73",
+      "slate": "slate",
+      "sun": "sun"
+    }
+  },
+  "action_maps": {
+    "NAUG": {
+      "give_order": "give_order",
+      "start_travel": "start_travel",
+      "avoid_body": "avoid_body",
+      "turn_left_on_meeting": "turn_left_on_meeting",
+      "prohibit_speaking_to_meteor": "prohibit_speaking_to_meteor",
+      "speak_to_meteor": "speak_to_meteor",
+      "approach_sun": "approach_sun",
+      "burn_up": "burn_up",
+      "cross_out_comet": "cross_out_comet",
+      "call_comet_forward": "call_comet_forward",
+      "arrest_meteor": "arrest_meteor",
+      "deliver_meteor_to_bungo": "deliver_meteor_to_bungo",
+      "punish_meteor": "punish_meteor"
+    }
+  },
+  "decisions": []
+}

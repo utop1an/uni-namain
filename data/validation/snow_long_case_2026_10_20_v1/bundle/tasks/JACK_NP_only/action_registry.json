@@ -1,0 +1,399 @@
+{
+  "d001__a_sell_cow_for_beans": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "sell_cow_for_beans",
+    "additional_context": []
+  },
+  "d001__a_plant_beans": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "plant_beans",
+    "additional_context": []
+  },
+  "d001__a_grow_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "grow_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_climb_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "climb_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_ask_giant_wife_for_breakfast": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "ask_giant_wife_for_breakfast",
+    "additional_context": []
+  },
+  "d001__a_hide_in_kettle": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "hide_in_kettle",
+    "additional_context": []
+  },
+  "d001__a_steal_gold_bags": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_gold_bags",
+    "additional_context": []
+  },
+  "d001__a_return_down_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "return_down_beanstalk",
+    "additional_context": []
+  },
+  "d001__a_hide_in_oven": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "hide_in_oven",
+    "additional_context": []
+  },
+  "d001__a_steal_hen": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_hen",
+    "additional_context": []
+  },
+  "d001__a_steal_harp": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "steal_harp",
+    "additional_context": []
+  },
+  "d001__a_cut_beanstalk": {
+    "kind": "source",
+    "source": "JACK_NP",
+    "original_action": "cut_beanstalk",
+    "additional_context": {
+      "preconditions": [
+        [
+          "scene_at",
+          "?mother",
+          "d001__c_beanstalk"
+        ],
+        [
+          "d001__p_has",
+          "?mother",
+          "?axe"
+        ]
+      ],
+      "effects": [
+        [
+          "scene_at",
+          "?giant",
+          "d001__c_cottage"
+        ],
+        [
+          "not",
+          [
+            "scene_at",
+            "?giant",
+            "d001__c_beanstalk"
+          ]
+        ],
+        [
+          "d001__p_at",
+          "?giant",
+          "d001__c_cottage"
+        ],
+        [
+          "not",
+          [
+            "d001__p_at",
+            "?giant",
+            "d001__c_beanstalk"
+          ]
+        ]
+      ],
+      "before": [
+        ":action",
+        "d001__a_cut_beanstalk",
+        ":parameters",
+        [
+          "?giant",
+          "-",
+          "object",
+          "?mother",
+          "-",
+          "object",
+          "?axe",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "typeguard__d001__t_entity",
+              "?giant"
+            ],
+            [
+              "typeguard__d001__t_entity",
+              "?mother"
+            ],
+            [
+              "typeguard__d001__t_item",
+              "?axe"
+            ],
+            [
+              "and",
+              [
+                "d001__p_intact",
+                "d001__c_beanstalk"
+              ],
+              [
+                "d001__p_climbing_down",
+                "?giant"
+              ]
+            ]
+          ],
+          [
+            "case_role_giant",
+            "?giant"
+          ],
+          [
+            "case_role_cutter",
+            "?mother"
+          ],
+          [
+            "case_role_axe",
+            "?axe"
+          ],
+          [
+            "d002__p_alive",
+            "?mother"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "shared__p_death",
+                "?giant"
+              ],
+              [
+                "not",
+                [
+                  "d002__p_alive",
+                  "?giant"
+                ]
+              ]
+            ],
+            [
+              "not",
+              [
+                "d001__p_intact",
+                "d001__c_beanstalk"
+              ]
+            ]
+          ],
+          [
+            "not",
+            [
+              "d001__p_climbing_down",
+              "?giant"
+            ]
+          ]
+        ]
+      ],
+      "after": [
+        ":action",
+        "d001__a_cut_beanstalk",
+        ":parameters",
+        [
+          "?giant",
+          "-",
+          "object",
+          "?mother",
+          "-",
+          "object",
+          "?axe",
+          "-",
+          "object"
+        ],
+        ":precondition",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "typeguard__d001__t_entity",
+                "?giant"
+              ],
+              [
+                "typeguard__d001__t_entity",
+                "?mother"
+              ],
+              [
+                "typeguard__d001__t_item",
+                "?axe"
+              ],
+              [
+                "and",
+                [
+                  "d001__p_intact",
+                  "d001__c_beanstalk"
+                ],
+                [
+                  "d001__p_climbing_down",
+                  "?giant"
+                ]
+              ]
+            ],
+            [
+              "case_role_giant",
+              "?giant"
+            ],
+            [
+              "case_role_cutter",
+              "?mother"
+            ],
+            [
+              "case_role_axe",
+              "?axe"
+            ],
+            [
+              "d002__p_alive",
+              "?mother"
+            ]
+          ],
+          [
+            "scene_at",
+            "?mother",
+            "d001__c_beanstalk"
+          ],
+          [
+            "d001__p_has",
+            "?mother",
+            "?axe"
+          ]
+        ],
+        ":effect",
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "and",
+                [
+                  "shared__p_death",
+                  "?giant"
+                ],
+                [
+                  "not",
+                  [
+                    "d002__p_alive",
+                    "?giant"
+                  ]
+                ]
+              ],
+              [
+                "not",
+                [
+                  "d001__p_intact",
+                  "d001__c_beanstalk"
+                ]
+              ]
+            ],
+            [
+              "not",
+              [
+                "d001__p_climbing_down",
+                "?giant"
+              ]
+            ]
+          ],
+          [
+            "scene_at",
+            "?giant",
+            "d001__c_cottage"
+          ],
+          [
+            "not",
+            [
+              "scene_at",
+              "?giant",
+              "d001__c_beanstalk"
+            ]
+          ],
+          [
+            "d001__p_at",
+            "?giant",
+            "d001__c_cottage"
+          ],
+          [
+            "not",
+            [
+              "d001__p_at",
+              "?giant",
+              "d001__c_beanstalk"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "scene__enter_hut": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "enter_hut",
+    "meaning": "Two companions enter the hut before collecting objects."
+  },
+  "scene__hand_comb_to_witch": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "hand_comb_to_witch",
+    "meaning": "Transfer the unique comb from rescuer to witch."
+  },
+  "scene__take_comb_back": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_comb_back",
+    "meaning": "Recover the poisoned comb before the witch departs."
+  },
+  "scene__take_axe": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "take_axe",
+    "meaning": "Take the axe from the workshop rack."
+  },
+  "scene__approach_beanstalk": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "approach_beanstalk",
+    "meaning": "Bring the axe to the beanstalk."
+  },
+  "scene__begin_descent": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "begin_descent",
+    "meaning": "After handing back the comb, the giant witch leaves the hut and starts descent."
+  },
+  "scene__reach_fallen": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "reach_fallen",
+    "meaning": "Carry the comb to the fallen Snow White."
+  },
+  "scene__apply_comb": {
+    "kind": "new_scenario_rule",
+    "source": "SCENE",
+    "original_action": "apply_comb",
+    "meaning": "Prepare comb-based revival by applying the held comb to the fallen target."
+  }
+}

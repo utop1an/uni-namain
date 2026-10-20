@@ -1,0 +1,19 @@
+{
+  "domain_sha256": "82627aefd39aaeb10d859b7d62ab01e9443793bc374c2033a8b1d2806bf39a80",
+  "scope": "Independent parser namespace-policy diagnostic only; no PDDL mutation, semantic repair or preservation claim",
+  "default_error_used_name": true,
+  "True": {
+    "status": "ERROR",
+    "reason": "UPProblemDefinitionError: Name entity already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+  },
+  "False": {
+    "status": "PARSED",
+    "warnings": [
+      "Name entity already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled.",
+      "Name location already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled."
+    ],
+    "actions": 109,
+    "fluents": 102
+  },
+  "domain_unchanged": true
+}

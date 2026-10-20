@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_d606f96c0a50355a",
+  "label": "complementary",
+  "right_from_left": [
+    2,
+    1
+  ],
+  "rationale": "The predicate `princess_rescued` in the `FOUR_NP` narrative describes a state where a princess is rescued, while the predicate `asleep` in the `JACK_NP` narrative describes a state where a giant is asleep. The `princess_rescued` predicate indicates a positive event (rescue), whereas the `asleep` predicate describes a negative state (lack of activity). These predicates describe different aspects of the scene and do not represent interchangeable states. The `FOUR_NP` narrative describes a rescue event, while the `JACK_NP` narrative describes a state of the giant. The action contexts for `FOUR_NP` involve the princess being rescued, and the action contexts for `JACK_NP` involve the giant being asleep. These are distinct events and states. The `FOUR_NP` narrative focuses on the princess, while the `JACK_NP` narrative focuses on the giant. The `FOUR_NP` narrative describes a rescue, while the `JACK_NP` narrative describes a state of the giant. The two predicates describe different aspects of the scene and do not represent interchangeable states. The `FOUR_NP` narrative describes a rescue event, and the `JACK_NP` narrative describes a state of the giant. These are distinct events and states. The `FOUR_NP` narrative describes a rescue, while the `JACK_NP` narrative describes a state of the giant. The two predicates describe different aspects of the scene and do not represent interchangeable states. The `FOUR_NP` narrative describes a rescue event, and the `JACK_NP` narrative describes a state of the giant. These are distinct events and states. The `FOUR_NP` narrative describes a rescue, while the `JACK_NP` narrative describes a state of the giant. The two predicates describe different aspects of the scene and do not represent interchangeable states. The `FOUR_NP` narrative describes a rescue event, and the `JACK_NP` narrative describes a state of the giant. These are distinct events and states.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:steal_harp",
+      "quote": "(asleep ?giant)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:receive_reward",
+      "quote": "(princess_rescued ?e)"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+(define (problem source_a_problem) (:domain narrative_union) (:objects d000__o_b - d000__t_person) (:init) (:goal (and (forall (?p - d000__t_person) (d000__p_done ?p)) (not (d000__p_rel d000__o_b d000__c_a)))))

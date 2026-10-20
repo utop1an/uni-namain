@@ -1,0 +1,105 @@
+{
+  "status": "incomplete",
+  "planner_called": true,
+  "method": "explicit_alignment_with_source_type_guards",
+  "scope": "Execution baseline; no inferred semantic equivalences or narrative-quality claim",
+  "mode": "initial_goal",
+  "semantic_alignment_status": "assumptions_not_independently_verified",
+  "search": {
+    "engine": "pyperplan",
+    "search": "gbf",
+    "heuristic": "hff",
+    "versions": {
+      "unified-planning": "1.3.0",
+      "up-pyperplan": "1.1.0",
+      "pyperplan": "2.1"
+    },
+    "budget_policy": "external_process_wall_clock_only",
+    "compilations": [],
+    "engine_status": "UNSOLVABLE_INCOMPLETELY",
+    "status": "incomplete"
+  },
+  "domain_unchanged": true,
+  "selection": {
+    "policy": "goal_dependencies",
+    "selected": [
+      "ACCO",
+      "BIRT"
+    ],
+    "excluded": [
+      "BUFF",
+      "CHIC_NP",
+      "FOUR_NP",
+      "HANS_NP",
+      "JACK_NP",
+      "MUSI",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "SNOW",
+      "SOUP",
+      "WOE"
+    ],
+    "source_reasons": {
+      "ACCO": [
+        "goal_dependency_producer",
+        "preserve_query_vocabulary_and_world"
+      ],
+      "BIRT": [
+        "preserve_query_vocabulary_and_world"
+      ],
+      "BUFF": [
+        "outside_query_and_dependency_closure"
+      ],
+      "CHIC_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "FOUR_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "HANS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "JACK_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "MUSI": [
+        "outside_query_and_dependency_closure"
+      ],
+      "NAUG": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PIGS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PUSS": [
+        "outside_query_and_dependency_closure"
+      ],
+      "REMA_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SNOW": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SOUP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "WOE": [
+        "outside_query_and_dependency_closure"
+      ]
+    },
+    "relevant_action_references_for_explanation_only": [
+      "ACCO:arrange_exhibition",
+      "ACCO:perform_show",
+      "ACCO:receive_orders_from_nobility",
+      "ACCO:return_kettle_to_temple",
+      "ACCO:sell_kettle_to_tinker",
+      "ACCO:show_kettle_to_friend"
+    ],
+    "action_subset_selection": false,
+    "optimal_or_minimal_subset_claim": false,
+    "scope": "Unsigned predicate dependency over-approximation; no reachability or semantic-equivalence claim",
+    "omitted_alignment_groups": []
+  }
+}

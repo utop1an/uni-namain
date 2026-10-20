@@ -1,0 +1,249 @@
+{
+  "sources": [
+    "JACK_NP",
+    "MUSI"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 45,
+    "predicates": 34,
+    "operators": 34
+  },
+  "predicate_maps": {
+    "JACK_NP": {
+      "asleep": "asleep",
+      "at": "at",
+      "at_item": "at_item",
+      "beanstalk_grown": "beanstalk_grown",
+      "climbing_down": "climbing_down",
+      "dead": "dead",
+      "distracted": "distracted",
+      "empty": "empty",
+      "has": "has",
+      "has_breakfast": "has_breakfast",
+      "inside": "inside",
+      "intact": "intact",
+      "offers": "offers",
+      "on": "on",
+      "planted": "planted"
+    },
+    "MUSI": {
+      "agreed": "agreed",
+      "at": "at",
+      "ate_all": "ate_all",
+      "attacked": "attacked",
+      "attempt_light": "attempt_light",
+      "bite": "bite",
+      "crowed": "crowed",
+      "fled": "fled",
+      "invited": "invited",
+      "kick": "kick",
+      "light_off": "light_off",
+      "light_on": "light_on",
+      "making_noise": "making_noise",
+      "moving_towards": "moving_towards",
+      "resting": "resting",
+      "retreated": "retreated",
+      "sees_light": "sees_light",
+      "sleeping_at": "sleeping_at",
+      "stacked_on": "stacked_on",
+      "window_shattered": "window_shattered"
+    }
+  },
+  "constant_maps": {
+    "JACK_NP": {
+      "axe": "axe",
+      "beanstalk": "beanstalk",
+      "brown_hen": "brown_hen",
+      "butcher": "butcher",
+      "castle_road": "castle_road",
+      "cottage": "cottage",
+      "fairy_maiden": "fairy_maiden",
+      "garden": "garden",
+      "giant": "giant",
+      "giant_castle": "giant_castle",
+      "giant_dog": "giant_dog",
+      "giant_wife": "giant_wife",
+      "gold_bag_1": "gold_bag_1",
+      "gold_bag_2": "gold_bag_2",
+      "golden_harp": "golden_harp",
+      "jack": "jack",
+      "jack_mother": "jack_mother",
+      "kettle": "kettle",
+      "magic_beans": "magic_beans",
+      "market": "market",
+      "milky_white": "milky_white",
+      "oak_tree_club": "oak_tree_club",
+      "oven": "oven",
+      "window": "window"
+    },
+    "MUSI": {
+      "ass": "ass",
+      "beam": "beam",
+      "bremen": "bremen",
+      "captain": "captain",
+      "cat": "cat",
+      "cock": "cock",
+      "drinks": "drinks",
+      "forest": "forest",
+      "hearth": "hearth",
+      "hound": "hound",
+      "kettledrums": "kettledrums",
+      "lute": "lute",
+      "man": "man",
+      "meat": "meat",
+      "messenger": "messenger",
+      "road_to_bremen": "road_to_bremen",
+      "robber": "robber",
+      "robbers_cottage": "robbers_cottage",
+      "straw": "straw",
+      "table": "table",
+      "window": "musi__c_window"
+    }
+  },
+  "action_maps": {
+    "JACK_NP": {
+      "sell_cow_for_beans": "sell_cow_for_beans",
+      "plant_beans": "plant_beans",
+      "grow_beanstalk": "grow_beanstalk",
+      "climb_beanstalk": "approach_location",
+      "ask_giant_wife_for_breakfast": "ask_giant_wife_for_breakfast",
+      "hide_in_kettle": "hide_in_kettle",
+      "steal_gold_bags": "steal_gold_bags",
+      "return_down_beanstalk": "return_down_beanstalk",
+      "hide_in_oven": "retreat_to_location",
+      "steal_hen": "steal_hen",
+      "steal_harp": "steal_harp",
+      "cut_beanstalk": "cut_beanstalk"
+    },
+    "MUSI": {
+      "run_away": "run_away",
+      "invite_hound": "invite_hound",
+      "hound_agrees": "hound_agrees",
+      "invite_cat": "invite_cat",
+      "cat_agrees": "cat_agrees",
+      "invite_cock": "invite_cock",
+      "cock_agrees": "cock_agrees",
+      "travel_together": "travel_together",
+      "rest_in_forest": "rest_in_forest",
+      "spot_light": "spot_light",
+      "approach_cottage": "approach_location",
+      "plan_scaring_robbers": "plan_scaring_robbers",
+      "stack_animals": "stack_animals",
+      "signal_and_make_noise": "signal_and_make_noise",
+      "robbers_flee": "robbers_flee",
+      "eat_feast": "eat_feast",
+      "extinguish_light": "extinguish_light",
+      "choose_sleep_spot": "choose_sleep_spot",
+      "messenger_attempt_light": "messenger_attempt_light",
+      "cat_attack_messenger": "cat_attack_messenger",
+      "dog_bite_messenger": "dog_bite_messenger",
+      "donkey_kick_messenger": "donkey_kick_messenger",
+      "cock_crow_alert": "cock_crow_alert",
+      "robbers_retreat": "retreat_to_location"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "predicate",
+      "left": "(at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `(at ?e - entity ?l - location)` in domain_1 and `(at ?e - entity ?l - location)` in domain_2, are identical in name and definition. They both represent the same concept: an entity is located at a specific location. There are no semantic differences or containment relationships that would prevent their merging. The predicates are used in similar operators (sell_cow_for_beans, climb_beanstalk, etc.), indicating a shared underlying concept. Therefore, they can be safely merged into a single predicate.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "dead",
+      "right": "retreated",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_down_beanstalk",
+      "right": "run_away",
+      "reason": "action move_to: malformed fields"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "hide_in_kettle",
+      "right": "spot_light",
+      "reason": "action observe_in_location :effect: ill-typed inside:?l:location->item"
+    },
+    {
+      "kind": "operator",
+      "left": "climb_beanstalk",
+      "right": "approach_cottage",
+      "result": "approach_location",
+      "reason": "The first action `climb_beanstalk` moves an entity up a beanstalk, and the second action `approach_cottage` moves entities towards a cottage. These actions have different entities and locations involved, but both involve moving an entity to a new location. We can merge these actions into a single action that moves an entity towards a specific location. The new action name can be `approach_location`. The preconditions and effects will be a combination of the two actions.",
+      "similarity": 0.5328634977340698,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "steal_hen",
+      "right": "robbers_flee",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "steal_harp",
+      "right": "robbers_flee",
+      "reason": "action take_item_to_location :effect: ill-typed has:?item:object->item; action take_item_to_location :effect: ill-typed has:?trigger:object->entity; action take_item_to_location :effect: ill-typed on:?item:object->item; action take_item_to_location :effect: ill-typed on:?location:object->location; action take_item_to_location :precondition: ill-typed asleep:?trigger:object->entity; action take_item_to_location :precondition: ill-typed on:?item:object->item; action take_item_to_location :precondition: ill-typed on:?location:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "hide_in_oven",
+      "right": "robbers_flee",
+      "reason": "action flee_to_location :effect: undeclared symbol ?cottage; action flee_to_location :precondition: undeclared symbol ?cottage"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cut_beanstalk",
+      "right": "robbers_flee",
+      "reason": "action flee_from_location :precondition: undeclared predicate event"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "plant_beans",
+      "right": "robbers_flee",
+      "reason": "action flee_after_disaster: invalid parameter ?d:disruption"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "ask_giant_wife_for_breakfast",
+      "right": "eat_feast",
+      "reason": "Expected one PDDL root expression, got 3"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "hide_in_oven",
+      "right": "extinguish_light",
+      "reason": "Expected one PDDL root expression, got 3"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_down_beanstalk",
+      "right": "extinguish_light",
+      "reason": "action turn_off_light :effect: ill-typed at:?c:location->entity; action turn_off_light :precondition: ill-typed at:?c:location->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "hide_in_oven",
+      "right": "robbers_retreat",
+      "result": "retreat_to_location",
+      "reason": "The action `hide_in_oven` in domain_1 and the action `robbers_retreat` in domain_2 both involve changing the state of an entity from one location to another, effectively removing the entity from the original location. `hide_in_oven` hides a giant castle in an oven, while `robbers_retreat` retreats a robber from a cottage. Although the specific entities and locations are different, the core action is to move an entity from one place to another and negate the original presence. Therefore, we can merge these two actions into a single action that represents a general retreat or hiding action.",
+      "similarity": 0.38006699085235596,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "constant",
+      "left": "window",
+      "right": "window",
+      "result": "musi__c_window",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    }
+  ]
+}

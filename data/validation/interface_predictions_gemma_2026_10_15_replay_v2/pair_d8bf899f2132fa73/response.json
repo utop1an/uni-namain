@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_d8bf899f2132fa73",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `at` in `PIGS_NP` describes the spatial location of an entity, while `promised_to_serve` in `PUSS` describes a relationship between two entities (servant and master). The `at` predicate is about physical location, whereas `promised_to_serve` is about a service relationship. The two predicates represent distinct concepts. The action contexts for `at` are focused on describing the location of entities within a scene, while the action context for `promised_to_serve` describes a relationship established through an action. The arguments `?e` and `?l` in `at` represent an entity and a location respectively, while `?servant` and `?master` represent entities in `promised_to_serve`. The different action contexts further highlight the distinct meanings of the predicates. The `at` predicate is used to describe the spatial position of an entity, whereas `promised_to_serve` describes a service relationship. The use of `at` in `PIGS_NP` is focused on describing the location of entities, while the use of `promised_to_serve` in `PUSS` is focused on describing a relationship between two entities. The two predicates are complementary because they describe different aspects of the world. The `at` predicate is about physical location, while the `promised_to_serve` predicate is about a service relationship. The two predicates are not interchangeable because they describe different concepts. The arguments `?e` and `?l` in `at` represent an entity and a location respectively, while `?servant` and `?master` represent entities in `promised_to_serve`.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(at ?p town_fair)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:send_sons_on_journey",
+      "quote": "(at ?m pig_home)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:wolf_eats_pig",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:wolf_knocks_and_requests_entry",
+      "quote": "(at ?w ?h)"
+    }
+  ]
+}

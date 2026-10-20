@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_d4f67b9f31fa4d81",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_d4f67b9f31fa4d81",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The `kissed_by` predicate in BIRT describes a relationship of being kissed by another entity, while the `at` predicate in SNOW describes the location of an entity. These predicates represent fundamentally different aspects of the story: one describes an interaction (kissing), and the other describes a spatial relationship. The `kissed_by` predicate requires a subject and an object, while the `at` predicate requires an entity and a location. They cannot be used interchangeably because they capture distinct information. The action contexts further highlight this difference: `kissed_by` describes an event, while `at` describes a state. The `receive_queen_kiss` action explicitly uses `kissed_by`, and the `at` predicates are used to describe the location of entities. Therefore, they are complementary, not equivalent.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(kissed_by ?n ?q)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:queen_sews_at_window",
+        "quote": "(at ?q ?l)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:snow_white_finds_dwarfs_cottage",
+        "quote": "(at ?c ?cottage)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:snow_white_flees_into_forest",
+        "quote": "(at ?c ?f)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_d4f67b9f31fa4d81"
+  ]
+}

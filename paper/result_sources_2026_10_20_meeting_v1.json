@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "reports": {
+    "matched_original_goal_search": {
+      "path": "data/validation/meeting_matched_2026_10_20_v1/report.json",
+      "sha256": "c17675851c2977e9ebf19ab98b751e973a00495568dee2baf8ec3612df280ea8",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged",
+        "matched_protocol_unchanged",
+        "construction_implementation_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "60 new solver calls; 15 original worlds x four representations"
+    },
+    "exploratory_selection_search": {
+      "path": "data/validation/meeting_followups_2026_10_20_v1/selection/solver/report.json",
+      "sha256": "ee4060a1301f45c1c2c2c23d1b5edc3fb2cb31ed2ed8867ea2e8732367ded4fc",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "15 separately frozen exploratory selected-domain solver calls"
+    },
+    "nonzero_interface_prefix_replay": {
+      "path": "data/validation/meeting_followups_2026_10_20_v1/machine_replay/report.json",
+      "sha256": "03e3a05435e8d450b1ac97bb640f47158093cbba457c7e73db5572cb70f23e92",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "counts",
+      "required_true": [
+        "hashes_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "counts",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "New replay of 146 historical source traces; all 234 invocation rows retained; not fresh solver calls"
+    },
+    "fresh_original_goal_replay": {
+      "path": "data/validation/meeting_original_goal_replay_2026_10_20_v1/report.json",
+      "sha256": "235242979f8be37810905defd3683116e084dba7a79dfc0e06d59d0c730a7d61",
+      "terminal_status": "complete",
+      "denominator": "source_count",
+      "row_id": "source",
+      "count_field": "counts",
+      "required_true": [
+        "hashes_unchanged"
+      ],
+      "metrics": [
+        "source_count",
+        "counts",
+        "original_goal_plans",
+        "valid_translations",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "All four fresh native plans replayed; 15 original source rows retained"
+    }
+  },
+  "excluded_pending": [
+    "Independent semantic labels remain absent",
+    "Narrative quality and independent-domain generalization unmeasured",
+    "Complete fresh UniDomain root/model comparison absent"
+  ]
+}

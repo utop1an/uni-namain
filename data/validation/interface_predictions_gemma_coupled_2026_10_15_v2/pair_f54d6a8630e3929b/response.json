@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_f54d6a8630e3929b",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate `entity_at` appears in both sources with the same signature and purpose: to specify the location of an entity. The arguments `?e` and `?l` represent the entity and location respectively. The action contexts demonstrate this usage consistently. The `entity_at` predicate is used to define preconditions and effects related to spatial relationships. The different action names (e.g., `count_eggs`, `fetch_eggs`) simply provide context for *why* an entity is located at a specific location, but the core predicate remains the same. The arguments are interchangeable, representing the same spatial relationship. The use of `right_from_left[0]` and `right_from_left[1]` indicates that the first argument is the entity and the second is the location, which is the standard interpretation of `entity_at`. The fact that the action contexts are different does not change the equivalence of the predicate, as the predicate itself is the same.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:count_eggs",
+      "quote": "(entity_at ?a tree)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:fetch_eggs",
+      "quote": "(entity_at ?t tree)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:learn_astronomer_trade",
+      "quote": "(entity_at ?b cross_way)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:learn_hunter_trade",
+      "quote": "(entity_at ?b cross_way)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:learn_tailor_trade",
+      "quote": "(entity_at ?b cross_way)"
+    },
+    {
+      "side": 0,
+      "ref": "FOUR_NP:action:learn_thief_trade",
+      "quote": "(entity_at ?b cross_way)"
+    }
+  ]
+}

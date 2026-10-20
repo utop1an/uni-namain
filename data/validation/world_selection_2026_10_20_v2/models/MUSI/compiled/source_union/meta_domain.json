@@ -1,0 +1,114 @@
+{
+  "sources": [
+    "MUSI"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 4,
+    "constants": 21,
+    "predicates": 20,
+    "operators": 24
+  },
+  "predicate_maps": {
+    "MUSI": {
+      "agreed": "d000__p_agreed",
+      "at": "d000__p_at",
+      "ate_all": "d000__p_ate_all",
+      "attacked": "d000__p_attacked",
+      "attempt_light": "d000__p_attempt_light",
+      "bite": "d000__p_bite",
+      "crowed": "d000__p_crowed",
+      "fled": "d000__p_fled",
+      "invited": "d000__p_invited",
+      "kick": "d000__p_kick",
+      "light_off": "d000__p_light_off",
+      "light_on": "d000__p_light_on",
+      "making_noise": "d000__p_making_noise",
+      "moving_towards": "d000__p_moving_towards",
+      "resting": "d000__p_resting",
+      "retreated": "d000__p_retreated",
+      "sees_light": "d000__p_sees_light",
+      "sleeping_at": "d000__p_sleeping_at",
+      "stacked_on": "d000__p_stacked_on",
+      "window_shattered": "d000__p_window_shattered"
+    }
+  },
+  "constant_maps": {
+    "MUSI": {
+      "ass": "d000__c_ass",
+      "beam": "d000__c_beam",
+      "bremen": "d000__c_bremen",
+      "captain": "d000__c_captain",
+      "cat": "d000__c_cat",
+      "cock": "d000__c_cock",
+      "drinks": "d000__c_drinks",
+      "forest": "d000__c_forest",
+      "hearth": "d000__c_hearth",
+      "hound": "d000__c_hound",
+      "kettledrums": "d000__c_kettledrums",
+      "lute": "d000__c_lute",
+      "man": "d000__c_man",
+      "meat": "d000__c_meat",
+      "messenger": "d000__c_messenger",
+      "road_to_bremen": "d000__c_road_to_bremen",
+      "robber": "d000__c_robber",
+      "robbers_cottage": "d000__c_robbers_cottage",
+      "straw": "d000__c_straw",
+      "table": "d000__c_table",
+      "window": "d000__c_window"
+    }
+  },
+  "action_maps": {
+    "MUSI": {
+      "run_away": "d000__a_run_away",
+      "invite_hound": "d000__a_invite_hound",
+      "hound_agrees": "d000__a_hound_agrees",
+      "invite_cat": "d000__a_invite_cat",
+      "cat_agrees": "d000__a_cat_agrees",
+      "invite_cock": "d000__a_invite_cock",
+      "cock_agrees": "d000__a_cock_agrees",
+      "travel_together": "d000__a_travel_together",
+      "rest_in_forest": "d000__a_rest_in_forest",
+      "spot_light": "d000__a_spot_light",
+      "approach_cottage": "d000__a_approach_cottage",
+      "plan_scaring_robbers": "d000__a_plan_scaring_robbers",
+      "stack_animals": "d000__a_stack_animals",
+      "signal_and_make_noise": "d000__a_signal_and_make_noise",
+      "robbers_flee": "d000__a_robbers_flee",
+      "eat_feast": "d000__a_eat_feast",
+      "extinguish_light": "d000__a_extinguish_light",
+      "choose_sleep_spot": "d000__a_choose_sleep_spot",
+      "messenger_attempt_light": "d000__a_messenger_attempt_light",
+      "cat_attack_messenger": "d000__a_cat_attack_messenger",
+      "dog_bite_messenger": "d000__a_dog_bite_messenger",
+      "donkey_kick_messenger": "d000__a_donkey_kick_messenger",
+      "cock_crow_alert": "d000__a_cock_crow_alert",
+      "robbers_retreat": "d000__a_robbers_retreat"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "MUSI": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "MUSI_problemfile.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

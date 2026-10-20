@@ -1,0 +1,38 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [
+    {
+      "engine": "up_quantifiers_remover",
+      "actions": 7,
+      "fluents": 9
+    },
+    {
+      "engine": "up_disjunctive_conditions_remover",
+      "actions": 16,
+      "fluents": 9
+    },
+    {
+      "engine": "up_negative_conditions_remover",
+      "actions": 16,
+      "fluents": 17
+    }
+  ],
+  "engine_status": "SOLVED_SATISFICING",
+  "status": "solved",
+  "length": 36,
+  "plan": "SequentialPlan:\n    meet_character(chicken-licken, drake-lake, wood)\n    meet_character(goose-loose, cock-lock, wood)\n    meet_character(duck-luck, gander-lander, wood)\n    meet_character(turkey-lurkey, hen-len, wood)\n    inform_about_sky_fall(chicken-licken, drake-lake)\n    inform_about_sky_fall(drake-lake, chicken-licken)\n    inform_about_sky_fall(turkey-lurkey, hen-len)\n    inform_about_sky_fall(goose-loose, cock-lock)\n    inform_about_sky_fall(hen-len, turkey-lurkey)\n    inform_about_sky_fall(cock-lock, goose-loose)\n    inform_about_sky_fall(duck-luck, gander-lander)\n    inform_about_sky_fall(gander-lander, duck-luck)\n    decide_to_tell_king(drake-lake)\n    decide_to_tell_king(goose-loose)\n    decide_to_tell_king(chicken-licken)\n    decide_to_tell_king(gander-lander)\n    decide_to_tell_king(duck-luck)\n    decide_to_tell_king(cock-lock)\n    decide_to_tell_king(turkey-lurkey)\n    decide_to_tell_king(hen-len)\n    follow_fox(chicken-licken)\n    follow_fox(drake-lake)\n    follow_fox(turkey-lurkey)\n    follow_fox(goose-loose)\n    follow_fox(hen-len)\n    follow_fox(cock-lock)\n    follow_fox(duck-luck)\n    follow_fox(gander-lander)\n    be_eaten_by_fox(chicken-licken, wood)\n    be_eaten_by_fox(drake-lake, wood)\n    be_eaten_by_fox(turkey-lurkey, wood)\n    be_eaten_by_fox(goose-loose, wood)\n    be_eaten_by_fox(hen-len, wood)\n    be_eaten_by_fox(cock-lock, wood)\n    be_eaten_by_fox(duck-luck, wood)\n    be_eaten_by_fox(gander-lander, wood)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

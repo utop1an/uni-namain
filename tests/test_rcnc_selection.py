@@ -6,8 +6,8 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from rcnc.planning import GroundAction, solve, run_query
-from rcnc.selection import relevant_actions, resolve_sources
+from archive.rcnc.planning import GroundAction, solve, run_query
+from archive.rcnc.selection import relevant_actions, resolve_sources
 from rcnc.validation import validate_artifacts
 
 ROOT=Path(__file__).resolve().parents[1]

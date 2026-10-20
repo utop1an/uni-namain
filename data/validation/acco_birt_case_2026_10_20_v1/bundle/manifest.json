@@ -1,0 +1,93 @@
+{
+  "status": "frozen_before_search",
+  "mode": "matched_source_representations",
+  "task_count": 5,
+  "tasks": [
+    {
+      "id": "interface_pair",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "interface_pair",
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+      "action_templates": 29,
+      "control_scope": "Single-source controls retain the common vocabulary, objects and goal; restrict action availability only. Not native-source goal tests."
+    },
+    {
+      "id": "no_interface_pair",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "no_interface_pair",
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+      "action_templates": 29,
+      "control_scope": "Single-source controls retain the common vocabulary, objects and goal; restrict action availability only. Not native-source goal tests."
+    },
+    {
+      "id": "ACCO_actions_only",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "ACCO_actions_only",
+      "domain_sha256": "9321fa7d875c47ed38ce006876c840933594ba9047aa14eb1b3caffb924cab38",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+      "action_templates": 17,
+      "control_scope": "Single-source controls retain the common vocabulary, objects and goal; restrict action availability only. Not native-source goal tests."
+    },
+    {
+      "id": "BIRT_actions_only",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "BIRT_actions_only",
+      "domain_sha256": "fcca1cb12d939579f36ea05fcea94c77d7bce50f021dbe2492760e490c8f9d3e",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+      "action_templates": 12,
+      "control_scope": "Single-source controls retain the common vocabulary, objects and goal; restrict action availability only. Not native-source goal tests."
+    },
+    {
+      "id": "no_shared_identity",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "no_shared_identity",
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "problem_sha256": "4391d8d0d3e3ead3ff4341387a8f6727b5c4e39b000700ef1038e842e04696ef",
+      "action_templates": 29,
+      "control_scope": "Single-source controls retain the common vocabulary, objects and goal; restrict action availability only. Not native-source goal tests."
+    }
+  ],
+  "budget": {
+    "seconds": 20,
+    "memory_mb": 4096,
+    "workers": 1
+  },
+  "original_query_sha256": "233c97f666fd269be08e0fbfa586dbdd57c30811de7e6a4015aa76040da5ebf6",
+  "query_sha256": "409db93457a43f534cde4622807fac62d43981d9f476c5db5fe01be9a07aad80",
+  "initial": [
+    [
+      "BIRT:at",
+      "hero",
+      "stage"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "ACCO:wealthy",
+        "hero"
+      ]
+    ]
+  },
+  "objects": {
+    "hero": [
+      "ACCO:entity",
+      "BIRT:entity"
+    ],
+    "token": [
+      "ACCO:item",
+      "BIRT:item"
+    ],
+    "stage": "BIRT:location"
+  },
+  "source_problem_facts_imported": false,
+  "decision_basis": "authored_assumption",
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\scripts\\experiments\\prepare_acco_birt_case.py": "73e6fc3a3f34faa4f1c97cff444f04c74b21ae6c022e10ed4a9b75072bb2d9e0",
+    "rcnc\\aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "rcnc\\narrative_pipeline.py": "d6141dc77f9ff063ee3f08c922a22f3c47c0ad14e9f3baeb6ac35d7f68de824a"
+  },
+  "scope": "One authored bridge world and 4 matched controls; not 5 independent narrative cases; domains exported before search"
+}

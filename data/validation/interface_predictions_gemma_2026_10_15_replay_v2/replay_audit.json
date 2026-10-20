@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "rows": 100,
+  "mismatches": [],
+  "counts": {
+    "invalid": 95,
+    "failed": 5
+  },
+  "structural_error_counts": {
+    "nonbijective_argument_map": 12,
+    "missing_both_side_evidence": 42,
+    "non_equivalent_has_argument_map": 75,
+    "label_argument_map_disagreement": 8
+  },
+  "independent_semantic_labels": 0,
+  "failed_replay_v1_reason": "Windows default GBK decoding; explicit UTF-8 fixes replay only, not model judgments"
+}

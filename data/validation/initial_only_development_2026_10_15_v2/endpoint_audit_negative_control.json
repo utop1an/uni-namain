@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "mutation": "Omit one reported change without modifying plan/domain/problem",
+  "removed_change": {
+    "atom": [
+      "d001__p_at",
+      "q__hero",
+      "q__stage"
+    ],
+    "value": false
+  },
+  "audit_result": {
+    "status": "FAIL",
+    "complete_changes_match": false,
+    "targets_checked": 2,
+    "changed_atoms": 2,
+    "fresh_validation": "VALID"
+  },
+  "source_search_sha256": "ae7b5193ec6c4724da671ae5b786bb97e1424bfd394360603a148b463016733a"
+}

@@ -1,0 +1,62 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "662bf3d4af514039a37d47b64858e0b1e1a50038cae7fde3ab05b4d9eddd4451",
+  "budget": {
+    "wall_seconds": 20,
+    "overall_cpu_seconds": 20,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "interface_pair",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "interface_pair",
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15"
+    },
+    {
+      "id": "no_interface_pair",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "no_interface_pair",
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15"
+    },
+    {
+      "id": "ACCO_actions_only",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "ACCO_actions_only",
+      "domain_sha256": "9321fa7d875c47ed38ce006876c840933594ba9047aa14eb1b3caffb924cab38",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15"
+    },
+    {
+      "id": "BIRT_actions_only",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "BIRT_actions_only",
+      "domain_sha256": "fcca1cb12d939579f36ea05fcea94c77d7bce50f021dbe2492760e490c8f9d3e",
+      "problem_sha256": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15"
+    },
+    {
+      "id": "no_shared_identity",
+      "source": "ACCO+BIRT_explicit_bridge",
+      "representation": "no_shared_identity",
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "problem_sha256": "4391d8d0d3e3ead3ff4341387a8f6727b5c4e39b000700ef1038e842e04696ef"
+    }
+  ],
+  "task_count": 5,
+  "mode": "matched_source_representations",
+  "task_bundle_origin": "data\\validation\\acco_birt_case_2026_10_20_v1\\bundle",
+  "task_bundle_manifest_sha256": "b99247b9de29be9ff88333a2b9f0b37b9ef456cbc7f48d792688304015782681",
+  "composed_origin": null,
+  "probe_origin": null,
+  "probe_manifest_sha256": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

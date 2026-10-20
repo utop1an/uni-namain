@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:33:47.09358Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_d4f67b9f31fa4d81\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'kissed_by' describes a specific interaction (being kissed), while 'at' describes a location. 'kissed_by' relates entities, indicating a relationship between them, whereas 'at' describes the spatial location of an entity. They represent distinct aspects of the story's events and do not share a common subject. The 'kissed_by' predicate requires two entities, while 'at' requires an entity and a location. The action contexts further highlight this difference: 'kissed_by' involves an interaction, while 'at' simply specifies a location. The 'receive_queen_kiss' action explicitly states that the queen is kissed by someone, while the 'at' predicates simply state where entities are located. Therefore, they are complementary predicates, describing different aspects of the story.\", \"evidence\": [ {\"side\": 0, \"ref\": \"BIRT:action:receive_queen_kiss\", \"quote\": \"(kissed_by ?n ?q)\"}, {\"side\": 1, \"ref\": \"SNOW:action:queen_sews_at_window\", \"quote\": \"(at ?q ?l)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_finds_dwarfs_cottage\", \"quote\": \"(at ?c ?cottage)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_flees_into_forest\", \"quote\": \"(at ?c ?f)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3716561100,
+  "load_duration": 4736400,
+  "prompt_eval_count": 820,
+  "prompt_eval_duration": 169921000,
+  "eval_count": 370,
+  "eval_duration": 3419347000
+}

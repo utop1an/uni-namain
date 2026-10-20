@@ -1,0 +1,220 @@
+{
+  "status": "complete",
+  "task_count": 18,
+  "manifest_sha256": "377693b2aca755c97c98a23be03006a66360083e4e94d9b28510500f1c8efbb3",
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 2.0,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__all_domains",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 13.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__goal_dependencies",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 2.485,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 4.0,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__all_domains",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 28.188,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__goal_dependencies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 3.843,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 2.063,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__all_domains",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 28.891,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__goal_dependencies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 2.015,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.985,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__all_domains",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 26.25,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__goal_dependencies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.703,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__all_domains",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 10.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__goal_dependencies",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.313,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__all_domains",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 10.859,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__goal_dependencies",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.406,
+      "inputs_unchanged": true
+    }
+  ],
+  "status_counts": {
+    "unsolvable": 9,
+    "solved": 9
+  },
+  "binary_unchanged": true,
+  "runner_unchanged": true
+}

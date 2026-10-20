@@ -1,0 +1,30 @@
+(define (domain household)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types FURNITURE_APPLIANCE HOUSEHOLD_OBJECT ROBOT STATE apple banana bowl cloth diningTable drawer empty lunchBox microwave robot sideTable stoveBurner)
+    (:predicates 
+    (atRobot ?fromLocation - FURNITURE_APPLIANCE)  
+    (contains ?container - HOUSEHOLD_OBJECT ?item - HOUSEHOLD_OBJECT)  
+    (holds ?item - HOUSEHOLD_OBJECT)  
+    (isEmpty ?state - STATE)  
+    (supports ?location - FURNITURE_APPLIANCE ?item - HOUSEHOLD_OBJECT))
+    (:action navigate
+        :parameters (?fromLocation - FURNITURE_APPLIANCE ?toLocation - FURNITURE_APPLIANCE)
+        :precondition (and (atRobot ?fromLocation) (not (atRobot ?toLocation)))
+        :effect (and (not (atRobot ?fromLocation)) (atRobot ?toLocation))
+    )
+     (:action pickup
+        :parameters (?location - FURNITURE_APPLIANCE ?item - HOUSEHOLD_OBJECT ?state - STATE)
+        :precondition (and (atRobot ?location) (supports ?location ?item) (isEmpty ?state))
+        :effect (and (not (supports ?location ?item)) (holds ?item) (not (isEmpty ?state)))
+    )
+     (:action place
+        :parameters (?item - HOUSEHOLD_OBJECT ?location - FURNITURE_APPLIANCE ?state - STATE)
+        :precondition (and (holds ?item) (atRobot ?location))
+        :effect (and (supports ?location ?item) (not (holds ?item)) (isEmpty ?state))
+    )
+     (:action putIn
+        :parameters (?item - HOUSEHOLD_OBJECT ?container - HOUSEHOLD_OBJECT ?state - STATE)
+        :precondition (holds ?item)
+        :effect (and (contains ?container ?item) (not (holds ?item)) (isEmpty ?state))
+    )
+)

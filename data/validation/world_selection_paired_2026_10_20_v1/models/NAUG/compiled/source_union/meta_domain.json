@@ -1,0 +1,94 @@
+{
+  "sources": [
+    "NAUG"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 4,
+    "constants": 14,
+    "predicates": 18,
+    "operators": 13
+  },
+  "predicate_maps": {
+    "NAUG": {
+      "arrested": "d000__p_arrested",
+      "at": "d000__p_at",
+      "avoid": "d000__p_avoid",
+      "burned": "d000__p_burned",
+      "crossed_out": "d000__p_crossed_out",
+      "delivered": "d000__p_delivered",
+      "detained": "d000__p_detained",
+      "gate_open": "d000__p_gate_open",
+      "has_mission": "d000__p_has_mission",
+      "left_turn_rule": "d000__p_left_turn_rule",
+      "near": "d000__p_near",
+      "on_list": "d000__p_on_list",
+      "prohibit_speak": "d000__p_prohibit_speak",
+      "punished": "d000__p_punished",
+      "rule_violation": "d000__p_rule_violation",
+      "speaks_to": "d000__p_speaks_to",
+      "summoned": "d000__p_summoned",
+      "traveling": "d000__p_traveling"
+    }
+  },
+  "constant_maps": {
+    "NAUG": {
+      "bungo": "d000__c_bungo",
+      "chalk": "d000__c_chalk",
+      "comet_house": "d000__c_comet_house",
+      "comet_master": "d000__c_comet_master",
+      "courtyard": "d000__c_courtyard",
+      "earth": "d000__c_earth",
+      "gate": "d000__c_gate",
+      "long_tail_45": "d000__c_long_tail_45",
+      "meteor": "d000__c_meteor",
+      "meteor_keeper": "d000__c_meteor_keeper",
+      "no1_express": "d000__c_no1_express",
+      "short_tail_73": "d000__c_short_tail_73",
+      "slate": "d000__c_slate",
+      "sun": "d000__c_sun"
+    }
+  },
+  "action_maps": {
+    "NAUG": {
+      "give_order": "d000__a_give_order",
+      "start_travel": "d000__a_start_travel",
+      "avoid_body": "d000__a_avoid_body",
+      "turn_left_on_meeting": "d000__a_turn_left_on_meeting",
+      "prohibit_speaking_to_meteor": "d000__a_prohibit_speaking_to_meteor",
+      "speak_to_meteor": "d000__a_speak_to_meteor",
+      "approach_sun": "d000__a_approach_sun",
+      "burn_up": "d000__a_burn_up",
+      "cross_out_comet": "d000__a_cross_out_comet",
+      "call_comet_forward": "d000__a_call_comet_forward",
+      "arrest_meteor": "d000__a_arrest_meteor",
+      "deliver_meteor_to_bungo": "d000__a_deliver_meteor_to_bungo",
+      "punish_meteor": "d000__a_punish_meteor"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "NAUG": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "NAUG_problemfile.pddl": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

@@ -1,0 +1,807 @@
+{
+  "status": "complete",
+  "probe_count": 45,
+  "compiled_domain_sha256": "ad78294cc3a29b6c681cc2477edf4c0d6c75702da95179b50dee7fb547a930e8",
+  "probe_manifest_sha256": "e9bc3df6e5e1d2faf3623322bf583595aca375cd1829be2f127afe2329d916aa",
+  "source_report_sha256": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+  "scope": "Synthetic auxiliary goals with unchanged source initial worlds; not original-goal success or independent-domain evidence",
+  "rows": [
+    {
+      "id": "ACCO__probe_0",
+      "source": "ACCO",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d000__p_has",
+        "d000__c_princess",
+        "d000__c_pack"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "ACCO__probe_1",
+      "source": "ACCO",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "ACCO__probe_2",
+      "source": "ACCO",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "BIRT__probe_0",
+      "source": "BIRT",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "BIRT__probe_1",
+      "source": "BIRT",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "BIRT__probe_2",
+      "source": "BIRT",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d001__p_door_open",
+        "d001__c_door"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "BUFF__probe_0",
+      "source": "BUFF",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d002__p_countryman_performs_with_real_pig",
+        "d002__c_buffoon",
+        "d002__c_little_pig"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "BUFF__probe_1",
+      "source": "BUFF",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d002__p_imitates_pig",
+        "d002__c_countryman"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "BUFF__probe_2",
+      "source": "BUFF",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "CHIC_NP__probe_0",
+      "source": "CHIC_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d003__p_met",
+        "d003__c_goose-loose",
+        "d003__c_duck-luck"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "CHIC_NP__probe_1",
+      "source": "CHIC_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d003__p_following_fox",
+        "d003__c_hen-len"
+      ],
+      "mapped": {
+        "length": 4,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "CHIC_NP__probe_2",
+      "source": "CHIC_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d003__p_met",
+        "d003__c_duck-luck",
+        "d003__c_goose-loose"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "FOUR_NP__probe_0",
+      "source": "FOUR_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "FOUR_NP__probe_1",
+      "source": "FOUR_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "FOUR_NP__probe_2",
+      "source": "FOUR_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "HANS_NP__probe_0",
+      "source": "HANS_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d005__p_pebble_on_path",
+        "d005__c_stable_location"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "HANS_NP__probe_1",
+      "source": "HANS_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d005__p_collected",
+        "d005__c_mother",
+        "d005__c_crumb"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "HANS_NP__probe_2",
+      "source": "HANS_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d005__p_at",
+        "d005__c_father",
+        "d005__c_room"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "JACK_NP__probe_0",
+      "source": "JACK_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "JACK_NP__probe_1",
+      "source": "JACK_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "JACK_NP__probe_2",
+      "source": "JACK_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "MUSI__probe_0",
+      "source": "MUSI",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d007__p_kick",
+        "d007__c_ass",
+        "d007__c_ass"
+      ],
+      "mapped": {
+        "length": 3,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "MUSI__probe_1",
+      "source": "MUSI",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d007__p_agreed",
+        "d007__c_messenger",
+        "d007__c_captain"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "MUSI__probe_2",
+      "source": "MUSI",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d007__p_resting",
+        "d007__c_cat"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "NAUG__probe_0",
+      "source": "NAUG",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "NAUG__probe_1",
+      "source": "NAUG",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "NAUG__probe_2",
+      "source": "NAUG",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d008__p_traveling",
+        "d008__c_comet_master"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "PIGS_NP__probe_0",
+      "source": "PIGS_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d009__p_puffed",
+        "d009__c_pig1"
+      ],
+      "mapped": {
+        "length": 6,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "PIGS_NP__probe_1",
+      "source": "PIGS_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "PIGS_NP__probe_2",
+      "source": "PIGS_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d009__p_huffed",
+        "d009__c_pig1"
+      ],
+      "mapped": {
+        "length": 6,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "PUSS__probe_0",
+      "source": "PUSS",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d010__p_has",
+        "d010__c_jack",
+        "d010__c_suit"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "PUSS__probe_1",
+      "source": "PUSS",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "PUSS__probe_2",
+      "source": "PUSS",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "REMA_NP__probe_0",
+      "source": "REMA_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d011__p_with_all_my_heart_spoken"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "REMA_NP__probe_1",
+      "source": "REMA_NP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d011__p_grandmother_mangle_spoken"
+      ],
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "REMA_NP__probe_2",
+      "source": "REMA_NP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "SNOW__probe_0",
+      "source": "SNOW",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d012__p_fair",
+        "d012__c_dwarf2"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "SNOW__probe_1",
+      "source": "SNOW",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d012__p_dead",
+        "d012__c_boar"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "SNOW__probe_2",
+      "source": "SNOW",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d012__p_visited",
+        "d012__c_king",
+        "d012__c_forest"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "SOUP__probe_0",
+      "source": "SOUP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d013__p_has_imagination",
+        "d013__c_old_lady_mouse"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "SOUP__probe_1",
+      "source": "SOUP",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "SOUP__probe_2",
+      "source": "SOUP",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d013__p_holds",
+        "d013__c_jailer",
+        "d013__c_sausage_skewer"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "WOE__probe_0",
+      "source": "WOE",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d014__p_invited",
+        "d014__c_bitter_woe",
+        "d014__c_wife"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "id": "WOE__probe_1",
+      "source": "WOE",
+      "probe_status": "unsolvable",
+      "status": "no_probe_plan_evidence"
+    },
+    {
+      "id": "WOE__probe_2",
+      "source": "WOE",
+      "probe_status": "solved",
+      "source_revalidation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "mapped_goal": [
+        "d014__p_singing",
+        "d014__c_rich_brother"
+      ],
+      "mapped": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    }
+  ],
+  "compiled_domain_unchanged": true,
+  "available_probe_plans": 26,
+  "validated_probe_plans": 26,
+  "sources_with_validated_probe": [
+    "ACCO",
+    "BIRT",
+    "BUFF",
+    "CHIC_NP",
+    "HANS_NP",
+    "MUSI",
+    "NAUG",
+    "PIGS_NP",
+    "PUSS",
+    "REMA_NP",
+    "SNOW",
+    "SOUP",
+    "WOE"
+  ],
+  "counts": {
+    "VALID": 26,
+    "no_probe_plan_evidence": 19
+  },
+  "implementation_sha256": "6f403db67c4b3263ec79d539e1cb3606549ecf981596abc21913938ec56e34c3"
+}

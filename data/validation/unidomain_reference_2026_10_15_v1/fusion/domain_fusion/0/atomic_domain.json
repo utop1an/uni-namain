@@ -1,0 +1,75 @@
+{
+  "sources": [
+    "ACCO"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 16,
+    "predicates": 17,
+    "operators": 17
+  },
+  "predicate_maps": {
+    "ACCO": {
+      "airborne": "airborne",
+      "badger_form": "badger_form",
+      "captured": "captured",
+      "contained_in": "contained_in",
+      "exhibition_ready": "exhibition_ready",
+      "four_legged": "four_legged",
+      "furred": "furred",
+      "hanging": "hanging",
+      "has": "has",
+      "located": "located",
+      "night": "night",
+      "owned_by": "owned_by",
+      "performing_show": "performing_show",
+      "reputation_widespread": "reputation_widespread",
+      "treasured": "treasured",
+      "wealthy": "wealthy",
+      "worshipped": "worshipped"
+    }
+  },
+  "constant_maps": {
+    "ACCO": {
+      "badger": "badger",
+      "box": "box",
+      "copper_coins": "copper_coins",
+      "friend": "friend",
+      "jhosiu": "jhosiu",
+      "lady_of_court": "lady_of_court",
+      "morinji": "morinji",
+      "pack": "pack",
+      "priest": "priest",
+      "prince": "prince",
+      "princess": "princess",
+      "showman": "showman",
+      "teakettle": "teakettle",
+      "temple_treasure": "temple_treasure",
+      "tight_rope": "tight_rope",
+      "tinker": "tinker"
+    }
+  },
+  "action_maps": {
+    "ACCO": {
+      "hang_kettle": "hang_kettle",
+      "kettle_transform_to_badger": "kettle_transform_to_badger",
+      "call_novices": "call_novices",
+      "kettle_jump_and_fly": "kettle_jump_and_fly",
+      "pursue_kettle": "pursue_kettle",
+      "knock_down_kettle": "knock_down_kettle",
+      "force_kettle_into_box": "force_kettle_into_box",
+      "sell_kettle_to_tinker": "sell_kettle_to_tinker",
+      "tinker_carry_home": "tinker_carry_home",
+      "kettle_transform_to_fur_badger": "kettle_transform_to_fur_badger",
+      "kettle_revert_shape": "kettle_revert_shape",
+      "show_kettle_to_friend": "show_kettle_to_friend",
+      "arrange_exhibition": "arrange_exhibition",
+      "perform_show": "perform_show",
+      "receive_orders_from_nobility": "receive_orders_from_nobility",
+      "return_kettle_to_temple": "return_kettle_to_temple",
+      "worship_kettle_as_saint": "worship_kettle_as_saint"
+    }
+  },
+  "decisions": []
+}

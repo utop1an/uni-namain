@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_f54d6a8630e3929b",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_f54d6a8630e3929b",
+    "label": "equivalent",
+    "right_from_left": [
+      5,
+      7
+    ],
+    "rationale": "The predicate `entity_at` appears in both sources with the same signature and parameters. In FOUR_NP, it's used to describe the location of entities like trees, rocks, and houses. In PUSS, it's used to describe the location of the castle owned by a particular entity. The core argument role, `entity_at ?e - entity ?l - location`, describes the spatial relationship between an entity and a location. The action contexts demonstrate this usage consistently. The action contexts in FOUR_NP use `entity_at` to specify the location of objects and entities, while PUSS uses it to define ownership relationships. The different entities involved (trees, rocks, houses, princess, dragon) don't change the fundamental meaning of the predicate. The action contexts provide the same spatial relationships, even if the specific entities involved are different. The argument roles are interchangeable, representing the same spatial relationship. The permutation of the argument indices (5, 7) reflects this interchangeability.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:count_eggs",
+        "quote": "(entity_at ?a tree)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:fetch_eggs",
+        "quote": "(entity_at ?t tree)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_astronomer_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_hunter_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_tailor_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_thief_trade",
+        "quote": "(entity_at ?b cross_way)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_f54d6a8630e3929b",
+    "nonbijective_argument_map:pair_f54d6a8630e3929b"
+  ]
+}

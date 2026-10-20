@@ -1,0 +1,37 @@
+{
+  "status": "unsolvable",
+  "planner_called": true,
+  "method": "explicit_alignment_with_source_type_guards",
+  "scope": "Execution baseline; no inferred semantic equivalences or narrative-quality claim",
+  "mode": "initial_goal",
+  "semantic_alignment_status": "assumptions_not_independently_verified",
+  "search": {
+    "grounding_policy": "typed_cartesian_with_static_positive_projection",
+    "states": 2,
+    "ground_candidates": 1,
+    "viable_ground_actions": 1,
+    "status": "unsolvable"
+  },
+  "domain_unchanged": true,
+  "selection": {
+    "policy": "all_domains",
+    "selected": [
+      "BURIAL",
+      "CAPTURE"
+    ],
+    "excluded": [],
+    "source_reasons": {
+      "BURIAL": [
+        "all_domains_policy"
+      ],
+      "CAPTURE": [
+        "all_domains_policy"
+      ]
+    },
+    "relevant_action_references_for_explanation_only": [],
+    "action_subset_selection": false,
+    "optimal_or_minimal_subset_claim": false,
+    "scope": "Unsigned predicate dependency over-approximation; no reachability or semantic-equivalence claim",
+    "omitted_alignment_groups": []
+  }
+}

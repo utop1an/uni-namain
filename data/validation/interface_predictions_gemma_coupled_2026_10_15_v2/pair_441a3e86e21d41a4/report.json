@@ -1,0 +1,45 @@
+{
+  "candidate_id": "pair_441a3e86e21d41a4",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_441a3e86e21d41a4",
+    "label": "incompatible",
+    "right_from_left": null,
+    "rationale": "The `at` predicate in the JACK_NP source describes the spatial location of an entity, while the `castle_owned_by` predicate in the PUSS source describes ownership of a location (castle). These predicates represent fundamentally different concepts: one relates to position, and the other to ownership. The action contexts provided for JACK_NP use `at` to specify the location of entities, while the PUSS predicate `castle_owned_by` relates a location to an entity. The predicates are incompatible because they describe distinct aspects of the world – spatial location versus ownership – and cannot be meaningfully combined. The action contexts do not provide any overlap in their usage or meaning. The parameters and type hierarchies are also distinct, further reinforcing the incompatibility. The supplied text does not provide any evidence to suggest equivalence.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:climb_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_kettle",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_oven",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:return_down_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(at ?j ?l)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_441a3e86e21d41a4"
+  ]
+}

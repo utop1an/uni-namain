@@ -1,0 +1,36 @@
+{
+  "candidate_id": "pair_17b7521c6a482fef",
+  "label": "uncertain",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `cloak_shaken` in the BUFF source describes a state of a cloak being disturbed, likely by a performer. The `has` predicate in the JACK_NP source describes possession of an item. While both predicates relate to objects, their semantics are distinct. `cloak_shaken` describes a state, while `has` describes ownership. The action contexts provide different scenarios: BUFF describes an applause event where a cloak is shaken, and JACK_NP describes various actions involving stealing and possessing items (cow, gold bags, harp, hen). The `has` predicate is used to describe possession of these items, while `cloak_shaken` is a specific state related to a performer and a cloak. The contexts are unrelated, and there is no clear connection between the two predicates. The presence of different action contexts and different types of objects (cloak, cow, gold bags, harp, hen) makes it uncertain whether the predicates are equivalent. The `parameters` also differ, indicating different objects are being related. The `occurrences` show the predicates are used in different contexts, further supporting the uncertainty. The action contexts are unrelated, and the predicates describe different relationships between objects. The evidence is insufficient to determine equivalence.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(has ?j ?beans)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:steal_gold_bags",
+      "quote": "(has ?j ?bag1)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:steal_harp",
+      "quote": "(has ?j ?harp)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:steal_hen",
+      "quote": "(has ?j ?hen)"
+    },
+    {
+      "side": 0,
+      "ref": "BUFF:action:audience_applaud_performance",
+      "quote": "(cloak_shaken ?performer ?cloak)"
+    }
+  ]
+}

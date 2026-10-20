@@ -1,0 +1,13 @@
+﻿deleted_step,deleted_action,outcome,first_broken_original_step,missing_conditions
+1,"scene__enter_hut(q__rescuer, q__companion, q__outside, q__hut)",inapplicable_remainder,2,"[""d000__p_at(q__rescuer, q__hut)"", ""d000__p_at(q__companion, q__hut)"", ""scene_at(q__companion, q__hut)"", ""scene_at(q__rescuer, q__hut)""]"
+2,"d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",inapplicable_remainder,5,"[""shared__p_possession(q__rescuer, q__comb)""]"
+3,"scene__take_axe(q__jack, q__axe, q__workshop)",inapplicable_remainder,4,"[""d001__p_has(q__jack, q__axe)""]"
+4,"scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",inapplicable_remainder,9,"[""scene_at(q__jack, d001__c_beanstalk)""]"
+5,"scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",inapplicable_remainder,6,"[""shared__p_possession(q__snow_white, q__comb)""]"
+6,"d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",inapplicable_remainder,7,"[""d002__p_poisoned(q__comb)""]"
+7,"scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",inapplicable_remainder,8,"[""shared__p_possession(q__rescuer, q__comb)"", ""(not shared__p_possession(q__snow_white, q__comb))""]"
+8,"scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",inapplicable_remainder,9,"[""d001__p_climbing_down(q__snow_white)""]"
+9,"d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",inapplicable_remainder,10,"[""scene_at(q__snow_white, d001__c_cottage)"", ""shared__p_death(q__snow_white)""]"
+10,"scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",inapplicable_remainder,11,"[""scene_at(q__rescuer, d001__c_cottage)""]"
+11,"scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",inapplicable_remainder,12,"[""scene_comb_applied(q__snow_white, q__comb)""]"
+12,"d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",goal_not_reached,,final goal false

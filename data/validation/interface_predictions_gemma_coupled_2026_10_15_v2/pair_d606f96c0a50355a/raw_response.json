@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:39:19.8363024Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_d606f96c0a50355a\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicates `princess_rescued` and `asleep` describe different states of entities. `princess_rescued` indicates a princess is rescued, while `asleep` indicates an entity (specifically a giant) is sleeping. The action contexts demonstrate how these predicates are used in distinct scenarios: `princess_rescued` is a result of a rescue action, and `asleep` is a precondition for a steal action. These predicates describe fundamentally different aspects of the world, and one cannot be directly inferred from the other. The action contexts provide evidence for this complementary relationship. Specifically, `FOUR_NP:action:receive_reward` uses `princess_rescued` to describe a consequence, and `JACK_NP:action:steal_harp` uses `asleep` to describe a precondition. The predicates are not interchangeable because they represent distinct properties of entities.\", \"evidence\": [ {\"side\": 1, \"ref\": \"JACK_NP:action:steal_gold_bags\", \"quote\": \"(asleep giant)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:steal_harp\", \"quote\": \"(asleep ?giant)\"}, {\"side\": 0, \"ref\": \"FOUR_NP:action:receive_reward\", \"quote\": \"(princess_rescued ?e)\"}, {\"side\": 0, \"ref\": \"FOUR_NP:action:steal_princess\", \"quote\": \"(princess_rescued ?t)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3592392200,
+  "load_duration": 2149200,
+  "prompt_eval_count": 882,
+  "prompt_eval_duration": 159189000,
+  "eval_count": 357,
+  "eval_duration": 3358733000
+}

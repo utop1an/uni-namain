@@ -1,0 +1,525 @@
+[
+  {
+    "step": 1,
+    "instance": "scene__enter_hut(q__rescuer, q__companion, q__outside, q__hut)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "enter_hut",
+    "applicable": true,
+    "causal_supports": [],
+    "changed_relevant_atoms": [
+      {
+        "atom": "scene_at(q__rescuer, q__outside)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_at(q__companion, q__outside)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "d000__p_at(q__rescuer, q__hut)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "d000__p_at(q__companion, q__hut)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "scene_at(q__companion, q__hut)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "scene_at(q__rescuer, q__hut)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u540c\u4f34\u8fdb\u5165\u5c0f\u5c4b",
+    "causal_purpose": "\u8ba9\u4e24\u540d\u540c\u4f34\u5230\u573a\uff0c\u6ee1\u8db3\u6536\u96c6\u548c\u4ea4\u63a5\u7684\u4f4d\u7f6e\u6761\u4ef6\u3002"
+  },
+  {
+    "step": 2,
+    "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+    "origin_kind": "source",
+    "source": "HANS_NP",
+    "action": "collect_treasure",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 1,
+        "consumer_step": 2,
+        "literal": "d000__p_at(q__rescuer, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 1,
+        "consumer_step": 2,
+        "literal": "d000__p_at(q__companion, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 1,
+        "consumer_step": 2,
+        "literal": "scene_at(q__companion, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 1,
+        "consumer_step": 2,
+        "literal": "scene_at(q__rescuer, q__hut)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "shared__p_possession(q__rescuer, q__comb)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "scene_comb_on_shelf(q__comb, q__hut)",
+        "before": true,
+        "after": false
+      }
+    ],
+    "label": "\u6536\u96c6\u68b3\u5b50\u548c\u5b9d\u77f3",
+    "causal_purpose": "\u4ece\u67b6\u4e0a\u53d6\u5f97\u552f\u4e00\u7684\u68b3\u5b50\uff1b\u5b9d\u77f3\u662f\u6e90\u52a8\u4f5c\u7684\u9644\u5e26\u6548\u679c\u3002"
+  },
+  {
+    "step": 3,
+    "instance": "scene__take_axe(q__jack, q__axe, q__workshop)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "take_axe",
+    "applicable": true,
+    "causal_supports": [],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d001__p_has(q__jack, q__axe)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "scene_axe_racked(q__axe, q__workshop)",
+        "before": true,
+        "after": false
+      }
+    ],
+    "label": "\u6770\u514b\u4ece\u5de5\u574a\u53d6\u65a7",
+    "causal_purpose": "\u53d6\u5f97\u780d\u6811\u5de5\u5177\uff0c\u53d6\u8d70\u67b6\u4e0a\u7684\u65a7\u5934\u3002"
+  },
+  {
+    "step": 4,
+    "instance": "scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "approach_beanstalk",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 3,
+        "consumer_step": 4,
+        "literal": "d001__p_has(q__jack, q__axe)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "scene_at(q__jack, q__workshop)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_at(q__jack, d001__c_beanstalk)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u6770\u514b\u643a\u65a7\u6765\u5230\u8c46\u830e",
+    "causal_purpose": "\u8ba9\u6301\u65a7\u8005\u5230\u8fbe\u780d\u6811\u4f4d\u7f6e\u3002"
+  },
+  {
+    "step": 5,
+    "instance": "scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "hand_comb_to_witch",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 1,
+        "consumer_step": 5,
+        "literal": "scene_at(q__rescuer, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 2,
+        "consumer_step": 5,
+        "literal": "shared__p_possession(q__rescuer, q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "shared__p_possession(q__rescuer, q__comb)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "shared__p_possession(q__snow_white, q__comb)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u628a\u68b3\u5b50\u4ea4\u7ed9\u767d\u96ea\u5973\u5deb",
+    "causal_purpose": "\u5c06\u68b3\u5b50\u7684\u6301\u6709\u6743\u8f6c\u7ed9\u65bd\u6cd5\u8005\u3002"
+  },
+  {
+    "step": 6,
+    "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+    "origin_kind": "source",
+    "source": "SNOW",
+    "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 5,
+        "consumer_step": 6,
+        "literal": "shared__p_possession(q__snow_white, q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d002__p_poisoned(q__comb)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u767d\u96ea\u5973\u5deb\u5236\u6210\u6bd2\u68b3",
+    "causal_purpose": "\u53ea\u6709\u6301\u68b3\u4e14\u5728\u573a\u65f6\u624d\u80fd\u65bd\u6cd5\uff0c\u4ea7\u751f\u5e26\u6bd2\u72b6\u6001\u3002"
+  },
+  {
+    "step": 7,
+    "instance": "scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "take_comb_back",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 1,
+        "consumer_step": 7,
+        "literal": "scene_at(q__rescuer, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 5,
+        "consumer_step": 7,
+        "literal": "shared__p_possession(q__snow_white, q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 6,
+        "consumer_step": 7,
+        "literal": "d002__p_poisoned(q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "shared__p_possession(q__rescuer, q__comb)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "shared__p_possession(q__snow_white, q__comb)",
+        "before": true,
+        "after": false
+      }
+    ],
+    "label": "\u8425\u6551\u8005\u63a5\u56de\u6bd2\u68b3",
+    "causal_purpose": "\u6062\u590d\u8425\u6551\u8005\u7684\u6301\u68b3\u72b6\u6001\uff0c\u5141\u8bb8\u767d\u96ea\u516c\u4e3b\u79bb\u5f00\u3002"
+  },
+  {
+    "step": 8,
+    "instance": "scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "begin_descent",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 6,
+        "consumer_step": 8,
+        "literal": "d002__p_poisoned(q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 7,
+        "consumer_step": 8,
+        "literal": "shared__p_possession(q__rescuer, q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 7,
+        "consumer_step": 8,
+        "literal": "shared__p_possession(q__snow_white, q__comb)",
+        "truth": false
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d001__p_climbing_down(q__snow_white)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "scene_at(q__snow_white, q__hut)",
+        "before": true,
+        "after": false
+      }
+    ],
+    "label": "\u5de8\u4eba\u767d\u96ea\u516c\u4e3b\u5f00\u59cb\u4e0b\u884c",
+    "causal_purpose": "\u5c06\u5979\u79fb\u5230\u8c46\u830e\u4e0a\uff0c\u4ea7\u751f\u780d\u6811\u52a8\u4f5c\u6240\u9700\u7684\u4e0b\u884c\u72b6\u6001\u3002"
+  },
+  {
+    "step": 9,
+    "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+    "origin_kind": "source",
+    "source": "JACK_NP",
+    "action": "cut_beanstalk",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 8,
+        "consumer_step": 9,
+        "literal": "d001__p_climbing_down(q__snow_white)",
+        "truth": true
+      },
+      {
+        "producer_step": 4,
+        "consumer_step": 9,
+        "literal": "scene_at(q__jack, d001__c_beanstalk)",
+        "truth": true
+      },
+      {
+        "producer_step": 3,
+        "consumer_step": 9,
+        "literal": "d001__p_has(q__jack, q__axe)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d002__p_alive(q__snow_white)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "shared__p_death(q__snow_white)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "d001__p_climbing_down(q__snow_white)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "d001__p_intact(d001__c_beanstalk)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_at(q__snow_white, d001__c_cottage)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u6770\u514b\u780d\u6811\uff0c\u767d\u96ea\u516c\u4e3b\u5760\u843d",
+    "causal_purpose": "\u6bc1\u574f\u8c46\u830e\uff0c\u4ea7\u751f\u6b7b\u4ea1\u72b6\u6001\uff0c\u5e76\u8bb0\u5f55\u843d\u5730\u70b9\u3002"
+  },
+  {
+    "step": 10,
+    "instance": "scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "reach_fallen",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 1,
+        "consumer_step": 10,
+        "literal": "scene_at(q__rescuer, q__hut)",
+        "truth": true
+      },
+      {
+        "producer_step": 9,
+        "consumer_step": 10,
+        "literal": "scene_at(q__snow_white, d001__c_cottage)",
+        "truth": true
+      },
+      {
+        "producer_step": 9,
+        "consumer_step": 10,
+        "literal": "shared__p_death(q__snow_white)",
+        "truth": true
+      },
+      {
+        "producer_step": 7,
+        "consumer_step": 10,
+        "literal": "shared__p_possession(q__rescuer, q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d000__p_at(q__rescuer, q__hut)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_at(q__rescuer, q__hut)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_at(q__rescuer, d001__c_cottage)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u8425\u6551\u8005\u643a\u68b3\u5230\u8fbe\u843d\u5730\u70b9",
+    "causal_purpose": "\u8425\u6551\u8005\u4e0e\u540c\u4e00\u767d\u96ea\u516c\u4e3b\u5230\u8fbe\u540c\u4e00\u4f4d\u7f6e\u3002"
+  },
+  {
+    "step": 11,
+    "instance": "scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",
+    "origin_kind": "new_scenario_rule",
+    "source": "SCENE",
+    "action": "apply_comb",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 10,
+        "consumer_step": 11,
+        "literal": "scene_at(q__rescuer, d001__c_cottage)",
+        "truth": true
+      },
+      {
+        "producer_step": 9,
+        "consumer_step": 11,
+        "literal": "scene_at(q__snow_white, d001__c_cottage)",
+        "truth": true
+      },
+      {
+        "producer_step": 9,
+        "consumer_step": 11,
+        "literal": "shared__p_death(q__snow_white)",
+        "truth": true
+      },
+      {
+        "producer_step": 7,
+        "consumer_step": 11,
+        "literal": "shared__p_possession(q__rescuer, q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 6,
+        "consumer_step": 11,
+        "literal": "d002__p_poisoned(q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "scene_comb_applied(q__snow_white, q__comb)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u7528\u6bd2\u68b3\u5b8c\u6210\u65bd\u6551\u51c6\u5907",
+    "causal_purpose": "\u628a\u68b3\u5b50\u65bd\u7528\u4e8e\u76ee\u6807\uff0c\u6ee1\u8db3\u62d4\u68b3\u590d\u6d3b\u7684\u63a5\u89e6\u6761\u4ef6\u3002"
+  },
+  {
+    "step": 12,
+    "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+    "origin_kind": "source",
+    "source": "SNOW",
+    "action": "dwarfs_remove_comb_rescue_snow_white",
+    "applicable": true,
+    "causal_supports": [
+      {
+        "producer_step": 9,
+        "consumer_step": 12,
+        "literal": "shared__p_death(q__snow_white)",
+        "truth": true
+      },
+      {
+        "producer_step": 6,
+        "consumer_step": 12,
+        "literal": "d002__p_poisoned(q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 7,
+        "consumer_step": 12,
+        "literal": "shared__p_possession(q__rescuer, q__comb)",
+        "truth": true
+      },
+      {
+        "producer_step": 10,
+        "consumer_step": 12,
+        "literal": "scene_at(q__rescuer, d001__c_cottage)",
+        "truth": true
+      },
+      {
+        "producer_step": 9,
+        "consumer_step": 12,
+        "literal": "scene_at(q__snow_white, d001__c_cottage)",
+        "truth": true
+      },
+      {
+        "producer_step": 11,
+        "consumer_step": 12,
+        "literal": "scene_comb_applied(q__snow_white, q__comb)",
+        "truth": true
+      }
+    ],
+    "changed_relevant_atoms": [
+      {
+        "atom": "d002__p_alive(q__snow_white)",
+        "before": false,
+        "after": true
+      },
+      {
+        "atom": "shared__p_death(q__snow_white)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "d002__p_poisoned(q__comb)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "scene_comb_applied(q__snow_white, q__comb)",
+        "before": true,
+        "after": false
+      },
+      {
+        "atom": "case_rescued_with_comb(q__snow_white)",
+        "before": false,
+        "after": true
+      }
+    ],
+    "label": "\u62d4\u68b3\u590d\u6d3b\u5e76\u89e3\u9664\u6bd2\u6027",
+    "causal_purpose": "\u8fbe\u6210\u590d\u6d3b\u4e8b\u4ef6\u3001\u6700\u7ec8\u6d3b\u7740\u548c\u65e0\u6b7b\u4ea1\u72b6\u6001\u7684\u76ee\u6807\u3002"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "candidate_id": "pair_f07cae9822f5c3ab",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicates `crowd_present` and `castle_owned_by` describe fundamentally different aspects of a scene. `crowd_present` indicates the presence of a crowd in a location, while `castle_owned_by` specifies the ownership of a castle. These predicates represent distinct properties and cannot be interchangeable. The declaration of `crowd_present` focuses on the *presence* of an audience, while `castle_owned_by` focuses on *ownership*. The parameters further highlight this difference: one relates a location to an 'entity' (audience), and the other relates a location to an 'entity' (owner). The action contexts are empty, and the provenance is not supplied, so we can only rely on the predicates themselves. This suggests a complementary relationship where the two predicates might be present in the same narrative, but they describe different things. The `right_from_left` label indicates that the first argument (`?audience`) is the 'right' argument and the second argument (`?theater`) is the 'left' argument, based on the declaration's structure. The declaration's structure is `(predicate ?arg1 - type ?arg2 - type)`, where `?arg1` is the left argument and `?arg2` is the right argument. The `type_hierarchy` is consistent across both predicates, indicating they share a common base type ('object').",
+  "evidence": []
+}

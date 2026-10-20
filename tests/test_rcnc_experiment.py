@@ -2,8 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from merge_domains import parse_domain
-from rcnc.experiment import (
+from rcnc.pddl import parse_domain
+from archive.rcnc.experiment import (
     build_causal_edges,
     event_family,
     extract_domain_frames,
@@ -34,7 +34,7 @@ class RCNCExperimentTests(unittest.TestCase):
         self.assertEqual("SOCIAL_COMMITMENT", event_family("king_proposes_marriage"))
 
     def test_fixed_constants_are_lifted_into_slots(self):
-        domain = parse_domain(INPUT / "BIRT_domainfile.pddl", apply_reviewed_semantics=False)
+        domain = parse_domain(INPUT / "BIRT_domainfile.pddl")
         _, actions, profiles = extract_domain_frames(domain)
         hear = next(action for action in actions if action.action == "hear_tapping_on_beech")
 
@@ -45,7 +45,7 @@ class RCNCExperimentTests(unittest.TestCase):
     def test_cross_domain_causal_stories_are_generated(self):
         actions = []
         for name in ("BIRT", "CHIC_NP", "HANS_NP", "JACK_NP"):
-            domain = parse_domain(INPUT / f"{name}_domainfile.pddl", apply_reviewed_semantics=False)
+            domain = parse_domain(INPUT / f"{name}_domainfile.pddl")
             _, domain_actions, _ = extract_domain_frames(domain)
             actions.extend(domain_actions)
         edges = build_causal_edges(actions)

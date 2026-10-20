@@ -1,0 +1,85 @@
+{
+  "status": "outcomes_generated",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "difference_basis": "complete_positive_state_symmetric_difference",
+  "grounding_basis": "unique_current_state_projected_bindings",
+  "fluent_budget_basis": "effect_targets_of_visited_applicable_bindings",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 3,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 100000,
+    "max_outcomes": 3
+  },
+  "states": 4,
+  "ground_candidates": 21,
+  "outcomes": [
+    {
+      "index": 0,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d000__p_exhibition_ready",
+            "q__hero"
+          ],
+          "value": true
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d000__a_arrange_exhibition(d000__c_badger, q__hero, q__token)"
+    },
+    {
+      "index": 1,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d000__p_hanging",
+            "q__token"
+          ],
+          "value": true
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d000__a_hang_kettle(q__hero, q__token)"
+    },
+    {
+      "index": 2,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d000__p_has",
+            "d000__c_badger",
+            "q__token"
+          ],
+          "value": true
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d000__a_show_kettle_to_friend(d000__c_badger, q__hero, q__token)"
+    }
+  ],
+  "ground_fluents_tracked": 3,
+  "expanded_effect_instances": 3,
+  "applicability_checks": 21,
+  "stop_reason": "outcome_limit"
+}

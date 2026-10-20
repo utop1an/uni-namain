@@ -1,0 +1,32 @@
+{
+  "selection": {
+    "policy": "all_domains",
+    "selected": [
+      "HEAR",
+      "WARN"
+    ],
+    "excluded": [],
+    "action_subset_selection": false
+  },
+  "solver": "typed_cartesian",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 30,
+    "max_ground_actions": 100000,
+    "seconds": 30
+  },
+  "merged_before_planning": true,
+  "domain_sha256": "7bd576f46d128624769a78f9083497407c1e666eec64ec6589a77d3b05537656",
+  "problem_sha256": "c0cd0692647c10a5cfb911fcbfe1b709005640165bde2f91d0f01c6e22975f94",
+  "implementation_sha256": {
+    "run_narrative_pipeline.py": "5e867515eea929b88d107bd7e1853d9d10726ddbe9989996e1149349bb2807c3",
+    "rcnc/narrative_pipeline.py": "5260d2769b5b575986233320c143c63d380423d747d004716545ae2d0c644860",
+    "rcnc/merged_planning.py": "ff14e9db178f1501f735f5181b6620e4aa7235a85a8904f6753161f667e2f03b",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "rcnc/outcome_planning.py": "21f4451fd8abaee46158d323dae8681bb0b7b64e54257d909a8dc4b7a92c0cd6"
+  }
+}

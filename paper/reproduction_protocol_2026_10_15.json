@@ -1,0 +1,96 @@
+{
+  "status": "documented_protocol_not_a_new_execution",
+  "date": "2026-10-15",
+  "python": "3.12.10 | packaged by conda-forge | (main, Apr 10 2025, 22:08:16) [MSC v.1943 64 bit (AMD64)]",
+  "packages": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1",
+    "jsonschema": "4.26.0",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.1",
+    "transformers": "5.19.0",
+    "requests": "2.32.5"
+  },
+  "platform": "Windows host; Fast Downward through Ubuntu WSL",
+  "commands": [
+    {
+      "purpose": "Pinned completed report inventory only",
+      "command": ".venv/Scripts/python.exe build_paper_results.py --index paper/result_sources_2026_10_15_v3.json --output data/my_evidence_recheck",
+      "scope": "Hash and denominator verification, not re-execution"
+    },
+    {
+      "purpose": "Current-code finite preservation control",
+      "command": ".venv/Scripts/python.exe validate_transition_preservation.py --output data/my_transition_check",
+      "scope": "New experiment using current compiler; compare counts with frozen v2 fixture"
+    },
+    {
+      "purpose": "Mutation sensitivity control",
+      "command": ".venv/Scripts/python.exe validate_transition_mutations.py --original data/my_transition_check --output data/my_mutation_check",
+      "scope": "Four deliberate errors; depends on preceding finite control"
+    },
+    {
+      "purpose": "Semantic-negative control",
+      "command": ".venv/Scripts/python.exe validate_semantic_negative_control.py --output data/my_semantic_negative",
+      "scope": "Authored counterexample, not real-domain accuracy"
+    },
+    {
+      "purpose": "Historical capture regression state audit",
+      "command": ".venv/Scripts/python.exe validate_capture_states.py --experiment data/validation/quantifier_capture_2026_10_15_v1 --output data/my_capture_recheck.json",
+      "scope": "Uses archived before/after PDDL; does not rebuild historical compiler"
+    },
+    {
+      "purpose": "Current fixed model source-plan replay",
+      "command": ".venv/Scripts/python.exe replay_downward_preservation.py --source-run data/validation/downward_sources_2026_10_15_v1 --compiled data/validation/type_encoding_regression_2026_10_15_v2/compiled --output data/my_source_replay",
+      "scope": "Six available source traces out of fifteen tasks; no new solver run"
+    },
+    {
+      "purpose": "Current fixed model auxiliary-plan replay",
+      "command": ".venv/Scripts/python.exe replay_source_probes.py --probes data/validation/source_effect_probes_2026_10_15_v1 --source-run data/validation/downward_probes_2026_10_15_v1 --compiled data/validation/type_encoding_regression_2026_10_15_v2/compiled --output data/my_probe_replay",
+      "scope": "26 available traces out of 45 auxiliary goals"
+    },
+    {
+      "purpose": "Full mapped-atom trajectory audit",
+      "command": ".venv/Scripts/python.exe audit_probe_trace_states.py --source-run data/validation/downward_probes_2026_10_15_v1 --replay data/my_probe_replay --output data/my_probe_states",
+      "scope": "Depends on preceding replay; complete mapped ground atoms on observed states, not all reachable states"
+    }
+  ],
+  "command_validation": "Argument spellings checked against current entry points. Individual underlying experiments were executed earlier; this combined protocol has not been run end-to-end.",
+  "code_sha256": {
+    "audit_probe_trace_states.py": "5b1d6dba0ece51d75690d57acda741c0049e19e8e1acdc8ce066d6a151b795a0",
+    "build_aligned_domain.py": "ea0f270d44544b3ae3d317ee08c0e7f4950518aaf153f64723932e5d4e082df9",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "build_paper_results.py": "4db707fadd62a35869faa4a95601f59eadda90c6319e41b2f38a450a240466d2",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "replay_downward_preservation.py": "edd832aebb7656514d2aa15a1fb3a41c9465e47a23667c79df6f963a813121a3",
+    "replay_source_probes.py": "6f403db67c4b3263ec79d539e1cb3606549ecf981596abc21913938ec56e34c3",
+    "validate_capture_states.py": "8a2b1f61c33d74628068781ae52a8ae7419fa34839b5af94d6f5815720b5532f",
+    "validate_semantic_negative_control.py": "94f81e387257cdb1d0c1acede48716eb3315e789ee052e224618d173b44e222d",
+    "validate_transition_mutations.py": "bba441a33935d8d783b9a3e8f3958b2cb5bd09f0a8eaa07396f3e23300a2bcb9",
+    "validate_transition_preservation.py": "6e49963b202ed45804ba4ee75ac5cfdba20645b68c520e77d0d70fc82b800152"
+  },
+  "version_boundary": {
+    "historical_pre_capture_fix": [
+      "composed_development_2026_10_15_v1",
+      "initial_only_development_2026_10_15_v2"
+    ],
+    "capture_fixed": [
+      "type_encoding_regression_2026_10_15_v2",
+      "probe_type_replay_2026_10_15_v2",
+      "probe_type_states_2026_10_15_v2"
+    ]
+  },
+  "rules": [
+    "Use a new output path for every command",
+    "Do not overwrite historical outputs or replace archived code with current code while claiming exact reproduction",
+    "Do not treat parsing, format checks, source preservation or plan success as independent semantic evidence",
+    "Keep full denominators and explicit unsupported cases and cutoffs"
+  ],
+  "excluded": [
+    "Full fresh fusion still running",
+    "Coupled-schema live condition not yet executed",
+    "Independent semantic labels",
+    "Independent narrative quality assessment"
+  ]
+}

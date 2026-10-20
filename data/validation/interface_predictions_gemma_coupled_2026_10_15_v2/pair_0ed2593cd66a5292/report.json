@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_0ed2593cd66a5292",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_0ed2593cd66a5292",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicate 'boiling' appears in both the PIGS_NP and PUSS narratives, but its usage and implications differ significantly. In PIGS_NP, 'boiling' describes a process applied to a pot, indicating a cooking action. The context shows a pot is 'boiling' as a result of a fire, and this 'boiling' is used to affect an item (pig). Conversely, in PUSS, 'drowning' and 'boiling' are used in the context of a cat's predicament. 'Drowning' describes a state of being submerged, while 'boiling' is used to describe the cat's demise. The two predicates describe fundamentally different events, one related to cooking and the other to death. Therefore, they are complementary, as they relate to different outcomes and processes. The action contexts provide the specific details of how each predicate is used within its respective narrative. Specifically, `PIGS_NP:action:pig_prepares_boiling_pot_and_fire` uses 'boiling' to describe a cooking process, while `PUSS:action:cat_persuade_master_to_bathe` uses 'drowning' to describe a fatal outcome. The presence of 'boiling' in both narratives does not imply equivalence; it represents distinct concepts within each story.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_call_for_help",
+        "quote": "(drowning ?jack)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_persuade_master_to_bathe",
+        "quote": "(drowning ?jack)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+        "quote": "(boiling ?pot)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:wolf_falls_into_pot_and_is_boiled",
+        "quote": "(boiling ?pot)"
+      }
+    ]
+  },
+  "errors": []
+}

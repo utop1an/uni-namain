@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:32:18.769675Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_66b8b6d8311a8875\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicate `exhibition_ready` describes a state of an item (likely a product or exhibit) being prepared for display, while `alive` describes the state of a living entity (specifically, a pig). These predicates represent fundamentally different concepts. `exhibition_ready` is a property of an object, while `alive` is a property of a living being. The action contexts demonstrate that `exhibition_ready` is used to describe the state of an item in an exhibition setting, whereas `alive` is used to describe the state of a living creature. The use of `alive` in multiple action contexts, particularly in actions involving the pig, further emphasizes its distinct meaning from `exhibition_ready`. The predicates are complementary because they describe different aspects of a scenario – one relates to the preparation of an item for display, and the other relates to the state of a living creature. The arguments are not interchangeable, and there is no bijection that can map them.\", \"evidence\": [ {\"side\": 1, \"ref\": \"PIGS_NP:action:ask_for_material\", \"quote\": \"(alive ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:build_house\", \"quote\": \"(alive ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_buys_butter_churn_and_hides\", \"quote\": \"(alive ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_collects_apples_and_escapes\", \"quote\": \"(alive ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_collects_turnips\", \"quote\": \"(alive ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_prepares_boiling_pot_and_fire\", \"quote\": \"(alive ?p)\"} ]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5887526800,
+  "load_duration": 15286900,
+  "prompt_eval_count": 3117,
+  "prompt_eval_duration": 492339000,
+  "eval_count": 476,
+  "eval_duration": 5212197000
+}

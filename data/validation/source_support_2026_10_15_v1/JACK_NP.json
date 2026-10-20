@@ -1,0 +1,361 @@
+{
+  "status": "predicate_relaxation_proves_unreachable",
+  "initial_predicates": [
+    "at",
+    "at_item",
+    "has",
+    "offers",
+    "on"
+  ],
+  "reachable_predicates": [
+    "at",
+    "at_item",
+    "beanstalk_grown",
+    "has",
+    "has_breakfast",
+    "inside",
+    "intact",
+    "offers",
+    "on",
+    "planted"
+  ],
+  "unreachable_goal_atoms": [
+    "(dead giant)"
+  ],
+  "goal_may_hold_in_relaxation": false,
+  "layers": [
+    {
+      "actions": [
+        "ask_giant_wife_for_breakfast",
+        "hide_in_oven",
+        "plant_beans",
+        "return_down_beanstalk",
+        "sell_cow_for_beans"
+      ],
+      "new_predicates": [
+        "has_breakfast",
+        "inside",
+        "planted"
+      ]
+    },
+    {
+      "actions": [
+        "grow_beanstalk"
+      ],
+      "new_predicates": [
+        "beanstalk_grown",
+        "intact"
+      ]
+    },
+    {
+      "actions": [
+        "climb_beanstalk"
+      ],
+      "new_predicates": []
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "cut_beanstalk",
+      "condition": [
+        "and",
+        [
+          "intact",
+          "beanstalk"
+        ],
+        [
+          "climbing_down",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "hide_in_kettle",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?j",
+          "giant_castle"
+        ],
+        [
+          "empty",
+          "?kettle"
+        ]
+      ],
+      "adds": [
+        "inside"
+      ]
+    },
+    {
+      "action": "steal_gold_bags",
+      "condition": [
+        "and",
+        [
+          "asleep",
+          "giant"
+        ],
+        [
+          "at_item",
+          "?bag1",
+          "giant_castle"
+        ],
+        [
+          "at_item",
+          "?bag2",
+          "giant_castle"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "steal_harp",
+      "condition": [
+        "and",
+        [
+          "on",
+          "?harp",
+          "giant_castle"
+        ],
+        [
+          "asleep",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "steal_hen",
+      "condition": [
+        "and",
+        [
+          "on",
+          "?hen",
+          "giant_castle"
+        ],
+        [
+          "distracted",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "ask_giant_wife_for_breakfast",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?j",
+          "giant_castle"
+        ],
+        [
+          "at",
+          "?wife",
+          "giant_castle"
+        ]
+      ],
+      "adds": [
+        "has_breakfast"
+      ]
+    },
+    {
+      "action": "climb_beanstalk",
+      "condition": [
+        "and",
+        [
+          "beanstalk_grown"
+        ],
+        [
+          "at",
+          "?j",
+          "beanstalk"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "cut_beanstalk",
+      "condition": [
+        "and",
+        [
+          "intact",
+          "beanstalk"
+        ],
+        [
+          "climbing_down",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "grow_beanstalk",
+      "condition": [
+        "planted",
+        "?beans"
+      ],
+      "adds": [
+        "beanstalk_grown",
+        "intact"
+      ]
+    },
+    {
+      "action": "hide_in_kettle",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?j",
+          "giant_castle"
+        ],
+        [
+          "empty",
+          "?kettle"
+        ]
+      ],
+      "adds": [
+        "inside"
+      ]
+    },
+    {
+      "action": "hide_in_oven",
+      "condition": [
+        "at",
+        "?j",
+        "giant_castle"
+      ],
+      "adds": [
+        "inside"
+      ]
+    },
+    {
+      "action": "plant_beans",
+      "condition": [
+        "at_item",
+        "?beans",
+        "?loc"
+      ],
+      "adds": [
+        "planted"
+      ]
+    },
+    {
+      "action": "return_down_beanstalk",
+      "condition": [
+        "at",
+        "?j",
+        "giant_castle"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "sell_cow_for_beans",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?j",
+          "?l"
+        ],
+        [
+          "at",
+          "?cow",
+          "?l"
+        ],
+        [
+          "offers",
+          "?b",
+          "?beans"
+        ],
+        [
+          "at",
+          "?b",
+          "?l"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "steal_gold_bags",
+      "condition": [
+        "and",
+        [
+          "asleep",
+          "giant"
+        ],
+        [
+          "at_item",
+          "?bag1",
+          "giant_castle"
+        ],
+        [
+          "at_item",
+          "?bag2",
+          "giant_castle"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "steal_harp",
+      "condition": [
+        "and",
+        [
+          "on",
+          "?harp",
+          "giant_castle"
+        ],
+        [
+          "asleep",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "steal_hen",
+      "condition": [
+        "and",
+        [
+          "on",
+          "?hen",
+          "giant_castle"
+        ],
+        [
+          "distracted",
+          "?giant"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    }
+  ],
+  "source_domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+  "source_problem_sha256": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

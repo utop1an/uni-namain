@@ -1,0 +1,937 @@
+{
+  "version": 1,
+  "status": "frozen_before_search",
+  "tasks": [
+    {
+      "id": "ACCO__probe_0",
+      "source": "ACCO",
+      "goal": [
+        "has",
+        "princess",
+        "pack"
+      ],
+      "producer_action_for_candidate_only": "sell_kettle_to_tinker",
+      "sampled_binding": {
+        "?pr": "princess",
+        "?t": "princess",
+        "?c": "box",
+        "?k": "pack"
+      },
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "e71d36255508e6c33b88a65d45c2cc7b3bf75d62f9e3e7f3a7afe479e974c661",
+      "original_problem_sha256": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+      "initial_ast_sha256": "6099738df71a06bb99ef5f10ae3128130b83f3006eef0c4929512075c5afd350"
+    },
+    {
+      "id": "ACCO__probe_1",
+      "source": "ACCO",
+      "goal": [
+        "contained_in",
+        "box",
+        "teakettle"
+      ],
+      "producer_action_for_candidate_only": "force_kettle_into_box",
+      "sampled_binding": {
+        "?b": "teakettle",
+        "?k": "box"
+      },
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "c9fd4a13f64a33a4d51e8514603fd7a11f0d4a3bbb083fd33879ca0606b9939d",
+      "original_problem_sha256": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+      "initial_ast_sha256": "6099738df71a06bb99ef5f10ae3128130b83f3006eef0c4929512075c5afd350"
+    },
+    {
+      "id": "ACCO__probe_2",
+      "source": "ACCO",
+      "goal": [
+        "has",
+        "friend",
+        "temple_treasure"
+      ],
+      "producer_action_for_candidate_only": "show_kettle_to_friend",
+      "sampled_binding": {
+        "?f": "friend",
+        "?t": "princess",
+        "?k": "temple_treasure"
+      },
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "06eb89f6eff7f06cc9ba79cf713f816dac20a5424f06c9a27da793510f006a18",
+      "original_problem_sha256": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+      "initial_ast_sha256": "6099738df71a06bb99ef5f10ae3128130b83f3006eef0c4929512075c5afd350"
+    },
+    {
+      "id": "BIRT__probe_0",
+      "source": "BIRT",
+      "goal": [
+        "stairs_descended",
+        "nora"
+      ],
+      "producer_action_for_candidate_only": "enter_tree_and_descend_stairs",
+      "sampled_binding": {
+        "?d": "fairy_queen",
+        "?n": "nora",
+        "?corridor": "corridor",
+        "?door": "cottage",
+        "?stairs": "bench",
+        "?t": "spring"
+      },
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "b923613b99ccab8baa37ad1a4bfb5a447ff1616842f6c2c8bf218a56ceeebf8e",
+      "original_problem_sha256": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+      "initial_ast_sha256": "f3112d90575b7c956b870cb562ae04ab05bb348bddd7060e5a61ebb1c2c045c4"
+    },
+    {
+      "id": "BIRT__probe_1",
+      "source": "BIRT",
+      "goal": [
+        "pellet_eaten",
+        "grandmotherkin"
+      ],
+      "producer_action_for_candidate_only": "eat_pellet_and_shrink",
+      "sampled_binding": {
+        "?n": "grandmotherkin",
+        "?p": "pellet"
+      },
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "15c147ea664c4a97c1cde4674c6d7c0dabbd382db76a3119f51dbfcba947aa24",
+      "original_problem_sha256": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+      "initial_ast_sha256": "f3112d90575b7c956b870cb562ae04ab05bb348bddd7060e5a61ebb1c2c045c4"
+    },
+    {
+      "id": "BIRT__probe_2",
+      "source": "BIRT",
+      "goal": [
+        "door_open",
+        "door"
+      ],
+      "producer_action_for_candidate_only": "turn_key_on_beech",
+      "sampled_binding": {
+        "?n": "grandmotherkin",
+        "?k": "lantern",
+        "?t": "spring"
+      },
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "dca88eb5ca9de4844f6606524aba5bccd5cdc5f14bcd627a9496fe0cc04eede5",
+      "original_problem_sha256": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+      "initial_ast_sha256": "f3112d90575b7c956b870cb562ae04ab05bb348bddd7060e5a61ebb1c2c045c4"
+    },
+    {
+      "id": "BUFF__probe_0",
+      "source": "BUFF",
+      "goal": [
+        "countryman_performs_with_real_pig",
+        "buffoon",
+        "little_pig"
+      ],
+      "producer_action_for_candidate_only": "countryman_perform_pig_imitation_with_real_pig",
+      "sampled_binding": {
+        "?countryman": "buffoon",
+        "?pig": "little_pig",
+        "?platform": "theater"
+      },
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "432e029159c80adc6bb38e2092865be129e30615a2b032ec0ec48fb5e65bba54",
+      "original_problem_sha256": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+      "initial_ast_sha256": "e3a67dd0c0f9be25418531ea6684ca4ad170e016b8c054e13cd19441cc6b767a"
+    },
+    {
+      "id": "BUFF__probe_1",
+      "source": "BUFF",
+      "goal": [
+        "imitates_pig",
+        "countryman"
+      ],
+      "producer_action_for_candidate_only": "perform_pig_imitation_without_apparatus",
+      "sampled_binding": {
+        "?performer": "countryman",
+        "?platform": "platform"
+      },
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "9f60c6a60831c22fd474cb5473c3fa00953a580cd90fcc21c34297c80fcc7dc0",
+      "original_problem_sha256": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+      "initial_ast_sha256": "e3a67dd0c0f9be25418531ea6684ca4ad170e016b8c054e13cd19441cc6b767a"
+    },
+    {
+      "id": "BUFF__probe_2",
+      "source": "BUFF",
+      "goal": [
+        "audience_calls_for_kickout",
+        "rich_nobleman",
+        "audience"
+      ],
+      "producer_action_for_candidate_only": "audience_criticize_countryman_and_call_for_kickout",
+      "sampled_binding": {
+        "?audience": "rich_nobleman",
+        "?countryman": "audience",
+        "?pig": "audience"
+      },
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "d9cb27ce088cded99538b4291c114ecf27f3de8d73000ca47a073409518d681b",
+      "original_problem_sha256": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+      "initial_ast_sha256": "e3a67dd0c0f9be25418531ea6684ca4ad170e016b8c054e13cd19441cc6b767a"
+    },
+    {
+      "id": "CHIC_NP__probe_0",
+      "source": "CHIC_NP",
+      "goal": [
+        "met",
+        "Goose-loose",
+        "Duck-luck"
+      ],
+      "producer_action_for_candidate_only": "meet_character",
+      "sampled_binding": {
+        "?e1": "Duck-luck",
+        "?e2": "Goose-loose",
+        "?l": "FoxHole"
+      },
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "e7af7cbbd2e12c169c825fa25859869eb4ef436fb10c537e2279aa6ce67c861b",
+      "original_problem_sha256": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+      "initial_ast_sha256": "6c7c553157894090ee528ada5edd4cfbd894e6dd2b6e18e53f9f99d1be7c4b08"
+    },
+    {
+      "id": "CHIC_NP__probe_1",
+      "source": "CHIC_NP",
+      "goal": [
+        "following_fox",
+        "Hen-len"
+      ],
+      "producer_action_for_candidate_only": "follow_fox",
+      "sampled_binding": {
+        "?e": "Hen-len"
+      },
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "1cb334873966ce13dd15639abe1a8bfe48cfc6c0bdfed4cc37bd14c4174d3586",
+      "original_problem_sha256": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+      "initial_ast_sha256": "6c7c553157894090ee528ada5edd4cfbd894e6dd2b6e18e53f9f99d1be7c4b08"
+    },
+    {
+      "id": "CHIC_NP__probe_2",
+      "source": "CHIC_NP",
+      "goal": [
+        "met",
+        "Duck-luck",
+        "Goose-loose"
+      ],
+      "producer_action_for_candidate_only": "meet_character",
+      "sampled_binding": {
+        "?e1": "Duck-luck",
+        "?e2": "Goose-loose",
+        "?l": "FoxHole"
+      },
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "2a131274d7518740a1791a41cb27c58ed8c714013b974232e2381d5e26696e30",
+      "original_problem_sha256": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+      "initial_ast_sha256": "6c7c553157894090ee528ada5edd4cfbd894e6dd2b6e18e53f9f99d1be7c4b08"
+    },
+    {
+      "id": "FOUR_NP__probe_0",
+      "source": "FOUR_NP",
+      "goal": [
+        "reward_received",
+        "brother_astronomer"
+      ],
+      "producer_action_for_candidate_only": "receive_reward",
+      "sampled_binding": {
+        "?e": "brother_astronomer"
+      },
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "418224b7fc275580ee816560ca65b90f92fabe33b3bf8292f36283f1cb64dfe3",
+      "original_problem_sha256": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+      "initial_ast_sha256": "be33748f2776b00f5e472643cca40c271d0485e8b6f65f1df2b48cbf5e321295"
+    },
+    {
+      "id": "FOUR_NP__probe_1",
+      "source": "FOUR_NP",
+      "goal": [
+        "is_hunter",
+        "brother_thief"
+      ],
+      "producer_action_for_candidate_only": "learn_hunter_trade",
+      "sampled_binding": {
+        "?b": "brother_thief"
+      },
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "e9893e037cac0b566f4e8344179b7e6ab57bf442792978649c7920582aaa0e80",
+      "original_problem_sha256": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+      "initial_ast_sha256": "be33748f2776b00f5e472643cca40c271d0485e8b6f65f1df2b48cbf5e321295"
+    },
+    {
+      "id": "FOUR_NP__probe_2",
+      "source": "FOUR_NP",
+      "goal": [
+        "has",
+        "king",
+        "telescope"
+      ],
+      "producer_action_for_candidate_only": "learn_astronomer_trade",
+      "sampled_binding": {
+        "?b": "king"
+      },
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "134f5d4caa992fb8ff95ce7a2f5308171c126efe1c8c25f4786b08760d031692",
+      "original_problem_sha256": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+      "initial_ast_sha256": "be33748f2776b00f5e472643cca40c271d0485e8b6f65f1df2b48cbf5e321295"
+    },
+    {
+      "id": "HANS_NP__probe_0",
+      "source": "HANS_NP",
+      "goal": [
+        "pebble_on_path",
+        "stable_location"
+      ],
+      "producer_action_for_candidate_only": "drop_pebble_on_path",
+      "sampled_binding": {
+        "?h": "bird",
+        "?peb": "sugar_window",
+        "?path_loc": "stable_location"
+      },
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "5490d71c79af9326f4ed7077dc1d472034c666f11fcd8d73bf7c65f02924b284",
+      "original_problem_sha256": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+      "initial_ast_sha256": "e539369d092482529b167713503e70f603438f81ee1380744805f258c18d9c5a"
+    },
+    {
+      "id": "HANS_NP__probe_1",
+      "source": "HANS_NP",
+      "goal": [
+        "collected",
+        "mother",
+        "crumb"
+      ],
+      "producer_action_for_candidate_only": "collect_treasure",
+      "sampled_binding": {
+        "?g": "bird",
+        "?h": "mother",
+        "?pearl": "crumb",
+        "?precious_stone": "precious_stone",
+        "?cottage": "room"
+      },
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "5c90cdf8e5f5f9424d523a0c68bddbabf03307ae78bea4e347fd3359f4bdf3be",
+      "original_problem_sha256": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+      "initial_ast_sha256": "e539369d092482529b167713503e70f603438f81ee1380744805f258c18d9c5a"
+    },
+    {
+      "id": "HANS_NP__probe_2",
+      "source": "HANS_NP",
+      "goal": [
+        "at",
+        "father",
+        "room"
+      ],
+      "producer_action_for_candidate_only": "hear_bird_and_follow_to_witch_house",
+      "sampled_binding": {
+        "?bird": "duck",
+        "?g": "father",
+        "?h": "bird",
+        "?branch": "door",
+        "?cottage": "room"
+      },
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "810816cf7de7d7bccf3787832e6117cf7a74692c0fcddef6fb7c5a325cd93971",
+      "original_problem_sha256": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+      "initial_ast_sha256": "e539369d092482529b167713503e70f603438f81ee1380744805f258c18d9c5a"
+    },
+    {
+      "id": "JACK_NP__probe_0",
+      "source": "JACK_NP",
+      "goal": [
+        "dead",
+        "jack"
+      ],
+      "producer_action_for_candidate_only": "cut_beanstalk",
+      "sampled_binding": {
+        "?giant": "jack",
+        "?mother": "giant",
+        "?axe": "oak_tree_club"
+      },
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "d053d095f0ed2eaefe8f8d3bee5502e9cf9292af04fcebb65e445857b197e941",
+      "original_problem_sha256": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+      "initial_ast_sha256": "dabd59ea8b2ea3a4f396dac76bd98ed55930ad1709737ac2b469e44b676b9721"
+    },
+    {
+      "id": "JACK_NP__probe_1",
+      "source": "JACK_NP",
+      "goal": [
+        "inside",
+        "jack",
+        "oak_tree_club"
+      ],
+      "producer_action_for_candidate_only": "hide_in_oven",
+      "sampled_binding": {
+        "?j": "jack",
+        "?oven": "oak_tree_club"
+      },
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "53a4a2796b1fc58281bf8bad9e5c9d7f584e25b51762d70af6c7b45fb0b98c87",
+      "original_problem_sha256": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+      "initial_ast_sha256": "dabd59ea8b2ea3a4f396dac76bd98ed55930ad1709737ac2b469e44b676b9721"
+    },
+    {
+      "id": "JACK_NP__probe_2",
+      "source": "JACK_NP",
+      "goal": [
+        "has_breakfast",
+        "brown_hen"
+      ],
+      "producer_action_for_candidate_only": "ask_giant_wife_for_breakfast",
+      "sampled_binding": {
+        "?j": "brown_hen",
+        "?wife": "giant_wife"
+      },
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "b23fa6ac4ff68e2b3da997b7d1876a86f6d3fbae4dcbad4713acd7122879b1a5",
+      "original_problem_sha256": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+      "initial_ast_sha256": "dabd59ea8b2ea3a4f396dac76bd98ed55930ad1709737ac2b469e44b676b9721"
+    },
+    {
+      "id": "MUSI__probe_0",
+      "source": "MUSI",
+      "goal": [
+        "kick",
+        "ass",
+        "ass"
+      ],
+      "producer_action_for_candidate_only": "donkey_kick_messenger",
+      "sampled_binding": {
+        "?donkey": "ass",
+        "?messenger": "ass"
+      },
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "10992f0633f22ddc6aaf96842a0cdb746c626364553820fab6f4d05a14c87104",
+      "original_problem_sha256": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+      "initial_ast_sha256": "6d746770d88aa6eff6736b9bc09b5fe1781497e80205e1d764e51562f1ed3edc"
+    },
+    {
+      "id": "MUSI__probe_1",
+      "source": "MUSI",
+      "goal": [
+        "agreed",
+        "messenger",
+        "captain"
+      ],
+      "producer_action_for_candidate_only": "hound_agrees",
+      "sampled_binding": {
+        "?donkey": "captain",
+        "?hound": "messenger"
+      },
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "31cc20c9f9abc2a118938b9070a0deacebe3b80dbfadaeaba2ae4d9ec84be63f",
+      "original_problem_sha256": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+      "initial_ast_sha256": "6d746770d88aa6eff6736b9bc09b5fe1781497e80205e1d764e51562f1ed3edc"
+    },
+    {
+      "id": "MUSI__probe_2",
+      "source": "MUSI",
+      "goal": [
+        "resting",
+        "cat"
+      ],
+      "producer_action_for_candidate_only": "rest_in_forest",
+      "sampled_binding": {
+        "?cat": "ass",
+        "?cock": "messenger",
+        "?donkey": "cat",
+        "?hound": "hound",
+        "?forest": "bremen"
+      },
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "ced4c280a6ba64fde6a1f70143665fb5088d2515cb1d3a4a4c7a3e15f33044b4",
+      "original_problem_sha256": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+      "initial_ast_sha256": "6d746770d88aa6eff6736b9bc09b5fe1781497e80205e1d764e51562f1ed3edc"
+    },
+    {
+      "id": "NAUG__probe_0",
+      "source": "NAUG",
+      "goal": [
+        "delivered",
+        "short_tail_73",
+        "bungo"
+      ],
+      "producer_action_for_candidate_only": "deliver_meteor_to_bungo",
+      "sampled_binding": {
+        "?m": "short_tail_73"
+      },
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "6fb4bc7da4cb91b2fa99d76cc9b695cd45ba27785be0a8556e6a1772d73707f0",
+      "original_problem_sha256": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+      "initial_ast_sha256": "5a52d0229542678f19b408fecce308cbc9f5e71e718ece09fbb058ccf652c723"
+    },
+    {
+      "id": "NAUG__probe_1",
+      "source": "NAUG",
+      "goal": [
+        "arrested",
+        "long_tail_45",
+        "meteor_keeper"
+      ],
+      "producer_action_for_candidate_only": "arrest_meteor",
+      "sampled_binding": {
+        "?c": "long_tail_45",
+        "?m": "meteor_keeper"
+      },
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "b3fa41f38e10008c2d30e9924876d4751ab0d1d72199f5fa778caa57257c3fa6",
+      "original_problem_sha256": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+      "initial_ast_sha256": "5a52d0229542678f19b408fecce308cbc9f5e71e718ece09fbb058ccf652c723"
+    },
+    {
+      "id": "NAUG__probe_2",
+      "source": "NAUG",
+      "goal": [
+        "traveling",
+        "comet_master"
+      ],
+      "producer_action_for_candidate_only": "start_travel",
+      "sampled_binding": {
+        "?c": "comet_master"
+      },
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "8d70d15f8cdc4c8b29d4fb56e9e955449393b5d981c0e8284c1add0251f7cb51",
+      "original_problem_sha256": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+      "initial_ast_sha256": "5a52d0229542678f19b408fecce308cbc9f5e71e718ece09fbb058ccf652c723"
+    },
+    {
+      "id": "PIGS_NP__probe_0",
+      "source": "PIGS_NP",
+      "goal": [
+        "puffed",
+        "pig1"
+      ],
+      "producer_action_for_candidate_only": "wolf_huff_and_puff",
+      "sampled_binding": {
+        "?w": "pig1",
+        "?h": "squire_orchard"
+      },
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "b0e2566e6dcfd7f8f22137902d1d2aa1291bc0823699fffc759e318e3aa472e7",
+      "original_problem_sha256": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+      "initial_ast_sha256": "aab8b3742936561be37fa727f5834967ef68206db927a86770afa2fe335f40de"
+    },
+    {
+      "id": "PIGS_NP__probe_1",
+      "source": "PIGS_NP",
+      "goal": [
+        "has",
+        "man_straw",
+        "pot_of_water"
+      ],
+      "producer_action_for_candidate_only": "receive_material",
+      "sampled_binding": {
+        "?m": "farmer",
+        "?p": "man_straw",
+        "?i": "pot_of_water"
+      },
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "f1dee44a917237fa4cc8d153f73742a4037e2f1d23b230de56e3d98d994f00db",
+      "original_problem_sha256": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+      "initial_ast_sha256": "aab8b3742936561be37fa727f5834967ef68206db927a86770afa2fe335f40de"
+    },
+    {
+      "id": "PIGS_NP__probe_2",
+      "source": "PIGS_NP",
+      "goal": [
+        "huffed",
+        "pig1"
+      ],
+      "producer_action_for_candidate_only": "wolf_huff_and_puff",
+      "sampled_binding": {
+        "?w": "pig1",
+        "?h": "squire_orchard"
+      },
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "41d5d78edab08752cad836a31d6b244379323683f43388917ce8a6774f0794e4",
+      "original_problem_sha256": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+      "initial_ast_sha256": "aab8b3742936561be37fa727f5834967ef68206db927a86770afa2fe335f40de"
+    },
+    {
+      "id": "PUSS__probe_0",
+      "source": "PUSS",
+      "goal": [
+        "has",
+        "jack",
+        "suit"
+      ],
+      "producer_action_for_candidate_only": "buy_boots",
+      "sampled_binding": {
+        "?jack": "groom",
+        "?puss": "jack",
+        "?boots": "suit"
+      },
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "5f0bd05f493a7646a57f1e1b965e6979c4f39759627a8dd5118745fd252876c3",
+      "original_problem_sha256": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+      "initial_ast_sha256": "5fe1a4b4a78ea7d4adfd1336f087557eb901a8d1da0ac1916b6dc44cb2e78c6c"
+    },
+    {
+      "id": "PUSS__probe_1",
+      "source": "PUSS",
+      "goal": [
+        "contains",
+        "mill",
+        "hare"
+      ],
+      "producer_action_for_candidate_only": "cat_catch_rabbits",
+      "sampled_binding": {
+        "?puss": "ogre",
+        "?bag": "mill",
+        "?rabbit": "hare",
+        "?warren": "field_of_wheat"
+      },
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "25f83da077021e6d03f6fd0de50f517b03d6aba5d6884e3efacf63f76fa08e7e",
+      "original_problem_sha256": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+      "initial_ast_sha256": "5fe1a4b4a78ea7d4adfd1336f087557eb901a8d1da0ac1916b6dc44cb2e78c6c"
+    },
+    {
+      "id": "PUSS__probe_2",
+      "source": "PUSS",
+      "goal": [
+        "rescued_by",
+        "groom",
+        "princess"
+      ],
+      "producer_action_for_candidate_only": "cat_call_for_help",
+      "sampled_binding": {
+        "?jack": "groom",
+        "?king": "princess",
+        "?puss": "princess"
+      },
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "a1ac032be90a9626f750a82914e91471178c5a0ee27077602f274259f33c00ef",
+      "original_problem_sha256": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+      "initial_ast_sha256": "5fe1a4b4a78ea7d4adfd1336f087557eb901a8d1da0ac1916b6dc44cb2e78c6c"
+    },
+    {
+      "id": "REMA_NP__probe_0",
+      "source": "REMA_NP",
+      "goal": [
+        "with_all_my_heart_spoken"
+      ],
+      "producer_action_for_candidate_only": "princess_accepts_with_heart",
+      "sampled_binding": {
+        "?k": "father_king",
+        "?p": "impostor_butterman"
+      },
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "f42c1687e0c0b18b06218c423e6d12c22b3b7ce23755a2d18fe29045e8b9d3ab",
+      "original_problem_sha256": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+      "initial_ast_sha256": "f8258912d9db6d6512b3ecc0ba6ce08c62112a0d446b89303cc238518aa0221f"
+    },
+    {
+      "id": "REMA_NP__probe_1",
+      "source": "REMA_NP",
+      "goal": [
+        "grandmother_mangle_spoken"
+      ],
+      "producer_action_for_candidate_only": "utter_phrase_grandmother_mangle",
+      "sampled_binding": {
+        "?p": "father_king"
+      },
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "a94db9f3462222289ddb4b8ea665ab2f60dc05ff95a2949e69455f40d896ed61",
+      "original_problem_sha256": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+      "initial_ast_sha256": "f8258912d9db6d6512b3ecc0ba6ce08c62112a0d446b89303cc238518aa0221f"
+    },
+    {
+      "id": "REMA_NP__probe_2",
+      "source": "REMA_NP",
+      "goal": [
+        "at",
+        "impostor_butterman",
+        "city"
+      ],
+      "producer_action_for_candidate_only": "run_away_from_palace",
+      "sampled_binding": {
+        "?p": "impostor_butterman"
+      },
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "065738921849beaeed575fa17292ffbf8600d5880a9f2a5d419477faf3ac3ebc",
+      "original_problem_sha256": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+      "initial_ast_sha256": "f8258912d9db6d6512b3ecc0ba6ce08c62112a0d446b89303cc238518aa0221f"
+    },
+    {
+      "id": "SNOW__probe_0",
+      "source": "SNOW",
+      "goal": [
+        "fair",
+        "dwarf2"
+      ],
+      "producer_action_for_candidate_only": "prince_marries_snow_white",
+      "sampled_binding": {
+        "?c": "dwarf1",
+        "?p": "dwarf2"
+      },
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "c2686d217bc9b0f57140bb5d9acbc3ff4f8ca098d549509b59a003971daffdd4",
+      "original_problem_sha256": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+      "initial_ast_sha256": "643435a2890acb6065dc7583b965a9d15212f04f170e00cca1cf2eba919fcf47"
+    },
+    {
+      "id": "SNOW__probe_1",
+      "source": "SNOW",
+      "goal": [
+        "dead",
+        "boar"
+      ],
+      "producer_action_for_candidate_only": "snow_white_eats_poisoned_apple_and_dies",
+      "sampled_binding": {
+        "?c": "boar",
+        "?apple": "plate"
+      },
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "dd37cf250bbba7330d759a83cb381cfa8415acd9e974d236d5166c919689d5dd",
+      "original_problem_sha256": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+      "initial_ast_sha256": "643435a2890acb6065dc7583b965a9d15212f04f170e00cca1cf2eba919fcf47"
+    },
+    {
+      "id": "SNOW__probe_2",
+      "source": "SNOW",
+      "goal": [
+        "visited",
+        "king",
+        "forest"
+      ],
+      "producer_action_for_candidate_only": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "sampled_binding": {
+        "?s": "king",
+        "?apple": "iron_slippers",
+        "?cottage": "forest"
+      },
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "999dceb3510457f087536a221d547a2c0edd57c67c74134813da68126d36789c",
+      "original_problem_sha256": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+      "initial_ast_sha256": "643435a2890acb6065dc7583b965a9d15212f04f170e00cca1cf2eba919fcf47"
+    },
+    {
+      "id": "SOUP__probe_0",
+      "source": "SOUP",
+      "goal": [
+        "has_imagination",
+        "old_lady_mouse"
+      ],
+      "producer_action_for_candidate_only": "receive_feather",
+      "sampled_binding": {
+        "?dryad": "old_owl",
+        "?m": "old_lady_mouse",
+        "?ph": "old_lady_mouse",
+        "?feather": "violet",
+        "?loc": "ship"
+      },
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "76162b1c0fee730268f4af0593bdcbf274d48e248f27e40fab4933c2937f3821",
+      "original_problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+      "initial_ast_sha256": "d8a99f5310b0ecc24291e188ead85d4bf9d92ff708b46ef936c8f21ee288bdcc"
+    },
+    {
+      "id": "SOUP__probe_1",
+      "source": "SOUP",
+      "goal": [
+        "holds",
+        "old_lady_mouse",
+        "violet"
+      ],
+      "producer_action_for_candidate_only": "receive_feather",
+      "sampled_binding": {
+        "?dryad": "old_owl",
+        "?m": "old_lady_mouse",
+        "?ph": "old_lady_mouse",
+        "?feather": "violet",
+        "?loc": "ship"
+      },
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "d61c8310890a0a1bbe474a8ada33f02579824e9b36bab80754bc34c78fe12e28",
+      "original_problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+      "initial_ast_sha256": "d8a99f5310b0ecc24291e188ead85d4bf9d92ff708b46ef936c8f21ee288bdcc"
+    },
+    {
+      "id": "SOUP__probe_2",
+      "source": "SOUP",
+      "goal": [
+        "holds",
+        "jailer",
+        "sausage_skewer"
+      ],
+      "producer_action_for_candidate_only": "give_skewer_to_elves",
+      "sampled_binding": {
+        "?elf": "jailer",
+        "?m": "fourth_traveler_mouse"
+      },
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "c3286fb4fc9a43db2c11b801a8a80ab466adaf3781d23415b0b3ae610de47b94",
+      "original_problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+      "initial_ast_sha256": "d8a99f5310b0ecc24291e188ead85d4bf9d92ff708b46ef936c8f21ee288bdcc"
+    },
+    {
+      "id": "WOE__probe_0",
+      "source": "WOE",
+      "goal": [
+        "invited",
+        "bitter_woe",
+        "wife"
+      ],
+      "producer_action_for_candidate_only": "invite_rich_brother_to_feast",
+      "sampled_binding": {
+        "?poor": "wife",
+        "?rich": "bitter_woe",
+        "?loc": "large_town"
+      },
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "12b5f5db03eb10b11b654bcfb761468531018a6a7489cedd1d66bd6322b61d49",
+      "original_problem_sha256": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+      "initial_ast_sha256": "5a59f61745e51024eda5236536153c0cad57b8b61f030e3de9295fa159b4f81b"
+    },
+    {
+      "id": "WOE__probe_1",
+      "source": "WOE",
+      "goal": [
+        "employed",
+        "bitter_woe",
+        "rich_brother"
+      ],
+      "producer_action_for_candidate_only": "request_help_from_rich_brother",
+      "sampled_binding": {
+        "?poor": "bitter_woe",
+        "?rich": "rich_brother"
+      },
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "8aff67d8dc7e87f686d2418a2953347a921986610eadcacf5bd5728bebc2f0f0",
+      "original_problem_sha256": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+      "initial_ast_sha256": "5a59f61745e51024eda5236536153c0cad57b8b61f030e3de9295fa159b4f81b"
+    },
+    {
+      "id": "WOE__probe_2",
+      "source": "WOE",
+      "goal": [
+        "singing",
+        "rich_brother"
+      ],
+      "producer_action_for_candidate_only": "sing_cheerful_song",
+      "sampled_binding": {
+        "?poor": "rich_brother",
+        "?loc": "well"
+      },
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "c9aff9b1b94159eb8ed31b8422c6a057b4522bedb02bfbb7cf549ea1d279863b",
+      "original_problem_sha256": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+      "initial_ast_sha256": "5a59f61745e51024eda5236536153c0cad57b8b61f030e3de9295fa159b4f81b"
+    }
+  ],
+  "task_count": 45,
+  "seed": 20261015,
+  "per_source": 3,
+  "coverage": [
+    {
+      "source": "ACCO",
+      "candidate_goals": 19,
+      "selected": 3,
+      "omitted_candidates": 16,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "BIRT",
+      "candidate_goals": 20,
+      "selected": 3,
+      "omitted_candidates": 17,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "BUFF",
+      "candidate_goals": 10,
+      "selected": 3,
+      "omitted_candidates": 7,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "CHIC_NP",
+      "candidate_goals": 8,
+      "selected": 3,
+      "omitted_candidates": 5,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "FOUR_NP",
+      "candidate_goals": 26,
+      "selected": 3,
+      "omitted_candidates": 23,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "HANS_NP",
+      "candidate_goals": 32,
+      "selected": 3,
+      "omitted_candidates": 29,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "JACK_NP",
+      "candidate_goals": 13,
+      "selected": 3,
+      "omitted_candidates": 10,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "MUSI",
+      "candidate_goals": 45,
+      "selected": 3,
+      "omitted_candidates": 42,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "NAUG",
+      "candidate_goals": 19,
+      "selected": 3,
+      "omitted_candidates": 16,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "PIGS_NP",
+      "candidate_goals": 28,
+      "selected": 3,
+      "omitted_candidates": 25,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "PUSS",
+      "candidate_goals": 13,
+      "selected": 3,
+      "omitted_candidates": 10,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "REMA_NP",
+      "candidate_goals": 10,
+      "selected": 3,
+      "omitted_candidates": 7,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "SNOW",
+      "candidate_goals": 36,
+      "selected": 3,
+      "omitted_candidates": 33,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "SOUP",
+      "candidate_goals": 13,
+      "selected": 3,
+      "omitted_candidates": 10,
+      "unsupported_or_empty_actions": []
+    },
+    {
+      "source": "WOE",
+      "candidate_goals": 23,
+      "selected": 3,
+      "omitted_candidates": 20,
+      "unsupported_or_empty_actions": []
+    }
+  ],
+  "scope": "Synthetic development probes from observed models; original goals remain separately evaluated",
+  "candidate_policy": "One seeded typed binding per action; positive non-universal effects; remove initially true targets; hash-ranked unique targets",
+  "world_policy": "Preserve original initial-state AST, objects, constants and complete source actions; replace only goal",
+  "limit": "Candidate producer may be unreachable; a solved probe is not original-goal success or independent generalization",
+  "implementation_sha256": "634caa9247c1ad7aae61100c188210118b62d858f17de75c2d67391ca18bf3fb"
+}

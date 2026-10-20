@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_d6852ba3e4e9f548",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `has` appears in both ACCO and REMA_NP narratives with the same declaration `(has ?e - entity ?i - item)`. The parameters are identical: `?e` as `entity` and `?i` as `item`. Across all action contexts, the predicate is consistently used to express possession or relationship between entities and items. The action contexts demonstrate that `has` is used to describe the state of objects being manipulated or possessed by agents. The identical declaration and parameter structure, combined with the consistent usage across different action contexts, strongly suggests that the predicate `has` is interchangeable between the two sources. The argument order is reversed to highlight the fact that the predicate is equivalent regardless of the source. The exact excerpts cited confirm this equivalence.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:arrange_exhibition",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:hang_kettle",
+      "quote": "(has ?pr ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:kettle_transform_to_fur_badger",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:perform_show",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:return_kettle_to_temple",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:sell_kettle_to_tinker",
+      "quote": "(has ?pr ?k)"
+    }
+  ]
+}

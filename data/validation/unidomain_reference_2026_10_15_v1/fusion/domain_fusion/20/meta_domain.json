@@ -1,0 +1,240 @@
+{
+  "sources": [
+    "PUSS",
+    "REMA_NP"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 41,
+    "predicates": 20,
+    "operators": 26
+  },
+  "predicate_maps": {
+    "PUSS": {
+      "alive": "alive",
+      "at": "at",
+      "at_item": "at_item",
+      "castle_owned_by": "castle_owned_by",
+      "contains": "contains",
+      "drowning": "drowning",
+      "gate_open": "gate_open",
+      "gift_delivered": "gift_delivered",
+      "has": "has",
+      "married": "married",
+      "obedient": "obedient",
+      "promised_to_serve": "promised_to_serve",
+      "rescued_by": "rescued_by",
+      "transformed_into": "transformed_into",
+      "wearing": "wearing"
+    },
+    "REMA_NP": {
+      "at": "rema_np__p_at",
+      "grandmother_mangle_spoken": "grandmother_mangle_spoken",
+      "has": "has",
+      "married": "rema_np__p_married",
+      "price_of_butter_spoken": "price_of_butter_spoken",
+      "with_all_my_heart_spoken": "with_all_my_heart_spoken"
+    }
+  },
+  "constant_maps": {
+    "PUSS": {
+      "ass": "ass",
+      "bag": "bag",
+      "boots": "boots",
+      "coachman": "coachman",
+      "eldest_son": "eldest_son",
+      "field_of_corn": "field_of_corn",
+      "field_of_wheat": "field_of_wheat",
+      "groom": "groom",
+      "hare": "hare",
+      "jack": "jack",
+      "king": "king",
+      "mill": "mill",
+      "miller": "miller",
+      "ogre": "ogre",
+      "ogre_castle": "ogre_castle",
+      "palace": "palace",
+      "partridge": "partridge",
+      "princess": "princess",
+      "puss": "puss",
+      "rabbit": "rabbit",
+      "river": "river",
+      "royal_wardrobe": "royal_wardrobe",
+      "second_son": "second_son",
+      "suit": "suit",
+      "warren": "warren"
+    },
+    "REMA_NP": {
+      "back_door": "back_door",
+      "back_stairs": "back_stairs",
+      "bag_of_rubies": "bag_of_rubies",
+      "bag_of_sapphires": "bag_of_sapphires",
+      "city": "city",
+      "crown": "crown",
+      "father_king": "father_king",
+      "forest": "forest",
+      "impostor_butterman": "impostor_butterman",
+      "king_at_palace": "king_at_palace",
+      "market_place": "market_place",
+      "oak_tree": "oak_tree",
+      "palace": "rema_np__c_palace",
+      "princess": "rema_np__c_princess",
+      "robber_chief": "robber_chief",
+      "sceptre": "sceptre"
+    }
+  },
+  "action_maps": {
+    "PUSS": {
+      "buy_boots": "buy_boots",
+      "give_bag_to_cat": "give_bag_to_cat",
+      "cat_catch_rabbits": "cat_catch_rabbits",
+      "cat_deliver_gifts_to_king": "cat_deliver_gifts_to_king",
+      "cat_persuade_master_to_bathe": "cat_persuade_master_to_bathe",
+      "cat_call_for_help": "cat_call_for_help",
+      "king_send_groom_fetch_suit": "king_send_groom_fetch_suit",
+      "master_wear_suit": "master_wear_suit",
+      "cat_ogre_transform_lion": "cat_ogre_transform_lion",
+      "cat_ogre_transform_mouse": "cat_ogre_transform_mouse",
+      "cat_eat_mouse": "cat_eat_mouse",
+      "cat_disentchant_prisoners": "cat_disentchant_prisoners",
+      "cat_open_castle_gates": "cat_open_castle_gates",
+      "master_marry_princess": "master_marry_princess"
+    },
+    "REMA_NP": {
+      "run_away_from_palace": "run_away_from_palace",
+      "encounter_impostor_king": "encounter_impostor_king",
+      "utter_phrase_price_of_butter": "utter_phrase_price_of_butter",
+      "receive_rubies_from_impostor": "receive_rubies_from_impostor",
+      "encounter_robbers_in_forest": "encounter_robbers_in_forest",
+      "utter_phrase_grandmother_mangle": "utter_phrase_grandmother_mangle",
+      "receive_sapphires_from_robber_chief": "receive_sapphires_from_robber_chief",
+      "arrive_at_marble_palace": "arrive_at_marble_palace",
+      "king_requests_information_and_gifts": "king_requests_information_and_gifts",
+      "king_proposes_marriage": "king_proposes_marriage",
+      "princess_accepts_with_heart": "princess_accepts_with_heart",
+      "suitors_retire_due_to_phrase": "suitors_retire_due_to_phrase"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at",
+      "right": "at",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "at_item",
+      "right": "at",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "contains",
+      "right": "has",
+      "reason": "action cat_take_item :effect: ill-typed at_item:?item:location->item; action cat_take_item :precondition: ill-typed at_item:?item:location->item; action cat_take_item :precondition: ill-typed has:?item:location->item; action deliver_gifts :effect: ill-typed gift_delivered:?king:object->entity; action deliver_gifts :effect: ill-typed gift_delivered:?puss:object->entity; action deliver_gifts :effect: ill-typed gift_delivered:?rabbit:object->item; action deliver_gifts :precondition: ill-typed at:?palace:object->location; action deliver_gifts :precondition: ill-typed at:?puss:object->entity"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` from domain_1 and `(has ?e - entity ?i - item)` from domain_2, are identical in name and arguments. They both represent the relationship where an entity `?e` possesses an item `?i`.  The predicates are used in similar contexts (buying, receiving, etc.), suggesting they represent the same underlying concept.  Merging them would simplify the domain description without introducing ambiguity or complexity. The predicates are not containing relationships, so rule (3) does not apply.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "married",
+      "right": "married",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action transfer_item :precondition: undeclared predicate can_transfer"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "give_bag_to_cat",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action transfer_item_to_entity :effect: ill-typed has:?i:entity->item; action transfer_item_to_entity :precondition: ill-typed has:?i:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "receive_rubies_from_impostor",
+      "reason": "action acquire_item :effect: ill-typed has:?item:object->entity; action acquire_item :effect: ill-typed has:?item:object->item; action acquire_item :effect: ill-typed has:?source:object->entity; action acquire_item :effect: wrong arity has; action acquire_item :precondition: ill-typed has:?item:object->item; action acquire_item :precondition: ill-typed has:?source:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "encounter_robbers_in_forest",
+      "reason": "Expected one PDDL root expression, got 3"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "action transfer_item :effect: ill-typed has:?giver:entity->item; action transfer_item :effect: ill-typed has:?item:item->entity; action transfer_item :effect: ill-typed has:?receiver:entity->item; action transfer_item :precondition: ill-typed has:?giver:entity->item; action transfer_item :precondition: ill-typed has:?item:item->entity; action transfer_item :precondition: ill-typed has:?receiver:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_catch_rabbits",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "action receive_item :effect: ill-typed has:?s:entity->item; action receive_item :precondition: ill-typed has:?s:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "give_bag_to_cat",
+      "right": "receive_sapphires_from_robber_chief",
+      "reason": "Unexpected ')' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "king_send_groom_fetch_suit",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action king_acquire_items :effect: ill-typed has:?i:entity->item; action king_acquire_items :precondition: ill-typed has:?i:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "cat_deliver_gifts_to_king",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action king_receives_gifts_from_cat :effect: ill-typed contains:?r:object->item; action king_receives_gifts_from_cat :effect: ill-typed contains:?s:object->item; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?k:object->entity; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?r:object->entity; action king_receives_gifts_from_cat :effect: ill-typed gift_delivered:?s:object->item; action king_receives_gifts_from_cat :effect: ill-typed has:?k:object->entity; action king_receives_gifts_from_cat :effect: ill-typed has:?r:object->item; action king_receives_gifts_from_cat :effect: ill-typed has:?s:object->item; action king_receives_gifts_from_cat :precondition: ill-typed has:?k:object->entity; action king_receives_gifts_from_cat :precondition: ill-typed has:?r:object->item; action king_receives_gifts_from_cat :precondition: ill-typed has:?s:object->item; action king_receives_gifts_from_cat :precondition: ill-typed rema_np__p_at:?k:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "king_requests_information_and_gifts",
+      "reason": "action request_and_marry :effect: ill-typed has:?k:object->entity; action request_and_marry :effect: ill-typed has:?p:object->entity; action request_and_marry :effect: ill-typed has:?r:object->item; action request_and_marry :effect: ill-typed has:?s:object->item; action request_and_marry :effect: ill-typed married:?k:object->entity; action request_and_marry :effect: ill-typed married:?p:object->entity; action request_and_marry :precondition: ill-typed has:?p:object->entity; action request_and_marry :precondition: ill-typed has:?r:object->item; action request_and_marry :precondition: ill-typed has:?s:object->item; action request_and_marry :precondition: ill-typed married:?k:object->entity; action request_and_marry :precondition: ill-typed married:?p:object->entity; action request_and_marry :precondition: ill-typed rema_np__p_at:?k:object->entity; action request_and_marry :precondition: ill-typed rema_np__p_at:?p:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_wear_suit",
+      "right": "king_requests_information_and_gifts",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "master_marry_princess",
+      "right": "king_proposes_marriage",
+      "reason": "action propose_marriage :effect: ill-typed rema_np__p_married:?k:object->entity; action propose_marriage :effect: ill-typed rema_np__p_married:?p:object->entity; action propose_marriage :precondition: ill-typed rema_np__p_at:?k:object->entity; action propose_marriage :precondition: ill-typed rema_np__p_at:?p:object->entity; action propose_marriage :precondition: undeclared symbol ?jack; action propose_marriage :precondition: undeclared symbol ?princess"
+    },
+    {
+      "kind": "constant",
+      "left": "palace",
+      "right": "palace",
+      "result": "rema_np__c_palace",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "princess",
+      "right": "princess",
+      "result": "rema_np__c_princess",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    }
+  ]
+}

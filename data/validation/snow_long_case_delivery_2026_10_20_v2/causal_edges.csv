@@ -1,0 +1,33 @@
+﻿producer_step,consumer_step,literal,truth
+1,2,"d000__p_at(q__rescuer, q__hut)",True
+1,2,"d000__p_at(q__companion, q__hut)",True
+1,2,"scene_at(q__companion, q__hut)",True
+1,2,"scene_at(q__rescuer, q__hut)",True
+3,4,"d001__p_has(q__jack, q__axe)",True
+1,5,"scene_at(q__rescuer, q__hut)",True
+2,5,"shared__p_possession(q__rescuer, q__comb)",True
+5,6,"shared__p_possession(q__snow_white, q__comb)",True
+1,7,"scene_at(q__rescuer, q__hut)",True
+5,7,"shared__p_possession(q__snow_white, q__comb)",True
+6,7,d002__p_poisoned(q__comb),True
+6,8,d002__p_poisoned(q__comb),True
+7,8,"shared__p_possession(q__rescuer, q__comb)",True
+7,8,"shared__p_possession(q__snow_white, q__comb)",False
+8,9,d001__p_climbing_down(q__snow_white),True
+4,9,"scene_at(q__jack, d001__c_beanstalk)",True
+3,9,"d001__p_has(q__jack, q__axe)",True
+1,10,"scene_at(q__rescuer, q__hut)",True
+9,10,"scene_at(q__snow_white, d001__c_cottage)",True
+9,10,shared__p_death(q__snow_white),True
+7,10,"shared__p_possession(q__rescuer, q__comb)",True
+10,11,"scene_at(q__rescuer, d001__c_cottage)",True
+9,11,"scene_at(q__snow_white, d001__c_cottage)",True
+9,11,shared__p_death(q__snow_white),True
+7,11,"shared__p_possession(q__rescuer, q__comb)",True
+6,11,d002__p_poisoned(q__comb),True
+9,12,shared__p_death(q__snow_white),True
+6,12,d002__p_poisoned(q__comb),True
+7,12,"shared__p_possession(q__rescuer, q__comb)",True
+10,12,"scene_at(q__rescuer, d001__c_cottage)",True
+9,12,"scene_at(q__snow_white, d001__c_cottage)",True
+11,12,"scene_comb_applied(q__snow_white, q__comb)",True

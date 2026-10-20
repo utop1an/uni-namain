@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_73cad6872aa0f288",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'owned_by' indicates ownership of an item, while 'offers' indicates a willingness to sell an item. These predicates describe different aspects of a transaction: 'owned_by' specifies the current owner, and 'offers' specifies a potential seller. They are related in the context of a sale, but one does not imply the other. The 'owned_by' predicate describes a state, while the 'offers' predicate describes an intention or action. The action contexts further support this distinction: 'owned_by' is used in a declaration about an item and its owner, while 'offers' is used within the precondition of an action that describes a sale. The 'offers' predicate is used to describe the act of offering an item for sale, while 'owned_by' describes the state of ownership. The action 'JACK_NP:action:sell_cow_for_beans' demonstrates this difference, where the precondition includes 'offers ?b ?beans' to describe the act of offering, and the effect includes 'has ?j ?beans' to describe the result of the sale.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(offers ?b ?beans)"
+    },
+    {
+      "side": 1,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(offers ?b ?beans)"
+    }
+  ]
+}

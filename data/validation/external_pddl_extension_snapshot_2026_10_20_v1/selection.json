@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "status": "fixed_before_artifact_parsing",
+  "repositories": [
+    {
+      "id": "camelot",
+      "repository": "liogiu2/Camelot-Wrapper",
+      "commit": "64086739a1d016dae1d101fd3bdbfc7e384a058d",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "Camelot Wrapper narrative environment integration, distinct implementation provider; relation to underlying Camelot/Sabre research lineage must be retained"
+    },
+    {
+      "id": "textworld",
+      "repository": "microsoft/TextWorld",
+      "commit": "6d88a0845bc904751d3b7f128d61f21cabdf6f70",
+      "metadata": [
+        "README.md",
+        "LICENSE.txt"
+      ],
+      "lineage": "Microsoft TextWorld interactive-fiction environment; selected PDDL files are environment unit-test fixtures, not a narrative benchmark"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "CAMELOT",
+      "provider": "camelot",
+      "family": "camelot_wrapper_example",
+      "role": "narrative_environment_candidate",
+      "domain": "camelot_wrapper/pddl_data/camelot_domain.pddl",
+      "problem": "camelot_wrapper/pddl_data/example_problem.pddl",
+      "annotation_selected": true
+    },
+    {
+      "id": "TEXTWORLD",
+      "provider": "textworld",
+      "family": "textworld_pddl_fixture",
+      "role": "interactive_fiction_fixture_auxiliary",
+      "domain": "textworld/envs/pddl/tests/domain.pddl",
+      "problem": "textworld/envs/pddl/tests/problem.pddl",
+      "annotation_selected": true
+    }
+  ],
+  "missing_artifact_lead": {
+    "provider": "guansuns",
+    "decision": "Not counted as independent from HRI household: HRI explicitly reuses GuanSuns scenario descriptions. Published PDDL tree inspection located logistics, not a directly published household domain."
+  },
+  "selection_policy": "All published PDDL pairs in these two fixed paths; no planner outcomes or repairs used. Extension screen kept separate from first 13-candidate audit.",
+  "annotation_policy": {
+    "seed": "external-screen-2026-10-20-v1",
+    "per_stratum": 24,
+    "primary_role": "external_annotation_pilot_not_pristine_heldout",
+    "actual_independent_labels": 0
+  }
+}

@@ -1,0 +1,1 @@
+(define (problem formula_problem) (:domain narrative_union) (:objects d000__o_b - d000__t_person) (:init) (:goal (and (forall (?x - d000__t_person) (exists (?y - d000__t_person) (= ?x ?y))) (not (exists (?v - d000__t_vacant) (d000__p_e ?v))) (d000__p_done))))

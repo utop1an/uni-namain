@@ -1,0 +1,941 @@
+{
+  "status": "audited",
+  "sources": [
+    {
+      "source": "PUSS",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "buy_boots",
+          "mapped_action": "buy_boots",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "give_bag_to_cat",
+          "mapped_action": "give_bag_to_cat",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_catch_rabbits",
+          "mapped_action": "cat_catch_rabbits",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_deliver_gifts_to_king",
+          "mapped_action": "cat_deliver_gifts_to_king",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_persuade_master_to_bathe",
+          "mapped_action": "cat_persuade_master_to_bathe",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_call_for_help",
+          "mapped_action": "cat_call_for_help",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "king_send_groom_fetch_suit",
+          "mapped_action": "queen_ascend_to_throne",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "master_wear_suit",
+          "mapped_action": "apply_item_to_entity",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "cat_ogre_transform_lion",
+          "mapped_action": "cat_ogre_transform_lion",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_ogre_transform_mouse",
+          "mapped_action": "cat_ogre_transform_mouse",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_eat_mouse",
+          "mapped_action": "cat_eat_captured_mouse",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_disentchant_prisoners",
+          "mapped_action": "cat_disentchant_prisoners",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "cat_open_castle_gates",
+          "mapped_action": "cat_open_castle_gates",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "master_marry_princess",
+          "mapped_action": "master_marry_princess",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "alive",
+          "mapped_predicate": "alive",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "at",
+          "mapped_predicate": "at",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "at_item",
+          "mapped_predicate": "at_item",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "castle_owned_by",
+          "mapped_predicate": "castle_owned_by",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "contains",
+          "mapped_predicate": "contains",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "drowning",
+          "mapped_predicate": "drowning",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "gate_open",
+          "mapped_predicate": "gate_open",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "gift_delivered",
+          "mapped_predicate": "gift_delivered",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 3,
+          "target_arity": 3,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "married",
+          "mapped_predicate": "married",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "obedient",
+          "mapped_predicate": "obedient",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "promised_to_serve",
+          "mapped_predicate": "promised_to_serve",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "rescued_by",
+          "mapped_predicate": "rescued_by",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "transformed_into",
+          "mapped_predicate": "transformed_into",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "wearing",
+          "mapped_predicate": "wearing",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        }
+      ]
+    },
+    {
+      "source": "REMA_NP",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "run_away_from_palace",
+          "mapped_action": "flee_to_location",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "encounter_impostor_king",
+          "mapped_action": "encounter_impostor_king",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "utter_phrase_price_of_butter",
+          "mapped_action": "utter_phrase_price_of_butter",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_rubies_from_impostor",
+          "mapped_action": "receive_rubies_from_impostor",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "encounter_robbers_in_forest",
+          "mapped_action": "encounter_robbers_in_forest",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "utter_phrase_grandmother_mangle",
+          "mapped_action": "utter_phrase_grandmother_mangle",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_sapphires_from_robber_chief",
+          "mapped_action": "receive_sapphires_from_robber_chief",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "arrive_at_marble_palace",
+          "mapped_action": "place_at_location",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "king_requests_information_and_gifts",
+          "mapped_action": "king_requests_information_and_gifts",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "king_proposes_marriage",
+          "mapped_action": "declare_fairest",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "princess_accepts_with_heart",
+          "mapped_action": "princess_accepts_with_heart",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "suitors_retire_due_to_phrase",
+          "mapped_action": "suitors_retire_due_to_phrase",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "at",
+          "mapped_predicate": "rema_np__p_at",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "grandmother_mangle_spoken",
+          "mapped_predicate": "grandmother_mangle_spoken",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "married",
+          "mapped_predicate": "rema_np__p_married",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "price_of_butter_spoken",
+          "mapped_predicate": "price_of_butter_spoken",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "with_all_my_heart_spoken",
+          "mapped_predicate": "with_all_my_heart_spoken",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        }
+      ]
+    },
+    {
+      "source": "SNOW",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "queen_sews_at_window",
+          "mapped_action": "queen_ascend_to_throne",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "queen_pricks_finger",
+          "mapped_action": "queen_pricks_finger",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "queen_wishes_child_white_red_black",
+          "mapped_action": "queen_wishes_child_white_red_black",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "child_is_born_and_queen_dies",
+          "mapped_action": "child_is_born_and_queen_dies",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "king_marries_stepmother",
+          "mapped_action": "king_marries_stepmother",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_asks_looking_glass_fairest",
+          "mapped_action": "declare_fairest",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_becomes_envious_of_snow_white",
+          "mapped_action": "stepmother_becomes_envious_of_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_orders_huntsman_to_kill_snow_white",
+          "mapped_action": "stepmother_orders_huntsman_to_kill_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+          "mapped_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+          "mapped_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "snow_white_flees_into_forest",
+          "mapped_action": "flee_to_location",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "snow_white_finds_dwarfs_cottage",
+          "mapped_action": "place_at_location",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+          "mapped_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "snow_white_sleeps_in_seventh_bed",
+          "mapped_action": "snow_white_sleeps_in_seventh_bed",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "dwarfs_return_and_discover_snow_white",
+          "mapped_action": "dwarfs_return_and_discover_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "dwarfs_offer_snow_white_to_maintain_house",
+          "mapped_action": "dwarfs_offer_snow_white_to_maintain_house",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+          "mapped_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_laces_snow_white_tightly",
+          "mapped_action": "apply_item_to_entity",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "dwarfs_cut_laces_rescue_snow_white",
+          "mapped_action": "dwarfs_cut_laces_rescue_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+          "mapped_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_comb_poison_snow_white",
+          "mapped_action": "stepmother_comb_poison_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "dwarfs_remove_comb_rescue_snow_white",
+          "mapped_action": "dwarfs_remove_comb_rescue_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+          "mapped_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "snow_white_eats_poisoned_apple_and_dies",
+          "mapped_action": "snow_white_eats_poisoned_apple_and_dies",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+          "mapped_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "prince_discovers_coffin_and_moves_it",
+          "mapped_action": "prince_discovers_coffin_and_moves_it",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "apple_piece_falls_out_reviving_snow_white",
+          "mapped_action": "apple_piece_falls_out_reviving_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "prince_marries_snow_white",
+          "mapped_action": "prince_marries_snow_white",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+          "mapped_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "alive",
+          "mapped_predicate": "snow__p_alive",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "at",
+          "mapped_predicate": "snow__p_at",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "at_item",
+          "mapped_predicate": "at_item",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "awake",
+          "mapped_predicate": "awake",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "dead",
+          "mapped_predicate": "state",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "disguised_as",
+          "mapped_predicate": "disguised_as",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "envious",
+          "mapped_predicate": "envious",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "fair",
+          "mapped_predicate": "fair",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "fairest",
+          "mapped_predicate": "fairest",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "in_coffin",
+          "mapped_predicate": "in_coffin",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "laced",
+          "mapped_predicate": "laced",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "poisoned",
+          "mapped_predicate": "poisoned",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "sleeping",
+          "mapped_predicate": "sleeping",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "visited",
+          "mapped_predicate": "visited",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "wearing",
+          "mapped_predicate": "wearing",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        }
+      ]
+    },
+    {
+      "source": "SOUP",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "travel_to",
+          "mapped_action": "travel_to",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "give_skewer_to_elves",
+          "mapped_action": "give_skewer_to_elves",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_anointed_skewer",
+          "mapped_action": "receive_anointed_skewer",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_feather",
+          "mapped_action": "receive_feather",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "learn_wisdom_from_ants",
+          "mapped_action": "learn_wisdom_from_ants",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "read_and_digest_books",
+          "mapped_action": "read_and_digest_books",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "escape_jail",
+          "mapped_action": "escape_jail",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "run_in_cage",
+          "mapped_action": "cat_eat_captured_mouse",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "prepare_soup_by_elf_effect",
+          "mapped_action": "prepare_soup_by_elf_effect",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "prepare_soup_by_poet_imagination",
+          "mapped_action": "prepare_soup_by_poet_imagination",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "prepare_soup_by_king_tail",
+          "mapped_action": "prepare_soup_by_king_tail",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "claim_queenhood",
+          "mapped_action": "queen_ascend_to_throne",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "anointed",
+          "mapped_predicate": "anointed",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "at",
+          "mapped_predicate": "snow__p_at",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "captured",
+          "mapped_predicate": "captured",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "escaped",
+          "mapped_predicate": "state",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has_feeling",
+          "mapped_predicate": "has_feeling",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has_imagination",
+          "mapped_predicate": "has_imagination",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has_understanding",
+          "mapped_predicate": "has_understanding",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "holds",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "in_cage",
+          "mapped_predicate": "in_cage",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "is_poet",
+          "mapped_predicate": "is_poet",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "is_queen",
+          "mapped_predicate": "is_queen",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "king_tail_stirred",
+          "mapped_predicate": "king_tail_stirred",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "soup_effect_created",
+          "mapped_predicate": "soup_effect_created",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        }
+      ]
+    }
+  ],
+  "parameter_mapping_policy": "No inferred action-parameter permutation",
+  "limit": "Literal rename-only equality is conservative syntactic evidence, not source-universe preservation, semantic equivalence or trace validity",
+  "action_counts": {
+    "rename_only_ast_equal": 55,
+    "rewritten_ast_no_verified_parameter_map": 12
+  },
+  "source_action_total": 67,
+  "mapped_action_total": 60,
+  "independent_domain_parse": "VALID",
+  "scope": "intermediate_node_not_final_reference_result",
+  "node": "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\25",
+  "input_sha256": {
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\25\\meta_domain.json": "1cf8bef7e3c7939fd316932a5befd8d67ddecab2378e7253ad1ea5200a05737b",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\25\\meta_domain.pddl": "dd84ce2e8934c1e8380d6e1709825b232eae0ef3d7ad487b430068f103fa6849",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de"
+  },
+  "reference_manifest_sha256": "add8ec23777d176b3caccbe2d06236df476702ebcfe0744e4826c9fb3837de63",
+  "snapshot_unchanged": true,
+  "implementation_sha256": {
+    "audit_fusion_mapping.py": "0bfabe5a79d274cd8fc0f579f204637fc8faf8222389e9ec7358c4c81612fd5f",
+    "audit_union_preservation.py": "fda4784e22c450c1e72fe5d10650b7861be336742380925e0c7f87303bbff033",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9"
+  }
+}

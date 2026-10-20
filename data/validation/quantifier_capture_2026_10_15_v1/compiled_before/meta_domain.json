@@ -1,0 +1,112 @@
+{
+  "sources": [
+    "A"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 0,
+    "constants": 2,
+    "predicates": 4,
+    "operators": 1
+  },
+  "predicate_maps": {
+    "A": {
+      "p": "d000__p_p",
+      "q": "d000__p_q"
+    }
+  },
+  "constant_maps": {
+    "A": {
+      "a": "d000__c_a",
+      "b": "d000__c_b"
+    }
+  },
+  "action_maps": {
+    "A": {
+      "spread": "d000__a_spread"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "A": {
+      "types": {
+        "item": "d000__t_item",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_type_parents": {
+    "d000__t_item": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_item",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_b"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_b"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_a": "d000__t_item",
+    "d000__c_b": "d000__t_item"
+  },
+  "predicate_orders": {
+    "A": {
+      "p": [
+        0
+      ],
+      "q": [
+        0
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "A": {
+      "p": [
+        "d000__t_item"
+      ],
+      "q": [
+        "d000__t_item"
+      ]
+    }
+  },
+  "source_sha256": {
+    "A_domainfile.pddl": "9a190584e12920bbc06567d2d1bb92708f44d7fb0e972ecfdaa21c0f70c259cd",
+    "A_problemfile.pddl": "7cae9e4ca201f86f19fbde301adeb0bdfd5c1eec038855c5c37ab3a4a9e3e88d"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "A_domainfile.pddl": "9a190584e12920bbc06567d2d1bb92708f44d7fb0e972ecfdaa21c0f70c259cd"
+    },
+    "type_groups": [],
+    "predicate_groups": []
+  },
+  "implementation_sha256": {
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_66b8b6d8311a8875",
+  "label": "complementary",
+  "right_from_left": [
+    4,
+    5
+  ],
+  "rationale": "The predicate `exhibition_ready` describes a state of an item (e.g., a 't' in ACCO's action context) being prepared for display, while `alive` describes the state of an entity (e.g., 'p' or 'w' in PIGS_NP's action context) being living. These predicates represent fundamentally different concepts: one relates to readiness for an event, and the other to biological existence. The action contexts demonstrate this difference: `exhibition_ready` is a precondition for `arrange_exhibition`, while `alive` is a precondition for many actions involving entities. The use of `alive` in multiple contexts related to the pig, and the absence of `alive` in the `exhibition_ready` context, further supports the complementary relationship. The fact that `alive` is used to describe the state of multiple entities, while `exhibition_ready` is used to describe the state of a single item, reinforces this distinction. The different action contexts and parameters highlight that these predicates are not interchangeable; they describe distinct aspects of the world.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:ask_for_material",
+      "quote": "(alive ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(alive ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(alive ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_collects_apples_and_escapes",
+      "quote": "(alive ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_collects_turnips",
+      "quote": "(alive ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(alive ?p)"
+    }
+  ]
+}

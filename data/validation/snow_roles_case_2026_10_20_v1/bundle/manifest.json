@@ -1,0 +1,258 @@
+{
+  "status": "frozen_before_search",
+  "mode": "matched_source_representations",
+  "task_count": 11,
+  "tasks": [
+    {
+      "id": "role_safe",
+      "source": "snow_white_giant_witch",
+      "representation": "role_safe",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "72d1ccc93bb260b39fa7abb92c9d5fa19ba59da0459c467ff7a6d6d19970e3bc"
+    },
+    {
+      "id": "no_interfaces",
+      "source": "snow_white_giant_witch",
+      "representation": "no_interfaces",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "023cf60427fe45ed8567e96518bfe1fe4c8a937b534c6a84e4a7d97b517878ed",
+      "problem_sha256": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968",
+      "mapping_sha256": "adcfc97942572762957077179dce873d08cf0ba436de09275e5d0913e7b268f6",
+      "patches_sha256": "01772fb2636e8fb058bc18f7614d1a428004c88d03f0864d6f074a5fa3d8e155"
+    },
+    {
+      "id": "no_possession_interface",
+      "source": "snow_white_giant_witch",
+      "representation": "no_possession_interface",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "43284a5888e6f98805d7d5e7600d972eef07d006b1d6775d7f881f5f310a798b",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "8124c03b79f5406e4d18053743aedf9405c77c8b63d681eadde137c27929a423",
+      "patches_sha256": "cc0bbfd53c4ea148332cc90e98a5b48dd18b29dd4191067eac2650d24e6c1c82"
+    },
+    {
+      "id": "no_death_interface",
+      "source": "snow_white_giant_witch",
+      "representation": "no_death_interface",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "0b5f7b2c7dc9b474c631d6f7578ca72fe4e8efd6c4827c5a9eb85d5f56ed7a06",
+      "problem_sha256": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968",
+      "mapping_sha256": "a48a8b34cef7e345d2d28a0e7341c64247b9b970721eb0f9200be2c41d190dd6",
+      "patches_sha256": "c2fa863cc393a3245377290c3f5862a3c894d99848e6a658e8393a8b035befc9"
+    },
+    {
+      "id": "HANS_NP_only",
+      "source": "snow_white_giant_witch",
+      "representation": "HANS_NP_only",
+      "retained_sources": [
+        "HANS_NP"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 15,
+      "domain_sha256": "83b0e2b543ad7eb5073b6e69473ffa5f0be0ce06e1343208890f0e1a2df2e3ae",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "f71d5e477a06ea81dd005209efedd1620d8ea2c59af05626a470b55ace36c423"
+    },
+    {
+      "id": "JACK_NP_only",
+      "source": "snow_white_giant_witch",
+      "representation": "JACK_NP_only",
+      "retained_sources": [
+        "JACK_NP"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 12,
+      "domain_sha256": "8e6117af9546e8ae1703a9c414b3dddf5ae495920d8df8adfa195b56f754144a",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "a1ec11f750a504e4e593fe4eeae1b7af9f8ce60904bdc4b63852712bf88ccb6d"
+    },
+    {
+      "id": "SNOW_only",
+      "source": "snow_white_giant_witch",
+      "representation": "SNOW_only",
+      "retained_sources": [
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 29,
+      "domain_sha256": "e61314883dbe8c4dad00a0153748125a7c919051c6675629d9cbff24664272b4",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "83e2852461b95ddc6802cae88ae1f520f65dbc61def9771d6a20638348440189"
+    },
+    {
+      "id": "without_HANS_NP",
+      "source": "snow_white_giant_witch",
+      "representation": "without_HANS_NP",
+      "retained_sources": [
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "source_action_templates": 41,
+      "domain_sha256": "042591eafed085f1c325dd4eaa20d2524e564c6c7b67e42c540d7aeecc42a8db",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "21d8c6ca9826e62e70e1c2f03133e64a4c4dcd007ac5ad568d7148d28709d276"
+    },
+    {
+      "id": "no_shared_identity",
+      "source": "snow_white_giant_witch",
+      "representation": "no_shared_identity",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": false,
+      "source_action_templates": 56,
+      "domain_sha256": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+      "problem_sha256": "c7b639ef7ddc2b1e3bb7fb8f5f9f2cbe77b4fde83301c5a81153f4dd48b92d52",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "72d1ccc93bb260b39fa7abb92c9d5fa19ba59da0459c467ff7a6d6d19970e3bc"
+    },
+    {
+      "id": "without_life_adapter",
+      "source": "snow_white_giant_witch",
+      "representation": "without_life_adapter",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": true,
+      "life_adapter": false,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "42da501c7aaa402418d6400ecaad48d85c13bc9eaa3fa8faf9e4a4cfb299e9d2",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "3e2391f82342150dae8204d6667acd1a9d5d4bb5d64d7db22116a90e7be21240"
+    },
+    {
+      "id": "unrestricted_sources",
+      "source": "snow_white_giant_witch",
+      "representation": "unrestricted_sources",
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "role_guards": false,
+      "life_adapter": false,
+      "shared_identity": true,
+      "source_action_templates": 56,
+      "domain_sha256": "a29af3b05a1f11dd48017c035bb6e5fca754561fea399e9a53a7fa14a80648b1",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+      "mapping_sha256": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+      "patches_sha256": "a618c3e4dca4019af5fc752f0c30a222f72f22617a49a102e65b127bef41dc6c"
+    }
+  ],
+  "budget": {
+    "seconds": 20,
+    "memory_mb": 4096,
+    "workers": 1
+  },
+  "query_sha256": "f379866960b56e5702b5db34b8efd03a01e6e02bdf6091b113eca9abde08ad58",
+  "contract_sha256": "660eb81e71b937fd11790c2a8cfc80c139520c31660067ff9b0ea09fb48cbf87",
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\scripts\\experiments\\prepare_snow_roles_case.py": "d4cdf6fa26a53734fd920ca1185ebe2c81325be6f0a5d1dbc25519ee1f36955a",
+    "rcnc\\aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "rcnc\\narrative_pipeline.py": "d6141dc77f9ff063ee3f08c922a22f3c47c0ad14e9f3baeb6ac35d7f68de824a"
+  },
+  "source_sha256": {
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78"
+  },
+  "scope": "One authored shared-identity world with eleven conditions, not eleven independent stories. Role/life/event overlays explicitly differ from source models; no source problem facts imported."
+}

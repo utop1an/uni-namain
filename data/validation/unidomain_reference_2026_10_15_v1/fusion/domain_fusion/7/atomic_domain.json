@@ -1,0 +1,90 @@
+{
+  "sources": [
+    "MUSI"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 3,
+    "constants": 21,
+    "predicates": 20,
+    "operators": 24
+  },
+  "predicate_maps": {
+    "MUSI": {
+      "agreed": "agreed",
+      "at": "at",
+      "ate_all": "ate_all",
+      "attacked": "attacked",
+      "attempt_light": "attempt_light",
+      "bite": "bite",
+      "crowed": "crowed",
+      "fled": "fled",
+      "invited": "invited",
+      "kick": "kick",
+      "light_off": "light_off",
+      "light_on": "light_on",
+      "making_noise": "making_noise",
+      "moving_towards": "moving_towards",
+      "resting": "resting",
+      "retreated": "retreated",
+      "sees_light": "sees_light",
+      "sleeping_at": "sleeping_at",
+      "stacked_on": "stacked_on",
+      "window_shattered": "window_shattered"
+    }
+  },
+  "constant_maps": {
+    "MUSI": {
+      "ass": "ass",
+      "beam": "beam",
+      "bremen": "bremen",
+      "captain": "captain",
+      "cat": "cat",
+      "cock": "cock",
+      "drinks": "drinks",
+      "forest": "forest",
+      "hearth": "hearth",
+      "hound": "hound",
+      "kettledrums": "kettledrums",
+      "lute": "lute",
+      "man": "man",
+      "meat": "meat",
+      "messenger": "messenger",
+      "road_to_bremen": "road_to_bremen",
+      "robber": "robber",
+      "robbers_cottage": "robbers_cottage",
+      "straw": "straw",
+      "table": "table",
+      "window": "window"
+    }
+  },
+  "action_maps": {
+    "MUSI": {
+      "run_away": "run_away",
+      "invite_hound": "invite_hound",
+      "hound_agrees": "hound_agrees",
+      "invite_cat": "invite_cat",
+      "cat_agrees": "cat_agrees",
+      "invite_cock": "invite_cock",
+      "cock_agrees": "cock_agrees",
+      "travel_together": "travel_together",
+      "rest_in_forest": "rest_in_forest",
+      "spot_light": "spot_light",
+      "approach_cottage": "approach_cottage",
+      "plan_scaring_robbers": "plan_scaring_robbers",
+      "stack_animals": "stack_animals",
+      "signal_and_make_noise": "signal_and_make_noise",
+      "robbers_flee": "robbers_flee",
+      "eat_feast": "eat_feast",
+      "extinguish_light": "extinguish_light",
+      "choose_sleep_spot": "choose_sleep_spot",
+      "messenger_attempt_light": "messenger_attempt_light",
+      "cat_attack_messenger": "cat_attack_messenger",
+      "dog_bite_messenger": "dog_bite_messenger",
+      "donkey_kick_messenger": "donkey_kick_messenger",
+      "cock_crow_alert": "cock_crow_alert",
+      "robbers_retreat": "robbers_retreat"
+    }
+  },
+  "decisions": []
+}

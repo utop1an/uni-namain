@@ -1,0 +1,123 @@
+{
+  "status": "complete",
+  "scope": "Type encoding regression with zero semantic merges; available source-plan denominator retained",
+  "source_report_sha256": "f2f6db7cc1bb9dd5c584cd269a89e88ebf18de8452733f9dca8a72459b74fb9c",
+  "compiled_before_replay": true,
+  "rows": [
+    {
+      "source": "ACCO",
+      "source_search_status": "solved",
+      "mapped": {
+        "length": 6,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "source": "BIRT",
+      "source_search_status": "solved",
+      "mapped": {
+        "length": 8,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "source": "BUFF",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "CHIC_NP",
+      "source_search_status": "solved",
+      "mapped": {
+        "length": 36,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "source": "FOUR_NP",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "HANS_NP",
+      "source_search_status": "time_limit",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "JACK_NP",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "MUSI",
+      "source_search_status": "time_limit",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "NAUG",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "PIGS_NP",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "PUSS",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "REMA_NP",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "SNOW",
+      "source_search_status": "time_limit",
+      "status": "no_source_plan_evidence"
+    },
+    {
+      "source": "SOUP",
+      "source_search_status": "solved",
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "status": "VALID"
+    },
+    {
+      "source": "WOE",
+      "source_search_status": "incomplete",
+      "status": "no_source_plan_evidence"
+    }
+  ],
+  "compiled_domain_unchanged": true,
+  "validated_count": 4,
+  "source_plan_count": 4,
+  "source_count": 15
+}

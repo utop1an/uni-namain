@@ -1,0 +1,18 @@
+{
+  "candidate_id": "pair_4d3bf80efae69a95",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates 'crossed_out' and 'banquet_at' describe fundamentally different aspects of the scenario. 'crossed_out' indicates an action performed on an object (presumably a document or item), while 'banquet_at' describes the location of a banquet. The action contexts further highlight this difference: 'crossed_out' requires a burned object and results in its crossing out, whereas 'banquet_at' describes a location and requires the presence of guests and hosts. These predicates do not share a common domain or represent related states; one describes a destructive action, the other a spatial event. The type hierarchies for both predicates are distinct, with 'crossed_out' relating to 'object' and 'item', while 'banquet_at' relates to 'location'. The action contexts also demonstrate this difference, with 'crossed_out' having a precondition of 'burned' and an effect of changing the state of the object, and 'banquet_at' having preconditions related to guest and host presence and location.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(crossed_out ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:stay_for_banquet",
+      "quote": "(banquet_at ?loc)"
+    }
+  ]
+}

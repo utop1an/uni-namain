@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_0fb0695e46dd0530",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `at` in BIRT and WOE both represent location, but their usage contexts differ significantly. In BIRT, `at` is primarily used to describe the physical presence of entities (e.g., a person, object) at a specific location, often within a narrative about a quest or journey. The actions associated with BIRT involve movement, interaction with objects, and describing the state of entities within a defined environment. WOE, on the other hand, uses `at` to describe the location of a character (WoE) and to track their state (fatigue, drinking). The actions in WOE are focused on the character's internal state and interactions within a more grounded, potentially impoverished, setting. The predicates are complementary because they represent the same concept (location) but within distinct domains and with different implications for the story. BIRT's `at` is about spatial positioning and object interaction, while WOE's `at` is about character positioning and state tracking. The action contexts further highlight this difference: BIRT actions involve moving objects and characters, while WOE actions focus on the character's internal state and interactions.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:bow_to_guests",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:encounter_bitter_woe",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:invite_rich_brother_to_feast",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:make_sign_of_cross",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:sing_cheerful_song",
+      "quote": "(at ?poor ?loc)"
+    }
+  ]
+}

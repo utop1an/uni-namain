@@ -1,0 +1,20 @@
+{
+  "objects": {
+    "hero": "HEAR:person"
+  },
+  "initial": [
+    [
+      "HEAR:messenger_present",
+      "hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "HEAR:rumor_known",
+        "hero"
+      ]
+    ]
+  },
+  "seconds": 30
+}

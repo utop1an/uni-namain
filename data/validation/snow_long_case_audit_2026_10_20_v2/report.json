@@ -1,0 +1,3064 @@
+{
+  "status": "complete",
+  "task_count": 23,
+  "rows": [
+    {
+      "id": "role_safe",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 12,
+      "elapsed_seconds": 8.172,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": null,
+      "removed_origin": null,
+      "execution_audit": {
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        },
+        "goal_reached": true,
+        "plan_length": 12,
+        "steps": [
+          {
+            "step": 1,
+            "instance": "scene__enter_hut(q__rescuer, q__companion, q__outside, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "enter_hut",
+            "applicable": true,
+            "causal_supports": [],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_at(q__rescuer, q__outside)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__companion, q__outside)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "d000__p_at(q__rescuer, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "d000__p_at(q__companion, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__companion, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__rescuer, q__hut)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+            "origin_kind": "source",
+            "source": "HANS_NP",
+            "action": "collect_treasure",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "d000__p_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "d000__p_at(q__companion, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "scene_at(q__companion, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_comb_on_shelf(q__comb, q__hut)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "instance": "scene__take_axe(q__jack, q__axe, q__workshop)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "take_axe",
+            "applicable": true,
+            "causal_supports": [],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d001__p_has(q__jack, q__axe)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_axe_racked(q__axe, q__workshop)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 4,
+            "instance": "scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "approach_beanstalk",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 3,
+                "consumer_step": 4,
+                "literal": "d001__p_has(q__jack, q__axe)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_at(q__jack, q__workshop)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__jack, d001__c_beanstalk)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 5,
+            "instance": "scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "hand_comb_to_witch",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 5,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 2,
+                "consumer_step": 5,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "shared__p_possession(q__snow_white, q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 6,
+            "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+            "origin_kind": "source",
+            "source": "SNOW",
+            "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 5,
+                "consumer_step": 6,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d002__p_poisoned(q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 7,
+            "instance": "scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "take_comb_back",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 7,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 5,
+                "consumer_step": 7,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 7,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "shared__p_possession(q__snow_white, q__comb)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 8,
+            "instance": "scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "begin_descent",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 6,
+                "consumer_step": 8,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 8,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 8,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": false
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d001__p_climbing_down(q__snow_white)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__snow_white, q__hut)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 9,
+            "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+            "origin_kind": "source",
+            "source": "JACK_NP",
+            "action": "cut_beanstalk",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 8,
+                "consumer_step": 9,
+                "literal": "d001__p_climbing_down(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 4,
+                "consumer_step": 9,
+                "literal": "scene_at(q__jack, d001__c_beanstalk)",
+                "truth": true
+              },
+              {
+                "producer_step": 3,
+                "consumer_step": 9,
+                "literal": "d001__p_has(q__jack, q__axe)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d002__p_alive(q__snow_white)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "shared__p_death(q__snow_white)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "d001__p_climbing_down(q__snow_white)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "d001__p_intact(d001__c_beanstalk)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__snow_white, d001__c_cottage)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 10,
+            "instance": "scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "reach_fallen",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 10,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 10,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 10,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 10,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d000__p_at(q__rescuer, q__hut)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__rescuer, q__hut)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__rescuer, d001__c_cottage)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 11,
+            "instance": "scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "apply_comb",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 10,
+                "consumer_step": 11,
+                "literal": "scene_at(q__rescuer, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 11,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 11,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 11,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 11,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_comb_applied(q__snow_white, q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 12,
+            "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+            "origin_kind": "source",
+            "source": "SNOW",
+            "action": "dwarfs_remove_comb_rescue_snow_white",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 9,
+                "consumer_step": 12,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 12,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 12,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 10,
+                "consumer_step": 12,
+                "literal": "scene_at(q__rescuer, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 12,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 11,
+                "consumer_step": 12,
+                "literal": "scene_comb_applied(q__snow_white, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d002__p_alive(q__snow_white)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "shared__p_death(q__snow_white)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "d002__p_poisoned(q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_comb_applied(q__snow_white, q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "case_rescued_with_comb(q__snow_white)",
+                "before": false,
+                "after": true
+              }
+            ]
+          }
+        ],
+        "states": [
+          {
+            "index": 0,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__outside"
+              ],
+              "q__companion": [
+                "q__outside"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [],
+            "comb_on_shelf": true,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 1,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [],
+            "comb_on_shelf": true,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 2,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 3,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 4,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 5,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": true,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__snow_white"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 6,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": true,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__snow_white"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 7,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 8,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_beanstalk"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 9,
+            "facts": {
+              "alive": false,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 10,
+            "facts": {
+              "alive": false,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 11,
+            "facts": {
+              "alive": false,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": false,
+              "comb_applied": true,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 12,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": true
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          }
+        ],
+        "violations": [],
+        "source_step_count": 4,
+        "new_scenario_step_count": 8,
+        "causal_edges": [
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "d000__p_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "d000__p_at(q__companion, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "scene_at(q__companion, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 3,
+            "consumer_step": 4,
+            "literal": "d001__p_has(q__jack, q__axe)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 5,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 2,
+            "consumer_step": 5,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 5,
+            "consumer_step": 6,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 7,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 5,
+            "consumer_step": 7,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 7,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 8,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 8,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 8,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": false
+          },
+          {
+            "producer_step": 8,
+            "consumer_step": 9,
+            "literal": "d001__p_climbing_down(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 4,
+            "consumer_step": 9,
+            "literal": "scene_at(q__jack, d001__c_beanstalk)",
+            "truth": true
+          },
+          {
+            "producer_step": 3,
+            "consumer_step": 9,
+            "literal": "d001__p_has(q__jack, q__axe)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 10,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 10,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 10,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 10,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 10,
+            "consumer_step": 11,
+            "literal": "scene_at(q__rescuer, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 11,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 11,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 11,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 11,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 12,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 12,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 12,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 10,
+            "consumer_step": 12,
+            "literal": "scene_at(q__rescuer, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 12,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 11,
+            "consumer_step": 12,
+            "literal": "scene_comb_applied(q__snow_white, q__comb)",
+            "truth": true
+          }
+        ],
+        "goal_supports": [
+          {
+            "goal": "d002__p_alive(q__snow_white)",
+            "truth": true,
+            "producer_step": 12
+          },
+          {
+            "goal": "shared__p_death(q__snow_white)",
+            "truth": false,
+            "producer_step": 12
+          },
+          {
+            "goal": "d001__p_intact(d001__c_beanstalk)",
+            "truth": false,
+            "producer_step": 9
+          },
+          {
+            "goal": "case_role_snow_white(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_role_giant(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_role_witch(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_rescued_with_comb(q__snow_white)",
+            "truth": true,
+            "producer_step": 12
+          }
+        ],
+        "deletion_replays": [
+          {
+            "deleted_step": 1,
+            "instance": "scene__enter_hut(q__rescuer, q__companion, q__outside, q__hut)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 2,
+              "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+              "unsatisfied_conditions": [
+                "d000__p_at(q__rescuer, q__hut)",
+                "d000__p_at(q__companion, q__hut)",
+                "scene_at(q__companion, q__hut)",
+                "scene_at(q__rescuer, q__hut)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 2,
+            "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 5,
+              "instance": "scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",
+              "unsatisfied_conditions": [
+                "shared__p_possession(q__rescuer, q__comb)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 3,
+            "instance": "scene__take_axe(q__jack, q__axe, q__workshop)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 4,
+              "instance": "scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",
+              "unsatisfied_conditions": [
+                "d001__p_has(q__jack, q__axe)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 4,
+            "instance": "scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 9,
+              "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+              "unsatisfied_conditions": [
+                "scene_at(q__jack, d001__c_beanstalk)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 5,
+            "instance": "scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 6,
+              "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+              "unsatisfied_conditions": [
+                "shared__p_possession(q__snow_white, q__comb)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 6,
+            "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 7,
+              "instance": "scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",
+              "unsatisfied_conditions": [
+                "d002__p_poisoned(q__comb)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 7,
+            "instance": "scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 8,
+              "instance": "scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",
+              "unsatisfied_conditions": [
+                "shared__p_possession(q__rescuer, q__comb)",
+                "(not shared__p_possession(q__snow_white, q__comb))"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 8,
+            "instance": "scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 9,
+              "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+              "unsatisfied_conditions": [
+                "d001__p_climbing_down(q__snow_white)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 9,
+            "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 10,
+              "instance": "scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",
+              "unsatisfied_conditions": [
+                "scene_at(q__snow_white, d001__c_cottage)",
+                "shared__p_death(q__snow_white)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 10,
+            "instance": "scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 11,
+              "instance": "scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",
+              "unsatisfied_conditions": [
+                "scene_at(q__rescuer, d001__c_cottage)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 11,
+            "instance": "scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",
+            "outcome": "inapplicable_remainder",
+            "failure": {
+              "first_inapplicable_original_step": 12,
+              "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+              "unsatisfied_conditions": [
+                "scene_comb_applied(q__snow_white, q__comb)"
+              ],
+              "reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+            }
+          },
+          {
+            "deleted_step": 12,
+            "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+            "outcome": "goal_not_reached",
+            "failure": null
+          }
+        ],
+        "all_steps_deletion_necessary": true
+      },
+      "scenario_contract_pass": true
+    },
+    {
+      "id": "no_interfaces",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.218,
+      "inputs_unchanged": true,
+      "base_condition": "no_interfaces",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_possession_interface",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.219,
+      "inputs_unchanged": true,
+      "base_condition": "no_possession_interface",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_death_interface",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.359,
+      "inputs_unchanged": true,
+      "base_condition": "no_death_interface",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "HANS_NP_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.14,
+      "inputs_unchanged": true,
+      "base_condition": "HANS_NP_only",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "JACK_NP_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.25,
+      "inputs_unchanged": true,
+      "base_condition": "JACK_NP_only",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "SNOW_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true,
+      "base_condition": "SNOW_only",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "without_HANS_NP",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.141,
+      "inputs_unchanged": true,
+      "base_condition": "without_HANS_NP",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_shared_identity",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.234,
+      "inputs_unchanged": true,
+      "base_condition": "no_shared_identity",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "without_life_adapter",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 12,
+      "elapsed_seconds": 2.078,
+      "inputs_unchanged": true,
+      "base_condition": "without_life_adapter",
+      "removed_schema": null,
+      "removed_origin": null,
+      "execution_audit": {
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        },
+        "goal_reached": true,
+        "plan_length": 12,
+        "steps": [
+          {
+            "step": 1,
+            "instance": "scene__enter_hut(q__rescuer, q__companion, q__outside, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "enter_hut",
+            "applicable": true,
+            "causal_supports": [],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_at(q__rescuer, q__outside)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__companion, q__outside)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "d000__p_at(q__rescuer, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "d000__p_at(q__companion, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__companion, q__hut)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__rescuer, q__hut)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+            "origin_kind": "source",
+            "source": "HANS_NP",
+            "action": "collect_treasure",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "d000__p_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "d000__p_at(q__companion, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "scene_at(q__companion, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 1,
+                "consumer_step": 2,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_comb_on_shelf(q__comb, q__hut)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "instance": "scene__take_axe(q__jack, q__axe, q__workshop)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "take_axe",
+            "applicable": true,
+            "causal_supports": [],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d001__p_has(q__jack, q__axe)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_axe_racked(q__axe, q__workshop)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 4,
+            "instance": "scene__approach_beanstalk(q__jack, q__axe, q__workshop, d001__c_beanstalk)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "approach_beanstalk",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 3,
+                "consumer_step": 4,
+                "literal": "d001__p_has(q__jack, q__axe)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_at(q__jack, q__workshop)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__jack, d001__c_beanstalk)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 5,
+            "instance": "scene__hand_comb_to_witch(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "hand_comb_to_witch",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 5,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 2,
+                "consumer_step": 5,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "shared__p_possession(q__snow_white, q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 6,
+            "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+            "origin_kind": "source",
+            "source": "SNOW",
+            "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 5,
+                "consumer_step": 6,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d002__p_poisoned(q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 7,
+            "instance": "scene__take_comb_back(q__rescuer, q__snow_white, q__comb, q__hut)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "take_comb_back",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 7,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 5,
+                "consumer_step": 7,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 7,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_possession(q__rescuer, q__comb)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "shared__p_possession(q__snow_white, q__comb)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 8,
+            "instance": "scene__begin_descent(q__snow_white, q__rescuer, q__comb, q__hut, d001__c_beanstalk)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "begin_descent",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 6,
+                "consumer_step": 8,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 8,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 8,
+                "literal": "shared__p_possession(q__snow_white, q__comb)",
+                "truth": false
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d001__p_climbing_down(q__snow_white)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "scene_at(q__snow_white, q__hut)",
+                "before": true,
+                "after": false
+              }
+            ]
+          },
+          {
+            "step": 9,
+            "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+            "origin_kind": "source",
+            "source": "JACK_NP",
+            "action": "cut_beanstalk",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 8,
+                "consumer_step": 9,
+                "literal": "d001__p_climbing_down(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 4,
+                "consumer_step": 9,
+                "literal": "scene_at(q__jack, d001__c_beanstalk)",
+                "truth": true
+              },
+              {
+                "producer_step": 3,
+                "consumer_step": 9,
+                "literal": "d001__p_has(q__jack, q__axe)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_death(q__snow_white)",
+                "before": false,
+                "after": true
+              },
+              {
+                "atom": "d001__p_intact(d001__c_beanstalk)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__snow_white, d001__c_cottage)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 10,
+            "instance": "scene__reach_fallen(q__rescuer, q__snow_white, q__comb, q__hut, d001__c_cottage)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "reach_fallen",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 1,
+                "consumer_step": 10,
+                "literal": "scene_at(q__rescuer, q__hut)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 10,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 10,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 10,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "d000__p_at(q__rescuer, q__hut)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__rescuer, q__hut)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_at(q__rescuer, d001__c_cottage)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 11,
+            "instance": "scene__apply_comb(q__rescuer, q__snow_white, q__comb, d001__c_cottage)",
+            "origin_kind": "new_scenario_rule",
+            "source": "SCENE",
+            "action": "apply_comb",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 10,
+                "consumer_step": 11,
+                "literal": "scene_at(q__rescuer, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 11,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 11,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 11,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 11,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "scene_comb_applied(q__snow_white, q__comb)",
+                "before": false,
+                "after": true
+              }
+            ]
+          },
+          {
+            "step": 12,
+            "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+            "origin_kind": "source",
+            "source": "SNOW",
+            "action": "dwarfs_remove_comb_rescue_snow_white",
+            "applicable": true,
+            "causal_supports": [
+              {
+                "producer_step": 9,
+                "consumer_step": 12,
+                "literal": "shared__p_death(q__snow_white)",
+                "truth": true
+              },
+              {
+                "producer_step": 6,
+                "consumer_step": 12,
+                "literal": "d002__p_poisoned(q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 7,
+                "consumer_step": 12,
+                "literal": "shared__p_possession(q__rescuer, q__comb)",
+                "truth": true
+              },
+              {
+                "producer_step": 10,
+                "consumer_step": 12,
+                "literal": "scene_at(q__rescuer, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 9,
+                "consumer_step": 12,
+                "literal": "scene_at(q__snow_white, d001__c_cottage)",
+                "truth": true
+              },
+              {
+                "producer_step": 11,
+                "consumer_step": 12,
+                "literal": "scene_comb_applied(q__snow_white, q__comb)",
+                "truth": true
+              }
+            ],
+            "changed_relevant_atoms": [
+              {
+                "atom": "shared__p_death(q__snow_white)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "d002__p_poisoned(q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "scene_comb_applied(q__snow_white, q__comb)",
+                "before": true,
+                "after": false
+              },
+              {
+                "atom": "case_rescued_with_comb(q__snow_white)",
+                "before": false,
+                "after": true
+              }
+            ]
+          }
+        ],
+        "states": [
+          {
+            "index": 0,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__outside"
+              ],
+              "q__companion": [
+                "q__outside"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [],
+            "comb_on_shelf": true,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 1,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [],
+            "comb_on_shelf": true,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 2,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": false,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 3,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "q__workshop"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 4,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 5,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": true,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__snow_white"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 6,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": false,
+              "witch_has_comb": true,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__snow_white"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 7,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": false,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "q__hut"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 8,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": true,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_beanstalk"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 9,
+            "facts": {
+              "alive": true,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "q__hut"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 10,
+            "facts": {
+              "alive": true,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 11,
+            "facts": {
+              "alive": true,
+              "dead": true,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": true,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": false,
+              "comb_applied": true,
+              "rescue_recorded": false
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          },
+          {
+            "index": 12,
+            "facts": {
+              "alive": true,
+              "dead": false,
+              "rescuer_has_comb": true,
+              "witch_has_comb": false,
+              "comb_poisoned": false,
+              "cutter_has_axe": true,
+              "descending": true,
+              "beanstalk_intact": false,
+              "comb_applied": false,
+              "rescue_recorded": true
+            },
+            "positions": {
+              "q__snow_white": [
+                "d001__c_cottage"
+              ],
+              "q__rescuer": [
+                "d001__c_cottage"
+              ],
+              "q__companion": [
+                "q__hut"
+              ],
+              "q__jack": [
+                "d001__c_beanstalk"
+              ]
+            },
+            "comb_owners": [
+              "q__rescuer"
+            ],
+            "comb_on_shelf": false,
+            "identity_roles": {
+              "snow_white": true,
+              "giant": true,
+              "witch": true
+            }
+          }
+        ],
+        "violations": [
+          {
+            "state": 9,
+            "kind": "alive_and_dead",
+            "actor": "q__snow_white"
+          },
+          {
+            "state": 10,
+            "kind": "alive_and_dead",
+            "actor": "q__snow_white"
+          },
+          {
+            "state": 11,
+            "kind": "alive_and_dead",
+            "actor": "q__snow_white"
+          }
+        ],
+        "source_step_count": 4,
+        "new_scenario_step_count": 8,
+        "causal_edges": [
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "d000__p_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "d000__p_at(q__companion, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "scene_at(q__companion, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 2,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 3,
+            "consumer_step": 4,
+            "literal": "d001__p_has(q__jack, q__axe)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 5,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 2,
+            "consumer_step": 5,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 5,
+            "consumer_step": 6,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 7,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 5,
+            "consumer_step": 7,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 7,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 8,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 8,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 8,
+            "literal": "shared__p_possession(q__snow_white, q__comb)",
+            "truth": false
+          },
+          {
+            "producer_step": 8,
+            "consumer_step": 9,
+            "literal": "d001__p_climbing_down(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 4,
+            "consumer_step": 9,
+            "literal": "scene_at(q__jack, d001__c_beanstalk)",
+            "truth": true
+          },
+          {
+            "producer_step": 3,
+            "consumer_step": 9,
+            "literal": "d001__p_has(q__jack, q__axe)",
+            "truth": true
+          },
+          {
+            "producer_step": 1,
+            "consumer_step": 10,
+            "literal": "scene_at(q__rescuer, q__hut)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 10,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 10,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 10,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 10,
+            "consumer_step": 11,
+            "literal": "scene_at(q__rescuer, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 11,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 11,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 11,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 11,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 12,
+            "literal": "shared__p_death(q__snow_white)",
+            "truth": true
+          },
+          {
+            "producer_step": 6,
+            "consumer_step": 12,
+            "literal": "d002__p_poisoned(q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 7,
+            "consumer_step": 12,
+            "literal": "shared__p_possession(q__rescuer, q__comb)",
+            "truth": true
+          },
+          {
+            "producer_step": 10,
+            "consumer_step": 12,
+            "literal": "scene_at(q__rescuer, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 9,
+            "consumer_step": 12,
+            "literal": "scene_at(q__snow_white, d001__c_cottage)",
+            "truth": true
+          },
+          {
+            "producer_step": 11,
+            "consumer_step": 12,
+            "literal": "scene_comb_applied(q__snow_white, q__comb)",
+            "truth": true
+          }
+        ],
+        "goal_supports": [
+          {
+            "goal": "d002__p_alive(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "shared__p_death(q__snow_white)",
+            "truth": false,
+            "producer_step": 12
+          },
+          {
+            "goal": "d001__p_intact(d001__c_beanstalk)",
+            "truth": false,
+            "producer_step": 9
+          },
+          {
+            "goal": "case_role_snow_white(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_role_giant(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_role_witch(q__snow_white)",
+            "truth": true,
+            "producer_step": 0
+          },
+          {
+            "goal": "case_rescued_with_comb(q__snow_white)",
+            "truth": true,
+            "producer_step": 12
+          }
+        ],
+        "deletion_replays": [],
+        "all_steps_deletion_necessary": false
+      },
+      "scenario_contract_pass": false
+    },
+    {
+      "id": "unrestricted_sources",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.063,
+      "inputs_unchanged": true,
+      "base_condition": "unrestricted_sources",
+      "removed_schema": null,
+      "removed_origin": null,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_01",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.125,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__enter_hut",
+      "removed_origin": "scene__enter_hut",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_02",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.234,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__hand_comb_to_witch",
+      "removed_origin": "scene__hand_comb_to_witch",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_03",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__take_comb_back",
+      "removed_origin": "scene__take_comb_back",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_04",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__take_axe",
+      "removed_origin": "scene__take_axe",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_05",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.219,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__approach_beanstalk",
+      "removed_origin": "scene__approach_beanstalk",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_06",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.188,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__begin_descent",
+      "removed_origin": "scene__begin_descent",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_07",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.172,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__reach_fallen",
+      "removed_origin": "scene__reach_fallen",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_08",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.188,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "scene__apply_comb",
+      "removed_origin": "scene__apply_comb",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_09",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.25,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "d000__a_collect_treasure",
+      "removed_origin": "HANS_NP:collect_treasure",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_10",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.313,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage",
+      "removed_origin": "SNOW:stepmother_makes_poisonous_comb_and_visits_cottage",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_11",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.547,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "d001__a_cut_beanstalk",
+      "removed_origin": "JACK_NP:cut_beanstalk",
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "remove_12",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.25,
+      "inputs_unchanged": true,
+      "base_condition": "role_safe",
+      "removed_schema": "d002__a_dwarfs_remove_comb_rescue_snow_white",
+      "removed_origin": "SNOW:dwarfs_remove_comb_rescue_snow_white",
+      "scenario_contract_pass": null
+    }
+  ],
+  "status_counts": {
+    "solved": 2,
+    "unsolvable": 20,
+    "wall_time_limit": 1
+  },
+  "primary_plan_length": 12,
+  "source_steps": 4,
+  "new_scenario_steps": 8,
+  "primary_state_count": 13,
+  "step_deletion_checks": 12,
+  "step_deletion_checks_failed_as_expected": 12,
+  "schema_removal_count": 12,
+  "schema_removal_status_counts": {
+    "unsolvable": 12
+  },
+  "scenario_contract_pass_count": 1,
+  "compiled_source_behavior_modified": true,
+  "independent_semantic_labels": 0,
+  "scope": "One authored long scenario; eight new scene schemas and four contextualized source steps. Deletion proves this returned plan is irredundant; whole-schema solver controls are separate bounded evidence, not a universal minimality theorem.",
+  "semantic_limits": [
+    "Comb-based revival still does not test death cause; it is an explicit magical scenario assumption.",
+    "Role permissions, life consistency, object custody, tools, travel and preparation are authored additions, not learned automatically.",
+    "Common scenario rules remain available in single-source controls; these are not native-source goal tests."
+  ],
+  "frozen_sha256": {
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\manifest.json": "90c62c8c92a29005adff32a6483839711613b2bc8f6a4d7e74d31811bcd360aa",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\manifest.json": "b370ed5254611861a940140b40f8d31abb904ddb3fa91f5f8e2d364f255e6d06",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\report.json": "f27ca17e1819751b5dc6555fc55f197fd85af11b9de9daa21b4ed4a12a3a272e",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\query.json": "5d78189255349a750808992177a44aaca3b2731b777f9a42f08cc46118caacd2",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\scenario_contract.json": "bb787e1c606606fd0435bac93eb9185e6eda842e5506d8b3095b28b8b25eb570",
+    "C:\\anu\\uninamain\\scripts\\audit\\audit_snow_long_case.py": "68430c2dd994cc6084db875d3bff5931a1f6985d7c557913abb0c30b4cf17c8a",
+    "rcnc\\validation.py": "491d76f442e2b08663a4935518a2925762ae5819e5fc4f6a5443f2f920c5c2fc",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\inputs\\SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\role_safe\\domain.pddl": "af86f3f90d922d9479fdc675ee5b770519001b1508657be190832270106862e9",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\role_safe\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\role_safe\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\role_safe\\action_registry.json": "e79d0ef43f40af8a5a29abff9325da4600e8504d48e657ca793a70cfaaa9afbe",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\role_safe\\plan.txt": "abf5ed51ece48102dc353de116d06c49d2fd086b2b40030516a1f48115892cea",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_interfaces\\domain.pddl": "549e8be668d77f6b9c92b7c26499f2f8a3d88143a7ffcbfdcd28f6048aefba07",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_interfaces\\problem.pddl": "bbddccc07edbbea1900fb300882c0c80b4ff2ab877fd5288cd2c311aec5717c5",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_interfaces\\source_mapping.json": "adcfc97942572762957077179dce873d08cf0ba436de09275e5d0913e7b268f6",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_interfaces\\action_registry.json": "8c7aeec296ae37de1defd6fd1f1ab6156a350f0923af375b996953ea2130997e",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_possession_interface\\domain.pddl": "907acb3976f9e3957064b9ce229d5dd47312166f00a836e32e7c1e49e1851d88",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_possession_interface\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_possession_interface\\source_mapping.json": "8124c03b79f5406e4d18053743aedf9405c77c8b63d681eadde137c27929a423",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_possession_interface\\action_registry.json": "e73f8ba2f34c0c88278428b0cd633f0262446b2b3c659d8bfb7488703fbc23d5",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_death_interface\\domain.pddl": "7b87041bce9f773a1e2dc29aee3ffb805558a9c420f969983c9643abd682e829",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_death_interface\\problem.pddl": "bbddccc07edbbea1900fb300882c0c80b4ff2ab877fd5288cd2c311aec5717c5",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_death_interface\\source_mapping.json": "a48a8b34cef7e345d2d28a0e7341c64247b9b970721eb0f9200be2c41d190dd6",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_death_interface\\action_registry.json": "76f6495f2eb40a1e579cb7850f9caab966d0d684b0ed1c0fe751195328b574fe",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\HANS_NP_only\\domain.pddl": "998b31f0f8413bb99855003fa7a1be683ca8153d4ae63f94cfa4b3eb6f07a656",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\HANS_NP_only\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\HANS_NP_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\HANS_NP_only\\action_registry.json": "3ae3f2e4431ecf95fc2df88b2db481592fad1ab7514d35b38d7fb509d7dfc431",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\JACK_NP_only\\domain.pddl": "0ea35ab9e4e33e01446fe9654c4344c311b3a98dc01c5942f7dd5bdf681c1105",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\JACK_NP_only\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\JACK_NP_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\JACK_NP_only\\action_registry.json": "83145d77163da6e0abd2b74fd3cb5ae267cd9eda9b7f357fd230b85ccbb88d8a",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\SNOW_only\\domain.pddl": "94acd35b29234578d51206bf483929adbcabd5f6e1013f30971d101966595140",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\SNOW_only\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\SNOW_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\SNOW_only\\action_registry.json": "b4af22f5c6ca710dda6c041687eb92c4d657854b9da41ac9ab5706e2c89fa9fc",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\without_HANS_NP\\domain.pddl": "a4f8b2ceec598e2ef12e9d2ec18fcb90f06c2dbb1f983d28b5af5b1d544cda04",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\without_HANS_NP\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\without_HANS_NP\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\without_HANS_NP\\action_registry.json": "4f3896d649d3170d4119c79c991e523fb587e74cf85e2e267f13598a2f5a2208",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\domain.pddl": "af86f3f90d922d9479fdc675ee5b770519001b1508657be190832270106862e9",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\problem.pddl": "36f8b2606328d8dde51aee59c1f6f3710b4b211d061f2b172d70c3ad2084326d",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_shared_identity\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\no_shared_identity\\action_registry.json": "e79d0ef43f40af8a5a29abff9325da4600e8504d48e657ca793a70cfaaa9afbe",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\domain.pddl": "2eb3caf4c0507b274bb06ab93d6258c53f52550ec2b21adb146de16b024a64b2",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\without_life_adapter\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\without_life_adapter\\action_registry.json": "6dbf3a952a50ab2fbb100befc144ae4b81015b7d40cc2bf2754c93f51501d471",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\plan.txt": "abf5ed51ece48102dc353de116d06c49d2fd086b2b40030516a1f48115892cea",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\unrestricted_sources\\domain.pddl": "d587d5d158ad2d5c33791189494de5721399505ba5224720600a8944c6fac466",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\unrestricted_sources\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\unrestricted_sources\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\unrestricted_sources\\action_registry.json": "ac03b4b644fd77bf4ac344a0af66d3b459705a887d2eb0eaca4dc2e046961c0a",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_01\\domain.pddl": "d8493a0d6e801278edc87eb39c8a0e6d77dc57a4e97f667584182a733b62addb",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_01\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_01\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_01\\action_registry.json": "c7674e2b7d32ed24408823d1de20132cce485d75424132d80e40c319eacd7f04",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_02\\domain.pddl": "a6e0d1d9b4ea20a76fe36b80f5ba82fff85d862b0ce60da43e55abdfb2c6b93c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_02\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_02\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_02\\action_registry.json": "0534101ec12c62dd2acfb47475ac200ce9d2739616a6b0f2b3b07c1252557ac3",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_03\\domain.pddl": "8f6fccb2d119e360482fd4f2190873b0192900967e39c8065bd4dc1195da73ba",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_03\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_03\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_03\\action_registry.json": "d76b63bdc24a271f91eac77d434d0b120eeb34840346a1a7540279270edbdd33",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_04\\domain.pddl": "be56529a9942f3515cea9b5f8bdecdd8bdad0cc6f05899594352e2d13b691b15",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_04\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_04\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_04\\action_registry.json": "7b4a621df52510744a22a21d55c8175a45802d8761a17fde14e354d14f3bc18f",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_05\\domain.pddl": "20a6fd3c30fa42ea127ac974fe1a3dc454b1717603f94e45e35df7ca2fc7c732",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_05\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_05\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_05\\action_registry.json": "5cf678403603392a74812258704ff02e2bf25af1467bc76c3dd1d8a8f81a675c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_06\\domain.pddl": "c48e5d54d566626a3b4c744e26bacc5eb433876f760f29fa6fc03f3b9ff0b599",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_06\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_06\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_06\\action_registry.json": "f309b45659a6d13d754d048885543c2fbce73ae3da0c93642829bcbb11fd3ea0",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_07\\domain.pddl": "d1459a8f1649dad7e5b645ef4862a05892bd0dd13a926c8d34d41b5e51ec3b2c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_07\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_07\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_07\\action_registry.json": "0712b8e7650f34d2cd8aa66c561dc1b506158e3c7a73ccae9ded4faa50ba48e6",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_08\\domain.pddl": "27f2a3970bf40a1b6f391ef3e361dd8cae4504c12b9ae7db49997e0e2cb94e57",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_08\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_08\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_08\\action_registry.json": "869fdbc4a88c07535038debd1d81e1b695da18a1ff3a56f1e9207194e1033b26",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_09\\domain.pddl": "567c3227f0c871f4889d58ecdf183f60d15c272166890d794bf2a6ec6a38e723",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_09\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_09\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_09\\action_registry.json": "1592ec9ddb21809870484cfeae900cff78718ebed8b9255d47022e5c6d5b8765",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_10\\domain.pddl": "4e96d520bc322d0796cb5a85f0d8d73c37b98f93e4681aed41924002c61c8473",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_10\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_10\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_10\\action_registry.json": "999d0bfa6b0b61756bf26dea2b2249b5fddb84e54145f3ce3d6d8e8ae1dba7d2",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_11\\domain.pddl": "bc45e5fa7548f608ac0d6a0435356828889e90f5ee8657578208dc348004ba49",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_11\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_11\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_11\\action_registry.json": "d3757fdade68a513438445ee5477cfe2225d06aa53068f67e0a1f7b71ee5b978",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_12\\domain.pddl": "3e5b2ed9ef27562304888ca836e2a30797de727588a38eaa185d988a7495c0a5",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\tasks\\remove_12\\problem.pddl": "edbca145a1c2d08a79918fa4b7caa95741a3bc8350a30f117eee8f55ba01013c",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_12\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_long_case_2026_10_20_v1\\bundle\\tasks\\remove_12\\action_registry.json": "ceb4f11daf3b0d25003ed9cc92be35accf6486a2766a2d0eddcfffc504adef11"
+  },
+  "hashes_unchanged": true
+}

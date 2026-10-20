@@ -1,0 +1,2908 @@
+{
+  "status": "complete",
+  "task_count": 234,
+  "manifest_sha256": "ad2e48508c6425e50655371918fd7d4a67f3ce7ed34a1597d84b976ee91bccbb",
+  "rows": [
+    {
+      "id": "ACCO__arrange_exhibition",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 7.906,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__call_novices",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__force_kettle_into_box",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.578,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__hang_kettle",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.485,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__kettle_jump_and_fly",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.547,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__kettle_revert_shape",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.312,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__kettle_transform_to_badger",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__kettle_transform_to_fur_badger",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.359,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__knock_down_kettle",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.532,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__perform_show",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__pursue_kettle",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.454,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__receive_orders_from_nobility",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.609,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__return_kettle_to_temple",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__sell_kettle_to_tinker",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.454,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__show_kettle_to_friend",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__tinker_carry_home",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO__worship_kettle_as_saint",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.547,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__accept_dryad_invitation",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.156,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__approach_beech_tree",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 2.156,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__eat_pellet_and_shrink",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.172,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__enter_tree_and_descend_stairs",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.594,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__hear_tapping_on_beech",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.219,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__receive_pellet_from_gnome",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__receive_queen_kiss",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.11,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__return_to_bench_and_share_story",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.14,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__travel_by_leaf_boat_under_pond",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.594,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__travel_to_trysting_place",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 2.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__turn_key_on_beech",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 2.235,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT__witness_queen_birthday_ceremony",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 2.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__audience_applaud_performance",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__audience_criticize_countryman_and_call_for_kickout",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__audience_demand_shake_cloak_for_pig",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__countryman_declare_intent_to_repeat_trick",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__countryman_perform_pig_imitation_with_real_pig",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.438,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__countryman_reveal_real_pig",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__open_theater_and_announce_reward",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BUFF__perform_pig_imitation_without_apparatus",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.359,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__be_eaten_by_fox",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__decide_to_tell_king",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__follow_fox",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.578,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__go_to_wood",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__inform_about_sky_fall",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 2.219,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__meet_character",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.891,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "CHIC_NP__turn_back",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.563,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__count_eggs",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__fetch_eggs",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.39,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__learn_astronomer_trade",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.438,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__learn_hunter_trade",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.36,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__learn_tailor_trade",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__learn_thief_trade",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.312,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__leave_home",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__locate_princess",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__obtain_ship",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__receive_reward",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__repair_ship",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__return_eggs_to_nest",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__return_home_with_princess",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__reunite_at_crossroads",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.281,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__sail_to_rock",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__separate_at_crossroads",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.344,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__sew_eggs",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.391,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__shoot_dragon",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.344,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__shoot_eggs",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__steal_princess",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.468,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "FOUR_NP__swim_after_ship_break",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.328,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__abandon_children_in_forest",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__call_duck_for_crossing",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__collect_treasure",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.062,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__drop_breadcrumb_on_path",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__drop_pebble_on_path",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.093,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__enter_witch_house",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__escape_from_stable",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__follow_breadcrumbs_home",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__follow_pebbles_home",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__hear_bird_and_follow_to_witch_house",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 9.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__leave_children_at_fire",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.079,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__push_witch_into_oven",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__return_home_and_reunite_with_father",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__wander_forest_seeking_way_out",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.079,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "HANS_NP__witch_captures_children",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.093,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__ask_giant_wife_for_breakfast",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.485,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__climb_beanstalk",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.593,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__cut_beanstalk",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.391,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__grow_beanstalk",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__hide_in_kettle",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.469,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__hide_in_oven",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.469,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__plant_beans",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.515,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__return_down_beanstalk",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__sell_cow_for_beans",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.531,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__steal_gold_bags",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__steal_harp",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.407,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "JACK_NP__steal_hen",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.343,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__approach_cottage",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.062,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__cat_agrees",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__cat_attack_messenger",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__choose_sleep_spot",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.187,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__cock_agrees",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__cock_crow_alert",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__dog_bite_messenger",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__donkey_kick_messenger",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.079,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__eat_feast",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__extinguish_light",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__hound_agrees",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__invite_cat",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__invite_cock",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__invite_hound",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__messenger_attempt_light",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__plan_scaring_robbers",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__rest_in_forest",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__robbers_flee",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__robbers_retreat",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__run_away",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__signal_and_make_noise",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__spot_light",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__stack_animals",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "MUSI__travel_together",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__approach_sun",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.609,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__arrest_meteor",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.61,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__avoid_body",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__burn_up",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.563,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__call_comet_forward",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__cross_out_comet",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__deliver_meteor_to_bungo",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.438,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__give_order",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.735,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__prohibit_speaking_to_meteor",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.735,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__punish_meteor",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 6,
+      "elapsed_seconds": 1.547,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__speak_to_meteor",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.515,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__start_travel",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.422,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "NAUG__turn_left_on_meeting",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.297,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__ask_for_material",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__build_house",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_buys_butter_churn_and_hides",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.391,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_collects_apples_and_escapes",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.828,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_collects_turnips",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.812,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.719,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_refuses_entry",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.687,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__pig_rolls_churn_down_hill",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__receive_material",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 2.297,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__send_sons_on_journey",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 2.219,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_attempts_chimney_entry",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.687,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_blows_house_down",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 7,
+      "elapsed_seconds": 1.844,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_eats_pig",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 8,
+      "elapsed_seconds": 1.703,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_fails_to_blow_house",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 7,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_flees_from_rolling_object",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.344,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_huff_and_puff",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 6,
+      "elapsed_seconds": 1.828,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_knocks_and_requests_entry",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_apple_orchard",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_fair_trip",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_turnip_field",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.859,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__buy_boots",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.562,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_call_for_help",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_catch_rabbits",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.61,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_deliver_gifts_to_king",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_disentchant_prisoners",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_eat_mouse",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.531,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_lion",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.313,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_mouse",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.469,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_open_castle_gates",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__cat_persuade_master_to_bathe",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.36,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__give_bag_to_cat",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.797,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__king_send_groom_fetch_suit",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.718,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__master_marry_princess",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.313,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "PUSS__master_wear_suit",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.609,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__arrive_at_marble_palace",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.359,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__encounter_impostor_king",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__encounter_robbers_in_forest",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.407,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__king_proposes_marriage",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.468,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__king_requests_information_and_gifts",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__princess_accepts_with_heart",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.375,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__receive_rubies_from_impostor",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.407,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__receive_sapphires_from_robber_chief",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__run_away_from_palace",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__suitors_retire_due_to_phrase",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.485,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__utter_phrase_grandmother_mangle",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.39,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "REMA_NP__utter_phrase_price_of_butter",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.516,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__apple_piece_falls_out_reviving_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 11.062,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__child_is_born_and_queen_dies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 10.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__dwarfs_cut_laces_rescue_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 10.765,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__dwarfs_offer_snow_white_to_maintain_house",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 10.5,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 10.64,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__dwarfs_remove_comb_rescue_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 10.453,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__dwarfs_return_and_discover_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 10.547,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__huntsman_spares_snow_white_and_brings_boar_heart",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.547,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__king_marries_stepmother",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 10.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__prince_discovers_coffin_and_moves_it",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 11.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__prince_marries_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 10.531,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__queen_pricks_finger",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 10.579,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__queen_sews_at_window",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 11.546,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__queen_wishes_child_white_red_black",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.047,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__snow_white_eats_poisoned_apple_and_dies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 11.438,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__snow_white_finds_dwarfs_cottage",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.484,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__snow_white_flees_into_forest",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.125,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__snow_white_sleeps_in_seventh_bed",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.172,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_asks_looking_glass_fairest",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.0,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.156,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_becomes_envious_of_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 11.406,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_comb_poison_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 11.078,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_disguises_as_old_woman_and_visits_cottage",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.125,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.188,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_laces_snow_white_tightly",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.36,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_apple_and_visits_cottage",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.25,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_comb_and_visits_cottage",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 11.125,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SNOW__stepmother_orders_huntsman_to_kill_snow_white",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 11.312,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__claim_queenhood",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.688,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__escape_jail",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__give_skewer_to_elves",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.766,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__learn_wisdom_from_ants",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.735,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__prepare_soup_by_elf_effect",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.468,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__prepare_soup_by_king_tail",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__prepare_soup_by_poet_imagination",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 5,
+      "elapsed_seconds": 1.688,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__read_and_digest_books",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.75,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__receive_anointed_skewer",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.594,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__receive_feather",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.703,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__run_in_cage",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.657,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "SOUP__travel_to",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.734,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__accept_woe_as_burden",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.641,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__allow_woe_to_ride_on_shoulder",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.718,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__bow_to_guests",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.485,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__encounter_bitter_woe",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.594,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__hide_woe_under_stone",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__invite_rich_brother_to_feast",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.609,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__make_sign_of_cross",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.641,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__move_heavy_stone",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.719,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__perform_work_for_rich_brother",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "elapsed_seconds": 1.64,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__receive_payment",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "elapsed_seconds": 1.641,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__request_help_from_rich_brother",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.672,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__rich_brother_attempt_to_move_stone",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.704,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__sing_cheerful_song",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.578,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__spend_money_on_drink",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.641,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__stay_for_banquet",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.437,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__take_gold_pot_and_hide",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.469,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "WOE__trade_assets_for_money",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 1,
+      "elapsed_seconds": 1.656,
+      "inputs_unchanged": true
+    }
+  ],
+  "status_counts": {
+    "solved": 146,
+    "unsolvable": 50,
+    "wall_time_limit": 38
+  },
+  "binary_unchanged": true,
+  "runner_unchanged": true
+}

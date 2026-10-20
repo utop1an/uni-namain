@@ -1,0 +1,111 @@
+{
+  "status": "outcomes_generated",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "difference_basis": "complete_positive_state_symmetric_difference",
+  "grounding_basis": "unique_current_state_projected_bindings",
+  "fluent_budget_basis": "effect_targets_of_visited_applicable_bindings",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 3,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 100000,
+    "max_outcomes": 3
+  },
+  "states": 4,
+  "ground_candidates": 12,
+  "outcomes": [
+    {
+      "index": 0,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "d001__c_beech_tree"
+          ],
+          "value": true
+        },
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "q__stage"
+          ],
+          "value": false
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d001__a_travel_to_trysting_place(q__hero, d001__c_beech_tree, q__stage)"
+    },
+    {
+      "index": 1,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "d001__c_bench"
+          ],
+          "value": true
+        },
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "q__stage"
+          ],
+          "value": false
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d001__a_travel_to_trysting_place(q__hero, d001__c_bench, q__stage)"
+    },
+    {
+      "index": 2,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "d001__c_corridor"
+          ],
+          "value": true
+        },
+        {
+          "atom": [
+            "d001__p_at",
+            "q__hero",
+            "q__stage"
+          ],
+          "value": false
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d001__a_travel_to_trysting_place(q__hero, d001__c_corridor, q__stage)"
+    }
+  ],
+  "ground_fluents_tracked": 4,
+  "expanded_effect_instances": 6,
+  "applicability_checks": 12,
+  "stop_reason": "outcome_limit"
+}

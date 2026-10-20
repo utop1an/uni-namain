@@ -1,0 +1,132 @@
+{
+  "sources": [
+    "SNOW"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 4,
+    "constants": 38,
+    "predicates": 16,
+    "operators": 29
+  },
+  "predicate_maps": {
+    "SNOW": {
+      "alive": "d000__p_alive",
+      "at": "d000__p_at",
+      "at_item": "d000__p_at_item",
+      "awake": "d000__p_awake",
+      "dead": "d000__p_dead",
+      "disguised_as": "d000__p_disguised_as",
+      "envious": "d000__p_envious",
+      "fair": "d000__p_fair",
+      "fairest": "d000__p_fairest",
+      "has": "d000__p_has",
+      "in_coffin": "d000__p_in_coffin",
+      "laced": "d000__p_laced",
+      "poisoned": "d000__p_poisoned",
+      "sleeping": "d000__p_sleeping",
+      "visited": "d000__p_visited",
+      "wearing": "d000__p_wearing"
+    }
+  },
+  "constant_maps": {
+    "SNOW": {
+      "apple": "d000__c_apple",
+      "bed": "d000__c_bed",
+      "blood_drop": "d000__c_blood_drop",
+      "boar": "d000__c_boar",
+      "boar_heart": "d000__c_boar_heart",
+      "candle": "d000__c_candle",
+      "coffin": "d000__c_coffin",
+      "comb": "d000__c_comb",
+      "cottage": "d000__c_cottage",
+      "dove": "d000__c_dove",
+      "dwarf1": "d000__c_dwarf1",
+      "dwarf2": "d000__c_dwarf2",
+      "dwarf3": "d000__c_dwarf3",
+      "dwarf4": "d000__c_dwarf4",
+      "dwarf5": "d000__c_dwarf5",
+      "dwarf6": "d000__c_dwarf6",
+      "dwarf7": "d000__c_dwarf7",
+      "forest": "d000__c_forest",
+      "fork": "d000__c_fork",
+      "golden_letter": "d000__c_golden_letter",
+      "huntsman": "d000__c_huntsman",
+      "iron_slippers": "d000__c_iron_slippers",
+      "king": "d000__c_king",
+      "knife": "d000__c_knife",
+      "lace": "d000__c_lace",
+      "looking_glass": "d000__c_looking_glass",
+      "mountain": "d000__c_mountain",
+      "mug": "d000__c_mug",
+      "needle": "d000__c_needle",
+      "owl": "d000__c_owl",
+      "plate": "d000__c_plate",
+      "prince": "d000__c_prince",
+      "queen": "d000__c_queen",
+      "raven": "d000__c_raven",
+      "red_hot_shoes": "d000__c_red_hot_shoes",
+      "salt": "d000__c_salt",
+      "snow_white": "d000__c_snow_white",
+      "spoon": "d000__c_spoon"
+    }
+  },
+  "action_maps": {
+    "SNOW": {
+      "queen_sews_at_window": "d000__a_queen_sews_at_window",
+      "queen_pricks_finger": "d000__a_queen_pricks_finger",
+      "queen_wishes_child_white_red_black": "d000__a_queen_wishes_child_white_red_black",
+      "child_is_born_and_queen_dies": "d000__a_child_is_born_and_queen_dies",
+      "king_marries_stepmother": "d000__a_king_marries_stepmother",
+      "stepmother_asks_looking_glass_fairest": "d000__a_stepmother_asks_looking_glass_fairest",
+      "stepmother_becomes_envious_of_snow_white": "d000__a_stepmother_becomes_envious_of_snow_white",
+      "stepmother_orders_huntsman_to_kill_snow_white": "d000__a_stepmother_orders_huntsman_to_kill_snow_white",
+      "huntsman_spares_snow_white_and_brings_boar_heart": "d000__a_huntsman_spares_snow_white_and_brings_boar_heart",
+      "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart": "d000__a_stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "snow_white_flees_into_forest": "d000__a_snow_white_flees_into_forest",
+      "snow_white_finds_dwarfs_cottage": "d000__a_snow_white_finds_dwarfs_cottage",
+      "snow_white_eats_vegetables_and_bread_and_drinks_wine": "d000__a_snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "snow_white_sleeps_in_seventh_bed": "d000__a_snow_white_sleeps_in_seventh_bed",
+      "dwarfs_return_and_discover_snow_white": "d000__a_dwarfs_return_and_discover_snow_white",
+      "dwarfs_offer_snow_white_to_maintain_house": "d000__a_dwarfs_offer_snow_white_to_maintain_house",
+      "stepmother_disguises_as_old_woman_and_visits_cottage": "d000__a_stepmother_disguises_as_old_woman_and_visits_cottage",
+      "stepmother_laces_snow_white_tightly": "d000__a_stepmother_laces_snow_white_tightly",
+      "dwarfs_cut_laces_rescue_snow_white": "d000__a_dwarfs_cut_laces_rescue_snow_white",
+      "stepmother_makes_poisonous_comb_and_visits_cottage": "d000__a_stepmother_makes_poisonous_comb_and_visits_cottage",
+      "stepmother_comb_poison_snow_white": "d000__a_stepmother_comb_poison_snow_white",
+      "dwarfs_remove_comb_rescue_snow_white": "d000__a_dwarfs_remove_comb_rescue_snow_white",
+      "stepmother_makes_poisonous_apple_and_visits_cottage": "d000__a_stepmother_makes_poisonous_apple_and_visits_cottage",
+      "snow_white_eats_poisoned_apple_and_dies": "d000__a_snow_white_eats_poisoned_apple_and_dies",
+      "dwarfs_prepare_glass_coffin_for_snow_white": "d000__a_dwarfs_prepare_glass_coffin_for_snow_white",
+      "prince_discovers_coffin_and_moves_it": "d000__a_prince_discovers_coffin_and_moves_it",
+      "apple_piece_falls_out_reviving_snow_white": "d000__a_apple_piece_falls_out_reviving_snow_white",
+      "prince_marries_snow_white": "d000__a_prince_marries_snow_white",
+      "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies": "d000__a_stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "SNOW": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

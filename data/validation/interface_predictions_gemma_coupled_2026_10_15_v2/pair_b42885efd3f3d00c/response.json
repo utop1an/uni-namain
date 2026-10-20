@@ -1,0 +1,18 @@
+{
+  "candidate_id": "pair_b42885efd3f3d00c",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'knighted' relates to a person receiving an honor, while 'envious' describes a feeling or state of being. These predicates represent distinct concepts: one concerning a formal action and status, the other concerning an emotional state. The 'knighted' predicate implies a specific entity ('e') is being granted a title, whereas 'envious' describes a feeling experienced by an entity ('e'). The action contexts further support this distinction. The 'knighted' action involves a formal bestowal, while the 'envious' action describes a state of mind. The shared parameter 'entity' indicates both predicates refer to the same type of object, but the predicates themselves represent different aspects of that object's state or role. The 'envious' action requires the precondition '(envious ?s)', indicating the entity 's' is experiencing envy, while the 'knighted' predicate simply states that 'e' is being knighted. Therefore, they are complementary, describing different facets of an entity's situation.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_becomes_envious_of_snow_white",
+      "quote": "(envious ?s)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_orders_huntsman_to_kill_snow_white",
+      "quote": "(envious ?s)"
+    }
+  ]
+}

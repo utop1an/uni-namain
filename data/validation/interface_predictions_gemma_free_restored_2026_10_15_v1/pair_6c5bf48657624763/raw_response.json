@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:47:58.8985572Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_6c5bf48657624763\", \"label\": \"equivalent\", \"right_from_left\": [5, 1], \"rationale\": \"The predicate `at` is used to express location in both MUSI and PIGS_NP. In MUSI, it describes the position of entities like 'donkey', 'hound', 'cat', and 'cock' within 'forest' or 'cottage'. In PIGS_NP, it similarly describes the location of 'pig', 'butter_churn', 'fire', and 'pot' within 'town_fair', 'pig_home', or 'chimney'. The arguments `?e` and `?l` represent the entity and location respectively, and their roles are interchangeable in both narratives. The action contexts demonstrate that the predicate's function – indicating the spatial position of an entity – is consistent across the two sources. The exact excerpts confirm this equivalence: `(at ?donkey ?forest)` and `(at ?p ?h)` are directly comparable.\", \"evidence\": [ {\"side\": 1, \"ref\": \"PIGS_NP:action:build_house\", \"quote\": \"(at ?p ?h)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_buys_butter_churn_and_hides\", \"quote\": \"(at ?p town_fair)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_prepares_boiling_pot_and_fire\", \"quote\": \"(at ?p ?h)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:send_sons_on_journey\", \"quote\": \"(at ?m pig_home)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:wolf_eats_pig\", \"quote\": \"(at ?p ?h)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:wolf_knocks_and_requests_entry\", \"quote\": \"(at ?w ?h)\"} ]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5391400700,
+  "load_duration": 2054800,
+  "prompt_eval_count": 3796,
+  "prompt_eval_duration": 536679000,
+  "eval_count": 472,
+  "eval_duration": 4778395000
+}

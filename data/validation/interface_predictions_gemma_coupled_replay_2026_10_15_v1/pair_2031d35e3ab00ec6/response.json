@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_2031d35e3ab00ec6",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "Both predicates use the `at` relation to specify the location of an entity. The `at` relation is used to express the spatial position of an entity. The parameters are both `entity` and `location`, indicating that both predicates are concerned with the location of an entity. The action contexts show that both predicates are used to describe the spatial position of entities within a scene. The predicates are interchangeable in their use of the `at` relation and the `entity` and `location` parameters. The different action contexts do not contradict this equivalence.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:climb_beanstalk",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:bow_to_guests",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:encounter_bitter_woe",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:invite_rich_brother_to_feast",
+      "quote": "(at ?poor ?loc)"
+    }
+  ]
+}

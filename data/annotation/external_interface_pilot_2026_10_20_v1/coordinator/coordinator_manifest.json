@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "packet_sha256": "ec23e2d2f9c2fb4ca8e52ba8f1fe746fd944d7a9cda4d9e4d86b3b3604e8418e",
+  "seed": "external-screen-2026-10-20-v1",
+  "per_stratum": 24,
+  "selection_policy": "SHA256-ranked sample without replacement within name/type-spelling strata; equal arity only",
+  "all_cross_source_pairs": 161,
+  "different_arity_excluded": 90,
+  "equal_arity_pairs": 71,
+  "selected_pairs": 48,
+  "strata": {
+    "different_name/different_type_names": {
+      "eligible": 40,
+      "selected": 24,
+      "omitted": 16
+    },
+    "different_name/same_order_type_names": {
+      "eligible": 31,
+      "selected": 24,
+      "omitted": 7
+    }
+  },
+  "selection": [
+    {
+      "id": "pair_ba10699b6e1556b6",
+      "refs": [
+        "HRI_HOUSEHOLD_0:receptacleIsAt",
+        "IPC_GRIPPER:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_a92253fa541ee68a",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isHoldingReceptacle",
+        "IPC_GRIPPER:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_dac45b5bddea21d2",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_GRIPPER:at-robby"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_59aabcef43675bc3",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isHolding",
+        "IPC_GRIPPER:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_67855eaf23baf42a",
+      "refs": [
+        "HRI_HOUSEHOLD_0:receptacleIsAt",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_3af0dd26bdd1671d",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isHolding",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_8bf9bc1a855902b4",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsInside",
+        "IPC_MICONIC:destin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_943e603e296bf487",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_f9b4e343aa3d750c",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_GRIPPER:free"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_128d8c1a831d128c",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isAt",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_df3ed4a2664a6d67",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsInside",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_a44d9d1ae0ec31b3",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_MICONIC:floor"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_b000bef6e2e62ef2",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_GRIPPER:room"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_ee920be80987b283",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isHoldingReceptacle",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_eea29a8f319efb0d",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsInside",
+        "IPC_GRIPPER:carry"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_a3517f6763de04a9",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isAt",
+        "IPC_MICONIC:destin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_513f73821ab02c70",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsInside",
+        "IPC_GRIPPER:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_908fae24d9e52bf7",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsAt",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_863e0dea77f8963d",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsInside",
+        "IPC_MICONIC:above"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_52ca308d6dc6c0dd",
+      "refs": [
+        "HRI_HOUSEHOLD_0:drawerIsOpen",
+        "IPC_GRIPPER:gripper"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_69d0120ed9150fb8",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsAt",
+        "IPC_GRIPPER:carry"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_61749b284140111e",
+      "refs": [
+        "HRI_HOUSEHOLD_0:receptacleIsAt",
+        "IPC_MICONIC:destin"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_6bcee187808244ad",
+      "refs": [
+        "HRI_HOUSEHOLD_0:objectIsAt",
+        "IPC_MICONIC:above"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_d0c160b691c33902",
+      "refs": [
+        "HRI_HOUSEHOLD_0:isHolding",
+        "IPC_GRIPPER:carry"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_e745ab7753bc8787",
+      "refs": [
+        "IPC_GRIPPER:free",
+        "IPC_MICONIC:boarded"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_3bec7c686c34be77",
+      "refs": [
+        "IPC_GRIPPER:room",
+        "IPC_MICONIC:floor"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_d05f942005d0b969",
+      "refs": [
+        "IPC_GRIPPER:gripper",
+        "IPC_MICONIC:floor"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_53be5b77987b0a77",
+      "refs": [
+        "IPC_GRIPPER:free",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_9b0471d9eef13d45",
+      "refs": [
+        "IPC_GRIPPER:gripper",
+        "IPC_MICONIC:passenger"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_203274d2e1e48da5",
+      "refs": [
+        "IPC_GRIPPER:room",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_acfb5c2d9e92cb05",
+      "refs": [
+        "IPC_GRIPPER:room",
+        "IPC_MICONIC:passenger"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_27dcdfa66a5e0d10",
+      "refs": [
+        "IPC_GRIPPER:carry",
+        "IPC_MICONIC:above"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_6de4a32cd10e56a5",
+      "refs": [
+        "IPC_GRIPPER:ball",
+        "IPC_MICONIC:floor"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_c49cf1fe47d401d3",
+      "refs": [
+        "IPC_GRIPPER:ball",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_7c8204781724d9dd",
+      "refs": [
+        "IPC_GRIPPER:at-robby",
+        "IPC_MICONIC:boarded"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_f0167525023d66de",
+      "refs": [
+        "IPC_GRIPPER:at-robby",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_195bbef48b94e688",
+      "refs": [
+        "IPC_GRIPPER:gripper",
+        "IPC_MICONIC:lift-at"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_1f3eabb24187ef2e",
+      "refs": [
+        "IPC_GRIPPER:ball",
+        "IPC_MICONIC:passenger"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_8870d1ef97c2dc5a",
+      "refs": [
+        "IPC_GRIPPER:at-robby",
+        "IPC_MICONIC:lift-at"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_db192a6f41e5d0e2",
+      "refs": [
+        "IPC_GRIPPER:free",
+        "IPC_MICONIC:lift-at"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_6381cd3b0817153a",
+      "refs": [
+        "IPC_GRIPPER:free",
+        "IPC_MICONIC:passenger"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_1361d7e0b4114820",
+      "refs": [
+        "IPC_GRIPPER:at",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_d77b803914f37f46",
+      "refs": [
+        "IPC_GRIPPER:gripper",
+        "IPC_MICONIC:served"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_36b3ef3e80417a77",
+      "refs": [
+        "IPC_GRIPPER:at",
+        "IPC_MICONIC:above"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_ac324ecd11eccd0e",
+      "refs": [
+        "IPC_GRIPPER:carry",
+        "IPC_MICONIC:destin"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_47a42b2957497774",
+      "refs": [
+        "IPC_GRIPPER:carry",
+        "IPC_MICONIC:origin"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_f9fa7538bb072a72",
+      "refs": [
+        "IPC_GRIPPER:at",
+        "IPC_MICONIC:destin"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_63a13e1d65112d6e",
+      "refs": [
+        "IPC_GRIPPER:at-robby",
+        "IPC_MICONIC:floor"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    }
+  ],
+  "independent_labels_completed": 0,
+  "source_sha256": {
+    "HRI_HOUSEHOLD_0_domainfile.pddl": "86be709799df5999089b5de7566c5978eebb47cbdd9007c7f4c5bcb932c889e4",
+    "IPC_GRIPPER_domainfile.pddl": "894b97e04557b9dce4198a3fe85f20d8a946e2b2dff9ddd42b8bcffd0a95e27c",
+    "IPC_MICONIC_domainfile.pddl": "433893873319a41c8b1cb91455319b9884f68bbc75368bbac681ef768d1a3b3a"
+  },
+  "packet_generator_sha256": "c9d1f4beb1cb724f7871ca392661cfc2777290ba38fd0d18f2578deaa0ceb8eb",
+  "limits": [
+    "No goals, problem files, plans or model predictions are read",
+    "Source name/type spelling strata are not semantic gold labels",
+    "Equal-arity restriction excludes abstraction through argument addition or removal",
+    "Two independent annotators and adjudication are still required"
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "status": "audited",
+  "sources": [
+    {
+      "source": "ACCO",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "hang_kettle",
+          "mapped_action": "hang_kettle",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "kettle_transform_to_badger",
+          "mapped_action": "kettle_transform_to_badger",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "call_novices",
+          "mapped_action": "call_novices",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "kettle_jump_and_fly",
+          "mapped_action": "kettle_jump_and_fly",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "pursue_kettle",
+          "mapped_action": "pursue_kettle",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "knock_down_kettle",
+          "mapped_action": "knock_down_kettle",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "force_kettle_into_box",
+          "mapped_action": "force_kettle_into_box",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "sell_kettle_to_tinker",
+          "mapped_action": "sell_kettle_to_tinker",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "tinker_carry_home",
+          "mapped_action": "activate_beech",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": false
+        },
+        {
+          "source_action": "kettle_transform_to_fur_badger",
+          "mapped_action": "kettle_transform_to_fur_badger",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "kettle_revert_shape",
+          "mapped_action": "kettle_revert_shape",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "show_kettle_to_friend",
+          "mapped_action": "show_kettle_to_friend",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "arrange_exhibition",
+          "mapped_action": "arrange_exhibition",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "perform_show",
+          "mapped_action": "perform_show",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_orders_from_nobility",
+          "mapped_action": "receive_orders_from_nobility",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "return_kettle_to_temple",
+          "mapped_action": "return_kettle_to_temple",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "worship_kettle_as_saint",
+          "mapped_action": "worship_kettle_as_saint",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "airborne",
+          "mapped_predicate": "airborne",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "badger_form",
+          "mapped_predicate": "badger_form",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "captured",
+          "mapped_predicate": "captured",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "contained_in",
+          "mapped_predicate": "contained_in",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "exhibition_ready",
+          "mapped_predicate": "exhibition_ready",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "four_legged",
+          "mapped_predicate": "four_legged",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "furred",
+          "mapped_predicate": "furred",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "hanging",
+          "mapped_predicate": "hanging",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "located",
+          "mapped_predicate": "located",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "night",
+          "mapped_predicate": "night",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "owned_by",
+          "mapped_predicate": "carried_item",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": false
+        },
+        {
+          "source_predicate": "performing_show",
+          "mapped_predicate": "state",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "reputation_widespread",
+          "mapped_predicate": "reputation_widespread",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 0,
+          "target_arity": 0,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "treasured",
+          "mapped_predicate": "treasured",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "wealthy",
+          "mapped_predicate": "wealthy",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "worshipped",
+          "mapped_predicate": "worshipped",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        }
+      ]
+    },
+    {
+      "source": "BIRT",
+      "mapping_categories": {
+        "actions": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "predicates": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        },
+        "constants": {
+          "missing_source_keys": [],
+          "extra_source_keys": [],
+          "missing_targets": [],
+          "within_source_collisions": {}
+        }
+      },
+      "actions": [
+        {
+          "source_action": "travel_to_trysting_place",
+          "mapped_action": "travel_to_trysting_place",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "hear_tapping_on_beech",
+          "mapped_action": "hear_tapping_on_beech",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "approach_beech_tree",
+          "mapped_action": "approach_beech_tree",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "turn_key_on_beech",
+          "mapped_action": "activate_beech",
+          "status": "rewritten_ast_no_verified_parameter_map",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "accept_dryad_invitation",
+          "mapped_action": "accept_dryad_invitation",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_pellet_from_gnome",
+          "mapped_action": "receive_pellet_from_gnome",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "eat_pellet_and_shrink",
+          "mapped_action": "eat_pellet_and_shrink",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "enter_tree_and_descend_stairs",
+          "mapped_action": "enter_tree_and_descend_stairs",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "travel_by_leaf_boat_under_pond",
+          "mapped_action": "travel_by_leaf_boat_under_pond",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "witness_queen_birthday_ceremony",
+          "mapped_action": "witness_queen_birthday_ceremony",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "receive_queen_kiss",
+          "mapped_action": "receive_queen_kiss",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        },
+        {
+          "source_action": "return_to_bench_and_share_story",
+          "mapped_action": "return_to_bench_and_share_story",
+          "status": "rename_only_ast_equal",
+          "ordered_signature_equal": true
+        }
+      ],
+      "predicates": [
+        {
+          "source_predicate": "at",
+          "mapped_predicate": "at",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "boat_available",
+          "mapped_predicate": "boat_available",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "corridor_reached",
+          "mapped_predicate": "corridor_reached",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "door_open",
+          "mapped_predicate": "door_open",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "gloomy",
+          "mapped_predicate": "gloomy",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "gold_star_on",
+          "mapped_predicate": "gold_star_on",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "has",
+          "mapped_predicate": "has",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "inside",
+          "mapped_predicate": "inside",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "invitation_offered",
+          "mapped_predicate": "invitation_offered",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "joyful",
+          "mapped_predicate": "joyful",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "kissed_by",
+          "mapped_predicate": "kissed_by",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "knighted",
+          "mapped_predicate": "knighted",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "lantern_carried",
+          "mapped_predicate": "carried_item",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "pellet_eaten",
+          "mapped_predicate": "pellet_eaten",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "shrunk",
+          "mapped_predicate": "state",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "sound_heard",
+          "mapped_predicate": "sound_heard",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "stairs_descended",
+          "mapped_predicate": "stairs_descended",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 1,
+          "target_arity": 1,
+          "ordered_signature_equal": true
+        },
+        {
+          "source_predicate": "story_shared",
+          "mapped_predicate": "story_shared",
+          "argument_order_trace": "not_recorded",
+          "source_arity": 2,
+          "target_arity": 2,
+          "ordered_signature_equal": true
+        }
+      ]
+    }
+  ],
+  "parameter_mapping_policy": "No inferred action-parameter permutation",
+  "limit": "Literal rename-only equality is conservative syntactic evidence, not source-universe preservation, semantic equivalence or trace validity",
+  "action_counts": {
+    "rename_only_ast_equal": 27,
+    "rewritten_ast_no_verified_parameter_map": 2
+  },
+  "source_action_total": 29,
+  "mapped_action_total": 28,
+  "independent_domain_parse": "VALID",
+  "scope": "intermediate_node_not_final_reference_result",
+  "node": "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\15",
+  "input_sha256": {
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\15\\meta_domain.json": "01bb451f19118c77459cdf46f273b4e95c984a0b33979dc1053c6cde769fcc54",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\fusion\\domain_fusion\\15\\meta_domain.pddl": "c3ab00be2cd7916c5fc9d136c01bc54e42a7cbc256581914fc5afa28ab4ec504",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\unidomain_reference_2026_10_15_v1\\inputs\\BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d"
+  },
+  "reference_manifest_sha256": "add8ec23777d176b3caccbe2d06236df476702ebcfe0744e4826c9fb3837de63",
+  "snapshot_unchanged": true,
+  "implementation_sha256": {
+    "audit_fusion_mapping.py": "0bfabe5a79d274cd8fc0f579f204637fc8faf8222389e9ec7358c4c81612fd5f",
+    "audit_union_preservation.py": "fda4784e22c450c1e72fe5d10650b7861be336742380925e0c7f87303bbff033",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9"
+  }
+}

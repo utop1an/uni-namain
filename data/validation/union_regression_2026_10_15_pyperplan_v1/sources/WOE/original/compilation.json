@@ -1,0 +1,23 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [
+    {
+      "engine": "up_quantifiers_remover",
+      "actions": 17,
+      "fluents": 22
+    },
+    {
+      "engine": "up_disjunctive_conditions_remover",
+      "actions": 21,
+      "fluents": 22
+    }
+  ]
+}

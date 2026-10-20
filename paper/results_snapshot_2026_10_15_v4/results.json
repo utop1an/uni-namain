@@ -1,0 +1,417 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-14T17:53:14.101159+00:00",
+  "index_sha256": "153116e0e6d253934537f5bb204b46c2d2840ee4d4001a5041cc0d0f8000eacf",
+  "results": {
+    "original_source_planning": {
+      "path": "data\\validation\\downward_sources_2026_10_15_v1\\report.json",
+      "sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+      "scope": "Original local source worlds and goals",
+      "metrics": {
+        "task_count": 15,
+        "status_counts": {
+          "solved": 6,
+          "unsolvable": 8,
+          "memory_limit": 1
+        }
+      }
+    },
+    "auxiliary_probe_planning": {
+      "path": "data\\validation\\downward_probes_2026_10_15_v1\\report.json",
+      "sha256": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+      "scope": "Auxiliary goals; original initial worlds retained",
+      "metrics": {
+        "task_count": 45,
+        "status_counts": {
+          "solved": 26,
+          "unsolvable": 19
+        }
+      }
+    },
+    "current_source_trace_replay": {
+      "path": "data\\validation\\downward_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "ecc682fab4396e48965ad852f517c0fd9d9a32f8ca720173c7ce74f921cbbf9e",
+      "scope": "Post-capture-fix membership compilation; availability remains 6/15",
+      "metrics": {
+        "source_count": 15,
+        "source_plan_count": 6,
+        "valid_translations": 6,
+        "counts": {
+          "VALID": 6,
+          "no_source_plan_evidence": 9
+        }
+      }
+    },
+    "current_probe_trace_replay": {
+      "path": "data\\validation\\probe_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "4841039fe26215a90d52c8f2843d90c63d5edb316b682eaa24500d5ba2d2e019",
+      "scope": "Post-capture-fix membership compilation; auxiliary probe denominator 45",
+      "metrics": {
+        "probe_count": 45,
+        "available_probe_plans": 26,
+        "validated_probe_plans": 26,
+        "counts": {
+          "VALID": 26,
+          "no_probe_plan_evidence": 19
+        }
+      }
+    },
+    "current_probe_state_equivalence": {
+      "path": "data\\validation\\probe_type_states_2026_10_15_v2\\report.json",
+      "sha256": "7448e8682cacbebef2c1704c01356bac1ee07a26f7faffea88a575f4dadddc76",
+      "scope": "All source atoms along available probe trajectories, not all reachable states",
+      "metrics": {
+        "probe_count": 45,
+        "counts": {
+          "PASS": 26,
+          "no_valid_probe_trace": 19
+        },
+        "truth_comparisons": 52116,
+        "states_compared": 73
+      }
+    },
+    "goal_directed_development": {
+      "path": "data\\validation\\downward_composed_2026_10_15_v1\\report.json",
+      "sha256": "6a7e363b8be0ff3e63a399730c285d5f48fa71eca55427e4bff4b8065c65f566",
+      "scope": "Authored worlds/interfaces; same-export solver comparison",
+      "metrics": {
+        "task_count": 18,
+        "status_counts": {
+          "unsolvable": 9,
+          "solved": 9
+        }
+      }
+    },
+    "initial_only_development": {
+      "path": "data\\validation\\initial_only_development_2026_10_15_v2\\report.json",
+      "sha256": "5f5cf8df93bdf799a3b79c05397c48a25d3cbb06bdd62fd99164f067af333906",
+      "scope": "Historical state-projection run before capture fix; 12 validated generated outcomes",
+      "metrics": {
+        "task_count": 6,
+        "counts": {
+          "outcomes_generated": 4,
+          "no_outcomes": 2
+        }
+      }
+    },
+    "finite_transition_control": {
+      "path": "data\\validation\\exhaustive_preservation_2026_10_15_v2\\report.json",
+      "sha256": "814e9f791745358f412783a7aafed840a7839606afa833e551eb0e833c88e6fa",
+      "scope": "Authored 256-state control after capture fix",
+      "metrics": {
+        "counts": {
+          "states": 256,
+          "ground_action_instances": 17,
+          "applicability_checks": 4352,
+          "applicable_transitions": 2048,
+          "goal_checks": 256,
+          "mismatches": 0
+        }
+      }
+    },
+    "capture_control": {
+      "path": "data\\validation\\quantifier_capture_2026_10_15_v1\\exhaustive_report.json",
+      "sha256": "5404eb86c3e37825c6bf40282b59592a17b7357464d25e0c62142ac495586a5e",
+      "scope": "Authored 16-state capture regression",
+      "metrics": {
+        "states": 16,
+        "action_bindings_checked": 32,
+        "before_mismatches": 8,
+        "after_mismatches": 0
+      }
+    },
+    "source_action_necessity": {
+      "path": "data\\validation\\downward_action_removal_2026_10_15_v1\\report.json",
+      "sha256": "245c3d4fd0227e1c65297e9e77e4007cf765382c7aaa712a076cde496d5dd87a",
+      "scope": "Source-action removal on six authored explicit-pair conditions; 18 tasks",
+      "metrics": {
+        "task_count": 18,
+        "status_counts": {
+          "unsolvable": 13,
+          "solved": 5
+        }
+      }
+    },
+    "external_native_planning": {
+      "path": "data\\validation\\downward_basketball_native_2026_10_15_v1\\report.json",
+      "sha256": "c9edcfb03b125a7adb0d9ba40bab03c2219beaeafaf54721d1a4613c8b509c9b",
+      "scope": "Basketball: one external development family, ten header-packaged original tasks",
+      "metrics": {
+        "task_count": 10,
+        "status_counts": {
+          "solved": 10
+        }
+      }
+    },
+    "external_union_replay": {
+      "path": "data\\validation\\basketball_union_replay_2026_10_15_v1\\report.json",
+      "sha256": "7dc482ce2ebcf4315b132b3331a44dbe3d6f3ecdb25c7a1accd6b8d2a23c0570",
+      "scope": "Ten external development traces in a fixed16-source union model",
+      "metrics": {
+        "problem_count": 10,
+        "compiled_source_count": 16,
+        "valid_replays": 10,
+        "states_compared": 80,
+        "truth_comparisons": 38560
+      }
+    },
+    "external_union_world_isolation": {
+      "path": "data\\validation\\basketball_union_replay_2026_10_15_v1\\world_audit.json",
+      "sha256": "fcc066043bc758b3c2692de9b8c04a7815008033d92628432c16a16f035397cb",
+      "scope": "Full initial-world isolation; injected foreign-fact negative control must fail",
+      "metrics": {
+        "problem_count": 10,
+        "negative_control": {
+          "injected_atom": "d000__p_airborne(d000__c_box)",
+          "audit": {
+            "status": "FAIL",
+            "expected_narrative_true_atoms": 42,
+            "observed_narrative_true_atoms": 43,
+            "extra_true_atoms": [
+              [
+                "d000__p_airborne",
+                [
+                  "d000__c_box"
+                ]
+              ]
+            ],
+            "missing_true_atoms": [],
+            "foreign_narrative_declarations": [
+              "d000__p_airborne(d000__c_box)"
+            ]
+          },
+          "scope": "In-memory negative control; archived problem files unchanged"
+        }
+      }
+    },
+    "external_membership_replay": {
+      "path": "data\\validation\\basketball_membership_replay_2026_10_15_v1\\report.json",
+      "sha256": "c6017a49967d88113c6d077d16bfdf40e2b80d009a64bd873644a10429e0c1c9",
+      "scope": "Ten external development traces in a fixed16-source membership model",
+      "metrics": {
+        "problem_count": 10,
+        "compiled_source_count": 16,
+        "valid_replays": 10,
+        "states_compared": 80,
+        "truth_comparisons": 38560
+      }
+    },
+    "external_membership_world_isolation": {
+      "path": "data\\validation\\basketball_membership_replay_2026_10_15_v1\\world_audit.json",
+      "sha256": "02d84a52a928010a5587ec6bd0bb648d8c0c2e85ebda52bb6f9261e3f6efe66d",
+      "scope": "Full initial-world isolation; injected foreign-fact negative control must fail",
+      "metrics": {
+        "problem_count": 10,
+        "negative_control": {
+          "injected_atom": "d000__p_airborne(d000__c_badger)",
+          "audit": {
+            "status": "FAIL",
+            "expected_narrative_true_atoms": 42,
+            "observed_narrative_true_atoms": 43,
+            "extra_true_atoms": [
+              [
+                "d000__p_airborne",
+                [
+                  "d000__c_badger"
+                ]
+              ]
+            ],
+            "missing_true_atoms": [],
+            "foreign_narrative_declarations": [
+              "d000__p_airborne(d000__c_badger)"
+            ]
+          },
+          "scope": "In-memory negative control; archived problem files unchanged"
+        }
+      }
+    },
+    "original_pool_trace_coverage": {
+      "path": "data\\validation\\source_trace_coverage_2026_10_15_v1\\report.json",
+      "sha256": "d3c55fc1f221fe80db3eca7df40e1e1c7c4bb28de9bb515d409f18a30afc2a9f",
+      "scope": "Schema visitation among original-goal and auxiliary plans; not branch coverage",
+      "metrics": {
+        "source_count": 15,
+        "declared_actions": 234,
+        "covered_actions": 61,
+        "uncovered_actions": 173,
+        "feature_coverage": {
+          "conditional_effect": {
+            "schemas_declaring_feature": 1,
+            "visited_schemas_declaring_feature": 0
+          },
+          "delete_effect": {
+            "schemas_declaring_feature": 97,
+            "visited_schemas_declaring_feature": 18
+          },
+          "disjunctive_condition": {
+            "schemas_declaring_feature": 1,
+            "visited_schemas_declaring_feature": 1
+          },
+          "existential_condition": {
+            "schemas_declaring_feature": 2,
+            "visited_schemas_declaring_feature": 1
+          },
+          "negative_condition": {
+            "schemas_declaring_feature": 18,
+            "visited_schemas_declaring_feature": 9
+          }
+        }
+      }
+    },
+    "conditional_prefix_control": {
+      "path": "data\\validation\\conditional_prefixes_2026_10_15_v1\\report.json",
+      "sha256": "5ab58903cf5f4675a50213308d70e92d18041a2e948b6555a40fea97b27a2057",
+      "scope": "Two authored prefixes, original initial world; not original-goal success",
+      "metrics": {
+        "trace_count": 2,
+        "states_compared": 5,
+        "truth_comparisons": 2605
+      }
+    },
+    "external_pool_schema": {
+      "path": "data\\validation\\basketball_fixed_pool_2026_10_15_v1\\schema_audit.json",
+      "sha256": "0e681815eb18acbad511938ed1ad0f734ac96dc8ca537e20fdfb39f3ea0251d9",
+      "scope": "Full schema recovery of the16-source namespaced union",
+      "metrics": {
+        "rows": [
+          {
+            "source": "ACCO",
+            "actions_checked": 17,
+            "predicates_checked": 17,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "BASKETBALL",
+            "actions_checked": 8,
+            "predicates_checked": 17,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "BIRT",
+            "actions_checked": 12,
+            "predicates_checked": 18,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "BUFF",
+            "actions_checked": 8,
+            "predicates_checked": 15,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "CHIC_NP",
+            "actions_checked": 7,
+            "predicates_checked": 9,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "FOUR_NP",
+            "actions_checked": 21,
+            "predicates_checked": 16,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "HANS_NP",
+            "actions_checked": 15,
+            "predicates_checked": 15,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "JACK_NP",
+            "actions_checked": 12,
+            "predicates_checked": 15,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "MUSI",
+            "actions_checked": 24,
+            "predicates_checked": 20,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "NAUG",
+            "actions_checked": 13,
+            "predicates_checked": 18,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "PIGS_NP",
+            "actions_checked": 21,
+            "predicates_checked": 21,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "PUSS",
+            "actions_checked": 14,
+            "predicates_checked": 15,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "REMA_NP",
+            "actions_checked": 12,
+            "predicates_checked": 6,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "SNOW",
+            "actions_checked": 29,
+            "predicates_checked": 16,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "SOUP",
+            "actions_checked": 12,
+            "predicates_checked": 13,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          },
+          {
+            "source": "WOE",
+            "actions_checked": 17,
+            "predicates_checked": 22,
+            "problem": "checked",
+            "status": "PASS",
+            "issues": []
+          }
+        ]
+      }
+    }
+  },
+  "excluded_pending": [
+    "Full fresh UniDomain reference still running",
+    "Coupled-schema live intervention not started",
+    "Independent semantic annotation files absent",
+    "Blinded multi-family semantic/generalization evaluation absent; one external development family is recorded separately"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "4db707fadd62a35869faa4a95601f59eadda90c6319e41b2f38a450a240466d2"
+}

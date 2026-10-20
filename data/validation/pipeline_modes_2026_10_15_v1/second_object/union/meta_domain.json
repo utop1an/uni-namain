@@ -1,0 +1,63 @@
+{
+  "sources": [
+    "HEAR",
+    "WARN"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 4,
+    "constants": 0,
+    "predicates": 4,
+    "operators": 2
+  },
+  "predicate_maps": {
+    "HEAR": {
+      "messenger_present": "d000__p_messenger_present",
+      "rumor_known": "d000__p_rumor_known"
+    },
+    "WARN": {
+      "rumor_known": "d001__p_rumor_known",
+      "warning_delivered": "d001__p_warning_delivered"
+    }
+  },
+  "constant_maps": {
+    "HEAR": {},
+    "WARN": {}
+  },
+  "action_maps": {
+    "HEAR": {
+      "hear_report": "d000__a_hear_report"
+    },
+    "WARN": {
+      "warn_village": "d001__a_warn_village"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "HEAR": {
+      "types": {
+        "person": "d000__t_person",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000"
+    },
+    "WARN": {
+      "types": {
+        "person": "d001__t_person",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001"
+    }
+  },
+  "source_sha256": {
+    "HEAR_domainfile.pddl": "8f17f3e7b9b825f6396018daa5b5198f50636d733b7ac9a0c775d44721e550ee",
+    "WARN_domainfile.pddl": "07b7dc5fd0de30d325e1b17bf4b0ae2074c4125eaa3d14ac0d1bd17096bd97ba"
+  },
+  "implementation_sha256": {
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

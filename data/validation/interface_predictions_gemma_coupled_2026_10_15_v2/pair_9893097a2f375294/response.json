@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_9893097a2f375294",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The `at` predicate in BIRT describes a spatial location, while the `work_done` predicate in WOE describes a completed task. The BIRT actions specify where entities are located (e.g., `at ?n ?t`) and the WOE action describes the completion of a task involving an entity and an employer. These predicates represent fundamentally different aspects of the narrative: the physical location of entities versus the state of completed work. The BIRT actions are focused on describing the scene, while the WOE actions are focused on describing the actions of the characters. Therefore, they are complementary, as they describe different facets of the story. The action contexts provide evidence for this complementary relationship. Specifically, `BIRT:action:return_to_bench_and_share_story` shows the character `?n` is at a location (`?bench`), while `WOE:action:perform_work_for_rich_brother` shows that `?worker` has completed work for `?employer`. The predicates are not interchangeable because they describe different things. The BIRT predicate describes a spatial relationship, while the WOE predicate describes a task completion relationship.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:perform_work_for_rich_brother",
+      "quote": "(work_done ?worker ?employer)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:receive_payment",
+      "quote": "(work_done ?worker ?employer)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:approach_beech_tree",
+      "quote": "(at ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:hear_tapping_on_beech",
+      "quote": "(at ?n bench)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:return_to_bench_and_share_story",
+      "quote": "(at ?n ?bench)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+      "quote": "(at ?n ?palace)"
+    }
+  ]
+}

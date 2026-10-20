@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "reports": {
+    "fresh_paired_selection": {
+      "path": "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\report.json",
+      "sha256": "c0e0474ac655a858d747e80de56e2d43ca4eb95405b4efee244b3c044d54e939",
+      "terminal_status": "complete",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "30 fresh solver invocations; 15 original worlds, two source-selection conditions",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts"
+    },
+    "selected_original_goal_replay": {
+      "path": "data\\validation\\world_selected_goal_replay_2026_10_20_v2\\report.json",
+      "sha256": "ce175f98153e2931f9693c9f6eb551f6b15a16ac44206a323c7dc862908dba1a",
+      "terminal_status": "complete",
+      "required_true": [
+        "hashes_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "counts",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "4 available plans replayed; 15 original source rows retained; no new solver invocations",
+      "denominator": "task_count",
+      "row_id": "source",
+      "count_field": "counts"
+    },
+    "translator_diagnostics": {
+      "path": "data\\validation\\translation_diagnostics_2026_10_20_v2\\report.json",
+      "sha256": "719323b172ce683b3c2a049f722131a94e89d38882dd98e214d5eaf13bea23e1",
+      "terminal_status": "complete",
+      "required_true": [
+        "hashes_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "scope"
+      ],
+      "scope": "5 instrumented diagnostic calls; 4 wall-limit samples retained; first failed diagnostic block separately retained and excluded",
+      "denominator": "task_count",
+      "row_id": "id"
+    },
+    "verified_selection_comparison": {
+      "path": "data\\validation\\selection_results_2026_10_20_v2\\results.json",
+      "sha256": "6b951c8bce13a208ca8b9a4b193e25dc4bec0bef369d4f61cfb48892f4b05208",
+      "terminal_status": "verified_complete_selection_comparison",
+      "required_true": [],
+      "metrics": [
+        "fresh_solver_calls",
+        "source_count",
+        "summary",
+        "limitations"
+      ],
+      "scope": "Earlier 60-case measurement block and fresh 30-case selection block kept separate"
+    }
+  },
+  "excluded_pending": [
+    "Independent interface labels remain zero",
+    "Cross-source necessary shared-object tasks not yet evaluated",
+    "HANS_NP, MUSI and SNOW remain limited",
+    "Complete fresh UniDomain comparison absent"
+  ]
+}

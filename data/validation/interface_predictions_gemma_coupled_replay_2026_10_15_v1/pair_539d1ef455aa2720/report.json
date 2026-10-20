@@ -1,0 +1,35 @@
+{
+  "candidate_id": "pair_539d1ef455aa2720",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_539d1ef455aa2720",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates `owned_by` and `collected` describe different relationships between entities. `owned_by` indicates possession of an item, while `collected` indicates that an entity has acquired an item. These relationships represent distinct aspects of an item's state. The action context for `collected` demonstrates that it is a process of acquiring an item, whereas `owned_by` describes a state of ownership. The `collected` predicate implies a change in ownership, but does not explicitly state it. The two predicates are complementary because they describe different facets of an item's existence and relationship to other entities. The `owned_by` predicate focuses on the owner, while the `collected` predicate focuses on the acquisition of an item. The action context for `collected` shows that the `collected` predicate is used to describe the result of an action, whereas the `owned_by` predicate describes a state. The supplied text does not provide evidence for equivalence.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(collected ?h ?pearl)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(collected ?g ?precious_stone)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(collected ?h ?pearl)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(collected ?g ?precious_stone)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_539d1ef455aa2720"
+  ]
+}

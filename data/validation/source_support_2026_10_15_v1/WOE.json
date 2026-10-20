@@ -1,0 +1,461 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "gold_at",
+    "has",
+    "has_strength",
+    "need_help",
+    "poor",
+    "rich",
+    "stone_at"
+  ],
+  "reachable_predicates": [
+    "at",
+    "concealed",
+    "drunk",
+    "employed",
+    "gold_at",
+    "has",
+    "has_fatigue",
+    "has_strength",
+    "invitation_sent",
+    "invited",
+    "need_help",
+    "poor",
+    "rich",
+    "singing",
+    "stone_at",
+    "stone_moved",
+    "trapped",
+    "woe_on_shoulder",
+    "work_done"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "encounter_bitter_woe",
+        "invite_rich_brother_to_feast",
+        "make_sign_of_cross",
+        "move_heavy_stone",
+        "request_help_from_rich_brother",
+        "rich_brother_attempt_to_move_stone",
+        "sing_cheerful_song",
+        "spend_money_on_drink",
+        "take_gold_pot_and_hide",
+        "trade_assets_for_money"
+      ],
+      "new_predicates": [
+        "concealed",
+        "drunk",
+        "employed",
+        "has_fatigue",
+        "invitation_sent",
+        "invited",
+        "singing",
+        "stone_moved",
+        "woe_on_shoulder"
+      ]
+    },
+    {
+      "actions": [
+        "accept_woe_as_burden",
+        "allow_woe_to_ride_on_shoulder",
+        "hide_woe_under_stone",
+        "perform_work_for_rich_brother"
+      ],
+      "new_predicates": [
+        "trapped",
+        "work_done"
+      ]
+    },
+    {
+      "actions": [
+        "receive_payment"
+      ],
+      "new_predicates": []
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "bow_to_guests",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ],
+        [
+          "exists",
+          [
+            "?guest",
+            "-",
+            "entity"
+          ],
+          [
+            "guest_present",
+            "?guest",
+            "?loc"
+          ]
+        ]
+      ],
+      "adds": [
+        "bowed"
+      ]
+    },
+    {
+      "action": "stay_for_banquet",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?guest",
+          "?loc"
+        ],
+        [
+          "at",
+          "?host",
+          "?loc"
+        ],
+        [
+          "banquet_at",
+          "?loc"
+        ],
+        [
+          "invited",
+          "?guest",
+          "?host"
+        ]
+      ],
+      "adds": [
+        "guest_present"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "accept_woe_as_burden",
+      "condition": [
+        "woe_on_shoulder",
+        "?woe",
+        "?rich"
+      ],
+      "adds": [
+        "has_fatigue"
+      ]
+    },
+    {
+      "action": "allow_woe_to_ride_on_shoulder",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ],
+        [
+          "at",
+          "?woe",
+          "?loc"
+        ],
+        [
+          "has_fatigue",
+          "?poor"
+        ]
+      ],
+      "adds": [
+        "woe_on_shoulder"
+      ]
+    },
+    {
+      "action": "bow_to_guests",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ],
+        [
+          "exists",
+          [
+            "?guest",
+            "-",
+            "entity"
+          ],
+          [
+            "guest_present",
+            "?guest",
+            "?loc"
+          ]
+        ]
+      ],
+      "adds": [
+        "bowed"
+      ]
+    },
+    {
+      "action": "encounter_bitter_woe",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ],
+        [
+          "at",
+          "?woe",
+          "?loc"
+        ]
+      ],
+      "adds": [
+        "has_fatigue"
+      ]
+    },
+    {
+      "action": "hide_woe_under_stone",
+      "condition": [
+        "and",
+        [
+          "woe_on_shoulder",
+          "?woe",
+          "?poor"
+        ],
+        [
+          "stone_at",
+          "?stone",
+          "?loc"
+        ]
+      ],
+      "adds": [
+        "stone_at",
+        "trapped"
+      ]
+    },
+    {
+      "action": "invite_rich_brother_to_feast",
+      "condition": [
+        "at",
+        "?poor",
+        "?loc"
+      ],
+      "adds": [
+        "invitation_sent",
+        "invited"
+      ]
+    },
+    {
+      "action": "make_sign_of_cross",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ],
+        [
+          "at",
+          "?woe",
+          "?loc"
+        ]
+      ],
+      "adds": [
+        "has_fatigue"
+      ]
+    },
+    {
+      "action": "move_heavy_stone",
+      "condition": [
+        "and",
+        [
+          "stone_at",
+          "?stone",
+          "?loc"
+        ],
+        [
+          "has_strength",
+          "?carrier"
+        ]
+      ],
+      "adds": [
+        "stone_moved"
+      ]
+    },
+    {
+      "action": "perform_work_for_rich_brother",
+      "condition": [
+        "and",
+        [
+          "employed",
+          "?worker",
+          "?employer"
+        ],
+        [
+          "has_strength",
+          "?worker"
+        ]
+      ],
+      "adds": [
+        "has_fatigue",
+        "work_done"
+      ]
+    },
+    {
+      "action": "receive_payment",
+      "condition": [
+        "and",
+        [
+          "work_done",
+          "?worker",
+          "?employer"
+        ],
+        [
+          "has",
+          "?employer",
+          "?money"
+        ],
+        [
+          "has",
+          "?employer",
+          "?bread"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "request_help_from_rich_brother",
+      "condition": [
+        "and",
+        [
+          "need_help",
+          "?poor"
+        ],
+        [
+          "rich",
+          "?rich"
+        ]
+      ],
+      "adds": [
+        "employed"
+      ]
+    },
+    {
+      "action": "rich_brother_attempt_to_move_stone",
+      "condition": [
+        "and",
+        [
+          "stone_at",
+          "?stone",
+          "?loc"
+        ],
+        [
+          "rich",
+          "?rich"
+        ]
+      ],
+      "adds": [
+        "stone_moved",
+        "woe_on_shoulder"
+      ]
+    },
+    {
+      "action": "sing_cheerful_song",
+      "condition": [
+        "at",
+        "?poor",
+        "?loc"
+      ],
+      "adds": [
+        "singing"
+      ]
+    },
+    {
+      "action": "spend_money_on_drink",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?poor",
+          "?money"
+        ],
+        [
+          "at",
+          "?poor",
+          "?kabak"
+        ]
+      ],
+      "adds": [
+        "drunk",
+        "has"
+      ]
+    },
+    {
+      "action": "stay_for_banquet",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?guest",
+          "?loc"
+        ],
+        [
+          "at",
+          "?host",
+          "?loc"
+        ],
+        [
+          "banquet_at",
+          "?loc"
+        ],
+        [
+          "invited",
+          "?guest",
+          "?host"
+        ]
+      ],
+      "adds": [
+        "guest_present"
+      ]
+    },
+    {
+      "action": "take_gold_pot_and_hide",
+      "condition": [
+        "and",
+        [
+          "gold_at",
+          "?gold",
+          "?loc"
+        ],
+        [
+          "at",
+          "?poor",
+          "?loc"
+        ]
+      ],
+      "adds": [
+        "concealed",
+        "has"
+      ]
+    },
+    {
+      "action": "trade_assets_for_money",
+      "condition": [
+        "has",
+        "?poor",
+        "?asset"
+      ],
+      "adds": [
+        "has"
+      ]
+    }
+  ],
+  "source_domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+  "source_problem_sha256": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

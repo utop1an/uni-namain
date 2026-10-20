@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_14632952b220f647",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'has' appears in both ACCO and JACK_NP with the same argument types ('entity' and 'item'). Across all action contexts, the predicate is consistently used to express possession or presence of an item. The pre- and post-conditions of the actions involving 'has' are identical, indicating interchangeable roles. The arguments are identical in type and the action contexts demonstrate the same semantic relationship. The action contexts are distinct, but the predicate's usage is consistent across both sources. The exact argument order is different, but the core meaning of 'has' remains the same.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:arrange_exhibition",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:hang_kettle",
+      "quote": "(has ?pr ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:kettle_transform_to_fur_badger",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:perform_show",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:return_kettle_to_temple",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:sell_kettle_to_tinker",
+      "quote": "(has ?pr ?k)"
+    }
+  ]
+}

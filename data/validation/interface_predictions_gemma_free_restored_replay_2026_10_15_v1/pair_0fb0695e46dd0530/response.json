@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_0fb0695e46dd0530",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'at' is used identically in both the BIRT and WOE narratives. In BIRT, 'at' is used to describe the location of entities like 'entity' and 'location', while in WOE, it describes the location of 'entity' and 'item'. The action contexts consistently use 'at' to denote spatial presence. The parameters for 'at' are also identical: 'entity' and 'location'. The occurrences of 'at' in both narratives have the same literal form, confirming their interchangeable use in this context. The different sources (BIRT and WOE) are describing the same spatial relationship – the presence of an entity at a location – and therefore the predicate is equivalent. The action contexts provide supporting evidence for this equivalence, as they demonstrate similar actions involving spatial positioning across both narratives.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BIRT:action:approach_beech_tree",
+      "quote": "(at ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:hear_tapping_on_beech",
+      "quote": "(at ?n bench)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_queen_kiss",
+      "quote": "(at ?n palace)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:return_to_bench_and_share_story",
+      "quote": "(at ?n ?bench)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+      "quote": "(at ?n ?palace)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:travel_to_trysting_place",
+      "quote": "(at ?n ?c)"
+    }
+  ]
+}

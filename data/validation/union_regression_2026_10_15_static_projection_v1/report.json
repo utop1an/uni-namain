@@ -1,0 +1,218 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-14T15:02:55.334734+00:00",
+  "scope": "Development source-plan regression; no semantic alignment or narrative-quality claim",
+  "source_count": 15,
+  "source_order": [
+    "ACCO",
+    "BIRT",
+    "BUFF",
+    "CHIC_NP",
+    "FOUR_NP",
+    "HANS_NP",
+    "JACK_NP",
+    "MUSI",
+    "NAUG",
+    "PIGS_NP",
+    "PUSS",
+    "REMA_NP",
+    "SNOW",
+    "SOUP",
+    "WOE"
+  ],
+  "budget_per_source": {
+    "seconds": 60.0,
+    "max_states": 5000,
+    "max_depth": 30,
+    "max_ground_actions": 100000
+  },
+  "solver": "typed_cartesian",
+  "runtime": {
+    "python": "3.12.10",
+    "unified_planning": "1.3.0"
+  },
+  "implementation_sha256": {
+    "run_union_regression.py": "39db7a7f60f7e6222586f6eca95aa986c53cc62860936c04f4aa338adf6b11c4",
+    "validate_narrative_pipeline.py": "ed56aaf731b233d4dc30935184a42c6020bb232e773dcde9280f05cef6018315",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "rcnc/merged_planning.py": "3ec67dd62cbcc9ad62033fad6bad7298d9fb9cca894212a567772d8d8adf9f20",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "audit_union_preservation.py": "fda4784e22c450c1e72fe5d10650b7861be336742380925e0c7f87303bbff033",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931"
+  },
+  "merged_before_planning": true,
+  "merged_domain_sha256": "5b3e303c8f9ff31b097b1c0c53cd8a992049805d27fafe982d8919e9bbee4e41",
+  "rows": [
+    {
+      "source": "ACCO",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 5000,
+        "ground_candidates": 2578,
+        "viable_ground_actions": 2538,
+        "status": "state_limit"
+      },
+      "elapsed_seconds": 43.86,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "BIRT",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 1,
+        "ground_candidates": 100000,
+        "status": "ground_action_limit"
+      },
+      "elapsed_seconds": 44.625,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "BUFF",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 5000,
+        "ground_candidates": 302,
+        "viable_ground_actions": 302,
+        "status": "state_limit"
+      },
+      "elapsed_seconds": 8.532,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "CHIC_NP",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 5000,
+        "ground_candidates": 360,
+        "viable_ground_actions": 360,
+        "status": "state_limit"
+      },
+      "elapsed_seconds": 10.906,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "FOUR_NP",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 32,
+        "ground_candidates": 273,
+        "viable_ground_actions": 273,
+        "status": "unsolvable"
+      },
+      "elapsed_seconds": 4.86,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "HANS_NP",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 1,
+        "ground_candidates": 100000,
+        "status": "ground_action_limit"
+      },
+      "elapsed_seconds": 60.0,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "JACK_NP",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 60.015,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "MUSI",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 60.032,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "NAUG",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 3088,
+        "ground_candidates": 549,
+        "viable_ground_actions": 549,
+        "status": "unsolvable"
+      },
+      "elapsed_seconds": 59.078,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "PIGS_NP",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 60.015,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "PUSS",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 5000,
+        "ground_candidates": 14750,
+        "viable_ground_actions": 14670,
+        "status": "state_limit"
+      },
+      "elapsed_seconds": 27.656,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "REMA_NP",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 60.016,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "SNOW",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 1,
+        "ground_candidates": 100000,
+        "status": "ground_action_limit"
+      },
+      "elapsed_seconds": 32.859,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "SOUP",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 60.016,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "WOE",
+      "search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 5000,
+        "ground_candidates": 10390,
+        "viable_ground_actions": 8568,
+        "status": "state_limit"
+      },
+      "elapsed_seconds": 32.453,
+      "preservation_evidence": "no_valid_source_plan"
+    }
+  ],
+  "search_counts": {
+    "state_limit": 5,
+    "ground_action_limit": 3,
+    "unsolvable": 2,
+    "time_limit": 5
+  },
+  "preservation_counts": {
+    "no_valid_source_plan": 15
+  },
+  "merged_domain_unchanged": true,
+  "finished_utc": "2026-10-14T15:13:20.314946+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "release": "26.6",
+  "source_url": "https://www.fast-downward.org/latest/files/release26.6/fast-downward-26.6.tar.gz",
+  "cmake": "4.4.4",
+  "build_workers": 2,
+  "build_helper": ".tmp/build_fd.py",
+  "git_revision_policy": "Tarball, unknown; GIT_CEILING_DIRECTORIES prevents parent project revision leakage",
+  "file_sha256": {
+    "official_source_archive": "482e161f9ecb6b41358a80db557d7c5cfafce504ed8f20896bcee4406d8b7750",
+    "planner_binary": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+    "driver_version": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+    "linux_cmake_binary": "d03a52669f3c9c7ee2718d733f61a05d9e768f5a2120b7c71a166c0b22e2f8cd"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_261a255ed2b4b9df",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates `owned_by` and `laced` describe different relationships between entities. `owned_by` indicates possession or ownership of an item, while `laced` describes a state where an item is attached to an entity, often in the context of a harmful or restrictive situation (like being laced with poison). These predicates represent distinct properties of objects and entities. The action contexts further support this by describing actions related to ownership (e.g., `dwarfs_cut_laces_rescue_snow_white`) and the state of being laced (e.g., `stepmother_laces_snow_white_tightly`). The `laced` predicate implies a specific state of the item, while `owned_by` describes a more general relationship. The `SNOW` action contexts explicitly show the `laced` predicate being used to describe the state of an entity (`?c`) and an item (`?lace`), which is distinct from the `owned_by` predicate which would describe a different relationship.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "SNOW:action:dwarfs_cut_laces_rescue_snow_white",
+      "quote": "(laced ?c ?lace)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_laces_snow_white_tightly",
+      "quote": "(laced ?c ?lace)"
+    }
+  ]
+}

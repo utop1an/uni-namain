@@ -1,0 +1,1005 @@
+{
+  "status": "complete",
+  "task_count": 11,
+  "rows": [
+    {
+      "id": "role_safe",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 7.734,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "execution_audit": {
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        },
+        "goal_reached": true,
+        "states": [
+          {
+            "index": 0,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": false,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 1,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 2,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 3,
+            "facts": {
+              "alive(snow_white)": false,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": false,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 4,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": false,
+              "rescued_with_comb(snow_white)": true,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          }
+        ],
+        "steps": [
+          {
+            "step": 1,
+            "source": "HANS_NP",
+            "action": "collect_treasure",
+            "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+            "bindings": {
+              "?g": "q__companion",
+              "?h": "q__rescuer",
+              "?pearl": "q__comb",
+              "?precious_stone": "q__gem",
+              "?cottage": "q__hut"
+            },
+            "role_checks": [
+              {
+                "parameter": "?g",
+                "role": "companion",
+                "object": "q__companion",
+                "holds": true
+              },
+              {
+                "parameter": "?h",
+                "role": "rescuer",
+                "object": "q__rescuer",
+                "holds": true
+              },
+              {
+                "parameter": "?pearl",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              },
+              {
+                "parameter": "?precious_stone",
+                "role": "gem",
+                "object": "q__gem",
+                "holds": true
+              },
+              {
+                "parameter": "?cottage",
+                "role": "hut",
+                "object": "q__hut",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": false,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 2,
+            "source": "SNOW",
+            "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+            "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+            "bindings": {
+              "?s": "q__snow_white",
+              "?comb": "q__comb",
+              "?cottage": "q__hut"
+            },
+            "role_checks": [
+              {
+                "parameter": "?s",
+                "role": "witch",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?comb",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              },
+              {
+                "parameter": "?cottage",
+                "role": "hut",
+                "object": "q__hut",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 3,
+            "source": "JACK_NP",
+            "action": "cut_beanstalk",
+            "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+            "bindings": {
+              "?giant": "q__snow_white",
+              "?mother": "q__jack",
+              "?axe": "q__axe"
+            },
+            "role_checks": [
+              {
+                "parameter": "?giant",
+                "role": "giant",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?mother",
+                "role": "cutter",
+                "object": "q__jack",
+                "holds": true
+              },
+              {
+                "parameter": "?axe",
+                "role": "axe",
+                "object": "q__axe",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": false,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": false,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 4,
+            "source": "SNOW",
+            "action": "dwarfs_remove_comb_rescue_snow_white",
+            "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+            "bindings": {
+              "?c": "q__snow_white",
+              "?d": "q__rescuer",
+              "?comb": "q__comb"
+            },
+            "role_checks": [
+              {
+                "parameter": "?c",
+                "role": "snow_white",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?d",
+                "role": "rescuer",
+                "object": "q__rescuer",
+                "holds": true
+              },
+              {
+                "parameter": "?comb",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": false,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": false,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": false,
+              "rescued_with_comb(snow_white)": true,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          }
+        ],
+        "life_identity_violations": [],
+        "role_checks_pass": true,
+        "sources_used": {
+          "HANS_NP": 1,
+          "SNOW": 2,
+          "JACK_NP": 1
+        },
+        "scope": "PDDL execution and declared scenario contracts; not independent narrative/semantic assessment"
+      },
+      "scenario_contract_pass": true
+    },
+    {
+      "id": "no_interfaces",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.109,
+      "inputs_unchanged": true,
+      "interfaces": [],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_possession_interface",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.157,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_death_interface",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.14,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "HANS_NP_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.125,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "JACK_NP_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.141,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "JACK_NP"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "SNOW_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.5,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "without_HANS_NP",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 2.078,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "no_shared_identity",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.843,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": true,
+      "shared_identity": false,
+      "scenario_contract_pass": null
+    },
+    {
+      "id": "without_life_adapter",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 3.234,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": true,
+      "life_adapter": false,
+      "shared_identity": true,
+      "execution_audit": {
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        },
+        "goal_reached": true,
+        "states": [
+          {
+            "index": 0,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": false,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 1,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 2,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 3,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "index": 4,
+            "facts": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": true,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          }
+        ],
+        "steps": [
+          {
+            "step": 1,
+            "source": "HANS_NP",
+            "action": "collect_treasure",
+            "instance": "d000__a_collect_treasure(q__companion, q__rescuer, q__comb, q__gem, q__hut)",
+            "bindings": {
+              "?g": "q__companion",
+              "?h": "q__rescuer",
+              "?pearl": "q__comb",
+              "?precious_stone": "q__gem",
+              "?cottage": "q__hut"
+            },
+            "role_checks": [
+              {
+                "parameter": "?g",
+                "role": "companion",
+                "object": "q__companion",
+                "holds": true
+              },
+              {
+                "parameter": "?h",
+                "role": "rescuer",
+                "object": "q__rescuer",
+                "holds": true
+              },
+              {
+                "parameter": "?pearl",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              },
+              {
+                "parameter": "?precious_stone",
+                "role": "gem",
+                "object": "q__gem",
+                "holds": true
+              },
+              {
+                "parameter": "?cottage",
+                "role": "hut",
+                "object": "q__hut",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": false,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 2,
+            "source": "JACK_NP",
+            "action": "cut_beanstalk",
+            "instance": "d001__a_cut_beanstalk(q__snow_white, q__jack, q__axe)",
+            "bindings": {
+              "?giant": "q__snow_white",
+              "?mother": "q__jack",
+              "?axe": "q__axe"
+            },
+            "role_checks": [
+              {
+                "parameter": "?giant",
+                "role": "giant",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?mother",
+                "role": "cutter",
+                "object": "q__jack",
+                "holds": true
+              },
+              {
+                "parameter": "?axe",
+                "role": "axe",
+                "object": "q__axe",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": true,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 3,
+            "source": "SNOW",
+            "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+            "instance": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage(q__snow_white, q__comb, q__hut)",
+            "bindings": {
+              "?s": "q__snow_white",
+              "?comb": "q__comb",
+              "?cottage": "q__hut"
+            },
+            "role_checks": [
+              {
+                "parameter": "?s",
+                "role": "witch",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?comb",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              },
+              {
+                "parameter": "?cottage",
+                "role": "hut",
+                "object": "q__hut",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          },
+          {
+            "step": 4,
+            "source": "SNOW",
+            "action": "dwarfs_remove_comb_rescue_snow_white",
+            "instance": "d002__a_dwarfs_remove_comb_rescue_snow_white(q__snow_white, q__rescuer, q__comb)",
+            "bindings": {
+              "?c": "q__snow_white",
+              "?d": "q__rescuer",
+              "?comb": "q__comb"
+            },
+            "role_checks": [
+              {
+                "parameter": "?c",
+                "role": "snow_white",
+                "object": "q__snow_white",
+                "holds": true
+              },
+              {
+                "parameter": "?d",
+                "role": "rescuer",
+                "object": "q__rescuer",
+                "holds": true
+              },
+              {
+                "parameter": "?comb",
+                "role": "comb",
+                "object": "q__comb",
+                "holds": true
+              }
+            ],
+            "applicable": true,
+            "before": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": true,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": true,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": false,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            },
+            "after": {
+              "alive(snow_white)": true,
+              "dead(snow_white)": false,
+              "has(rescuer,comb)": true,
+              "poisoned(comb)": false,
+              "climbing_down(snow_white)": true,
+              "rescued_with_comb(snow_white)": true,
+              "intact(beanstalk)": false,
+              "role_snow_white(snow_white)": true,
+              "role_giant(snow_white)": true,
+              "role_witch(snow_white)": true
+            }
+          }
+        ],
+        "life_identity_violations": [
+          {
+            "state": 2,
+            "actor": "snow_white",
+            "violation": "alive_and_dead"
+          },
+          {
+            "state": 3,
+            "actor": "snow_white",
+            "violation": "alive_and_dead"
+          }
+        ],
+        "role_checks_pass": true,
+        "sources_used": {
+          "HANS_NP": 1,
+          "JACK_NP": 1,
+          "SNOW": 2
+        },
+        "scope": "PDDL execution and declared scenario contracts; not independent narrative/semantic assessment"
+      },
+      "scenario_contract_pass": false
+    },
+    {
+      "id": "unrestricted_sources",
+      "exit_code": 124,
+      "engine_status": "wall_time_limit",
+      "status": "wall_time_limit",
+      "elapsed_seconds": 20.094,
+      "inputs_unchanged": true,
+      "interfaces": [
+        "death",
+        "possession"
+      ],
+      "retained_sources": [
+        "HANS_NP",
+        "JACK_NP",
+        "SNOW"
+      ],
+      "role_guards": false,
+      "life_adapter": false,
+      "shared_identity": true,
+      "scenario_contract_pass": null
+    }
+  ],
+  "status_counts": {
+    "solved": 2,
+    "unsolvable": 8,
+    "wall_time_limit": 1
+  },
+  "scenario_contract_pass_count": 1,
+  "scenario_contract_fail_count": 1,
+  "source_count": 3,
+  "primary_plan_length": 4,
+  "primary_trace_states": 5,
+  "role_identity": {
+    "single_object": "q__snow_white",
+    "roles": [
+      "snow_white",
+      "giant",
+      "witch"
+    ],
+    "immutable_facts_checked_in_every_primary_state": true
+  },
+  "source_action_templates_before_controls": 56,
+  "compiled_source_behavior_modified": true,
+  "modification_contract": "data\\validation\\snow_roles_case_2026_10_20_v1\\scenario_contract.json",
+  "independent_semantic_labels": 0,
+  "source_problem_facts_imported": false,
+  "semantic_limits": [
+    "Role guards are authored and make uncast roles unavailable; not automatically learned role equivalences.",
+    "Life synchronization and ending descent are authored changes to compiled effects; unrestricted source preservation is not claimed.",
+    "The goal explicitly observes a comb rescue, rather than only asking for final alive status.",
+    "Source has is non-exclusive; recovery does not check cause of death or physical comb attachment.",
+    "Visited is an abstract historical flag, with no complete travel/time model. No independently evaluated narrative quality."
+  ],
+  "frozen_sha256": {
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\manifest.json": "1bc0b71a313b4a52ca80c6b6fbdcf8a0d52e4d6363cf88d691fa14490cd5b392",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\manifest.json": "e1256d5a8e1af42c11958b719c6c8a3b4cb7d9f49b7ed009d9eed385244fac60",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\report.json": "8e7ae09707e76a219149cd52ddc316062a0c579d9a52399936df7b0e9b9a639b",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\query.json": "f379866960b56e5702b5db34b8efd03a01e6e02bdf6091b113eca9abde08ad58",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\scenario_contract.json": "660eb81e71b937fd11790c2a8cfc80c139520c31660067ff9b0ea09fb48cbf87",
+    "C:\\anu\\uninamain\\scripts\\audit\\audit_snow_roles_case.py": "30b2799ef6c2a92d96e7ec5b2e03e8b9f1eb5d16a341a1e2fd18f2c70d6293d9",
+    "rcnc\\validation.py": "491d76f442e2b08663a4935518a2925762ae5819e5fc4f6a5443f2f920c5c2fc",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\role_safe\\domain.pddl": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\role_safe\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\role_safe\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\role_safe\\scenario_patches.json": "72d1ccc93bb260b39fa7abb92c9d5fa19ba59da0459c467ff7a6d6d19970e3bc",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\role_safe\\plan.txt": "c42b9f8677768895d3399343a558a8ed0ab99a4881182919897f78e00737ad4a",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_interfaces\\domain.pddl": "023cf60427fe45ed8567e96518bfe1fe4c8a937b534c6a84e4a7d97b517878ed",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_interfaces\\problem.pddl": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_interfaces\\source_mapping.json": "adcfc97942572762957077179dce873d08cf0ba436de09275e5d0913e7b268f6",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_interfaces\\scenario_patches.json": "01772fb2636e8fb058bc18f7614d1a428004c88d03f0864d6f074a5fa3d8e155",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_possession_interface\\domain.pddl": "43284a5888e6f98805d7d5e7600d972eef07d006b1d6775d7f881f5f310a798b",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_possession_interface\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_possession_interface\\source_mapping.json": "8124c03b79f5406e4d18053743aedf9405c77c8b63d681eadde137c27929a423",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_possession_interface\\scenario_patches.json": "cc0bbfd53c4ea148332cc90e98a5b48dd18b29dd4191067eac2650d24e6c1c82",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_death_interface\\domain.pddl": "0b5f7b2c7dc9b474c631d6f7578ca72fe4e8efd6c4827c5a9eb85d5f56ed7a06",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_death_interface\\problem.pddl": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_death_interface\\source_mapping.json": "a48a8b34cef7e345d2d28a0e7341c64247b9b970721eb0f9200be2c41d190dd6",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_death_interface\\scenario_patches.json": "c2fa863cc393a3245377290c3f5862a3c894d99848e6a658e8393a8b035befc9",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\HANS_NP_only\\domain.pddl": "83b0e2b543ad7eb5073b6e69473ffa5f0be0ce06e1343208890f0e1a2df2e3ae",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\HANS_NP_only\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\HANS_NP_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\HANS_NP_only\\scenario_patches.json": "f71d5e477a06ea81dd005209efedd1620d8ea2c59af05626a470b55ace36c423",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\JACK_NP_only\\domain.pddl": "8e6117af9546e8ae1703a9c414b3dddf5ae495920d8df8adfa195b56f754144a",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\JACK_NP_only\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\JACK_NP_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\JACK_NP_only\\scenario_patches.json": "a1ec11f750a504e4e593fe4eeae1b7af9f8ce60904bdc4b63852712bf88ccb6d",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\SNOW_only\\domain.pddl": "e61314883dbe8c4dad00a0153748125a7c919051c6675629d9cbff24664272b4",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\SNOW_only\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\SNOW_only\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\SNOW_only\\scenario_patches.json": "83e2852461b95ddc6802cae88ae1f520f65dbc61def9771d6a20638348440189",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\without_HANS_NP\\domain.pddl": "042591eafed085f1c325dd4eaa20d2524e564c6c7b67e42c540d7aeecc42a8db",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\without_HANS_NP\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\without_HANS_NP\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\without_HANS_NP\\scenario_patches.json": "21d8c6ca9826e62e70e1c2f03133e64a4c4dcd007ac5ad568d7148d28709d276",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\domain.pddl": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\problem.pddl": "c7b639ef7ddc2b1e3bb7fb8f5f9f2cbe77b4fde83301c5a81153f4dd48b92d52",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_shared_identity\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\no_shared_identity\\scenario_patches.json": "72d1ccc93bb260b39fa7abb92c9d5fa19ba59da0459c467ff7a6d6d19970e3bc",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\domain.pddl": "42da501c7aaa402418d6400ecaad48d85c13bc9eaa3fa8faf9e4a4cfb299e9d2",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\without_life_adapter\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\without_life_adapter\\scenario_patches.json": "3e2391f82342150dae8204d6667acd1a9d5d4bb5d64d7db22116a90e7be21240",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\without_life_adapter\\plan.txt": "3c01dfac885e85ca95c4a3e408f1ad74b698e648ece4706b5dea5ce941cddd98",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\unrestricted_sources\\domain.pddl": "a29af3b05a1f11dd48017c035bb6e5fca754561fea399e9a53a7fa14a80648b1",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\tasks\\unrestricted_sources\\problem.pddl": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\unrestricted_sources\\source_mapping.json": "ad308b16f15076e2e9a2f217a790802f7c0b52f59d6c6e7d7a633ce09f4c9930",
+    "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle\\tasks\\unrestricted_sources\\scenario_patches.json": "a618c3e4dca4019af5fc752f0c30a222f72f22617a49a102e65b127bef41dc6c"
+  },
+  "hashes_unchanged": true
+}

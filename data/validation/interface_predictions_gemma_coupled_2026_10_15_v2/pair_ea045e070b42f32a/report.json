@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_ea045e070b42f32a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_ea045e070b42f32a",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates `at` in both JACK_NP and REMA_NP express the same concept: spatial location. The arguments `?e` and `?l` represent an entity and a location, respectively. The action contexts demonstrate this by using `at` to specify the location of entities within scenes. The predicates share identical declarations and parameter types, confirming their interchangeable relation. The differing action contexts do not alter this fundamental equivalence; they simply provide different details about how the spatial relationship is established and utilized within each narrative.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:climb_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_kettle",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_oven",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:return_down_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(at ?j ?l)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_ea045e070b42f32a"
+  ]
+}

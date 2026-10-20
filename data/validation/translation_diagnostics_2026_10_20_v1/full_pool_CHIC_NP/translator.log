@@ -1,0 +1,42 @@
+Parsing...
+Parsing: [0.040s CPU, 0.040s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.004s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.030s CPU, 0.060s wall-clock]
+Preparing model... [0.020s CPU, 0.019s wall-clock]
+Generated 1725 rules.
+Computing model... [2.110s CPU, 2.111s wall-clock]
+296537 relevant atoms
+16261 auxiliary atoms
+312798 final queue length
+1388135 total queue pushes
+Completing instantiation... [6.880s CPU, 6.886s wall-clock]
+Instantiating: [9.100s CPU, 9.136s wall-clock]
+Computing fact groups...
+Finding invariants...
+486 initial candidates
+Finding invariants: [0.070s CPU, 0.072s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+990 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.080s CPU, 0.077s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.220s CPU, 0.225s wall-clock]
+Translating task: [6.590s CPU, 6.600s wall-clock]
+181490 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+timeout: the monitored command dumped core

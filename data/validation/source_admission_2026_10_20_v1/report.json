@@ -1,0 +1,624 @@
+{
+  "status": "audit_complete_not_admitted",
+  "commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+  "family_count": 4,
+  "admitted_families": 0,
+  "new_independent_test_families": 0,
+  "model_or_planner_called": false,
+  "translation_applied": false,
+  "snapshot_manifest_sha256": "759ebc8bba2e46976327591060f9bf3c9ec5fcb1204ab52f2d553c146e888b56",
+  "attribution_report_sha256": "c0f75441db06949a2b0c836d76740ae092968858e16a870951589ff95a46ebd3",
+  "local_file_sha256": {
+    "data\\narra-domains\\ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\narra-domains\\ACCO_problemfile.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\narra-domains\\BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\narra-domains\\BIRT_problemfile.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\narra-domains\\BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\narra-domains\\BUFF_problemfile.pddl": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+    "data\\narra-domains\\CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\narra-domains\\CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\narra-domains\\FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\narra-domains\\FOUR_NP_problemfile.pddl": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+    "data\\narra-domains\\HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\narra-domains\\HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\narra-domains\\JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\narra-domains\\JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "data\\narra-domains\\MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\narra-domains\\MUSI_problemfile.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+    "data\\narra-domains\\NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\narra-domains\\NAUG_problemfile.pddl": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+    "data\\narra-domains\\PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\narra-domains\\PIGS_NP_problemfile.pddl": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+    "data\\narra-domains\\PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\narra-domains\\PUSS_problemfile.pddl": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+    "data\\narra-domains\\REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\narra-domains\\REMA_NP_problemfile.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+    "data\\narra-domains\\SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\narra-domains\\SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+    "data\\narra-domains\\SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\narra-domains\\SOUP_problemfile.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\narra-domains\\WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\narra-domains\\WOE_problemfile.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6"
+  },
+  "implementation_sha256": "93361e5ad8e149867ba56618ec2ff5bfadf7bebf63c75b3d4ba8b916c1f67449",
+  "files": [
+    {
+      "path": "originals/aladdin/genie.lbl",
+      "sha256": "2f6c8ad599fdb1e73446162f686ce482cd5e90ec001c485f058106c8117ed230",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/aladdin/genie.lbl",
+      "feature_evidence": [
+        {
+          "marker": ":actors",
+          "line": 3,
+          "text": ":actors (?traveller)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 4,
+          "text": ":constraints ((character ?traveller) (place ?from) (place ?dest))"
+        },
+        {
+          "marker": ":actors",
+          "line": 11,
+          "text": ":actors (?slayer)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 12,
+          "text": ":constraints ((knight ?slayer) (monster ?monster) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 19,
+          "text": ":actors (?pillager)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 20,
+          "text": ":constraints ((character ?pillager) (character ?body) (thing ?thing) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 28,
+          "text": ":actors (?giver)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 29,
+          "text": ":constraints ((character ?giver) (character ?givee) (thing ?thing) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 37,
+          "text": ":actors (?char)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 38,
+          "text": ":constraints ((character ?char) (genie ?genie) (magic-lamp ?lamp) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 46,
+          "text": ":actors (?genie)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 47,
+          "text": ":constraints ((genie ?genie) (character ?target) (character ?lover))"
+        },
+        {
+          "marker": "intends",
+          "line": 52,
+          "text": "(intends ?target (married-to ?target ?lover))))"
+        },
+        {
+          "marker": ":actors",
+          "line": 56,
+          "text": ":actors (?groom ?bride)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 57,
+          "text": ":constraints ((male ?groom) (female ?bride) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 67,
+          "text": ":actors (?male)"
+        },
+        {
+          "marker": ":not-needs-intention",
+          "line": 68,
+          "text": ":not-needs-intention t"
+        },
+        {
+          "marker": ":constraints",
+          "line": 69,
+          "text": ":constraints ((male ?male) (female ?female) (place ?place))"
+        },
+        {
+          "marker": "intends",
+          "line": 74,
+          "text": "(intends ?male (married-to ?male ?female))))"
+        },
+        {
+          "marker": ":actors",
+          "line": 78,
+          "text": ":actors (?king)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 79,
+          "text": ":constraints ((king ?king) (knight ?knight) (place ?place))"
+        },
+        {
+          "marker": "intends",
+          "line": 82,
+          "text": ":effect ((intends ?knight ?objective)))"
+        },
+        {
+          "marker": ":actors",
+          "line": 86,
+          "text": ":actors (?char)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 87,
+          "text": ":constraints ((character ?char) (genie ?genie) (magic-lamp ?lamp))"
+        },
+        {
+          "marker": "intends",
+          "line": 91,
+          "text": ":effect ((intends ?genie ?objective)))"
+        },
+        {
+          "marker": ":actors",
+          "line": 95,
+          "text": ":actors (?monster)"
+        },
+        {
+          "marker": ":not-needs-intention",
+          "line": 96,
+          "text": ":not-needs-intention t"
+        },
+        {
+          "marker": ":constraints",
+          "line": 97,
+          "text": ":constraints ((monster ?monster) (character ?char) (place ?place))"
+        },
+        {
+          "marker": "intends",
+          "line": 100,
+          "text": ":effect ((intends ?char (not (alive ?monster)))))"
+        }
+      ],
+      "parser": {
+        "status": "unsupported_raw_source",
+        "error": "ValueError: Expected one PDDL root expression, got 18"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/aladdin/genie.lbp",
+      "sha256": "54b93cee01321189a362b3a8767a80345ee6764a479501ada33b4e5865944e93",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/aladdin/genie.lbp",
+      "feature_evidence": [
+        {
+          "marker": ":rank-fun",
+          "line": 2,
+          "text": ":rank-fun genie-rank-plan"
+        }
+      ],
+      "parser": {
+        "status": "not_applicable_problem_not_PDDL"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/bribery/bomb.lbp",
+      "sha256": "e745657d70d6e0b2f4d4d982e309ffde3e630d9a4a75c97f5b29d5f024285908",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/bribery/bomb.lbp",
+      "feature_evidence": [
+        {
+          "marker": ":rank-fun",
+          "line": 2,
+          "text": ":rank-fun my-rank-plan"
+        }
+      ],
+      "parser": {
+        "status": "not_applicable_problem_not_PDDL"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/bribery/bribe.lbl",
+      "sha256": "6ca5636c9b36aa3d17960e6c576b04f661fb760fecad1b6cc24f84c5395dbf8b",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/bribery/bribe.lbl",
+      "feature_evidence": [
+        {
+          "marker": ":actors",
+          "line": 3,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 4,
+          "text": ":constraints ((person ?person) (person ?target) (money ?money) (evil ?person))"
+        },
+        {
+          "marker": ":actors",
+          "line": 12,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 13,
+          "text": ":constraints ((person ?person) (person ?target) (thing ?thing))"
+        },
+        {
+          "marker": ":actors",
+          "line": 20,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 21,
+          "text": ":constraints ((person ?person) (person ?victim))"
+        },
+        {
+          "marker": "intends",
+          "line": 24,
+          "text": ":effect ((intends ?victim ?objective)))"
+        },
+        {
+          "marker": ":actors",
+          "line": 28,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 29,
+          "text": ":constraints ((person ?person) (person ?victim) (evil ?person))"
+        }
+      ],
+      "parser": {
+        "status": "unsupported_raw_source",
+        "error": "ValueError: Expected one PDDL root expression, got 4"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/deerhunter/deer.lbl",
+      "sha256": "94effa7ddbdcbbc5255930efe5bf67e6d3eb357bfa6b126f2ed2f92b9c2328dc",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/deerhunter/deer.lbl",
+      "feature_evidence": [
+        {
+          "marker": ":actors",
+          "line": 3,
+          "text": ":actors (?mover)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 4,
+          "text": ":constraints ((mobile-person ?mover) (place ?dest) (place ?from))"
+        },
+        {
+          "marker": ":actors",
+          "line": 11,
+          "text": ":actors (?shooter)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 12,
+          "text": ":constraints ((person ?shooter) (animal ?target) (gun ?gun) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 19,
+          "text": ":actors (?eater)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 20,
+          "text": ":constraints ((person ?eater) (animal ?food) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 27,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 28,
+          "text": ":constraints ((person ?person) (thing ?thing) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 35,
+          "text": ":actors (?thief)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 36,
+          "text": ":constraints ((person ?thief) (person ?victim) (thing ?thing) (place ?place) (gun ?gun))"
+        },
+        {
+          "marker": ":actors",
+          "line": 44,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 45,
+          "text": ":constraints ((person ?person) (gun ?gun) (ammo ?ammo))"
+        },
+        {
+          "marker": ":actors",
+          "line": 52,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 53,
+          "text": ":constraints ((person ?person))"
+        },
+        {
+          "marker": ":not-needs-intention",
+          "line": 56,
+          "text": ":not-needs-intention t"
+        },
+        {
+          "marker": "intends",
+          "line": 57,
+          "text": ":effect ((intends ?person (:not (hungry ?person)))))"
+        },
+        {
+          "marker": ":actors",
+          "line": 61,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 62,
+          "text": ":constraints ((person ?person) (money ?money))"
+        },
+        {
+          "marker": ":not-needs-intention",
+          "line": 65,
+          "text": ":not-needs-intention t"
+        },
+        {
+          "marker": "intends",
+          "line": 66,
+          "text": ":effect ((intends ?person (has ?person ?money))))"
+        }
+      ],
+      "parser": {
+        "status": "unsupported_raw_source",
+        "error": "ValueError: Expected one PDDL root expression, got 8"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/deerhunter/deer.lbp",
+      "sha256": "816049e5b42c8aec19d36c5135dc35e9b3118a4b457e326902009b8cddf0ac9d",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/deerhunter/deer.lbp",
+      "feature_evidence": [
+        {
+          "marker": ":rank-fun",
+          "line": 2,
+          "text": ":rank-fun deer-rank-plan"
+        }
+      ],
+      "parser": {
+        "status": "not_applicable_problem_not_PDDL"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/secretagent/assassin-cw.lbp",
+      "sha256": "5add31ed5091282334e9ce4c9df5b2f156b9ffccdbddc1bf7704e0a38efdacc8",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/secretagent/assassin-cw.lbp",
+      "feature_evidence": [
+        {
+          "marker": ":rank-fun",
+          "line": 2,
+          "text": ":rank-fun assassin-rank-plan"
+        },
+        {
+          "marker": "intends",
+          "line": 16,
+          "text": "(intends hero (:not (alive saddam)))"
+        }
+      ],
+      "parser": {
+        "status": "not_applicable_problem_not_PDDL"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    },
+    {
+      "path": "originals/secretagent/assassin.lbl",
+      "sha256": "52683a2f745fbdead4d2911cadfaeb063f8b51b0668d85c8fe50bb09cfe335b2",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/secretagent/assassin.lbl",
+      "feature_evidence": [
+        {
+          "marker": ":actors",
+          "line": 3,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 4,
+          "text": ":constraints ((person ?person) (place ?start) (place ?dest))"
+        },
+        {
+          "marker": ":actors",
+          "line": 12,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 13,
+          "text": ":constraints ((person ?person) (place ?start) (place ?dest) (papers ?papers))"
+        },
+        {
+          "marker": ":actors",
+          "line": 22,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 23,
+          "text": ":constraints ((person ?person) (person ?victim) (place ?place) (weapon ?weapon))"
+        },
+        {
+          "marker": ":actors",
+          "line": 31,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 32,
+          "text": ":constraints ((person ?person) (thing ?thing) (place ?place))"
+        },
+        {
+          "marker": ":actors",
+          "line": 39,
+          "text": ":actors (?person)"
+        },
+        {
+          "marker": ":constraints",
+          "line": 40,
+          "text": ":constraints ((person ?person) (weapon ?weapon) (place ?place))"
+        }
+      ],
+      "parser": {
+        "status": "unsupported_raw_source",
+        "error": "ValueError: Expected one PDDL root expression, got 5"
+      },
+      "exact_local_matches": [],
+      "newline_normalized_local_matches": []
+    }
+  ],
+  "families": [
+    {
+      "family": "aladdin",
+      "status": "not_admitted",
+      "files": 2,
+      "format": "original .lbl action library and .lbp problem, not classical PDDL",
+      "feature_counts": {
+        ":actors": 11,
+        ":constraints": 11,
+        "intends": 5,
+        ":not-needs-intention": 2,
+        ":rank-fun": 1
+      },
+      "origin_evidence": {
+        "path": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\report\\report.tex",
+        "line": 759,
+        "section": "Aladdin",
+        "excerpt": "\\subsection{Aladdin}\n\nThis is the fourth and largest of four problems detailed in the appendix\nof Riedl's dissertation. It was also detailed in a journal article\nabout Riedl's IPOCL planner, so we suggest using that citation when\nreferring to this problem.\n\n\\begin{quote}\n\t\\bibentry{riedl2010narrative}\n"
+      },
+      "upstream_lineage": "Riedl dissertation / IPOCL examples as attributed by benchmark maintainers; not four independent acquisition lineages",
+      "learning_provenance": "not asserted; supplied original authored narrative models",
+      "blocking_reasons": [
+        "Raw representation unsupported",
+        "Actors/intention/ranking semantics require a faithful representation audit and adapter",
+        "Story-level overlap with observed sources unresolved; byte nonidentity is insufficient",
+        "Per-problem redistribution terms not established by tool GPL notice"
+      ],
+      "next_action": "Keep as audited candidates; do not strip actor or intention fields or promote to held-out test"
+    },
+    {
+      "family": "bribery",
+      "status": "not_admitted",
+      "files": 2,
+      "format": "original .lbl action library and .lbp problem, not classical PDDL",
+      "feature_counts": {
+        ":rank-fun": 1,
+        ":actors": 4,
+        ":constraints": 4,
+        "intends": 1
+      },
+      "origin_evidence": {
+        "path": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\report\\report.tex",
+        "line": 488,
+        "section": "Bribery",
+        "excerpt": "\\subsection{Bribery}\n\nThis is the first of four problems detailed in the appendix of Mark\nO. Riedl's dissertation. His dissertation is one of the seminal works\non narrative planning that established the model of intention used\nin several future planners.\n\n\\begin{quote}\n\t\\bibentry{riedl2004thesis}\n"
+      },
+      "upstream_lineage": "Riedl dissertation / IPOCL examples as attributed by benchmark maintainers; not four independent acquisition lineages",
+      "learning_provenance": "not asserted; supplied original authored narrative models",
+      "blocking_reasons": [
+        "Raw representation unsupported",
+        "Actors/intention/ranking semantics require a faithful representation audit and adapter",
+        "Story-level overlap with observed sources unresolved; byte nonidentity is insufficient",
+        "Per-problem redistribution terms not established by tool GPL notice"
+      ],
+      "next_action": "Keep as audited candidates; do not strip actor or intention fields or promote to held-out test"
+    },
+    {
+      "family": "deerhunter",
+      "status": "not_admitted",
+      "files": 2,
+      "format": "original .lbl action library and .lbp problem, not classical PDDL",
+      "feature_counts": {
+        ":actors": 8,
+        ":constraints": 8,
+        ":not-needs-intention": 2,
+        "intends": 2,
+        ":rank-fun": 1
+      },
+      "origin_evidence": {
+        "path": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\report\\report.tex",
+        "line": 570,
+        "section": "Deer Hunter",
+        "excerpt": "\\subsection{Deer Hunter}\n\nThis is the second of four problems detailed in the appendix of Riedl's\ndissertation.\n\n\\begin{quote}\n\t\\bibentry{riedl2004thesis}\n"
+      },
+      "upstream_lineage": "Riedl dissertation / IPOCL examples as attributed by benchmark maintainers; not four independent acquisition lineages",
+      "learning_provenance": "not asserted; supplied original authored narrative models",
+      "blocking_reasons": [
+        "Raw representation unsupported",
+        "Actors/intention/ranking semantics require a faithful representation audit and adapter",
+        "Story-level overlap with observed sources unresolved; byte nonidentity is insufficient",
+        "Per-problem redistribution terms not established by tool GPL notice"
+      ],
+      "next_action": "Keep as audited candidates; do not strip actor or intention fields or promote to held-out test"
+    },
+    {
+      "family": "secretagent",
+      "status": "not_admitted",
+      "files": 2,
+      "format": "original .lbl action library and .lbp problem, not classical PDDL",
+      "feature_counts": {
+        ":rank-fun": 1,
+        "intends": 1,
+        ":actors": 5,
+        ":constraints": 5
+      },
+      "origin_evidence": {
+        "path": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\report\\report.tex",
+        "line": 688,
+        "section": "Secret Agent",
+        "excerpt": "\\subsection{Secret Agent}\n\nThis is the third of four problems detailed in the appendix of Riedl's\ndissertation.\n\n\\begin{quote}\n\t\\bibentry{riedl2004thesis}\n"
+      },
+      "upstream_lineage": "Riedl dissertation / IPOCL examples as attributed by benchmark maintainers; not four independent acquisition lineages",
+      "learning_provenance": "not asserted; supplied original authored narrative models",
+      "blocking_reasons": [
+        "Raw representation unsupported",
+        "Actors/intention/ranking semantics require a faithful representation audit and adapter",
+        "Story-level overlap with observed sources unresolved; byte nonidentity is insufficient",
+        "Per-problem redistribution terms not established by tool GPL notice"
+      ],
+      "next_action": "Keep as audited candidates; do not strip actor or intention fields or promote to held-out test"
+    }
+  ],
+  "scope": "Raw compatibility/provenance screening only. No predictions, solutions or solver outcomes read. Inspection does not create held-out evaluation results."
+}

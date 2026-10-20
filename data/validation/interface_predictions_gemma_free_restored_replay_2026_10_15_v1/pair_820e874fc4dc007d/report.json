@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_820e874fc4dc007d",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_820e874fc4dc007d",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `attempt_light` appears in both the `MUSI` and `SOUP` sources, but its usage and context differ significantly. In `MUSI`, `attempt_light` is a precondition for actions involving animals attacking a messenger, indicating an attempt to initiate a physical interaction. The actions are related to animal behavior and a messenger's vulnerability. In `SOUP`, `attempt_light` is an effect of actions related to preparing soup, suggesting a magical or imaginative process. The contexts are entirely different, representing distinct domains (animal behavior vs. soup preparation). Therefore, they are complementary – they both involve the concept of 'attempting light' but in radically different scenarios. The argument roles are distinct: `MUSI` focuses on physical interactions and `SOUP` on magical/imaginary effects. The action contexts provide further evidence of this difference, with `MUSI` actions involving attacks and `SOUP` actions involving preparation. The presence of `attempt_light` in both sources does not imply equivalence; it simply reflects the presence of a similar predicate name across different domains.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "MUSI:action:cat_attack_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:dog_bite_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:donkey_kick_messenger",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:messenger_attempt_light",
+        "quote": "(attempt_light ?messenger)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:claim_queenhood",
+        "quote": "(soup_effect_created ?m)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(soup_effect_created ?m)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_820e874fc4dc007d"
+  ]
+}

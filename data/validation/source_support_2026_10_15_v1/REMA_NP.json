@@ -1,0 +1,272 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "has"
+  ],
+  "reachable_predicates": [
+    "at",
+    "grandmother_mangle_spoken",
+    "has",
+    "married",
+    "price_of_butter_spoken",
+    "with_all_my_heart_spoken"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "arrive_at_marble_palace",
+        "encounter_impostor_king",
+        "encounter_robbers_in_forest",
+        "king_proposes_marriage",
+        "king_requests_information_and_gifts",
+        "run_away_from_palace",
+        "utter_phrase_grandmother_mangle",
+        "utter_phrase_price_of_butter"
+      ],
+      "new_predicates": [
+        "grandmother_mangle_spoken",
+        "married",
+        "price_of_butter_spoken"
+      ]
+    },
+    {
+      "actions": [
+        "princess_accepts_with_heart",
+        "receive_rubies_from_impostor",
+        "receive_sapphires_from_robber_chief",
+        "suitors_retire_due_to_phrase"
+      ],
+      "new_predicates": [
+        "with_all_my_heart_spoken"
+      ]
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "arrive_at_marble_palace",
+      "condition": [
+        "at",
+        "?p",
+        "oak_tree"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "encounter_impostor_king",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "city"
+        ],
+        [
+          "at",
+          "?i",
+          "market_place"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "encounter_robbers_in_forest",
+      "condition": [
+        "at",
+        "?p",
+        "forest"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "king_proposes_marriage",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "palace"
+        ],
+        [
+          "at",
+          "?k",
+          "palace"
+        ]
+      ],
+      "adds": [
+        "married"
+      ]
+    },
+    {
+      "action": "king_requests_information_and_gifts",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "palace"
+        ],
+        [
+          "has",
+          "?p",
+          "?r"
+        ],
+        [
+          "has",
+          "?p",
+          "?s"
+        ],
+        [
+          "at",
+          "?k",
+          "palace"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "princess_accepts_with_heart",
+      "condition": [
+        "and",
+        [
+          "married",
+          "?p",
+          "?k"
+        ],
+        [
+          "not",
+          [
+            "with_all_my_heart_spoken"
+          ]
+        ]
+      ],
+      "adds": [
+        "with_all_my_heart_spoken"
+      ]
+    },
+    {
+      "action": "receive_rubies_from_impostor",
+      "condition": [
+        "and",
+        [
+          "price_of_butter_spoken"
+        ],
+        [
+          "at",
+          "?p",
+          "market_place"
+        ],
+        [
+          "has",
+          "?i",
+          "?r"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "receive_sapphires_from_robber_chief",
+      "condition": [
+        "and",
+        [
+          "grandmother_mangle_spoken"
+        ],
+        [
+          "at",
+          "?p",
+          "oak_tree"
+        ],
+        [
+          "has",
+          "?c",
+          "?s"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "run_away_from_palace",
+      "condition": [
+        "at",
+        "?p",
+        "back_stairs"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "suitors_retire_due_to_phrase",
+      "condition": [
+        "and",
+        [
+          "grandmother_mangle_spoken"
+        ],
+        [
+          "at",
+          "?s",
+          "palace"
+        ]
+      ],
+      "adds": []
+    },
+    {
+      "action": "utter_phrase_grandmother_mangle",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "oak_tree"
+        ],
+        [
+          "not",
+          [
+            "grandmother_mangle_spoken"
+          ]
+        ]
+      ],
+      "adds": [
+        "grandmother_mangle_spoken"
+      ]
+    },
+    {
+      "action": "utter_phrase_price_of_butter",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "market_place"
+        ],
+        [
+          "not",
+          [
+            "price_of_butter_spoken"
+          ]
+        ]
+      ],
+      "adds": [
+        "price_of_butter_spoken"
+      ]
+    }
+  ],
+  "source_domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+  "source_problem_sha256": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

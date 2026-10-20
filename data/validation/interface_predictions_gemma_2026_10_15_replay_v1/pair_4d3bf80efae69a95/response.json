@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_4d3bf80efae69a95",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'crossed_out' describes a state of removal or cancellation, while 'banquet_at' describes a location where a banquet is held. These predicates represent distinct aspects of a scenario: one focuses on an action performed on an object, and the other on the location of an event. There is no direct relationship between the two. The 'crossed_out' predicate requires a specific entity to be marked, while 'banquet_at' simply specifies a location. The action contexts further highlight this difference: 'crossed_out' requires a burned entity, and 'banquet_at' requires a location to be present. The 'entity' and 'location' type hierarchies support this distinction. The 'crossed_out' predicate is associated with the action 'cross_out_comet' which involves marking an entity, while 'banquet_at' is associated with the action 'stay_for_banquet' which involves a guest, host, and location. The occurrences in both action contexts confirm this difference in their roles. The predicates are complementary because they describe different properties or states of the world.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(crossed_out ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:stay_for_banquet",
+      "quote": "(banquet_at ?loc)"
+    }
+  ]
+}

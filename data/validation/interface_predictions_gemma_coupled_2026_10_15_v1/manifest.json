@@ -1,0 +1,25 @@
+{
+  "status": "failed",
+  "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+  "model": "gemma3:4b",
+  "prompt_sha256": "4195e32a3741c2e35ad3b69ecad93ab6961215084fdb3e0393c5a4dc4b2f715d",
+  "options": {
+    "temperature": 0,
+    "seed": 20261015,
+    "num_ctx": 16384,
+    "num_predict": 2048
+  },
+  "total": 100,
+  "schema_policy": "coupled_fields",
+  "schemas_sha256": "10a76e079cd14291e4dcf83fdea00592d3ceb9e1c678645dd4db0354658a3d58",
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\run_annotation_predictions.py": "bf30827b7f6bac7b9120fe4ab537f6a369bd82d034a4269fda71771b81b09174",
+    "C:\\anu\\uninamain\\rcnc\\interface_annotation.py": "9873d63f20430898329367db958edbac5f3fb48afb862ee4ca9e7144a08fb04d"
+  },
+  "started_utc": "2026-10-15T03:29:12.055380+00:00",
+  "source": "machine_predictions_not_human_annotations",
+  "context_byte_limit": 48000,
+  "request_timeout_seconds": 240,
+  "automatic_alignment_adoption": false,
+  "finished_utc": "2026-10-15T03:29:14.227103+00:00"
+}

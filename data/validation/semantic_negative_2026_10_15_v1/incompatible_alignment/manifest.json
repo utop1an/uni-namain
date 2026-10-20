@@ -1,0 +1,48 @@
+{
+  "selection": {
+    "policy": "all_domains",
+    "selected": [
+      "BURIAL",
+      "CAPTURE"
+    ],
+    "excluded": [],
+    "source_reasons": {
+      "BURIAL": [
+        "all_domains_policy"
+      ],
+      "CAPTURE": [
+        "all_domains_policy"
+      ]
+    },
+    "relevant_action_references_for_explanation_only": [],
+    "action_subset_selection": false,
+    "optimal_or_minimal_subset_claim": false,
+    "scope": "Unsigned predicate dependency over-approximation; no reachability or semantic-equivalence claim",
+    "omitted_alignment_groups": []
+  },
+  "solver": "typed_cartesian",
+  "catalog_sha256": "2733b761c428ce8f72ec4ce7aee67d40fcbd4a7bab0a181ca1c7fa1b91d47354",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 30,
+    "max_ground_actions": 100000,
+    "seconds": 30
+  },
+  "merged_before_planning": true,
+  "domain_sha256": "6568117e76525e01f002f2e999eade50fa0e4928825d408a468c32b874f50953",
+  "problem_sha256": "1b6fd7b1a3db519ec492f3f00bd68da131b38bc795dbca4d089472fdb0e4f227",
+  "implementation_sha256": {
+    "run_narrative_pipeline.py": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+    "rcnc/narrative_pipeline.py": "6057f317b3c224c5e6310092f1cba612552207fcc42adfc0ac5091cc0efd0a39",
+    "rcnc/merged_planning.py": "3ec67dd62cbcc9ad62033fad6bad7298d9fb9cca894212a567772d8d8adf9f20",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "rcnc/outcome_planning.py": "a8b0eaa039bf80236f781aca59c40ff6a930d51e36c3d74c0a1dfa23d1a542b6",
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "rcnc/domain_catalog.py": "83ceba2120bdabc863ff1e26773b740994e5ee8c5349e835593203bf40417e8a",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931"
+  }
+}

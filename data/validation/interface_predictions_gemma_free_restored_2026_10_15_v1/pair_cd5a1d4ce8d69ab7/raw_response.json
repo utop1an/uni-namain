@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:47:45.6857619Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_cd5a1d4ce8d69ab7\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicates 'crossed_out' and 'rich' describe fundamentally different aspects of the entities involved. 'crossed_out' indicates a state change (something has been marked as deleted or removed), while 'rich' describes a property of an entity (having wealth or resources). The action contexts further highlight this difference: 'crossed_out' requires a prior burned state, and its effect is to remove an entity from a list, whereas 'rich' is a condition for receiving help and is associated with a brother's action. These predicates cannot be interchangeable because they represent distinct characteristics. The 'entity' type hierarchy is shared, but the predicates' meanings and the actions that trigger them are distinct. The action contexts provide evidence for this complementary relationship. Specifically, 'crossed_out ?c' describes a state change, while 'rich ?e' describes a property. The 'crossed_out' predicate's effect is to remove an entity from a list, while the 'rich' predicate describes a resource-based relationship. The 'action:cross_out_comet' action requires the entity to be burned, while the 'action:request_help_from_rich_brother' action requires the entity to be rich. The 'action:rich_brother_attempt_to_move_stone' action requires the rich entity to be present, and the 'action:crossed_out' action requires the entity to be crossed out. These different contexts demonstrate that the predicates are complementary, not equivalent. The 'entity' type hierarchy is shared, but the predicates' meanings and the actions that trigger them are distinct.\", \"evidence\": [ {\"side\": 0, \"ref\": \"NAUG:action:cross_out_comet\", \"quote\": \"(crossed_out ?c)\"}, {\"side\": 1, \"ref\": \"WOE:action:request_help_from_rich_brother\", \"quote\": \"(rich ?rich)\"}, {\"side\": 1, \"ref\": \"WOE:action:rich_brother_attempt_to_move_stone\", \"quote\": \"(rich ?rich)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4535783100,
+  "load_duration": 2235800,
+  "prompt_eval_count": 742,
+  "prompt_eval_duration": 127181000,
+  "eval_count": 486,
+  "eval_duration": 4335733000
+}

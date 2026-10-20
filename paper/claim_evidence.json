@@ -1,0 +1,599 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "draft": "paper/icaps2027_method_draft.tex",
+  "status": "working_draft_not_submission_ready",
+  "snow_long_shared_roles_2026_10_20": {
+    "search": "data/validation/snow_long_case_2026_10_20_v1/solver/report.json",
+    "audit": "data/validation/snow_long_case_audit_2026_10_20_v2/report.json",
+    "contract": "data/validation/snow_long_case_2026_10_20_v1/scenario_contract.json",
+    "meeting_case": "output/pdf/icaps_meeting_2026_10_21_snow_long_case.pdf",
+    "design": "One authored world x 23 frozen conditions: 11 matched role/interface/source controls and 12 predeclared whole-schema removals. Same FD 26.6 lama-first, 20-second wall/CPU configuration, 4096 MB, one worker.",
+    "primary": "12-step independently validated plan at 8.172 observed seconds: 4 contextualized source steps and 8 new scenario steps; 13 states pass role identity, alive/dead exclusion, unique canonical scene position and unique comb custody checks.",
+    "necessity": "Deleting any one returned step makes the remainder inapplicable or the final goal false (12/12); removing each of the 12 declared backbone action schemas also reports unsolvable (12/12). Irredundancy is conditional on this scenario; no general shortest-plan theorem is claimed.",
+    "formal_counts": {"solved": 2, "unsolvable": 20, "wall_time_limit": 1},
+    "semantic_counterexample": "Without the life adapter, a 12-step valid goal plan still has simultaneous alive/dead in states 9, 10 and 11 and fails the scenario contract.",
+    "compiled_behavior_modified": true,
+    "new_assumptions": ["Eight explicit scene rules for entering, custody transfer, tools, travel, descent and revival preparation", "Collect requires a unique shelf comb and consumes its availability", "Poisoning requires possession/co-location; cutting requires axe/co-location and records the landing", "Revival requires co-location and a comb-application marker; source role/life/event adapters are retained"],
+    "control_scope": "Eight scene schemas remain available in single-source controls. The unrestricted_sources label disables the earlier role/life adapters but retains long-scene context and observation rules; it is not an untouched-source benchmark.",
+    "not_established": ["Automatically learned scene or role rules", "Independent narrative quality improvement", "Unrestricted source behavior preservation", "Statistical timing improvement"],
+    "test_checkpoint": "178 tests passed in 91.908 seconds; dated engineering validation"
+  },
+  "snow_shared_roles_2026_10_20": {
+    "solver_evidence": "data/validation/snow_roles_case_2026_10_20_v1/solver/report.json",
+    "execution_audit": "data/validation/snow_roles_case_audit_2026_10_20_v2/report.json",
+    "scenario_contract": "data/validation/snow_roles_case_2026_10_20_v1/scenario_contract.json",
+    "meeting_case": "output/pdf/icaps_meeting_2026_10_21_snow_roles_case.pdf",
+    "design": "One authored world, eleven conditions, all frozen before search; Fast Downward 26.6 lama-first, 20-second wall/CPU, 4096 MB, one worker. All 56 source templates compiled before explicit role permissions and removal controls.",
+    "identity": "One request object q__snow_white fills SNOW victim, SNOW witch and JACK giant slots; explicit static roles and three source entity memberships. Original source constants remain distinct.",
+    "primary_result": "4-step plan uses HANS_NP once, JACK_NP once and SNOW twice; 7.734 observed seconds including launch/response; independent plan validation and five-state role/life checks pass.",
+    "controls": "No interfaces, no possession interface, no death interface, each of three single-source-action controls, removal of HANS_NP and removal of shared memberships all report unsolvable. Unrestricted role/life baseline hits its 20-second limit.",
+    "negative_semantic_control": "Without the life adapter, a 4-step plan is formally valid but Snow White is alive and dead in two intermediate states and casts a spell after death. It fails the declared scenario contract and is not counted as story success.",
+    "compiled_behavior_modified": true,
+    "modifications": ["Static role permissions on every action parameter; uncast roles have no allowed binding", "Shared death clears SNOW alive; cutting the beanstalk ends descent", "Explicit event-observation goal requires a comb rescue"],
+    "supported_scope": "Executable shared-identity cross-source composition under the declared authored scenario contract; not unrestricted source preservation or automatic semantic alignment.",
+    "independent_semantic_labels": 0,
+    "remaining_semantic_limits": ["Non-exclusive possession", "Revival does not test death cause or comb attachment", "Abstract visits without a complete location/time model", "Cutting does not require holding the axe"],
+    "test_checkpoint": "177 tests passed in 82.597 seconds; dated engineering validation"
+  },
+  "acco_birt_bridge_2026_10_20": {
+    "solver_evidence": "data/validation/acco_birt_case_2026_10_20_v1/solver/report.json",
+    "audit_evidence": "data/validation/acco_birt_case_audit_2026_10_20_v1/report.json",
+    "meeting_case": "output/pdf/icaps_meeting_2026_10_21_acco_birt_case.pdf",
+    "design": "One authored shared-object world, five pre-search frozen conditions; 20-second wall/CPU configuration, 4096 MB, one worker. First four conditions have byte-identical problem files; single-source controls remove foreign actions while retaining vocabulary and the common goal.",
+    "results": "Authored possession interface with both sources: validated 4-step plan, 8.594 observed seconds including WSL launch/response. No interface, ACCO-actions-only, BIRT-actions-only and no-shared-identity conditions: solver-reported unsolvable.",
+    "supported_scope": "Executable cross-source causal bridge under unchanged source models, explicit shared identities and an authored interface; both source action sets and the interface are required in this constructed task according to the matched solver controls. Selector retains both sources in this world.",
+    "semantic_risks": ["turn_key_on_beech grants possession of any item without prior key ownership or beech identity checks", "arrange_exhibition has an unused sponsor; sponsor replacement preserves plan validity", "Global reputation permits wealth for a non-performing actor; executable one-step witness retained"],
+    "independent_semantic_labels": 0,
+    "source_model_repaired": false,
+    "not_established": ["Automatically inferred interface correctness", "Narrative plausibility or narrative quality improvement", "Independent-domain generalization", "Statistical speed improvement"],
+    "test_checkpoint": "176 tests passed in 48.396 seconds; dated engineering check"
+  },
+  "selection_bottleneck_2026_10_20": {
+    "evidence": "data/validation/selection_results_2026_10_20_v2/results.json",
+    "brief": "output/pdf/icaps_meeting_2026_10_21_selection_update.pdf",
+    "design": "30 fresh sequential solver calls, 15 unchanged original worlds x graph-closure control and static-source-universe selection; 20 seconds wall/CPU, 4096 MB, one worker; older full-pool results separately labeled",
+    "fresh_graph_closure": {"solved": 3, "unsolvable": 8, "resource_limits": 4},
+    "fresh_world_selection": {"solved": 4, "unsolvable": 8, "resource_limits": 3},
+    "CHIC_NP": "Graph-closure control hit its limit at 20.094 observed seconds; selected condition returned a validated 40-step plan at 1.421 observed seconds. Instrumented translator diagnostics counted 292117 versus 371 grounded actions; 291746 of the former belong to HANS_NP.",
+    "mechanism": "Whole-source selection by interface connectivity over-selects HANS_NP despite disjoint static source universes. Large typed parameter products, unused parameters and an unconditional action generate substantial independent grounding/SAS conversion work.",
+    "preservation_check": "4 available original-goal plans pass in selected models; all 15 source rows retained; 64 states, 23457 source-atom comparisons, zero mismatches",
+    "limitations": ["All selected models are singletons in these original worlds; cross-source narrative fusion is not demonstrated", "HANS_NP, MUSI and SNOW still hit limits", "No independent semantic labels or narrative assessments", "One fixed-order development comparison; no statistical speedup claim", "Instrumented diagnostics are separate and preserve failed first attempts; no extra solver success units"],
+    "test_checkpoint": "175 tests passed in 68.039 seconds; dated engineering validation"
+  },
+  "meeting_development_2026_10_20": {
+    "evidence": "data/validation/meeting_results_2026_10_20_v1/results.json",
+    "condition": "Observed local sources and original worlds/goals; fixed full-pool models, cached unverified machine interfaces; new 20-second bounded search",
+    "search": "60 matched solver invocations: source isolated 4/15 solved, 8 unsolvable, 3 limits; each of union, zero-merge membership and machine-interface full-pool conditions 0/15 solved, 8 unsolvable, 7 limits",
+    "selection": "Separate exploratory follow-up after early full-pool limits: 3/15 solved, 8 unsolvable, 4 limits; recovered ACCO/BIRT/SOUP, not CHIC_NP; no optimality or held-out improvement claim",
+    "original_goal_witness": "All 4 available fresh native plans map validly to the machine model despite its search cutoffs; 64 states, 23457 source-atom comparisons, zero mismatches; unavailable evidence for other 11 sources retained",
+    "nonzero_interface_prefix_replay": "146 available historical invocation prefixes replayed in the machine model; 459 states, 354757 comparisons, zero mismatches; all 234 task rows retained",
+    "supported_interpretation": "Finite source-local preservation evidence with nonzero unverified interfaces; substantial observed preprocessing cost of full-pool search under the declared budget",
+    "not_established": ["Cross-source semantic correctness", "Narrative quality", "Independent-domain generalization", "Statistically established speedup", "Main-track novelty from these engineering results alone"]
+  },
+  "claims": [
+    {
+      "claim": "The corrected namespaced union preserves complete mapped source schemas and problems for the current pool",
+      "status": "supported_structural_scope",
+      "evidence": [
+        "data/validation/union_scope_fix_2026_10_15/schema_audit_v2.json"
+      ],
+      "denominator": {
+        "sources": 15,
+        "actions": 234,
+        "predicates": 236
+      },
+      "limit": "Not a semantic equivalence or narrative quality evaluation"
+    },
+    {
+      "claim": "The available source plans translate validly into a fixed namespaced union",
+      "status": "supported_conditional_on_available_source_plans",
+      "evidence": [
+        "data/validation/union_regression_2026_10_15_pyperplan_v1/report.json"
+      ],
+      "denominator": {
+        "all_sources": 15,
+        "available_source_plans": 4,
+        "valid_translations": 4
+      },
+      "limit": "Four solved, eight incomplete, three timed out under a 120-second per-source Pyperplan reference budget"
+    },
+    {
+      "claim": "The zero-merge type membership encoding retains validity of those available source plans",
+      "status": "supported_conditional_on_available_source_plans",
+      "evidence": [
+        "data/validation/type_encoding_regression_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "all_sources": 15,
+        "available_source_plans": 4,
+        "valid_translations": 4
+      },
+      "limit": "No predicate merges in this real-source regression"
+    },
+    {
+      "claim": "All three explicit request modes are connected to the pre-search model path",
+      "status": "supported_engineering_fixtures",
+      "evidence": [
+        "data/validation/pipeline_modes_2026_10_15_v1/report.json",
+        "tests/test_narrative_pipeline.py"
+      ],
+      "limit": "Initial-only mode generates outcomes; it does not perform narrative-quality ranking"
+    },
+    {
+      "claim": "Argument permutations, explicit shared membership and whole-domain selection behave as specified",
+      "status": "supported_engineering_fixtures",
+      "evidence": [
+        "tests/test_aligned_domain.py",
+        "tests/test_domain_catalog.py",
+        "data/validation/icaps_8h_2026_10_15/tests-checkpoint-4.log"
+      ],
+      "limit": "Synthetic authored correspondences, not automatically inferred real-domain gold annotations"
+    },
+    {
+      "claim": "The compiler preserves arbitrary source-only traces under the stated injectivity and membership assumptions",
+      "status": "proof_draft_needs_independent_review",
+      "evidence": [
+        "paper/icaps2027_method_draft.tex",
+        "build_aligned_domain.py"
+      ],
+      "limit": "Not arbitrary mixed-source execution equivalence; formal proof should be audited independently"
+    },
+    {
+      "claim": "Automatic semantic alignment is accurate on unseen narrative domains",
+      "status": "not_established_do_not_claim",
+      "missing_evidence": [
+        "independent domain split",
+        "verified source learning provenance",
+        "independent semantic annotations",
+        "frozen automatic inference evaluation"
+      ]
+    },
+    {
+      "claim": "The method improves narrative quality or character intentionality",
+      "status": "not_established_do_not_claim",
+      "missing_evidence": [
+        "declared narrative candidate/ranking policy",
+        "independent narrative assessments",
+        "intentionality model if claiming intentional plans"
+      ]
+    },
+    {
+      "claim": "The method improves over a current UniDomain reference under a fair protocol",
+      "status": "not_established_do_not_claim",
+      "missing_evidence": [
+        "fresh reference run",
+        "identical world and goal comparisons",
+        "matched planner budgets",
+        "full-denominator ablations"
+      ]
+    },
+    {
+      "claim": "Finite authored source transitions are preserved and four deliberate compilation mutations are detected",
+      "status": "supported_finite_engineering_fixture",
+      "evidence": [
+        "data/validation/exhaustive_preservation_2026_10_15_v1/report.json",
+        "data/validation/exhaustive_mutations_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "states": 256,
+        "applicability_checks": 4352,
+        "applicable_transitions": 2048,
+        "goal_checks": 256,
+        "mutations": 4,
+        "detected": 4
+      },
+      "limit": "Not arbitrary-domain proof, independent annotation or semantic inference"
+    },
+    {
+      "claim": "Source plan preservation and plan validation can pass despite an incompatible interface",
+      "status": "supported_authored_counterexample",
+      "evidence": [
+        "data/validation/semantic_negative_2026_10_15_v1/report.json"
+      ],
+      "limit": "Semantic incompatibility known by authored construction; no error prevalence claim"
+    },
+    {
+      "claim": "A reproducible outcome-blind development annotation packet is prepared",
+      "status": "prepared_not_annotated",
+      "evidence": [
+        "data/annotation/interface_development_2026_10_15_v1/coordinator_manifest.json"
+      ],
+      "denominator": {
+        "all_cross_source_pairs": 25868,
+        "equal_arity_pairs": 11410,
+        "selected_pairs": 100,
+        "independent_annotations": 0
+      },
+      "limit": "Observed development sources; stratified sample not population prevalence, independent-test data or semantic gold"
+    },
+    {
+      "claim": "Current local-model interface proposals fail the declared output contract on the entire frozen sample",
+      "status": "supported_development_protocol_failure",
+      "evidence": [
+        "data/validation/interface_predictions_gemma_2026_10_15_v1/report.json",
+        "data/validation/interface_predictions_gemma_2026_10_15_replay_v2/replay_audit.json"
+      ],
+      "denominator": {
+        "total": 100,
+        "invalid": 95,
+        "token_truncated": 5,
+        "checked": 0,
+        "replayed_same": 100
+      },
+      "limit": "Not measured semantic accuracy; structural schema improvement would not establish semantic improvement"
+    },
+    {
+      "claim": "An explicit authored possession interface enables a validated four-step event plan in a matched development world",
+      "status": "supported_authored_development_conditions_only",
+      "evidence": [
+        "data/validation/composed_development_2026_10_15_v1/report.json",
+        "data/validation/composed_development_2026_10_15_v1/audit_v1.json"
+      ],
+      "denominator": {
+        "conditions": 18,
+        "validated_plans": 6,
+        "incomplete": 6,
+        "time_limit": 6
+      },
+      "limit": "Same pair retained by pair-only/dependency policies; authored assumptions and broad source action effects; no narrative quality, independent-test or controlled timing claim"
+    },
+    {
+      "claim": "Six available Fast Downward source plans preserve validity in both fixed source-preserving models",
+      "status": "supported_conditional_on_available_source_plans",
+      "evidence": [
+        "data/validation/downward_sources_2026_10_15_v1/report.json",
+        "data/validation/downward_union_replay_2026_10_15_v1/report.json",
+        "data/validation/downward_type_replay_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "all_sources": 15,
+        "available_source_plans": 6,
+        "valid_union_translations": 6,
+        "valid_type_translations": 6,
+        "source_unsolvable": 8,
+        "source_memory_limit": 1
+      },
+      "limit": "Conditional execution preservation; no semantic or narrative-quality inference"
+    },
+    {
+      "claim": "Stronger search resolves the 18 frozen composed cases without changing exported domain or problem bytes",
+      "status": "supported_authored_development_solver_comparison",
+      "evidence": [
+        "data/validation/downward_composed_2026_10_15_v1/comparison_audit.json"
+      ],
+      "denominator": {
+        "conditions": 18,
+        "valid_plans": 9,
+        "solver_reported_unsolvable": 9
+      },
+      "limit": "Same wall budget, additional Fast Downward memory cap; concurrent workloads and authored worlds preclude controlled timing or narrative-quality claims"
+    },
+    {
+      "claim": "Three original source problems have conservative predicate-support obstructions before fusion",
+      "status": "supported_structural_reachability_diagnostic",
+      "evidence": [
+        "data/validation/source_support_2026_10_15_v1/report.json",
+        "data/validation/source_support_2026_10_15_v1/solver_crosscheck.json"
+      ],
+      "denominator": {
+        "all_sources": 15,
+        "solver_unsolvable": 8,
+        "predicate_obstructions": 3
+      },
+      "limit": "No repair or narrative-intent inference; other sources not declared solvable by the relaxation"
+    },
+    {
+      "claim": "Auxiliary positive-effect probe traces preserve validity in both fixed baseline models",
+      "status": "supported_development_trace_scope",
+      "evidence": [
+        "data/validation/downward_probes_2026_10_15_v1/report.json",
+        "data/validation/probe_union_replay_2026_10_15_v1/report.json",
+        "data/validation/probe_type_replay_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "all_probes": 45,
+        "available_probe_plans": 26,
+        "valid_translations_each_model": 26,
+        "sources_with_available_plans": 13,
+        "all_sources": 15
+      },
+      "limit": "Goals replaced only for explicitly separate auxiliary probes; unchanged source domains and initial worlds; not original-goal success or semantic annotations"
+    },
+    {
+      "claim": "Sparse effect-target outcome differences match dense enumeration on the authored finite control",
+      "status": "supported_fixture_scope",
+      "evidence": [
+        "data/validation/outcome_sparse_2026_10_15_v1/report.json"
+      ],
+      "limit": "No corpus-wide scaling claim; real initial-only development conditions still running with observed time cutoffs"
+    },
+    {
+      "claim": "All mapped source atoms agree along each available auxiliary probe trace",
+      "status": "supported_available_trajectory_scope",
+      "evidence": [
+        "data/validation/probe_union_states_2026_10_15_v1/report.json",
+        "data/validation/probe_type_states_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "all_probes": 45,
+        "available_traces": 26,
+        "states_each_model": 73,
+        "truth_comparisons_each_model": 52116
+      },
+      "limit": "Not exhaustive reachable-state coverage or semantic-interface evidence"
+    },
+    {
+      "claim": "Sparse eager-grounding initial-only generation solves these authored source cases",
+      "status": "not_supported",
+      "evidence": [
+        "data/validation/initial_only_development_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "conditions": 6,
+        "wall_limit_seconds": 60,
+        "time_limits": 6,
+        "returned_outcomes": 0
+      },
+      "limit": "All hashes unchanged; preserves an explicit complete failure baseline"
+    },
+    {
+      "claim": "State-projected initial-only BFS produces complete validated endpoint changes on the six matched development conditions",
+      "status": "supported_development_scope",
+      "evidence": [
+        "data/validation/initial_only_development_2026_10_15_v2/report.json",
+        "data/validation/initial_only_development_2026_10_15_v2/comparison_audit.json",
+        "data/validation/initial_only_development_2026_10_15_v2/endpoint_audit_negative_control.json",
+        "data/validation/outcome_sparse_2026_10_15_v2/report.json"
+      ],
+      "denominator": {
+        "conditions": 6,
+        "outcome_conditions": 4,
+        "empty_world_conditions_exhausted": 2,
+        "valid_outcomes": 12
+      },
+      "limit": "Visited grounding counters differ from historical eager implementation. Same queries and PDDL bytes, not a controlled runtime speedup, independent domain test, or narrative ranking."
+    },
+    {
+      "claim": "Capture-avoiding bound-variable renaming repairs the demonstrated conditional/universal effect scope error",
+      "status": "supported_finite_control_and_regression",
+      "evidence": [
+        "data/validation/quantifier_capture_2026_10_15_v1/report.json",
+        "data/validation/quantifier_capture_2026_10_15_v1/exhaustive_report.json",
+        "data/validation/exhaustive_preservation_2026_10_15_v2/report.json",
+        "data/validation/exhaustive_mutations_2026_10_15_v2/report.json",
+        "data/validation/downward_type_replay_2026_10_15_v2/report.json",
+        "data/validation/probe_type_replay_2026_10_15_v2/report.json"
+      ],
+      "denominator": {
+        "capture_states": 16,
+        "capture_bindings": 32,
+        "old_mismatches": 8,
+        "new_mismatches": 0,
+        "original_plans_available": 6,
+        "auxiliary_probe_plans_available": 26
+      },
+      "limit": "Finite controls and available trajectories, not a general proof; nested forall effects remain unsupported by independent parser"
+    },
+    {
+      "claim": "Both source action sets are necessary for the authored explicit-pair bridge task, under the recorded solver outcomes",
+      "status": "supported_on_authored_development_task",
+      "evidence": [
+        "data/validation/action_removal_tasks_2026_10_15_v1/manifest.json",
+        "data/validation/downward_action_removal_2026_10_15_v1/report.json",
+        "data/validation/downward_action_removal_2026_10_15_v1/comparison_audit.json"
+      ],
+      "denominator": {
+        "conditions": 18,
+        "solved": 5,
+        "solver_reported_unsolvable": 13,
+        "cutoffs": 0,
+        "fresh_valid_plans": 5
+      },
+      "limit": "Same frozen historical compiler exports; source action removal only; not general source necessity or narrative quality"
+    },
+    {
+      "claim": "Available original and auxiliary traces cover 61 of 234 source action schemas",
+      "status": "measured_coverage_limit",
+      "evidence": [
+        "data/validation/source_trace_coverage_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "original_tasks": 15,
+        "original_valid_plans": 6,
+        "auxiliary_tasks": 45,
+        "auxiliary_valid_plans": 26,
+        "declared_actions": 234,
+        "distinct_visited_actions": 61,
+        "unvisited_actions": 173,
+        "source_conditional_effect_actions": 1,
+        "visited_conditional_effect_actions": 0
+      },
+      "limit": "Schema occurrence is not grounding or branch coverage; quantified-effect controls are authored fixtures"
+    },
+    {
+      "claim": "Two targeted conditional-effect prefixes preserve source truth values with guard false and true",
+      "status": "supported_on_two_authored_prefixes",
+      "evidence": [
+        "data/validation/conditional_prefixes_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "prefixes": 2,
+        "states": 5,
+        "truth_comparisons": 2605,
+        "mismatches": 0
+      },
+      "limit": "Original initial state retained; not original-goal solutions or random probes; source permits pebble as breadcrumb item; no narrative plausibility claim"
+    },
+    {
+      "claim": "Raw duplicate declarations rejected before parsing loss; valid local-source exports unaffected",
+      "status": "verified_engineering_fix",
+      "evidence": [
+        "data/validation/duplicate_input_guard_2026_10_15_v1/before.json",
+        "data/validation/duplicate_input_guard_2026_10_15_v1/after.json",
+        "data/validation/icaps_8h_2026_10_15/tests-checkpoint-25.log"
+      ],
+      "denominator": {
+        "unchanged_pddl_files": 16,
+        "source_problems": 15,
+        "full_tests": 124
+      },
+      "limit": "Engineering input validation; source semantics and scientific novelty not established by this fix"
+    },
+    {
+      "claim": "One external development family retains all ten available source traces in two fixed16-source models",
+      "status": "supported_external_development_validation",
+      "evidence": [
+        "data/validation/basketball_full_snapshot_2026_10_15_v1/manifest.json",
+        "data/validation/basketball_native_tasks_2026_10_15_v1/manifest.json",
+        "data/validation/downward_basketball_native_2026_10_15_v1/report.json",
+        "data/validation/basketball_union_replay_2026_10_15_v1/report.json",
+        "data/validation/basketball_membership_replay_2026_10_15_v1/report.json"
+      ],
+      "denominator": {
+        "external_families": 1,
+        "original_problems": 10,
+        "native_valid_plans": 10,
+        "valid_replays_per_representation": 10,
+        "states_per_representation": 80,
+        "truth_comparisons_per_representation": 38560
+      },
+      "limit": "Explicit header-only packaging; external development, not independent blinded semantic test; original worlds kept separate; no predicate merges or narrative-quality claim"
+    },
+    {
+      "claim": "Coupled output fields improve checked-output yield in one restored-service paired development run",
+      "status": "supported_output_contract_only",
+      "evidence": [
+        "data/validation/interface_schema_comparison_restored_2026_10_15_v1.json",
+        "data/validation/interface_predictions_gemma_free_restored_2026_10_15_v1/runtime_snapshot.json"
+      ],
+      "denominator": {
+        "pairs": 100,
+        "free_checked": 0,
+        "coupled_checked": 52
+      },
+      "limit": "No independently verified semantic labels; single condition, not accuracy or repeated-run performance"
+    }
+  ],
+  "verified_literature": [
+    {
+      "key": "ye2025unidomain",
+      "url": "https://arxiv.org/abs/2507.21545v3",
+      "publication_year": 2025,
+      "version_date": "2026-04-20",
+      "role": "Domain retrieval and fusion reference; not narrative evidence"
+    },
+    {
+      "key": "riedl2010narrative",
+      "url": "https://arxiv.org/abs/1401.3841",
+      "doi": "10.1613/jair.2989",
+      "publication_year": 2010,
+      "role": "Causal progression and character intentionality are distinct requirements"
+    },
+    {
+      "key": "haslum2012compilations",
+      "url": "https://arxiv.org/abs/1401.5856",
+      "doi": "10.1613/jair.3602",
+      "publication_year": 2012,
+      "role": "Intentionality compilation is prior work, not implemented here"
+    },
+    {
+      "key": "rivera2024story",
+      "url": "https://ojs.aaai.org/index.php/ICAPS/article/view/31509",
+      "doi": "10.1609/icaps.v34i1.31509",
+      "publication_year": 2024,
+      "role": "Narrative-planning scope and evaluation context"
+    },
+    {
+      "key": "porteous2020thype",
+      "url": "https://joaoff.com/publication/2020/AAMAS/aamas20-thype.pdf",
+      "publication_year": 2020,
+      "role": "Prior narrative type extension with plausibility and robustness evaluation; do not claim model extension alone is new"
+    },
+    {
+      "key": "lima2021blending",
+      "url": "https://edirlei.com/papers/Narrative_Blending_ICEC2021.pdf",
+      "doi": "10.1007/978-3-030-89394-1_22",
+      "publication_year": 2021,
+      "role": "Prior episode-based narrative blending under shared narrative structure; do not claim story recombination alone is new"
+    },
+    {
+      "key": "lindsay2023modularity",
+      "url": "https://ojs.aaai.org/index.php/ICAPS/article/view/27203",
+      "doi": "10.1609/icaps.v33i1.27203",
+      "publication_year": 2023,
+      "checked_sections": [
+        "Modularity",
+        "Algorithms 1 and 2"
+      ],
+      "role": "Prior explicit module dependencies and action inheritance compilation; pre-search model flattening is not novel"
+    },
+    {
+      "key": "smirnov2024consistent",
+      "url": "https://arxiv.org/html/2404.07751v1",
+      "publication_year": 2024,
+      "checked_sections": [
+        "III Method",
+        "VI Conclusions"
+      ],
+      "role": "Prior structured generation, consistency checks and reachability analysis; semantic correctness explicitly not established"
+    }
+  ],
+  "formula_boundary_development": {
+    "claim": "Finite controls cover negated quantifiers, empty source types, alternating quantifiers, shadowing, Boolean connectives and equality",
+    "positive": "data/validation/formula_boundaries_2026_10_15_v1/report.json",
+    "counts": {
+      "conditions": 14,
+      "states": 128,
+      "ground_action_instances": 28,
+      "applicability_checks": 3584,
+      "applicable_transitions": 1984,
+      "goal_checks": 128,
+      "mismatches": 0
+    },
+    "negative": "data/validation/formula_mutation_2026_10_15_v1/report.json",
+    "mutation": "remove quantified condition membership guards while keeping parameter guards",
+    "detected_mismatches": 1024,
+    "scope": "Authored finite controls, not independent review of the theorem, unbounded verification, or semantic correspondence evidence"
+  },
+  "casciani2025requirements_check": {
+    "url": "https://www.diag.uniroma1.it/degiacomo/papers/2025/LM4Plan@ICAPS25cdmw.pdf",
+    "metadata_source": "https://angelo-casciani.github.io/publications/",
+    "venue": "ICAPS2025 Workshop on Planning in the Era of LLMs",
+    "checked_sections": [
+      "Section3 typing paragraph, PDF page3",
+      "Section4 invariant analysis, PDF page5"
+    ],
+    "boundary": "Static unary type predicates and multiple memberships, plus invariant-based model refinement, are prior mechanisms. Their use alone cannot support novelty here.",
+    "verified_on": "2026-10-15"
+  },
+  "action_invocation_development": {
+    "solver_report": "data/validation/downward_action_reachability_2026_10_15_v1/report.json",
+    "full_denominator": 234,
+    "solver_counts": {
+      "solved": 146,
+      "unsolvable": 50,
+      "wall_time_limit": 38
+    },
+    "each_fixed_model_replay": {
+      "valid_prefixes": 146,
+      "states": 459,
+      "source_atom_comparisons": 354757,
+      "mismatches": 0
+    },
+    "combined_three_solver_bundle_witnesses": 166,
+    "solver_reported_unreachable": 50,
+    "unresolved_in_bundles": 18,
+    "boundary": "Unchanged source worlds; not original-goal success, semantic correspondence truth, or branch coverage. Separate authored conditional controls not pooled."
+  },
+  "fusion_terminal_boundary": {
+    "report": "data/validation/unidomain_reference_2026_10_15_v1/report.json",
+    "status": "worker_error during host interruption",
+    "final_root_complete": false,
+    "completed_nodes": 13,
+    "model_calls_cached": 6460,
+    "last_completed_node": "27",
+    "namespace_diagnostic": "data/validation/fusion_node27_namespace_diagnostic_2026_10_15_v1/report.json",
+    "boundary": "Default UP global-name policy rejects type/fluent overlap; same unchanged PDDL parses with that policy disabled. Not an inherent PDDL-invalidity conclusion."
+  }
+}

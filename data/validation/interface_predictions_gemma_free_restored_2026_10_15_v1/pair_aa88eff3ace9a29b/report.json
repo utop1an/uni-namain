@@ -1,0 +1,43 @@
+{
+  "candidate_id": "pair_aa88eff3ace9a29b",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_aa88eff3ace9a29b",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'inside' is used with different arguments in the two sources. In BIRT, it relates an entity to a location ('inside ?n ?t') and an item to a location ('inside ?e - entity ?c - item'). In PIGS_NP, it relates an entity to an item ('inside ?p ?c'). These usages represent different aspects of spatial relationships: BIRT focuses on whether an object is *within* a location, while PIGS_NP focuses on whether an object is *inside* a container (item). The action contexts further support this distinction; BIRT's 'enter_tree_and_descend_stairs' and 'receive_pellet_from_gnome' actions explicitly define locations, while PIGS_NP's actions describe the pig's presence within a container (churn). Therefore, the predicates are complementary because they both describe spatial containment but from different perspectives and with different argument types. The argument order is reversed to reflect this relationship: the BIRT predicate describes the broader concept of 'inside' relating an entity to a location, while the PIGS_NP predicate describes a more specific instance of 'inside' relating an entity to an item within a container.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BIRT:action:enter_tree_and_descend_stairs",
+        "quote": "(inside ?n ?t)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:receive_pellet_from_gnome",
+        "quote": "(inside ?n ?t)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:turn_key_on_beech",
+        "quote": "(inside dryad ?t)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+        "quote": "(inside ?p ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "PIGS_NP:action:pig_rolls_churn_down_hill",
+        "quote": "(inside ?p ?c)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_aa88eff3ace9a29b"
+  ]
+}

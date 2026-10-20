@@ -1,0 +1,66 @@
+{
+  "objects": {
+    "hero": "q__hero"
+  },
+  "object_types": {
+    "q__hero": "object"
+  },
+  "logical_type_memberships": {
+    "q__hero": [
+      "d001__t_person",
+      "d000__t_person"
+    ]
+  },
+  "initial": [
+    [
+      "d001__p_alive",
+      "q__hero"
+    ]
+  ],
+  "type_encoding_facts": [
+    [
+      "typeguard__d000__t_person",
+      "d000__c_corpse"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_corpse"
+    ],
+    [
+      "typeguard__d001__t_person",
+      "d001__c_prisoner"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_prisoner"
+    ],
+    [
+      "typeguard__d001__t_person",
+      "q__hero"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "q__hero"
+    ],
+    [
+      "typeguard__d000__t_person",
+      "q__hero"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "q__hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "d000__p_buried",
+        "q__hero"
+      ]
+    ],
+    "negative": []
+  },
+  "state_semantics": "complete_closed_world",
+  "source_problem_facts_imported": false,
+  "goal_origin": "user_supplied"
+}

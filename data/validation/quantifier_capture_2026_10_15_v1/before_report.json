@@ -1,0 +1,17 @@
+{
+  "source": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "before": {
+    "length": 1,
+    "validation": {
+      "status": "INVALID",
+      "engine": "sequential_plan_validator",
+      "version": "1.3.0",
+      "details": "status: INVALID\nengine: sequential_plan_validator\nreason: UNSATISFIED_GOALS"
+    }
+  }
+}

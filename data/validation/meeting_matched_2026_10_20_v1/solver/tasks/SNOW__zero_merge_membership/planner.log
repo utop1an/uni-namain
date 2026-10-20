@@ -1,0 +1,45 @@
+INFO     planner time limit: 20s
+INFO     planner memory limit: 4096 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 19s
+INFO     translator memory limit: 4096 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.030s CPU, 0.042s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.004s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.030s CPU, 0.072s wall-clock]
+Preparing model... [0.020s CPU, 0.019s wall-clock]
+Generated 1725 rules.
+Computing model... [3.240s CPU, 3.246s wall-clock]
+436182 relevant atoms
+20969 auxiliary atoms
+457151 final queue length
+1772293 total queue pushes
+Completing instantiation... [11.900s CPU, 11.913s wall-clock]
+Instantiating: [15.300s CPU, 15.353s wall-clock]
+Computing fact groups...
+Finding invariants...
+501 initial candidates
+Finding invariants: [0.100s CPU, 0.107s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.000s wall-clock]
+Choosing groups...
+2251 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.010s CPU, 0.004s wall-clock]
+Computing fact groups: [0.120s CPU, 0.120s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.380s CPU, 0.376s wall-clock]

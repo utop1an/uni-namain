@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_4bac60ea7ff9d794",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The PIGS_NP predicate `house` represents a physical structure, while the WOE predicate `stone_at` describes the location of a stone object. The `house` predicate requires arguments `?h` (house) and `?m` (item), representing the house and the item within it. The `stone_at` predicate requires arguments `?s` (stone) and `?l` (location), representing the stone and its location. The actions involving `house` relate to building, destroying, and maintaining a house, while actions involving `stone_at` relate to placing and moving stones. The predicates are complementary because one describes a building and the other describes a spatial relationship for an object. The `house` predicate is broader, encompassing a building, while the `stone_at` predicate is more specific, describing the location of a stone. The use of `item` and `location` as parameters in both predicates further supports this complementary relationship. The action contexts demonstrate this difference: `build_house` creates a house, while `wolf_blows_house_down` destroys a house. `hide_woe_under_stone` places a stone at a location, and `move_heavy_stone` moves a stone from one location to another. The predicates are not interchangeable because they represent fundamentally different concepts – a building versus the spatial location of an object. The `type_hierarchy` confirms this, with `item` and `location` being subtypes of `object`.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:hide_woe_under_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:hide_woe_under_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:move_heavy_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:rich_brother_attempt_to_move_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:move_heavy_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:rich_brother_attempt_to_move_stone",
+      "quote": "(stone_at ?stone ?loc)"
+    }
+  ]
+}

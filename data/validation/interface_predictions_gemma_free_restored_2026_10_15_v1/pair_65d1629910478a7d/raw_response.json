@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:43:35.748081Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_65d1629910478a7d\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate `at_item` in JACK_NP describes the location of an item, while the predicate `house` in PIGS_NP describes a location as a house. The `at_item` predicate is about the *presence* of an item at a location, while the `house` predicate describes a *type* of location. The two predicates describe different aspects of spatial relationships. JACK_NP's `at_item` focuses on the physical presence of an object, whereas PIGS_NP's `house` describes a specific kind of location. The action contexts demonstrate this difference: JACK_NP uses `at_item` to track the location of items during actions like planting and selling, while PIGS_NP uses `house` to define and manipulate houses as locations. The predicates are complementary because they both deal with locations, but they represent distinct concepts – the presence of an item versus a specific type of location.\", \"evidence\": [ {\"side\": 1, \"ref\": \"PIGS_NP:action:build_house\", \"quote\": \"(house ?h ?i)\"}, {\"side\": 0, \"ref\": \"JACK_NP:action:plant_beans\", \"quote\": \"(at_item ?beans ?loc)\"}, {\"side\": 0, \"ref\": \"JACK_NP:action:sell_cow_for_beans\", \"quote\": \"(at_item ?beans ?l)\"}, {\"side\": 0, \"ref\": \"JACK_NP:action:steal_gold_bags\", \"quote\": \"(at_item ?bag1 giant_castle)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:wolf_blows_house_down\", \"quote\": \"(house ?h ?i)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:wolf_fails_to_blow_house\", \"quote\": \"(house ?h ?i)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4798385500,
+  "load_duration": 2313300,
+  "prompt_eval_count": 1316,
+  "prompt_eval_duration": 203485000,
+  "eval_count": 472,
+  "eval_duration": 4494196000
+}

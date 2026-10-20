@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:35:48.4254374Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_d9f1427b796df0b0\", \"label\": \"complementary\", \"right_from_left\": [\n    1,\n    2\n  ],\n  \"rationale\": \"The predicate 'arrested' describes a state of being detained, typically by a law enforcement entity, while 'has' describes possession of an item. Arresting an entity (arrested ?c) is a restrictive action, whereas 'has' (has ?e - entity ?i - item) is a general statement of ownership. The action contexts for 'arrested' involve law enforcement and detention, while 'has' describes a simple relationship between two entities. Therefore, they represent complementary concepts: one describes a legal state, and the other describes a possession relationship. The action contexts and parameters further support this distinction. Specifically, the preconditions and effects of 'arrested' involve law enforcement and detention, whereas 'has' simply describes ownership. The use of 'entity' and 'item' as types further highlights this difference. The 'arrested' predicate is about a legal process, while 'has' is about a simple object relationship.\",\n  \"evidence\": [\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:buy_boots\",\n      \"quote\": \"(has ?puss ?boots)\"\n    },\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:cat_catch_rabbits\",\n      \"quote\": \"(has ?puss ?bag)\"\n    },\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:give_bag_to_cat\",\n      \"quote\": \"(has ?puss ?bag)\"\n    },\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:king_send_groom_fetch_suit\",\n      \"quote\": \"(has ?groom ?suit)\"\n    },\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:master_wear_suit\",\n      \"quote\": \"(has ?jack ?suit)\"\n    },\n    {\n      \"side\": 1,\n      \"ref\": \"PUSS:action:cat_catch_rabbits\",\n      \"quote\": \"(has ?puss ?bag)\"\n    }\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5988400000,
+  "load_duration": 2120900,
+  "prompt_eval_count": 1173,
+  "prompt_eval_duration": 208297000,
+  "eval_count": 533,
+  "eval_duration": 5626959000
+}

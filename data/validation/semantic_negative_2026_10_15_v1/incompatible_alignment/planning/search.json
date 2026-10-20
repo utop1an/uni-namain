@@ -1,0 +1,15 @@
+{
+  "grounding_policy": "typed_cartesian_with_static_positive_projection",
+  "states": 3,
+  "ground_candidates": 3,
+  "viable_ground_actions": 3,
+  "status": "solved",
+  "length": 2,
+  "plan": "SequentialPlan:\n    d001__a_capture_alive(q__hero)\n    d000__a_bury(q__hero)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

@@ -1,0 +1,1 @@
+(define (domain d) (:requirements :strips) (:predicates (p) (q)) (:action a :parameters () :effect (p)) (:action a :parameters () :effect (q)))

@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:30:29.0117566Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_aaa5a79c448dd45b\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate `at` is used to describe the location of entities in both NAUG and SNOW. However, the contexts of use differ significantly. In NAUG, `at` is primarily used within the context of actions related to movement, orders, and summoning, where it specifies the location of entities within a defined area (e.g., 'courtyard'). In SNOW, `at` is used to describe the location of entities within a more open-ended setting, such as a cottage or forest, often as a result of an action's effect. The NAUG actions are tightly coupled with spatial reasoning for tactical purposes, while the SNOW actions describe a more narrative-driven spatial relationship. The two predicates are complementary because they both represent location, but their contexts and intended uses are distinct. The action contexts provide evidence for this distinction: NAUG's `at` is tied to commands and movement, while SNOW's `at` is a direct effect of an action. The use of `?e - entity` and `?l - location` in both declarations further supports this distinction, as they represent the same basic concept but with different operational contexts.\", \"evidence\": [ {\"side\": 1, \"ref\": \"SNOW:action:queen_sews_at_window\", \"quote\": \"(at ?q ?l)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_finds_dwarfs_cottage\", \"quote\": \"(at ?c ?cottage)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_flees_into_forest\", \"quote\": \"(at ?c ?f)\"}, {\"side\": 0, \"ref\": \"NAUG:action:call_comet_forward\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(at ?c courtyard)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5047983300,
+  "load_duration": 3229800,
+  "prompt_eval_count": 1055,
+  "prompt_eval_duration": 185097000,
+  "eval_count": 501,
+  "eval_duration": 4778517000
+}

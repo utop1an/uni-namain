@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:35:18.5960641Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_cd5c7db4c4c8dd1a\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicates 'laced' and 'gold_at' describe different aspects of the scene. 'laced' relates to the state of being bound or fastened (specifically, with a lace), while 'gold_at' describes the location of a gold item. They represent distinct properties of objects and locations. The 'laced' predicate is used in the context of dwarves cutting laces, and the 'gold_at' predicate is used in the context of a character possessing gold. These predicates describe different relationships and are therefore complementary. The action contexts further support this by describing actions related to each predicate: cutting laces versus taking and hiding gold. No shared arguments or common ground exists between the predicates, indicating a complementary relationship.\", \"evidence\": [ {\"side\": 0, \"ref\": \"SNOW:action:dwarfs_cut_laces_rescue_snow_white\", \"quote\": \"(laced ?c ?lace)\"}, {\"side\": 0, \"ref\": \"SNOW:action:stepmother_laces_snow_white_tightly\", \"quote\": \"(laced ?c ?lace)\"}, {\"side\": 1, \"ref\": \"WOE:action:take_gold_pot_and_hide\", \"quote\": \"(gold_at ?gold ?loc)\"}, {\"side\": 1, \"ref\": \"WOE:action:take_gold_pot_and_hide\", \"quote\": \"(gold_at ?gold ?loc)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3598698800,
+  "load_duration": 2266200,
+  "prompt_eval_count": 871,
+  "prompt_eval_duration": 164563000,
+  "eval_count": 355,
+  "eval_duration": 3334565000
+}

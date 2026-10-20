@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_468ae18a21ae9404",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_468ae18a21ae9404",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates `boat_available` and `on` describe different aspects of the scene. `boat_available` indicates the availability of a boat at a location, while `on` describes the spatial relationship between an item and a location. They represent distinct properties and are not interchangeable. `boat_available` checks if a boat is present at a location, whereas `on` asserts a specific spatial arrangement. The action contexts further support this distinction: `boat_available` is used in a context related to travel, while `on` is used in contexts related to theft and manipulation. The type hierarchies for both predicates are consistent (object, item, location), but their usage and the actions associated with them are fundamentally different. The `on` predicate describes a spatial relationship, while `boat_available` describes the state of a resource. The action contexts demonstrate this difference in purpose and application. The `on` predicate is used to describe the location of an item, while `boat_available` is used to determine if a boat is available at a location.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+        "quote": "(boat_available ?b ?pond)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(on ?harp giant_castle)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_hen",
+        "quote": "(on ?hen giant_castle)"
+      }
+    ]
+  },
+  "errors": []
+}

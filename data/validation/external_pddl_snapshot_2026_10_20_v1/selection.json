@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "status": "fixed_before_artifact_parsing",
+  "repositories": [
+    {
+      "id": "questmaster",
+      "repository": "umbertocicciaa/QuestMasterAI",
+      "commit": "caf6d8f79e53f73a97f5d9d95b7c8770f385bacb",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "QuestMasterAI example artifact; exact production history unknown"
+    },
+    {
+      "id": "hri",
+      "repository": "HRI-EU/pddl-domains",
+      "commit": "56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438",
+      "metadata": [
+        "Readme.md"
+      ],
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source"
+    },
+    {
+      "id": "ipc",
+      "repository": "aibasel/downward-benchmarks",
+      "commit": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f",
+      "metadata": [
+        "README.md"
+      ],
+      "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution"
+    },
+    {
+      "id": "nl2plan",
+      "repository": "mrlab-ai/NL2Plan",
+      "commit": "9f1f4e0a997b9ed09d1f34a0eabb1546b3e6cba2",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "NL2Plan; repository deliberately withholds novel-domain PDDL"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "QM_QUEST",
+      "provider": "questmaster",
+      "family": "questmaster_adventure_example",
+      "role": "narrative_candidate",
+      "domain": "resources/valid_domain.pddl",
+      "problem": "resources/valid_problem.pddl",
+      "annotation_selected": true
+    },
+    {
+      "id": "HRI_HOUSEHOLD_0",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_0/domain.pddl",
+      "problem": "results/household/run_0/problem.pddl",
+      "annotation_selected": true
+    },
+    {
+      "id": "HRI_HOUSEHOLD_1",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_1/domain.pddl",
+      "problem": "results/household/run_1/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_HOUSEHOLD_2",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_2/domain.pddl",
+      "problem": "results/household/run_2/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_HOUSEHOLD_3",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_3/domain.pddl",
+      "problem": "results/household/run_3/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_HOUSEHOLD_4",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_4/domain.pddl",
+      "problem": "results/household/run_4/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_PIZZA_0",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_0/domain.pddl",
+      "problem": "results/pizza/run_0/problem.pddl",
+      "annotation_selected": true
+    },
+    {
+      "id": "HRI_PIZZA_1",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_1/domain.pddl",
+      "problem": "results/pizza/run_1/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_PIZZA_2",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_2/domain.pddl",
+      "problem": "results/pizza/run_2/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_PIZZA_3",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_3/domain.pddl",
+      "problem": "results/pizza/run_3/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "HRI_PIZZA_4",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_4/domain.pddl",
+      "problem": "results/pizza/run_4/problem.pddl",
+      "annotation_selected": false
+    },
+    {
+      "id": "IPC_GRIPPER",
+      "provider": "ipc",
+      "family": "ipc_gripper",
+      "role": "classical_auxiliary",
+      "domain": "gripper/domain.pddl",
+      "problem": "gripper/prob01.pddl",
+      "annotation_selected": true
+    },
+    {
+      "id": "IPC_MICONIC",
+      "provider": "ipc",
+      "family": "ipc_miconic",
+      "role": "classical_auxiliary",
+      "domain": "miconic/domain.pddl",
+      "problem": "miconic/s1-0.pddl",
+      "annotation_selected": true
+    }
+  ],
+  "missing_artifact_lead": {
+    "provider": "nl2plan",
+    "family": "dungeoncrawl",
+    "decision": "not_admitted_no_published_PDDL; do not regenerate with a model or infer an equivalent domain"
+  },
+  "selection_policy": "All five supplied HRI household/pizza runs audited; run_0 fixed in advance for annotation. Fixed first original IPC problems. No solver outcomes or source repairs used in admission.",
+  "annotation_policy": {
+    "seed": "external-screen-2026-10-20-v1",
+    "per_stratum": 24,
+    "primary_role": "external_annotation_pilot_not_pristine_heldout",
+    "source_roles_must_remain_visible": true,
+    "actual_independent_labels": 0
+  },
+  "no_claims": [
+    "No narrative improvement from auxiliary classical domains",
+    "No verified artifact learning run from repository default model configuration",
+    "No independent acquisition lineage count from repository or scenario counts alone"
+  ]
+}

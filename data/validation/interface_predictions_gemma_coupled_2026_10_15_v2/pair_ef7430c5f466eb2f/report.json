@@ -1,0 +1,23 @@
+{
+  "candidate_id": "pair_ef7430c5f466eb2f",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_ef7430c5f466eb2f",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates 'wearing' and 'wearing' appear in both sources, but the contexts surrounding their use are distinct. PUSS's 'wearing' is associated with general item wearing, while SNOW's 'wearing' is specifically linked to wearing a 'hot slippers' item as a consequence of a death event. This difference in context suggests a complementary relationship: one describes general wearing, and the other describes wearing a specific item in a particular circumstance. The action contexts highlight this difference; PUSS's action involves simply wearing an item, while SNOW's action involves wearing an item *and* a subsequent death event. The predicate declarations and parameter lists are identical, indicating that the predicates themselves are interchangeable in terms of their formal definition. The type hierarchies are also identical, further supporting the interchangeability. The 'story_or_learner_provenance' is not supplied, so we cannot determine if this relationship was derived from a specific story or learned through a process. The exact excerpts containing the predicate occurrence on both sides are: PUSS: `(wearing ?jack ?suit)` and SNOW: `(wearing ?s ?slippers)`.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+        "quote": "(wearing ?s ?slippers)"
+      }
+    ]
+  },
+  "errors": []
+}

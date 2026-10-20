@@ -1,0 +1,481 @@
+{
+  "status": "complete",
+  "graph": {
+    "status": "complete",
+    "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+    "total_candidates": 100,
+    "prediction_status_counts": {
+      "invalid": 46,
+      "checked": 52,
+      "failed": 2
+    },
+    "definite_non_equivalence_edges": 42,
+    "skipped": [
+      {
+        "candidate_id": "pair_0144468d6aba2916",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_0fb0695e46dd0530",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_34eb6bde8556d6d2",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_17b7521c6a482fef",
+        "reason": "uncertain"
+      },
+      {
+        "candidate_id": "pair_f49de975e1d95d74",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_66b8b6d8311a8875",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_441a3e86e21d41a4",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_14632952b220f647",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_261a255ed2b4b9df",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_99f69d839ec1c694",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_73cad6872aa0f288",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_172a62dea9b31ebc",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_f07cae9822f5c3ab",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_b42885efd3f3d00c",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_f54d6a8630e3929b",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_93641b9b0488b68a",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_e2697e615aa24da1",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_8d993c2ea358f3c4",
+        "reason": "failed"
+      },
+      {
+        "candidate_id": "pair_444e52e70f7a6796",
+        "reason": "uncertain"
+      },
+      {
+        "candidate_id": "pair_67dd7e3e347984b6",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_96ad380cac551f38",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_3383e8868caf67e5",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_51f25a7ced16df50",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_e4ff7f6eef9123bc",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_23ce9ad14840ddf8",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_72a0d7f5799ac0fc",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_8a4f1ab733cca76e",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_1b8c4a8b72749715",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_1fe4656a9e924488",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_e816004ef74c7c47",
+        "reason": "failed"
+      },
+      {
+        "candidate_id": "pair_c084c33f9e7074eb",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_c99464606154c7e3",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_73b1d3651d9d6bf1",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_631ac0fedac32a3d",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_7e6fabe5ba62ce3a",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_ada5d08cb7b94320",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_539d1ef455aa2720",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_8034e8135b162a5d",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_6c5bf48657624763",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_4022a891696c6434",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_d6852ba3e4e9f548",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_d8bf899f2132fa73",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_3f126383032786ea",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_758dc3dc309ce5ca",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_ea045e070b42f32a",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_5af390b5bc641c70",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_4c3ccf5aa0322ab4",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_e98cbdc579c23be6",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_820e874fc4dc007d",
+        "reason": "uncertain"
+      },
+      {
+        "candidate_id": "pair_4bcb1cf993ce45d2",
+        "reason": "invalid"
+      },
+      {
+        "candidate_id": "pair_a755cf43e81a7e72",
+        "reason": "invalid"
+      }
+    ],
+    "components": [
+      {
+        "root": "BIRT:at",
+        "members": [
+          "BIRT:at",
+          "PUSS:at"
+        ],
+        "canonical_positions": {
+          "BIRT:at": [
+            0,
+            1
+          ],
+          "PUSS:at": [
+            0,
+            1
+          ]
+        },
+        "edge_ids": [
+          "pair_7060fed9791deccc"
+        ],
+        "conflicts": [],
+        "status": "structurally_consistent_unverified"
+      },
+      {
+        "root": "BIRT:has",
+        "members": [
+          "BIRT:has",
+          "JACK_NP:has",
+          "PIGS_NP:has"
+        ],
+        "canonical_positions": {
+          "BIRT:has": [
+            0,
+            1
+          ],
+          "JACK_NP:has": [
+            0,
+            1
+          ],
+          "PIGS_NP:has": [
+            0,
+            1
+          ]
+        },
+        "edge_ids": [
+          "pair_978af286844034aa",
+          "pair_efdfd8a3c9eb404c"
+        ],
+        "conflicts": [],
+        "status": "structurally_consistent_unverified"
+      },
+      {
+        "root": "CHIC_NP:at",
+        "members": [
+          "CHIC_NP:at",
+          "HANS_NP:at"
+        ],
+        "canonical_positions": {
+          "CHIC_NP:at": [
+            0,
+            1
+          ],
+          "HANS_NP:at": [
+            0,
+            1
+          ]
+        },
+        "edge_ids": [
+          "pair_3073427e43b5096d"
+        ],
+        "conflicts": [],
+        "status": "structurally_consistent_unverified"
+      },
+      {
+        "root": "JACK_NP:at",
+        "members": [
+          "JACK_NP:at",
+          "WOE:at"
+        ],
+        "canonical_positions": {
+          "JACK_NP:at": [
+            0,
+            1
+          ],
+          "WOE:at": [
+            0,
+            1
+          ]
+        },
+        "edge_ids": [
+          "pair_2031d35e3ab00ec6"
+        ],
+        "conflicts": [],
+        "status": "structurally_consistent_unverified"
+      },
+      {
+        "root": "NAUG:at",
+        "members": [
+          "NAUG:at",
+          "PIGS_NP:at",
+          "REMA_NP:at"
+        ],
+        "canonical_positions": {
+          "NAUG:at": [
+            0,
+            1
+          ],
+          "PIGS_NP:at": [
+            0,
+            1
+          ],
+          "REMA_NP:at": [
+            0,
+            1
+          ]
+        },
+        "edge_ids": [
+          "pair_2aa5ac616114039c",
+          "pair_6340089a043f86dd"
+        ],
+        "conflicts": [],
+        "status": "structurally_consistent_unverified"
+      }
+    ],
+    "equivalence_edges": 7,
+    "component_count": 5,
+    "consistent_components": 5,
+    "withheld_components": 0,
+    "semantic_equivalence_verified": false,
+    "automatic_alignment_adoption": false,
+    "policy": "Withhold entire inconsistent components; no greedy edge repair; same-source predicate collapse forbidden; types not inferred"
+  },
+  "decisions": [
+    {
+      "root": "BIRT:at",
+      "edge_ids": [
+        "pair_7060fed9791deccc"
+      ],
+      "status": "exported_unverified",
+      "group_id": "interface_9e2dfe3e7cd5d53e",
+      "required_role_types": [
+        [
+          "BIRT:entity",
+          "PUSS:entity"
+        ],
+        [
+          "BIRT:location",
+          "PUSS:location"
+        ]
+      ]
+    },
+    {
+      "root": "BIRT:has",
+      "edge_ids": [
+        "pair_978af286844034aa",
+        "pair_efdfd8a3c9eb404c"
+      ],
+      "status": "exported_unverified",
+      "group_id": "interface_b525a0d27c2e45f3",
+      "required_role_types": [
+        [
+          "BIRT:entity",
+          "JACK_NP:entity",
+          "PIGS_NP:entity"
+        ],
+        [
+          "BIRT:item",
+          "JACK_NP:item",
+          "PIGS_NP:item"
+        ]
+      ]
+    },
+    {
+      "root": "CHIC_NP:at",
+      "edge_ids": [
+        "pair_3073427e43b5096d"
+      ],
+      "status": "exported_unverified",
+      "group_id": "interface_82f1308fd516317a",
+      "required_role_types": [
+        [
+          "CHIC_NP:entity",
+          "HANS_NP:entity"
+        ],
+        [
+          "CHIC_NP:location",
+          "HANS_NP:location"
+        ]
+      ]
+    },
+    {
+      "root": "JACK_NP:at",
+      "edge_ids": [
+        "pair_2031d35e3ab00ec6"
+      ],
+      "status": "exported_unverified",
+      "group_id": "interface_9420e6a250b7a1e0",
+      "required_role_types": [
+        [
+          "JACK_NP:entity",
+          "WOE:entity"
+        ],
+        [
+          "JACK_NP:location",
+          "WOE:location"
+        ]
+      ]
+    },
+    {
+      "root": "NAUG:at",
+      "edge_ids": [
+        "pair_2aa5ac616114039c",
+        "pair_6340089a043f86dd"
+      ],
+      "status": "exported_unverified",
+      "group_id": "interface_0f71a7a314338daa",
+      "required_role_types": [
+        [
+          "NAUG:entity",
+          "PIGS_NP:entity",
+          "REMA_NP:entity"
+        ],
+        [
+          "NAUG:location",
+          "PIGS_NP:location",
+          "REMA_NP:location"
+        ]
+      ]
+    }
+  ],
+  "exported_groups": 5,
+  "semantic_equivalence_verified": false,
+  "planner_called": false,
+  "alignment_sha256": "198dc6b0789ea801740784826db8a43b1b8682d341bf4a903f36804c6735c6bb",
+  "input_sha256": {
+    "packet": "a18a764717da39bcc1b62df0d104b03486ebc87346b5452c93c961cd8f167fbf",
+    "predictions": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53"
+  },
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\rcnc\\candidate_alignment.py": "ad88190b75ddb92023c032ec7437d93ee8041b1c6e3231cc14f423f54772d016",
+    "rcnc\\interface_graph.py": "f6b2788052d85c8df1ff6ab2eca4df980f02d169c52a870be918c0e08a3dbf3b",
+    "scripts\\audit\\audit_interface_graph.py": "f38f12da7fbbcacfdf83809301874c58210a9163ef142b0432ae8def4a377ec4",
+    "scripts\\annotation\\run_annotation_predictions.py": "7d4f12a5a2807b4ae48eb2fc7d2a4030a7ff5a09611744d50cf7794210b3b2b0",
+    "rcnc\\interface_annotation.py": "c16a8fd30fff295ffc25ab288d60800a164e84a4ef45c7bad56ef189141303c2"
+  },
+  "compilation": {
+    "status": "compiled_and_independently_parsed",
+    "validation": {
+      "valid": true,
+      "problems": [],
+      "counts": {
+        "requirements": 7,
+        "types": 0,
+        "constants": 347,
+        "predicates": 289,
+        "operators": 234
+      },
+      "scope": "Structural and independent parsing checks under explicit alignment assumptions; no semantic correctness or narrative-quality claim"
+    }
+  },
+  "alignment_unchanged": true,
+  "scope": "Machine hypothesis development condition, not reviewed alignment or semantic evaluation; no planning or source world pooling"
+}

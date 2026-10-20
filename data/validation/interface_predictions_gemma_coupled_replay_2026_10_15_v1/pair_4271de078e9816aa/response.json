@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_4271de078e9816aa",
+  "label": "incompatible",
+  "right_from_left": null,
+  "rationale": "The predicates `has_mission` and `sleeping` represent fundamentally different states of an entity. `has_mission` indicates an entity is engaged in a task or operation, while `sleeping` indicates an entity is in a state of rest. The action contexts demonstrate this difference: `has_mission` is a precondition for actions like `start_travel` and `prohibit_speaking_to_meteor`, implying an active state. Conversely, `sleeping` is a precondition for actions like `dwarfs_offer_snow_white_to_maintain_house`, indicating a passive state. The predicates cannot share a common meaning because they describe mutually exclusive conditions. The supplied action contexts do not provide any mechanism for an entity to simultaneously `has_mission` and `sleeping`.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:burn_up",
+      "quote": "(has_mission ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:give_order",
+      "quote": "(has_mission ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:prohibit_speaking_to_meteor",
+      "quote": "(has_mission ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(has_mission ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:dwarfs_offer_snow_white_to_maintain_house",
+      "quote": "(sleeping ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:dwarfs_return_and_discover_snow_white",
+      "quote": "(sleeping ?c)"
+    }
+  ]
+}

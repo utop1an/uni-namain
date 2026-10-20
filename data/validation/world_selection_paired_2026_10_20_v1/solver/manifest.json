@@ -1,0 +1,237 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "662bf3d4af514039a37d47b64858e0b1e1a50038cae7fde3ab05b4d9eddd4451",
+  "budget": {
+    "wall_seconds": 20,
+    "overall_cpu_seconds": 20,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "ACCO__world_selected",
+      "source": "ACCO",
+      "representation": "world_selected",
+      "domain_sha256": "e761c53314e93f311eb2c6dcdd9e687e11fea9a116467655faf23176e303ab3f",
+      "problem_sha256": "c7be42ab0c1b2ee631f69e299588b15db2b794393050d37ac6f31b230c9a8129"
+    },
+    {
+      "id": "ACCO__graph_closure_control",
+      "source": "ACCO",
+      "representation": "graph_closure_control",
+      "domain_sha256": "e761c53314e93f311eb2c6dcdd9e687e11fea9a116467655faf23176e303ab3f",
+      "problem_sha256": "c7be42ab0c1b2ee631f69e299588b15db2b794393050d37ac6f31b230c9a8129"
+    },
+    {
+      "id": "BIRT__world_selected",
+      "source": "BIRT",
+      "representation": "world_selected",
+      "domain_sha256": "5a07c6c419ec9a26ddf1dc69c6164a7de3e7f1c8a68f1354ecd90f5c511b2b0a",
+      "problem_sha256": "83ae2b7cb22524831337e32ef3f970cf15fea407351e35814b843942597a2863"
+    },
+    {
+      "id": "BIRT__graph_closure_control",
+      "source": "BIRT",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "8a0dee017304b8b94106ef4b92aa06882281bbbe6a777d4db954167ef94d9b57"
+    },
+    {
+      "id": "BUFF__world_selected",
+      "source": "BUFF",
+      "representation": "world_selected",
+      "domain_sha256": "c866de70c42f20a31f98ac0df5ff6ce08ce35acfa6d1795f4a188b47e0fcf281",
+      "problem_sha256": "5d9c8d16ecd22e1a3532571d557b87c320ad2a5ee7e2429c4494d86a7fc73acb"
+    },
+    {
+      "id": "BUFF__graph_closure_control",
+      "source": "BUFF",
+      "representation": "graph_closure_control",
+      "domain_sha256": "c866de70c42f20a31f98ac0df5ff6ce08ce35acfa6d1795f4a188b47e0fcf281",
+      "problem_sha256": "5d9c8d16ecd22e1a3532571d557b87c320ad2a5ee7e2429c4494d86a7fc73acb"
+    },
+    {
+      "id": "CHIC_NP__world_selected",
+      "source": "CHIC_NP",
+      "representation": "world_selected",
+      "domain_sha256": "a58dc81cde25eba0f393d69b0c9e92de28a2f0c8229b96f9e654db0b0ba0bba0",
+      "problem_sha256": "97973882e3194f9f761f778667e1c4af50ef4ac54a7c72f544d13586045f8058"
+    },
+    {
+      "id": "CHIC_NP__graph_closure_control",
+      "source": "CHIC_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f56edd6de2f0bc6fb35c2f2bba2553c8734365495fc5582a1789df3fe16e0078",
+      "problem_sha256": "d4c0d3558ce9022e713181c5c82fb1f2f8b83875706ac358da629d6499cdd5c0"
+    },
+    {
+      "id": "FOUR_NP__world_selected",
+      "source": "FOUR_NP",
+      "representation": "world_selected",
+      "domain_sha256": "8072c557120e46a5c8eb0eb3aedd786b064c916d1e471ed6bb4f2e66cdc6beb4",
+      "problem_sha256": "09d225fd127385b763950bb3a4a04c047a6b2a93cc10ede21d2f6df375196748"
+    },
+    {
+      "id": "FOUR_NP__graph_closure_control",
+      "source": "FOUR_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "8072c557120e46a5c8eb0eb3aedd786b064c916d1e471ed6bb4f2e66cdc6beb4",
+      "problem_sha256": "09d225fd127385b763950bb3a4a04c047a6b2a93cc10ede21d2f6df375196748"
+    },
+    {
+      "id": "HANS_NP__world_selected",
+      "source": "HANS_NP",
+      "representation": "world_selected",
+      "domain_sha256": "978a7b37e33be320749db1cf9440e9a6aca28e1f80a8a0691f38a92695947607",
+      "problem_sha256": "d8d76b7357cfccb89db33a7bd0a447ed39a6528521e7a0341a8e230a634a4c38"
+    },
+    {
+      "id": "HANS_NP__graph_closure_control",
+      "source": "HANS_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f56edd6de2f0bc6fb35c2f2bba2553c8734365495fc5582a1789df3fe16e0078",
+      "problem_sha256": "80bf56f94464459ea0dc9c24208ab6c114cd24bc4fc0dd58305789998ebfe5e0"
+    },
+    {
+      "id": "JACK_NP__world_selected",
+      "source": "JACK_NP",
+      "representation": "world_selected",
+      "domain_sha256": "657e0dee6d8292ae3c3bb6b9701256c1ab291632ffdadebd911597eea496c246",
+      "problem_sha256": "ef2768ddfe9a662161bb62aeaff4819caa26b1820ef116068527380d6e5a9cd8"
+    },
+    {
+      "id": "JACK_NP__graph_closure_control",
+      "source": "JACK_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "b1b8ceb51a5bc81745677b4ca01af982d71b0292d915f0dccd37e69103794038"
+    },
+    {
+      "id": "MUSI__world_selected",
+      "source": "MUSI",
+      "representation": "world_selected",
+      "domain_sha256": "7ead8e104d1dbaad2eec4618426cc1cd0245454cbd08a1d2c5c0288da88a9eda",
+      "problem_sha256": "fcf01cecb36305e78f1cdffbdd0fb3c686fb7354d2d21133b4f7f00dbc13773d"
+    },
+    {
+      "id": "MUSI__graph_closure_control",
+      "source": "MUSI",
+      "representation": "graph_closure_control",
+      "domain_sha256": "7ead8e104d1dbaad2eec4618426cc1cd0245454cbd08a1d2c5c0288da88a9eda",
+      "problem_sha256": "fcf01cecb36305e78f1cdffbdd0fb3c686fb7354d2d21133b4f7f00dbc13773d"
+    },
+    {
+      "id": "NAUG__world_selected",
+      "source": "NAUG",
+      "representation": "world_selected",
+      "domain_sha256": "10bb2c4b7d4f2bb1464a0b8b6977bb133a4deceaf626d7471f56085a398a2cf1",
+      "problem_sha256": "7a653333bd6a8caeb4a4b69c1d7d274dddf4124b17e21e83919c3a483c7abbd5"
+    },
+    {
+      "id": "NAUG__graph_closure_control",
+      "source": "NAUG",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "dd4663bf171909ccd8e3e1d5897ac2b8cfdf5aabf2b6b6dd43f7af8bebbf14ca"
+    },
+    {
+      "id": "PIGS_NP__world_selected",
+      "source": "PIGS_NP",
+      "representation": "world_selected",
+      "domain_sha256": "50ef9e60feb3b8752796c63f502f15fc1edde9a16735c68c014a32e13a59f08d",
+      "problem_sha256": "b29ac89894cbd59826e2bdd9c7bc9ef96799b775b5c2dd71c183b494593f457a"
+    },
+    {
+      "id": "PIGS_NP__graph_closure_control",
+      "source": "PIGS_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "0e9d0bcb1b8e1c867f97b1e63662a3613209a2385555e48d2509b2991aae279f"
+    },
+    {
+      "id": "PUSS__world_selected",
+      "source": "PUSS",
+      "representation": "world_selected",
+      "domain_sha256": "6eea7bad8892d1015cea2ebdfa570e696e6c8755c4e9d1c515d21e04077b2446",
+      "problem_sha256": "3f14fba8fea8f395c78d8e1f3c9f5f4b54d5be8eda74182b7d7a7846adfa8a26"
+    },
+    {
+      "id": "PUSS__graph_closure_control",
+      "source": "PUSS",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "f5dcac7e0df1f48386d08eb8ca55b9e8fb8b9f7fbd470202eabf2958ee32f4fb"
+    },
+    {
+      "id": "REMA_NP__world_selected",
+      "source": "REMA_NP",
+      "representation": "world_selected",
+      "domain_sha256": "bf11e3076164c56e3f7a87ce93544d34d29ab708cacae1f3675cbfbdfb8587a6",
+      "problem_sha256": "7092d7aa59ceace2f7ca8656cc74319f1bf0ca61215bac52dd4d3bd98dd9c273"
+    },
+    {
+      "id": "REMA_NP__graph_closure_control",
+      "source": "REMA_NP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "0ff4a82316c7919d0245a038327968de4a9e8af0e6996935f25cbb789f5a3ff0"
+    },
+    {
+      "id": "SNOW__world_selected",
+      "source": "SNOW",
+      "representation": "world_selected",
+      "domain_sha256": "4b1403e5946d66f68ec8cfe69c8a44c70c1b845856bc8501e9b2bdf212f563bb",
+      "problem_sha256": "ae2c66ab01af3d8e8a729c3bbbc6d173b9260b101c38371d46e448b01b487648"
+    },
+    {
+      "id": "SNOW__graph_closure_control",
+      "source": "SNOW",
+      "representation": "graph_closure_control",
+      "domain_sha256": "4b1403e5946d66f68ec8cfe69c8a44c70c1b845856bc8501e9b2bdf212f563bb",
+      "problem_sha256": "ae2c66ab01af3d8e8a729c3bbbc6d173b9260b101c38371d46e448b01b487648"
+    },
+    {
+      "id": "SOUP__world_selected",
+      "source": "SOUP",
+      "representation": "world_selected",
+      "domain_sha256": "e3353c0543c022912e53304bf7755e33f52789691ae9f0df0de4a626ca29139d",
+      "problem_sha256": "06713238089188391d34e6c27b6c10b7ac096fb9900bc87c5a27584b8746db9f"
+    },
+    {
+      "id": "SOUP__graph_closure_control",
+      "source": "SOUP",
+      "representation": "graph_closure_control",
+      "domain_sha256": "e3353c0543c022912e53304bf7755e33f52789691ae9f0df0de4a626ca29139d",
+      "problem_sha256": "06713238089188391d34e6c27b6c10b7ac096fb9900bc87c5a27584b8746db9f"
+    },
+    {
+      "id": "WOE__world_selected",
+      "source": "WOE",
+      "representation": "world_selected",
+      "domain_sha256": "beff0f8482af016dd86123d9b4fb06797d0911d9dcf8b78cecb663f487368c67",
+      "problem_sha256": "e03286e1499e1feb36da57dba863576d1209a4b3db55b92c46ef6d5c02228739"
+    },
+    {
+      "id": "WOE__graph_closure_control",
+      "source": "WOE",
+      "representation": "graph_closure_control",
+      "domain_sha256": "f19fdc909fe92c9ec58878a61cab23dd26d629a4e42195fb1ff094afa8861b63",
+      "problem_sha256": "05319f5dd010e0d9af748290f52b8cb561eeaeae714c8a4264eb3eecf90f5f74"
+    }
+  ],
+  "task_count": 30,
+  "mode": "matched_source_representations",
+  "task_bundle_origin": "data\\validation\\world_selection_paired_2026_10_20_v1\\bundle",
+  "task_bundle_manifest_sha256": "2f7f24f38d14fa9155380f93f95add0d60c28cebe6459e3f794644c7b671c283",
+  "composed_origin": null,
+  "probe_origin": null,
+  "probe_manifest_sha256": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

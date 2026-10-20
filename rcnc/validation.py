@@ -2,6 +2,25 @@
 from pathlib import Path
 
 
+def prepare_artifacts(domain, problem_path, output):
+    """Copy the unchanged model and problem before writing a candidate plan."""
+    output = Path(output)
+    output.mkdir(parents=True, exist_ok=True)
+    (output/'domain.pddl').write_bytes(Path(domain).read_bytes())
+    (output/'problem.pddl').write_bytes(Path(problem_path).read_bytes())
+    return output
+
+
+def write_validated_plan(problem, plan, output):
+    """Write a plan and independently check it against the saved artifacts."""
+    from unified_planning.io import PDDLWriter
+
+    PDDLWriter(problem).write_plan(plan, str(output/'plan.txt'))
+    validation = validate_artifacts(output)
+    return {'status': 'solved' if validation['status'] == 'VALID' else 'validation_failed',
+            'length': len(plan.actions), 'plan': str(plan), 'validation': validation}
+
+
 def validate_artifacts(directory: Path):
     try:
         import unified_planning

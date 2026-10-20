@@ -1,0 +1,29 @@
+{
+  "candidate_id": "pair_b42885efd3f3d00c",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_b42885efd3f3d00c",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'knighted' relates to a person receiving a title, while 'envious' describes a feeling or state of mind. These predicates represent distinct concepts within the narrative. 'Knighted' implies a positive action and status, whereas 'envious' describes a negative emotion. The action contexts for 'envious' explicitly state preconditions related to fairness and life, indicating a state of being, while the 'knighted' predicate doesn't have such specific preconditions. The 'entity' parameter type is shared, but the predicates themselves represent different aspects of the story. The action contexts for 'envious' show it's triggered by fairness and life, while 'knighted' is a standalone action. The use of 'entity' as a parameter type does not imply equivalence. The provided action contexts and declarations support a complementary relationship.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_becomes_envious_of_snow_white",
+        "quote": "(envious ?s)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_orders_huntsman_to_kill_snow_white",
+        "quote": "(envious ?s)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_b42885efd3f3d00c",
+    "non_equivalent_has_argument_map:pair_b42885efd3f3d00c"
+  ]
+}

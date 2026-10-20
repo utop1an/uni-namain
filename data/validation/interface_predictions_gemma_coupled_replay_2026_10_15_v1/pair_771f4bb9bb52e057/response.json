@@ -1,0 +1,18 @@
+{
+  "candidate_id": "pair_771f4bb9bb52e057",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The PIGS_NP predicate `house` represents a building structure, while the SNOW predicate `at_item` represents the location of an item. The `house` predicate describes a building's location, while `at_item` describes an item's location. These predicates describe different aspects of spatial relationships. The PIGS_NP actions involve building and destroying houses, while the SNOW action involves moving an item to a location. The two predicates are complementary because they describe different types of spatial relationships and are used in distinct contexts. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships. The `house` predicate is used to describe the location of a building, while the `at_item` predicate is used to describe the location of an item. The two predicates are not interchangeable because they describe different types of spatial relationships.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:prince_discovers_coffin_and_moves_it",
+      "quote": "(at_item ?coffin ?mountain)"
+    }
+  ]
+}

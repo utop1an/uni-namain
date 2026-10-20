@@ -1,0 +1,29 @@
+{
+  "status": "frozen_before_audit",
+  "conditions": {
+    "negated_all": "(not (forall (?y - person) (p ?y)))",
+    "negated_exists": "(not (exists (?y - person) (p ?y)))",
+    "implication": "(imply (p ?x) (exists (?y - person) (r ?x ?y)))",
+    "disjunction": "(or (p ?x) (not (r ?x ?x)))",
+    "equality": "(= ?x a)",
+    "inequality": "(not (= ?x a))",
+    "all_exists": "(forall (?y - person) (exists (?z - person) (r ?y ?z)))",
+    "exists_all": "(exists (?y - person) (forall (?z - person) (r ?y ?z)))",
+    "shadowed_parameter": "(forall (?x - person) (or (p ?x) (r ?x a)))",
+    "shadowed_nested": "(exists (?y - person) (and (p ?y) (forall (?y - person) (r ?y a))))",
+    "vacuous_all": "(forall (?y - vacant) (e ?y))",
+    "empty_exists": "(exists (?y - vacant) (e ?y))",
+    "negative_empty_exists": "(not (exists (?y - vacant) (e ?y)))",
+    "negative_vacuous_all": "(not (forall (?y - vacant) (e ?y)))"
+  },
+  "expected_source_atoms": 7,
+  "expected_states": 128,
+  "expected_ground_actions": 28,
+  "source_sha256": {
+    "A_domainfile.pddl": "4f5e0d07eaea196002624e8636af8ca8b3bcd0d228a1429a6bfc3113eb558d32",
+    "A_problemfile.pddl": "86dfeac3407cf9859d4e3aa64b75089434a0ae82306105ca24dc5ff155dcc1dd",
+    "B_domainfile.pddl": "eeee408a5ccb4bb7afd42b3618315c07a7cfdbd7ac210b1b547d6f4a8a675d53",
+    "B_problemfile.pddl": "a4cebdf8f62948763d919e50462ef0ea9aaea7ab99cb053100e444acfa39c23d"
+  },
+  "scope": "Authored finite formula controls, including an empty declared source type; no semantic-interface assessment"
+}

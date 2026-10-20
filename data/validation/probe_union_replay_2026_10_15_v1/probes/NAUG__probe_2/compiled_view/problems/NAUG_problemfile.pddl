@@ -1,0 +1,1 @@
+(define (problem The_Naughty_Comet_problem) (:domain narrative_union) (:init (d008__p_at d008__c_comet_master d008__c_courtyard) (d008__p_at d008__c_short_tail_73 d008__c_courtyard) (d008__p_gate_open) (d008__p_on_list d008__c_short_tail_73)) (:goal (and (d008__p_traveling d008__c_comet_master))))

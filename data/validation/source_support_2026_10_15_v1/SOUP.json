@@ -1,0 +1,273 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "holds"
+  ],
+  "reachable_predicates": [
+    "anointed",
+    "at",
+    "has_feeling",
+    "has_imagination",
+    "has_understanding",
+    "holds",
+    "is_poet",
+    "is_queen",
+    "king_tail_stirred",
+    "soup_effect_created"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "give_skewer_to_elves",
+        "learn_wisdom_from_ants",
+        "prepare_soup_by_king_tail",
+        "read_and_digest_books",
+        "receive_anointed_skewer",
+        "receive_feather",
+        "travel_to"
+      ],
+      "new_predicates": [
+        "anointed",
+        "has_feeling",
+        "has_imagination",
+        "has_understanding",
+        "king_tail_stirred"
+      ]
+    },
+    {
+      "actions": [
+        "claim_queenhood",
+        "prepare_soup_by_elf_effect",
+        "prepare_soup_by_poet_imagination"
+      ],
+      "new_predicates": [
+        "is_poet",
+        "is_queen",
+        "soup_effect_created"
+      ]
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "escape_jail",
+      "condition": [
+        "captured",
+        "?m"
+      ],
+      "adds": [
+        "escaped"
+      ]
+    },
+    {
+      "action": "run_in_cage",
+      "condition": [
+        "captured",
+        "?m"
+      ],
+      "adds": [
+        "in_cage"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "claim_queenhood",
+      "condition": [
+        "or",
+        [
+          "soup_effect_created",
+          "?m"
+        ],
+        [
+          "king_tail_stirred"
+        ]
+      ],
+      "adds": [
+        "is_queen"
+      ]
+    },
+    {
+      "action": "escape_jail",
+      "condition": [
+        "captured",
+        "?m"
+      ],
+      "adds": [
+        "escaped"
+      ]
+    },
+    {
+      "action": "give_skewer_to_elves",
+      "condition": [
+        "holds",
+        "?m",
+        "sausage_skewer"
+      ],
+      "adds": [
+        "holds"
+      ]
+    },
+    {
+      "action": "learn_wisdom_from_ants",
+      "condition": [
+        "at",
+        "?m",
+        "?ant_loc"
+      ],
+      "adds": [
+        "has_understanding"
+      ]
+    },
+    {
+      "action": "prepare_soup_by_elf_effect",
+      "condition": [
+        "and",
+        [
+          "holds",
+          "?m",
+          "sausage_skewer"
+        ],
+        [
+          "anointed",
+          "sausage_skewer"
+        ],
+        [
+          "at",
+          "?m",
+          "kitchen"
+        ]
+      ],
+      "adds": [
+        "soup_effect_created"
+      ]
+    },
+    {
+      "action": "prepare_soup_by_king_tail",
+      "condition": [
+        "at",
+        "mouse_king",
+        "kitchen"
+      ],
+      "adds": [
+        "king_tail_stirred"
+      ]
+    },
+    {
+      "action": "prepare_soup_by_poet_imagination",
+      "condition": [
+        "and",
+        [
+          "has_understanding",
+          "?m"
+        ],
+        [
+          "has_imagination",
+          "?m"
+        ],
+        [
+          "has_feeling",
+          "?m"
+        ]
+      ],
+      "adds": [
+        "is_poet",
+        "soup_effect_created"
+      ]
+    },
+    {
+      "action": "read_and_digest_books",
+      "condition": [
+        "at",
+        "?m",
+        "library"
+      ],
+      "adds": [
+        "has_feeling"
+      ]
+    },
+    {
+      "action": "receive_anointed_skewer",
+      "condition": [
+        "and",
+        [
+          "holds",
+          "?m",
+          "sausage_skewer"
+        ],
+        [
+          "holds",
+          "?elf",
+          "violet"
+        ]
+      ],
+      "adds": [
+        "anointed"
+      ]
+    },
+    {
+      "action": "receive_feather",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?m",
+          "?loc"
+        ],
+        [
+          "at",
+          "?dryad",
+          "?loc"
+        ],
+        [
+          "at",
+          "?ph",
+          "?loc"
+        ],
+        [
+          "holds",
+          "?dryad",
+          "?feather"
+        ]
+      ],
+      "adds": [
+        "has_imagination",
+        "holds"
+      ]
+    },
+    {
+      "action": "run_in_cage",
+      "condition": [
+        "captured",
+        "?m"
+      ],
+      "adds": [
+        "in_cage"
+      ]
+    },
+    {
+      "action": "travel_to",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?m",
+          "?orig"
+        ],
+        [
+          "holds",
+          "?m",
+          "sausage_skewer"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    }
+  ],
+  "source_domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+  "source_problem_sha256": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

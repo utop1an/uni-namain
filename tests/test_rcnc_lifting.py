@@ -4,9 +4,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from rcnc.lifting import role_domains, run_lifted_query
+from archive.rcnc.lifting import role_domains, run_lifted_query
 from rcnc.validation import validate_artifacts
-from merge_domains import parse_sexpr, section
+from rcnc.pddl import parse_sexpr, section
 
 ROOT=Path(__file__).resolve().parents[1]
 INPUT=ROOT/'data/narra-domains'

@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_a2d5d08b00d71a16",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates 'empty' and 'concealed' describe different states of an item. 'empty' indicates the kettle is devoid of contents, while 'concealed' indicates the item is hidden. These represent distinct conditions regarding the presence or absence of an item in a location. The action 'hide_in_kettle' aims to make a kettle empty, while 'take_gold_pot_and_hide' aims to conceal an item. The 'empty' predicate is a necessary precondition for the 'concealed' predicate to be true, and vice versa. The action contexts further support this by describing actions that create one state or the other. The 'empty' predicate describes a state of absence, while 'concealed' describes a state of being hidden. These are complementary concepts; an item can be empty or concealed, but not both simultaneously in the same context. The 'at' predicates in the action contexts are relevant to location, but do not affect the core relationship between the predicates themselves. The 'item' parameter in both predicates indicates that they both refer to the same type of object.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:hide_in_kettle",
+      "quote": "(empty ?kettle)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:take_gold_pot_and_hide",
+      "quote": "(concealed ?gold)"
+    }
+  ]
+}

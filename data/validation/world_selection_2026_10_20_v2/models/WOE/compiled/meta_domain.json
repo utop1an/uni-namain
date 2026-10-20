@@ -1,0 +1,571 @@
+{
+  "sources": [
+    "WOE"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 0,
+    "constants": 27,
+    "predicates": 26,
+    "operators": 17
+  },
+  "predicate_maps": {
+    "WOE": {
+      "at": "d000__p_at",
+      "banquet_at": "d000__p_banquet_at",
+      "bowed": "d000__p_bowed",
+      "concealed": "d000__p_concealed",
+      "drunk": "d000__p_drunk",
+      "employed": "d000__p_employed",
+      "gold_at": "d000__p_gold_at",
+      "guest_present": "d000__p_guest_present",
+      "has": "d000__p_has",
+      "has_fatigue": "d000__p_has_fatigue",
+      "has_strength": "d000__p_has_strength",
+      "invitation_sent": "d000__p_invitation_sent",
+      "invited": "d000__p_invited",
+      "need_help": "d000__p_need_help",
+      "poor": "d000__p_poor",
+      "rich": "d000__p_rich",
+      "singing": "d000__p_singing",
+      "stone_at": "d000__p_stone_at",
+      "stone_moved": "d000__p_stone_moved",
+      "trapped": "d000__p_trapped",
+      "woe_on_shoulder": "d000__p_woe_on_shoulder",
+      "work_done": "d000__p_work_done"
+    }
+  },
+  "constant_maps": {
+    "WOE": {
+      "big_house": "d000__c_big_house",
+      "bitter_woe": "d000__c_bitter_woe",
+      "cattle": "d000__c_cattle",
+      "children": "d000__c_children",
+      "copecks_25": "d000__c_copecks_25",
+      "forest": "d000__c_forest",
+      "gold_pot": "d000__c_gold_pot",
+      "grove": "d000__c_grove",
+      "harrow": "d000__c_harrow",
+      "honey": "d000__c_honey",
+      "izba": "d000__c_izba",
+      "kabak": "d000__c_kabak",
+      "large_town": "d000__c_large_town",
+      "loaf_bread": "d000__c_loaf_bread",
+      "new_home": "d000__c_new_home",
+      "plow": "d000__c_plow",
+      "poor_brother": "d000__c_poor_brother",
+      "rich_brother": "d000__c_rich_brother",
+      "sledge": "d000__c_sledge",
+      "stone": "d000__c_stone",
+      "telega": "d000__c_telega",
+      "treasure_pit": "d000__c_treasure_pit",
+      "village": "d000__c_village",
+      "well": "d000__c_well",
+      "wife": "d000__c_wife",
+      "wine": "d000__c_wine",
+      "yard": "d000__c_yard"
+    }
+  },
+  "action_maps": {
+    "WOE": {
+      "request_help_from_rich_brother": "d000__a_request_help_from_rich_brother",
+      "perform_work_for_rich_brother": "d000__a_perform_work_for_rich_brother",
+      "receive_payment": "d000__a_receive_payment",
+      "stay_for_banquet": "d000__a_stay_for_banquet",
+      "bow_to_guests": "d000__a_bow_to_guests",
+      "sing_cheerful_song": "d000__a_sing_cheerful_song",
+      "encounter_bitter_woe": "d000__a_encounter_bitter_woe",
+      "make_sign_of_cross": "d000__a_make_sign_of_cross",
+      "allow_woe_to_ride_on_shoulder": "d000__a_allow_woe_to_ride_on_shoulder",
+      "spend_money_on_drink": "d000__a_spend_money_on_drink",
+      "trade_assets_for_money": "d000__a_trade_assets_for_money",
+      "move_heavy_stone": "d000__a_move_heavy_stone",
+      "hide_woe_under_stone": "d000__a_hide_woe_under_stone",
+      "take_gold_pot_and_hide": "d000__a_take_gold_pot_and_hide",
+      "invite_rich_brother_to_feast": "d000__a_invite_rich_brother_to_feast",
+      "rich_brother_attempt_to_move_stone": "d000__a_rich_brother_attempt_to_move_stone",
+      "accept_woe_as_burden": "d000__a_accept_woe_as_burden"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "WOE": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_bitter_woe"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bitter_woe"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_children"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_children"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_poor_brother"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_poor_brother"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_rich_brother"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_rich_brother"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_wife"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_wife"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_cattle"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cattle"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_copecks_25"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_copecks_25"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_gold_pot"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_gold_pot"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_grove"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_grove"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_harrow"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_harrow"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_honey"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_honey"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_loaf_bread"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_loaf_bread"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_plow"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_plow"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_sledge"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_sledge"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_stone"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_stone"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_telega"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_telega"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_wine"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_wine"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_big_house"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_big_house"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_izba"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_izba"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_kabak"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_kabak"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_large_town"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_large_town"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_new_home"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_new_home"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_treasure_pit"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_treasure_pit"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_village"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_village"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_well"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_well"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_yard"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_yard"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_bitter_woe": "d000__t_entity",
+    "d000__c_children": "d000__t_entity",
+    "d000__c_poor_brother": "d000__t_entity",
+    "d000__c_rich_brother": "d000__t_entity",
+    "d000__c_wife": "d000__t_entity",
+    "d000__c_cattle": "d000__t_item",
+    "d000__c_copecks_25": "d000__t_item",
+    "d000__c_gold_pot": "d000__t_item",
+    "d000__c_grove": "d000__t_item",
+    "d000__c_harrow": "d000__t_item",
+    "d000__c_honey": "d000__t_item",
+    "d000__c_loaf_bread": "d000__t_item",
+    "d000__c_plow": "d000__t_item",
+    "d000__c_sledge": "d000__t_item",
+    "d000__c_stone": "d000__t_item",
+    "d000__c_telega": "d000__t_item",
+    "d000__c_wine": "d000__t_item",
+    "d000__c_big_house": "d000__t_location",
+    "d000__c_forest": "d000__t_location",
+    "d000__c_izba": "d000__t_location",
+    "d000__c_kabak": "d000__t_location",
+    "d000__c_large_town": "d000__t_location",
+    "d000__c_new_home": "d000__t_location",
+    "d000__c_treasure_pit": "d000__t_location",
+    "d000__c_village": "d000__t_location",
+    "d000__c_well": "d000__t_location",
+    "d000__c_yard": "d000__t_location"
+  },
+  "predicate_orders": {
+    "WOE": {
+      "at": [
+        0,
+        1
+      ],
+      "banquet_at": [
+        0
+      ],
+      "bowed": [
+        0,
+        1
+      ],
+      "concealed": [
+        0
+      ],
+      "drunk": [
+        0
+      ],
+      "employed": [
+        0,
+        1
+      ],
+      "gold_at": [
+        0,
+        1
+      ],
+      "guest_present": [
+        0,
+        1
+      ],
+      "has": [
+        0,
+        1
+      ],
+      "has_fatigue": [
+        0
+      ],
+      "has_strength": [
+        0
+      ],
+      "invitation_sent": [
+        0,
+        1
+      ],
+      "invited": [
+        0,
+        1
+      ],
+      "need_help": [
+        0
+      ],
+      "poor": [
+        0
+      ],
+      "rich": [
+        0
+      ],
+      "singing": [
+        0
+      ],
+      "stone_at": [
+        0,
+        1
+      ],
+      "stone_moved": [
+        0
+      ],
+      "trapped": [
+        0
+      ],
+      "woe_on_shoulder": [
+        0,
+        1
+      ],
+      "work_done": [
+        0,
+        1
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "WOE": {
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "banquet_at": [
+        "d000__t_location"
+      ],
+      "bowed": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "concealed": [
+        "d000__t_item"
+      ],
+      "drunk": [
+        "d000__t_entity"
+      ],
+      "employed": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "gold_at": [
+        "d000__t_item",
+        "d000__t_location"
+      ],
+      "guest_present": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "has": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "has_fatigue": [
+        "d000__t_entity"
+      ],
+      "has_strength": [
+        "d000__t_entity"
+      ],
+      "invitation_sent": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "invited": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "need_help": [
+        "d000__t_entity"
+      ],
+      "poor": [
+        "d000__t_entity"
+      ],
+      "rich": [
+        "d000__t_entity"
+      ],
+      "singing": [
+        "d000__t_entity"
+      ],
+      "stone_at": [
+        "d000__t_item",
+        "d000__t_location"
+      ],
+      "stone_moved": [
+        "d000__t_item"
+      ],
+      "trapped": [
+        "d000__t_entity"
+      ],
+      "woe_on_shoulder": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "work_done": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ]
+    }
+  },
+  "source_sha256": {
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "WOE_problemfile.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "machine_hypothesis",
+    "source_sha256": {
+      "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+    },
+    "type_groups": [],
+    "predicate_groups": [],
+    "semantic_status": "unverified_machine_assumptions",
+    "role_type_policy": "aligned_slot_hypothesis",
+    "object_identity_inferred": false,
+    "initial_facts_inferred": false,
+    "proposal_provenance": {
+      "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+      "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+    }
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

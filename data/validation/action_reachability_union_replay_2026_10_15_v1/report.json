@@ -1,0 +1,3301 @@
+{
+  "status": "complete",
+  "task_count": 234,
+  "rows": [
+    {
+      "id": "ACCO__arrange_exhibition",
+      "source": "ACCO",
+      "target_action": "arrange_exhibition",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrange_exhibition"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "ACCO__call_novices",
+      "source": "ACCO",
+      "target_action": "call_novices",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 4,
+      "truth_comparisons": 876,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "call_novices",
+        "hang_kettle",
+        "kettle_transform_to_badger"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "ACCO__force_kettle_into_box",
+      "source": "ACCO",
+      "target_action": "force_kettle_into_box",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 6,
+      "truth_comparisons": 1314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "force_kettle_into_box",
+        "hang_kettle",
+        "kettle_jump_and_fly",
+        "kettle_transform_to_badger",
+        "knock_down_kettle"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "ACCO__hang_kettle",
+      "source": "ACCO",
+      "target_action": "hang_kettle",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hang_kettle"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "ACCO__kettle_jump_and_fly",
+      "source": "ACCO",
+      "target_action": "kettle_jump_and_fly",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 4,
+      "truth_comparisons": 876,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hang_kettle",
+        "kettle_jump_and_fly",
+        "kettle_transform_to_badger"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "ACCO__kettle_revert_shape",
+      "source": "ACCO",
+      "target_action": "kettle_revert_shape",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "ACCO__kettle_transform_to_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_badger",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 3,
+      "truth_comparisons": 657,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hang_kettle",
+        "kettle_transform_to_badger"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "ACCO__kettle_transform_to_fur_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_fur_badger",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "ACCO__knock_down_kettle",
+      "source": "ACCO",
+      "target_action": "knock_down_kettle",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 5,
+      "truth_comparisons": 1095,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hang_kettle",
+        "kettle_jump_and_fly",
+        "kettle_transform_to_badger",
+        "knock_down_kettle"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "ACCO__perform_show",
+      "source": "ACCO",
+      "target_action": "perform_show",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 3,
+      "truth_comparisons": 657,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrange_exhibition",
+        "perform_show"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "ACCO__pursue_kettle",
+      "source": "ACCO",
+      "target_action": "pursue_kettle",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 5,
+      "truth_comparisons": 1095,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hang_kettle",
+        "kettle_jump_and_fly",
+        "kettle_transform_to_badger",
+        "pursue_kettle"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "ACCO__receive_orders_from_nobility",
+      "source": "ACCO",
+      "target_action": "receive_orders_from_nobility",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 4,
+      "truth_comparisons": 876,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrange_exhibition",
+        "perform_show",
+        "receive_orders_from_nobility"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "ACCO__return_kettle_to_temple",
+      "source": "ACCO",
+      "target_action": "return_kettle_to_temple",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 5,
+      "truth_comparisons": 1095,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrange_exhibition",
+        "perform_show",
+        "receive_orders_from_nobility",
+        "return_kettle_to_temple"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "ACCO__sell_kettle_to_tinker",
+      "source": "ACCO",
+      "target_action": "sell_kettle_to_tinker",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "sell_kettle_to_tinker"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "ACCO__show_kettle_to_friend",
+      "source": "ACCO",
+      "target_action": "show_kettle_to_friend",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "show_kettle_to_friend"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "ACCO__tinker_carry_home",
+      "source": "ACCO",
+      "target_action": "tinker_carry_home",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 2,
+      "truth_comparisons": 438,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "tinker_carry_home"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "ACCO__worship_kettle_as_saint",
+      "source": "ACCO",
+      "target_action": "worship_kettle_as_saint",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 219,
+      "states_compared": 6,
+      "truth_comparisons": 1314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrange_exhibition",
+        "perform_show",
+        "receive_orders_from_nobility",
+        "return_kettle_to_temple",
+        "worship_kettle_as_saint"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "BIRT__accept_dryad_invitation",
+      "source": "BIRT",
+      "target_action": "accept_dryad_invitation",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "accept_dryad_invitation",
+        "turn_key_on_beech"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__approach_beech_tree",
+      "source": "BIRT",
+      "target_action": "approach_beech_tree",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 4,
+      "truth_comparisons": 2932,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_beech_tree",
+        "hear_tapping_on_beech",
+        "travel_to_trysting_place"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "BIRT__eat_pellet_and_shrink",
+      "source": "BIRT",
+      "target_action": "eat_pellet_and_shrink",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "eat_pellet_and_shrink",
+        "turn_key_on_beech"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__enter_tree_and_descend_stairs",
+      "source": "BIRT",
+      "target_action": "enter_tree_and_descend_stairs",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "enter_tree_and_descend_stairs",
+        "turn_key_on_beech"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__hear_tapping_on_beech",
+      "source": "BIRT",
+      "target_action": "hear_tapping_on_beech",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hear_tapping_on_beech",
+        "travel_to_trysting_place"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__receive_pellet_from_gnome",
+      "source": "BIRT",
+      "target_action": "receive_pellet_from_gnome",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "receive_pellet_from_gnome",
+        "turn_key_on_beech"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__receive_queen_kiss",
+      "source": "BIRT",
+      "target_action": "receive_queen_kiss",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "receive_queen_kiss",
+        "travel_to_trysting_place"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__return_to_bench_and_share_story",
+      "source": "BIRT",
+      "target_action": "return_to_bench_and_share_story",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 3,
+      "truth_comparisons": 2199,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "return_to_bench_and_share_story",
+        "travel_to_trysting_place"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BIRT__travel_by_leaf_boat_under_pond",
+      "source": "BIRT",
+      "target_action": "travel_by_leaf_boat_under_pond",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "BIRT__travel_to_trysting_place",
+      "source": "BIRT",
+      "target_action": "travel_to_trysting_place",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 2,
+      "truth_comparisons": 1466,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "travel_to_trysting_place"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BIRT__turn_key_on_beech",
+      "source": "BIRT",
+      "target_action": "turn_key_on_beech",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 2,
+      "truth_comparisons": 1466,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "turn_key_on_beech"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BIRT__witness_queen_birthday_ceremony",
+      "source": "BIRT",
+      "target_action": "witness_queen_birthday_ceremony",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 733,
+      "states_compared": 2,
+      "truth_comparisons": 1466,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "witness_queen_birthday_ceremony"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BUFF__audience_applaud_performance",
+      "source": "BUFF",
+      "target_action": "audience_applaud_performance",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "BUFF__audience_criticize_countryman_and_call_for_kickout",
+      "source": "BUFF",
+      "target_action": "audience_criticize_countryman_and_call_for_kickout",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 4,
+      "truth_comparisons": 824,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "audience_criticize_countryman_and_call_for_kickout",
+        "countryman_declare_intent_to_repeat_trick",
+        "countryman_perform_pig_imitation_with_real_pig"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "BUFF__audience_demand_shake_cloak_for_pig",
+      "source": "BUFF",
+      "target_action": "audience_demand_shake_cloak_for_pig",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 2,
+      "truth_comparisons": 412,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "audience_demand_shake_cloak_for_pig"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BUFF__countryman_declare_intent_to_repeat_trick",
+      "source": "BUFF",
+      "target_action": "countryman_declare_intent_to_repeat_trick",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 2,
+      "truth_comparisons": 412,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "countryman_declare_intent_to_repeat_trick"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BUFF__countryman_perform_pig_imitation_with_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_perform_pig_imitation_with_real_pig",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 3,
+      "truth_comparisons": 618,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "countryman_declare_intent_to_repeat_trick",
+        "countryman_perform_pig_imitation_with_real_pig"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "BUFF__countryman_reveal_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_reveal_real_pig",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 5,
+      "truth_comparisons": 1030,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "audience_criticize_countryman_and_call_for_kickout",
+        "countryman_declare_intent_to_repeat_trick",
+        "countryman_perform_pig_imitation_with_real_pig",
+        "countryman_reveal_real_pig"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "BUFF__open_theater_and_announce_reward",
+      "source": "BUFF",
+      "target_action": "open_theater_and_announce_reward",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 2,
+      "truth_comparisons": 412,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "open_theater_and_announce_reward"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "BUFF__perform_pig_imitation_without_apparatus",
+      "source": "BUFF",
+      "target_action": "perform_pig_imitation_without_apparatus",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 206,
+      "states_compared": 2,
+      "truth_comparisons": 412,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "perform_pig_imitation_without_apparatus"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "CHIC_NP__be_eaten_by_fox",
+      "source": "CHIC_NP",
+      "target_action": "be_eaten_by_fox",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 6,
+      "truth_comparisons": 1680,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "be_eaten_by_fox",
+        "decide_to_tell_king",
+        "follow_fox",
+        "inform_about_sky_fall",
+        "meet_character"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "CHIC_NP__decide_to_tell_king",
+      "source": "CHIC_NP",
+      "target_action": "decide_to_tell_king",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 4,
+      "truth_comparisons": 1120,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "decide_to_tell_king",
+        "inform_about_sky_fall",
+        "meet_character"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "CHIC_NP__follow_fox",
+      "source": "CHIC_NP",
+      "target_action": "follow_fox",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 5,
+      "truth_comparisons": 1400,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "decide_to_tell_king",
+        "follow_fox",
+        "inform_about_sky_fall",
+        "meet_character"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "CHIC_NP__go_to_wood",
+      "source": "CHIC_NP",
+      "target_action": "go_to_wood",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 2,
+      "truth_comparisons": 560,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "go_to_wood"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "CHIC_NP__inform_about_sky_fall",
+      "source": "CHIC_NP",
+      "target_action": "inform_about_sky_fall",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 3,
+      "truth_comparisons": 840,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "inform_about_sky_fall",
+        "meet_character"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "CHIC_NP__meet_character",
+      "source": "CHIC_NP",
+      "target_action": "meet_character",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 2,
+      "truth_comparisons": 560,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "meet_character"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "CHIC_NP__turn_back",
+      "source": "CHIC_NP",
+      "target_action": "turn_back",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 280,
+      "states_compared": 2,
+      "truth_comparisons": 560,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "turn_back"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "FOUR_NP__count_eggs",
+      "source": "FOUR_NP",
+      "target_action": "count_eggs",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__fetch_eggs",
+      "source": "FOUR_NP",
+      "target_action": "fetch_eggs",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__learn_astronomer_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_astronomer_trade",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__learn_hunter_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_hunter_trade",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__learn_tailor_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_tailor_trade",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__learn_thief_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_thief_trade",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__leave_home",
+      "source": "FOUR_NP",
+      "target_action": "leave_home",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 442,
+      "states_compared": 2,
+      "truth_comparisons": 884,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "leave_home"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "FOUR_NP__locate_princess",
+      "source": "FOUR_NP",
+      "target_action": "locate_princess",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__obtain_ship",
+      "source": "FOUR_NP",
+      "target_action": "obtain_ship",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__receive_reward",
+      "source": "FOUR_NP",
+      "target_action": "receive_reward",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__repair_ship",
+      "source": "FOUR_NP",
+      "target_action": "repair_ship",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__return_eggs_to_nest",
+      "source": "FOUR_NP",
+      "target_action": "return_eggs_to_nest",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__return_home_with_princess",
+      "source": "FOUR_NP",
+      "target_action": "return_home_with_princess",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__reunite_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "reunite_at_crossroads",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__sail_to_rock",
+      "source": "FOUR_NP",
+      "target_action": "sail_to_rock",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__separate_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "separate_at_crossroads",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__sew_eggs",
+      "source": "FOUR_NP",
+      "target_action": "sew_eggs",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__shoot_dragon",
+      "source": "FOUR_NP",
+      "target_action": "shoot_dragon",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__shoot_eggs",
+      "source": "FOUR_NP",
+      "target_action": "shoot_eggs",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__steal_princess",
+      "source": "FOUR_NP",
+      "target_action": "steal_princess",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "FOUR_NP__swim_after_ship_break",
+      "source": "FOUR_NP",
+      "target_action": "swim_after_ship_break",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__abandon_children_in_forest",
+      "source": "HANS_NP",
+      "target_action": "abandon_children_in_forest",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__call_duck_for_crossing",
+      "source": "HANS_NP",
+      "target_action": "call_duck_for_crossing",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__collect_treasure",
+      "source": "HANS_NP",
+      "target_action": "collect_treasure",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__drop_breadcrumb_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_breadcrumb_on_path",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__drop_pebble_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_pebble_on_path",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__enter_witch_house",
+      "source": "HANS_NP",
+      "target_action": "enter_witch_house",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__escape_from_stable",
+      "source": "HANS_NP",
+      "target_action": "escape_from_stable",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__follow_breadcrumbs_home",
+      "source": "HANS_NP",
+      "target_action": "follow_breadcrumbs_home",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__follow_pebbles_home",
+      "source": "HANS_NP",
+      "target_action": "follow_pebbles_home",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__hear_bird_and_follow_to_witch_house",
+      "source": "HANS_NP",
+      "target_action": "hear_bird_and_follow_to_witch_house",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__leave_children_at_fire",
+      "source": "HANS_NP",
+      "target_action": "leave_children_at_fire",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__push_witch_into_oven",
+      "source": "HANS_NP",
+      "target_action": "push_witch_into_oven",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__return_home_and_reunite_with_father",
+      "source": "HANS_NP",
+      "target_action": "return_home_and_reunite_with_father",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__wander_forest_seeking_way_out",
+      "source": "HANS_NP",
+      "target_action": "wander_forest_seeking_way_out",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "HANS_NP__witch_captures_children",
+      "source": "HANS_NP",
+      "target_action": "witch_captures_children",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__ask_giant_wife_for_breakfast",
+      "source": "JACK_NP",
+      "target_action": "ask_giant_wife_for_breakfast",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 2,
+      "truth_comparisons": 836,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "ask_giant_wife_for_breakfast"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "JACK_NP__climb_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "climb_beanstalk",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__cut_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "cut_beanstalk",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__grow_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "grow_beanstalk",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 3,
+      "truth_comparisons": 1254,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "grow_beanstalk",
+        "plant_beans"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "JACK_NP__hide_in_kettle",
+      "source": "JACK_NP",
+      "target_action": "hide_in_kettle",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__hide_in_oven",
+      "source": "JACK_NP",
+      "target_action": "hide_in_oven",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 2,
+      "truth_comparisons": 836,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "hide_in_oven"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "JACK_NP__plant_beans",
+      "source": "JACK_NP",
+      "target_action": "plant_beans",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 2,
+      "truth_comparisons": 836,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "plant_beans"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "JACK_NP__return_down_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "return_down_beanstalk",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 2,
+      "truth_comparisons": 836,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "return_down_beanstalk"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "JACK_NP__sell_cow_for_beans",
+      "source": "JACK_NP",
+      "target_action": "sell_cow_for_beans",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 418,
+      "states_compared": 2,
+      "truth_comparisons": 836,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "sell_cow_for_beans"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "JACK_NP__steal_gold_bags",
+      "source": "JACK_NP",
+      "target_action": "steal_gold_bags",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__steal_harp",
+      "source": "JACK_NP",
+      "target_action": "steal_harp",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "JACK_NP__steal_hen",
+      "source": "JACK_NP",
+      "target_action": "steal_hen",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__approach_cottage",
+      "source": "MUSI",
+      "target_action": "approach_cottage",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__cat_agrees",
+      "source": "MUSI",
+      "target_action": "cat_agrees",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__cat_attack_messenger",
+      "source": "MUSI",
+      "target_action": "cat_attack_messenger",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__choose_sleep_spot",
+      "source": "MUSI",
+      "target_action": "choose_sleep_spot",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__cock_agrees",
+      "source": "MUSI",
+      "target_action": "cock_agrees",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__cock_crow_alert",
+      "source": "MUSI",
+      "target_action": "cock_crow_alert",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__dog_bite_messenger",
+      "source": "MUSI",
+      "target_action": "dog_bite_messenger",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__donkey_kick_messenger",
+      "source": "MUSI",
+      "target_action": "donkey_kick_messenger",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__eat_feast",
+      "source": "MUSI",
+      "target_action": "eat_feast",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__extinguish_light",
+      "source": "MUSI",
+      "target_action": "extinguish_light",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__hound_agrees",
+      "source": "MUSI",
+      "target_action": "hound_agrees",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__invite_cat",
+      "source": "MUSI",
+      "target_action": "invite_cat",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__invite_cock",
+      "source": "MUSI",
+      "target_action": "invite_cock",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__invite_hound",
+      "source": "MUSI",
+      "target_action": "invite_hound",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__messenger_attempt_light",
+      "source": "MUSI",
+      "target_action": "messenger_attempt_light",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__plan_scaring_robbers",
+      "source": "MUSI",
+      "target_action": "plan_scaring_robbers",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__rest_in_forest",
+      "source": "MUSI",
+      "target_action": "rest_in_forest",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__robbers_flee",
+      "source": "MUSI",
+      "target_action": "robbers_flee",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__robbers_retreat",
+      "source": "MUSI",
+      "target_action": "robbers_retreat",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__run_away",
+      "source": "MUSI",
+      "target_action": "run_away",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__signal_and_make_noise",
+      "source": "MUSI",
+      "target_action": "signal_and_make_noise",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__spot_light",
+      "source": "MUSI",
+      "target_action": "spot_light",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__stack_animals",
+      "source": "MUSI",
+      "target_action": "stack_animals",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "MUSI__travel_together",
+      "source": "MUSI",
+      "target_action": "travel_together",
+      "solver_status": "wall_time_limit",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "NAUG__approach_sun",
+      "source": "NAUG",
+      "target_action": "approach_sun",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 4,
+      "truth_comparisons": 2128,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "NAUG__arrest_meteor",
+      "source": "NAUG",
+      "target_action": "arrest_meteor",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 5,
+      "truth_comparisons": 2660,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "arrest_meteor",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "NAUG__avoid_body",
+      "source": "NAUG",
+      "target_action": "avoid_body",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 5,
+      "truth_comparisons": 2660,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "avoid_body",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "NAUG__burn_up",
+      "source": "NAUG",
+      "target_action": "burn_up",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 5,
+      "truth_comparisons": 2660,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "burn_up",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "NAUG__call_comet_forward",
+      "source": "NAUG",
+      "target_action": "call_comet_forward",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 2,
+      "truth_comparisons": 1064,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "call_comet_forward"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "NAUG__cross_out_comet",
+      "source": "NAUG",
+      "target_action": "cross_out_comet",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 6,
+      "truth_comparisons": 3192,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "burn_up",
+        "cross_out_comet",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "NAUG__deliver_meteor_to_bungo",
+      "source": "NAUG",
+      "target_action": "deliver_meteor_to_bungo",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 6,
+      "truth_comparisons": 3192,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "arrest_meteor",
+        "deliver_meteor_to_bungo",
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "NAUG__give_order",
+      "source": "NAUG",
+      "target_action": "give_order",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 2,
+      "truth_comparisons": 1064,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "give_order"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "NAUG__prohibit_speaking_to_meteor",
+      "source": "NAUG",
+      "target_action": "prohibit_speaking_to_meteor",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 3,
+      "truth_comparisons": 1596,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "give_order",
+        "prohibit_speaking_to_meteor"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "NAUG__punish_meteor",
+      "source": "NAUG",
+      "target_action": "punish_meteor",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 7,
+      "truth_comparisons": 3724,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "arrest_meteor",
+        "deliver_meteor_to_bungo",
+        "give_order",
+        "punish_meteor",
+        "start_travel"
+      ],
+      "plan_length": 6
+    },
+    {
+      "id": "NAUG__speak_to_meteor",
+      "source": "NAUG",
+      "target_action": "speak_to_meteor",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 5,
+      "truth_comparisons": 2660,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "approach_sun",
+        "give_order",
+        "speak_to_meteor",
+        "start_travel"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "NAUG__start_travel",
+      "source": "NAUG",
+      "target_action": "start_travel",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 532,
+      "states_compared": 3,
+      "truth_comparisons": 1596,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "give_order",
+        "start_travel"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "NAUG__turn_left_on_meeting",
+      "source": "NAUG",
+      "target_action": "turn_left_on_meeting",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__ask_for_material",
+      "source": "PIGS_NP",
+      "target_action": "ask_for_material",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__build_house",
+      "source": "PIGS_NP",
+      "target_action": "build_house",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 4,
+      "truth_comparisons": 5392,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "PIGS_NP__pig_buys_butter_churn_and_hides",
+      "source": "PIGS_NP",
+      "target_action": "pig_buys_butter_churn_and_hides",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__pig_collects_apples_and_escapes",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_apples_and_escapes",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 3,
+      "truth_comparisons": 4044,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "pig_collects_apples_and_escapes",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "PIGS_NP__pig_collects_turnips",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_turnips",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 3,
+      "truth_comparisons": 4044,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "pig_collects_turnips",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+      "source": "PIGS_NP",
+      "target_action": "pig_prepares_boiling_pot_and_fire",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 4,
+      "truth_comparisons": 5392,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "pig_collects_apples_and_escapes",
+        "pig_prepares_boiling_pot_and_fire",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "PIGS_NP__pig_refuses_entry",
+      "source": "PIGS_NP",
+      "target_action": "pig_refuses_entry",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 6,
+      "truth_comparisons": 8088,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_refuses_entry",
+        "wolf_attempts_chimney_entry",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "PIGS_NP__pig_rolls_churn_down_hill",
+      "source": "PIGS_NP",
+      "target_action": "pig_rolls_churn_down_hill",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__receive_material",
+      "source": "PIGS_NP",
+      "target_action": "receive_material",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__send_sons_on_journey",
+      "source": "PIGS_NP",
+      "target_action": "send_sons_on_journey",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 2,
+      "truth_comparisons": 2696,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "send_sons_on_journey"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PIGS_NP__wolf_attempts_chimney_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_attempts_chimney_entry",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 5,
+      "truth_comparisons": 6740,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "wolf_attempts_chimney_entry",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "PIGS_NP__wolf_blows_house_down",
+      "source": "PIGS_NP",
+      "target_action": "wolf_blows_house_down",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 8,
+      "truth_comparisons": 10784,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_refuses_entry",
+        "wolf_attempts_chimney_entry",
+        "wolf_blows_house_down",
+        "wolf_huff_and_puff",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 7
+    },
+    {
+      "id": "PIGS_NP__wolf_eats_pig",
+      "source": "PIGS_NP",
+      "target_action": "wolf_eats_pig",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 9,
+      "truth_comparisons": 12132,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_refuses_entry",
+        "wolf_attempts_chimney_entry",
+        "wolf_blows_house_down",
+        "wolf_eats_pig",
+        "wolf_huff_and_puff",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 8
+    },
+    {
+      "id": "PIGS_NP__wolf_fails_to_blow_house",
+      "source": "PIGS_NP",
+      "target_action": "wolf_fails_to_blow_house",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 8,
+      "truth_comparisons": 10784,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_refuses_entry",
+        "wolf_attempts_chimney_entry",
+        "wolf_fails_to_blow_house",
+        "wolf_huff_and_puff",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 7
+    },
+    {
+      "id": "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+      "source": "PIGS_NP",
+      "target_action": "wolf_falls_into_pot_and_is_boiled",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 5,
+      "truth_comparisons": 6740,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "pig_collects_apples_and_escapes",
+        "pig_prepares_boiling_pot_and_fire",
+        "wolf_falls_into_pot_and_is_boiled",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "PIGS_NP__wolf_flees_from_rolling_object",
+      "source": "PIGS_NP",
+      "target_action": "wolf_flees_from_rolling_object",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PIGS_NP__wolf_huff_and_puff",
+      "source": "PIGS_NP",
+      "target_action": "wolf_huff_and_puff",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 7,
+      "truth_comparisons": 9436,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_refuses_entry",
+        "wolf_attempts_chimney_entry",
+        "wolf_huff_and_puff",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 6
+    },
+    {
+      "id": "PIGS_NP__wolf_knocks_and_requests_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_knocks_and_requests_entry",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 5,
+      "truth_comparisons": 6740,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "wolf_knocks_and_requests_entry",
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_apple_orchard",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_apple_orchard",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 2,
+      "truth_comparisons": 2696,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "wolf_promises_apple_orchard"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_fair_trip",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_fair_trip",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 2,
+      "truth_comparisons": 2696,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "wolf_promises_fair_trip"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_turnip_field",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_turnip_field",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1348,
+      "states_compared": 2,
+      "truth_comparisons": 2696,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "wolf_promises_turnip_field"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__buy_boots",
+      "source": "PUSS",
+      "target_action": "buy_boots",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "buy_boots"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__cat_call_for_help",
+      "source": "PUSS",
+      "target_action": "cat_call_for_help",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__cat_catch_rabbits",
+      "source": "PUSS",
+      "target_action": "cat_catch_rabbits",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "cat_catch_rabbits"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__cat_deliver_gifts_to_king",
+      "source": "PUSS",
+      "target_action": "cat_deliver_gifts_to_king",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__cat_disentchant_prisoners",
+      "source": "PUSS",
+      "target_action": "cat_disentchant_prisoners",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "cat_disentchant_prisoners"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__cat_eat_mouse",
+      "source": "PUSS",
+      "target_action": "cat_eat_mouse",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 3,
+      "truth_comparisons": 4971,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "cat_eat_mouse",
+        "cat_ogre_transform_mouse"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_lion",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_lion",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_mouse",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_mouse",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "cat_ogre_transform_mouse"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__cat_open_castle_gates",
+      "source": "PUSS",
+      "target_action": "cat_open_castle_gates",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__cat_persuade_master_to_bathe",
+      "source": "PUSS",
+      "target_action": "cat_persuade_master_to_bathe",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__give_bag_to_cat",
+      "source": "PUSS",
+      "target_action": "give_bag_to_cat",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "give_bag_to_cat"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__king_send_groom_fetch_suit",
+      "source": "PUSS",
+      "target_action": "king_send_groom_fetch_suit",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_send_groom_fetch_suit"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "PUSS__master_marry_princess",
+      "source": "PUSS",
+      "target_action": "master_marry_princess",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "PUSS__master_wear_suit",
+      "source": "PUSS",
+      "target_action": "master_wear_suit",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1657,
+      "states_compared": 2,
+      "truth_comparisons": 3314,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "master_wear_suit"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "REMA_NP__arrive_at_marble_palace",
+      "source": "REMA_NP",
+      "target_action": "arrive_at_marble_palace",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrive_at_marble_palace",
+        "encounter_robbers_in_forest"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "REMA_NP__encounter_impostor_king",
+      "source": "REMA_NP",
+      "target_action": "encounter_impostor_king",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_impostor_king",
+        "run_away_from_palace"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "REMA_NP__encounter_robbers_in_forest",
+      "source": "REMA_NP",
+      "target_action": "encounter_robbers_in_forest",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 2,
+      "truth_comparisons": 166,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_robbers_in_forest"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "REMA_NP__king_proposes_marriage",
+      "source": "REMA_NP",
+      "target_action": "king_proposes_marriage",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 2,
+      "truth_comparisons": 166,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_proposes_marriage"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "REMA_NP__king_requests_information_and_gifts",
+      "source": "REMA_NP",
+      "target_action": "king_requests_information_and_gifts",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 4,
+      "truth_comparisons": 332,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "arrive_at_marble_palace",
+        "encounter_robbers_in_forest",
+        "king_requests_information_and_gifts"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "REMA_NP__princess_accepts_with_heart",
+      "source": "REMA_NP",
+      "target_action": "princess_accepts_with_heart",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_proposes_marriage",
+        "princess_accepts_with_heart"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "REMA_NP__receive_rubies_from_impostor",
+      "source": "REMA_NP",
+      "target_action": "receive_rubies_from_impostor",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "receive_rubies_from_impostor",
+        "utter_phrase_price_of_butter"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "REMA_NP__receive_sapphires_from_robber_chief",
+      "source": "REMA_NP",
+      "target_action": "receive_sapphires_from_robber_chief",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 4,
+      "truth_comparisons": 332,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_robbers_in_forest",
+        "receive_sapphires_from_robber_chief",
+        "utter_phrase_grandmother_mangle"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "REMA_NP__run_away_from_palace",
+      "source": "REMA_NP",
+      "target_action": "run_away_from_palace",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 2,
+      "truth_comparisons": 166,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "run_away_from_palace"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "REMA_NP__suitors_retire_due_to_phrase",
+      "source": "REMA_NP",
+      "target_action": "suitors_retire_due_to_phrase",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 4,
+      "truth_comparisons": 332,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_robbers_in_forest",
+        "suitors_retire_due_to_phrase",
+        "utter_phrase_grandmother_mangle"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "REMA_NP__utter_phrase_grandmother_mangle",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_grandmother_mangle",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 3,
+      "truth_comparisons": 249,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_robbers_in_forest",
+        "utter_phrase_grandmother_mangle"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "REMA_NP__utter_phrase_price_of_butter",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_price_of_butter",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 83,
+      "states_compared": 2,
+      "truth_comparisons": 166,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "utter_phrase_price_of_butter"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__apple_piece_falls_out_reviving_snow_white",
+      "source": "SNOW",
+      "target_action": "apple_piece_falls_out_reviving_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 4,
+      "truth_comparisons": 5872,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "apple_piece_falls_out_reviving_snow_white",
+        "huntsman_spares_snow_white_and_brings_boar_heart",
+        "stepmother_makes_poisonous_apple_and_visits_cottage"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "SNOW__child_is_born_and_queen_dies",
+      "source": "SNOW",
+      "target_action": "child_is_born_and_queen_dies",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "child_is_born_and_queen_dies"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__dwarfs_cut_laces_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_cut_laces_rescue_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 4,
+      "truth_comparisons": 5872,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_cut_laces_rescue_snow_white",
+        "huntsman_spares_snow_white_and_brings_boar_heart",
+        "stepmother_laces_snow_white_tightly"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "SNOW__dwarfs_offer_snow_white_to_maintain_house",
+      "source": "SNOW",
+      "target_action": "dwarfs_offer_snow_white_to_maintain_house",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_offer_snow_white_to_maintain_house",
+        "snow_white_sleeps_in_seventh_bed"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_prepare_glass_coffin_for_snow_white",
+        "huntsman_spares_snow_white_and_brings_boar_heart"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__dwarfs_remove_comb_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_remove_comb_rescue_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 4,
+      "truth_comparisons": 5872,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_remove_comb_rescue_snow_white",
+        "huntsman_spares_snow_white_and_brings_boar_heart",
+        "stepmother_makes_poisonous_apple_and_visits_cottage"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "SNOW__dwarfs_return_and_discover_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_return_and_discover_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_return_and_discover_snow_white",
+        "snow_white_sleeps_in_seventh_bed"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__huntsman_spares_snow_white_and_brings_boar_heart",
+      "source": "SNOW",
+      "target_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "huntsman_spares_snow_white_and_brings_boar_heart"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__king_marries_stepmother",
+      "source": "SNOW",
+      "target_action": "king_marries_stepmother",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_marries_stepmother"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__prince_discovers_coffin_and_moves_it",
+      "source": "SNOW",
+      "target_action": "prince_discovers_coffin_and_moves_it",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 4,
+      "truth_comparisons": 5872,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "dwarfs_prepare_glass_coffin_for_snow_white",
+        "huntsman_spares_snow_white_and_brings_boar_heart",
+        "prince_discovers_coffin_and_moves_it"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "SNOW__prince_marries_snow_white",
+      "source": "SNOW",
+      "target_action": "prince_marries_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "prince_marries_snow_white"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__queen_pricks_finger",
+      "source": "SNOW",
+      "target_action": "queen_pricks_finger",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "queen_pricks_finger"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__queen_sews_at_window",
+      "source": "SNOW",
+      "target_action": "queen_sews_at_window",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "queen_sews_at_window",
+        "snow_white_finds_dwarfs_cottage"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__queen_wishes_child_white_red_black",
+      "source": "SNOW",
+      "target_action": "queen_wishes_child_white_red_black",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "queen_wishes_child_white_red_black"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__snow_white_eats_poisoned_apple_and_dies",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_poisoned_apple_and_dies",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "snow_white_eats_poisoned_apple_and_dies",
+        "stepmother_makes_poisonous_apple_and_visits_cottage"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "snow_white_eats_vegetables_and_bread_and_drinks_wine"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__snow_white_finds_dwarfs_cottage",
+      "source": "SNOW",
+      "target_action": "snow_white_finds_dwarfs_cottage",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "snow_white_finds_dwarfs_cottage"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__snow_white_flees_into_forest",
+      "source": "SNOW",
+      "target_action": "snow_white_flees_into_forest",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "snow_white_flees_into_forest"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__snow_white_sleeps_in_seventh_bed",
+      "source": "SNOW",
+      "target_action": "snow_white_sleeps_in_seventh_bed",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "snow_white_sleeps_in_seventh_bed"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_asks_looking_glass_fairest",
+      "source": "SNOW",
+      "target_action": "stepmother_asks_looking_glass_fairest",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_asks_looking_glass_fairest"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "source": "SNOW",
+      "target_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_becomes_envious_of_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_becomes_envious_of_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 4,
+      "truth_comparisons": 5872,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_marries_stepmother",
+        "stepmother_asks_looking_glass_fairest",
+        "stepmother_becomes_envious_of_snow_white"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "SNOW__stepmother_comb_poison_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_comb_poison_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 3,
+      "truth_comparisons": 4404,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_comb_poison_snow_white",
+        "stepmother_makes_poisonous_apple_and_visits_cottage"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SNOW__stepmother_disguises_as_old_woman_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_disguises_as_old_woman_and_visits_cottage"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "source": "SNOW",
+      "target_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_laces_snow_white_tightly",
+      "source": "SNOW",
+      "target_action": "stepmother_laces_snow_white_tightly",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_laces_snow_white_tightly"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_apple_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_makes_poisonous_apple_and_visits_cottage"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_comb_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 2,
+      "truth_comparisons": 2936,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "stepmother_makes_poisonous_comb_and_visits_cottage"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SNOW__stepmother_orders_huntsman_to_kill_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_orders_huntsman_to_kill_snow_white",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 1468,
+      "states_compared": 5,
+      "truth_comparisons": 7340,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "king_marries_stepmother",
+        "stepmother_asks_looking_glass_fairest",
+        "stepmother_becomes_envious_of_snow_white",
+        "stepmother_orders_huntsman_to_kill_snow_white"
+      ],
+      "plan_length": 4
+    },
+    {
+      "id": "SOUP__claim_queenhood",
+      "source": "SOUP",
+      "target_action": "claim_queenhood",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 3,
+      "truth_comparisons": 915,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "claim_queenhood",
+        "prepare_soup_by_king_tail"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SOUP__escape_jail",
+      "source": "SOUP",
+      "target_action": "escape_jail",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "SOUP__give_skewer_to_elves",
+      "source": "SOUP",
+      "target_action": "give_skewer_to_elves",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "give_skewer_to_elves"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SOUP__learn_wisdom_from_ants",
+      "source": "SOUP",
+      "target_action": "learn_wisdom_from_ants",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "learn_wisdom_from_ants"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SOUP__prepare_soup_by_elf_effect",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_elf_effect",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "SOUP__prepare_soup_by_king_tail",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_king_tail",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "prepare_soup_by_king_tail"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SOUP__prepare_soup_by_poet_imagination",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_poet_imagination",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 6,
+      "truth_comparisons": 1830,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "learn_wisdom_from_ants",
+        "prepare_soup_by_poet_imagination",
+        "read_and_digest_books",
+        "receive_feather",
+        "travel_to"
+      ],
+      "plan_length": 5
+    },
+    {
+      "id": "SOUP__read_and_digest_books",
+      "source": "SOUP",
+      "target_action": "read_and_digest_books",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 3,
+      "truth_comparisons": 915,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "read_and_digest_books",
+        "travel_to"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "SOUP__receive_anointed_skewer",
+      "source": "SOUP",
+      "target_action": "receive_anointed_skewer",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "SOUP__receive_feather",
+      "source": "SOUP",
+      "target_action": "receive_feather",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "receive_feather"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "SOUP__run_in_cage",
+      "source": "SOUP",
+      "target_action": "run_in_cage",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "SOUP__travel_to",
+      "source": "SOUP",
+      "target_action": "travel_to",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 305,
+      "states_compared": 2,
+      "truth_comparisons": 610,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "travel_to"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__accept_woe_as_burden",
+      "source": "WOE",
+      "target_action": "accept_woe_as_burden",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 3,
+      "truth_comparisons": 1947,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "accept_woe_as_burden",
+        "rich_brother_attempt_to_move_stone"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "WOE__allow_woe_to_ride_on_shoulder",
+      "source": "WOE",
+      "target_action": "allow_woe_to_ride_on_shoulder",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 3,
+      "truth_comparisons": 1947,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "allow_woe_to_ride_on_shoulder",
+        "encounter_bitter_woe"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "WOE__bow_to_guests",
+      "source": "WOE",
+      "target_action": "bow_to_guests",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "WOE__encounter_bitter_woe",
+      "source": "WOE",
+      "target_action": "encounter_bitter_woe",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "encounter_bitter_woe"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__hide_woe_under_stone",
+      "source": "WOE",
+      "target_action": "hide_woe_under_stone",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 4,
+      "truth_comparisons": 2596,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "allow_woe_to_ride_on_shoulder",
+        "encounter_bitter_woe",
+        "hide_woe_under_stone"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "WOE__invite_rich_brother_to_feast",
+      "source": "WOE",
+      "target_action": "invite_rich_brother_to_feast",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "invite_rich_brother_to_feast"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__make_sign_of_cross",
+      "source": "WOE",
+      "target_action": "make_sign_of_cross",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "make_sign_of_cross"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__move_heavy_stone",
+      "source": "WOE",
+      "target_action": "move_heavy_stone",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "move_heavy_stone"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__perform_work_for_rich_brother",
+      "source": "WOE",
+      "target_action": "perform_work_for_rich_brother",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 3,
+      "truth_comparisons": 1947,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "perform_work_for_rich_brother",
+        "request_help_from_rich_brother"
+      ],
+      "plan_length": 2
+    },
+    {
+      "id": "WOE__receive_payment",
+      "source": "WOE",
+      "target_action": "receive_payment",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 4,
+      "truth_comparisons": 2596,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "perform_work_for_rich_brother",
+        "receive_payment",
+        "request_help_from_rich_brother"
+      ],
+      "plan_length": 3
+    },
+    {
+      "id": "WOE__request_help_from_rich_brother",
+      "source": "WOE",
+      "target_action": "request_help_from_rich_brother",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "request_help_from_rich_brother"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__rich_brother_attempt_to_move_stone",
+      "source": "WOE",
+      "target_action": "rich_brother_attempt_to_move_stone",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "rich_brother_attempt_to_move_stone"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__sing_cheerful_song",
+      "source": "WOE",
+      "target_action": "sing_cheerful_song",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "sing_cheerful_song"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__spend_money_on_drink",
+      "source": "WOE",
+      "target_action": "spend_money_on_drink",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "spend_money_on_drink"
+      ],
+      "plan_length": 1
+    },
+    {
+      "id": "WOE__stay_for_banquet",
+      "source": "WOE",
+      "target_action": "stay_for_banquet",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "WOE__take_gold_pot_and_hide",
+      "source": "WOE",
+      "target_action": "take_gold_pot_and_hide",
+      "solver_status": "unsolvable",
+      "status": "no_audited_source_trace"
+    },
+    {
+      "id": "WOE__trade_assets_for_money",
+      "source": "WOE",
+      "target_action": "trade_assets_for_money",
+      "solver_status": "solved",
+      "status": "PASS",
+      "source_ground_atoms": 649,
+      "states_compared": 2,
+      "truth_comparisons": 1298,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "visited_actions": [
+        "trade_assets_for_money"
+      ],
+      "plan_length": 1
+    }
+  ],
+  "counts": {
+    "PASS": 146,
+    "no_audited_source_trace": 88
+  },
+  "states_compared": 459,
+  "truth_comparisons": 354757,
+  "mismatch_count": 0,
+  "hashes_unchanged": true,
+  "frozen_sha256": {
+    "data\\validation\\source_action_reachability_tasks_2026_10_15_v1\\manifest.json": "b04b7ba8e25530f10a1575a276bf32f5af59260bef9d871b244cf24e1dfa5059",
+    "data\\validation\\action_reachability_audit_2026_10_15_v1\\report.json": "179217e9daf81532f7391c8686d3c2e6acc3ac7bfe6dc3ba46a4d96fb20eef3b",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\meta_domain.json": "7b224eaa651405e03f459f1047d5799f48087881d9fa54358e55f698dce25637",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\meta_domain.pddl": "5b3e303c8f9ff31b097b1c0c53cd8a992049805d27fafe982d8919e9bbee4e41",
+    "C:\\anu\\uninamain\\replay_action_reachability.py": "e26e263d01be5aaaaa7cf60c71f4432905abde202cbca692c8b769dbafa3cf61",
+    "rcnc\\trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\ACCO_problemfile.pddl": "19202e2b56810a534d6a7ca952a6f8e25f74460810b029f033cd33c408fc119d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__arrange_exhibition\\plan.txt": "edecec3286a8a79f4f0aaaa203bce3ed2818eb812d4a5879e91f860feb37ebb8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__call_novices\\plan.txt": "b25046a7322fb23ffefdec6d8cc648dbacc149b99370e13334cdb99a6ff66cf0",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__force_kettle_into_box\\plan.txt": "646235c0e6a50e91e6085b27ac1edc6cb0fe866bca6c125bdd10afb18da92cfe",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__hang_kettle\\plan.txt": "d665587fc1e30fdee97e202d0885caf1302530404f53b892cc381b3ddb089502",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__kettle_jump_and_fly\\plan.txt": "ac9cf777c3c8c8a8baec0919231dcb15ff382f25d9bcfd2c778a8523ba4f239d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__kettle_transform_to_badger\\plan.txt": "8ee547b351d7ceabf560ad869a14f5249e8e99bd6440cddac62dd2c920f33760",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__knock_down_kettle\\plan.txt": "129d7eaa608e4cfaec87de5cb65fcd8920cc50b1f9c0a317aa653eb7f0b429f5",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__perform_show\\plan.txt": "477d34b2cb263e268675d972433888b23f318fad15829693b2e20898174c4040",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__pursue_kettle\\plan.txt": "2efd3862fde1d02e98fac7392c718ab13eac554f9bdb35c02ca20a8fcc3453fc",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__receive_orders_from_nobility\\plan.txt": "cfc2caae0915f2a213b1d991bd7a56f50faa0cce8d0f019569587d1b289ac212",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__return_kettle_to_temple\\plan.txt": "3485da8413253258bdc33b75da45b361914f1aaa76662f1186bd970fa0b2e7b4",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__sell_kettle_to_tinker\\plan.txt": "f5883731add97df5388e970efcb97a15d838eda2668cbd58c5903e5328f7900a",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__show_kettle_to_friend\\plan.txt": "deb4bb170d2ebc5bb57071e0e5c6d396259dd2532563edd77bd28bf9d4bc3db1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__tinker_carry_home\\plan.txt": "07a3d24bb36267e0621bbb38d2b3e830fd9eec1fb5ba5119c8e13957834c359e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\ACCO__worship_kettle_as_saint\\plan.txt": "3b0ff9acdd234c92359b91d80be99b643eb540ddb7c15478e9ea58a999dc7587",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\BIRT_problemfile.pddl": "d01b40670daa410e05e52dca8499b8ce7d5dadad061dfea6b7e05d55e9934324",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__accept_dryad_invitation\\plan.txt": "586ed1e62b810d7369c891053c8c31119376a6c7894ad85a2661c5f91c2d006d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__approach_beech_tree\\plan.txt": "ff18c5fac01f2021dad7bfe3054847b224d941146ede9e8d60a0ab02a9343c03",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__eat_pellet_and_shrink\\plan.txt": "451a111be2cd05299bdbd9e30f18546e87dbf10e742de23a637ca99b64dd6d52",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__enter_tree_and_descend_stairs\\plan.txt": "2c6c019bce25c522cca99a173598e3f41a60d360522ea493431553b6ad8a8d6d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__hear_tapping_on_beech\\plan.txt": "00c5bef01b5edc80966ca2d062fddf3bf3455338e4fd3f622946a2f5076e77b4",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__receive_pellet_from_gnome\\plan.txt": "9e842b8287abde2b8495d828b3994200a063145dda32d74de63990c8517aeca5",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__receive_queen_kiss\\plan.txt": "3dc73ddce642b2a8243ecdca623fc7095df437391d812e0ab8aed2c6585339b5",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__return_to_bench_and_share_story\\plan.txt": "aae13919c04d88b33ec8629c26cca3347c89ab41e46bd4b7ab03a86d98429338",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__travel_to_trysting_place\\plan.txt": "392d56d973f8a47e5cdd82c950bead19b65871a1a027e7addabe3db4ed642378",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__turn_key_on_beech\\plan.txt": "38140d1e5c8fa77ec0f89b9a4950860bbbc61035850db68a9b1905e1decaa756",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BIRT__witness_queen_birthday_ceremony\\plan.txt": "452a6b992569da9e04d7c61cc75bc6eebe6dbb63d597a487e7e5e7bf4884e02e",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\BUFF_problemfile.pddl": "7b5f83af42d446a469fb8b3d2f7ffcb21427978216c99795a3674513806c9bcd",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__audience_criticize_countryman_and_call_for_kickout\\plan.txt": "4c20d726312eb54f635670aa9fa641de62f577ee5284025538249ba1936204f9",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__audience_demand_shake_cloak_for_pig\\plan.txt": "a3e140a03ac16d8e498ff6cf077a8e08fa1354b60c5cdb579135b0bb41b94920",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__countryman_declare_intent_to_repeat_trick\\plan.txt": "18822604aa404bdf5c30baa1d7fe8f4e2c9f73aeab8444460a2065359040b3a1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__countryman_perform_pig_imitation_with_real_pig\\plan.txt": "c0137ab397e5a1ae33569b9b585ec67c7ce79bdece4a88ed67d43f2b060d42c1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__countryman_reveal_real_pig\\plan.txt": "094645ef0cbcc6c415c35a4214ac6cab9977c33f4800e9aaa3c36b6bf0c62628",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__open_theater_and_announce_reward\\plan.txt": "4a27a45704fd13cba205159c6433d39ae27279e989b38c7e8e763a2c1b6ee4ae",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\BUFF__perform_pig_imitation_without_apparatus\\plan.txt": "6462be944e6db4eaab75829ac94f4fe197abb22f7ddf37d51d38479979dd1a1f",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\CHIC_NP_problemfile.pddl": "880b95330e03071414c00e40591f326e0a155cf3fe7106b56c943ad038156981",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__be_eaten_by_fox\\plan.txt": "50408b74e8fa493a4a4cb3e2f17b7a11bf47e26ff3044fc802635d2256f0618f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__decide_to_tell_king\\plan.txt": "f7725e00f8c3488d3efa121b83cc14c26d9f4e7417a066e4e43f0ad83f991880",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__follow_fox\\plan.txt": "cedb79fe500904535ee250ed342b606f85201aabb94869f5a2a9cdb5fdfc31a6",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__go_to_wood\\plan.txt": "106184fbc339eefeb13b93f0193053893f59ff431a017de13d7e025af8382fed",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__inform_about_sky_fall\\plan.txt": "321b0f771b17c12df94a388721337803a777efd2b0d5f0da4f1a4a15e672f549",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__meet_character\\plan.txt": "9cb6533b10cb67562d2ace07c982eacb8c13082039829c1edc3e293505595278",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\CHIC_NP__turn_back\\plan.txt": "483115f859c6926913ab1f8b66ae8520c4c5bf5c673811d4528193964de4840e",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\FOUR_NP_problemfile.pddl": "2c674fef7fd653b42f86382857df639ecc57fd03fe2c9d322e037ed03da8b20e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\FOUR_NP__leave_home\\plan.txt": "9356538884221eacf08ae4a07f8bda1c086d3d45867a5734a85887825c6493b8",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\JACK_NP_problemfile.pddl": "917538dc89f2858b2ae97309c0bf3a7bc6c1ca18b6bf15fa1c763a866e93a897",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__ask_giant_wife_for_breakfast\\plan.txt": "35af654e2addc6dde7e0d0049c61e162ef3d4da9d7c6d89d45294325739e65fe",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__grow_beanstalk\\plan.txt": "19fd57ae713c90b35e1be2a4d19530d60ff0670b092ca0e09ae7a5253129e73e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__hide_in_oven\\plan.txt": "e24671a3736ffac44d90143525c4a062f6ddcdd0f5b347b2838e807d9b313e72",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__plant_beans\\plan.txt": "7f58ccb8973aa1c21b3bf1ee1729c396623c88a85bf52c1872958b6a6c5ab279",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__return_down_beanstalk\\plan.txt": "8cb0aa8029e71d5191b76bf751ed18434224271d939b282d8b152deb1a244c76",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\JACK_NP__sell_cow_for_beans\\plan.txt": "336ee414aad7a279bd94c8e93beebd5586a9f2d3f54ce9cb7a1a83997966504f",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\NAUG_problemfile.pddl": "297f1041c9e2d9079dcd9265b06ff3ffc45ccf6924e66fd9f97b2a737654df2e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__approach_sun\\plan.txt": "48d2ec4c4348e9735fe74e6767df7c93062fa20c4f78a4f838abb792ae178c5c",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__arrest_meteor\\plan.txt": "803f95d4722718855cac6cffceb6ecf9011bf2b399ecfc8c38f9cfb228837fa0",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__avoid_body\\plan.txt": "1f11856fe45c7f8daee0bd0b7179aee3d51e77d224b25452ab4861dde8c3f7d7",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__burn_up\\plan.txt": "ae52449deed1d34f080d7a28bad8c0489575cfb869b9c084cb9d72a3ce399871",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__call_comet_forward\\plan.txt": "e362db562bc672d8405d60c82f860b72dc22b24bbfa1071feab9fbe6ed3f9d26",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__cross_out_comet\\plan.txt": "4d6815c10d58ec3c533d2de44e01c9717e6e9fff82d766ae2473b7a956237c00",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__deliver_meteor_to_bungo\\plan.txt": "02ba93cb12b9eb573cda881b92a813e31b3a7f2819425fd06f4153126fe4f5e7",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__give_order\\plan.txt": "625cac8460d29b5198d459d10a8901e3e1abddf3ade445b92694fd4b873f4073",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__prohibit_speaking_to_meteor\\plan.txt": "7cc766fea5c90bb9a2bdd5f227f32a4bbcd0a3d95cc20a0e6bf6491f51c62427",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__punish_meteor\\plan.txt": "e2aa23ba71ceb0904a15893bf2c4671ccb5ebba3a7b62f7cb82240e22a2af001",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__speak_to_meteor\\plan.txt": "11cabeaf8e754a05a00f3a994d552a99922661e4d9560680685826c4de83e4bc",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\NAUG__start_travel\\plan.txt": "f39b61668131323f74874ad698d664a359f8499e1e5b0857962c4e0410818e82",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\PIGS_NP_problemfile.pddl": "82461c4a491a44c40deb0a76ae03b71e5076eb6bba2ceda32b5f7dd8ee15e607",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__build_house\\plan.txt": "2a2ee75d4d103f6897ab2f80d3454e5a198a6cc323d7c9b62f750dacd0199dcc",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__pig_collects_apples_and_escapes\\plan.txt": "e0921708914475244b418264356321d55dda2d4d75ff27bf2cd611e2cfbf78e6",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__pig_collects_turnips\\plan.txt": "0b246c978e1dcc35f2e0370ea2ea1a4b896931233444a12e382bd0969594344f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__pig_prepares_boiling_pot_and_fire\\plan.txt": "39416d6854ae9220691b122eee8fe8ab8c833166960e9143736685ae1e40948e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__pig_refuses_entry\\plan.txt": "a9dd9de2dbca921caa4cf5036ef5bf2e30283ac58db91665f4413db782e5eca3",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__send_sons_on_journey\\plan.txt": "5b31863c5c6b66f0a4facaa0f9cc5c8d26376e4ef8c25bf2c95e843cc75e75d7",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_attempts_chimney_entry\\plan.txt": "c578912c073048205c4aef2fd956001bdb85880be719fbc760e0d37561d40788",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_blows_house_down\\plan.txt": "57c89ba85ad1704eebcacf031e6e4096004c495c7d22981088bae4b4a054e4ca",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_eats_pig\\plan.txt": "f15d8e34d05819181999044d28386ca221ddec036b606b62b5a21e5c920b050b",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_fails_to_blow_house\\plan.txt": "c0c67e92ebabb1892fd29c775199471218034e547763b413c5174b313ece36f3",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_falls_into_pot_and_is_boiled\\plan.txt": "3e780b0118489fcfb9a7ae2963bfa65495cb246a53129c27e98c95c2980047e8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_huff_and_puff\\plan.txt": "265db353a7d60e6e6696f58684e396359e145a8fc7017a66eca53dfd11e43254",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_knocks_and_requests_entry\\plan.txt": "39d5d12a1f58064be83c1d55bf9b2ba673cd941a6f052ab820ede300426082d5",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_promises_apple_orchard\\plan.txt": "181aa19ad9147a89fbc0c3d49827302000ad64e5b7145042aafc490c3c4bcbe7",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_promises_fair_trip\\plan.txt": "1b5df93b1d7c329dafa5bcbec59b6cd06990243b99a8cb5a8eb5f3c3bd94c342",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PIGS_NP__wolf_promises_turnip_field\\plan.txt": "326b667a15dbcf2d7fa7988e32a42b508f779d2c0fffa842542d32d6eb278da6",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\PUSS_problemfile.pddl": "1041490aa0c95f0dc8f9688061759ae04e83f77f269bc7d9ab2ba4021fb7ce32",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__buy_boots\\plan.txt": "6423275137c3add13df376a5749312c5c8f7eaa8fb944f5a8f7cec8c2c209bd8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__cat_catch_rabbits\\plan.txt": "db3c2176adcda9123abbb67a7db378ceacdf8e0aca6d7e7a9ebe5b4373dab713",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__cat_disentchant_prisoners\\plan.txt": "de22ad59561a58f812ebc8199885ab180e53f51d263b3a04862459796abd0341",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__cat_eat_mouse\\plan.txt": "01c5010f3cd3add834391e4e6b02e94b2a0ec94e1b2f3670de873c2122c24362",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__cat_ogre_transform_mouse\\plan.txt": "afb754f34f441fce642fad2caf8d86fae954ef6fbd7e28f1c22c3a89c7e6d6b8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__give_bag_to_cat\\plan.txt": "ce2163efac6d83cf0fb42899721ffd06ff552e731bbed8d9377729dc17d3f4be",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__king_send_groom_fetch_suit\\plan.txt": "15dfd3f4260fe2fc7afd98c3d53fdb8dc79c8b2574c3cc3819565a14292c6803",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\PUSS__master_wear_suit\\plan.txt": "670e2395c3b16b7469cd80df3fc3236f740b6591b3069b2d5203bb74fc79f9c0",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\REMA_NP_problemfile.pddl": "f95792ee2bf751101216b8f7eda7db072d8626296ed2d77858bc6544c92acd4a",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__arrive_at_marble_palace\\plan.txt": "e49df25909437a6634aea2d776704331081af91be29de33aae77fb1a7b1dc4bd",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__encounter_impostor_king\\plan.txt": "eb45732c4d455b6d28ef7d05ad3ed68fc394477f84ec4588982e448dfb3e8076",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__encounter_robbers_in_forest\\plan.txt": "6db207e490d6d19132ae2b9115a5a82803d86dadabbcdaf21642d3c23da418bc",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__king_proposes_marriage\\plan.txt": "aed3ab04df9d276ac86bc6a37748365dcaca03b55fe2820fda642837619f018d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__king_requests_information_and_gifts\\plan.txt": "edcd1a352810713a746267c31cee0c22dac985cc33affd622eefef67a4609a39",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__princess_accepts_with_heart\\plan.txt": "c438776e2f43652ae3caa29fa22da3a72a0a571d4a3e89b7ce1f8b4f5f6992f6",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__receive_rubies_from_impostor\\plan.txt": "fcffc3cedcc2485d951bb6c86008aa44d112053e687ed50b3ab1b0e3667e5d4e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__receive_sapphires_from_robber_chief\\plan.txt": "9ded244bda57ffe9b4bd691372592d049104bcd0495f4fcfcc5dcf1eff8e97f4",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__run_away_from_palace\\plan.txt": "e258e0d3409e231c8917af92019edbd31a30be8fc1e65eabdbf36273322a6296",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__suitors_retire_due_to_phrase\\plan.txt": "a82c8727a3ef1a6efa4b3d1e1560ec611d44af914b06490ff5fb6fa4e8c73e5f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__utter_phrase_grandmother_mangle\\plan.txt": "9830d943eab2f53ba3fb556296ce37a60079553b90d3e0f6eac8479c471c9f9f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\REMA_NP__utter_phrase_price_of_butter\\plan.txt": "95cf410e4edb69c73eb591263fe6e33a04ea3fc9540c5d6a7f122305496bf8b4",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\SNOW_problemfile.pddl": "e60e67bf3315c8e263348d340c829efe6017954edcca01b4416c1096157055e6",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__apple_piece_falls_out_reviving_snow_white\\plan.txt": "5ee1c3e44a8855d992204d884a54e150c6a1fd0a8f2947463137798a7d15519e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__child_is_born_and_queen_dies\\plan.txt": "c733dd721b0ffbacbb00149f691bedd30a565847dcb70a562853047d1c11c047",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__dwarfs_cut_laces_rescue_snow_white\\plan.txt": "3820ce1448986048445a850cadc8c6b36c63a139af540aad0780474075b40ec0",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__dwarfs_offer_snow_white_to_maintain_house\\plan.txt": "4cf5eb0394469cc0d7aba9be0600b28eda15428fc11583925984882b42bd334a",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__dwarfs_prepare_glass_coffin_for_snow_white\\plan.txt": "d1e3b03634abda37b9e1add1524eb2ff66508b60e312fd7c2c150491d801c82a",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__dwarfs_remove_comb_rescue_snow_white\\plan.txt": "fc995924ceb1652e31a3f41b5ef47e0bdbc06889679b6a09c45c5e6b95a65165",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__dwarfs_return_and_discover_snow_white\\plan.txt": "921b1f5e95dfc7765c21c0882334ee70dd831f38854c1c970b32c5c4901dc2f8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__huntsman_spares_snow_white_and_brings_boar_heart\\plan.txt": "a2cf693266b26c4948083affb090cebe21dea66d770c3bf407e7f62dd861d0a1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__king_marries_stepmother\\plan.txt": "756eb2d5db9d85cafb1080a9e8f9be5c180881145f10c11d0526f7d360717459",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__prince_discovers_coffin_and_moves_it\\plan.txt": "0b67a5c705c9118e2788275ce1d5c99ab73427fae3ad7a6675724322f535e9cf",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__prince_marries_snow_white\\plan.txt": "560eae53fd77ea83cfd22bcf0de554cd85a3a53af3b2fdda1211e66461548154",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__queen_pricks_finger\\plan.txt": "37385aa3c278f8968f8031d0fb3cbd7c9a4cbee682977daf31a265cbf5c9edd3",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__queen_sews_at_window\\plan.txt": "97e6213291b94994b65eb67fe1d15c688db13e0f5d5698d6ca5371312ade35b6",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__queen_wishes_child_white_red_black\\plan.txt": "193a581613e3c52913928bebdf8fca1a9646d4f54ad4a7e888cce66ca16d577d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__snow_white_eats_poisoned_apple_and_dies\\plan.txt": "d5a25290db3efe1af378a08622259130d3a379ba6edca52d9a7b95447bf32d28",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine\\plan.txt": "43038d38ae725ff0b216bb807c4b9f3ceaf6166d089b641000d4d93bbdca258f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__snow_white_finds_dwarfs_cottage\\plan.txt": "59d1da018feae125f33549dfa164f5f1f0fb0c96d283c009196b9b179abf66af",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__snow_white_flees_into_forest\\plan.txt": "f35f80a1f91abe6875fe9cd98117240fcae7a2a8e866e2ac600f055f1f2a6109",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__snow_white_sleeps_in_seventh_bed\\plan.txt": "41d1857224a066a608394402ce15f5c4b373ee31fb122b0ce8ab71885b50955d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_asks_looking_glass_fairest\\plan.txt": "fb1290596e48563317c73a7c71049c92d0d514e64f3e13635402ccbd3d54cbb1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies\\plan.txt": "33847b962ba84b6c1680888de7ae25d5c010b9a216b72a3afdae25653984e770",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_becomes_envious_of_snow_white\\plan.txt": "45678531b1eb7cfd7839ead069a4816226853b609b1031e097a9d49d48abbb3e",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_comb_poison_snow_white\\plan.txt": "ab76d77a3ff3f5ad25a67226c8c797d2eff378c05c98dfa69350bbdbdbe6c468",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_disguises_as_old_woman_and_visits_cottage\\plan.txt": "490712656d68e696cd1f590e820043e48577a541a70e8b6561f85a1783684a9d",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart\\plan.txt": "b8c533cd7418343ccc979671b7f62ab2c723bb4037abb4714c12a302ec148a7a",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_laces_snow_white_tightly\\plan.txt": "5c5a7c95519c72c5a87efbc400835bc9258c84be5bfb256d067d0ac2d7084512",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_makes_poisonous_apple_and_visits_cottage\\plan.txt": "14f521b60e220732500e79560315f537587664074ec0a3d3ea0353edb12eb0aa",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_makes_poisonous_comb_and_visits_cottage\\plan.txt": "bb488a5e1bf50552a95af06293610bb57aa4d97f6de264c46aeb5dbe9b937bdf",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SNOW__stepmother_orders_huntsman_to_kill_snow_white\\plan.txt": "49e8a1d54a2a3b4c377708cb5aabc9e3c378a3f03e57988a3b9421c759d5132a",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\SOUP_problemfile.pddl": "1195f905bed370fcf9623851c138a41ffc792cec718b626bcdbe67670bf38ba8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__claim_queenhood\\plan.txt": "9f7304c93848372ff84dc9d58604732461fcceecc45b6ebf3574b0bd08d64830",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__give_skewer_to_elves\\plan.txt": "d53c3342c71c748f2a3be9c7f77eb489374bb99c623cb8881deb971b19ff6f87",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__learn_wisdom_from_ants\\plan.txt": "cd61dcdb384fe3d9cfce431fc75bfdf9a7d2ee0d56d6b0c8382faceab5b57dd4",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__prepare_soup_by_king_tail\\plan.txt": "50940899a39670b6e0c029ea72743e9fcea93da13bf6e358d475d323e78f8cbd",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__prepare_soup_by_poet_imagination\\plan.txt": "3c03c6abb862509b838022e8871bf2cd89ad22b397065964c294c4f4a8542243",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__read_and_digest_books\\plan.txt": "271d084468739e5e8cc57b7c1541a33ac9bdfbfd1d7376e551853b9ec5226148",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__receive_feather\\plan.txt": "bf34bf3e189d393be71859536be6d3b1ffeeac4f6a0bf48cf5252ef4480ded12",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\SOUP__travel_to\\plan.txt": "de00b0b722b0d22f0671253fb1a9f08dfabb2b55e47e849d7605d38f76909cfc",
+    "data\\validation\\union_scope_fix_2026_10_15\\union\\problems\\WOE_problemfile.pddl": "7edfe7c72c5ee62fc8520c0713cef6c1c66183db44e3c9ac7e722289fd6f97f8",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__accept_woe_as_burden\\plan.txt": "66b8e64f75bf80885e88617b36e176662c323f29b0aa17394cdb4f5158de43e2",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__allow_woe_to_ride_on_shoulder\\plan.txt": "ecb32942cf7372e593847067e5db3b05acd4795211f2ea0d7e1d960fc543a1c1",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__encounter_bitter_woe\\plan.txt": "a79d0c8380f6d8f084e22ad54b0bfc82611e4d9d791ed00578a76942d2fba4db",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__hide_woe_under_stone\\plan.txt": "3ac075a4f92ed734883a8d0ff09e8b14628b6512ea908daecb524f6145b2ad50",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__invite_rich_brother_to_feast\\plan.txt": "7ecb3bd09004ab83c564b01b7d20243dd8bb4cb4119b7ce387b5f85fd11dfbc5",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__make_sign_of_cross\\plan.txt": "01c87175da5978b5b6278a65895a5033de4757819c208accaa964bbd68e2a833",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__move_heavy_stone\\plan.txt": "b61698060299686c51d187cad8ca413149b2149814395dbd182d22bbc0d26b02",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__perform_work_for_rich_brother\\plan.txt": "1f6ef8c0dbc88c5f858762f407a38acea261ccfa5440b778b3481954bc4e4a32",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__receive_payment\\plan.txt": "d4559e8ace706fa45381bf3eaa199a1afb14ca8bc738763ed29dd034349975e0",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__request_help_from_rich_brother\\plan.txt": "c9016f6c5d4aa7101209fe5ac9684702faa06601b7c653fa68956cd45b5b00f4",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__rich_brother_attempt_to_move_stone\\plan.txt": "7c7b64cc60167863773d47cff8747891d3312d9986cfe88d651c5e6ef6a9dc36",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__sing_cheerful_song\\plan.txt": "448a1a7fd1f84d8203863fcfe627a439321d3693ff0963b6ecd788fe9afead72",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__spend_money_on_drink\\plan.txt": "5289dc54cf1ef0b5b6a6c43d38f109a265c2ed1055bd1f6fd6634d449488d51f",
+    "data\\validation\\downward_action_reachability_2026_10_15_v1\\tasks\\WOE__trade_assets_for_money\\plan.txt": "44c8412403294d3dfe82acd0bfb5debc99510b09263a3b69ea57b73b87edc7fe"
+  },
+  "scope": "Source-local executable prefixes in a fixed compiled model; original goal attainment not required. Full source-atom trace preservation, not exhaustive transition or semantic-interface correctness."
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "counts": {
+    "states": 128,
+    "ground_action_instances": 28,
+    "applicability_checks": 3584,
+    "applicable_transitions": 1984,
+    "goal_checks": 128,
+    "mismatches": 0
+  },
+  "state_atoms": [
+    "p(a)",
+    "p(b)",
+    "r(a, a)",
+    "r(b, a)",
+    "r(a, b)",
+    "r(b, b)",
+    "done"
+  ],
+  "counterexamples": [],
+  "scope": "Exhaustive states of one finite authored fixture; not a proof for all domains or semantic-alignment evaluation",
+  "frozen_sha256": {
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\inputs\\A_domainfile.pddl": "4f5e0d07eaea196002624e8636af8ca8b3bcd0d228a1429a6bfc3113eb558d32",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\inputs\\A_problemfile.pddl": "86dfeac3407cf9859d4e3aa64b75089434a0ae82306105ca24dc5ff155dcc1dd",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\inputs\\B_domainfile.pddl": "eeee408a5ccb4bb7afd42b3618315c07a7cfdbd7ac210b1b547d6f4a8a675d53",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\inputs\\B_problemfile.pddl": "a4cebdf8f62948763d919e50462ef0ea9aaea7ab99cb053100e444acfa39c23d",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\manifest.json": "4149a1a4cedcbc3f50bbfd8da97351f449fc2898eb3169dadede5307457af287",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\compiled\\meta_domain.pddl": "1c9e278ad8c204de04e6ceac35a5644a1cc3643c472ae54b55505d6ae4d5aaa4",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\compiled\\meta_domain.json": "3577d0d76b247d9c3f367dd272d2980566bbfce329079854425f01d0e2968c52",
+    "data\\validation\\formula_boundaries_2026_10_15_v1\\compiled\\problems\\A_problemfile.pddl": "13b2fbf23f50121ff0e6c1a61e9eb9bd4316558f23b2ab851a82f0515366ce9b",
+    "C:\\anu\\uninamain\\validate_formula_boundaries.py": "0b3c9001772e19c286a34e5672b76d689786fb97b9693acdf672ecea932403ce",
+    "validate_transition_preservation.py": "6e49963b202ed45804ba4ee75ac5cfdba20645b68c520e77d0d70fc82b800152",
+    "build_aligned_domain.py": "ea0f270d44544b3ae3d317ee08c0e7f4950518aaf153f64723932e5d4e082df9",
+    "build_narrative_union.py": "066108af3a6b14b396fc5b3a46f2729ff1d032013e6d3b61765b7af781e3e504"
+  },
+  "hashes_unchanged": true,
+  "condition_count": 14
+}

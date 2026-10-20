@@ -1,0 +1,83 @@
+{
+  "sources": [
+    "REMA_NP"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 4,
+    "constants": 16,
+    "predicates": 6,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "REMA_NP": {
+      "at": "d000__p_at",
+      "grandmother_mangle_spoken": "d000__p_grandmother_mangle_spoken",
+      "has": "d000__p_has",
+      "married": "d000__p_married",
+      "price_of_butter_spoken": "d000__p_price_of_butter_spoken",
+      "with_all_my_heart_spoken": "d000__p_with_all_my_heart_spoken"
+    }
+  },
+  "constant_maps": {
+    "REMA_NP": {
+      "back_door": "d000__c_back_door",
+      "back_stairs": "d000__c_back_stairs",
+      "bag_of_rubies": "d000__c_bag_of_rubies",
+      "bag_of_sapphires": "d000__c_bag_of_sapphires",
+      "city": "d000__c_city",
+      "crown": "d000__c_crown",
+      "father_king": "d000__c_father_king",
+      "forest": "d000__c_forest",
+      "impostor_butterman": "d000__c_impostor_butterman",
+      "king_at_palace": "d000__c_king_at_palace",
+      "market_place": "d000__c_market_place",
+      "oak_tree": "d000__c_oak_tree",
+      "palace": "d000__c_palace",
+      "princess": "d000__c_princess",
+      "robber_chief": "d000__c_robber_chief",
+      "sceptre": "d000__c_sceptre"
+    }
+  },
+  "action_maps": {
+    "REMA_NP": {
+      "run_away_from_palace": "d000__a_run_away_from_palace",
+      "encounter_impostor_king": "d000__a_encounter_impostor_king",
+      "utter_phrase_price_of_butter": "d000__a_utter_phrase_price_of_butter",
+      "receive_rubies_from_impostor": "d000__a_receive_rubies_from_impostor",
+      "encounter_robbers_in_forest": "d000__a_encounter_robbers_in_forest",
+      "utter_phrase_grandmother_mangle": "d000__a_utter_phrase_grandmother_mangle",
+      "receive_sapphires_from_robber_chief": "d000__a_receive_sapphires_from_robber_chief",
+      "arrive_at_marble_palace": "d000__a_arrive_at_marble_palace",
+      "king_requests_information_and_gifts": "d000__a_king_requests_information_and_gifts",
+      "king_proposes_marriage": "d000__a_king_proposes_marriage",
+      "princess_accepts_with_heart": "d000__a_princess_accepts_with_heart",
+      "suitors_retire_due_to_phrase": "d000__a_suitors_retire_due_to_phrase"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "REMA_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "REMA_NP_problemfile.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

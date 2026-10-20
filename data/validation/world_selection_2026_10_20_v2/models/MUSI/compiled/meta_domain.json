@@ -1,0 +1,498 @@
+{
+  "sources": [
+    "MUSI"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 0,
+    "constants": 21,
+    "predicates": 24,
+    "operators": 24
+  },
+  "predicate_maps": {
+    "MUSI": {
+      "agreed": "d000__p_agreed",
+      "at": "d000__p_at",
+      "ate_all": "d000__p_ate_all",
+      "attacked": "d000__p_attacked",
+      "attempt_light": "d000__p_attempt_light",
+      "bite": "d000__p_bite",
+      "crowed": "d000__p_crowed",
+      "fled": "d000__p_fled",
+      "invited": "d000__p_invited",
+      "kick": "d000__p_kick",
+      "light_off": "d000__p_light_off",
+      "light_on": "d000__p_light_on",
+      "making_noise": "d000__p_making_noise",
+      "moving_towards": "d000__p_moving_towards",
+      "resting": "d000__p_resting",
+      "retreated": "d000__p_retreated",
+      "sees_light": "d000__p_sees_light",
+      "sleeping_at": "d000__p_sleeping_at",
+      "stacked_on": "d000__p_stacked_on",
+      "window_shattered": "d000__p_window_shattered"
+    }
+  },
+  "constant_maps": {
+    "MUSI": {
+      "ass": "d000__c_ass",
+      "beam": "d000__c_beam",
+      "bremen": "d000__c_bremen",
+      "captain": "d000__c_captain",
+      "cat": "d000__c_cat",
+      "cock": "d000__c_cock",
+      "drinks": "d000__c_drinks",
+      "forest": "d000__c_forest",
+      "hearth": "d000__c_hearth",
+      "hound": "d000__c_hound",
+      "kettledrums": "d000__c_kettledrums",
+      "lute": "d000__c_lute",
+      "man": "d000__c_man",
+      "meat": "d000__c_meat",
+      "messenger": "d000__c_messenger",
+      "road_to_bremen": "d000__c_road_to_bremen",
+      "robber": "d000__c_robber",
+      "robbers_cottage": "d000__c_robbers_cottage",
+      "straw": "d000__c_straw",
+      "table": "d000__c_table",
+      "window": "d000__c_window"
+    }
+  },
+  "action_maps": {
+    "MUSI": {
+      "run_away": "d000__a_run_away",
+      "invite_hound": "d000__a_invite_hound",
+      "hound_agrees": "d000__a_hound_agrees",
+      "invite_cat": "d000__a_invite_cat",
+      "cat_agrees": "d000__a_cat_agrees",
+      "invite_cock": "d000__a_invite_cock",
+      "cock_agrees": "d000__a_cock_agrees",
+      "travel_together": "d000__a_travel_together",
+      "rest_in_forest": "d000__a_rest_in_forest",
+      "spot_light": "d000__a_spot_light",
+      "approach_cottage": "d000__a_approach_cottage",
+      "plan_scaring_robbers": "d000__a_plan_scaring_robbers",
+      "stack_animals": "d000__a_stack_animals",
+      "signal_and_make_noise": "d000__a_signal_and_make_noise",
+      "robbers_flee": "d000__a_robbers_flee",
+      "eat_feast": "d000__a_eat_feast",
+      "extinguish_light": "d000__a_extinguish_light",
+      "choose_sleep_spot": "d000__a_choose_sleep_spot",
+      "messenger_attempt_light": "d000__a_messenger_attempt_light",
+      "cat_attack_messenger": "d000__a_cat_attack_messenger",
+      "dog_bite_messenger": "d000__a_dog_bite_messenger",
+      "donkey_kick_messenger": "d000__a_donkey_kick_messenger",
+      "cock_crow_alert": "d000__a_cock_crow_alert",
+      "robbers_retreat": "d000__a_robbers_retreat"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "MUSI": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_ass"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_ass"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_captain"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_captain"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_cat"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cat"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_cock"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cock"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_hound"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_hound"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_man"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_man"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_messenger"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_messenger"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_robber"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_robber"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_drinks"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_drinks"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_kettledrums"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_kettledrums"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_lute"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_lute"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_meat"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_meat"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_straw"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_straw"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_table"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_table"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_beam"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_beam"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_bremen"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bremen"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_hearth"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_hearth"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_road_to_bremen"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_road_to_bremen"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_robbers_cottage"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_robbers_cottage"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_window"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_window"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_ass": "d000__t_entity",
+    "d000__c_captain": "d000__t_entity",
+    "d000__c_cat": "d000__t_entity",
+    "d000__c_cock": "d000__t_entity",
+    "d000__c_hound": "d000__t_entity",
+    "d000__c_man": "d000__t_entity",
+    "d000__c_messenger": "d000__t_entity",
+    "d000__c_robber": "d000__t_entity",
+    "d000__c_drinks": "d000__t_item",
+    "d000__c_kettledrums": "d000__t_item",
+    "d000__c_lute": "d000__t_item",
+    "d000__c_meat": "d000__t_item",
+    "d000__c_straw": "d000__t_item",
+    "d000__c_table": "d000__t_item",
+    "d000__c_beam": "d000__t_location",
+    "d000__c_bremen": "d000__t_location",
+    "d000__c_forest": "d000__t_location",
+    "d000__c_hearth": "d000__t_location",
+    "d000__c_road_to_bremen": "d000__t_location",
+    "d000__c_robbers_cottage": "d000__t_location",
+    "d000__c_window": "d000__t_location"
+  },
+  "predicate_orders": {
+    "MUSI": {
+      "agreed": [
+        0,
+        1
+      ],
+      "at": [
+        0,
+        1
+      ],
+      "ate_all": [
+        0
+      ],
+      "attacked": [
+        0,
+        1
+      ],
+      "attempt_light": [
+        0
+      ],
+      "bite": [
+        0,
+        1
+      ],
+      "crowed": [
+        0
+      ],
+      "fled": [
+        0,
+        1
+      ],
+      "invited": [
+        0,
+        1
+      ],
+      "kick": [
+        0,
+        1
+      ],
+      "light_off": [
+        0
+      ],
+      "light_on": [
+        0
+      ],
+      "making_noise": [
+        0
+      ],
+      "moving_towards": [
+        0,
+        1
+      ],
+      "resting": [
+        0
+      ],
+      "retreated": [
+        0
+      ],
+      "sees_light": [
+        0
+      ],
+      "sleeping_at": [
+        0,
+        1
+      ],
+      "stacked_on": [
+        0,
+        1
+      ],
+      "window_shattered": []
+    }
+  },
+  "source_predicate_types": {
+    "MUSI": {
+      "agreed": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "ate_all": [
+        "d000__t_entity"
+      ],
+      "attacked": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "attempt_light": [
+        "d000__t_entity"
+      ],
+      "bite": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "crowed": [
+        "d000__t_entity"
+      ],
+      "fled": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "invited": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "kick": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "light_off": [
+        "d000__t_location"
+      ],
+      "light_on": [
+        "d000__t_location"
+      ],
+      "making_noise": [
+        "d000__t_entity"
+      ],
+      "moving_towards": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "resting": [
+        "d000__t_entity"
+      ],
+      "retreated": [
+        "d000__t_entity"
+      ],
+      "sees_light": [
+        "d000__t_entity"
+      ],
+      "sleeping_at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "stacked_on": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "window_shattered": []
+    }
+  },
+  "source_sha256": {
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "MUSI_problemfile.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "machine_hypothesis",
+    "source_sha256": {
+      "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+    },
+    "type_groups": [],
+    "predicate_groups": [],
+    "semantic_status": "unverified_machine_assumptions",
+    "role_type_policy": "aligned_slot_hypothesis",
+    "object_identity_inferred": false,
+    "initial_facts_inferred": false,
+    "proposal_provenance": {
+      "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+      "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+    }
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

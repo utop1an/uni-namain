@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "scope": "Deliberately corrupted synthetic compilation outputs; tests checker sensitivity, not semantic inference",
+  "baseline_counts": {
+    "states": 256,
+    "ground_action_instances": 17,
+    "applicability_checks": 4352,
+    "applicable_transitions": 2048,
+    "goal_checks": 256,
+    "mismatches": 0
+  },
+  "original_domain_sha256": "408cf04794b20cb3f9521d461a3676cea31053e0470ab82456cf75c2c703c23f",
+  "rows": [
+    {
+      "mutation": "drop_universal_effect_guard",
+      "detected": true,
+      "counts": {
+        "states": 256,
+        "ground_action_instances": 17,
+        "applicability_checks": 4352,
+        "applicable_transitions": 2048,
+        "goal_checks": 256,
+        "mismatches": 64
+      },
+      "counterexample_kinds": [
+        "foreign_or_membership_frame"
+      ],
+      "mutated_domain_sha256": "2bea23fb324670b08d449a99a80253cd0de61966a12ec245f6f7fe1f934bed0c",
+      "mutated_problem_sha256": "0f3f0375402c75b04783fa49885ac52c23a8ede2395904214585c6714e135d03"
+    },
+    {
+      "mutation": "flip_add_effect_to_delete",
+      "detected": true,
+      "counts": {
+        "states": 256,
+        "ground_action_instances": 17,
+        "applicability_checks": 4352,
+        "applicable_transitions": 2048,
+        "goal_checks": 256,
+        "mismatches": 256
+      },
+      "counterexample_kinds": [
+        "projected_successor"
+      ],
+      "mutated_domain_sha256": "638718965823b370781afe41fa9a1dcf3b6e4ed2b63d334cf24b1a98c9624964",
+      "mutated_problem_sha256": "0f3f0375402c75b04783fa49885ac52c23a8ede2395904214585c6714e135d03"
+    },
+    {
+      "mutation": "reverse_action_arguments",
+      "detected": true,
+      "counts": {
+        "states": 256,
+        "ground_action_instances": 17,
+        "applicability_checks": 4352,
+        "applicable_transitions": 2048,
+        "goal_checks": 256,
+        "mismatches": 192
+      },
+      "counterexample_kinds": [
+        "projected_successor"
+      ],
+      "mutated_domain_sha256": "67e0ab8a1d5078e2b603b28b082f088b41e9117236e11a245d72a0862406192e",
+      "mutated_problem_sha256": "0f3f0375402c75b04783fa49885ac52c23a8ede2395904214585c6714e135d03"
+    },
+    {
+      "mutation": "admit_foreign_object",
+      "detected": true,
+      "counts": {
+        "states": 256,
+        "ground_action_instances": 17,
+        "applicability_checks": 4352,
+        "applicable_transitions": 1920,
+        "goal_checks": 256,
+        "mismatches": 160
+      },
+      "counterexample_kinds": [
+        "applicability",
+        "goal"
+      ],
+      "mutated_domain_sha256": "408cf04794b20cb3f9521d461a3676cea31053e0470ab82456cf75c2c703c23f",
+      "mutated_problem_sha256": "b88b9721efc27b6d1cd25b40c42259cb226cc03a5c08250a0bec595b828c75ca"
+    }
+  ],
+  "implementation_sha256": {
+    "validate_transition_mutations.py": "bba441a33935d8d783b9a3e8f3958b2cb5bd09f0a8eaa07396f3e23300a2bcb9",
+    "validate_transition_preservation.py": "6e49963b202ed45804ba4ee75ac5cfdba20645b68c520e77d0d70fc82b800152"
+  }
+}

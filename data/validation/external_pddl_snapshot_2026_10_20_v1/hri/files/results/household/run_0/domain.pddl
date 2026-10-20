@@ -1,0 +1,47 @@
+(define (domain household)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types HOUSEHOLD_OBJECT LOCATION RECEPTACLE ROBOT apple cloth diningTableLoc drawerLoc kitchenCounterLoc lunchBoxReceptacle robot1)
+    (:predicates 
+    (drawerIsOpen ?drawer - LOCATION)  
+    (isAt ?who - ROBOT ?from - LOCATION)  
+    (isHolding ?who - ROBOT ?what - HOUSEHOLD_OBJECT)  
+    (isHoldingReceptacle ?who - ROBOT ?what - RECEPTACLE)  
+    (objectIsAt ?what - HOUSEHOLD_OBJECT ?from - LOCATION)  
+    (objectIsInside ?what - HOUSEHOLD_OBJECT ?insideWhat - RECEPTACLE)  
+    (receptacleIsAt ?what - RECEPTACLE ?from - LOCATION))
+    (:action navigate
+        :parameters (?who - ROBOT ?from - LOCATION ?to - LOCATION)
+        :precondition (and (isAt ?who ?from) (not (isAt ?who ?to)))
+        :effect (and (not (isAt ?who ?from)) (isAt ?who ?to))
+    )
+     (:action openDrawer
+        :parameters (?who - ROBOT ?drawer - LOCATION)
+        :precondition (isAt ?who ?drawer)
+        :effect (drawerIsOpen ?drawer)
+    )
+     (:action pick
+        :parameters (?who - ROBOT ?from - LOCATION ?what - HOUSEHOLD_OBJECT)
+        :precondition (and (isAt ?who ?from) (objectIsAt ?what ?from))
+        :effect (and (isHolding ?who ?what) (not (objectIsAt ?what ?from)))
+    )
+     (:action pickReceptacle
+        :parameters (?who - ROBOT ?from - LOCATION ?what - RECEPTACLE)
+        :precondition (and (isAt ?who ?from) (receptacleIsAt ?what ?from))
+        :effect (and (isHoldingReceptacle ?who ?what) (not (receptacleIsAt ?what ?from)))
+    )
+     (:action place
+        :parameters (?who - ROBOT ?what - HOUSEHOLD_OBJECT ?at - LOCATION)
+        :precondition (and (isHolding ?who ?what) (isAt ?who ?at))
+        :effect (and (not (isHolding ?who ?what)) (objectIsAt ?what ?at))
+    )
+     (:action placeInside
+        :parameters (?who - ROBOT ?what - HOUSEHOLD_OBJECT ?insideWhat - RECEPTACLE)
+        :precondition (and (isHolding ?who ?what) (isHoldingReceptacle ?who ?insideWhat))
+        :effect (and (not (isHolding ?who ?what)) (objectIsInside ?what ?insideWhat))
+    )
+     (:action placeReceptacle
+        :parameters (?who - ROBOT ?what - RECEPTACLE ?at - LOCATION)
+        :precondition (and (isHoldingReceptacle ?who ?what) (isAt ?who ?at))
+        :effect (and (not (isHoldingReceptacle ?who ?what)) (receptacleIsAt ?what ?at))
+    )
+)

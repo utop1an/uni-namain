@@ -1,0 +1,1 @@
+(define (problem The_Naughty_Comet_problem) (:domain The_Naughty_Comet) (:init (at comet_master courtyard) (at short_tail_73 courtyard) (gate_open) (on_list short_tail_73)) (:goal (audit__target_executed)))

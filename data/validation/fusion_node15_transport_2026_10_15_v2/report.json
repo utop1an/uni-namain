@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "scope": "intermediate_node_not_final_reference_result",
+  "node_sources": 2,
+  "original_source_pool": 15,
+  "rows": [
+    {
+      "source": "ACCO",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+        "problem.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+        "plan.txt": "6368c4c03033c883f3a7f4820d333ef313aae412a3971c7539f2405ab750f6b2"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "transport_validated",
+      "transported_length": 6,
+      "mapped_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "argument_policy": "Require unchanged ordered formal names and types; preserve actual argument positions",
+      "predicate_policy": "Reference exporter positional renaming, not verified semantic role equivalence"
+    },
+    {
+      "source": "BIRT",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+        "problem.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+        "plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "transport_validated",
+      "transported_length": 12,
+      "mapped_validation": {
+        "status": "INVALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: INVALID\nengine: sequential_plan_validator\nreason: INAPPLICABLE_ACTION\ninapplicable action: activate_beech(nora, key, palace)"
+      },
+      "argument_policy": "Require unchanged ordered formal names and types; preserve actual argument positions",
+      "predicate_policy": "Reference exporter positional renaming, not verified semantic role equivalence"
+    }
+  ],
+  "transport_contract": "Diagnostic of native adapter positional export, not an inferred semantic/permutation map",
+  "audit_report_sha256": "9b0f8f787c66eead3a92c5d0d96f668a236f1b8e14b30a0971df42a62cd3259f",
+  "source_report_sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+  "compiled_domain_sha256": "c3ab00be2cd7916c5fc9d136c01bc54e42a7cbc256581914fc5afa28ab4ec504",
+  "counts": {
+    "transport_validated": 2
+  },
+  "transported_validation_counts": {
+    "VALID": 1,
+    "INVALID": 1
+  },
+  "model_unchanged": true,
+  "mappings_unchanged": true,
+  "limit": "Missing parameter maps are not failed plans; invalid transported traces are not proof that no alternative plan exists",
+  "implementation_sha256": {
+    "probe_fusion_source_plans.py": "4065b207413cee224c5aeb2cdfb854649717cc183a1aad650e8891f74fc8e6f6",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  }
+}

@@ -1,0 +1,1260 @@
+{
+  "sources": [
+    "ACCO",
+    "BIRT",
+    "BUFF",
+    "CHIC_NP",
+    "FOUR_NP",
+    "HANS_NP",
+    "WOE"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 3,
+    "constants": 151,
+    "predicates": 91,
+    "operators": 81
+  },
+  "predicate_maps": {
+    "WOE": {
+      "at": "at",
+      "banquet_at": "banquet_at",
+      "bowed": "in_location",
+      "concealed": "concealed",
+      "drunk": "sad",
+      "employed": "employed",
+      "gold_at": "item_at",
+      "guest_present": "present",
+      "has": "has",
+      "has_fatigue": "has_fatigue",
+      "has_strength": "has_strength",
+      "invitation_sent": "invitation_sent",
+      "invited": "invited",
+      "need_help": "need_help",
+      "poor": "sick",
+      "rich": "state",
+      "singing": "singing",
+      "stone_at": "stone_at",
+      "stone_moved": "stone_moved",
+      "trapped": "trapped",
+      "woe_on_shoulder": "woe_on_shoulder",
+      "work_done": "work_done"
+    },
+    "ACCO": {
+      "airborne": "airborne",
+      "badger_form": "badger_form",
+      "captured": "captured",
+      "contained_in": "contained_in",
+      "exhibition_ready": "ready_to_show",
+      "four_legged": "four_legged",
+      "furred": "furred",
+      "hanging": "hanging",
+      "has": "has",
+      "located": "located",
+      "night": "night",
+      "owned_by": "held",
+      "performing_show": "state",
+      "reputation_widespread": "reputation_widespread",
+      "treasured": "treasured",
+      "wealthy": "wealthy",
+      "worshipped": "worshipped"
+    },
+    "BIRT": {
+      "at": "at",
+      "boat_available": "boat_available",
+      "corridor_reached": "corridor_reached",
+      "door_open": "door_open",
+      "gloomy": "sad",
+      "gold_star_on": "gold_star_on",
+      "has": "has",
+      "inside": "in_location",
+      "invitation_offered": "invitation_offered",
+      "joyful": "joyful",
+      "kissed_by": "kissed_by",
+      "knighted": "rescued_princess",
+      "lantern_carried": "held",
+      "pellet_eaten": "entity_in_state",
+      "shrunk": "state",
+      "sound_heard": "sound_heard",
+      "stairs_descended": "stairs_descended",
+      "story_shared": "story_shared"
+    },
+    "BUFF": {
+      "applause_given": "applause_given",
+      "audience_calls_for_kickout": "audience_calls_for_kickout",
+      "audience_demands_shake_cloak": "audience_demands_shake_cloak",
+      "cloak_shaken": "cloak_shaken",
+      "countryman_declares_intent": "countryman_declares_intent",
+      "countryman_performs_with_real_pig": "countryman_performs_with_real_pig",
+      "crowd_present": "crowd_present",
+      "imitates_pig": "imitates_pig",
+      "on_platform": "on_platform",
+      "partiality_prevalent": "partiality_prevalent",
+      "performs_without_apparatus": "performs_without_apparatus",
+      "pig_found": "pig_found",
+      "pig_revealed": "pig_revealed",
+      "reward_announced": "reward_announced",
+      "theater_opened": "theater_opened"
+    },
+    "CHIC_NP": {
+      "at": "at",
+      "decided_to_tell_king": "ready_to_show",
+      "eaten_by_fox": "eaten_by_fox",
+      "following_fox": "following_fox",
+      "going_to_wood": "going_to_wood",
+      "informed_about_sky_fall": "informed_about_sky_fall",
+      "met": "met",
+      "sky_fell_on_head": "sky_fell_on_head",
+      "turned_back": "state_reached"
+    },
+    "FOUR_NP": {
+      "dragon_dead": "dragon_dead",
+      "eggs_fetched": "entity_in_state",
+      "eggs_sewn": "eggs_sewn",
+      "eggs_shot": "eggs_shot",
+      "entity_at": "at",
+      "half_kingdom": "half_kingdom",
+      "has": "has",
+      "is_astronomer": "is_astronomer",
+      "is_hunter": "is_hunter",
+      "is_tailor": "is_tailor",
+      "is_thief": "is_thief",
+      "item_at": "item_at",
+      "princess_rescued": "rescued_princess",
+      "reward_received": "state_reached",
+      "ship_broken": "ship_broken",
+      "ship_repaired": "ship_repaired"
+    },
+    "HANS_NP": {
+      "at": "at",
+      "bird_heard": "present",
+      "bread_given": "bread_given",
+      "captured": "buff__p_captured",
+      "collected": "held",
+      "crossed_lake": "crossed_lake",
+      "crumb_on_path": "crumb_on_path",
+      "dead": "sick",
+      "duck_helped": "duck_helped",
+      "fire_lit": "fire_lit",
+      "has": "has",
+      "locked": "locked",
+      "lost": "lost",
+      "pebble_on_path": "pebble_on_path",
+      "reunited_with_father": "reunited_with_father"
+    }
+  },
+  "constant_maps": {
+    "WOE": {
+      "big_house": "big_house",
+      "bitter_woe": "bitter_woe",
+      "cattle": "cattle",
+      "children": "children",
+      "copecks_25": "copecks_25",
+      "forest": "forest",
+      "gold_pot": "gold_pot",
+      "grove": "grove",
+      "harrow": "harrow",
+      "honey": "honey",
+      "izba": "izba",
+      "kabak": "kabak",
+      "large_town": "large_town",
+      "loaf_bread": "loaf_bread",
+      "new_home": "new_home",
+      "plow": "plow",
+      "poor_brother": "poor_brother",
+      "rich_brother": "rich_brother",
+      "sledge": "sledge",
+      "stone": "stone",
+      "telega": "telega",
+      "treasure_pit": "treasure_pit",
+      "village": "village",
+      "well": "well",
+      "wife": "wife",
+      "wine": "wine",
+      "yard": "yard"
+    },
+    "ACCO": {
+      "badger": "badger",
+      "box": "box",
+      "copper_coins": "copper_coins",
+      "friend": "friend",
+      "jhosiu": "jhosiu",
+      "lady_of_court": "lady_of_court",
+      "morinji": "morinji",
+      "pack": "pack",
+      "priest": "priest",
+      "prince": "prince",
+      "princess": "princess",
+      "showman": "showman",
+      "teakettle": "teakettle",
+      "temple_treasure": "temple_treasure",
+      "tight_rope": "tight_rope",
+      "tinker": "tinker"
+    },
+    "BIRT": {
+      "beech_tree": "beech_tree",
+      "bench": "bench",
+      "boat": "boat",
+      "corridor": "corridor",
+      "cottage": "cottage",
+      "door": "door",
+      "dryad": "dryad",
+      "fairy_queen": "fairy_queen",
+      "fairyland": "fairyland",
+      "gnome": "gnome",
+      "gold_star": "gold_star",
+      "grandmother": "grandmother",
+      "grandmotherkin": "grandmotherkin",
+      "key": "key",
+      "lantern": "lantern",
+      "mother": "mother",
+      "mothereen": "mothereen",
+      "nora": "nora",
+      "palace": "palace",
+      "pellet": "pellet",
+      "pond": "pond",
+      "silver_salver": "silver_salver",
+      "spring": "spring",
+      "stairs": "stairs",
+      "stream": "stream"
+    },
+    "BUFF": {
+      "audience": "audience",
+      "buffoon": "buffoon",
+      "cloak": "cloak",
+      "countryman": "countryman",
+      "little_pig": "little_pig",
+      "platform": "platform",
+      "rich_nobleman": "rich_nobleman",
+      "theater": "theater"
+    },
+    "CHIC_NP": {
+      "Acorn": "Acorn",
+      "Chicken-licken": "Chicken-licken",
+      "Cock-lock": "Cock-lock",
+      "Drake-lake": "Drake-lake",
+      "Duck-luck": "Duck-luck",
+      "Fox-lox": "Fox-lox",
+      "FoxHole": "FoxHole",
+      "Gander-lander": "Gander-lander",
+      "Goose-loose": "Goose-loose",
+      "Hen-len": "Hen-len",
+      "King": "King",
+      "Sky": "Sky",
+      "Turkey-lurkey": "Turkey-lurkey",
+      "Wood": "Wood"
+    },
+    "FOUR_NP": {
+      "brother_astronomer": "brother_astronomer",
+      "brother_hunter": "brother_hunter",
+      "brother_tailor": "brother_tailor",
+      "brother_thief": "brother_thief",
+      "chaffinch": "chaffinch",
+      "cross_way": "cross_way",
+      "dragon": "dragon",
+      "eggs": "eggs",
+      "father": "father",
+      "gun": "gun",
+      "house": "house",
+      "king": "four_np__c_king",
+      "kingdom": "kingdom",
+      "mentor_astronomer": "mentor_astronomer",
+      "mentor_hunter": "mentor_hunter",
+      "mentor_tailor": "mentor_tailor",
+      "mentor_thief": "mentor_thief",
+      "needle": "needle",
+      "planks": "planks",
+      "princess": "buff__c_princess",
+      "rock_sea": "rock_sea",
+      "sea": "sea",
+      "ship": "ship",
+      "sticks": "sticks",
+      "telescope": "telescope",
+      "town_gate": "town_gate",
+      "tree": "tree"
+    },
+    "HANS_NP": {
+      "apple": "apple",
+      "bird": "bird",
+      "branch": "branch",
+      "bread_piece": "bread_piece",
+      "brushwood": "brushwood",
+      "cake": "cake",
+      "cottage": "buff__c_cottage",
+      "crumb": "crumb",
+      "dead_tree": "dead_tree",
+      "door": "buff__c_door",
+      "duck": "duck",
+      "father": "hans_np__c_father",
+      "father_house": "father_house",
+      "forest": "buff__c_forest",
+      "grettel": "grettel",
+      "hansel": "hansel",
+      "hill": "hill",
+      "kettle": "kettle",
+      "lake": "lake",
+      "milk": "milk",
+      "mother": "buff__c_mother",
+      "nut": "nut",
+      "oven": "oven",
+      "pancake": "pancake",
+      "path": "path",
+      "pearl": "pearl",
+      "pebble": "pebble",
+      "precious_stone": "precious_stone",
+      "roof": "roof",
+      "room": "room",
+      "stable_location": "stable_location",
+      "sugar_window": "sugar_window",
+      "window": "window",
+      "witch": "witch"
+    }
+  },
+  "action_maps": {
+    "WOE": {
+      "request_help_from_rich_brother": "request_help_from_rich_brother",
+      "perform_work_for_rich_brother": "perform_work_for_rich_brother",
+      "receive_payment": "receive_payment",
+      "stay_for_banquet": "attend_banquet",
+      "bow_to_guests": "open_door",
+      "sing_cheerful_song": "sing_cheerful_song",
+      "encounter_bitter_woe": "encounter_bitter_woe",
+      "make_sign_of_cross": "make_sign_of_cross",
+      "allow_woe_to_ride_on_shoulder": "allow_woe_to_ride_on_shoulder",
+      "spend_money_on_drink": "spend_money_on_drink",
+      "trade_assets_for_money": "trade_assets_for_money",
+      "move_heavy_stone": "transport_item",
+      "hide_woe_under_stone": "hide_woe_under_stone",
+      "take_gold_pot_and_hide": "take_item_and_hide",
+      "invite_rich_brother_to_feast": "invite_rich_brother_to_feast",
+      "rich_brother_attempt_to_move_stone": "follow_stone_home",
+      "accept_woe_as_burden": "accept_woe_as_burden"
+    },
+    "ACCO": {
+      "hang_kettle": "hang_kettle",
+      "kettle_transform_to_badger": "kettle_transform_to_badger",
+      "call_novices": "call_novices",
+      "kettle_jump_and_fly": "kettle_jump_and_fly",
+      "pursue_kettle": "capture_and_destroy",
+      "knock_down_kettle": "knock_down_kettle",
+      "force_kettle_into_box": "force_kettle_into_box",
+      "sell_kettle_to_tinker": "sell_kettle_to_tinker",
+      "tinker_carry_home": "activate_beech",
+      "kettle_transform_to_fur_badger": "kettle_transform_to_fur_badger",
+      "kettle_revert_shape": "kettle_revert_shape",
+      "show_kettle_to_friend": "show_kettle_to_friend",
+      "arrange_exhibition": "perform_and_applaud",
+      "perform_show": "prepare_to_show",
+      "receive_orders_from_nobility": "receive_orders_from_nobility",
+      "return_kettle_to_temple": "transport_item",
+      "worship_kettle_as_saint": "worship_kettle_as_saint"
+    },
+    "BIRT": {
+      "travel_to_trysting_place": "move_to_location",
+      "hear_tapping_on_beech": "go_and_hear_tapping_on_wood",
+      "approach_beech_tree": "approach_beech_tree",
+      "turn_key_on_beech": "activate_beech",
+      "accept_dryad_invitation": "accept_dryad_invitation",
+      "receive_pellet_from_gnome": "receive_pellet_from_gnome",
+      "eat_pellet_and_shrink": "eat_pellet_and_shrink",
+      "enter_tree_and_descend_stairs": "enter_tree_and_descend_stairs",
+      "travel_by_leaf_boat_under_pond": "travel_by_leaf_boat_under_pond",
+      "witness_queen_birthday_ceremony": "witness_queen_birthday_ceremony",
+      "receive_queen_kiss": "interact",
+      "return_to_bench_and_share_story": "return_to_location"
+    },
+    "BUFF": {
+      "open_theater_and_announce_reward": "open_door",
+      "perform_pig_imitation_without_apparatus": "perform_pig_imitation_without_apparatus",
+      "audience_demand_shake_cloak_for_pig": "audience_demand_shake_cloak_for_pig",
+      "audience_applaud_performance": "perform_and_applaud",
+      "countryman_declare_intent_to_repeat_trick": "countryman_declare_intent_to_repeat_trick",
+      "countryman_perform_pig_imitation_with_real_pig": "countryman_perform_pig_imitation_with_real_pig",
+      "audience_criticize_countryman_and_call_for_kickout": "audience_criticize_countryman_and_call_for_kickout",
+      "countryman_reveal_real_pig": "countryman_reveal_real_pig"
+    },
+    "CHIC_NP": {
+      "go_to_wood": "go_and_hear_tapping_on_wood",
+      "turn_back": "turn_back",
+      "meet_character": "interact",
+      "inform_about_sky_fall": "inform_about_sky_fall",
+      "decide_to_tell_king": "prepare_to_show",
+      "follow_fox": "follow_fox",
+      "be_eaten_by_fox": "be_eaten_by_fox"
+    },
+    "FOUR_NP": {
+      "leave_home": "move_to_location",
+      "separate_at_crossroads": "separate_at_crossroads",
+      "learn_thief_trade": "learn_thief_trade",
+      "learn_astronomer_trade": "learn_astronomer_trade",
+      "learn_hunter_trade": "learn_hunter_trade",
+      "learn_tailor_trade": "learn_tailor_trade",
+      "reunite_at_crossroads": "seek_way_out_in_forest",
+      "count_eggs": "count_eggs",
+      "fetch_eggs": "fetch_eggs",
+      "shoot_eggs": "shoot_eggs",
+      "sew_eggs": "sew_eggs",
+      "return_eggs_to_nest": "return_eggs_to_nest",
+      "locate_princess": "locate_princess",
+      "obtain_ship": "obtain_ship",
+      "sail_to_rock": "move_to_destination_and_resolve_state",
+      "steal_princess": "steal_princess",
+      "shoot_dragon": "capture_and_destroy",
+      "swim_after_ship_break": "swim_after_ship_break",
+      "repair_ship": "repair_ship",
+      "return_home_with_princess": "return_to_location",
+      "receive_reward": "open_door"
+    },
+    "HANS_NP": {
+      "abandon_children_in_forest": "abandon_children_in_forest",
+      "leave_children_at_fire": "move_to_location",
+      "drop_pebble_on_path": "drop_pebble_on_path",
+      "follow_pebbles_home": "follow_stone_home",
+      "drop_breadcrumb_on_path": "drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "seek_way_out_in_forest",
+      "hear_bird_and_follow_to_witch_house": "observe_and_follow_to_witch_house",
+      "enter_witch_house": "enter_witch_house",
+      "witch_captures_children": "witch_captures_children",
+      "push_witch_into_oven": "push_witch_into_oven",
+      "escape_from_stable": "escape_from_stable",
+      "collect_treasure": "open_door",
+      "call_duck_for_crossing": "call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "move_to_destination_and_resolve_state"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "predicate",
+      "left": "(at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `(at ?e - entity ?l - location)` in domain_1 and `(at ?e - entity ?l - location)` in domain_2, are identical in name and semantics. Both predicates represent the same situation: an entity `?e` is located at a location `?l`. There is no need for generalization or creating a more complex predicate. They are essentially the same predicate with the same arguments and relation. Therefore, they can be merged into one predicate.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "bowed",
+      "right": "sound_heard",
+      "reason": "action observe_object :precondition: ill-typed at:?o:object->entity"
+    },
+    {
+      "kind": "predicate",
+      "left": "(bowed ?e - entity ?l - location)",
+      "right": "(inside ?e - entity ?l - location)",
+      "result": "(in_location ?e - entity ?l - location)",
+      "reason": "The predicates `(bowed ?e - entity ?l - location)` and `(inside ?e - entity ?l - location)` share the same arguments: `?e` (entity) and `?l` (location). The predicates represent the same concept – an entity is in a location. The predicates `bowed` and `inside` have different names and different operators, but the core meaning is the same: an entity is located in a specific place. Therefore, we can merge them into a single predicate that captures this shared meaning. The `bowed` operator is used to describe a specific action (bowing), while `inside` is a more general predicate.  Merging them simplifies the domain and avoids potential complexity in reasoning. We can represent this with a predicate that simply states an entity is in a location.",
+      "similarity": 0.5352529883384705,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "concealed",
+      "right": "worshipped",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "concealed",
+      "right": "four_legged",
+      "reason": "Expected one PDDL root expression, got 32"
+    },
+    {
+      "kind": "predicate",
+      "left": "(drunk ?e - entity)",
+      "right": "(gloomy ?e - entity)",
+      "result": "(sad ?e - entity)",
+      "reason": "The two predicates, `in domain_1: (drunk ?e - entity)` and `in domain_2: (gloomy ?e - entity)`, both describe a state of an entity being in a specific emotional state. While they use different terms ('drunk' and 'gloomy'), they represent fundamentally similar concepts: an entity being in a negative emotional state.  The predicates share the same structure – they both specify an entity (`?e`) and a state (`drunk` or `gloomy`).  The `used as effect of` clause suggests a causal relationship, but the core semantic meaning is the same.  Merging them would simplify the domain by consolidating these related states.  It's important to note that the predicates are not containing relationships; they describe a state of the entity, not a relationship between entities.",
+      "similarity": 0.4762312173843384,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "gold_at",
+      "right": "boat_available",
+      "reason": "action move_item_and_hide :effect: ill-typed concealed:?item:object->item; action move_item_and_hide :effect: ill-typed has:?item:object->entity; action move_item_and_hide :effect: ill-typed item_at:?item:object->location; action move_item_and_hide :effect: wrong arity has; action move_item_and_hide :precondition: ill-typed item_at:?item:object->location"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates are almost identical in terms of their structure and semantics. Both predicates represent the same relationship: an entity 'e' has an item 'i'. The only difference is the context in which they are used – one is related to gold and drinks, and the other is related to kettles and shows. However, the core relationship remains the same. Therefore, we can merge them into a single predicate representing this fundamental 'has' relationship. We can keep the original predicate name 'has' for clarity and avoid introducing a new, overly general predicate.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "has_strength",
+      "right": "carried_item",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "has_strength",
+      "right": "exhibition_ready",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "invitation_sent",
+      "right": "invitation_offered",
+      "reason": "action accept_invitation :effect: ill-typed invitation:?receiver:object->entity; action accept_invitation :effect: ill-typed invitation:?sender:object->entity; action accept_invitation :precondition: ill-typed invitation:?receiver:object->entity; action accept_invitation :precondition: ill-typed invitation:?sender:object->entity; action offer_invitation :effect: ill-typed in_location:?r:entity->location; action offer_invitation :effect: undeclared symbol ?k; action offer_invitation :precondition: ill-typed at:?r:entity->location; action offer_invitation :precondition: undeclared symbol ?k"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "poor",
+      "right": "wealthy",
+      "reason": "Expected one PDDL root expression, got 28"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "poor",
+      "right": "pellet_eaten",
+      "reason": "Proposed predicate overwrites an unrelated declaration"
+    },
+    {
+      "kind": "predicate",
+      "left": "(rich ?e - entity)",
+      "right": "(state ?e - entity)",
+      "result": "(state ?e - entity)",
+      "reason": "The two predicates, `in domain_1: (rich ?e - entity) ; entity ?e is in the state 'rich'`, and `in domain_2: (state ?e - entity) ; entity ?e is in the state 'state'`, describe the state of an entity. However, they use different terms (`rich` vs. `state`) to represent the same state. The predicates are semantically equivalent, as both indicate that an entity is in a specific state. Merging them would simplify the domain by combining these similar state descriptions. The predicates are not containing relationship, so we can merge them without increasing complexity.",
+      "similarity": 0.6045266389846802,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "trade_assets_for_money",
+      "right": "sell_kettle_to_tinker",
+      "reason": "action exchange_for_money_and_use :effect: ill-typed has:?a:object->item; action exchange_for_money_and_use :effect: ill-typed has:?b:object->item; action exchange_for_money_and_use :effect: ill-typed has:?p:object->entity; action exchange_for_money_and_use :effect: undeclared symbol ?t; action exchange_for_money_and_use :precondition: ill-typed has:?a:object->item; action exchange_for_money_and_use :precondition: ill-typed has:?b:object->item; action exchange_for_money_and_use :precondition: ill-typed has:?m:object->item; action exchange_for_money_and_use :precondition: ill-typed has:?p:object->entity; action exchange_for_money_and_use :precondition: undeclared symbol ?t"
+    },
+    {
+      "kind": "operator",
+      "left": "move_heavy_stone",
+      "right": "return_kettle_to_temple",
+      "result": "transport_item",
+      "reason": "The two actions, `move_heavy_stone` from domain_1 and `return_kettle_to_temple` from domain_2, both involve moving an item from one location to another. `move_heavy_stone` specifically deals with a 'stone', while `return_kettle_to_temple` deals with a 'kettle'. However, the core action is about transporting an item. We can merge these actions into a more general action that handles the transportation of items to a specific location. The preconditions and effects of the two actions are related to the movement of objects. Therefore, we can merge them into a single action with a more generic name.",
+      "similarity": 0.33731961250305176,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "sing_cheerful_song",
+      "right": "hear_tapping_on_beech",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "invite_rich_brother_to_feast",
+      "right": "activate_beech",
+      "reason": "action offer_invitation :effect: ill-typed invitation_sent:?e:object->entity; action offer_invitation :effect: ill-typed invitation_sent:?r:object->entity; action offer_invitation :effect: ill-typed invited:?e:object->entity; action offer_invitation :effect: ill-typed invited:?r:object->entity; action offer_invitation :precondition: ill-typed at:?e:object->entity; action offer_invitation :precondition: ill-typed at:?l:object->location; action offer_invitation :precondition: ill-typed invitation_offered:?e:object->entity; action offer_invitation :precondition: ill-typed invitation_offered:?r:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_payment",
+      "right": "receive_pellet_from_gnome",
+      "reason": "action receive_item_from_entity :precondition: undeclared symbol ?l"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "rich_brother_attempt_to_move_stone",
+      "right": "enter_tree_and_descend_stairs",
+      "reason": "action move_stone_to_corridor :effect: ill-typed stone_moved:?s:object->item; action move_stone_to_corridor :effect: undeclared symbol ?rich; action move_stone_to_corridor :precondition: ill-typed stone_at:?l:object->location; action move_stone_to_corridor :precondition: ill-typed stone_at:?s:object->item; action move_stone_to_corridor :precondition: undeclared symbol ?rich"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "bow_to_guests",
+      "right": "witness_queen_birthday_ceremony",
+      "reason": "action attend_ceremony :effect: ill-typed at:?n:object->entity; action attend_ceremony :effect: ill-typed at:?p:object->location; action attend_ceremony :precondition: ill-typed at:?n:object->entity; action attend_ceremony :precondition: ill-typed at:?p:object->location; action attend_ceremony :precondition: ill-typed joyful:?n:object->entity; action attend_ceremony :precondition: ill-typed story_shared:?n:object->entity; action attend_ceremony :precondition: ill-typed story_shared:?s:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "bow_to_guests",
+      "right": "receive_queen_kiss",
+      "reason": "action receive_queen_kiss :effect: ill-typed in_location:?n:object->entity; action receive_queen_kiss :effect: ill-typed joyful:?n:object->entity; action receive_queen_kiss :effect: ill-typed kissed_by:?n:object->entity; action receive_queen_kiss :effect: ill-typed kissed_by:?q:object->entity; action receive_queen_kiss :precondition: ill-typed at:?n:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "stay_for_banquet",
+      "right": "return_to_bench_and_share_story",
+      "reason": "action attend_banquet_and_share_story :effect: ill-typed at:?location:entity->location; action attend_banquet_and_share_story :effect: ill-typed guest_present:?location:entity->location; action attend_banquet_and_share_story :precondition: ill-typed at:?location:entity->location; action attend_banquet_and_share_story :precondition: ill-typed banquet_at:?location:entity->location"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item) ; relation 'has' holds`, appear to be almost identical in their definition and usage. Both predicates describe the existence of an entity `?e` that possesses an item `?i`. The only difference is the domain they belong to (domain_1 and domain_2).  The 'has' relation is explicitly stated in both predicates, indicating a possession relationship.  Merging these predicates would simplify the domain description and avoid redundancy. The predicates are not containing relationships, and the semantics are very similar.  We can merge them into a single predicate representing the 'has' relationship.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "located",
+      "right": "at",
+      "reason": "action place_at :precondition: ill-typed badger_form:?pr:entity->item; action return_item_to_location :effect: undeclared predicate located; action transform_to_fur_badger :precondition: ill-typed at:?k:item->entity"
+    },
+    {
+      "kind": "predicate",
+      "left": "(owned_by ?i - item ?e - entity)",
+      "right": "(lantern_carried ?e - entity ?l - item)",
+      "result": "(carried_item ?e - entity ?l - item)",
+      "reason": "The two predicates represent similar concepts: ownership and carrying a lantern. Predicate `(owned_by ?i - item ?e - entity)` describes ownership, while `(lantern_carried ?e - entity ?l - item)` describes carrying a lantern. The entities `?e` are the same in both predicates, representing the person or object carrying the lantern. The predicates are not semantically equivalent in a general sense, but they share a common element – an entity.  We can merge them into a single predicate that captures the essence of both, focusing on the entity and the relationship it has with an item.  The core idea is that an entity can be 'owned by' something or 'carry' something.",
+      "similarity": 0.4631039798259735,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(performing_show ?e - entity)",
+      "right": "(shrunk ?e - entity)",
+      "result": "(state ?e - entity)",
+      "reason": "The two predicates, `(performing_show ?e - entity)` and `(shrunk ?e - entity)`, both relate to an entity `?e` and indicate a state of being. The first predicate signifies that the entity is 'performing show', while the second signifies that the entity is 'shrunk'. Although they describe different states, they share the same structure: `(predicate_name ?e - entity)`.  The predicates are effects of different operators, but the core relationship is that an entity can be in one of these states.  We can merge them into a more general predicate that captures the essence of an entity being in a specific state.  Since the predicates are used as effects of different operators, we can create a new predicate that represents the general state of an entity. The predicates are semantically equivalent in that they both describe a state an entity can be in. We can create a new predicate that represents the general state of an entity. The predicates are effects of different operators, but the core relationship is that an entity can be in one of these states.",
+      "similarity": 0.4087008833885193,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "wealthy",
+      "right": "knighted",
+      "reason": "action return_item_to_temple :effect: ill-typed has:?t:object->entity; action return_item_to_temple :precondition: ill-typed has:?t:object->entity"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "wealthy",
+      "right": "gloomy",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "call_novices",
+      "right": "approach_beech_tree",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "operator",
+      "left": "tinker_carry_home",
+      "right": "turn_key_on_beech",
+      "result": "activate_beech",
+      "reason": "The action `tinker_carry_home` in domain_1 involves carrying an item (`k`) to a location (`jhosiu`). The action `turn_key_on_beech` in domain_2 involves being at a location (`t`) and having an item (`k`), and it has effects like `door_open` and `inside dryad`. These two actions are not directly equivalent. However, we can consider a scenario where the `tinker_carry_home` action is used to move an item to a specific location, and the `turn_key_on_beech` action is used to activate something at that location. We can merge these actions into a new action that combines the effects of both. The new action will involve being at a location and having an item, and it will have effects like `door_open` and `inside dryad`.",
+      "similarity": 0.34736311435699463,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "receive_orders_from_nobility",
+      "right": "receive_queen_kiss",
+      "reason": "Expected one PDDL root expression, got 3"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "banquet_at",
+      "right": "at",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "predicate",
+      "left": "(gold_at ?g - item ?l - location)",
+      "right": "(item_at ?i - item ?l - location)",
+      "result": "(item_at ?i - item ?l - location)",
+      "reason": "The two predicates, `(gold_at ?g - item ?l - location)` and `(item_at ?i - item ?l - location)`, share a very similar structure. Both describe the presence of an item at a location. The key difference is the name of the relation ('gold at' vs 'item at'), but the arguments and their roles are identical: `?g` or `?i` represents an item, and `?l` represents a location.  The predicates are used as preconditions and effects of operators, suggesting they represent the same underlying concept – the location of an item.  Merging them would simplify the domain definition and avoid redundancy. The predicates are not containing relationships, so rule (3) does not apply.",
+      "similarity": 0.7218747138977051,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(guest_present ?guest - entity ?l - location)",
+      "right": "(bird_heard ?c - entity ?l - location)",
+      "result": "(present ?e - entity ?l - location)",
+      "reason": "The two predicates, `(guest_present ?guest - entity ?l - location)` and `(bird_heard ?c - entity ?l - location)`, share the same structure: they both describe the presence of an entity (`guest` or `c`) at a location (`l`). The difference lies in the entity type – `guest` represents a person, while `c` represents a bird.  However, both predicates use the same location argument.  The predicates are semantically related in that they both involve an entity and a location.  Merging them would simplify the domain by combining these similar concepts. We can create a new predicate that captures the general concept of something being present at a location, with the entity type as a parameter. This avoids creating overly specific predicates and maintains the core meaning of the original predicates.",
+      "similarity": 0.5346261858940125,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "need_help",
+      "right": "decided_to_tell_king",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "need_help",
+      "right": "countryman_declares_intent",
+      "reason": "action perform_entity_state :effect: undeclared symbol ?countryman; action perform_entity_state :effect: undeclared symbol ?pig; action perform_entity_state :precondition: wrong arity entity_state"
+    },
+    {
+      "kind": "predicate",
+      "left": "(poor ?e - entity)",
+      "right": "(dead ?e - entity)",
+      "result": "(sick ?e - entity)",
+      "reason": "The two predicates, `in domain_1: (poor ?e - entity) ; entity ?e is in the state 'poor'` and `in domain_2: (dead ?e - entity) ; entity ?e is in the state 'dead'`, both describe the state of an entity being in a specific condition.  Specifically, `poor` and `dead` are states that an entity can be in.  The predicates are semantically equivalent in that they both represent a condition an entity can have.  Merging them would simplify the domain description.  The predicates are not containing relationships; `poor` and `dead` are distinct states, not a subset or superset relationship. Therefore, they can be merged.",
+      "similarity": 0.608002781867981,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "stone_at",
+      "right": "crumb_on_path",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "trapped",
+      "right": "state_reached",
+      "reason": "Expected one PDDL root expression, got 8"
+    },
+    {
+      "kind": "predicate",
+      "left": "(at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `(at ?e - entity ?l - location)` in domain_1 and `(at ?e - entity ?l - location)` in domain_2, have the same name and exactly the same arguments and relation. They both represent the fact that an entity `?e` is located at a location `?l`.  There is no semantic difference between them. Therefore, they can be merged into a single predicate. The predicates are essentially identical in their meaning and usage within the PDDL domain.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` from domain_1 and `(has ?e - entity ?i - item)` from domain_2, have the exact same name and structure. They both represent the relationship where an entity `?e` has an item `?i`. The predicates are used in similar contexts (preconditions and effects of various operators like `receive_payment`, `spend_money_on_drink`, `trade_assets_for_money`, etc.).  There's no indication of a containment relationship or a more complex semantic difference. Therefore, they are semantically equivalent and can be merged.  Merging them into a single predicate with the same structure is the most appropriate approach.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "captured",
+      "right": "captured",
+      "reason": "Action update name collision"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "captured",
+      "right": "collected",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "exhibition_ready",
+      "right": "met",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "predicate",
+      "left": "(exhibition_ready ?e - entity)",
+      "right": "(decided_to_tell_king ?e - entity)",
+      "result": "(ready_to_show ?e - entity)",
+      "reason": "The two predicates, `in domain_1: (exhibition_ready ?e - entity)` and `in domain_2: (decided_to_tell_king ?e - entity)`, both use the same entity type (`?e - entity`) and describe a state of that entity. The first predicate indicates the entity is 'exhibition ready', while the second indicates the entity 'decided to tell king'. Although the states are different, they both relate to the same entity.  The predicates are used as preconditions for different operators, suggesting a shared underlying concept related to the entity's state or role.  Merging them would simplify the domain definition and avoid potential conflicts. The predicates are not containing relationships, so rule (3) does not apply. The predicates are not semantically equivalent in a general sense, but they share the same entity type and are used in similar contexts within the domain, justifying a merge.",
+      "similarity": 0.35758545994758606,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "located",
+      "right": "pebble_on_path",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "located",
+      "right": "crumb_on_path",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "predicate",
+      "left": "(carried_item ?e - entity ?l - item)",
+      "right": "(collected ?c - entity ?i - item)",
+      "result": "(held ?e - entity ?i - item)",
+      "reason": "The two predicates, `(carried_item ?e - entity ?l - item)` and `(collected ?c - entity ?i - item)`, both represent a carrying or collection relationship between an entity and an item. They share a similar structure with `?e` or `?c` representing the entity and `?l` or `?i` representing the item being carried or collected.  The predicates are semantically equivalent in that they both describe a relationship where an entity possesses or is holding an item.  Merging them would simplify the domain description.  Since they represent a carrying/holding relationship, merging is appropriate and doesn't introduce unnecessary complexity.",
+      "similarity": 0.5819623470306396,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(knighted ?e - entity)",
+      "right": "(princess_rescued ?e - entity)",
+      "result": "(rescued_princess ?e - entity)",
+      "reason": "The two predicates, `(knighted ?e - entity)` and `(princess_rescued ?e - entity)`, both relate to the same entity `?e` and describe a state where the entity is in a specific condition. The first predicate indicates that an entity has been knighted, while the second predicate indicates that an entity has been rescued as a princess. Although the underlying reasons for these states are different (knighting vs. rescuing a princess), the predicates share the same structure and express a state about a single entity.  The predicates are semantically equivalent in the sense that both describe an entity that is in a particular state.  Merging them would simplify the domain and avoid redundancy. We can represent this combined state as an entity being in a state of having been rescued as a princess, which is a more general description encompassing the original 'knighted' state.",
+      "similarity": 0.4726604223251343,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(pellet_eaten ?e - entity)",
+      "right": "(eggs_fetched ?e - entity)",
+      "result": "(entity_in_state ?e - entity)",
+      "reason": "The two predicates, `in domain_1: (pellet_eaten ?e - entity)` and `in domain_2: (eggs_fetched ?e - entity)`, both describe the state of an entity being in a specific state ('pellet eaten' and 'eggs fetched' respectively). They share the same structure – an entity `?e` – and the same role of describing a state. However, the predicates are used in different operators (`eat_pellet_and_shrink` and `fetch_eggs`, `shoot_eggs`). The predicates are semantically equivalent in that they both represent an entity being in a particular state. Merging them would simplify the domain description without losing any information. The predicates are not containing relationships, and the semantics are not overly general. Therefore, they can be merged.",
+      "similarity": 0.658005952835083,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "arrange_exhibition",
+      "right": "audience_applaud_performance",
+      "result": "perform_and_applaud",
+      "reason": "The two operators, `arrange_exhibition` from domain_1 and `audience_applaud_performance` from domain_2, perform actions related to preparing for and executing a show. `arrange_exhibition` sets an entity to 'ready_to_show', while `audience_applaud_performance` results in 'applause_given'. Although the preconditions and effects are different, both actions are related to a performance and the reaction of the audience. Therefore, we can merge them into a single action that represents the overall process of a performance being ready and the audience applauding it. The new action name could be 'perform_and_applaud'.",
+      "similarity": 0.3859294056892395,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "approach_beech_tree",
+      "right": "go_to_wood",
+      "reason": "action go_to_location: malformed fields"
+    },
+    {
+      "kind": "operator",
+      "left": "hear_tapping_on_beech",
+      "right": "go_to_wood",
+      "result": "go_and_hear_tapping_on_wood",
+      "reason": "The action `hear_tapping_on_beech` in domain_1 describes the sound of tapping on a beech tree, while the action `go_to_wood` in domain_2 describes going to the wood. These actions are semantically related because hearing tapping on a beech tree could be a reason to go to the wood. Therefore, we can merge these two actions into a single action that represents the act of going to the wood and hearing the tapping sound. The new action name can be `go_and_hear_tapping_on_wood`. The preconditions and effects will be combined from both actions.",
+      "similarity": 0.5232868790626526,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "encounter_bitter_woe",
+      "right": "meet_character",
+      "reason": "action interact_at_location :effect: ill-typed has_fatigue:?e1:object->entity; action interact_at_location :effect: ill-typed met:?e1:object->entity; action interact_at_location :effect: ill-typed met:?e2:object->entity; action interact_at_location :precondition: ill-typed at:?e1:object->entity; action interact_at_location :precondition: ill-typed at:?e2:object->entity; action interact_at_location :precondition: ill-typed at:?l:object->location; action interact_at_location :precondition: ill-typed met:?e1:object->entity; action interact_at_location :precondition: ill-typed met:?e2:object->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "receive_queen_kiss",
+      "right": "meet_character",
+      "result": "interact",
+      "reason": "The first domain describes a scenario involving a queen and her actions (receiving a kiss, being joyful, being sad). The second domain describes a scenario involving two entities meeting at a location. The action `receive_queen_kiss` in domain_1 involves a single entity (`?n`) receiving a kiss from the queen (`?q`). The action `meet_character` in domain_2 involves two entities (`?e1` and `?e2`) meeting at a location (`?l`). Although the actions have different names, they both involve two entities interacting. The effect of `receive_queen_kiss` is that the entity `?n` is kissed by `?q`, is joyful, and is not sad. The effect of `meet_character` is that `?e1` and `?e2` are met, and `?e2` is met by `?e1`.  We can merge these two actions into a single action that represents the general concept of two entities interacting. A reasonable name for this merged action would be 'interact'.",
+      "similarity": 0.4016786217689514,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "perform_show",
+      "right": "decide_to_tell_king",
+      "result": "prepare_to_show",
+      "reason": "The first action `perform_show` involves showing an item (`?k`) to a state, and it requires the entity to be `ready_to_show`. The second action `decide_to_tell_king` involves making an entity `ready_to_show`.  These two actions are closely related because `decide_to_tell_king` sets the entity to `ready_to_show`, which is a precondition for `perform_show`. Therefore, we can merge these two actions into a single action that prepares an entity for showing something. The new action name could be `prepare_to_show`. The preconditions would include both the preconditions of `decide_to_tell_king` and the preconditions of `perform_show` related to being ready to show. The effect would be setting the entity to `ready_to_show`.",
+      "similarity": 0.3090102970600128,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "travel_to_trysting_place",
+      "right": "separate_at_crossroads",
+      "reason": "action go_to_crossroads_and_get_sticks :precondition: undeclared predicate cross_way"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "pursue_kettle",
+      "right": "fetch_eggs",
+      "reason": "action capture_item :effect: ill-typed entity_in_state:?i:item->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "call_novices",
+      "right": "fetch_eggs",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "operator",
+      "left": "pursue_kettle",
+      "right": "shoot_dragon",
+      "result": "capture_and_destroy",
+      "reason": "The action `shoot_dragon` in domain_2 involves shooting a dragon at a specific location, resulting in the dragon's death and a broken ship. The action `pursue_kettle` in domain_1 involves capturing a kettle, which implies the kettle is airborne. Although the actions have different parameters and preconditions, they both relate to achieving a specific outcome – dealing with a dangerous item (dragon) or capturing a kettle.  We can merge these actions into a single action that captures the essence of both, namely 'capture_and_destroy'. The preconditions would include the initial state of the kettle being airborne and the hunter's ability to shoot. The effects would include the kettle being captured and the dragon being dead.",
+      "similarity": 0.5285956859588623,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "return_to_bench_and_share_story",
+      "right": "return_home_with_princess",
+      "result": "return_to_location",
+      "reason": "The two operators, `return_to_bench_and_share_story` from domain 1 and `return_home_with_princess` from domain 2, both involve an entity moving from one location to another. The `return_to_bench_and_share_story` action returns an entity to a bench and shares a story, while the `return_home_with_princess` action returns an entity (specifically, a princess) to a house.  Although the specific details differ (story sharing vs. returning with a princess), the core action is an entity moving from one location to another.  Therefore, we can merge these two actions into a single action that represents the general concept of returning to a destination. The new action name could be `return_to_location`. The preconditions and effects would need to be combined, considering the different locations (bench vs. house).",
+      "similarity": 0.40400439500808716,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "operator",
+      "left": "travel_to_trysting_place",
+      "right": "leave_at_location",
+      "result": "move_to_location",
+      "reason": "The action `travel_to_trysting_place` in domain_1 and the action `leave_at_location` in domain_2 both involve moving an entity from one location to another. The `travel_to_trysting_place` action preconditions that the entity is at the destination location and then sets the entity's location to the destination. The `leave_at_location` action preconditions that the entity is at the current location and then removes the entity from that location.  These actions are essentially inverses of each other. We can merge them into a single action that represents the general concept of moving an entity from one location to another. The new action name can be `move_to_location`. The preconditions will be the same as the original actions, and the effects will also be the same. The new action will have the same parameters as the original actions.",
+      "similarity": 0.4085974097251892,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "rich_brother_attempt_to_move_stone",
+      "right": "drop_pebble_on_path",
+      "reason": "action move_stone_with_pebble :effect: wrong arity stone_moved"
+    },
+    {
+      "kind": "operator",
+      "left": "rich_brother_attempt_to_move_stone",
+      "right": "follow_pebbles_home",
+      "result": "follow_stone_home",
+      "reason": "The action `rich_brother_attempt_to_move_stone` in domain_1 involves attempting to move a stone to a location, and it has preconditions related to the stone being at the location and the rich brother being in a state. The action `follow_pebbles_home` in domain_2 involves following pebbles to their home location, with preconditions related to the pebbles being on the path and the entities being at the path location. These actions are not directly equivalent. However, we can consider a scenario where the rich brother attempts to move a pebble (which is treated as a stone in this context) to its home location. The preconditions would be similar to the original actions, and the effects would involve the pebble being at the home location and the rich brother's state. Therefore, we can merge these two actions into one action.",
+      "similarity": 0.34615558385849,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "approach_beech_tree",
+      "right": "seek_way_out_in_forest",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "travel_by_leaf_boat_under_pond",
+      "right": "seek_way_out_in_forest",
+      "reason": "Operator merge would overwrite another action"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "activate_beech",
+      "right": "seek_way_out_in_forest",
+      "reason": "Operator merge would overwrite another action"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "approach_beech_tree",
+      "right": "observe_and_follow_to_witch_house",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "activate_beech",
+      "right": "enter_witch_house",
+      "reason": "action enter_location_with_open_door :effect: ill-typed has:?d:object->item; action enter_location_with_open_door :effect: ill-typed has:?e:object->entity; action enter_location_with_open_door :effect: ill-typed in_location:?e:object->entity; action enter_location_with_open_door :effect: ill-typed in_location:?l:object->location; action enter_location_with_open_door :precondition: ill-typed at:?e:object->entity; action enter_location_with_open_door :precondition: ill-typed at:?l:object->location; action enter_location_with_open_door :precondition: ill-typed door_open:?d:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "knock_down_kettle",
+      "right": "push_witch_into_oven",
+      "reason": "Unclosed '(' in PDDL"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "force_kettle_into_box",
+      "right": "push_witch_into_oven",
+      "reason": "action move_entity_to_location :effect: ill-typed at:?e:object->entity; action move_entity_to_location :effect: ill-typed at:?l:object->location; action move_entity_to_location :effect: ill-typed sick:?e:object->entity; action move_entity_to_location :precondition: ill-typed at:?e:object->entity; action move_entity_to_location :precondition: ill-typed at:?l:object->location"
+    },
+    {
+      "kind": "operator",
+      "left": "present_to_guests",
+      "right": "acquire_reward_by_opening_theater",
+      "result": "open_door",
+      "reason": "The action `present_to_guests` in domain_1 and `acquire_reward_by_opening_theater` in domain_2 are related to the presence of entities in locations and obtaining rewards. The `acquire_reward_by_opening_theater` action requires a nobleman to be in a theater location and then obtain a reward. The `present_to_guests` action requires a poor person to be at a location and a guest to be present at that location. Although the actions have different names and parameters, they both involve a nobleman being in a location and obtaining something (a reward in the second case, a guest in the first case). Therefore, we can merge these two actions into a single action that represents the nobleman going to a location and obtaining a reward or a guest. We can name this action `open_door` as it represents opening a door to obtain a reward.",
+      "similarity": 0.3352767825126648,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "call_novices",
+      "right": "call_duck_for_crossing",
+      "reason": "action assist_crossing :effect: wrong arity duck_helped; action assist_crossing :precondition: ill-typed badger_form:?e:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "kettle_jump_and_fly",
+      "right": "call_duck_for_crossing",
+      "reason": "action get_airborne :effect: ill-typed crossed_lake:?i:item->entity; action get_airborne :precondition: ill-typed at:?i:item->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "travel_by_leaf_boat_under_pond",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :precondition: ill-typed boat_available:?d:entity->item"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "kettle_transform_to_badger",
+      "right": "call_duck_for_crossing",
+      "reason": "action transform_with_helper :effect: ill-typed badger_form:?item:object->item; action transform_with_helper :effect: ill-typed duck_helped:?helper:object->entity; action transform_with_helper :effect: wrong arity duck_helped; action transform_with_helper :precondition: ill-typed at:?helper:object->entity; action transform_with_helper :precondition: ill-typed at:?item:object->location; action transform_with_helper :precondition: ill-typed hanging:?item:object->item"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_announced",
+      "right": "decided_to_tell_king",
+      "reason": "Expected one PDDL root expression, got 81"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "countryman_declares_intent",
+      "right": "eggs_fetched",
+      "reason": "action identify_entity :effect: undeclared predicate identify_entity; action perform_with_pig :precondition: undeclared predicate countryman_declares_intent"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "imitates_pig",
+      "right": "is_thief",
+      "reason": "Expected one PDDL root expression, got 37"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_announced",
+      "right": "reunited_with_father",
+      "reason": "Expected one PDDL root expression, got 31"
+    },
+    {
+      "kind": "predicate",
+      "left": "(at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `in domain_1` and `in domain_2`, both represent the same concept: an entity is located at a specific location. They share the same name, arguments (`?e` for entity and `?l` for location), and relation (`at` holds). The predicates are used in similar preconditions and effects within the PDDL domains. Therefore, they are semantically equivalent and can be merged. The predicates are very specific, representing the 'at' relation with entities and locations, which is a fundamental concept in the domains. Merging them into a single predicate would not introduce unnecessary complexity.",
+      "similarity": 1.0000001192092896,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(turned_back ?e - entity)",
+      "right": "(reward_received ?e - entity)",
+      "result": "(state_reached ?e - entity)",
+      "reason": "The two predicates, `(turned_back ?e)` and `(reward_received ?e)`, both use the same entity variable `?e` and refer to entities that are in a specific state ('turned back' and 'reward received' respectively). While they represent different events, the core concept of an entity being in a particular state is shared.  The predicates are not containing relationships; one doesn't imply the other in a way that would significantly complicate the PDDL logic.  Merging them would simplify the domain by combining these related concepts. The predicates are essentially describing the same kind of situation – an entity having a specific state.  We can represent this with a new predicate that captures this general state. The semantics are closely related, focusing on the state of an entity.",
+      "similarity": 0.5419503450393677,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "go_to_wood",
+      "right": "abandon_children_in_forest",
+      "reason": "action move_to_location :effect: undeclared predicate going_to_location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "follow_fox",
+      "right": "follow_pebbles_home",
+      "reason": "action move_to_location :effect: ill-typed at:?e:object->entity; action move_to_location :effect: ill-typed at:?l:object->location; action move_to_location :precondition: ill-typed at:?e:object->entity; action move_to_location :precondition: ill-typed at:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "follow_fox",
+      "right": "follow_breadcrumbs_home",
+      "reason": "action move_to_destination :effect: ill-typed at:?e:object->entity; action move_to_destination :effect: ill-typed at:?l:object->location; action move_to_destination :precondition: ill-typed at:?e:object->entity; action move_to_destination :precondition: ill-typed at:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "go_to_wood",
+      "right": "seek_way_out_in_forest",
+      "reason": "action move_to_location :effect: undeclared predicate going_to_location; action move_to_location :precondition: ill-typed at:?e:object->entity; action move_to_location :precondition: ill-typed at:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "turn_back",
+      "right": "seek_way_out_in_forest",
+      "reason": "action move_to_location :effect: ill-typed at:?e:object->entity; action move_to_location :effect: ill-typed at:?l:object->location; action move_to_location :effect: ill-typed state_reached:?e:object->entity; action move_to_location :precondition: ill-typed at:?e:object->entity; action move_to_location :precondition: ill-typed at:?l:object->location; action move_to_location :precondition: ill-typed state_reached:?e:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "go_to_wood",
+      "right": "hear_bird_and_follow_to_witch_house",
+      "reason": "action follow_bird_to_location :effect: undeclared symbol ?l_old"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "be_eaten_by_fox",
+      "right": "witch_captures_children",
+      "reason": "action capture_entity :effect: ill-typed at:?l:entity->location; action capture_entity :precondition: ill-typed locked:?l:entity->location"
+    },
+    {
+      "kind": "operator",
+      "left": "open_theater_and_announce_reward",
+      "right": "acquire_reward",
+      "result": "acquire_reward_by_opening_theater",
+      "reason": "The action `open_theater_and_announce_reward` in domain_1 essentially opens a theater and announces a reward. The action `acquire_reward` in domain_2 acquires a reward. These actions have different names and parameters, but they both relate to obtaining or announcing a reward.  The `open_theater_and_announce_reward` action creates a `theater_opened` predicate and announces a reward, while `acquire_reward` creates a `has` predicate.  It's reasonable to merge these actions into a single action that represents obtaining a reward, perhaps by opening a theater and announcing it. The new action name could be `acquire_reward_by_opening_theater`. The preconditions and effects would need to be combined, reflecting the opening of the theater and the announcement of the reward.",
+      "similarity": 0.5412726402282715,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(entity_at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `(entity_at ?e - entity ?l - location)` and `(at ?e - entity ?l - location)`, both express the presence of an entity at a location. The first predicate is more specific, explicitly stating 'entity at', while the second uses 'at'. However, the arguments and their roles are identical: `?e` represents an entity, and `?l` represents a location. The predicates are used in similar operators like `leave_home`, `separate_at_crossroads`, and `learn_thief_trade`, indicating a similar underlying concept.  The predicates are not containing relationships, and the semantics are closely related. Therefore, we can merge them into a more general predicate. The key difference is the explicit 'entity at' in the first predicate, which can be simplified to just 'at'.",
+      "similarity": 0.7122077941894531,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` in domain_1 and `(has ?e - entity ?i - item)` in domain_2, are almost identical. They both express the same relationship: an entity `?e` has an item `?i`. The only difference is the source domain.  Since the predicates have the same name and express the same relationship, they can be merged.  The arguments are also identical, indicating they represent the same concept.  Merging them will simplify the domain description and avoid redundancy.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "item_at",
+      "right": "pebble_on_path",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "item_at",
+      "right": "fire_lit",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_received",
+      "right": "bread_given",
+      "reason": "Expected one PDDL root expression, got 30"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_received",
+      "right": "reunited_with_father",
+      "reason": "Expected one PDDL root expression, got 45"
+    },
+    {
+      "kind": "operator",
+      "left": "leave_home",
+      "right": "leave_children_at_fire",
+      "result": "leave_at_location",
+      "reason": "The action `leave_home` in domain_1 and `leave_children_at_fire` in domain_2 are both related to moving entities from one location to another. `leave_home` moves a person from the house to the town gate, while `leave_children_at_fire` moves children from the forest to a lost state. Although the specific locations and preconditions are different, the core action is to move an entity from one place to another. We can merge these actions into a more general action that captures the essence of leaving something at a specific location. The new action name can be `leave_at_location`. The preconditions and effects can be combined by considering the general case of moving an entity from one location to another, and the specific details (house, town_gate, forest, lost) can be represented in the preconditions and effects respectively.",
+      "similarity": 0.47962939739227295,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "follow_pebbles_home",
+      "reason": "action return_to_home_with_object :effect: ill-typed at:?e:object->entity; action return_to_home_with_object :effect: ill-typed at:?l:object->location; action return_to_home_with_object :effect: undeclared symbol ?home; action return_to_home_with_object :precondition: ill-typed at:?e:object->entity; action return_to_home_with_object :precondition: ill-typed at:?l:object->location; action return_to_home_with_object :precondition: ill-typed pebble_on_path:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "sail_to_rock",
+      "right": "follow_pebbles_home",
+      "reason": "action move_to_destination :effect: ill-typed at:?d:object->location; action move_to_destination :effect: ill-typed at:?e:object->entity; action move_to_destination :precondition: ill-typed at:?d:object->location; action move_to_destination :precondition: ill-typed at:?e:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "reunite_at_crossroads",
+      "right": "follow_pebbles_home",
+      "reason": "action follow_to_home :effect: ill-typed at:?b:object->entity; action follow_to_home :effect: ill-typed at:?d:object->location; action follow_to_home :effect: ill-typed at:?h:object->entity; action follow_to_home :precondition: ill-typed at:?b:object->entity; action follow_to_home :precondition: ill-typed at:?d:object->location; action follow_to_home :precondition: ill-typed at:?h:object->entity; action follow_to_home :precondition: ill-typed pebble_on_path:?d:object->location"
+    },
+    {
+      "kind": "operator",
+      "left": "reunite_at_crossroads",
+      "right": "wander_forest_seeking_way_out",
+      "result": "seek_way_out_in_forest",
+      "reason": "The two operators, `reunite_at_crossroads` from domain_1 and `wander_forest_seeking_way_out` from domain_2, both involve an entity being at a location. The `reunite_at_crossroads` action changes the entity's location from a crossroad to a house, while the `wander_forest_seeking_way_out` action changes the entity's location to a forest and marks the entity as lost.  There isn't a direct semantic equivalence. However, we can interpret `wander_forest_seeking_way_out` as an action where an entity is trying to find a way out of the forest, which can be considered as a form of 'reuniting' with a desired location (a way out). Therefore, we can merge these two actions into a single action that represents an entity attempting to find a way out of a forest, potentially leading to the entity being lost. The new action will have the same parameters and preconditions as the original actions, and the effects will be a combination of the effects of the original actions.",
+      "similarity": 0.4108061194419861,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "steal_princess",
+      "right": "witch_captures_children",
+      "reason": "action capture_person :effect: ill-typed at:?l:object->location; action capture_person :effect: ill-typed at:?p:object->entity; action capture_person :effect: ill-typed at:?s:object->location; action capture_person :effect: ill-typed captured:?p:object->entity; action capture_person :effect: ill-typed locked:?s:object->location; action capture_person :precondition: ill-typed at:?c:object->entity; action capture_person :precondition: ill-typed at:?l:object->location; action capture_person :precondition: ill-typed at:?p:object->entity; action capture_person :precondition: ill-typed locked:?s:object->location"
+    },
+    {
+      "kind": "operator",
+      "left": "receive_reward",
+      "right": "collect_treasure",
+      "result": "acquire_reward",
+      "reason": "The action `collect_treasure` in domain_2 and the action `receive_reward` in domain_1 are semantically related. Both actions involve an entity acquiring a reward or treasure. `collect_treasure` involves an entity (`?h`, `?g`) having a pearl and a precious stone, while `receive_reward` involves an entity (`?e`) receiving a reward. We can merge these actions into a single action named `acquire_reward`. The preconditions and effects can be combined to represent the overall action of acquiring a reward or treasure.",
+      "similarity": 0.5513441562652588,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "separate_at_crossroads",
+      "right": "call_duck_for_crossing",
+      "reason": "action help_cross_location :effect: undeclared predicate crossed_location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "swim_after_ship_break",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :effect: ill-typed crossed_lake:?l:location->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "sail_to_rock",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :precondition: ill-typed at:?l:entity->location; action cross_lake_with_duck :precondition: undeclared symbol u"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :effect: ill-typed at:?duck:object->entity; action cross_lake_with_duck :effect: ill-typed at:?lake:object->location; action cross_lake_with_duck :effect: ill-typed crossed_lake:?lake:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?duck:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?duck:object->location; action cross_lake_with_duck :precondition: ill-typed at:?lake:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?lake:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action return_home_with_family :effect: undeclared predicate reunited_with_princess"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_eggs_to_nest",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action return_to_home_and_reunite :precondition: ill-typed crossed_lake:?h:location->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "separate_at_crossroads",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action arrive_at_crossroads_and_reunite :effect: ill-typed at:?b:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed at:?f:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed at:?h:object->location; action arrive_at_crossroads_and_reunite :effect: ill-typed has:?b:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed reunited_with_father:?f:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?b:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?f:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?h:object->location; action arrive_at_crossroads_and_reunite :precondition: ill-typed crossed_lake:?f:object->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "sail_to_rock",
+      "right": "return_home_and_reunite_with_father",
+      "result": "move_to_destination_and_resolve_state",
+      "reason": "The action `sail_to_rock` in domain_1 and `return_home_and_reunite_with_father` in domain_2 both involve moving an entity to a specific location (rock_sea or father_house) and potentially changing its state (e.g., no longer lost). The preconditions and effects of these actions are related to the movement and state changes of entities. Although the specific predicates used are different (e.g., `has ship`, `at house` vs. `crossed_lake`, `at father_house`), the core intention of the actions is similar: to move an entity to a destination and potentially resolve a state (like being lost). Therefore, we can merge these two actions into a single action that encompasses both scenarios. The new action name could be `move_to_destination_and_resolve_state`.",
+      "similarity": 0.37640202045440674,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "constant",
+      "left": "father",
+      "right": "father",
+      "result": "hans_np__c_father",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "king",
+      "right": "king",
+      "result": "four_np__c_king",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "princess",
+      "right": "princess",
+      "result": "buff__c_princess",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "cottage",
+      "right": "cottage",
+      "result": "buff__c_cottage",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "door",
+      "right": "door",
+      "result": "buff__c_door",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "forest",
+      "right": "forest",
+      "result": "buff__c_forest",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    },
+    {
+      "kind": "constant",
+      "left": "mother",
+      "right": "mother",
+      "result": "buff__c_mother",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "total": 18,
+  "pyperplan_counts": {
+    "incomplete": 6,
+    "time_limit": 6,
+    "solved": 6
+  },
+  "downward_counts": {
+    "unsolvable": 9,
+    "solved": 9
+  },
+  "freshly_validated_downward_plans": 9,
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__all_domains",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__all_domains",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__all_domains",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__all_domains",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "solved",
+      "downward_status": "solved",
+      "fresh_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 3,
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__all_domains",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__all_domains",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "pyperplan_status": "time_limit",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "pyperplan_status": "incomplete",
+      "downward_status": "unsolvable",
+      "audit_errors": []
+    }
+  ],
+  "scope": "Identical exported problems under two solver configurations",
+  "limits": [
+    "Both use 60-second wall budgets in this run; Fast Downward additionally has a 4 GiB limit",
+    "Concurrent workstation workloads; no controlled runtime-speed claim",
+    "Authored development worlds/interfaces; no independent semantic or narrative-quality conclusion"
+  ],
+  "implementation_sha256": "026251b4107503f52860ef81e7fa43319f9c32c825b1ad63584f055be8daf38f"
+}

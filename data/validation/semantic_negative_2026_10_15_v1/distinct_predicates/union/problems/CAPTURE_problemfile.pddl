@@ -1,0 +1,1 @@
+(define (problem capture_problem) (:domain narrative_aligned) (:init (d001__p_alive d001__c_prisoner) (typeguard__d000__t_person d000__c_corpse) (typeguard__d000__t_object d000__c_corpse) (typeguard__d001__t_person d001__c_prisoner) (typeguard__d001__t_object d001__c_prisoner)) (:goal (d001__p_captured d001__c_prisoner)))

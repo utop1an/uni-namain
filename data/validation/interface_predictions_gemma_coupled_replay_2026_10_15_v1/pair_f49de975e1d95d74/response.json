@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_f49de975e1d95d74",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `owned_by` and `has` describe different relationships between entities and items. `owned_by` indicates possession, while `has` indicates an item is present with an entity. These relationships are distinct and describe different aspects of the same objects. The `owned_by` predicate requires an owner entity, while the `has` predicate simply states an item is associated with an entity. The action contexts further illustrate this difference: `owned_by` is not present in any action context, while `has` is a precondition and effect in multiple actions (eat_pellet_and_shrink, receive_pellet_from_gnome, turn_key_on_beech). Therefore, they are complementary, as they represent distinct ways an entity can relate to an item. The parameters are identical, but the semantics are different. The `story_or_learner_provenance` is not supplied, so we cannot determine if this relationship was derived from a specific source or learning process.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "BIRT:action:eat_pellet_and_shrink",
+      "quote": "(has ?n ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "BIRT:action:receive_pellet_from_gnome",
+      "quote": "(has ?n ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "BIRT:action:turn_key_on_beech",
+      "quote": "(has ?n ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "BIRT:action:eat_pellet_and_shrink",
+      "quote": "(has ?n ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "BIRT:action:receive_pellet_from_gnome",
+      "quote": "(has ?n ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "BIRT:action:turn_key_on_beech",
+      "quote": "(has ?n ?k)"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "candidate_id": "pair_23ce9ad14840ddf8",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_23ce9ad14840ddf8",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates `pig_found` and `married` describe fundamentally different relationships. `pig_found` indicates the presence of a pig, while `married` denotes a marital relationship between two entities. The action contexts further highlight this difference: `pig_found` relates to an event (applaud performance) involving a pig, whereas `married` is a state relation between two entities (jack and princess) established through a specific action (master_marry_princess). The predicates are complementary because they represent distinct types of relationships, and one cannot be a direct substitute for the other. The action contexts provide evidence for this complementary relationship by describing actions that involve one predicate but not the other. Specifically, `BUFF:action:audience_applaud_performance` uses `pig_found` to describe an event, while `PUSS:action:master_marry_princess` uses `married` to describe a state. The parameters of the predicates are also different, indicating distinct concepts. The `pig_found` predicate takes two entities as arguments, while the `married` predicate takes two entities as arguments. The type hierarchies are also different, with `pig_found` relating to `entity` and `location`, while `married` also relates to `entity`.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_marry_princess",
+        "quote": "(married ?jack ?princess)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_23ce9ad14840ddf8"
+  ]
+}

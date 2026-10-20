@@ -1,0 +1,78 @@
+{
+  "sources": [
+    "HRI_HOUSEHOLD_0"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 12,
+    "constants": 0,
+    "predicates": 7,
+    "operators": 7
+  },
+  "predicate_maps": {
+    "HRI_HOUSEHOLD_0": {
+      "drawerIsOpen": "d000__p_drawerisopen",
+      "isAt": "d000__p_isat",
+      "isHolding": "d000__p_isholding",
+      "isHoldingReceptacle": "d000__p_isholdingreceptacle",
+      "objectIsAt": "d000__p_objectisat",
+      "objectIsInside": "d000__p_objectisinside",
+      "receptacleIsAt": "d000__p_receptacleisat"
+    }
+  },
+  "constant_maps": {
+    "HRI_HOUSEHOLD_0": {}
+  },
+  "action_maps": {
+    "HRI_HOUSEHOLD_0": {
+      "navigate": "d000__a_navigate",
+      "openDrawer": "d000__a_opendrawer",
+      "pick": "d000__a_pick",
+      "pickReceptacle": "d000__a_pickreceptacle",
+      "place": "d000__a_place",
+      "placeInside": "d000__a_placeinside",
+      "placeReceptacle": "d000__a_placereceptacle"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "HRI_HOUSEHOLD_0": {
+      "types": {
+        "HOUSEHOLD_OBJECT": "d000__t_household_object",
+        "LOCATION": "d000__t_location",
+        "RECEPTACLE": "d000__t_receptacle",
+        "ROBOT": "d000__t_robot",
+        "apple": "d000__t_apple",
+        "cloth": "d000__t_cloth",
+        "diningTableLoc": "d000__t_diningtableloc",
+        "drawerLoc": "d000__t_drawerloc",
+        "kitchenCounterLoc": "d000__t_kitchencounterloc",
+        "lunchBoxReceptacle": "d000__t_lunchboxreceptacle",
+        "robot1": "d000__t_robot1",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {
+        "apple": "d000__o_apple",
+        "cloth": "d000__o_cloth",
+        "diningTableLoc": "d000__o_diningtableloc",
+        "drawerLoc": "d000__o_drawerloc",
+        "kitchenCounterLoc": "d000__o_kitchencounterloc",
+        "lunchBoxReceptacle": "d000__o_lunchboxreceptacle",
+        "robot1": "d000__o_robot1"
+      }
+    }
+  },
+  "source_sha256": {
+    "HRI_HOUSEHOLD_0_domainfile.pddl": "86be709799df5999089b5de7566c5978eebb47cbdd9007c7f4c5bcb932c889e4",
+    "HRI_HOUSEHOLD_0_problemfile.pddl": "d604d9da9af69cf7f121295e33118d7de022d3442843a5a38797cbd4179393ea"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

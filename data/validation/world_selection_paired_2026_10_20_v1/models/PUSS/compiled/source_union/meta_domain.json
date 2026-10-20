@@ -1,0 +1,103 @@
+{
+  "sources": [
+    "PUSS"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 4,
+    "constants": 25,
+    "predicates": 15,
+    "operators": 14
+  },
+  "predicate_maps": {
+    "PUSS": {
+      "alive": "d000__p_alive",
+      "at": "d000__p_at",
+      "at_item": "d000__p_at_item",
+      "castle_owned_by": "d000__p_castle_owned_by",
+      "contains": "d000__p_contains",
+      "drowning": "d000__p_drowning",
+      "gate_open": "d000__p_gate_open",
+      "gift_delivered": "d000__p_gift_delivered",
+      "has": "d000__p_has",
+      "married": "d000__p_married",
+      "obedient": "d000__p_obedient",
+      "promised_to_serve": "d000__p_promised_to_serve",
+      "rescued_by": "d000__p_rescued_by",
+      "transformed_into": "d000__p_transformed_into",
+      "wearing": "d000__p_wearing"
+    }
+  },
+  "constant_maps": {
+    "PUSS": {
+      "ass": "d000__c_ass",
+      "bag": "d000__c_bag",
+      "boots": "d000__c_boots",
+      "coachman": "d000__c_coachman",
+      "eldest_son": "d000__c_eldest_son",
+      "field_of_corn": "d000__c_field_of_corn",
+      "field_of_wheat": "d000__c_field_of_wheat",
+      "groom": "d000__c_groom",
+      "hare": "d000__c_hare",
+      "jack": "d000__c_jack",
+      "king": "d000__c_king",
+      "mill": "d000__c_mill",
+      "miller": "d000__c_miller",
+      "ogre": "d000__c_ogre",
+      "ogre_castle": "d000__c_ogre_castle",
+      "palace": "d000__c_palace",
+      "partridge": "d000__c_partridge",
+      "princess": "d000__c_princess",
+      "puss": "d000__c_puss",
+      "rabbit": "d000__c_rabbit",
+      "river": "d000__c_river",
+      "royal_wardrobe": "d000__c_royal_wardrobe",
+      "second_son": "d000__c_second_son",
+      "suit": "d000__c_suit",
+      "warren": "d000__c_warren"
+    }
+  },
+  "action_maps": {
+    "PUSS": {
+      "buy_boots": "d000__a_buy_boots",
+      "give_bag_to_cat": "d000__a_give_bag_to_cat",
+      "cat_catch_rabbits": "d000__a_cat_catch_rabbits",
+      "cat_deliver_gifts_to_king": "d000__a_cat_deliver_gifts_to_king",
+      "cat_persuade_master_to_bathe": "d000__a_cat_persuade_master_to_bathe",
+      "cat_call_for_help": "d000__a_cat_call_for_help",
+      "king_send_groom_fetch_suit": "d000__a_king_send_groom_fetch_suit",
+      "master_wear_suit": "d000__a_master_wear_suit",
+      "cat_ogre_transform_lion": "d000__a_cat_ogre_transform_lion",
+      "cat_ogre_transform_mouse": "d000__a_cat_ogre_transform_mouse",
+      "cat_eat_mouse": "d000__a_cat_eat_mouse",
+      "cat_disentchant_prisoners": "d000__a_cat_disentchant_prisoners",
+      "cat_open_castle_gates": "d000__a_cat_open_castle_gates",
+      "master_marry_princess": "d000__a_master_marry_princess"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "PUSS": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "PUSS_problemfile.pddl": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

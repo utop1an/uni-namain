@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_3f126383032786ea",
+  "label": "complementary",
+  "right_from_left": [
+    4,
+    1
+  ],
+  "rationale": "The predicate 'has' appears in both narratives, but its usage and the context surrounding it are distinct. In FOUR_NP, 'has' is primarily used to describe possession of items (eggs, telescope, ship, etc.) within the context of actions like counting, fetching, and learning trades. These actions involve agents interacting with the environment and acquiring resources. In HANS_NP, 'has' is used to describe possession of items (pearl, precious stone, crumb, pebble) within the context of navigation and exploration. The agent is dropping items on a path to mark locations. The core difference is the *purpose* of the 'has' relationship. FOUR_NP focuses on resource acquisition and trade, while HANS_NP focuses on leaving traces for navigation. This difference in context and action type justifies a complementary relationship. The arguments represent different aspects of object possession within distinct scenarios. The argument order is reversed to reflect this.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:collect_treasure",
+      "quote": "(has ?h ?pearl)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:collect_treasure",
+      "quote": "(has ?g ?precious_stone)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:drop_breadcrumb_on_path",
+      "quote": "(has ?h ?crumb)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:drop_pebble_on_path",
+      "quote": "(has ?h ?peb)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:enter_witch_house",
+      "quote": "(has ?h cake)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:enter_witch_house",
+      "quote": "(has ?g sugar_window)"
+    }
+  ]
+}

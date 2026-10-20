@@ -1,0 +1,118 @@
+{
+  "status": "fixed_before_followup_search",
+  "label": "Exploratory follow-up motivated by early all-pool time limits; not part of original 60-case design",
+  "selection_policy": "Start from original problem source; retain complete predicate-interface source groups to a fixed point. Not minimal or reachability-optimal.",
+  "source_worlds_and_goals": "Exact snapshots from original matched experiment; no new facts or object identities",
+  "seconds_per_task": 20,
+  "memory_mb": 4096,
+  "workers": 1,
+  "all_sources_retained_in_denominator": [
+    "ACCO",
+    "BIRT",
+    "BUFF",
+    "CHIC_NP",
+    "FOUR_NP",
+    "HANS_NP",
+    "JACK_NP",
+    "MUSI",
+    "NAUG",
+    "PIGS_NP",
+    "PUSS",
+    "REMA_NP",
+    "SNOW",
+    "SOUP",
+    "WOE"
+  ],
+  "selected_sources": {
+    "ACCO": [
+      "ACCO"
+    ],
+    "BIRT": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "BUFF": [
+      "BUFF"
+    ],
+    "CHIC_NP": [
+      "CHIC_NP",
+      "HANS_NP"
+    ],
+    "FOUR_NP": [
+      "FOUR_NP"
+    ],
+    "HANS_NP": [
+      "CHIC_NP",
+      "HANS_NP"
+    ],
+    "JACK_NP": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "MUSI": [
+      "MUSI"
+    ],
+    "NAUG": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "PIGS_NP": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "PUSS": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "REMA_NP": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ],
+    "SNOW": [
+      "SNOW"
+    ],
+    "SOUP": [
+      "SOUP"
+    ],
+    "WOE": [
+      "BIRT",
+      "JACK_NP",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "WOE"
+    ]
+  },
+  "origin_alignment_sha256": "bae3c6ce6ea972ca1be6e3ba891f86465c6f4c10c131ad840a93ec68449b159f"
+}

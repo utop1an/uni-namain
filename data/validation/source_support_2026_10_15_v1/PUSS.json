@@ -1,0 +1,369 @@
+{
+  "status": "predicate_relaxation_proves_unreachable",
+  "initial_predicates": [
+    "alive",
+    "at_item",
+    "castle_owned_by",
+    "has"
+  ],
+  "reachable_predicates": [
+    "alive",
+    "at_item",
+    "castle_owned_by",
+    "contains",
+    "has",
+    "promised_to_serve",
+    "transformed_into",
+    "wearing"
+  ],
+  "unreachable_goal_atoms": [
+    "(married jack princess)",
+    "(at jack palace)",
+    "(gate_open ogre_castle)"
+  ],
+  "goal_may_hold_in_relaxation": false,
+  "layers": [
+    {
+      "actions": [
+        "buy_boots",
+        "cat_catch_rabbits",
+        "cat_disentchant_prisoners",
+        "cat_ogre_transform_mouse",
+        "give_bag_to_cat",
+        "king_send_groom_fetch_suit",
+        "master_wear_suit"
+      ],
+      "new_predicates": [
+        "contains",
+        "promised_to_serve",
+        "transformed_into",
+        "wearing"
+      ]
+    },
+    {
+      "actions": [
+        "cat_eat_mouse"
+      ],
+      "new_predicates": []
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "cat_call_for_help",
+      "condition": [
+        "drowning",
+        "?jack"
+      ],
+      "adds": [
+        "rescued_by"
+      ]
+    },
+    {
+      "action": "cat_deliver_gifts_to_king",
+      "condition": [
+        "and",
+        [
+          "contains",
+          "?bag",
+          "?rabbit"
+        ],
+        [
+          "at",
+          "?puss",
+          "?palace"
+        ]
+      ],
+      "adds": [
+        "gift_delivered"
+      ]
+    },
+    {
+      "action": "cat_ogre_transform_lion",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?puss",
+          "ogre_castle"
+        ],
+        [
+          "alive",
+          "?ogre"
+        ]
+      ],
+      "adds": [
+        "transformed_into"
+      ]
+    },
+    {
+      "action": "cat_open_castle_gates",
+      "condition": [
+        "at",
+        "?king",
+        "?castle"
+      ],
+      "adds": [
+        "gate_open"
+      ]
+    },
+    {
+      "action": "cat_persuade_master_to_bathe",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?jack",
+          "?river"
+        ],
+        [
+          "at",
+          "?puss",
+          "?river"
+        ]
+      ],
+      "adds": [
+        "drowning"
+      ]
+    },
+    {
+      "action": "master_marry_princess",
+      "condition": [
+        "and",
+        [
+          "not",
+          [
+            "married",
+            "?jack",
+            "?princess"
+          ]
+        ],
+        [
+          "at",
+          "?jack",
+          "palace"
+        ]
+      ],
+      "adds": [
+        "married"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "buy_boots",
+      "condition": [
+        "not",
+        [
+          "has",
+          "?puss",
+          "?boots"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "cat_call_for_help",
+      "condition": [
+        "drowning",
+        "?jack"
+      ],
+      "adds": [
+        "rescued_by"
+      ]
+    },
+    {
+      "action": "cat_catch_rabbits",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?puss",
+          "?bag"
+        ],
+        [
+          "at_item",
+          "?rabbit",
+          "?warren"
+        ],
+        [
+          "not",
+          [
+            "contains",
+            "?bag",
+            "?rabbit"
+          ]
+        ]
+      ],
+      "adds": [
+        "contains"
+      ]
+    },
+    {
+      "action": "cat_deliver_gifts_to_king",
+      "condition": [
+        "and",
+        [
+          "contains",
+          "?bag",
+          "?rabbit"
+        ],
+        [
+          "at",
+          "?puss",
+          "?palace"
+        ]
+      ],
+      "adds": [
+        "gift_delivered"
+      ]
+    },
+    {
+      "action": "cat_disentchant_prisoners",
+      "condition": [
+        "alive",
+        "?puss"
+      ],
+      "adds": [
+        "promised_to_serve"
+      ]
+    },
+    {
+      "action": "cat_eat_mouse",
+      "condition": [
+        "transformed_into",
+        "?ogre",
+        "?mouse"
+      ],
+      "adds": []
+    },
+    {
+      "action": "cat_ogre_transform_lion",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?puss",
+          "ogre_castle"
+        ],
+        [
+          "alive",
+          "?ogre"
+        ]
+      ],
+      "adds": [
+        "transformed_into"
+      ]
+    },
+    {
+      "action": "cat_ogre_transform_mouse",
+      "condition": [
+        "alive",
+        "?ogre"
+      ],
+      "adds": [
+        "transformed_into"
+      ]
+    },
+    {
+      "action": "cat_open_castle_gates",
+      "condition": [
+        "at",
+        "?king",
+        "?castle"
+      ],
+      "adds": [
+        "gate_open"
+      ]
+    },
+    {
+      "action": "cat_persuade_master_to_bathe",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?jack",
+          "?river"
+        ],
+        [
+          "at",
+          "?puss",
+          "?river"
+        ]
+      ],
+      "adds": [
+        "drowning"
+      ]
+    },
+    {
+      "action": "give_bag_to_cat",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?jack",
+          "?bag"
+        ],
+        [
+          "not",
+          [
+            "has",
+            "?puss",
+            "?bag"
+          ]
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "king_send_groom_fetch_suit",
+      "condition": [
+        "at_item",
+        "?suit",
+        "?wardrobe"
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "master_marry_princess",
+      "condition": [
+        "and",
+        [
+          "not",
+          [
+            "married",
+            "?jack",
+            "?princess"
+          ]
+        ],
+        [
+          "at",
+          "?jack",
+          "palace"
+        ]
+      ],
+      "adds": [
+        "married"
+      ]
+    },
+    {
+      "action": "master_wear_suit",
+      "condition": [
+        "has",
+        "?jack",
+        "?suit"
+      ],
+      "adds": [
+        "wearing"
+      ]
+    }
+  ],
+  "source_domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+  "source_problem_sha256": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

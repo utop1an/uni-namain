@@ -1,0 +1,204 @@
+{
+  "status": "FAIL",
+  "counts": {
+    "states": 256,
+    "ground_action_instances": 17,
+    "applicability_checks": 4352,
+    "applicable_transitions": 2048,
+    "goal_checks": 256,
+    "mismatches": 192
+  },
+  "state_atoms": [
+    "ready(a)",
+    "ready(b)",
+    "done(a)",
+    "done(b)",
+    "rel(a, a)",
+    "rel(b, a)",
+    "rel(a, b)",
+    "rel(b, b)"
+  ],
+  "counterexamples": [
+    {
+      "kind": "projected_successor",
+      "state_mask": 1,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 2,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 3,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 3,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 5,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 6,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 7,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 7,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 9,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 10,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 11,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 11,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 13,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 14,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 15,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 15,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 17,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 18,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 19,
+      "action": "link(a,b)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 19,
+      "action": "link(b,a)",
+      "detail": [
+        "rel(b, a)",
+        "rel(a, b)"
+      ]
+    }
+  ],
+  "scope": "Exhaustive states of one finite authored fixture; not a proof for all domains or semantic-alignment evaluation"
+}

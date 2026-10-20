@@ -1,0 +1,569 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "alive",
+    "at",
+    "has_bundle"
+  ],
+  "reachable_predicates": [
+    "alive",
+    "at",
+    "boiling",
+    "dead",
+    "door_closed",
+    "entry_denied",
+    "entry_requested",
+    "escaped",
+    "has",
+    "has_bundle",
+    "house",
+    "house_destroyed",
+    "house_intact",
+    "huffed",
+    "inside",
+    "material_requested",
+    "over",
+    "plan",
+    "puffed",
+    "rolling",
+    "under"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "ask_for_material",
+        "pig_buys_butter_churn_and_hides",
+        "send_sons_on_journey",
+        "wolf_promises_apple_orchard",
+        "wolf_promises_fair_trip",
+        "wolf_promises_turnip_field"
+      ],
+      "new_predicates": [
+        "has",
+        "inside",
+        "material_requested",
+        "plan"
+      ]
+    },
+    {
+      "actions": [
+        "build_house",
+        "pig_collects_apples_and_escapes",
+        "pig_collects_turnips",
+        "pig_prepares_boiling_pot_and_fire",
+        "pig_rolls_churn_down_hill",
+        "receive_material"
+      ],
+      "new_predicates": [
+        "boiling",
+        "door_closed",
+        "escaped",
+        "house",
+        "house_intact",
+        "over",
+        "rolling",
+        "under"
+      ]
+    },
+    {
+      "actions": [
+        "wolf_attempts_chimney_entry",
+        "wolf_falls_into_pot_and_is_boiled",
+        "wolf_flees_from_rolling_object",
+        "wolf_knocks_and_requests_entry"
+      ],
+      "new_predicates": [
+        "dead",
+        "entry_requested"
+      ]
+    },
+    {
+      "actions": [
+        "pig_refuses_entry"
+      ],
+      "new_predicates": [
+        "entry_denied"
+      ]
+    },
+    {
+      "actions": [
+        "wolf_huff_and_puff"
+      ],
+      "new_predicates": [
+        "huffed",
+        "puffed"
+      ]
+    },
+    {
+      "actions": [
+        "wolf_blows_house_down",
+        "wolf_fails_to_blow_house"
+      ],
+      "new_predicates": [
+        "house_destroyed"
+      ]
+    },
+    {
+      "actions": [
+        "wolf_eats_pig"
+      ],
+      "new_predicates": []
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "ask_for_material",
+      "condition": [
+        "and",
+        [
+          "has_bundle",
+          "?m",
+          "?i"
+        ],
+        [
+          "alive",
+          "?p"
+        ],
+        [
+          "alive",
+          "?m"
+        ]
+      ],
+      "adds": [
+        "material_requested"
+      ]
+    },
+    {
+      "action": "build_house",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?p",
+          "?i"
+        ],
+        [
+          "alive",
+          "?p"
+        ],
+        [
+          "at",
+          "?p",
+          "?h"
+        ]
+      ],
+      "adds": [
+        "door_closed",
+        "house",
+        "house_intact"
+      ]
+    },
+    {
+      "action": "pig_buys_butter_churn_and_hides",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "town_fair"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "has",
+        "inside"
+      ]
+    },
+    {
+      "action": "pig_collects_apples_and_escapes",
+      "condition": [
+        "and",
+        [
+          "plan",
+          "?p",
+          "?l"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "escaped",
+        "has"
+      ]
+    },
+    {
+      "action": "pig_collects_turnips",
+      "condition": [
+        "and",
+        [
+          "plan",
+          "?p",
+          "?l"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "pig_prepares_boiling_pot_and_fire",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?p",
+          "?h"
+        ],
+        [
+          "has",
+          "?p",
+          "?pot"
+        ],
+        [
+          "has",
+          "?p",
+          "?fire"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "boiling",
+        "over",
+        "under"
+      ]
+    },
+    {
+      "action": "pig_refuses_entry",
+      "condition": [
+        "and",
+        [
+          "entry_requested",
+          "?w",
+          "?h"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "entry_denied"
+      ]
+    },
+    {
+      "action": "pig_rolls_churn_down_hill",
+      "condition": [
+        "and",
+        [
+          "inside",
+          "?p",
+          "?c"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "rolling"
+      ]
+    },
+    {
+      "action": "receive_material",
+      "condition": [
+        "and",
+        [
+          "material_requested",
+          "?p",
+          "?i"
+        ],
+        [
+          "has_bundle",
+          "?m",
+          "?i"
+        ],
+        [
+          "alive",
+          "?p"
+        ],
+        [
+          "alive",
+          "?m"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "send_sons_on_journey",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?m",
+          "pig_home"
+        ],
+        [
+          "at",
+          "?p",
+          "pig_home"
+        ],
+        [
+          "alive",
+          "?m"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "plan"
+      ]
+    },
+    {
+      "action": "wolf_attempts_chimney_entry",
+      "condition": [
+        "and",
+        [
+          "house_intact",
+          "?h"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "entry_requested"
+      ]
+    },
+    {
+      "action": "wolf_blows_house_down",
+      "condition": [
+        "and",
+        [
+          "huffed",
+          "?w"
+        ],
+        [
+          "puffed",
+          "?w"
+        ],
+        [
+          "house",
+          "?h",
+          "?i"
+        ],
+        [
+          "door_closed",
+          "?h"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "house_destroyed"
+      ]
+    },
+    {
+      "action": "wolf_eats_pig",
+      "condition": [
+        "and",
+        [
+          "house_destroyed",
+          "?h"
+        ],
+        [
+          "at",
+          "?p",
+          "?h"
+        ],
+        [
+          "alive",
+          "?p"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "wolf_fails_to_blow_house",
+      "condition": [
+        "and",
+        [
+          "huffed",
+          "?w"
+        ],
+        [
+          "puffed",
+          "?w"
+        ],
+        [
+          "house",
+          "?h",
+          "?i"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "house_intact"
+      ]
+    },
+    {
+      "action": "wolf_falls_into_pot_and_is_boiled",
+      "condition": [
+        "and",
+        [
+          "boiling",
+          "?pot"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "wolf_flees_from_rolling_object",
+      "condition": [
+        "and",
+        [
+          "rolling",
+          "?c"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "escaped"
+      ]
+    },
+    {
+      "action": "wolf_huff_and_puff",
+      "condition": [
+        "and",
+        [
+          "entry_denied",
+          "?w",
+          "?h"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "huffed",
+        "puffed"
+      ]
+    },
+    {
+      "action": "wolf_knocks_and_requests_entry",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?w",
+          "?h"
+        ],
+        [
+          "door_closed",
+          "?h"
+        ],
+        [
+          "alive",
+          "?w"
+        ]
+      ],
+      "adds": [
+        "entry_requested"
+      ]
+    },
+    {
+      "action": "wolf_promises_apple_orchard",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?w"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "plan"
+      ]
+    },
+    {
+      "action": "wolf_promises_fair_trip",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?w"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "plan"
+      ]
+    },
+    {
+      "action": "wolf_promises_turnip_field",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?w"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "plan"
+      ]
+    }
+  ],
+  "source_domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+  "source_problem_sha256": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

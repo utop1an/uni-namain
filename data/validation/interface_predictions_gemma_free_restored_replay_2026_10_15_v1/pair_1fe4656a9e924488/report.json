@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_1fe4656a9e924488",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_1fe4656a9e924488",
+    "label": "complementary",
+    "right_from_left": [
+      7,
+      1
+    ],
+    "rationale": "The `has` predicate in HANS_NP describes possession of an item, while the `offers` predicate in JACK_NP describes a willingness to give an item. These predicates represent distinct relationships: `has` indicates ownership, while `offers` indicates a potential exchange. The action contexts further illustrate this difference: HANS_NP actions involve acquiring items through collection or dropping, while JACK_NP actions involve selling items for other items. Therefore, they are complementary because they both relate to items, but one describes possession and the other describes a potential transaction. The use of `?e` and `?i` as parameters in both predicates further supports this distinction, as `has` describes a static state of possession, while `offers` describes a dynamic state of willingness. The provided action contexts confirm this by showing actions of acquiring (HANS_NP) versus exchanging (JACK_NP).",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(has ?h ?pearl)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(has ?g ?precious_stone)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(offers ?b ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(offers ?b ?beans)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_1fe4656a9e924488"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "status": "complete",
+  "task_count": 5,
+  "rows": [
+    {
+      "id": "interface_pair",
+      "exit_code": 0,
+      "engine_status": "plan_found",
+      "status": "solved",
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 4,
+      "elapsed_seconds": 8.594,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "no_interface_pair",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.89,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "ACCO_actions_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.359,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "BIRT_actions_only",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.891,
+      "inputs_unchanged": true
+    },
+    {
+      "id": "no_shared_identity",
+      "exit_code": 11,
+      "engine_status": "unsolvable",
+      "status": "unsolvable",
+      "elapsed_seconds": 1.203,
+      "inputs_unchanged": true
+    }
+  ],
+  "status_counts": {
+    "solved": 1,
+    "unsolvable": 4
+  },
+  "budget": {
+    "wall_seconds": 20,
+    "overall_cpu_seconds": 20,
+    "memory_mb": 4096
+  },
+  "primary_problem_bytes_identical": true,
+  "native_single_source_goal_test": false,
+  "single_source_control": "Common vocabulary/world/goal; only source action availability changes",
+  "initial_trace_state": {
+    "BIRT:at(hero,stage)": true,
+    "shared:has(hero,token)": false,
+    "ACCO:exhibition_ready(hero)": false,
+    "ACCO:performing_show(hero)": false,
+    "ACCO:reputation_widespread": false,
+    "ACCO:wealthy(hero)": false
+  },
+  "trace": [
+    {
+      "step": 1,
+      "source": "BIRT",
+      "action": "turn_key_on_beech",
+      "instance": "d001__a_turn_key_on_beech(q__hero, q__token, q__stage)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": false,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d001__t_entity(n) and typeguard__d001__t_item(k) and typeguard__d001__t_location(t) and d001__p_at(n, t))"
+      ]
+    },
+    {
+      "step": 2,
+      "source": "ACCO",
+      "action": "arrange_exhibition",
+      "instance": "d000__a_arrange_exhibition(d000__c_badger, q__hero, q__token)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": false,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(s) and typeguard__d000__t_entity(t) and typeguard__d000__t_item(k) and shared__p_possession(t, k))"
+      ]
+    },
+    {
+      "step": 3,
+      "source": "ACCO",
+      "action": "perform_show",
+      "instance": "d000__a_perform_show(q__hero, q__token)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": false,
+        "ACCO:reputation_widespread": false,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": false
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(t) and typeguard__d000__t_item(k) and (d000__p_exhibition_ready(t) and shared__p_possession(t, k)))"
+      ]
+    },
+    {
+      "step": 4,
+      "source": "ACCO",
+      "action": "receive_orders_from_nobility",
+      "instance": "d000__a_receive_orders_from_nobility(q__hero)",
+      "applicable": true,
+      "before": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": false
+      },
+      "after": {
+        "BIRT:at(hero,stage)": true,
+        "shared:has(hero,token)": true,
+        "ACCO:exhibition_ready(hero)": true,
+        "ACCO:performing_show(hero)": true,
+        "ACCO:reputation_widespread": true,
+        "ACCO:wealthy(hero)": true
+      },
+      "compiled_preconditions": [
+        "(typeguard__d000__t_entity(t) and d000__p_reputation_widespread)"
+      ]
+    }
+  ],
+  "plan_sources": [
+    "ACCO",
+    "BIRT"
+  ],
+  "original_plan_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "unused_sponsor_witness": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "global_reputation_actor_witness": {
+    "instance": "d000__a_receive_orders_from_nobility(d000__c_badger)",
+    "applicable": true,
+    "badger_performing_before": false,
+    "badger_wealthy_after": true,
+    "scope": "One-step semantic-risk witness after the real prefix; not an additional original-goal success"
+  },
+  "selector_keeps_both_sources": true,
+  "semantic_review": [
+    {
+      "action": "BIRT:turn_key_on_beech",
+      "risk": "Only at is required; key possession and beech identity are not checked. Any item-typed argument becomes possessed. Door/dryad side effects also occur.",
+      "status": "author_code_review_risk_not_independent_label"
+    },
+    {
+      "action": "ACCO:arrange_exhibition",
+      "risk": "Sponsor parameter is unused; any held item can support an exhibition.",
+      "status": "author_code_review_risk_not_independent_label"
+    },
+    {
+      "action": "ACCO:perform_show",
+      "risk": "Requires exhibition_ready and possession, but does not encode suitability of the item or audience; sets global reputation.",
+      "status": "author_code_review_risk_not_independent_label"
+    },
+    {
+      "action": "ACCO:receive_orders_from_nobility",
+      "risk": "Global reputation permits any ACCO entity to become wealthy, including an entity that did not perform.",
+      "status": "author_code_review_risk_not_independent_label"
+    }
+  ],
+  "source_model_repaired": false,
+  "independent_semantic_labels": 0,
+  "interpretation": "Authored interface and explicit shared identities enable an executable cross-source causal chain under these source models. Narrative plausibility and automatically inferred interface correctness remain unestablished.",
+  "frozen_sha256": {
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\bundle\\manifest.json": "b99247b9de29be9ff88333a2b9f0b37b9ef456cbc7f48d792688304015782681",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\manifest.json": "3db22f48556f391f07a54428a0458f2bdaae32489be867f9893b9e6f15cca856",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\report.json": "abc7d8662fc8c8b5890cade2378ebe15b34a3af9c61848abfa0355ddd0559d62",
+    "C:\\anu\\uninamain\\scripts\\audit\\audit_acco_birt_case.py": "126e9587c40d526228b5fbf478448a26927769439e6c522e08709c225607ea92",
+    "rcnc\\world_source_selection.py": "f56bde9ce0d6bbdbf89f0b87535b9101e339cd6bfd323991ae8f61a700ba4e0f",
+    "rcnc\\validation.py": "491d76f442e2b08663a4935518a2925762ae5819e5fc4f6a5443f2f920c5c2fc",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\interface_pair\\domain.pddl": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\interface_pair\\problem.pddl": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\no_interface_pair\\domain.pddl": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\no_interface_pair\\problem.pddl": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\ACCO_actions_only\\domain.pddl": "9321fa7d875c47ed38ce006876c840933594ba9047aa14eb1b3caffb924cab38",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\ACCO_actions_only\\problem.pddl": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\BIRT_actions_only\\domain.pddl": "fcca1cb12d939579f36ea05fcea94c77d7bce50f021dbe2492760e490c8f9d3e",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\BIRT_actions_only\\problem.pddl": "a68eef7d878f40dce25ae38c4972ce210b4d5568371421a4acaf3ebd523e8a15",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\domain.pddl": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\no_shared_identity\\problem.pddl": "4391d8d0d3e3ead3ff4341387a8f6727b5c4e39b000700ef1038e842e04696ef",
+    "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\tasks\\interface_pair\\plan.txt": "072351f6bb69576cecacacdccc839e0fa93f31e1c4cf42497822dbbc94239557"
+  },
+  "hashes_unchanged": true
+}

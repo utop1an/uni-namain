@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "malformed_input": {
+    "rejected": true,
+    "reason": "A_domainfile.pddl: duplicate action"
+  },
+  "valid_source_export_byte_equality": {
+    "meta_domain.pddl": true,
+    "problems\\ACCO_problemfile.pddl": true,
+    "problems\\BIRT_problemfile.pddl": true,
+    "problems\\BUFF_problemfile.pddl": true,
+    "problems\\CHIC_NP_problemfile.pddl": true,
+    "problems\\FOUR_NP_problemfile.pddl": true,
+    "problems\\HANS_NP_problemfile.pddl": true,
+    "problems\\JACK_NP_problemfile.pddl": true,
+    "problems\\MUSI_problemfile.pddl": true,
+    "problems\\NAUG_problemfile.pddl": true,
+    "problems\\PIGS_NP_problemfile.pddl": true,
+    "problems\\PUSS_problemfile.pddl": true,
+    "problems\\REMA_NP_problemfile.pddl": true,
+    "problems\\SNOW_problemfile.pddl": true,
+    "problems\\SOUP_problemfile.pddl": true,
+    "problems\\WOE_problemfile.pddl": true
+  },
+  "source_problem_count": 15,
+  "scope": "Duplicate declarations rejected before parsing loss; all current local-source compiled PDDL exports unchanged",
+  "implementation_sha256": "066108af3a6b14b396fc5b3a46f2729ff1d032013e6d3b61765b7af781e3e504"
+}

@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_96ad380cac551f38",
+  "label": "complementary",
+  "right_from_left": [
+    9,
+    1
+  ],
+  "rationale": "The PIGS_NP predicate 'at' describes the location of an entity, while the PUSS predicate 'castle_owned_by' describes ownership of a location. These predicates represent fundamentally different aspects of the world: spatial location versus ownership. The 'at' predicate is used to specify where an entity is, while 'castle_owned_by' specifies which entity controls a particular location. The action contexts for 'at' consistently describe the spatial position of entities, whereas the 'castle_owned_by' predicate is used in the context of defining ownership relationships. The predicates are complementary because they describe distinct properties of the world. The arguments '?e' and '?l' in 'at' represent an entity and a location, respectively, while '?castle' and '?owner' in 'castle_owned_by' represent a location and an entity, respectively. The use of 'at' focuses on spatial positioning, while 'castle_owned_by' focuses on ownership. The action contexts demonstrate this difference: 'at' describes where something is, while 'castle_owned_by' describes who owns something.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(at ?p town_fair)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:send_sons_on_journey",
+      "quote": "(at ?m pig_home)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:wolf_eats_pig",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:wolf_knocks_and_requests_entry",
+      "quote": "(at ?w ?h)"
+    }
+  ]
+}

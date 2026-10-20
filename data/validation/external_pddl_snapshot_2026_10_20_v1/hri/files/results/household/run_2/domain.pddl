@@ -1,0 +1,26 @@
+(define (domain household)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types FURNITURE_APPLIANCE HOUSEHOLD_OBJECT LOCATION ROBOT SMALL_RECEPTACLE apple bedroom bowl cloth diningRoom diningTable drawers handheldVacuum kitchen livingRoom microwave robot sideTable)
+    (:predicates 
+    (contains ?receptacle - SMALL_RECEPTACLE ?obj - HOUSEHOLD_OBJECT)  
+    (isAt ?robot - ROBOT ?fromLocation - LOCATION)  
+    (isConnected ?fromLocation - LOCATION ?toLocation - LOCATION)  
+    (isEmpty ?robot - ROBOT)  
+    (isIn ?obj - HOUSEHOLD_OBJECT ?receptacle - SMALL_RECEPTACLE)  
+    (isOnHouseholdObject ?obj - HOUSEHOLD_OBJECT ?from - FURNITURE_APPLIANCE))
+    (:action navigate
+        :parameters (?robot - ROBOT ?fromLocation - LOCATION ?toLocation - LOCATION)
+        :precondition (and (isAt ?robot ?fromLocation) (isConnected ?fromLocation ?toLocation) (not (isAt ?robot ?toLocation)))
+        :effect (and (not (isAt ?robot ?fromLocation)) (isAt ?robot ?toLocation))
+    )
+     (:action pickUp
+        :parameters (?obj - HOUSEHOLD_OBJECT ?from - FURNITURE_APPLIANCE ?robot - ROBOT)
+        :precondition (and (isOnHouseholdObject ?obj ?from) (isEmpty ?robot))
+        :effect (and (not (isOnHouseholdObject ?obj ?from)) (not (isEmpty ?robot)))
+    )
+     (:action placeIn
+        :parameters (?robot - ROBOT ?receptacle - SMALL_RECEPTACLE ?obj - HOUSEHOLD_OBJECT)
+        :precondition (and (not (isEmpty ?robot)) (not (contains ?receptacle ?obj)) (not (isIn ?obj ?receptacle)))
+        :effect (and (isIn ?obj ?receptacle) (isEmpty ?robot) (contains ?receptacle ?obj))
+    )
+)

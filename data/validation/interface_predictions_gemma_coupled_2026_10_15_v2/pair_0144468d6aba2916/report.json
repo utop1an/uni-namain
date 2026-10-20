@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_0144468d6aba2916",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_0144468d6aba2916",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates `at` on both sides of the pair describe the location of an entity. The arguments `?e` and `?l` represent the entity and its location, respectively. The action contexts demonstrate this: MUSI's `at` predicates specify the location of various entities (donkey, hound, cat, cock) within different locations (forest, cottage), while SNOW's `at` predicates similarly define the location of snow_white and the dwarfs. The arguments are interchangeable, representing the same spatial relationship. The action contexts provide the same information, just from different sources. The predicates share the same type and semantic meaning.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?donkey ?forest)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?hound ?forest)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?cat ?forest)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?cock ?forest)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?donkey ?cottage)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:approach_cottage",
+        "quote": "(at ?hound ?cottage)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_0144468d6aba2916"
+  ]
+}

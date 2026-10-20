@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_8a4f1ab733cca76e",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'lost' appears in both the HANS_NP and NAUG narratives, consistently referring to the same entity ('?c' in NAUG and '?h', '?g' in HANS_NP). Both narratives use 'lost' to describe a state of being separated or disoriented. The action contexts demonstrate that 'lost' is triggered by various events – abandonment, following breadcrumbs, following pebbles, and simply wandering – across both sources. The parameters and effects of the actions related to 'lost' are consistent between the two narratives, further supporting the equivalence. The fact that the arguments are named differently ('entity' vs 'c') does not negate the equivalence, as the predicate itself is interchangeable. The action contexts provide the definitive evidence for this relationship.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "NAUG:action:approach_sun",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:arrest_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:avoid_body",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:burn_up",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:speak_to_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(traveling ?c)"
+    }
+  ]
+}

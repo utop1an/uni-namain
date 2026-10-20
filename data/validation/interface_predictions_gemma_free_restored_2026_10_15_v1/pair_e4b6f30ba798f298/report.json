@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_e4b6f30ba798f298",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_e4b6f30ba798f298",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'captured' appears in both ACCO and SOUP, but with different argument types. ACCO uses 'captured ?i - item' to represent an item being captured, while SOUP uses 'captured ?e - entity' to represent an entity being captured. These represent distinct concepts: ACCO focuses on capturing objects, while SOUP focuses on capturing entities. The action contexts further reinforce this difference; ACCO actions involve capturing items within boxes, while SOUP actions involve escaping from cages (which implies being captured). Therefore, they are complementary because they describe the same event (being captured) from different perspectives and with different argument types, but cannot be considered equivalent. The action contexts provide the specific details of each capture, further solidifying the distinction. Specifically, ACCO's 'force_kettle_into_box' and 'knock_down_kettle' actions involve capturing items, while SOUP's 'escape_jail' and 'run_in_cage' actions involve capturing entities. The use of 'item' and 'entity' as argument types further differentiates the two predicates.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:force_kettle_into_box",
+        "quote": "(captured ?k)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:escape_jail",
+        "quote": "(captured ?m)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_e4b6f30ba798f298"
+  ]
+}

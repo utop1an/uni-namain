@@ -1,0 +1,23 @@
+{
+  "candidate_id": "pair_7c861e1d4b89d3bf",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates 'dead' and 'has_strength' represent distinct properties of entities. 'dead' indicates a state of non-existence or demise, while 'has_strength' describes a physical capability. The action contexts further support this distinction: 'cut_beanstalk' results in the death of a giant, a catastrophic event, whereas 'has_strength' is a precondition for performing actions like moving a stone or working for a rich brother. The 'dead' predicate describes a final state, while 'has_strength' describes a dynamic attribute. The action contexts demonstrate different scenarios where these predicates are relevant. The 'dead' predicate is triggered by a destructive action, while 'has_strength' is a prerequisite for various actions. These predicates are complementary because they describe different aspects of an entity's state and capabilities. The 'dead' predicate is a consequence of a specific action, whereas 'has_strength' is a general property.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:cut_beanstalk",
+      "quote": "(dead ?giant)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:move_heavy_stone",
+      "quote": "(has_strength ?carrier)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:perform_work_for_rich_brother",
+      "quote": "(has_strength ?worker)"
+    }
+  ]
+}

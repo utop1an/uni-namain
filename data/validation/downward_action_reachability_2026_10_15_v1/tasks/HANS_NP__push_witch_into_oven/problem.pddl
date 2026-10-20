@@ -1,0 +1,1 @@
+(define (problem Hansel_And_Grettel_problem) (:domain Hansel_And_Grettel) (:init (at father father_house) (at hansel father_house) (at grettel father_house) (at mother father_house) (has hansel pebble)) (:goal (audit__target_executed)))

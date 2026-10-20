@@ -1,0 +1,55 @@
+{
+  "sources": [
+    "CHIC_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 3,
+    "constants": 14,
+    "predicates": 9,
+    "operators": 7
+  },
+  "predicate_maps": {
+    "CHIC_NP": {
+      "at": "at",
+      "decided_to_tell_king": "decided_to_tell_king",
+      "eaten_by_fox": "eaten_by_fox",
+      "following_fox": "following_fox",
+      "going_to_wood": "going_to_wood",
+      "informed_about_sky_fall": "informed_about_sky_fall",
+      "met": "met",
+      "sky_fell_on_head": "sky_fell_on_head",
+      "turned_back": "turned_back"
+    }
+  },
+  "constant_maps": {
+    "CHIC_NP": {
+      "Acorn": "Acorn",
+      "Chicken-licken": "Chicken-licken",
+      "Cock-lock": "Cock-lock",
+      "Drake-lake": "Drake-lake",
+      "Duck-luck": "Duck-luck",
+      "Fox-lox": "Fox-lox",
+      "FoxHole": "FoxHole",
+      "Gander-lander": "Gander-lander",
+      "Goose-loose": "Goose-loose",
+      "Hen-len": "Hen-len",
+      "King": "King",
+      "Sky": "Sky",
+      "Turkey-lurkey": "Turkey-lurkey",
+      "Wood": "Wood"
+    }
+  },
+  "action_maps": {
+    "CHIC_NP": {
+      "go_to_wood": "go_to_wood",
+      "turn_back": "turn_back",
+      "meet_character": "meet_character",
+      "inform_about_sky_fall": "inform_about_sky_fall",
+      "decide_to_tell_king": "decide_to_tell_king",
+      "follow_fox": "follow_fox",
+      "be_eaten_by_fox": "be_eaten_by_fox"
+    }
+  },
+  "decisions": []
+}

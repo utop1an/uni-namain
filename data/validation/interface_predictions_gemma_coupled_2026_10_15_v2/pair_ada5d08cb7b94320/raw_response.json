@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:37:56.8429372Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_ada5d08cb7b94320\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicates `owned_by` and `has` describe different relationships between entities and items. `owned_by` indicates ownership (a person or entity possesses an item), while `has` indicates possession or containment (an entity holds an item). The action contexts further clarify this distinction: `owned_by` is used in contexts related to ownership and possession, while `has` is used in contexts related to holding, buying, collecting, and preparing. The different parameter names and the specific actions associated with each predicate highlight their distinct roles. Therefore, they are complementary, as they both relate to an entity's relationship with an item, but describe different facets of that relationship. The use of `?i` and `?e` in `owned_by` and `?e` and `?i` in `has` respectively, further supports this distinction. The action contexts demonstrate that `owned_by` is used when determining who possesses an item, while `has` is used when determining what an entity is currently holding.\", \"evidence\": [ {\"side\": 1, \"ref\": \"PIGS_NP:action:build_house\", \"quote\": \"(has ?p ?i)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_buys_butter_churn_and_hides\", \"quote\": \"(has ?p ?c)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_collects_apples_and_escapes\", \"quote\": \"(has ?p ?a)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_collects_turnips\", \"quote\": \"(has ?p ?i)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_prepares_boiling_pot_and_fire\", \"quote\": \"(has ?p ?pot)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:receive_material\", \"quote\": \"(has ?p ?i)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4922655500,
+  "load_duration": 2760600,
+  "prompt_eval_count": 1233,
+  "prompt_eval_duration": 216291000,
+  "eval_count": 494,
+  "eval_duration": 4576191000
+}

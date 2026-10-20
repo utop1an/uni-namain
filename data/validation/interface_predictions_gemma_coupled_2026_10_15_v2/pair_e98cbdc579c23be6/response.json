@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_e98cbdc579c23be6",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'eggs_fetched' relates to an action of fetching eggs, while 'on_list' relates to an action of crossing out an entity from a list. The 'eggs_fetched' predicate describes a state where an entity has fetched eggs, while 'on_list' describes an entity's presence on a list. These predicates describe different aspects of the world and do not directly relate to each other. The 'eggs_fetched' predicate is associated with actions involving retrieving eggs, while 'on_list' is associated with actions related to marking entities as present or absent from a list. These are distinct concepts, and one does not logically imply the other. The action contexts further support this distinction: 'eggs_fetched' is tied to actions like 'fetch_eggs' and 'shoot_eggs', while 'on_list' is tied to 'cross_out_comet'.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:cross_out_comet",
+      "quote": "(on_list ?c)"
+    }
+  ]
+}

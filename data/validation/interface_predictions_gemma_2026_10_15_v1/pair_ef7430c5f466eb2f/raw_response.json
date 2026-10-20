@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:29:02.1589295Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_ef7430c5f466eb2f\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicates 'wearing' and 'wearing' share the same declaration and parameter types ('entity' and 'item'). However, the contexts of their usage are distinct. PUSS's 'wearing' is associated with general clothing ('suit'), while SNOW's 'wearing' is specifically related to wearing 'hot slippers' and has a consequential effect of death. This difference in context suggests a complementary relationship: both describe the state of being 'wearing', but they apply to different objects and have different implications. The action contexts highlight this difference - one is a simple state change, the other is a state change with a significant consequence. The action contexts are distinct, and the predicates are used in different scenarios, thus the relationship is complementary.\", \"evidence\": [ {\"side\": 0, \"ref\": \"PUSS:action:master_wear_suit\", \"quote\": \"(wearing ?jack ?suit)\"}, {\"side\": 1, \"ref\": \"SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies\", \"quote\": \"(wearing ?s ?slippers)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2757574400,
+  "load_duration": 3943500,
+  "prompt_eval_count": 669,
+  "prompt_eval_duration": 140900000,
+  "eval_count": 287,
+  "eval_duration": 2490652000
+}

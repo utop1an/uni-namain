@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_aaa5a79c448dd45b",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate `at` is used to describe the location of entities in both NAUG and SNOW. However, the contexts of use differ significantly. In NAUG, `at` is primarily used within the context of actions related to movement, orders, and summoning, often referring to locations like 'courtyard'. In SNOW, `at` is used to describe the location of entities within a narrative context, such as 'queen_sews_at_window' or 'snow_white_finds_dwarfs_cottage', indicating a more static, descriptive role. The NAUG actions involve movement and commands, while the SNOW actions are part of a story-driven description. Therefore, the predicates are complementary because they both express location but in distinct contexts and with different implications. The parameters `?e - entity` and `?l - location` are identical across both sources, indicating interchangeable arguments. The action contexts provide the specific nuances of their usage, justifying the complementary relationship. Specifically, NAUG's `at` is tied to actions like summoning and movement, while SNOW's `at` is tied to narrative descriptions of character placement.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:call_comet_forward",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:give_order",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_sews_at_window",
+      "quote": "(at ?q ?l)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_finds_dwarfs_cottage",
+      "quote": "(at ?c ?cottage)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_flees_into_forest",
+      "quote": "(at ?c ?f)"
+    }
+  ]
+}

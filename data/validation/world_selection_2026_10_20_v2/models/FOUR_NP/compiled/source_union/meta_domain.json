@@ -1,0 +1,113 @@
+{
+  "sources": [
+    "FOUR_NP"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 4,
+    "constants": 27,
+    "predicates": 16,
+    "operators": 21
+  },
+  "predicate_maps": {
+    "FOUR_NP": {
+      "dragon_dead": "d000__p_dragon_dead",
+      "eggs_fetched": "d000__p_eggs_fetched",
+      "eggs_sewn": "d000__p_eggs_sewn",
+      "eggs_shot": "d000__p_eggs_shot",
+      "entity_at": "d000__p_entity_at",
+      "half_kingdom": "d000__p_half_kingdom",
+      "has": "d000__p_has",
+      "is_astronomer": "d000__p_is_astronomer",
+      "is_hunter": "d000__p_is_hunter",
+      "is_tailor": "d000__p_is_tailor",
+      "is_thief": "d000__p_is_thief",
+      "item_at": "d000__p_item_at",
+      "princess_rescued": "d000__p_princess_rescued",
+      "reward_received": "d000__p_reward_received",
+      "ship_broken": "d000__p_ship_broken",
+      "ship_repaired": "d000__p_ship_repaired"
+    }
+  },
+  "constant_maps": {
+    "FOUR_NP": {
+      "brother_astronomer": "d000__c_brother_astronomer",
+      "brother_hunter": "d000__c_brother_hunter",
+      "brother_tailor": "d000__c_brother_tailor",
+      "brother_thief": "d000__c_brother_thief",
+      "chaffinch": "d000__c_chaffinch",
+      "cross_way": "d000__c_cross_way",
+      "dragon": "d000__c_dragon",
+      "eggs": "d000__c_eggs",
+      "father": "d000__c_father",
+      "gun": "d000__c_gun",
+      "house": "d000__c_house",
+      "king": "d000__c_king",
+      "kingdom": "d000__c_kingdom",
+      "mentor_astronomer": "d000__c_mentor_astronomer",
+      "mentor_hunter": "d000__c_mentor_hunter",
+      "mentor_tailor": "d000__c_mentor_tailor",
+      "mentor_thief": "d000__c_mentor_thief",
+      "needle": "d000__c_needle",
+      "planks": "d000__c_planks",
+      "princess": "d000__c_princess",
+      "rock_sea": "d000__c_rock_sea",
+      "sea": "d000__c_sea",
+      "ship": "d000__c_ship",
+      "sticks": "d000__c_sticks",
+      "telescope": "d000__c_telescope",
+      "town_gate": "d000__c_town_gate",
+      "tree": "d000__c_tree"
+    }
+  },
+  "action_maps": {
+    "FOUR_NP": {
+      "leave_home": "d000__a_leave_home",
+      "separate_at_crossroads": "d000__a_separate_at_crossroads",
+      "learn_thief_trade": "d000__a_learn_thief_trade",
+      "learn_astronomer_trade": "d000__a_learn_astronomer_trade",
+      "learn_hunter_trade": "d000__a_learn_hunter_trade",
+      "learn_tailor_trade": "d000__a_learn_tailor_trade",
+      "reunite_at_crossroads": "d000__a_reunite_at_crossroads",
+      "count_eggs": "d000__a_count_eggs",
+      "fetch_eggs": "d000__a_fetch_eggs",
+      "shoot_eggs": "d000__a_shoot_eggs",
+      "sew_eggs": "d000__a_sew_eggs",
+      "return_eggs_to_nest": "d000__a_return_eggs_to_nest",
+      "locate_princess": "d000__a_locate_princess",
+      "obtain_ship": "d000__a_obtain_ship",
+      "sail_to_rock": "d000__a_sail_to_rock",
+      "steal_princess": "d000__a_steal_princess",
+      "shoot_dragon": "d000__a_shoot_dragon",
+      "swim_after_ship_break": "d000__a_swim_after_ship_break",
+      "repair_ship": "d000__a_repair_ship",
+      "return_home_with_princess": "d000__a_return_home_with_princess",
+      "receive_reward": "d000__a_receive_reward"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "FOUR_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "FOUR_NP_problemfile.pddl": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

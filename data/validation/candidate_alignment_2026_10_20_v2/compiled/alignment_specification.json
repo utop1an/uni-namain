@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "decision_basis": "machine_hypothesis",
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "type_groups": [
+    {
+      "members": [
+        "BIRT:entity",
+        "PUSS:entity"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_7060fed9791deccc; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "BIRT:location",
+        "PUSS:location"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_7060fed9791deccc; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "BIRT:entity",
+        "JACK_NP:entity",
+        "PIGS_NP:entity"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_978af286844034aa, pair_efdfd8a3c9eb404c; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "BIRT:item",
+        "JACK_NP:item",
+        "PIGS_NP:item"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_978af286844034aa, pair_efdfd8a3c9eb404c; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "CHIC_NP:entity",
+        "HANS_NP:entity"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_3073427e43b5096d; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "CHIC_NP:location",
+        "HANS_NP:location"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_3073427e43b5096d; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "JACK_NP:entity",
+        "WOE:entity"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_2031d35e3ab00ec6; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "JACK_NP:location",
+        "WOE:location"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_2031d35e3ab00ec6; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "NAUG:entity",
+        "PIGS_NP:entity",
+        "REMA_NP:entity"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_2aa5ac616114039c, pair_6340089a043f86dd; aligned argument slot is a role-type hypothesis, not semantic proof"
+    },
+    {
+      "members": [
+        "NAUG:location",
+        "PIGS_NP:location",
+        "REMA_NP:location"
+      ],
+      "evidence": "Unverified machine candidate edges: pair_2aa5ac616114039c, pair_6340089a043f86dd; aligned argument slot is a role-type hypothesis, not semantic proof"
+    }
+  ],
+  "predicate_groups": [
+    {
+      "id": "interface_9e2dfe3e7cd5d53e",
+      "evidence": "Unverified machine candidate edges: pair_7060fed9791deccc",
+      "members": [
+        {
+          "predicate": "BIRT:at",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "PUSS:at",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface_b525a0d27c2e45f3",
+      "evidence": "Unverified machine candidate edges: pair_978af286844034aa, pair_efdfd8a3c9eb404c",
+      "members": [
+        {
+          "predicate": "BIRT:has",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "JACK_NP:has",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "PIGS_NP:has",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface_82f1308fd516317a",
+      "evidence": "Unverified machine candidate edges: pair_3073427e43b5096d",
+      "members": [
+        {
+          "predicate": "CHIC_NP:at",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "HANS_NP:at",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface_9420e6a250b7a1e0",
+      "evidence": "Unverified machine candidate edges: pair_2031d35e3ab00ec6",
+      "members": [
+        {
+          "predicate": "JACK_NP:at",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "WOE:at",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface_0f71a7a314338daa",
+      "evidence": "Unverified machine candidate edges: pair_2aa5ac616114039c, pair_6340089a043f86dd",
+      "members": [
+        {
+          "predicate": "NAUG:at",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "PIGS_NP:at",
+          "order": [
+            0,
+            1
+          ]
+        },
+        {
+          "predicate": "REMA_NP:at",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "semantic_status": "unverified_machine_assumptions",
+  "role_type_policy": "aligned_slot_hypothesis",
+  "object_identity_inferred": false,
+  "initial_facts_inferred": false,
+  "proposal_provenance": {
+    "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+    "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+    "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+  }
+}

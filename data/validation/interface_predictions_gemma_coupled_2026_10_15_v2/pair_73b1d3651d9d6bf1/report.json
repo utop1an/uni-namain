@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_73b1d3651d9d6bf1",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_73b1d3651d9d6bf1",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates `at` on both sides of the pair express the same spatial relationship: the location of an entity. The arguments `?e` and `?l` in the HANS_NP predicate represent an entity and its location, respectively. Similarly, the arguments `?e` and `?l` in the PIGS_NP predicate also represent an entity and its location. The action contexts demonstrate that the `at` predicate is used to specify the location of entities in both narratives. The arguments are interchangeable, representing the same spatial relationship. The predicates are used in similar contexts, indicating a functional equivalence.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:abandon_children_in_forest",
+        "quote": "(at ?h ?forest)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:call_duck_for_crossing",
+        "quote": "(at ?h ?lake)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:collect_treasure",
+        "quote": "(at ?h ?cottage)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:drop_breadcrumb_on_path",
+        "quote": "(at ?h ?path_loc)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:drop_pebble_on_path",
+        "quote": "(at ?h ?path_loc)"
+      },
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:enter_witch_house",
+        "quote": "(at ?h ?cottage)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_73b1d3651d9d6bf1"
+  ]
+}

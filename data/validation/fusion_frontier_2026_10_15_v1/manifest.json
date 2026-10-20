@@ -1,0 +1,45 @@
+{
+  "status": "frozen_intermediate_frontier",
+  "time_utc": "2026-10-14T17:48:12.512671+00:00",
+  "selection": "Maximal completed source subsets among node metadata available now; not final root",
+  "source_count": 15,
+  "node_count": 3,
+  "nodes": [
+    {
+      "node": "24",
+      "sources": [
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP"
+      ],
+      "domain_sha256": "506056a757e551f85df38d3952b93e9414d7899b78da6d2b8a45d5bec7d80f72",
+      "metadata_sha256": "5fe112e9682040c98682dd66557910170838473ea1b3787fd46acf36847f112a"
+    },
+    {
+      "node": "25",
+      "sources": [
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP"
+      ],
+      "domain_sha256": "dd84ce2e8934c1e8380d6e1709825b232eae0ef3d7ad487b430068f103fa6849",
+      "metadata_sha256": "1cf8bef7e3c7939fd316932a5befd8d67ddecab2378e7253ad1ea5200a05737b"
+    },
+    {
+      "node": "26",
+      "sources": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "WOE"
+      ],
+      "domain_sha256": "9ac2eb14928ac0a38421895f3e0134124597bdb386bfe260f429c533439a5766",
+      "metadata_sha256": "3b308044a6909052c9a59ce63f3bef45aace048cd4e8670631766326827d2626"
+    }
+  ]
+}

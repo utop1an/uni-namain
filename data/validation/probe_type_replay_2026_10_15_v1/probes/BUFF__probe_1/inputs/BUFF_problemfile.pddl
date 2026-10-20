@@ -1,0 +1,1 @@
+(define (problem The_Buffoon_And_The_Countryman_problem) (:domain The_Buffoon_And_The_Countryman) (:init (theater_opened rich_nobleman theater) (reward_announced rich_nobleman) (crowd_present audience theater) (on_platform buffoon platform) (on_platform countryman platform)) (:goal (and (imitates_pig countryman))))

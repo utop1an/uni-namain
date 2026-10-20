@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "scope": "intermediate_node_not_final_reference_result",
+  "node_sources": 8,
+  "original_source_pool": 15,
+  "rows": [
+    {
+      "source": "JACK_NP",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "MUSI",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+        "problem.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+        "plan.txt": "da3bac82609ee09a42c50dbcfb82c2aec02acf7567f112f3d3b9d6e0f7fce68c"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "extinguish_light",
+          "mapped_action": "attempt_entry",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "run_away",
+          "mapped_action": "travel",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "run_away",
+          "mapped_action": "travel",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "cock_crow_alert",
+          "mapped_action": "open_location_gate",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "plan_scaring_robbers",
+          "mapped_action": "call_for_help_and_disturb",
+          "reason": "changed_ordered_formal_parameters"
+        },
+        {
+          "action": "robbers_retreat",
+          "mapped_action": "move_to_location",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    },
+    {
+      "source": "NAUG",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "PIGS_NP",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "PUSS",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "REMA_NP",
+      "source_solver_status": "unsolvable",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "SNOW",
+      "source_solver_status": "memory_limit",
+      "status": "no_original_plan_evidence"
+    },
+    {
+      "source": "SOUP",
+      "source_solver_status": "solved",
+      "source_artifact_sha256": {
+        "domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+        "problem.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+        "plan.txt": "77c7ee92a4a29c6c80527feb4935d318f1b01b0fa7f965e6ffe2b35faefcdaaf"
+      },
+      "original_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "status": "unverified_parameter_transport",
+      "unmapped_steps": [
+        {
+          "action": "claim_queenhood",
+          "mapped_action": "queen_ascend_to_throne",
+          "reason": "changed_ordered_formal_parameters"
+        }
+      ]
+    }
+  ],
+  "transport_contract": "Diagnostic of native adapter positional export, not an inferred semantic/permutation map",
+  "audit_report_sha256": "001b38e86891933dd640b4732ade74291528e0929f3cb74ae56df7bef543e16a",
+  "source_report_sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+  "compiled_domain_sha256": "82627aefd39aaeb10d859b7d62ab01e9443793bc374c2033a8b1d2806bf39a80",
+  "counts": {
+    "no_original_plan_evidence": 6,
+    "unverified_parameter_transport": 2
+  },
+  "transported_validation_counts": {},
+  "model_unchanged": true,
+  "mappings_unchanged": true,
+  "limit": "Missing parameter maps are not failed plans; invalid transported traces are not proof that no alternative plan exists",
+  "implementation_sha256": {
+    "probe_fusion_source_plans.py": "4065b207413cee224c5aeb2cdfb854649717cc183a1aad650e8891f74fc8e6f6",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  }
+}

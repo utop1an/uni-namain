@@ -1,0 +1,59 @@
+{
+  "status": "prepared_no_human_labels",
+  "packet_sha256": "ec23e2d2f9c2fb4ca8e52ba8f1fe746fd944d7a9cda4d9e4d86b3b3604e8418e",
+  "source_count": 3,
+  "candidate_count": 48,
+  "sampling": {
+    "seed": "external-screen-2026-10-20-v1",
+    "per_stratum": 24,
+    "policy": "SHA256-ranked sample without replacement within name/type-spelling strata; equal arity only",
+    "strata": {
+      "different_name/different_type_names": {
+        "eligible": 40,
+        "selected": 24,
+        "omitted": 16
+      },
+      "different_name/same_order_type_names": {
+        "eligible": 31,
+        "selected": 24,
+        "omitted": 7
+      }
+    }
+  },
+  "admission_report_sha256": {
+    "data\\validation\\external_pddl_admission_2026_10_20_v2\\report.json": "725297517535be36a967ebb968f862907c4f05b6e4b31bfec636521535715a51",
+    "data\\validation\\external_pddl_extension_admission_2026_10_20_v1\\report.json": "017be584c8f1b45b939d6cb0c563e128ba1064559b051a347cdf10cc52a80bff"
+  },
+  "source_metadata_sha256": "02530939ab97e79803771e8bf322470eaf1ff343aea3a3faa646903d46d16a7d",
+  "bundles": [
+    {
+      "path": "annotator_a.zip",
+      "sha256": "2a446ea78122b6e0fb5085379d239a1bffb2fbc55f2395aef007bd648fa58b91",
+      "members": [
+        "index.html",
+        "INSTRUCTIONS.txt",
+        "annotation_template.json"
+      ]
+    },
+    {
+      "path": "annotator_b.zip",
+      "sha256": "2a446ea78122b6e0fb5085379d239a1bffb2fbc55f2395aef007bd648fa58b91",
+      "members": [
+        "index.html",
+        "INSTRUCTIONS.txt",
+        "annotation_template.json"
+      ]
+    }
+  ],
+  "independent_labels_created": 0,
+  "contacted_annotators": false,
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\scripts\\annotation\\prepare_external_annotations.py": "74cf3477c81a1a6d1f574c628512f9645ac7672bb32e46516c238710401fd5e3",
+    "rcnc\\interface_annotation.py": "c9d1f4beb1cb724f7871ca392661cfc2777290ba38fd0d18f2578deaa0ceb8eb",
+    "scripts\\annotation\\build_annotation_viewer.py": "49f6c6625d1e8bca3e8d95cb582d46493e73d3a5c687ce973142030574c5e6ad",
+    "templates\\annotation_viewer.html": "3934853429d73b9e848c8bbd394a9c1c00fb46cce88c3d2b588f63c4772c3435"
+  },
+  "scope": "External auxiliary interface-annotation pilot, not a narrative-quality benchmark or pristine held-out test. Source roles and shared lineages remain explicit. No model predictions, plans, goals or solver outcomes are supplied.",
+  "browser_visual_qa": "not_performed_in_this_run",
+  "limits": "Sample-descriptive evaluation only; selected domains share some task concepts and are not evidence of independent narrative-model acquisition."
+}

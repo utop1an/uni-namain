@@ -1,0 +1,549 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "light_on"
+  ],
+  "reachable_predicates": [
+    "agreed",
+    "at",
+    "ate_all",
+    "attacked",
+    "attempt_light",
+    "bite",
+    "crowed",
+    "fled",
+    "invited",
+    "kick",
+    "light_off",
+    "light_on",
+    "making_noise",
+    "moving_towards",
+    "resting",
+    "retreated",
+    "sees_light",
+    "sleeping_at",
+    "stacked_on",
+    "window_shattered"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "choose_sleep_spot",
+        "cock_crow_alert",
+        "extinguish_light",
+        "invite_cat",
+        "invite_cock",
+        "invite_hound",
+        "plan_scaring_robbers",
+        "rest_in_forest",
+        "robbers_retreat",
+        "run_away"
+      ],
+      "new_predicates": [
+        "crowed",
+        "invited",
+        "light_off",
+        "making_noise",
+        "moving_towards",
+        "resting",
+        "retreated",
+        "sleeping_at"
+      ]
+    },
+    {
+      "actions": [
+        "cat_agrees",
+        "cock_agrees",
+        "hound_agrees",
+        "messenger_attempt_light",
+        "spot_light",
+        "stack_animals"
+      ],
+      "new_predicates": [
+        "agreed",
+        "attempt_light",
+        "sees_light",
+        "stacked_on"
+      ]
+    },
+    {
+      "actions": [
+        "approach_cottage",
+        "cat_attack_messenger",
+        "dog_bite_messenger",
+        "donkey_kick_messenger",
+        "signal_and_make_noise",
+        "travel_together"
+      ],
+      "new_predicates": [
+        "attacked",
+        "bite",
+        "kick",
+        "window_shattered"
+      ]
+    },
+    {
+      "actions": [
+        "eat_feast",
+        "robbers_flee"
+      ],
+      "new_predicates": [
+        "ate_all",
+        "fled"
+      ]
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "approach_cottage",
+      "condition": [
+        "and",
+        [
+          "sees_light",
+          "?cock"
+        ],
+        [
+          "at",
+          "?donkey",
+          "?forest"
+        ],
+        [
+          "at",
+          "?hound",
+          "?forest"
+        ],
+        [
+          "at",
+          "?cat",
+          "?forest"
+        ],
+        [
+          "at",
+          "?cock",
+          "?forest"
+        ]
+      ],
+      "adds": [
+        "at",
+        "moving_towards"
+      ]
+    },
+    {
+      "action": "cat_agrees",
+      "condition": [
+        "invited",
+        "?donkey",
+        "?cat"
+      ],
+      "adds": [
+        "agreed"
+      ]
+    },
+    {
+      "action": "cat_attack_messenger",
+      "condition": [
+        "and",
+        [
+          "attempt_light",
+          "?messenger"
+        ],
+        [
+          "at",
+          "?cat",
+          "hearth"
+        ]
+      ],
+      "adds": [
+        "attacked"
+      ]
+    },
+    {
+      "action": "choose_sleep_spot",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?cat",
+          "?hearth"
+        ],
+        [
+          "at",
+          "?cock",
+          "?beam"
+        ]
+      ],
+      "adds": [
+        "sleeping_at"
+      ]
+    },
+    {
+      "action": "cock_agrees",
+      "condition": [
+        "invited",
+        "?donkey",
+        "?cock"
+      ],
+      "adds": [
+        "agreed"
+      ]
+    },
+    {
+      "action": "cock_crow_alert",
+      "condition": [
+        "at",
+        "?cock",
+        "beam"
+      ],
+      "adds": [
+        "crowed"
+      ]
+    },
+    {
+      "action": "dog_bite_messenger",
+      "condition": [
+        "and",
+        [
+          "attempt_light",
+          "?messenger"
+        ],
+        [
+          "at",
+          "?hound",
+          "?cottage"
+        ]
+      ],
+      "adds": [
+        "bite"
+      ]
+    },
+    {
+      "action": "donkey_kick_messenger",
+      "condition": [
+        "attempt_light",
+        "?messenger"
+      ],
+      "adds": [
+        "kick"
+      ]
+    },
+    {
+      "action": "eat_feast",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?donkey",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?hound",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?cat",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?cock",
+          "?cottage"
+        ],
+        [
+          "window_shattered"
+        ]
+      ],
+      "adds": [
+        "ate_all"
+      ]
+    },
+    {
+      "action": "extinguish_light",
+      "condition": [
+        "light_on",
+        "?cottage"
+      ],
+      "adds": [
+        "light_off"
+      ]
+    },
+    {
+      "action": "hound_agrees",
+      "condition": [
+        "invited",
+        "?donkey",
+        "?hound"
+      ],
+      "adds": [
+        "agreed"
+      ]
+    },
+    {
+      "action": "invite_cat",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "invited"
+      ]
+    },
+    {
+      "action": "invite_cock",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?donkey",
+          "?loc"
+        ],
+        [
+          "at",
+          "?cock",
+          "?loc"
+        ]
+      ],
+      "adds": [
+        "invited"
+      ]
+    },
+    {
+      "action": "invite_hound",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "invited"
+      ]
+    },
+    {
+      "action": "messenger_attempt_light",
+      "condition": [
+        "light_off",
+        "?cottage"
+      ],
+      "adds": [
+        "attempt_light"
+      ]
+    },
+    {
+      "action": "plan_scaring_robbers",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?donkey",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?hound",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?cat",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?cock",
+          "?cottage"
+        ]
+      ],
+      "adds": [
+        "making_noise"
+      ]
+    },
+    {
+      "action": "rest_in_forest",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?donkey",
+          "?forest"
+        ],
+        [
+          "at",
+          "?hound",
+          "?forest"
+        ],
+        [
+          "at",
+          "?cat",
+          "?forest"
+        ],
+        [
+          "at",
+          "?cock",
+          "?forest"
+        ]
+      ],
+      "adds": [
+        "resting"
+      ]
+    },
+    {
+      "action": "robbers_flee",
+      "condition": [
+        "and",
+        [
+          "window_shattered"
+        ],
+        [
+          "at",
+          "?robber",
+          "?cottage"
+        ]
+      ],
+      "adds": [
+        "fled"
+      ]
+    },
+    {
+      "action": "robbers_retreat",
+      "condition": [
+        "at",
+        "?robber",
+        "?cottage"
+      ],
+      "adds": [
+        "retreated"
+      ]
+    },
+    {
+      "action": "run_away",
+      "condition": [
+        "at",
+        "?donkey",
+        "?from"
+      ],
+      "adds": [
+        "at",
+        "moving_towards"
+      ]
+    },
+    {
+      "action": "signal_and_make_noise",
+      "condition": [
+        "and",
+        [
+          "stacked_on",
+          "?hound",
+          "?donkey"
+        ],
+        [
+          "stacked_on",
+          "?cat",
+          "?hound"
+        ],
+        [
+          "stacked_on",
+          "?cock",
+          "?cat"
+        ]
+      ],
+      "adds": [
+        "making_noise",
+        "window_shattered"
+      ]
+    },
+    {
+      "action": "spot_light",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?cock",
+          "?forest"
+        ],
+        [
+          "resting",
+          "?cock"
+        ]
+      ],
+      "adds": [
+        "moving_towards",
+        "sees_light"
+      ]
+    },
+    {
+      "action": "stack_animals",
+      "condition": [
+        "and",
+        [
+          "making_noise",
+          "?donkey"
+        ],
+        [
+          "making_noise",
+          "?hound"
+        ],
+        [
+          "making_noise",
+          "?cat"
+        ],
+        [
+          "making_noise",
+          "?cock"
+        ]
+      ],
+      "adds": [
+        "stacked_on"
+      ]
+    },
+    {
+      "action": "travel_together",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?donkey",
+          "?from"
+        ],
+        [
+          "at",
+          "?hound",
+          "?from"
+        ],
+        [
+          "at",
+          "?cat",
+          "?from"
+        ],
+        [
+          "at",
+          "?cock",
+          "?from"
+        ],
+        [
+          "agreed",
+          "?hound",
+          "?donkey"
+        ],
+        [
+          "agreed",
+          "?cat",
+          "?donkey"
+        ],
+        [
+          "agreed",
+          "?cock",
+          "?donkey"
+        ]
+      ],
+      "adds": [
+        "at",
+        "moving_towards"
+      ]
+    }
+  ],
+  "source_domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+  "source_problem_sha256": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

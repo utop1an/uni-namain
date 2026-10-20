@@ -1,0 +1,56 @@
+{
+  "sources": [
+    "BUFF"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 8,
+    "predicates": 15,
+    "operators": 8
+  },
+  "predicate_maps": {
+    "BUFF": {
+      "applause_given": "applause_given",
+      "audience_calls_for_kickout": "audience_calls_for_kickout",
+      "audience_demands_shake_cloak": "audience_demands_shake_cloak",
+      "cloak_shaken": "cloak_shaken",
+      "countryman_declares_intent": "countryman_declares_intent",
+      "countryman_performs_with_real_pig": "countryman_performs_with_real_pig",
+      "crowd_present": "crowd_present",
+      "imitates_pig": "imitates_pig",
+      "on_platform": "on_platform",
+      "partiality_prevalent": "partiality_prevalent",
+      "performs_without_apparatus": "performs_without_apparatus",
+      "pig_found": "pig_found",
+      "pig_revealed": "pig_revealed",
+      "reward_announced": "reward_announced",
+      "theater_opened": "theater_opened"
+    }
+  },
+  "constant_maps": {
+    "BUFF": {
+      "audience": "audience",
+      "buffoon": "buffoon",
+      "cloak": "cloak",
+      "countryman": "countryman",
+      "little_pig": "little_pig",
+      "platform": "platform",
+      "rich_nobleman": "rich_nobleman",
+      "theater": "theater"
+    }
+  },
+  "action_maps": {
+    "BUFF": {
+      "open_theater_and_announce_reward": "open_theater_and_announce_reward",
+      "perform_pig_imitation_without_apparatus": "perform_pig_imitation_without_apparatus",
+      "audience_demand_shake_cloak_for_pig": "audience_demand_shake_cloak_for_pig",
+      "audience_applaud_performance": "audience_applaud_performance",
+      "countryman_declare_intent_to_repeat_trick": "countryman_declare_intent_to_repeat_trick",
+      "countryman_perform_pig_imitation_with_real_pig": "countryman_perform_pig_imitation_with_real_pig",
+      "audience_criticize_countryman_and_call_for_kickout": "audience_criticize_countryman_and_call_for_kickout",
+      "countryman_reveal_real_pig": "countryman_reveal_real_pig"
+    }
+  },
+  "decisions": []
+}

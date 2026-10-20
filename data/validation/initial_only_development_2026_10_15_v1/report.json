@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "task_count": 6,
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "status": "time_limit",
+      "stop_reason": null,
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": null,
+      "ground_candidates": null,
+      "validations": []
+    }
+  ],
+  "scope": "Six authored development worlds/interfaces without goals; generated outcomes are not task success or narrative quality",
+  "counts": {
+    "time_limit": 6
+  },
+  "frozen_tasks_unchanged": true,
+  "implementation_unchanged": true,
+  "sources_unchanged": true
+}

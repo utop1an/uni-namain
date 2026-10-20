@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:37:22.3944738Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_d606f96c0a50355a\", \"label\": \"complementary\", \"right_from_left\": [2, 1], \"rationale\": \"The predicate `princess_rescued` in the `FOUR_NP` narrative describes a state where a princess is rescued, while the predicate `asleep` in the `JACK_NP` narrative describes a state where a giant is asleep. The `princess_rescued` predicate implies an action taken to free the princess, whereas the `asleep` predicate describes a state of rest for the giant. These predicates represent distinct aspects of the story's events and characters, one focused on a rescue and the other on a character's state. The action contexts further support this distinction: `FOUR_NP` describes actions related to the princess's rescue, while `JACK_NP` describes actions involving a giant and its interactions with objects. The predicates are complementary because they describe different conditions and events within the narrative. The `FOUR_NP` action `receive_reward` explicitly states `(princess_rescued ?e)`, while the `JACK_NP` action `steal_harp` explicitly states `(asleep ?giant)`. The arguments `?e` and `?giant` are entities, and the predicates are applied to them. The use of `?e` and `?giant` as parameters is consistent across both narratives. The predicates are not interchangeable because they describe fundamentally different states: a rescued princess versus a sleeping giant. The action contexts provide further evidence of this difference, as the actions described in `FOUR_NP` are directly related to the rescue of the princess, while the actions described in `JACK_NP` are related to the giant's activities.\", \"evidence\": [ {\"side\": 0, \"ref\": \"FOUR_NP:action:receive_reward\", \"quote\": \"(princess_rescued ?e)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:steal_harp\", \"quote\": \"(asleep ?giant)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4391968700,
+  "load_duration": 2599400,
+  "prompt_eval_count": 882,
+  "prompt_eval_duration": 160331000,
+  "eval_count": 443,
+  "eval_duration": 4127899999
+}

@@ -1,0 +1,29 @@
+{
+  "HRI_HOUSEHOLD_0_domainfile.pddl": {
+    "domain_sha256": "86be709799df5999089b5de7566c5978eebb47cbdd9007c7f4c5bcb932c889e4",
+    "source_url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_0/domain.pddl",
+    "source_role": "non_narrative_generated_auxiliary",
+    "family": "hri_household",
+    "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+    "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+    "evaluation_role": "external_annotation_pilot_not_pristine_heldout"
+  },
+  "IPC_GRIPPER_domainfile.pddl": {
+    "domain_sha256": "894b97e04557b9dce4198a3fe85f20d8a946e2b2dff9ddd42b8bcffd0a95e27c",
+    "source_url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/gripper/domain.pddl",
+    "source_role": "classical_auxiliary",
+    "family": "ipc_gripper",
+    "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution",
+    "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+    "evaluation_role": "external_annotation_pilot_not_pristine_heldout"
+  },
+  "IPC_MICONIC_domainfile.pddl": {
+    "domain_sha256": "433893873319a41c8b1cb91455319b9884f68bbc75368bbac681ef768d1a3b3a",
+    "source_url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/miconic/domain.pddl",
+    "source_role": "classical_auxiliary",
+    "family": "ipc_miconic",
+    "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution",
+    "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+    "evaluation_role": "external_annotation_pilot_not_pristine_heldout"
+  }
+}

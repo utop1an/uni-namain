@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_8a4f1ab733cca76e",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate `lost` appears in both the HANS_NP and NAUG narratives, but its usage and context differ significantly. In HANS_NP, `lost` describes the state of children who have been abandoned or left in dangerous locations (forests, fires), indicating a negative consequence. The actions associated with `lost` involve actions like abandonment, following breadcrumbs, and being left at a fire. Conversely, in NAUG, `traveling` describes the state of a character moving through the world, often in response to a mission or avoiding obstacles. The `traveling` predicate is frequently associated with actions like approaching the sun, arresting a meteor, or turning left on a meeting. The `lost` predicate in NAUG is tied to the `burn_up` action, signifying a complete cessation of travel due to destruction. Therefore, `lost` in HANS_NP represents a state of being, while `traveling` in NAUG represents movement. These are related concepts (a character can be lost while traveling), but they describe fundamentally different aspects of the character's state and are not interchangeable. The action contexts highlight this distinction: HANS_NP actions are about negative consequences and location, while NAUG actions are about movement and avoidance. The predicates are complementary because they describe different facets of the character's situation, but not equivalent.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "NAUG:action:approach_sun",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:arrest_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:avoid_body",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:burn_up",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:speak_to_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(traveling ?c)"
+    }
+  ]
+}

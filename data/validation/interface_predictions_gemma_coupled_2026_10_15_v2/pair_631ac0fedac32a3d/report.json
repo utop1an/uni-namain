@@ -1,0 +1,45 @@
+{
+  "candidate_id": "pair_631ac0fedac32a3d",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_631ac0fedac32a3d",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The NAUG side describes the *location* of entities, specifically using the predicate 'at' which indicates a spatial relationship. The PUSS side describes *ownership* of a location, using the predicate 'castle_owned_by'. These predicates represent distinct aspects of a scene: the *where* versus the *who owns it*. The 'at' predicate focuses on spatial positioning, while 'castle_owned_by' focuses on ownership relationships. They cannot be interchangeable because they describe different properties of the same location. The action contexts further support this distinction: NAUG actions relate to movement and location, while PUSS actions relate to ownership and restrictions. The 'at' predicate is used to specify the location of entities, while 'castle_owned_by' specifies the owner of a location. The two predicates are complementary because they describe different aspects of the same location. The NAUG side uses 'at' to describe the location of entities, while the PUSS side uses 'castle_owned_by' to describe the ownership of a location. These predicates are complementary because they describe different aspects of the same location. The action contexts further support this distinction: NAUG actions relate to movement and location, while PUSS actions relate to ownership and restrictions. The 'at' predicate is used to specify the location of entities, while 'castle_owned_by' specifies the owner of a location. The two predicates are complementary because they describe different aspects of the same location. The NAUG side uses 'at' to describe the location of entities, while the PUSS side uses 'castle_owned_by' to describe the ownership of a location. These predicates are complementary because they describe different aspects of the same location. The action contexts further support this distinction: NAUG actions relate to movement and location, while PUSS actions relate to ownership and restrictions. The 'at' predicate is used to specify the location of entities, while 'castle_owned_by' specifies the owner of a location. The two predicates are complementary because they describe different aspects of the same location.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "NAUG:action:call_comet_forward",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:give_order",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:call_comet_forward",
+        "quote": "(at ?master courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:give_order",
+        "quote": "(at ?master courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(at ?c courtyard)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_631ac0fedac32a3d"
+  ]
+}

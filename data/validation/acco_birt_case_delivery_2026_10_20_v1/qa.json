@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "tests": 176,
+  "test_seconds": 48.396,
+  "test_log_sha256": "2080eca3c0da8dd087b54c19b0ae6e503eee436c2924e0ec22c23fee682d71e1",
+  "pdf": "output/pdf/icaps_meeting_2026_10_21_acco_birt_case.pdf",
+  "pdf_sha256": "b64fcb5bc8c30a8971b9515406086b3a6a603e87dca567a25841d308f6b152df",
+  "pdf_pages": 2,
+  "visual_review": "Both pages rendered and inspected; no clipping/overlap",
+  "interface_plan_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "unused_sponsor_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "global_reputation_actor_witness": {
+    "instance": "d000__a_receive_orders_from_nobility(d000__c_badger)",
+    "applicable": true,
+    "badger_performing_before": false,
+    "badger_wealthy_after": true,
+    "scope": "One-step semantic-risk witness after the real prefix; not an additional original-goal success"
+  },
+  "selector_keeps_shared_sources": true,
+  "selector_excludes_disjoint_control_source": true
+}

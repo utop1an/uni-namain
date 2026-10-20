@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "dfe01073115f24fff2b9b42adb393e595d352a094e95f8a41d57c5c826f4f327",
+  "commands": [
+    {
+      "script": "build_paper_results.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "validate_transition_preservation.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "validate_transition_mutations.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "validate_semantic_negative_control.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "validate_capture_states.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "replay_downward_preservation.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "replay_source_probes.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    },
+    {
+      "script": "audit_probe_trace_states.py",
+      "help_exit_code": 0,
+      "documented_options_present": true
+    }
+  ],
+  "current_code_hashes_match": {
+    "audit_probe_trace_states.py": true,
+    "build_aligned_domain.py": true,
+    "build_narrative_union.py": true,
+    "build_paper_results.py": true,
+    "merge_domains.py": true,
+    "pddl_checks.py": true,
+    "replay_downward_preservation.py": true,
+    "replay_source_probes.py": true,
+    "validate_capture_states.py": true,
+    "validate_semantic_negative_control.py": true,
+    "validate_transition_mutations.py": true,
+    "validate_transition_preservation.py": true
+  },
+  "scope": "Entry-point availability and documented option spelling only; not end-to-end reproduction"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "662bf3d4af514039a37d47b64858e0b1e1a50038cae7fde3ab05b4d9eddd4451",
+  "budget": {
+    "wall_seconds": 20,
+    "overall_cpu_seconds": 20,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "role_safe",
+      "source": "snow_white_giant_witch",
+      "representation": "role_safe",
+      "domain_sha256": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "no_interfaces",
+      "source": "snow_white_giant_witch",
+      "representation": "no_interfaces",
+      "domain_sha256": "023cf60427fe45ed8567e96518bfe1fe4c8a937b534c6a84e4a7d97b517878ed",
+      "problem_sha256": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968"
+    },
+    {
+      "id": "no_possession_interface",
+      "source": "snow_white_giant_witch",
+      "representation": "no_possession_interface",
+      "domain_sha256": "43284a5888e6f98805d7d5e7600d972eef07d006b1d6775d7f881f5f310a798b",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "no_death_interface",
+      "source": "snow_white_giant_witch",
+      "representation": "no_death_interface",
+      "domain_sha256": "0b5f7b2c7dc9b474c631d6f7578ca72fe4e8efd6c4827c5a9eb85d5f56ed7a06",
+      "problem_sha256": "82c31235748755e7c6d7476a5595b32a557359aa8047fe85d4bf7d4c58bcd968"
+    },
+    {
+      "id": "HANS_NP_only",
+      "source": "snow_white_giant_witch",
+      "representation": "HANS_NP_only",
+      "domain_sha256": "83b0e2b543ad7eb5073b6e69473ffa5f0be0ce06e1343208890f0e1a2df2e3ae",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "JACK_NP_only",
+      "source": "snow_white_giant_witch",
+      "representation": "JACK_NP_only",
+      "domain_sha256": "8e6117af9546e8ae1703a9c414b3dddf5ae495920d8df8adfa195b56f754144a",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "SNOW_only",
+      "source": "snow_white_giant_witch",
+      "representation": "SNOW_only",
+      "domain_sha256": "e61314883dbe8c4dad00a0153748125a7c919051c6675629d9cbff24664272b4",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "without_HANS_NP",
+      "source": "snow_white_giant_witch",
+      "representation": "without_HANS_NP",
+      "domain_sha256": "042591eafed085f1c325dd4eaa20d2524e564c6c7b67e42c540d7aeecc42a8db",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "no_shared_identity",
+      "source": "snow_white_giant_witch",
+      "representation": "no_shared_identity",
+      "domain_sha256": "8791799f67f72a36ab875d29e7f4d0b71c296c29737bde354b6980893a9c3a5d",
+      "problem_sha256": "c7b639ef7ddc2b1e3bb7fb8f5f9f2cbe77b4fde83301c5a81153f4dd48b92d52"
+    },
+    {
+      "id": "without_life_adapter",
+      "source": "snow_white_giant_witch",
+      "representation": "without_life_adapter",
+      "domain_sha256": "42da501c7aaa402418d6400ecaad48d85c13bc9eaa3fa8faf9e4a4cfb299e9d2",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    },
+    {
+      "id": "unrestricted_sources",
+      "source": "snow_white_giant_witch",
+      "representation": "unrestricted_sources",
+      "domain_sha256": "a29af3b05a1f11dd48017c035bb6e5fca754561fea399e9a53a7fa14a80648b1",
+      "problem_sha256": "1ccbd4c196b66c26a926ce08fb45829f9491cfd9e209e4464a4a13543451f412"
+    }
+  ],
+  "task_count": 11,
+  "mode": "matched_source_representations",
+  "task_bundle_origin": "data\\validation\\snow_roles_case_2026_10_20_v1\\bundle",
+  "task_bundle_manifest_sha256": "1bc0b71a313b4a52ca80c6b6fbdcf8a0d52e4d6363cf88d691fa14490cd5b392",
+  "composed_origin": null,
+  "probe_origin": null,
+  "probe_manifest_sha256": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

@@ -1,0 +1,29 @@
+{
+  "candidate_id": "pair_261a255ed2b4b9df",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_261a255ed2b4b9df",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates `owned_by` and `laced` describe different relationships between entities. `owned_by` indicates possession of an item, while `laced` describes a state where an item is attached to an entity (likely a poisonous one). These relationships represent distinct properties of the same entities, and one cannot be derived from the other. The action contexts further support this by describing actions related to ownership and the application of a substance. The `owned_by` predicate relates an item to an entity, while the `laced` predicate describes a state of the entity. The `SNOW:action:dwarfs_cut_laces_rescue_snow_white` action explicitly states `(laced ?c ?lace)`, and the `SNOW:action:stepmother_laces_snow_white_tightly` action explicitly states `(laced ?c ?lace)`. These actions demonstrate that `laced` describes a state that can be present, while `owned_by` describes a state of possession. The `SNOW:action:dwarfs_cut_laces_rescue_snow_white` action also includes `(dead ?c)`, indicating that the `laced` state is associated with a negative outcome. The `SNOW:action:stepmother_laces_snow_white_tightly` action includes `(dead ?c)`, indicating that the `laced` state is associated with a negative outcome. The two predicates describe different aspects of the same entities, and one cannot be derived from the other. The action contexts further support this by describing actions related to ownership and the application of a substance. The `owned_by` predicate relates an item to an entity, while the `laced` predicate describes a state of the entity. The `SNOW:action:dwarfs_cut_laces_rescue_snow_white` action explicitly states `(laced ?c ?lace)`, and the `SNOW:action:stepmother_laces_snow_white_tightly` action explicitly states `(laced ?c ?lace).",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_cut_laces_rescue_snow_white",
+        "quote": "(laced ?c ?lace)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_laces_snow_white_tightly",
+        "quote": "(laced ?c ?lace)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_261a255ed2b4b9df",
+    "non_equivalent_has_argument_map:pair_261a255ed2b4b9df"
+  ]
+}

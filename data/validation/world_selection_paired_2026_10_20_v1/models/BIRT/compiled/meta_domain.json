@@ -1,0 +1,516 @@
+{
+  "sources": [
+    "BIRT"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 0,
+    "constants": 25,
+    "predicates": 22,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "BIRT": {
+      "at": "d000__p_at",
+      "boat_available": "d000__p_boat_available",
+      "corridor_reached": "d000__p_corridor_reached",
+      "door_open": "d000__p_door_open",
+      "gloomy": "d000__p_gloomy",
+      "gold_star_on": "d000__p_gold_star_on",
+      "has": "d000__p_has",
+      "inside": "d000__p_inside",
+      "invitation_offered": "d000__p_invitation_offered",
+      "joyful": "d000__p_joyful",
+      "kissed_by": "d000__p_kissed_by",
+      "knighted": "d000__p_knighted",
+      "lantern_carried": "d000__p_lantern_carried",
+      "pellet_eaten": "d000__p_pellet_eaten",
+      "shrunk": "d000__p_shrunk",
+      "sound_heard": "d000__p_sound_heard",
+      "stairs_descended": "d000__p_stairs_descended",
+      "story_shared": "d000__p_story_shared"
+    }
+  },
+  "constant_maps": {
+    "BIRT": {
+      "beech_tree": "d000__c_beech_tree",
+      "bench": "d000__c_bench",
+      "boat": "d000__c_boat",
+      "corridor": "d000__c_corridor",
+      "cottage": "d000__c_cottage",
+      "door": "d000__c_door",
+      "dryad": "d000__c_dryad",
+      "fairy_queen": "d000__c_fairy_queen",
+      "fairyland": "d000__c_fairyland",
+      "gnome": "d000__c_gnome",
+      "gold_star": "d000__c_gold_star",
+      "grandmother": "d000__c_grandmother",
+      "grandmotherkin": "d000__c_grandmotherkin",
+      "key": "d000__c_key",
+      "lantern": "d000__c_lantern",
+      "mother": "d000__c_mother",
+      "mothereen": "d000__c_mothereen",
+      "nora": "d000__c_nora",
+      "palace": "d000__c_palace",
+      "pellet": "d000__c_pellet",
+      "pond": "d000__c_pond",
+      "silver_salver": "d000__c_silver_salver",
+      "spring": "d000__c_spring",
+      "stairs": "d000__c_stairs",
+      "stream": "d000__c_stream"
+    }
+  },
+  "action_maps": {
+    "BIRT": {
+      "travel_to_trysting_place": "d000__a_travel_to_trysting_place",
+      "hear_tapping_on_beech": "d000__a_hear_tapping_on_beech",
+      "approach_beech_tree": "d000__a_approach_beech_tree",
+      "turn_key_on_beech": "d000__a_turn_key_on_beech",
+      "accept_dryad_invitation": "d000__a_accept_dryad_invitation",
+      "receive_pellet_from_gnome": "d000__a_receive_pellet_from_gnome",
+      "eat_pellet_and_shrink": "d000__a_eat_pellet_and_shrink",
+      "enter_tree_and_descend_stairs": "d000__a_enter_tree_and_descend_stairs",
+      "travel_by_leaf_boat_under_pond": "d000__a_travel_by_leaf_boat_under_pond",
+      "witness_queen_birthday_ceremony": "d000__a_witness_queen_birthday_ceremony",
+      "receive_queen_kiss": "d000__a_receive_queen_kiss",
+      "return_to_bench_and_share_story": "d000__a_return_to_bench_and_share_story"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "BIRT": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_dryad"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_dryad"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_fairy_queen"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_fairy_queen"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_gnome"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_gnome"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_grandmother"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_grandmother"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_grandmotherkin"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_grandmotherkin"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_mother"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_mother"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_mothereen"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_mothereen"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_nora"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_nora"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_boat"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_boat"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_gold_star"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_gold_star"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_key"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_key"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_lantern"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_lantern"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_pellet"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_pellet"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_silver_salver"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_silver_salver"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_beech_tree"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_beech_tree"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_bench"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bench"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_corridor"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_corridor"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_cottage"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cottage"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_door"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_door"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_fairyland"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_fairyland"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_palace"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_palace"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_pond"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_pond"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_spring"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_spring"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_stairs"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_stairs"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_stream"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_stream"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_dryad": "d000__t_entity",
+    "d000__c_fairy_queen": "d000__t_entity",
+    "d000__c_gnome": "d000__t_entity",
+    "d000__c_grandmother": "d000__t_entity",
+    "d000__c_grandmotherkin": "d000__t_entity",
+    "d000__c_mother": "d000__t_entity",
+    "d000__c_mothereen": "d000__t_entity",
+    "d000__c_nora": "d000__t_entity",
+    "d000__c_boat": "d000__t_item",
+    "d000__c_gold_star": "d000__t_item",
+    "d000__c_key": "d000__t_item",
+    "d000__c_lantern": "d000__t_item",
+    "d000__c_pellet": "d000__t_item",
+    "d000__c_silver_salver": "d000__t_item",
+    "d000__c_beech_tree": "d000__t_location",
+    "d000__c_bench": "d000__t_location",
+    "d000__c_corridor": "d000__t_location",
+    "d000__c_cottage": "d000__t_location",
+    "d000__c_door": "d000__t_location",
+    "d000__c_fairyland": "d000__t_location",
+    "d000__c_palace": "d000__t_location",
+    "d000__c_pond": "d000__t_location",
+    "d000__c_spring": "d000__t_location",
+    "d000__c_stairs": "d000__t_location",
+    "d000__c_stream": "d000__t_location"
+  },
+  "predicate_orders": {
+    "BIRT": {
+      "at": [
+        0,
+        1
+      ],
+      "boat_available": [
+        0,
+        1
+      ],
+      "corridor_reached": [
+        0
+      ],
+      "door_open": [
+        0
+      ],
+      "gloomy": [
+        0
+      ],
+      "gold_star_on": [
+        0,
+        1
+      ],
+      "has": [
+        0,
+        1
+      ],
+      "inside": [
+        0,
+        1
+      ],
+      "invitation_offered": [
+        0,
+        1
+      ],
+      "joyful": [
+        0
+      ],
+      "kissed_by": [
+        0,
+        1
+      ],
+      "knighted": [
+        0
+      ],
+      "lantern_carried": [
+        0,
+        1
+      ],
+      "pellet_eaten": [
+        0
+      ],
+      "shrunk": [
+        0
+      ],
+      "sound_heard": [
+        0,
+        1
+      ],
+      "stairs_descended": [
+        0
+      ],
+      "story_shared": [
+        0,
+        1
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "BIRT": {
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "boat_available": [
+        "d000__t_item",
+        "d000__t_location"
+      ],
+      "corridor_reached": [
+        "d000__t_entity"
+      ],
+      "door_open": [
+        "d000__t_location"
+      ],
+      "gloomy": [
+        "d000__t_entity"
+      ],
+      "gold_star_on": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "has": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "inside": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "invitation_offered": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "joyful": [
+        "d000__t_entity"
+      ],
+      "kissed_by": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "knighted": [
+        "d000__t_entity"
+      ],
+      "lantern_carried": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "pellet_eaten": [
+        "d000__t_entity"
+      ],
+      "shrunk": [
+        "d000__t_entity"
+      ],
+      "sound_heard": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "stairs_descended": [
+        "d000__t_entity"
+      ],
+      "story_shared": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ]
+    }
+  },
+  "source_sha256": {
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BIRT_problemfile.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "machine_hypothesis",
+    "source_sha256": {
+      "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+    },
+    "type_groups": [],
+    "predicate_groups": [],
+    "semantic_status": "unverified_machine_assumptions",
+    "role_type_policy": "aligned_slot_hypothesis",
+    "object_identity_inferred": false,
+    "initial_facts_inferred": false,
+    "proposal_provenance": {
+      "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+      "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+    }
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

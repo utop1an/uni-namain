@@ -1,0 +1,49 @@
+INFO     planner time limit: 20s
+INFO     planner memory limit: 4096 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 19s
+INFO     translator memory limit: 4096 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.006s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.027s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 134 rules.
+Computing model... [1.710s CPU, 1.714s wall-clock]
+292280 relevant atoms
+10716 auxiliary atoms
+302996 final queue length
+1434246 total queue pushes
+Completing instantiation... [5.940s CPU, 5.941s wall-clock]
+Instantiating: [7.690s CPU, 7.727s wall-clock]
+Computing fact groups...
+Finding invariants...
+33 initial candidates
+Finding invariants: [0.060s CPU, 0.057s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+431 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.060s CPU, 0.059s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.250s CPU, 0.250s wall-clock]
+Translating task: [6.870s CPU, 6.877s wall-clock]
+180635 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...

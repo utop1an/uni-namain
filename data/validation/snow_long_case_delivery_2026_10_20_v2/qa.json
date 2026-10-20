@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "tests": 178,
+  "test_seconds": 91.908,
+  "test_log_sha256": "92608d89f5826aff6ca1676dca2bfa79843c2834d38453ad641bda83c32d86ba",
+  "pdf": "output/pdf/icaps_meeting_2026_10_21_snow_long_case.pdf",
+  "pdf_sha256": "6cb3572c8992b9c2e809cbf0c29487f0a78c87dfbb0ae8a690673a4099f9f20d",
+  "pdf_pages": 3,
+  "visual_review": "All three rendered pages inspected; no clipping/overlap",
+  "primary_plan_length": 12,
+  "source_steps": 4,
+  "new_scene_steps": 8,
+  "states_checked": 13,
+  "step_deletion_failures": 12,
+  "whole_schema_removals_unsolvable": 12,
+  "compiled_behavior_modified": true,
+  "audit_revision": "v2 adds explicit frozen-query, contract, bundle and source snapshot integrity checks; same solver block, no solver rerun"
+}

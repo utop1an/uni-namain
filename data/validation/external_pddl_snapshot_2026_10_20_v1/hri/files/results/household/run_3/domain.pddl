@@ -1,0 +1,48 @@
+(define (domain household)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types APPLIANCE FURNITURE HOUSEHOLD_OBJECT RECEPTACLE ROBOT apple banana cloth diningTable drawer lunchBox microwave robot)
+    (:predicates 
+    (contains ?into - RECEPTACLE ?obj - HOUSEHOLD_OBJECT)  
+    (isAt ?robot - ROBOT ?from - FURNITURE)  
+    (isClosed ?drawer - FURNITURE)  
+    (isHoldingObject ?robot - ROBOT ?obj - HOUSEHOLD_OBJECT)  
+    (isHoldingReceptacle ?robot - ROBOT ?receptacle - RECEPTACLE)  
+    (isOnTop ?receptacle - RECEPTACLE ?on - FURNITURE)  
+    (isOnTopObject ?obj - HOUSEHOLD_OBJECT ?from - FURNITURE)  
+    (isOpenDrawer ?drawer - FURNITURE))
+    (:action close
+        :parameters (?drawer - FURNITURE ?robot - ROBOT)
+        :precondition (and (isOpenDrawer ?drawer) (isAt ?robot ?drawer))
+        :effect (and (not (isOpenDrawer ?drawer)) (isClosed ?drawer))
+    )
+     (:action drop
+        :parameters (?robot - ROBOT ?obj - HOUSEHOLD_OBJECT ?into - RECEPTACLE)
+        :precondition (isHoldingObject ?robot ?obj)
+        :effect (and (not (isHoldingObject ?robot ?obj)) (contains ?into ?obj))
+    )
+     (:action navigate
+        :parameters (?robot - ROBOT ?from - FURNITURE ?to - FURNITURE)
+        :precondition (and (isAt ?robot ?from) (not (isAt ?robot ?to)))
+        :effect (and (not (isAt ?robot ?from)) (isAt ?robot ?to))
+    )
+     (:action open
+        :parameters (?robot - ROBOT ?drawer - FURNITURE)
+        :precondition (and (isAt ?robot ?drawer) (not (isOpenDrawer ?drawer)) (isClosed ?drawer))
+        :effect (and (isOpenDrawer ?drawer) (not (isClosed ?drawer)))
+    )
+     (:action pick
+        :parameters (?robot - ROBOT ?from - FURNITURE ?obj - HOUSEHOLD_OBJECT)
+        :precondition (and (isAt ?robot ?from) (not (isHoldingObject ?robot ?obj)) (isOnTopObject ?obj ?from))
+        :effect (and (isHoldingObject ?robot ?obj) (not (isOnTopObject ?obj ?from)))
+    )
+     (:action placeOn
+        :parameters (?robot - ROBOT ?obj - HOUSEHOLD_OBJECT ?on - FURNITURE)
+        :precondition (isHoldingObject ?robot ?obj)
+        :effect (and (not (isHoldingObject ?robot ?obj)) (isOnTopObject ?obj ?on))
+    )
+     (:action placeOnTop
+        :parameters (?robot - ROBOT ?receptacle - RECEPTACLE ?on - FURNITURE)
+        :precondition (isHoldingReceptacle ?robot ?receptacle)
+        :effect (and (not (isHoldingReceptacle ?robot ?receptacle)) (isOnTop ?receptacle ?on))
+    )
+)

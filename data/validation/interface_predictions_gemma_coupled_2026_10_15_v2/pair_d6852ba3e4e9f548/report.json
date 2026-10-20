@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_d6852ba3e4e9f548",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_d6852ba3e4e9f548",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'has' appears in both the ACCO and REMA_NP narratives with identical syntax and parameters (?e - entity, ?i - item). Across all action contexts, the predicate is consistently used to express possession or relationship between entities and items. The action contexts demonstrate that 'has' is used to describe the state of possession of an item by an entity, which is a fundamental concept in both narratives. The identical syntax and parameterization, combined with the consistent usage across different actions and narratives, strongly suggests that the predicate 'has' represents the same concept in both sources. The action contexts provide sufficient evidence to support this equivalence. The exact excerpts containing the predicate occurrence on both sides are: ACCO: `(has ?t ?k)`, REMA_NP: `(has ?i ?r)`, `(has ?c ?s)`, `(has ?p ?r)`, `(has ?p ?s)`, `(has ?k ?r)`, `(has ?k ?s)`. The arguments are interchangeable, and the predicate represents the same relationship in both narratives.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:arrange_exhibition",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:hang_kettle",
+        "quote": "(has ?pr ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:kettle_transform_to_fur_badger",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:perform_show",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:return_kettle_to_temple",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:sell_kettle_to_tinker",
+        "quote": "(has ?pr ?k)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_d6852ba3e4e9f548"
+  ]
+}

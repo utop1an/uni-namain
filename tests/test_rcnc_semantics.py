@@ -1,6 +1,6 @@
 import copy,json,tempfile,unittest
 from pathlib import Path
-from rcnc.semantic_proposals import source_pack,check_proposal,evaluate_response,run_proposals,generation_schema
+from archive.rcnc.semantic_proposals import source_pack,check_proposal,evaluate_response,run_proposals,generation_schema
 ROOT=Path(__file__).resolve().parents[1]
 
 class SemanticProposalTests(unittest.TestCase):

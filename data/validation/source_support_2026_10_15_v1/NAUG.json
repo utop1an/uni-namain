@@ -1,0 +1,325 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "gate_open",
+    "on_list"
+  ],
+  "reachable_predicates": [
+    "arrested",
+    "at",
+    "avoid",
+    "burned",
+    "crossed_out",
+    "delivered",
+    "detained",
+    "gate_open",
+    "has_mission",
+    "left_turn_rule",
+    "near",
+    "on_list",
+    "prohibit_speak",
+    "punished",
+    "rule_violation",
+    "speaks_to",
+    "summoned",
+    "traveling"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "call_comet_forward",
+        "give_order"
+      ],
+      "new_predicates": [
+        "avoid",
+        "has_mission",
+        "left_turn_rule",
+        "prohibit_speak",
+        "summoned"
+      ]
+    },
+    {
+      "actions": [
+        "prohibit_speaking_to_meteor",
+        "start_travel"
+      ],
+      "new_predicates": [
+        "traveling"
+      ]
+    },
+    {
+      "actions": [
+        "approach_sun"
+      ],
+      "new_predicates": [
+        "near"
+      ]
+    },
+    {
+      "actions": [
+        "arrest_meteor",
+        "avoid_body",
+        "burn_up",
+        "speak_to_meteor",
+        "turn_left_on_meeting"
+      ],
+      "new_predicates": [
+        "arrested",
+        "burned",
+        "detained",
+        "rule_violation",
+        "speaks_to"
+      ]
+    },
+    {
+      "actions": [
+        "cross_out_comet",
+        "deliver_meteor_to_bungo"
+      ],
+      "new_predicates": [
+        "crossed_out",
+        "delivered"
+      ]
+    },
+    {
+      "actions": [
+        "punish_meteor"
+      ],
+      "new_predicates": [
+        "punished"
+      ]
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "approach_sun",
+      "condition": [
+        "and",
+        [
+          "traveling",
+          "?c"
+        ],
+        [
+          "avoid",
+          "?c",
+          "sun"
+        ]
+      ],
+      "adds": [
+        "near"
+      ]
+    },
+    {
+      "action": "arrest_meteor",
+      "condition": [
+        "and",
+        [
+          "traveling",
+          "?c"
+        ],
+        [
+          "near",
+          "?c",
+          "?m"
+        ]
+      ],
+      "adds": [
+        "arrested",
+        "detained"
+      ]
+    },
+    {
+      "action": "avoid_body",
+      "condition": [
+        "and",
+        [
+          "traveling",
+          "?c"
+        ],
+        [
+          "avoid",
+          "?c",
+          "?b"
+        ],
+        [
+          "near",
+          "?c",
+          "?b"
+        ]
+      ],
+      "adds": []
+    },
+    {
+      "action": "burn_up",
+      "condition": [
+        "near",
+        "?c",
+        "sun"
+      ],
+      "adds": [
+        "burned"
+      ]
+    },
+    {
+      "action": "call_comet_forward",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?c",
+          "courtyard"
+        ],
+        [
+          "at",
+          "?master",
+          "courtyard"
+        ]
+      ],
+      "adds": [
+        "summoned"
+      ]
+    },
+    {
+      "action": "cross_out_comet",
+      "condition": [
+        "burned",
+        "?c"
+      ],
+      "adds": [
+        "crossed_out"
+      ]
+    },
+    {
+      "action": "deliver_meteor_to_bungo",
+      "condition": [
+        "detained",
+        "?m"
+      ],
+      "adds": [
+        "delivered"
+      ]
+    },
+    {
+      "action": "give_order",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?c",
+          "courtyard"
+        ],
+        [
+          "at",
+          "?master",
+          "courtyard"
+        ],
+        [
+          "not",
+          [
+            "has_mission",
+            "?c"
+          ]
+        ]
+      ],
+      "adds": [
+        "avoid",
+        "has_mission",
+        "left_turn_rule",
+        "prohibit_speak"
+      ]
+    },
+    {
+      "action": "prohibit_speaking_to_meteor",
+      "condition": [
+        "has_mission",
+        "?c"
+      ],
+      "adds": [
+        "prohibit_speak"
+      ]
+    },
+    {
+      "action": "punish_meteor",
+      "condition": [
+        "delivered",
+        "?m",
+        "bungo"
+      ],
+      "adds": [
+        "punished"
+      ]
+    },
+    {
+      "action": "speak_to_meteor",
+      "condition": [
+        "and",
+        [
+          "traveling",
+          "?c"
+        ],
+        [
+          "prohibit_speak",
+          "?c"
+        ],
+        [
+          "near",
+          "?c",
+          "?m"
+        ]
+      ],
+      "adds": [
+        "rule_violation",
+        "speaks_to"
+      ]
+    },
+    {
+      "action": "start_travel",
+      "condition": [
+        "and",
+        [
+          "has_mission",
+          "?c"
+        ],
+        [
+          "gate_open"
+        ]
+      ],
+      "adds": [
+        "traveling"
+      ]
+    },
+    {
+      "action": "turn_left_on_meeting",
+      "condition": [
+        "and",
+        [
+          "traveling",
+          "?c"
+        ],
+        [
+          "traveling",
+          "?other"
+        ],
+        [
+          "left_turn_rule",
+          "?c"
+        ],
+        [
+          "near",
+          "?c",
+          "?other"
+        ]
+      ],
+      "adds": [
+        "left_turn_rule"
+      ]
+    }
+  ],
+  "source_domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+  "source_problem_sha256": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

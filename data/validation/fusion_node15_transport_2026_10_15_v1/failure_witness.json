@@ -1,0 +1,55 @@
+{
+  "status": "applicability_divergence",
+  "steps": [
+    {
+      "step": 1,
+      "source_action": "travel_to_trysting_place(nora, bench, cottage)",
+      "mapped_action": "travel_to_trysting_place(nora, bench, cottage)",
+      "source_applicable": true,
+      "mapped_applicable": true
+    },
+    {
+      "step": 2,
+      "source_action": "travel_to_trysting_place(nora, palace, bench)",
+      "mapped_action": "travel_to_trysting_place(nora, palace, bench)",
+      "source_applicable": true,
+      "mapped_applicable": true
+    },
+    {
+      "step": 3,
+      "source_action": "receive_queen_kiss(nora, dryad)",
+      "mapped_action": "receive_queen_kiss(nora, dryad)",
+      "source_applicable": true,
+      "mapped_applicable": true
+    },
+    {
+      "step": 4,
+      "source_action": "receive_queen_kiss(nora, fairy_queen)",
+      "mapped_action": "receive_queen_kiss(nora, fairy_queen)",
+      "source_applicable": true,
+      "mapped_applicable": true
+    },
+    {
+      "step": 5,
+      "source_action": "turn_key_on_beech(nora, key, palace)",
+      "mapped_action": "activate_beech(nora, key, palace)",
+      "source_applicable": true,
+      "mapped_applicable": false,
+      "mapped_unsatisfied_conditions": [
+        "has(nora, key)"
+      ],
+      "mapped_reason": "InapplicabilityReasons.VIOLATES_CONDITIONS"
+    }
+  ],
+  "artifact_sha256": {
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\problem.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\validation\\downward_sources_2026_10_15_v1\\tasks\\BIRT\\plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1",
+    "data\\validation\\fusion_node15_transport_2026_10_15_v1\\sources\\BIRT\\domain.pddl": "c3ab00be2cd7916c5fc9d136c01bc54e42a7cbc256581914fc5afa28ab4ec504",
+    "data\\validation\\fusion_node15_transport_2026_10_15_v1\\sources\\BIRT\\problem.pddl": "6beba3a62718cf76ef55d6ba2760eb97faa69f95e5f6a5d85b1567d326b4bcc2",
+    "data\\validation\\fusion_node15_transport_2026_10_15_v1\\sources\\BIRT\\plan.txt": "f059ae0bc9be3bdf7d5683972dbc29e86628d85538a90c745dfa120fa0eda05f"
+  },
+  "limit": "This trace witness does not establish semantic correctness or absence of alternative plans",
+  "first_problem_step": 5,
+  "implementation_sha256": "797b5153fce9847837f8b4c2350fa2660382b61034f0249dd5e07e8942b7b1ed"
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:42:38.0788011Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_025ba82c2dca75d9\", \"label\": \"incompatible\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'going_to_wood' in CHIC_NP describes an action of moving an entity towards a wood location. The predicate 'dead' in HANS_NP describes the state of an entity being deceased. These predicates represent fundamentally different concepts: one relates to movement and location, the other to a state of non-existence. There is no logical connection or overlap in their meanings. The action contexts further reinforce this distinction. 'going_to_wood' requires preconditions related to location and movement, while 'dead' is a state resulting from an action (push_witch_into_oven). The predicates are incompatible because they describe distinct properties of entities. The provided action contexts do not suggest any relationship between the two predicates. The 'parameters' are identical, but this does not imply equivalence. The 'type_hierarchy' is also identical, indicating that they both operate on the same type of 'entity'.\", \"evidence\": [ {\"side\": 0, \"ref\": \"CHIC_NP:action:go_to_wood\", \"quote\": \"(going_to_wood ?e)\"}, {\"side\": 0, \"ref\": \"CHIC_NP:action:turn_back\", \"quote\": \"(going_to_wood ?e)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:push_witch_into_oven\", \"quote\": \"(dead ?witch)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3226991700,
+  "load_duration": 2647000,
+  "prompt_eval_count": 785,
+  "prompt_eval_duration": 141097000,
+  "eval_count": 344,
+  "eval_duration": 2999509000
+}

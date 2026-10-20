@@ -1,0 +1,91 @@
+{
+  "sources": [
+    "WOE"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 3,
+    "constants": 27,
+    "predicates": 22,
+    "operators": 17
+  },
+  "predicate_maps": {
+    "WOE": {
+      "at": "at",
+      "banquet_at": "banquet_at",
+      "bowed": "bowed",
+      "concealed": "concealed",
+      "drunk": "drunk",
+      "employed": "employed",
+      "gold_at": "gold_at",
+      "guest_present": "guest_present",
+      "has": "has",
+      "has_fatigue": "has_fatigue",
+      "has_strength": "has_strength",
+      "invitation_sent": "invitation_sent",
+      "invited": "invited",
+      "need_help": "need_help",
+      "poor": "poor",
+      "rich": "rich",
+      "singing": "singing",
+      "stone_at": "stone_at",
+      "stone_moved": "stone_moved",
+      "trapped": "trapped",
+      "woe_on_shoulder": "woe_on_shoulder",
+      "work_done": "work_done"
+    }
+  },
+  "constant_maps": {
+    "WOE": {
+      "big_house": "big_house",
+      "bitter_woe": "bitter_woe",
+      "cattle": "cattle",
+      "children": "children",
+      "copecks_25": "copecks_25",
+      "forest": "forest",
+      "gold_pot": "gold_pot",
+      "grove": "grove",
+      "harrow": "harrow",
+      "honey": "honey",
+      "izba": "izba",
+      "kabak": "kabak",
+      "large_town": "large_town",
+      "loaf_bread": "loaf_bread",
+      "new_home": "new_home",
+      "plow": "plow",
+      "poor_brother": "poor_brother",
+      "rich_brother": "rich_brother",
+      "sledge": "sledge",
+      "stone": "stone",
+      "telega": "telega",
+      "treasure_pit": "treasure_pit",
+      "village": "village",
+      "well": "well",
+      "wife": "wife",
+      "wine": "wine",
+      "yard": "yard"
+    }
+  },
+  "action_maps": {
+    "WOE": {
+      "request_help_from_rich_brother": "request_help_from_rich_brother",
+      "perform_work_for_rich_brother": "perform_work_for_rich_brother",
+      "receive_payment": "receive_payment",
+      "stay_for_banquet": "stay_for_banquet",
+      "bow_to_guests": "bow_to_guests",
+      "sing_cheerful_song": "sing_cheerful_song",
+      "encounter_bitter_woe": "encounter_bitter_woe",
+      "make_sign_of_cross": "make_sign_of_cross",
+      "allow_woe_to_ride_on_shoulder": "allow_woe_to_ride_on_shoulder",
+      "spend_money_on_drink": "spend_money_on_drink",
+      "trade_assets_for_money": "trade_assets_for_money",
+      "move_heavy_stone": "move_heavy_stone",
+      "hide_woe_under_stone": "hide_woe_under_stone",
+      "take_gold_pot_and_hide": "take_gold_pot_and_hide",
+      "invite_rich_brother_to_feast": "invite_rich_brother_to_feast",
+      "rich_brother_attempt_to_move_stone": "rich_brother_attempt_to_move_stone",
+      "accept_woe_as_burden": "accept_woe_as_burden"
+    }
+  },
+  "decisions": []
+}

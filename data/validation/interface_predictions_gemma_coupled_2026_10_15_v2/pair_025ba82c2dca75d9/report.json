@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_025ba82c2dca75d9",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_025ba82c2dca75d9",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicate 'going_to_wood' describes an action of moving towards a wood location, while 'dead' describes a state of being deceased. These predicates represent distinct aspects of a scenario: one relates to movement and resource interaction, and the other relates to a final state. The 'going_to_wood' predicate is used in the preconditions and effects of the 'turn_back' action, indicating a movement action. The 'dead' predicate is used in the effect of the 'push_witch_into_oven' action, indicating a final state. Because one describes an action and the other describes a state, they are complementary. The action contexts show that 'going_to_wood' is a precondition for 'turn_back', and 'dead' is an effect of 'push_witch_into_oven'. The predicates are not interchangeable because they describe different things. The arguments are both 'entity' types.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "CHIC_NP:action:go_to_wood",
+        "quote": "(going_to_wood ?e)"
+      },
+      {
+        "side": 0,
+        "ref": "CHIC_NP:action:turn_back",
+        "quote": "(going_to_wood ?e)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:push_witch_into_oven",
+        "quote": "(dead ?witch)"
+      }
+    ]
+  },
+  "errors": []
+}

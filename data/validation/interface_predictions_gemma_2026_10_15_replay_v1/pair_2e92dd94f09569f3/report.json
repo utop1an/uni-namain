@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_2e92dd94f09569f3",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_2e92dd94f09569f3",
+    "label": "complementary",
+    "right_from_left": [
+      2,
+      1
+    ],
+    "rationale": "The predicate 'reunited_with_father' in the HANS_NP narrative describes a state of familial connection, specifically the father being present with a child. The predicate 'awake' in the SNOW narrative describes a state of consciousness, indicating the entity is no longer asleep. These predicates represent distinct aspects of an entity's state: one relating to relationships and presence, the other to alertness. The action contexts further support this distinction; 'reunited_with_father' is triggered by actions related to family reunion, while 'awake' is triggered by actions related to rescue and maintenance. The two predicates cannot share the same entity, as 'reunited_with_father' requires a father, while 'awake' does not. Therefore, they are complementary, describing different states of an entity.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:return_home_and_reunite_with_father",
+        "quote": "(reunited_with_father ?h)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_cut_laces_rescue_snow_white",
+        "quote": "(awake ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_offer_snow_white_to_maintain_house",
+        "quote": "(awake ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_return_and_discover_snow_white",
+        "quote": "(awake ?d)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_2e92dd94f09569f3"
+  ]
+}

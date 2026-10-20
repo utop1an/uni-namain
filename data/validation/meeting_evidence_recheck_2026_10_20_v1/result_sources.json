@@ -1,0 +1,580 @@
+{
+  "version": 6,
+  "reports": {
+    "original_source_planning": {
+      "path": "data\\validation\\downward_sources_2026_10_15_v1\\report.json",
+      "sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Original local source worlds and goals",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "auxiliary_probe_planning": {
+      "path": "data\\validation\\downward_probes_2026_10_15_v1\\report.json",
+      "sha256": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Auxiliary goals; original initial worlds retained",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "current_source_trace_replay": {
+      "path": "data\\validation\\downward_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "ecc682fab4396e48965ad852f517c0fd9d9a32f8ca720173c7ce74f921cbbf9e",
+      "terminal_status": "complete",
+      "metrics": [
+        "source_count",
+        "source_plan_count",
+        "valid_translations",
+        "counts"
+      ],
+      "scope": "Post-capture-fix membership compilation; availability remains 6/15",
+      "denominator": "source_count",
+      "count_field": "counts",
+      "row_id": "source",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "current_probe_trace_replay": {
+      "path": "data\\validation\\probe_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "4841039fe26215a90d52c8f2843d90c63d5edb316b682eaa24500d5ba2d2e019",
+      "terminal_status": "complete",
+      "metrics": [
+        "probe_count",
+        "available_probe_plans",
+        "validated_probe_plans",
+        "counts"
+      ],
+      "scope": "Post-capture-fix membership compilation; auxiliary probe denominator 45",
+      "denominator": "probe_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "current_probe_state_equivalence": {
+      "path": "data\\validation\\probe_type_states_2026_10_15_v2\\report.json",
+      "sha256": "7448e8682cacbebef2c1704c01356bac1ee07a26f7faffea88a575f4dadddc76",
+      "terminal_status": "complete",
+      "metrics": [
+        "probe_count",
+        "counts",
+        "truth_comparisons",
+        "states_compared"
+      ],
+      "scope": "All source atoms along available probe trajectories, not all reachable states",
+      "denominator": "probe_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "goal_directed_development": {
+      "path": "data\\validation\\downward_composed_2026_10_15_v1\\report.json",
+      "sha256": "6a7e363b8be0ff3e63a399730c285d5f48fa71eca55427e4bff4b8065c65f566",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Authored worlds/interfaces; same-export solver comparison",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "initial_only_development": {
+      "path": "data\\validation\\initial_only_development_2026_10_15_v2\\report.json",
+      "sha256": "5f5cf8df93bdf799a3b79c05397c48a25d3cbb06bdd62fd99164f067af333906",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "counts"
+      ],
+      "scope": "Historical state-projection run before capture fix; 12 validated generated outcomes",
+      "denominator": "task_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "frozen_tasks_unchanged",
+        "implementation_unchanged",
+        "sources_unchanged"
+      ]
+    },
+    "finite_transition_control": {
+      "path": "data\\validation\\exhaustive_preservation_2026_10_15_v2\\report.json",
+      "sha256": "814e9f791745358f412783a7aafed840a7839606afa833e551eb0e833c88e6fa",
+      "terminal_status": "PASS",
+      "metrics": [
+        "counts"
+      ],
+      "scope": "Authored 256-state control after capture fix",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "compiled_domain_unchanged"
+      ]
+    },
+    "capture_control": {
+      "path": "data\\validation\\quantifier_capture_2026_10_15_v1\\exhaustive_report.json",
+      "sha256": "5404eb86c3e37825c6bf40282b59592a17b7357464d25e0c62142ac495586a5e",
+      "terminal_status": "PASS",
+      "metrics": [
+        "states",
+        "action_bindings_checked",
+        "before_mismatches",
+        "after_mismatches"
+      ],
+      "scope": "Authored 16-state capture regression",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": []
+    },
+    "source_action_necessity": {
+      "path": "data\\validation\\downward_action_removal_2026_10_15_v1\\report.json",
+      "sha256": "245c3d4fd0227e1c65297e9e77e4007cf765382c7aaa712a076cde496d5dd87a",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Source-action removal on six authored explicit-pair conditions; 18 tasks",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "external_native_planning": {
+      "path": "data\\validation\\downward_basketball_native_2026_10_15_v1\\report.json",
+      "sha256": "c9edcfb03b125a7adb0d9ba40bab03c2219beaeafaf54721d1a4613c8b509c9b",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "Basketball: one external development family, ten header-packaged original tasks",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "external_union_replay": {
+      "path": "data\\validation\\basketball_union_replay_2026_10_15_v1\\report.json",
+      "sha256": "7dc482ce2ebcf4315b132b3331a44dbe3d6f3ecdb25c7a1accd6b8d2a23c0570",
+      "terminal_status": "complete",
+      "metrics": [
+        "problem_count",
+        "compiled_source_count",
+        "valid_replays",
+        "states_compared",
+        "truth_comparisons"
+      ],
+      "scope": "Ten external development traces in a fixed16-source union model",
+      "denominator": "problem_count",
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "external_union_world_isolation": {
+      "path": "data\\validation\\basketball_union_replay_2026_10_15_v1\\world_audit.json",
+      "sha256": "fcc066043bc758b3c2692de9b8c04a7815008033d92628432c16a16f035397cb",
+      "terminal_status": "PASS",
+      "metrics": [
+        "problem_count",
+        "negative_control"
+      ],
+      "scope": "Full initial-world isolation; injected foreign-fact negative control must fail",
+      "denominator": "problem_count",
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "external_membership_replay": {
+      "path": "data\\validation\\basketball_membership_replay_2026_10_15_v1\\report.json",
+      "sha256": "c6017a49967d88113c6d077d16bfdf40e2b80d009a64bd873644a10429e0c1c9",
+      "terminal_status": "complete",
+      "metrics": [
+        "problem_count",
+        "compiled_source_count",
+        "valid_replays",
+        "states_compared",
+        "truth_comparisons"
+      ],
+      "scope": "Ten external development traces in a fixed16-source membership model",
+      "denominator": "problem_count",
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "external_membership_world_isolation": {
+      "path": "data\\validation\\basketball_membership_replay_2026_10_15_v1\\world_audit.json",
+      "sha256": "02d84a52a928010a5587ec6bd0bb648d8c0c2e85ebda52bb6f9261e3f6efe66d",
+      "terminal_status": "PASS",
+      "metrics": [
+        "problem_count",
+        "negative_control"
+      ],
+      "scope": "Full initial-world isolation; injected foreign-fact negative control must fail",
+      "denominator": "problem_count",
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "original_pool_trace_coverage": {
+      "path": "data\\validation\\source_trace_coverage_2026_10_15_v1\\report.json",
+      "sha256": "d3c55fc1f221fe80db3eca7df40e1e1c7c4bb28de9bb515d409f18a30afc2a9f",
+      "terminal_status": "complete",
+      "metrics": [
+        "source_count",
+        "declared_actions",
+        "covered_actions",
+        "uncovered_actions",
+        "feature_coverage"
+      ],
+      "scope": "Schema visitation among original-goal and auxiliary plans; not branch coverage",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "conditional_prefix_control": {
+      "path": "data\\validation\\conditional_prefixes_2026_10_15_v1\\report.json",
+      "sha256": "5ab58903cf5f4675a50213308d70e92d18041a2e948b6555a40fea97b27a2057",
+      "terminal_status": "PASS",
+      "metrics": [
+        "trace_count",
+        "states_compared",
+        "truth_comparisons"
+      ],
+      "scope": "Two authored prefixes, original initial world; not original-goal success",
+      "denominator": "trace_count",
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "external_pool_schema": {
+      "path": "data\\validation\\basketball_fixed_pool_2026_10_15_v1\\schema_audit.json",
+      "sha256": "0e681815eb18acbad511938ed1ad0f734ac96dc8ca537e20fdfb39f3ea0251d9",
+      "terminal_status": "PASS",
+      "metrics": [
+        "rows"
+      ],
+      "scope": "Full schema recovery of the16-source namespaced union",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": []
+    },
+    "action_invocation_planning": {
+      "path": "data\\validation\\downward_action_reachability_2026_10_15_v1\\report.json",
+      "sha256": "f0eefcadbddfb31ff28ab6c9efb9871838a02d423425a1d33ab8bd157162b2f8",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "234 unchanged-world action invocation tasks; not original-goal solving",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ]
+    },
+    "action_invocation_instrumentation": {
+      "path": "data\\validation\\action_reachability_audit_2026_10_15_v1\\report.json",
+      "sha256": "179217e9daf81532f7391c8686d3c2e6acc3ac7bfe6dc3ba46a4d96fb20eef3b",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "status_counts",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "Monitor inversion and all-source-atom comparisons",
+      "denominator": "task_count",
+      "count_field": "status_counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "action_invocation_union": {
+      "path": "data\\validation\\action_reachability_union_replay_2026_10_15_v1\\report.json",
+      "sha256": "753088763944fc5d4d89224805ceac995746331303ecae4b73b77950da53ea81",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "counts",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "Fixed namespaced-union executable-prefix replay",
+      "denominator": "task_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "action_invocation_membership": {
+      "path": "data\\validation\\action_reachability_membership_replay_2026_10_15_v1\\report.json",
+      "sha256": "70b85667f7c9be0da5284da814da44cc4e034c392223fb76c5b1f5e43b68741a",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "counts",
+        "states_compared",
+        "truth_comparisons",
+        "mismatch_count"
+      ],
+      "scope": "Fixed membership-model executable-prefix replay",
+      "denominator": "task_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "action_invocation_coverage": {
+      "path": "data\\validation\\action_reachability_summary_2026_10_15_v1\\report.json",
+      "sha256": "06a172a201a3763bfa154a40e5edd943dc5d1cee39ddf9dcdb350a98d895283f",
+      "terminal_status": "complete",
+      "metrics": [
+        "task_count",
+        "counts",
+        "target_solver_counts",
+        "feature_coverage",
+        "sources"
+      ],
+      "scope": "Any validated prefix from three frozen solver bundles; target timeouts retained",
+      "denominator": "task_count",
+      "count_field": "counts",
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged",
+        "consistent"
+      ]
+    },
+    "formula_boundary_control": {
+      "path": "data\\validation\\formula_boundaries_2026_10_15_v1\\report.json",
+      "sha256": "f2c3cbf575ac53f2fb37b4c931e3ddf295e4273cd44ae7e6282c40473ceeae05",
+      "terminal_status": "PASS",
+      "metrics": [
+        "condition_count",
+        "counts"
+      ],
+      "scope": "Finite authored Boolean/equality/empty-type controls",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "hashes_unchanged"
+      ]
+    },
+    "formula_guard_mutation": {
+      "path": "data\\validation\\formula_mutation_2026_10_15_v1\\report.json",
+      "sha256": "4405e90da309f6dbea99e922408cb2173085c53141ffa74abb3a096bb914298f",
+      "terminal_status": "FAIL",
+      "metrics": [
+        "counts",
+        "mutation_detected",
+        "changed_action_count"
+      ],
+      "scope": "Expected failure after removing quantified membership guards",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "mutation_detected"
+      ]
+    },
+    "fusion_interrupted_terminal": {
+      "path": "data\\validation\\unidomain_reference_2026_10_15_v1\\report.json",
+      "sha256": "1188e9f943662048e0c90a4ee4ee5eb88f379a126f51d419862f1e9eebd298d4",
+      "terminal_status": "worker_error",
+      "metrics": [
+        "source_count",
+        "returncode",
+        "elapsed_seconds",
+        "completed_fusion_nodes",
+        "cached_responses"
+      ],
+      "scope": "Interrupted reference run; no complete final root or full comparison",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "source_snapshot_unchanged",
+        "implementation_unchanged"
+      ]
+    },
+    "fusion_node27_mapping": {
+      "path": "data\\validation\\fusion_node27_audit_2026_10_15_v1\\report.json",
+      "sha256": "001b38e86891933dd640b4732ade74291528e0929f3cb74ae56df7bef543e16a",
+      "terminal_status": "audited",
+      "metrics": [
+        "action_counts",
+        "source_action_total",
+        "mapped_action_total",
+        "independent_domain_parse",
+        "parse_error"
+      ],
+      "scope": "Eight-source intermediate node; default parser rejection, not final root",
+      "denominator": null,
+      "count_field": null,
+      "row_id": "id",
+      "required_true": [
+        "snapshot_unchanged"
+      ]
+    },
+    "restored_free_predictions": {
+      "path": "data/validation/interface_predictions_gemma_free_restored_2026_10_15_v1/report.json",
+      "sha256": "ee24cc28a2483cb89cc6f25435fc5f4862ae1fbd518a17d8ddc10f46fcd6d3a8",
+      "terminal_status": "complete",
+      "metrics": [
+        "total",
+        "processed",
+        "counts",
+        "independent_semantically_verified"
+      ],
+      "scope": "Frozen 100 development pairs; output validation only, no independently verified semantics",
+      "denominator": "total",
+      "row_id": "candidate_id",
+      "count_field": "counts"
+    },
+    "coupled_predictions": {
+      "path": "data/validation/interface_predictions_gemma_coupled_2026_10_15_v2/report.json",
+      "sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "terminal_status": "complete",
+      "metrics": [
+        "total",
+        "processed",
+        "counts",
+        "independent_semantically_verified"
+      ],
+      "scope": "Frozen 100 development pairs; output validation only, no independently verified semantics",
+      "denominator": "total",
+      "row_id": "candidate_id",
+      "count_field": "counts"
+    },
+    "restored_free_replay": {
+      "path": "data/validation/interface_predictions_gemma_free_restored_replay_2026_10_15_v1/report.json",
+      "sha256": "5a4f614151b562adf725d39421d49cc3189b50123069aa8deb6933520aba52f1",
+      "terminal_status": "complete",
+      "metrics": [
+        "total",
+        "processed",
+        "counts",
+        "independent_semantically_verified"
+      ],
+      "scope": "Frozen 100 development pairs; output validation only, no independently verified semantics",
+      "denominator": "total",
+      "row_id": "candidate_id",
+      "count_field": "counts"
+    },
+    "coupled_replay": {
+      "path": "data/validation/interface_predictions_gemma_coupled_replay_2026_10_15_v1/report.json",
+      "sha256": "53eaef931cd823bab4e0045c3e8e69e6eb04ed6e1a22db80f5054a111b587482",
+      "terminal_status": "complete",
+      "metrics": [
+        "total",
+        "processed",
+        "counts",
+        "independent_semantically_verified"
+      ],
+      "scope": "Frozen 100 development pairs; output validation only, no independently verified semantics",
+      "denominator": "total",
+      "row_id": "candidate_id",
+      "count_field": "counts"
+    },
+    "restored_schema_comparison": {
+      "path": "data/validation/interface_schema_comparison_restored_2026_10_15_v1.json",
+      "sha256": "0ef8e486ee54d73187449dc4289082ec49107de936423811f0ed3ac0a4d73ac5",
+      "terminal_status": "PASS",
+      "metrics": [
+        "total",
+        "before_counts",
+        "after_counts",
+        "status_transitions",
+        "independent_semantically_verified"
+      ],
+      "scope": "Development diagnostic; not independent semantic evaluation"
+    },
+    "coupled_graph": {
+      "path": "data/validation/interface_graph_coupled_2026_10_15_v1/report.json",
+      "sha256": "4a44f8a7c6ae9f84bd6a89e140480158e1c95f73f6cbae4f3e7c58e310e514d3",
+      "terminal_status": "complete",
+      "metrics": [
+        "equivalence_edges",
+        "component_count",
+        "consistent_components",
+        "withheld_components",
+        "semantic_equivalence_verified",
+        "automatic_alignment_adoption"
+      ],
+      "scope": "Development diagnostic; not independent semantic evaluation"
+    },
+    "annotation_viewer_qa": {
+      "path": "data/validation/annotation_viewer_uiqa_2026_10_15_v1/report.json",
+      "sha256": "b0f36d2fb8c3bbfefe873b4e4b721018ed3c447b4d583449c6b6e59bac696456",
+      "terminal_status": "checked_with_limits",
+      "metrics": [
+        "download_file_confirmed",
+        "independent_human_labels_created"
+      ],
+      "scope": "Development diagnostic; not independent semantic evaluation"
+    }
+  },
+  "excluded_pending": [
+    "Final UniDomain root absent after host-interrupted worker error; intermediate diagnostics are separately labeled",
+    "Independent semantic annotation files absent",
+    "Blinded multi-family semantic/generalization evaluation absent; one external development family is separate"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [
+    {
+      "engine": "up_negative_conditions_remover",
+      "actions": 12,
+      "fluents": 9
+    }
+  ],
+  "engine_status": "UNSOLVABLE_INCOMPLETELY",
+  "status": "incomplete"
+}

@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "repository": "https://github.com/sgware/sabre-benchmarks",
+  "commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+  "tree_url": "https://api.github.com/repos/sgware/sabre-benchmarks/git/trees/d9327b3ec2706a468c580c332d3f848ffb4c47fc?recursive=1",
+  "tree_sha256": "d2943bbeaca343fcc52a34175754b4b5e11679016dbfda4aee6ea4374b01bc98",
+  "families": [
+    "aladdin",
+    "bribery",
+    "deerhunter",
+    "secretagent"
+  ],
+  "files": [
+    {
+      "path": "originals/aladdin/genie.lbl",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/aladdin/genie.lbl",
+      "bytes": 4951,
+      "sha256": "2f6c8ad599fdb1e73446162f686ce482cd5e90ec001c485f058106c8117ed230",
+      "git_blob_sha1": "4c473c7688d78c8eeb3a94e71127899347b20466"
+    },
+    {
+      "path": "originals/aladdin/genie.lbp",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/aladdin/genie.lbp",
+      "bytes": 805,
+      "sha256": "54b93cee01321189a362b3a8767a80345ee6764a479501ada33b4e5865944e93",
+      "git_blob_sha1": "c31e30cc07ff6d6db730c4c628b02b073a1c4344"
+    },
+    {
+      "path": "originals/bribery/bomb.lbp",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/bribery/bomb.lbp",
+      "bytes": 271,
+      "sha256": "e745657d70d6e0b2f4d4d982e309ffde3e630d9a4a75c97f5b29d5f024285908",
+      "git_blob_sha1": "c50a24e23de69e7f460372bc07ea4be6f274d286"
+    },
+    {
+      "path": "originals/bribery/bribe.lbl",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/bribery/bribe.lbl",
+      "bytes": 1503,
+      "sha256": "6ca5636c9b36aa3d17960e6c576b04f661fb760fecad1b6cc24f84c5395dbf8b",
+      "git_blob_sha1": "02367af28c1326502d937e6605bc96d02e866d1b"
+    },
+    {
+      "path": "originals/deerhunter/deer.lbl",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/deerhunter/deer.lbl",
+      "bytes": 2371,
+      "sha256": "94effa7ddbdcbbc5255930efe5bf67e6d3eb357bfa6b126f2ed2f92b9c2328dc",
+      "git_blob_sha1": "71c75934da95828c7f24cffb8e203f81e0017b25"
+    },
+    {
+      "path": "originals/deerhunter/deer.lbp",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/deerhunter/deer.lbp",
+      "bytes": 863,
+      "sha256": "816049e5b42c8aec19d36c5135dc35e9b3118a4b457e326902009b8cddf0ac9d",
+      "git_blob_sha1": "7129c20d13772f2ce58e65c395685643299d51a7"
+    },
+    {
+      "path": "originals/secretagent/assassin-cw.lbp",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/secretagent/assassin-cw.lbp",
+      "bytes": 710,
+      "sha256": "5add31ed5091282334e9ce4c9df5b2f156b9ffccdbddc1bf7704e0a38efdacc8",
+      "git_blob_sha1": "d4ce7d629041955e1964a2f779d36e6f21b41825"
+    },
+    {
+      "path": "originals/secretagent/assassin.lbl",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/originals/secretagent/assassin.lbl",
+      "bytes": 1810,
+      "sha256": "52683a2f745fbdead4d2911cadfaeb063f8b51b0668d85c8fe50bb09cfe335b2",
+      "git_blob_sha1": "82047d10817cfd321e59b4ac75b78eb19f83e0a7"
+    },
+    {
+      "path": "readme.md",
+      "url": "https://raw.githubusercontent.com/sgware/sabre-benchmarks/d9327b3ec2706a468c580c332d3f848ffb4c47fc/readme.md",
+      "bytes": 7383,
+      "sha256": "12e174645597fddc2c398ab74e50376d8fe55a84d1af6e572b4bfc932a07d4d0",
+      "git_blob_sha1": "9e1660f0eee6035cb864e2b5ae8706dd91fadade"
+    }
+  ],
+  "solutions_downloaded": false,
+  "selection": "All original lbl/lbp artifacts in four families absent from previous six-family audit; no outcome selection",
+  "scope": "Admission material only, not an admitted independent benchmark",
+  "implementation_sha256": "710fe57609377447148b4b644efb0daaf029a6b1658264f413db40c65b7f53e2"
+}

@@ -1,0 +1,18 @@
+-- Building for 64-bit.
+fatal: not a git repository (or any of the parent directories): .git
+Building outside of git version control.
+Git revision: "unknown"
+-- Could NOT find Cplex: Found unsuitable version "CPLEX_VERSION-NOTFOUND", but required is at least "12" (found CPLEX_INCLUDE_DIRS-NOTFOUND)
+-- Configuring done (18.4s)
+-- Generating done (1.3s)
+-- Build files have been written to: /mnt/c/anu/uninamain/.tmp/fast-downward-26.6/builds/release
+Copying translator module into output directory
+[  0%] Built target translate
+[  0%] Building CXX object search/CMakeFiles/downward.dir/planner.cc.o
+[  0%] Building CXX object search/CMakeFiles/downward.dir/command_line.cc.o
+[  1%] Linking CXX executable ../bin/downward
+[100%] Built target downward
+Building configuration release.
+Executing command "cmake -S /mnt/c/anu/uninamain/.tmp/fast-downward-26.6/src -B /mnt/c/anu/uninamain/.tmp/fast-downward-26.6/builds/release -G Unix Makefiles -DCMAKE_BUILD_TYPE=Release"
+Executing command "cmake --build /mnt/c/anu/uninamain/.tmp/fast-downward-26.6/builds/release -j 16 -- -j2"
+Built configuration release successfully.

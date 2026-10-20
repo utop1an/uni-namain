@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "candidate_families": 6,
+  "cases_inspected": 6,
+  "rows": [
+    {
+      "family": "basketball",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\basketball\\domain-basketball.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\basketball\\p1-basketball.pddl",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "39376b6ca5100e40ac1bd84f627fbb31a6068a5acbc97427ac8f3a64d0bd1f2d",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ':domain', found ':'  (at char 40), (line:3, col:2)",
+      "union_build": "REJECTED",
+      "union_error": "Unsupported problem section: :requirements"
+    },
+    {
+      "family": "hospital",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\hospital\\domain-hospital.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\hospital\\p1-hospital.pddl",
+      "domain_sha256": "7a6bdb906951c9bf7a3d670c6a1774f4594c73f51ea5283d4976ed2048a306e7",
+      "problem_sha256": "88f93db9fdbb5428a1fd274fea78a2b8a0345c29baad5318be6f09f75e20d7ab",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ':domain', found ':'  (at char 32), (line:3, col:2)",
+      "union_build": "REJECTED",
+      "union_error": "hospital_domainfile.pddl: ['action assess :precondition: undeclared symbol three', 'action get-work-help :effect: undeclared symbol zero', 'action get-work-help :precondition: undeclared symbol zero', 'action mistake-assess :precondition: undeclared symbol three']"
+    },
+    {
+      "family": "fantasy",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\fantasy\\fantasy-domain.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\fantasy\\fantasy-problem.pddl",
+      "domain_sha256": "d20b2c5c981338201bd445dcb01765c7b59e479f0c3d7039ffa2cc6b3fda6067",
+      "problem_sha256": "f2708ee0f75d7140400c1fee4ad06128c113ec5d685f2105a1b7e89fdf30051d",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ')', found '('  (at char 182), (line:7, col:3)",
+      "union_build": "REJECTED",
+      "union_error": "fantasy_domainfile.pddl: ['action accept: unsupported fields', 'action eat: invalid parameter ?creature:creature', 'action eat: unsupported fields', 'action get-hungry :effect: undeclared predicate intends', 'action get-hungry: invalid parameter ?creature:creature', 'action get-hungry: unsupported fields', 'action marry: unsupported fields', 'action propose: unsupported fields', 'action steal :effect: undeclared predicate intends', 'action steal: invalid parameter ?item:item', 'action steal: invalid parameter ?thief:creature', 'action steal: invalid parameter ?victim:creature', 'action steal: unsupported fields', 'action travel: invalid parameter ?creature:creature', 'action travel: unsupported fields', 'predicate alive: invalid parameter ?creature:creature', 'predicate belongsto: invalid parameter ?creature:creature', 'predicate belongsto: invalid parameter ?item:item', 'predicate happy: invalid parameter ?creature:creature', 'predicate has: invalid parameter ?creature:creature', 'predicate has: invalid parameter ?item:item', 'predicate hungry: invalid parameter ?creature:creature', 'predicate loves: invalid parameter ?love:creature', 'predicate loves: invalid parameter ?lover:creature', 'predicate rich: invalid parameter ?creature:creature', 'type monster: unknown parent creature', 'type person: unknown parent creature', 'type valuable: unknown parent item']"
+    },
+    {
+      "family": "raiders",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\raiders\\ark-domain.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\raiders\\ark-problem.pddl",
+      "domain_sha256": "adfd8b015c976ea497a71116d91031929bd709fdba20c993dfd3e9f3aad76305",
+      "problem_sha256": "6bb1c7e4916b56c2e8a3289dbd2d22da8ea3074e8a3d388b84137c20117027a3",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ')', found '('  (at char 229), (line:7, col:3)",
+      "union_build": "REJECTED",
+      "union_error": "raiders_domainfile.pddl: duplicate section"
+    },
+    {
+      "family": "space",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\space\\space-domain.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\space\\space-problem.pddl",
+      "domain_sha256": "42b3fbd4c913eeef1bb299d75fa81b911bb621e31784c481676feee58e06cef2",
+      "problem_sha256": "95328a95e024ebd244debea533924f39531a8b1c80171b863d265dfeb036cee2",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ')', found '('  (at char 214), (line:7, col:3)",
+      "union_build": "REJECTED",
+      "union_error": "space_domainfile.pddl: duplicate predicate"
+    },
+    {
+      "family": "western",
+      "domain": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\western\\western-domain.pddl",
+      "problem": "data\\validation\\external_source_admission_2026_10_15_v1\\candidate_files\\originals\\western\\western-problem.pddl",
+      "domain_sha256": "f53b85bad6cb838321c9623da4c7ec49dea676706495be0a7bad23c2d4b4ebc7",
+      "problem_sha256": "59a52e56c81a4938a8fa744b5d61021c25acbb2145d7ed657074c9b39a12a94b",
+      "input_modified": false,
+      "original_parser": "REJECTED",
+      "original_error": "Expected ')', found '('  (at char 178), (line:7, col:3)",
+      "union_build": "REJECTED",
+      "union_error": "western_domainfile.pddl: duplicate :types"
+    }
+  ],
+  "commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+  "input_policy": "Byte-identical external domain and one original problem per family; inspection only, no planner or automatic repair",
+  "scope": "Compatibility admission, not independent test results, semantic correctness, licensing determination, or attribution of existing local sources",
+  "implementation_sha256": {
+    "build_narrative_union.py": "066108af3a6b14b396fc5b3a46f2729ff1d032013e6d3b61765b7af781e3e504",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

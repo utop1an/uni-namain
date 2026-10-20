@@ -1,0 +1,446 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "total": 18,
+  "status_counts": {
+    "incomplete": 6,
+    "time_limit": 6,
+    "solved": 6
+  },
+  "freshly_validated_plans": 6,
+  "matched_input_audit": "Explicit world, goal and search budget compared across all methods within each world",
+  "domain_reuse_groups": [
+    {
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "domain_hash_count_across_worlds": 1
+    },
+    {
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "domain_hash_count_across_worlds": 1
+    },
+    {
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "domain_hash_count_across_worlds": 1
+    },
+    {
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "domain_hash_count_across_worlds": 1
+    },
+    {
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "domain_hash_count_across_worlds": 1
+    },
+    {
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "domain_hash_count_across_worlds": 1
+    }
+  ],
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__all_domains",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "ad78294cc3a29b6c681cc2477edf4c0d6c75702da95179b50dee7fb547a930e8",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d001__a_turn_key_on_beech q__hero q__token q__stage)",
+          "sources": [
+            "BIRT"
+          ]
+        },
+        {
+          "action": "(d000__a_arrange_exhibition d000__c_friend q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO",
+        "BIRT"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__all_domains",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "d9c8f9bd866272478597691068d8932d9db53a67f512c61e566086ceb012b510",
+      "audit_errors": []
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d001__a_turn_key_on_beech q__hero q__token q__stage)",
+          "sources": [
+            "BIRT"
+          ]
+        },
+        {
+          "action": "(d000__a_arrange_exhibition q__hero q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO",
+        "BIRT"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d000__a_arrange_exhibition d000__c_princess q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__all_domains",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "ad78294cc3a29b6c681cc2477edf4c0d6c75702da95179b50dee7fb547a930e8",
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d000__a_arrange_exhibition d000__c_prince q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d000__a_arrange_exhibition d000__c_priest q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__all_domains",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "d9c8f9bd866272478597691068d8932d9db53a67f512c61e566086ceb012b510",
+      "audit_errors": []
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "narrative_initial_fact_count": 1,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "independent_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "steps": [
+        {
+          "action": "(d000__a_arrange_exhibition d000__c_tinker q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_perform_show q__hero q__token)",
+          "sources": [
+            "ACCO"
+          ]
+        },
+        {
+          "action": "(d000__a_receive_orders_from_nobility q__hero)",
+          "sources": [
+            "ACCO"
+          ]
+        }
+      ],
+      "plan_sources": [
+        "ACCO"
+      ],
+      "source_necessity_claim": false,
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__all_domains",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "ad78294cc3a29b6c681cc2477edf4c0d6c75702da95179b50dee7fb547a930e8",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "c93ef90abae56e888e8ce66b832309a39dc58e1351c45bf061912c0882433579",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__all_domains",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 704,
+      "domain_sha256": "d9c8f9bd866272478597691068d8932d9db53a67f512c61e566086ceb012b510",
+      "audit_errors": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "narrative_initial_fact_count": 0,
+      "technical_membership_fact_count": 92,
+      "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+      "audit_errors": []
+    }
+  ],
+  "limitations": [
+    "Authored interfaces and worlds on observed source models",
+    "Incomplete search and timeouts do not establish unsolvability",
+    "Mixed-source plans do not prove every used source is necessary",
+    "Concurrent workloads; wall-clock durations are descriptive only",
+    "No independent narrative quality or semantic accuracy labels"
+  ],
+  "implementation_sha256": "9183363de9b8fd42589082fad74c6c72a09d9d647b64cda8b64d33deb929a10d"
+}

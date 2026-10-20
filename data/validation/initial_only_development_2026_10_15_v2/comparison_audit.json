@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "task_count": 6,
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcomes": [
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        }
+      ]
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcomes": [
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 2,
+          "changed_atoms": 2,
+          "fresh_validation": "VALID"
+        }
+      ]
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcomes": [
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        }
+      ]
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcomes": [
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        },
+        {
+          "status": "PASS",
+          "complete_changes_match": true,
+          "targets_checked": 1,
+          "changed_atoms": 1,
+          "fresh_validation": "VALID"
+        }
+      ]
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "no_outcomes",
+      "stop_reason": "reachable_space_exhausted",
+      "outcomes": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "exact_query_and_pddl_bytes": true,
+      "status": "no_outcomes",
+      "stop_reason": "reachable_space_exhausted",
+      "outcomes": []
+    }
+  ],
+  "report_sha256": {
+    "before": "86bcfab2410565558701e4f9990fa54d3c9d0e818d72e7885fa23a9a355cd14d",
+    "after": "5f5cf8df93bdf799a3b79c05397c48a25d3cbb06bdd62fd99164f067af333906"
+  },
+  "scope": "Same authored inputs and wall budget; grounding/fluent budgets now count visited candidates/targets; no runtime speedup or narrative-quality claim",
+  "outcomes_revalidated": 12
+}

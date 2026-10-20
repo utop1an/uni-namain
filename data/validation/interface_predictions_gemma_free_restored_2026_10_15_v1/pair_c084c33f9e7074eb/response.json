@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_c084c33f9e7074eb",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `located` in ACCO and `at` in SOUP both express spatial relationships between an entity and a location. However, they differ in their semantic nuance. `located` implies a specific, potentially fixed location, while `at` is more general, indicating presence within a location. The ACCO actions often involve precise location specifications (e.g., `morinji`, `jhosiu`), while the SOUP actions use more abstract location terms (e.g., `kitchen`, `library`). The action contexts demonstrate this difference: ACCO actions frequently use `located` to specify the final location of an object after a transformation or movement, whereas SOUP uses `at` to describe the initial or current location of an entity. Therefore, they represent complementary aspects of spatial reasoning – one focused on precise location and the other on general presence. The argument roles are swapped in the label to reflect the argument order in the supplied text. The use of `?obj` and `?loc` in ACCO's `located` predicate contrasts with `?e` and `?l` in SOUP's `at` predicate, further highlighting the distinction in their intended use.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:call_novices",
+      "quote": "(located ?k morinji)"
+    },
+    {
+      "side": 1,
+      "ref": "SOUP:action:learn_wisdom_from_ants",
+      "quote": "(at ?m ?ant_loc)"
+    }
+  ]
+}

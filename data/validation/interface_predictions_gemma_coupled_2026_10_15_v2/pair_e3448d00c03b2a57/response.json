@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_e3448d00c03b2a57",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `at` in BIRT and NAUG represent location, but with different contexts. BIRT's `at` is primarily used to describe the physical presence of an entity within a location, often tied to actions like approaching, hearing, or returning. The action contexts demonstrate this, with `at` frequently appearing as a precondition or effect of actions involving movement, sound, or interaction with objects. NAUG's `at` is used within the context of a celestial being's actions and commands, specifically relating to their position within a courtyard. The `call_comet_forward` and `give_order` actions both rely on the `at` predicate to define the location of entities. Because BIRT's `at` is grounded in physical presence and object interaction, while NAUG's `at` is tied to the positioning of celestial beings, they represent distinct concepts. One describes a physical location, the other a spatial relationship within a narrative of celestial beings. The use of `at` in both systems is not interchangeable, and the contexts in which they are used are fundamentally different, thus they are complementary.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "NAUG:action:call_comet_forward",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:give_order",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:approach_beech_tree",
+      "quote": "(at ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:hear_tapping_on_beech",
+      "quote": "(at ?n bench)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_queen_kiss",
+      "quote": "(at ?n palace)"
+    }
+  ]
+}

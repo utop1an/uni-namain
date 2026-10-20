@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:39:12.7965809Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_ecba684bbc686752\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicate 'four_legged' in ACCO describes a physical property of an item, while 'punished' in NAUG describes a state imposed on an entity. These predicates represent distinct concepts: one related to morphology and the other to consequence. The ACCO action 'kettle_transform_to_fur_badger' explicitly sets 'four_legged ?k', while the NAUG action 'punish_meteor' sets 'punished ?m'. There is no overlap in their meaning or application. The action contexts provide different domains of application. ACCO deals with object properties, while NAUG deals with consequences of actions. The type hierarchies are also distinct, with ACCO focusing on object properties and NAUG on entities.\", \"evidence\": [ {\"side\": 0, \"ref\": \"ACCO:action:kettle_transform_to_fur_badger\", \"quote\": \"(four_legged ?k)\"}, {\"side\": 1, \"ref\": \"NAUG:action:punish_meteor\", \"quote\": \"(punished ?m)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2841647000,
+  "load_duration": 2054300,
+  "prompt_eval_count": 725,
+  "prompt_eval_duration": 140146000,
+  "eval_count": 270,
+  "eval_duration": 2631276000
+}

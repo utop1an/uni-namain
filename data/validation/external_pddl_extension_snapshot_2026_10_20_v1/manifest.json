@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "selection_sha256": "2001ddd390bc5d62d1a1c21dd1d2aff9572be0f55f64071db5eeccd11d2cc4a0",
+  "repositories": [
+    {
+      "id": "camelot",
+      "repository": "liogiu2/Camelot-Wrapper",
+      "commit": "64086739a1d016dae1d101fd3bdbfc7e384a058d",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "Camelot Wrapper narrative environment integration, distinct implementation provider; relation to underlying Camelot/Sabre research lineage must be retained",
+      "tree_url": "https://api.github.com/repos/liogiu2/Camelot-Wrapper/git/trees/64086739a1d016dae1d101fd3bdbfc7e384a058d?recursive=1",
+      "tree_sha256": "956cdcb68b5a6b7786201ab1322e7ad92fd641b93b4dec001332d22c2f062f00",
+      "pddl_file_count": 2
+    },
+    {
+      "id": "textworld",
+      "repository": "microsoft/TextWorld",
+      "commit": "6d88a0845bc904751d3b7f128d61f21cabdf6f70",
+      "metadata": [
+        "README.md",
+        "LICENSE.txt"
+      ],
+      "lineage": "Microsoft TextWorld interactive-fiction environment; selected PDDL files are environment unit-test fixtures, not a narrative benchmark",
+      "tree_url": "https://api.github.com/repos/microsoft/TextWorld/git/trees/6d88a0845bc904751d3b7f128d61f21cabdf6f70?recursive=1",
+      "tree_sha256": "e2461c116c08ff500ae2aba23484cc2cd24307b990a87de55e3139c103a2c1b3",
+      "pddl_file_count": 2
+    }
+  ],
+  "files": [
+    {
+      "provider": "camelot",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/liogiu2/Camelot-Wrapper/64086739a1d016dae1d101fd3bdbfc7e384a058d/LICENSE",
+      "sha256": "815a16c3791839ea13dd7e384bdf922ac5d211c7d249b08c1e248247bd6df77e",
+      "git_blob_sha1": "90174d6dc1bca0e7694e113249c9abc313a5a1a6",
+      "bytes": 1063
+    },
+    {
+      "provider": "camelot",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/liogiu2/Camelot-Wrapper/64086739a1d016dae1d101fd3bdbfc7e384a058d/README.md",
+      "sha256": "87e251f6dd367f48b75c547b70daeeb6b3d430f85dbe70ec404f3f6b000277aa",
+      "git_blob_sha1": "510355f67e523bfbf3fa8b67fe832ca753bb8477",
+      "bytes": 4427
+    },
+    {
+      "provider": "camelot",
+      "path": "camelot_wrapper/pddl_data/camelot_domain.pddl",
+      "url": "https://raw.githubusercontent.com/liogiu2/Camelot-Wrapper/64086739a1d016dae1d101fd3bdbfc7e384a058d/camelot_wrapper/pddl_data/camelot_domain.pddl",
+      "sha256": "e8a1dc3fb6ec9b30739f4e50307c9cbba1a8e3ec2561a8936c093a06ed7afe0a",
+      "git_blob_sha1": "c781e9b4f49a80c6e0e9539679161474c54adab3",
+      "bytes": 15420
+    },
+    {
+      "provider": "camelot",
+      "path": "camelot_wrapper/pddl_data/example_problem.pddl",
+      "url": "https://raw.githubusercontent.com/liogiu2/Camelot-Wrapper/64086739a1d016dae1d101fd3bdbfc7e384a058d/camelot_wrapper/pddl_data/example_problem.pddl",
+      "sha256": "0a81e35e82635c75e4618ff02064fe27e7250a654c684bf9f428303ec122b582",
+      "git_blob_sha1": "4f6f906d8b0bc8f252cabb4f16a35fc73a99654b",
+      "bytes": 1142
+    },
+    {
+      "provider": "textworld",
+      "path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/TextWorld/6d88a0845bc904751d3b7f128d61f21cabdf6f70/LICENSE.txt",
+      "sha256": "1cd8760aca172397e4689d12ad0d846ee8015f617a5fcdb6b00623167859e9b6",
+      "git_blob_sha1": "9c0cca59b6dd034b7baa95643dda3900f0e6b12d",
+      "bytes": 1107
+    },
+    {
+      "provider": "textworld",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/TextWorld/6d88a0845bc904751d3b7f128d61f21cabdf6f70/README.md",
+      "sha256": "ee227420d571ba249133882d8781a3b7df709cf7efa488cf29379dc97743f67b",
+      "git_blob_sha1": "e33f8be1254cd827aa080684073eecb63694f5bc",
+      "bytes": 8103
+    },
+    {
+      "provider": "textworld",
+      "path": "textworld/envs/pddl/tests/domain.pddl",
+      "url": "https://raw.githubusercontent.com/microsoft/TextWorld/6d88a0845bc904751d3b7f128d61f21cabdf6f70/textworld/envs/pddl/tests/domain.pddl",
+      "sha256": "4030f86750ba690e1ca24b4caa3760a66d6005829bfb41d1a583767b65fd0d84",
+      "git_blob_sha1": "4817ec5a0ad3ad069d9d7cab4be91ec20b840db6",
+      "bytes": 11167
+    },
+    {
+      "provider": "textworld",
+      "path": "textworld/envs/pddl/tests/problem.pddl",
+      "url": "https://raw.githubusercontent.com/microsoft/TextWorld/6d88a0845bc904751d3b7f128d61f21cabdf6f70/textworld/envs/pddl/tests/problem.pddl",
+      "sha256": "e614cc46893db374e89c7a1fdcd90933c7743cfc5fa6fa348c94648c5390f5ed",
+      "git_blob_sha1": "3e42742b597b9b6e37de53d7a86176a0c74d9044",
+      "bytes": 10097
+    }
+  ],
+  "solutions_downloaded": false,
+  "implementation_sha256": "d558fb7dc3b461762484f3c405ebd48e85ee73241cd988eebefa3589c633043a"
+}

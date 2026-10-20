@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "tests": 177,
+  "test_seconds": 82.597,
+  "test_log_sha256": "a2b228881d10d7330b094988618e158c3b414beb9e1533e05174a4a2d57f91ab",
+  "pdf": "output/pdf/icaps_meeting_2026_10_21_snow_roles_case.pdf",
+  "pdf_sha256": "b70a43c94a35a4397718929c6f1034c3d1ca5e76e82d8b00431dc11ee9f44720",
+  "pdf_pages": 2,
+  "visual_review": "Both pages rendered and inspected; no clipping or text overlap",
+  "primary_plan_validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  },
+  "primary_life_identity_violations": [],
+  "unsafe_control_violation_count": 2,
+  "scenario_contract_pass_count": 1,
+  "scenario_contract_fail_count": 1,
+  "compiled_source_behavior_modified": true
+}

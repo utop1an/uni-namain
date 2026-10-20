@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_5e6b07fea8368e96",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'at' in CHIC_NP describes the spatial location of an entity, while the predicate 'under' in PIGS_NP describes the spatial relationship between an item and a location. 'at' specifies a point location, while 'under' specifies a containment relationship. These predicates represent different aspects of spatial relationships and cannot be used interchangeably. The CHIC_NP action 'at' describes the location of an entity, while the PIGS_NP action 'under' describes the location of an item relative to a location. The contexts show that 'at' is used to describe the location of an entity, and 'under' is used to describe the location of an item relative to a location. These are complementary predicates because they describe different spatial relationships. Specifically, the CHIC_NP action 'at' is used to determine the location of an entity, while the PIGS_NP action 'under' is used to determine the location of an item relative to a location. The contexts show that the 'at' predicate is used to describe the location of an entity, and the 'under' predicate is used to describe the location of an item relative to a location. These predicates are complementary because they describe different spatial relationships. The CHIC_NP predicate 'at' is used to describe the location of an entity, while the PIGS_NP predicate 'under' is used to describe the location of an item relative to a location. The contexts show that the 'at' predicate is used to describe the location of an entity, and the 'under' predicate is used to describe the location of an item relative to a location. These predicates are complementary because they describe different spatial relationships. The CHIC_NP predicate 'at' is used to describe the location of an entity, while the PIGS_NP predicate 'under' is used to describe the location of an item relative to a location. The contexts show that the 'at' predicate is used to describe the location of an entity, and the 'under' predicate is used to describe the location of an item relative to a location. These predicates are complementary because they describe different spatial relationships.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(under ?pot chimney)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:be_eaten_by_fox",
+      "quote": "(at ?e ?l)"
+    }
+  ]
+}

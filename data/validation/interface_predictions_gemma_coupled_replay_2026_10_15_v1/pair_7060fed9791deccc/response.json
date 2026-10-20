@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_7060fed9791deccc",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'at' appears in both sources with the same declaration and parameter types. Both sources use 'at' to describe the location of entities. The action contexts demonstrate that 'at' is used to specify the location of entities in both narratives. Specifically, in BIRT, 'at' is used to describe the location of entities like 'entity' and 'location', while in PUSS, 'at' is used to describe the location of entities like 'king' and 'puss'. The action contexts show that the same predicate is used to express the same concept – the location of an entity – in both narratives. The arguments are interchangeable, and the predicate is used in the same way in both sources. The exact excerpts confirm this: BIRT: `(at ?n ?t)` and PUSS: `(at ?puss ?palace)`. The action contexts show that the same predicate is used to express the same concept – the location of an entity – in both narratives. The arguments are interchangeable, and the predicate is used in the same way in both sources. The exact excerpts confirm this: BIRT: `(at ?n ?t)` and PUSS: `(at ?puss ?palace)`.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BIRT:action:approach_beech_tree",
+      "quote": "(at ?n ?t)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_deliver_gifts_to_king",
+      "quote": "(at ?puss ?palace)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:hear_tapping_on_beech",
+      "quote": "(at ?n bench)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_open_castle_gates",
+      "quote": "(at ?king ?castle)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_queen_kiss",
+      "quote": "(at ?n palace)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_persuade_master_to_bathe",
+      "quote": "(at ?jack ?river)"
+    }
+  ]
+}

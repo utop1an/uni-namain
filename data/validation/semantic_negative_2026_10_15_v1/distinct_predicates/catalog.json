@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "source": "BURIAL",
+      "sha256": "6e9df4f516ef07dfafe486a29c1a479824050afd1ca20a88617f53e697f4df64",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "person": "object"
+      },
+      "constants": {
+        "corpse": "person"
+      },
+      "predicates": {
+        "dead": [
+          [
+            "?p",
+            "person"
+          ]
+        ],
+        "buried": [
+          [
+            "?p",
+            "person"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "bury",
+          "requires": [
+            "BURIAL:dead"
+          ],
+          "effects": [
+            "BURIAL:buried"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "CAPTURE",
+      "sha256": "725c1f7af6b10fdaceb758795d743270177ceff4d9854350590f16d513a514f6",
+      "upstream_learning_provenance": "not_supplied",
+      "types": {
+        "person": "object"
+      },
+      "constants": {
+        "prisoner": "person"
+      },
+      "predicates": {
+        "alive": [
+          [
+            "?p",
+            "person"
+          ]
+        ],
+        "captured": [
+          [
+            "?p",
+            "person"
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "name": "capture_alive",
+          "requires": [
+            "CAPTURE:alive"
+          ],
+          "effects": [
+            "CAPTURE:captured"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Structural local-file catalog; upstream learning provenance not inferred"
+}

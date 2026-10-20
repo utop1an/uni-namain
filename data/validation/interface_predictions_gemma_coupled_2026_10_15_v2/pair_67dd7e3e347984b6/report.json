@@ -1,0 +1,47 @@
+{
+  "candidate_id": "pair_67dd7e3e347984b6",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_67dd7e3e347984b6",
+    "label": "equivalent",
+    "right_from_left": [
+      0
+    ],
+    "rationale": "The predicate `alive` appears in nearly every action context across both `PIGS_NP` and `PUSS`. The precondition of nearly every action involving a pig or wolf requires that the entity involved (`p`, `m`, `p`, `w`) is `alive`. Similarly, actions involving the cat (`puss`) also require that `puss` is `alive`. The effect of many actions also depends on the `alive` status of the involved entities. Therefore, the predicate `alive` is consistently used to represent the state of being alive across all entities in the narrative, indicating an equivalent relationship. The arguments are interchangeable in their roles as the condition for action execution.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:ask_for_material",
+        "quote": "(alive ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:build_house",
+        "quote": "(alive ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+        "quote": "(alive ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_collects_apples_and_escapes",
+        "quote": "(alive ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_collects_turnips",
+        "quote": "(alive ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+        "quote": "(alive ?p)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_67dd7e3e347984b6"
+  ]
+}

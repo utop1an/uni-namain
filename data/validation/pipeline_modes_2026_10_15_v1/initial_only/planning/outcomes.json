@@ -1,0 +1,38 @@
+{
+  "status": "outcomes_generated",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 10,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 100000,
+    "max_outcomes": 3
+  },
+  "states": 2,
+  "ground_candidates": 1,
+  "outcomes": [
+    {
+      "index": 0,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "d000__p_rumor_known",
+            "q__hero"
+          ],
+          "value": true
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    d000__a_hear_report(q__hero)"
+    }
+  ],
+  "stop_reason": "reachable_space_exhausted"
+}

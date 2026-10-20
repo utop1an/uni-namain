@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+  "model": "gemma3:4b",
+  "prompt_sha256": "4195e32a3741c2e35ad3b69ecad93ab6961215084fdb3e0393c5a4dc4b2f715d",
+  "options": {
+    "temperature": 0,
+    "seed": 20261015,
+    "num_ctx": 16384,
+    "num_predict": 2048
+  },
+  "total": 100,
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\run_annotation_predictions.py": "ddc354ea5418e550c8283cb73506803801a2801e9a0063740977fc96788bed88",
+    "C:\\anu\\uninamain\\rcnc\\interface_annotation.py": "9873d63f20430898329367db958edbac5f3fb48afb862ee4ca9e7144a08fb04d"
+  },
+  "started_utc": "2026-10-14T15:38:15.430625+00:00",
+  "source": "machine_predictions_not_human_annotations",
+  "context_byte_limit": 48000,
+  "request_timeout_seconds": 240,
+  "automatic_alignment_adoption": false,
+  "origin_manifest": {
+    "status": "complete",
+    "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+    "model": "gemma3:4b",
+    "prompt_sha256": "4195e32a3741c2e35ad3b69ecad93ab6961215084fdb3e0393c5a4dc4b2f715d",
+    "options": {
+      "temperature": 0,
+      "seed": 20261015,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "total": 100,
+    "implementation_sha256": {
+      "C:\\anu\\uninamain\\run_annotation_predictions.py": "ddc354ea5418e550c8283cb73506803801a2801e9a0063740977fc96788bed88",
+      "C:\\anu\\uninamain\\rcnc\\interface_annotation.py": "9873d63f20430898329367db958edbac5f3fb48afb862ee4ca9e7144a08fb04d"
+    },
+    "started_utc": "2026-10-14T15:28:27.587991+00:00",
+    "source": "machine_predictions_not_human_annotations",
+    "context_byte_limit": 48000,
+    "request_timeout_seconds": 240,
+    "automatic_alignment_adoption": false,
+    "model_digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+    "finished_utc": "2026-10-14T15:37:48.596856+00:00"
+  },
+  "finished_utc": "2026-10-14T15:38:18.123698+00:00"
+}

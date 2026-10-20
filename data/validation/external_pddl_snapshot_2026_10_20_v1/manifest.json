@@ -1,0 +1,316 @@
+{
+  "status": "complete",
+  "selection_sha256": "d54ffe93a6a156f726eba2a203cd3f1ee2ddc3c3c90929d78a4b356676db5e57",
+  "repositories": [
+    {
+      "id": "questmaster",
+      "repository": "umbertocicciaa/QuestMasterAI",
+      "commit": "caf6d8f79e53f73a97f5d9d95b7c8770f385bacb",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "QuestMasterAI example artifact; exact production history unknown",
+      "tree_url": "https://api.github.com/repos/umbertocicciaa/QuestMasterAI/git/trees/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb?recursive=1",
+      "tree_sha256": "8146966d0e67f93a0d1380f4f8567c527cecd4c990ec0b6c91af068429f4f7d5",
+      "pddl_file_count": 2
+    },
+    {
+      "id": "hri",
+      "repository": "HRI-EU/pddl-domains",
+      "commit": "56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438",
+      "metadata": [
+        "Readme.md"
+      ],
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "tree_url": "https://api.github.com/repos/HRI-EU/pddl-domains/git/trees/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438?recursive=1",
+      "tree_sha256": "9edd97b9fae480c3a557a8ff7ec7a6731f9f533b1e4c33702e28d267e53d9743",
+      "pddl_file_count": 50
+    },
+    {
+      "id": "ipc",
+      "repository": "aibasel/downward-benchmarks",
+      "commit": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f",
+      "metadata": [
+        "README.md"
+      ],
+      "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution",
+      "tree_url": "https://api.github.com/repos/aibasel/downward-benchmarks/git/trees/e21d49c2cb61d147a46c5966f2581bf6fd422b9f?recursive=1",
+      "tree_sha256": "e98f9d18a2301094815a8bf158924d15caf85401e3f5ebd45ed7ad27a6b97469",
+      "pddl_file_count": 4862
+    },
+    {
+      "id": "nl2plan",
+      "repository": "mrlab-ai/NL2Plan",
+      "commit": "9f1f4e0a997b9ed09d1f34a0eabb1546b3e6cba2",
+      "metadata": [
+        "README.md",
+        "LICENSE"
+      ],
+      "lineage": "NL2Plan; repository deliberately withholds novel-domain PDDL",
+      "tree_url": "https://api.github.com/repos/mrlab-ai/NL2Plan/git/trees/9f1f4e0a997b9ed09d1f34a0eabb1546b3e6cba2?recursive=1",
+      "tree_sha256": "8068c7dcfef2352234e6140adfa8dd6f7be6c0ca38200f95d6a9510b6193a017",
+      "pddl_file_count": 0
+    }
+  ],
+  "files": [
+    {
+      "provider": "questmaster",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/LICENSE",
+      "sha256": "eb654fa9681db28b553031e42c4f566026483612646911c1dbe30315f26c04a1",
+      "git_blob_sha1": "ba7d88272e8ba79c7d677239b8e404c48cec475f",
+      "bytes": 1080
+    },
+    {
+      "provider": "questmaster",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/README.md",
+      "sha256": "1ca58a1f3882ef359d0721baa41148ef06e8bd9c0329c9c425947425edaf4976",
+      "git_blob_sha1": "54ac772967f8670ff1a9db0e79d2817c25308ee4",
+      "bytes": 9868
+    },
+    {
+      "provider": "questmaster",
+      "path": "resources/valid_domain.pddl",
+      "url": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/resources/valid_domain.pddl",
+      "sha256": "58b4b7be03b503d1a9c1a9f785f2dbfd61ca443e91b69c12c1657997c7476840",
+      "git_blob_sha1": "a35b71495a43ee6b4ddfc7ecf92035fb41fcc48e",
+      "bytes": 783
+    },
+    {
+      "provider": "questmaster",
+      "path": "resources/valid_problem.pddl",
+      "url": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/resources/valid_problem.pddl",
+      "sha256": "d9df0bb9301ee571d6e62ae0a17cf39dc1e2823206540921e8b00d70004a2bb9",
+      "git_blob_sha1": "0ab52302a0488c16c56df46119c87de9d5c92e7b",
+      "bytes": 181
+    },
+    {
+      "provider": "hri",
+      "path": "Readme.md",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/Readme.md",
+      "sha256": "dd600fc517df8dfe5c02c75a70c076391a98ab93422f346529b9bc49543ed581",
+      "git_blob_sha1": "77b13855b9542fa59940add31d39ed941231dec7",
+      "bytes": 505
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_0/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_0/domain.pddl",
+      "sha256": "86be709799df5999089b5de7566c5978eebb47cbdd9007c7f4c5bcb932c889e4",
+      "git_blob_sha1": "885bfb87c689c130b8a745cdaa1b712e3c422bc1",
+      "bytes": 2390
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_0/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_0/problem.pddl",
+      "sha256": "4cc096b04dfe3ed1818167f39b5397596a96dcf0751965fd14043425719702c6",
+      "git_blob_sha1": "cd7f85712ffc6a58c47bae378324a92f103408bb",
+      "bytes": 771
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_1/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_1/domain.pddl",
+      "sha256": "b8416782db1e3be20d385830b2167a428dabce73ab2ed2fe764ea972618d2bb5",
+      "git_blob_sha1": "52ba345b970eddda5ca3af4bb405c1a6a0960452",
+      "bytes": 1862
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_1/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_1/problem.pddl",
+      "sha256": "4bb227c0430ec17c08ead13aa2ed1ebf2e0f23ba5f83b27100e5e7562cd9826c",
+      "git_blob_sha1": "3eff3037d49f0a32c7da27c7da50dec83000975f",
+      "bytes": 694
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_2/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_2/domain.pddl",
+      "sha256": "48d4b31a838533c24cb7d479103ef5597f4891095c5caf1b7dd44df6f3180377",
+      "git_blob_sha1": "f05f161e08547b0ab77212e7b2d52dc649eff5b9",
+      "bytes": 1642
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_2/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_2/problem.pddl",
+      "sha256": "50d0902a5a292cfcbeff9544ac64666c52d9d87a8bf8b7ccfc145d03e1407a3f",
+      "git_blob_sha1": "da22e71ce4c4e656f9b01a571b4ae8c9b36a8fa1",
+      "bytes": 917
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_3/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_3/domain.pddl",
+      "sha256": "ead3291d997b188d5c2bc51fa6304d5b8d28ca30392b6f31aff07d289b85466a",
+      "git_blob_sha1": "ab735e68bb5f3b4d8368de37e496a56e18e3a324",
+      "bytes": 2468
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_3/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_3/problem.pddl",
+      "sha256": "a02b7795fa2ee99dbe0ebb59da819f266a9d1f78a661686204e2c1a70519443a",
+      "git_blob_sha1": "d7ec2c61acb787a8d703350e9df5380427abb449",
+      "bytes": 794
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_4/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_4/domain.pddl",
+      "sha256": "7dd364a210d5de718f947631c73a9952352c78a4712a24cefc710a60f81b7009",
+      "git_blob_sha1": "bf876d467346ece14c42317bd5c82f7e71811a70",
+      "bytes": 1659
+    },
+    {
+      "provider": "hri",
+      "path": "results/household/run_4/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_4/problem.pddl",
+      "sha256": "e313935c7e75ed8ed5bba603c06d1b8dbe76cffb4ca89aed922661d93b98b8b6",
+      "git_blob_sha1": "b9e7887e32df363c0091f05e1603af17efeaa23b",
+      "bytes": 1026
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_0/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_0/domain.pddl",
+      "sha256": "2d4f96ba0efbdd4be0d0c04fb0d7524aa29f4d510b5aafcd82caba254319d52e",
+      "git_blob_sha1": "66507b6a9ad2a8367987b15f88340ed74d991be9",
+      "bytes": 1538
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_0/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_0/problem.pddl",
+      "sha256": "b1bfc58de7026062da3b4ade1c1efd45eb1337c3d2c4262ee9390c57fb74610c",
+      "git_blob_sha1": "8ac4219ed3271a0e16635fe6393deec52166ee81",
+      "bytes": 847
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_1/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_1/domain.pddl",
+      "sha256": "15389465d4d46aa8b5778ecae31518af8295195c348b7224c501d7a95430e723",
+      "git_blob_sha1": "1b5ba9a3a7f1bb4dfccf6133f11ad783dc3637d5",
+      "bytes": 1988
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_1/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_1/problem.pddl",
+      "sha256": "6f57b1eca32703b5fa8e90c93f9c1ffd7c29fbd576fe66d4998bd646a79048c2",
+      "git_blob_sha1": "755149bb9850d74f157a9d3b84029a31d8643a90",
+      "bytes": 811
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_2/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_2/domain.pddl",
+      "sha256": "f4fa996d3654754416c3317ab308779e8a7744bd2b26ec8e894718f76d67a9d6",
+      "git_blob_sha1": "8461806c651267af4c56e74ad5c1a494fe71d597",
+      "bytes": 2075
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_2/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_2/problem.pddl",
+      "sha256": "d1a89bf65fc7ab0970950909b5cf8219e9d8dac2fc8d5f02def426f4d44d2951",
+      "git_blob_sha1": "4ec07611a75e875cfd818a456501e5933b6fab9e",
+      "bytes": 1231
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_3/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_3/domain.pddl",
+      "sha256": "772a4469647a533c897600c6a9f077cd89c4bbb4476bd291e9c22c00d1bf2748",
+      "git_blob_sha1": "fec24c001f081bf10c243b545c80677539a3cf34",
+      "bytes": 1737
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_3/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_3/problem.pddl",
+      "sha256": "056ea2991c47464a4b149b2b0ccbd6a118cda22b2c2678add366d23ede7de6b2",
+      "git_blob_sha1": "95f5c8c8c4be9023a71b35c20654ab2c3b936842",
+      "bytes": 1257
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_4/domain.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_4/domain.pddl",
+      "sha256": "65a2bdd7abccb208dfdb8aeaeef60fe86bff5345c1764223a35455ede0bf5559",
+      "git_blob_sha1": "ffc7e2549c64b81844798eddfd5700063ad6e54c",
+      "bytes": 1704
+    },
+    {
+      "provider": "hri",
+      "path": "results/pizza/run_4/problem.pddl",
+      "url": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_4/problem.pddl",
+      "sha256": "ae1eeae507f567579dbbbd408733351421c3430ae34c4d24d8bfc8ec93f12181",
+      "git_blob_sha1": "1cd542a32a686fb3c186a8c7360c06aebac5039f",
+      "bytes": 1422
+    },
+    {
+      "provider": "ipc",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/README.md",
+      "sha256": "9e89d772e71ded9522964324910913b6f8434afdd1088637aa661eab7edc018b",
+      "git_blob_sha1": "ccd22f9376af520df7da4eb70c8b7a08f6f7070b",
+      "bytes": 1514
+    },
+    {
+      "provider": "ipc",
+      "path": "gripper/domain.pddl",
+      "url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/gripper/domain.pddl",
+      "sha256": "894b97e04557b9dce4198a3fe85f20d8a946e2b2dff9ddd42b8bcffd0a95e27c",
+      "git_blob_sha1": "4fa38299282aeb0498da66d256feba95aebfab2e",
+      "bytes": 898
+    },
+    {
+      "provider": "ipc",
+      "path": "gripper/prob01.pddl",
+      "url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/gripper/prob01.pddl",
+      "sha256": "968130f7f9f914a4e12c81d31af6de8d223881b5d219a672ac2c28a942256d14",
+      "git_blob_sha1": "c518fed4736dcf79ada96da4a104f24fbf87e918",
+      "bytes": 626
+    },
+    {
+      "provider": "ipc",
+      "path": "miconic/domain.pddl",
+      "url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/miconic/domain.pddl",
+      "sha256": "433893873319a41c8b1cb91455319b9884f68bbc75368bbac681ef768d1a3b3a",
+      "git_blob_sha1": "d07d02d1ba25745e8f602be060a852e9fb60392a",
+      "bytes": 1280
+    },
+    {
+      "provider": "ipc",
+      "path": "miconic/s1-0.pddl",
+      "url": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/miconic/s1-0.pddl",
+      "sha256": "3f7f25cdfd6a488c303fbbd84ae06bc3c56beaa10de0d9af761bfeb9191d9cb7",
+      "git_blob_sha1": "a3fb8c01752db71d04210048da67d8b0c5c1f669",
+      "bytes": 291
+    },
+    {
+      "provider": "nl2plan",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mrlab-ai/NL2Plan/9f1f4e0a997b9ed09d1f34a0eabb1546b3e6cba2/LICENSE",
+      "sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+      "git_blob_sha1": "e72bfddabc15be5718a7cc061ac10e47741d8219",
+      "bytes": 35148
+    },
+    {
+      "provider": "nl2plan",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/mrlab-ai/NL2Plan/9f1f4e0a997b9ed09d1f34a0eabb1546b3e6cba2/README.md",
+      "sha256": "0a52d171984e8a48268972248d6ca76d0acd02c068986a7d1681e4181784376e",
+      "git_blob_sha1": "50af269267fb75498c34d6d6c310b9c6890e5f6c",
+      "bytes": 17199
+    }
+  ],
+  "solutions_downloaded": false,
+  "implementation_sha256": "d558fb7dc3b461762484f3c405ebd48e85ee73241cd988eebefa3589c633043a"
+}

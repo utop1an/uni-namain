@@ -1,0 +1,115 @@
+{
+  "sources": [
+    "WOE"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 4,
+    "constants": 27,
+    "predicates": 22,
+    "operators": 17
+  },
+  "predicate_maps": {
+    "WOE": {
+      "at": "d000__p_at",
+      "banquet_at": "d000__p_banquet_at",
+      "bowed": "d000__p_bowed",
+      "concealed": "d000__p_concealed",
+      "drunk": "d000__p_drunk",
+      "employed": "d000__p_employed",
+      "gold_at": "d000__p_gold_at",
+      "guest_present": "d000__p_guest_present",
+      "has": "d000__p_has",
+      "has_fatigue": "d000__p_has_fatigue",
+      "has_strength": "d000__p_has_strength",
+      "invitation_sent": "d000__p_invitation_sent",
+      "invited": "d000__p_invited",
+      "need_help": "d000__p_need_help",
+      "poor": "d000__p_poor",
+      "rich": "d000__p_rich",
+      "singing": "d000__p_singing",
+      "stone_at": "d000__p_stone_at",
+      "stone_moved": "d000__p_stone_moved",
+      "trapped": "d000__p_trapped",
+      "woe_on_shoulder": "d000__p_woe_on_shoulder",
+      "work_done": "d000__p_work_done"
+    }
+  },
+  "constant_maps": {
+    "WOE": {
+      "big_house": "d000__c_big_house",
+      "bitter_woe": "d000__c_bitter_woe",
+      "cattle": "d000__c_cattle",
+      "children": "d000__c_children",
+      "copecks_25": "d000__c_copecks_25",
+      "forest": "d000__c_forest",
+      "gold_pot": "d000__c_gold_pot",
+      "grove": "d000__c_grove",
+      "harrow": "d000__c_harrow",
+      "honey": "d000__c_honey",
+      "izba": "d000__c_izba",
+      "kabak": "d000__c_kabak",
+      "large_town": "d000__c_large_town",
+      "loaf_bread": "d000__c_loaf_bread",
+      "new_home": "d000__c_new_home",
+      "plow": "d000__c_plow",
+      "poor_brother": "d000__c_poor_brother",
+      "rich_brother": "d000__c_rich_brother",
+      "sledge": "d000__c_sledge",
+      "stone": "d000__c_stone",
+      "telega": "d000__c_telega",
+      "treasure_pit": "d000__c_treasure_pit",
+      "village": "d000__c_village",
+      "well": "d000__c_well",
+      "wife": "d000__c_wife",
+      "wine": "d000__c_wine",
+      "yard": "d000__c_yard"
+    }
+  },
+  "action_maps": {
+    "WOE": {
+      "request_help_from_rich_brother": "d000__a_request_help_from_rich_brother",
+      "perform_work_for_rich_brother": "d000__a_perform_work_for_rich_brother",
+      "receive_payment": "d000__a_receive_payment",
+      "stay_for_banquet": "d000__a_stay_for_banquet",
+      "bow_to_guests": "d000__a_bow_to_guests",
+      "sing_cheerful_song": "d000__a_sing_cheerful_song",
+      "encounter_bitter_woe": "d000__a_encounter_bitter_woe",
+      "make_sign_of_cross": "d000__a_make_sign_of_cross",
+      "allow_woe_to_ride_on_shoulder": "d000__a_allow_woe_to_ride_on_shoulder",
+      "spend_money_on_drink": "d000__a_spend_money_on_drink",
+      "trade_assets_for_money": "d000__a_trade_assets_for_money",
+      "move_heavy_stone": "d000__a_move_heavy_stone",
+      "hide_woe_under_stone": "d000__a_hide_woe_under_stone",
+      "take_gold_pot_and_hide": "d000__a_take_gold_pot_and_hide",
+      "invite_rich_brother_to_feast": "d000__a_invite_rich_brother_to_feast",
+      "rich_brother_attempt_to_move_stone": "d000__a_rich_brother_attempt_to_move_stone",
+      "accept_woe_as_burden": "d000__a_accept_woe_as_burden"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "WOE": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "WOE_problemfile.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

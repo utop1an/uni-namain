@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_aa88eff3ace9a29b",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'inside' is used with different arguments in the two sources. In BIRT, it relates an entity to a location ('inside ?n ?t') and an item to a location ('inside ?d ?t'). In PIGS_NP, it relates an entity to an item ('inside ?p ?c'). These usages represent different aspects of spatial relationships – one describing where an object *is*, and the other describing where an object *exists*. The action contexts further support this distinction: BIRT's 'inside' is used in actions involving movement and navigation within a structured environment (tree, stairs), while PIGS_NP's 'inside' is used in a simpler, more static context (pig owning an item). Therefore, they are complementary because they both describe the concept of 'inside' but in distinct scenarios and with different argument types. The argument roles are distinct: BIRT's 'inside' is about location, while PIGS_NP's 'inside' is about object presence. The action contexts provide the evidence for this complementary relationship. Specifically, the occurrences of `(inside ?n ?t)` and `(inside ?d ?t)` in BIRT and `(inside ?p ?c)` and `(inside ?p ?c)` in PIGS_NP demonstrate different argument types for the same predicate.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "BIRT:action:enter_tree_and_descend_stairs",
+      "quote": "(inside ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:receive_pellet_from_gnome",
+      "quote": "(inside ?n ?t)"
+    },
+    {
+      "side": 0,
+      "ref": "BIRT:action:turn_key_on_beech",
+      "quote": "(inside dryad ?t)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(inside ?p ?c)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_rolls_churn_down_hill",
+      "quote": "(inside ?p ?c)"
+    }
+  ]
+}

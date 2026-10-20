@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_0ed2593cd66a5292",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_0ed2593cd66a5292",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'boiling' appears in both narratives, but its usage and implications differ significantly. In 'PIGS_NP', 'boiling' describes a process applied to a pot, indicating a state of heated liquid, likely for cooking. This is explicitly linked to the preparation of food and the presence of a fire. In 'PUSS', 'drowning' and 'boiling' are complementary because 'drowning' describes a fatal state, while 'boiling' is a process that can lead to death (as seen in the effect of the action). The 'boiling' action in 'PUSS' is a consequence of the 'drowning' action, and the 'drowning' action is not a result of 'boiling'. The action contexts highlight this difference: 'PIGS_NP' uses 'boiling' to describe a controlled heating process, while 'PUSS' uses 'drowning' as the primary event and 'boiling' as a contributing factor to the outcome. Therefore, they represent distinct concepts related to liquid states and their effects, making them complementary rather than equivalent. The exact excerpts support this: '(:action pig_prepares_boiling_pot_and_fire ... (boiling ?pot))' and '(:action wolf_falls_into_pot_and_is_boiled ... (boiling ?pot))' versus '(:action cat_call_for_help ... (drowning ?jack))' and '(:action cat_persuade_master_to_bathe ... (drowning ?jack))'. The type hierarchies are also relevant, with 'boiling' associated with an 'item' (pot) and 'drowning' associated with an 'entity' (jack). The different action contexts further solidify the complementary relationship.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+        "quote": "(boiling ?pot)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_call_for_help",
+        "quote": "(drowning ?jack)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_persuade_master_to_bathe",
+        "quote": "(drowning ?jack)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_0ed2593cd66a5292"
+  ]
+}

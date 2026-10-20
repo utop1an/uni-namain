@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_6c5bf48657624763",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate `at` is used to express location in both sources. In MUSI, it describes the position of entities like 'donkey', 'hound', 'cat', and 'cock' relative to locations like 'forest' and 'cottage'. In PIGS_NP, it similarly describes the location of entities like 'pig', 'm', and 'p' relative to locations like 'town_fair', 'pig_home', and 'h'. The arguments `?e` and `?l` represent the entity and location respectively, and their roles are interchangeable in both narratives. The action contexts demonstrate that the predicate is used to specify the spatial relationships between entities and locations, which is consistent across both sources. The use of 'at' is identical in both sources, and the arguments are used in the same way, indicating an equivalent relationship. The path indices confirm that the same entities and locations are referenced when the predicate is used.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?donkey ?forest)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?hound ?forest)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?cat ?forest)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?cock ?forest)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?donkey ?cottage)"
+    },
+    {
+      "side": 0,
+      "ref": "MUSI:action:approach_cottage",
+      "quote": "(at ?hound ?cottage)"
+    }
+  ]
+}

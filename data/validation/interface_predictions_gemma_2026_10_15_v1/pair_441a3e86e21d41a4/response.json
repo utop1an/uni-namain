@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_441a3e86e21d41a4",
+  "label": "incompatible",
+  "right_from_left": [
+    1,
+    2
+  ],
+  "rationale": "The predicate pair `at` in JACK_NP and `castle_owned_by` in PUSS represent fundamentally different aspects of the narrative. The `at` predicate describes the spatial location of an entity at a given time, while `castle_owned_by` describes a relationship of ownership between a location (the castle) and an entity (the owner). These predicates capture distinct information about the world and cannot be directly equivalent. The action contexts provided further highlight this difference: `at` is used in numerous actions to specify locations for movement and interaction, whereas `castle_owned_by` is used to establish a relationship between a location and an entity, which is a declarative statement about the castle's status. The supplied action records do not provide any mechanism for a direct mapping between the two predicates. The arguments `?j` and `?l` are used in different contexts, further emphasizing their distinct roles. The `at` predicate is used to specify locations for actions, while the `castle_owned_by` predicate is used to describe the ownership of a location. The different action contexts and parameterizations confirm that these predicates are incompatible.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:climb_beanstalk",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:hide_in_kettle",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:hide_in_oven",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:return_down_beanstalk",
+      "quote": "(at ?j giant_castle)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(at ?j ?l)"
+    }
+  ]
+}

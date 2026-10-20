@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-19",
+  "original_path": "unidomain_ollama_fusion.py",
+  "original_sha256": "b3efa9d384c8a64ef4c1d1bdb9fac4a9cf997d89afc9cb3c94fe16699747ba03",
+  "modules": {
+    "models": "unidomain/models.py",
+    "fusion": "unidomain/fusion.py",
+    "pipeline": "unidomain/pipeline.py",
+    "cli": "unidomain/cli.py"
+  },
+  "scope": "Source organization only; preserve baseline prompts, cache keys, model options, fusion order and failure handling."
+}

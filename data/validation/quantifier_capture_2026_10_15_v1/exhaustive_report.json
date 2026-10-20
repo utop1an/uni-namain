@@ -1,0 +1,693 @@
+{
+  "status": "PASS",
+  "source_ground_atoms": 4,
+  "states": 16,
+  "rows": [
+    {
+      "valuation": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "FAIL",
+        "mismatch_count": 1,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "binding": [
+        "a"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    },
+    {
+      "valuation": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "binding": [
+        "b"
+      ],
+      "before": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      },
+      "after": {
+        "status": "PASS",
+        "mismatch_count": 0,
+        "truth_comparisons": 8
+      }
+    }
+  ],
+  "scope": "All valuations and action bindings of this authored finite fixture, not arbitrary source domains",
+  "action_bindings_checked": 32,
+  "before_mismatches": 8,
+  "after_mismatches": 0,
+  "input_sha256": {
+    "data\\validation\\quantifier_capture_2026_10_15_v1\\inputs\\A_domainfile.pddl": "9a190584e12920bbc06567d2d1bb92708f44d7fb0e972ecfdaa21c0f70c259cd",
+    "data\\validation\\quantifier_capture_2026_10_15_v1\\inputs\\A_problemfile.pddl": "7cae9e4ca201f86f19fbde301adeb0bdfd5c1eec038855c5c37ab3a4a9e3e88d",
+    "data\\validation\\quantifier_capture_2026_10_15_v1\\compiled_before\\meta_domain.pddl": "4c18de05fa71b5c528c804c4fc34806a61595e524b6c68f2a11a76f429fd63b1",
+    "data\\validation\\quantifier_capture_2026_10_15_v1\\compiled_after\\meta_domain.pddl": "ee9c8b1bd1f72db39ef07d9dfc7a84a4f9b43c145f3b5cf211a8d4325464af66"
+  },
+  "implementation_sha256": {
+    "validate_capture_states.py": "8a2b1f61c33d74628068781ae52a8ae7419fa34839b5af94d6f5815720b5532f",
+    "rcnc/trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "Synthetic engineering fixtures; no learned-domain generalization or semantic-alignment evidence",
+  "cases": [
+    {
+      "case": "initial_goal",
+      "expected": "solved",
+      "actual": "solved",
+      "pass": true,
+      "planner_called": true
+    },
+    {
+      "case": "initial_only",
+      "expected": "outcomes_generated",
+      "actual": "outcomes_generated",
+      "pass": true,
+      "planner_called": true
+    },
+    {
+      "case": "goal_only",
+      "expected": "needs_initial_state",
+      "actual": "needs_initial_state",
+      "pass": true,
+      "planner_called": false
+    },
+    {
+      "case": "empty_initial",
+      "expected": "unsolvable",
+      "actual": "unsolvable",
+      "pass": true,
+      "planner_called": true
+    },
+    {
+      "case": "second_object",
+      "expected": "solved",
+      "actual": "solved",
+      "pass": true,
+      "planner_called": true
+    },
+    {
+      "case": "selected_source",
+      "expected": "solved",
+      "actual": "solved",
+      "pass": true,
+      "planner_called": true
+    }
+  ],
+  "same_domain_for_multiple_problems": true,
+  "all_statuses_expected": true,
+  "status": "PASS"
+}

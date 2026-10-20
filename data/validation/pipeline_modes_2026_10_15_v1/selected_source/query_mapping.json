@@ -1,0 +1,26 @@
+{
+  "objects": {
+    "hero": "q__hero"
+  },
+  "object_types": {
+    "q__hero": "d000__t_person"
+  },
+  "initial": [
+    [
+      "d000__p_messenger_present",
+      "q__hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "d000__p_rumor_known",
+        "q__hero"
+      ]
+    ],
+    "negative": []
+  },
+  "state_semantics": "complete_closed_world",
+  "source_problem_facts_imported": false,
+  "goal_origin": "user_supplied"
+}

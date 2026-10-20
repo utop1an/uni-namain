@@ -1,0 +1,312 @@
+{
+  "sources": [
+    "FOUR_NP",
+    "HANS_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 3,
+    "constants": 61,
+    "predicates": 29,
+    "operators": 32
+  },
+  "predicate_maps": {
+    "FOUR_NP": {
+      "dragon_dead": "dragon_dead",
+      "eggs_fetched": "eggs_fetched",
+      "eggs_sewn": "eggs_sewn",
+      "eggs_shot": "eggs_shot",
+      "entity_at": "at",
+      "half_kingdom": "half_kingdom",
+      "has": "has",
+      "is_astronomer": "is_astronomer",
+      "is_hunter": "is_hunter",
+      "is_tailor": "is_tailor",
+      "is_thief": "is_thief",
+      "item_at": "item_at",
+      "princess_rescued": "princess_rescued",
+      "reward_received": "reward_received",
+      "ship_broken": "ship_broken",
+      "ship_repaired": "ship_repaired"
+    },
+    "HANS_NP": {
+      "at": "at",
+      "bird_heard": "bird_heard",
+      "bread_given": "bread_given",
+      "captured": "captured",
+      "collected": "collected",
+      "crossed_lake": "crossed_lake",
+      "crumb_on_path": "crumb_on_path",
+      "dead": "dead",
+      "duck_helped": "duck_helped",
+      "fire_lit": "fire_lit",
+      "has": "has",
+      "locked": "locked",
+      "lost": "lost",
+      "pebble_on_path": "pebble_on_path",
+      "reunited_with_father": "reunited_with_father"
+    }
+  },
+  "constant_maps": {
+    "FOUR_NP": {
+      "brother_astronomer": "brother_astronomer",
+      "brother_hunter": "brother_hunter",
+      "brother_tailor": "brother_tailor",
+      "brother_thief": "brother_thief",
+      "chaffinch": "chaffinch",
+      "cross_way": "cross_way",
+      "dragon": "dragon",
+      "eggs": "eggs",
+      "father": "father",
+      "gun": "gun",
+      "house": "house",
+      "king": "king",
+      "kingdom": "kingdom",
+      "mentor_astronomer": "mentor_astronomer",
+      "mentor_hunter": "mentor_hunter",
+      "mentor_tailor": "mentor_tailor",
+      "mentor_thief": "mentor_thief",
+      "needle": "needle",
+      "planks": "planks",
+      "princess": "princess",
+      "rock_sea": "rock_sea",
+      "sea": "sea",
+      "ship": "ship",
+      "sticks": "sticks",
+      "telescope": "telescope",
+      "town_gate": "town_gate",
+      "tree": "tree"
+    },
+    "HANS_NP": {
+      "apple": "apple",
+      "bird": "bird",
+      "branch": "branch",
+      "bread_piece": "bread_piece",
+      "brushwood": "brushwood",
+      "cake": "cake",
+      "cottage": "cottage",
+      "crumb": "crumb",
+      "dead_tree": "dead_tree",
+      "door": "door",
+      "duck": "duck",
+      "father": "hans_np__c_father",
+      "father_house": "father_house",
+      "forest": "forest",
+      "grettel": "grettel",
+      "hansel": "hansel",
+      "hill": "hill",
+      "kettle": "kettle",
+      "lake": "lake",
+      "milk": "milk",
+      "mother": "mother",
+      "nut": "nut",
+      "oven": "oven",
+      "pancake": "pancake",
+      "path": "path",
+      "pearl": "pearl",
+      "pebble": "pebble",
+      "precious_stone": "precious_stone",
+      "roof": "roof",
+      "room": "room",
+      "stable_location": "stable_location",
+      "sugar_window": "sugar_window",
+      "window": "window",
+      "witch": "witch"
+    }
+  },
+  "action_maps": {
+    "FOUR_NP": {
+      "leave_home": "leave_at_location",
+      "separate_at_crossroads": "separate_at_crossroads",
+      "learn_thief_trade": "learn_thief_trade",
+      "learn_astronomer_trade": "learn_astronomer_trade",
+      "learn_hunter_trade": "learn_hunter_trade",
+      "learn_tailor_trade": "learn_tailor_trade",
+      "reunite_at_crossroads": "seek_way_out_in_forest",
+      "count_eggs": "count_eggs",
+      "fetch_eggs": "fetch_eggs",
+      "shoot_eggs": "shoot_eggs",
+      "sew_eggs": "sew_eggs",
+      "return_eggs_to_nest": "return_eggs_to_nest",
+      "locate_princess": "locate_princess",
+      "obtain_ship": "obtain_ship",
+      "sail_to_rock": "move_to_destination_and_resolve_state",
+      "steal_princess": "steal_princess",
+      "shoot_dragon": "shoot_dragon",
+      "swim_after_ship_break": "swim_after_ship_break",
+      "repair_ship": "repair_ship",
+      "return_home_with_princess": "return_home_with_princess",
+      "receive_reward": "acquire_reward"
+    },
+    "HANS_NP": {
+      "abandon_children_in_forest": "abandon_children_in_forest",
+      "leave_children_at_fire": "leave_at_location",
+      "drop_pebble_on_path": "drop_pebble_on_path",
+      "follow_pebbles_home": "follow_pebbles_home",
+      "drop_breadcrumb_on_path": "drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "seek_way_out_in_forest",
+      "hear_bird_and_follow_to_witch_house": "hear_bird_and_follow_to_witch_house",
+      "enter_witch_house": "enter_witch_house",
+      "witch_captures_children": "witch_captures_children",
+      "push_witch_into_oven": "push_witch_into_oven",
+      "escape_from_stable": "escape_from_stable",
+      "collect_treasure": "acquire_reward",
+      "call_duck_for_crossing": "call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "move_to_destination_and_resolve_state"
+    }
+  },
+  "decisions": [
+    {
+      "kind": "predicate",
+      "left": "(entity_at ?e - entity ?l - location)",
+      "right": "(at ?e - entity ?l - location)",
+      "result": "(at ?e - entity ?l - location)",
+      "reason": "The two predicates, `(entity_at ?e - entity ?l - location)` and `(at ?e - entity ?l - location)`, both express the presence of an entity at a location. The first predicate is more specific, explicitly stating 'entity at', while the second uses 'at'. However, the arguments and their roles are identical: `?e` represents an entity, and `?l` represents a location. The predicates are used in similar operators like `leave_home`, `separate_at_crossroads`, and `learn_thief_trade`, indicating a similar underlying concept.  The predicates are not containing relationships, and the semantics are closely related. Therefore, we can merge them into a more general predicate. The key difference is the explicit 'entity at' in the first predicate, which can be simplified to just 'at'.",
+      "similarity": 0.7122077941894531,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "predicate",
+      "left": "(has ?e - entity ?i - item)",
+      "right": "(has ?e - entity ?i - item)",
+      "result": "(has ?e - entity ?i - item)",
+      "reason": "The two predicates, `(has ?e - entity ?i - item)` in domain_1 and `(has ?e - entity ?i - item)` in domain_2, are almost identical. They both express the same relationship: an entity `?e` has an item `?i`. The only difference is the source domain.  Since the predicates have the same name and express the same relationship, they can be merged.  The arguments are also identical, indicating they represent the same concept.  Merging them will simplify the domain description and avoid redundancy.",
+      "similarity": 0.9999999403953552,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "item_at",
+      "right": "pebble_on_path",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "item_at",
+      "right": "fire_lit",
+      "reason": "Arity-changing predicate merges require an explicit problem mapping"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_received",
+      "right": "bread_given",
+      "reason": "Expected one PDDL root expression, got 30"
+    },
+    {
+      "kind": "rejected_predicate_merge",
+      "left": "reward_received",
+      "right": "reunited_with_father",
+      "reason": "Expected one PDDL root expression, got 45"
+    },
+    {
+      "kind": "operator",
+      "left": "leave_home",
+      "right": "leave_children_at_fire",
+      "result": "leave_at_location",
+      "reason": "The action `leave_home` in domain_1 and `leave_children_at_fire` in domain_2 are both related to moving entities from one location to another. `leave_home` moves a person from the house to the town gate, while `leave_children_at_fire` moves children from the forest to a lost state. Although the specific locations and preconditions are different, the core action is to move an entity from one place to another. We can merge these actions into a more general action that captures the essence of leaving something at a specific location. The new action name can be `leave_at_location`. The preconditions and effects can be combined by considering the general case of moving an entity from one location to another, and the specific details (house, town_gate, forest, lost) can be represented in the preconditions and effects respectively.",
+      "similarity": 0.47962939739227295,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "follow_pebbles_home",
+      "reason": "action return_to_home_with_object :effect: ill-typed at:?e:object->entity; action return_to_home_with_object :effect: ill-typed at:?l:object->location; action return_to_home_with_object :effect: undeclared symbol ?home; action return_to_home_with_object :precondition: ill-typed at:?e:object->entity; action return_to_home_with_object :precondition: ill-typed at:?l:object->location; action return_to_home_with_object :precondition: ill-typed pebble_on_path:?l:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "sail_to_rock",
+      "right": "follow_pebbles_home",
+      "reason": "action move_to_destination :effect: ill-typed at:?d:object->location; action move_to_destination :effect: ill-typed at:?e:object->entity; action move_to_destination :precondition: ill-typed at:?d:object->location; action move_to_destination :precondition: ill-typed at:?e:object->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "reunite_at_crossroads",
+      "right": "follow_pebbles_home",
+      "reason": "action follow_to_home :effect: ill-typed at:?b:object->entity; action follow_to_home :effect: ill-typed at:?d:object->location; action follow_to_home :effect: ill-typed at:?h:object->entity; action follow_to_home :precondition: ill-typed at:?b:object->entity; action follow_to_home :precondition: ill-typed at:?d:object->location; action follow_to_home :precondition: ill-typed at:?h:object->entity; action follow_to_home :precondition: ill-typed pebble_on_path:?d:object->location"
+    },
+    {
+      "kind": "operator",
+      "left": "reunite_at_crossroads",
+      "right": "wander_forest_seeking_way_out",
+      "result": "seek_way_out_in_forest",
+      "reason": "The two operators, `reunite_at_crossroads` from domain_1 and `wander_forest_seeking_way_out` from domain_2, both involve an entity being at a location. The `reunite_at_crossroads` action changes the entity's location from a crossroad to a house, while the `wander_forest_seeking_way_out` action changes the entity's location to a forest and marks the entity as lost.  There isn't a direct semantic equivalence. However, we can interpret `wander_forest_seeking_way_out` as an action where an entity is trying to find a way out of the forest, which can be considered as a form of 'reuniting' with a desired location (a way out). Therefore, we can merge these two actions into a single action that represents an entity attempting to find a way out of a forest, potentially leading to the entity being lost. The new action will have the same parameters and preconditions as the original actions, and the effects will be a combination of the effects of the original actions.",
+      "similarity": 0.4108061194419861,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "steal_princess",
+      "right": "witch_captures_children",
+      "reason": "action capture_person :effect: ill-typed at:?l:object->location; action capture_person :effect: ill-typed at:?p:object->entity; action capture_person :effect: ill-typed at:?s:object->location; action capture_person :effect: ill-typed captured:?p:object->entity; action capture_person :effect: ill-typed locked:?s:object->location; action capture_person :precondition: ill-typed at:?c:object->entity; action capture_person :precondition: ill-typed at:?l:object->location; action capture_person :precondition: ill-typed at:?p:object->entity; action capture_person :precondition: ill-typed locked:?s:object->location"
+    },
+    {
+      "kind": "operator",
+      "left": "receive_reward",
+      "right": "collect_treasure",
+      "result": "acquire_reward",
+      "reason": "The action `collect_treasure` in domain_2 and the action `receive_reward` in domain_1 are semantically related. Both actions involve an entity acquiring a reward or treasure. `collect_treasure` involves an entity (`?h`, `?g`) having a pearl and a precious stone, while `receive_reward` involves an entity (`?e`) receiving a reward. We can merge these actions into a single action named `acquire_reward`. The preconditions and effects can be combined to represent the overall action of acquiring a reward or treasure.",
+      "similarity": 0.5513441562652588,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "separate_at_crossroads",
+      "right": "call_duck_for_crossing",
+      "reason": "action help_cross_location :effect: undeclared predicate crossed_location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "swim_after_ship_break",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :effect: ill-typed crossed_lake:?l:location->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "sail_to_rock",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :precondition: ill-typed at:?l:entity->location; action cross_lake_with_duck :precondition: undeclared symbol u"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "call_duck_for_crossing",
+      "reason": "action cross_lake_with_duck :effect: ill-typed at:?duck:object->entity; action cross_lake_with_duck :effect: ill-typed at:?lake:object->location; action cross_lake_with_duck :effect: ill-typed crossed_lake:?lake:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?duck:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?duck:object->location; action cross_lake_with_duck :precondition: ill-typed at:?lake:object->entity; action cross_lake_with_duck :precondition: ill-typed at:?lake:object->location"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_home_with_princess",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action return_home_with_family :effect: undeclared predicate reunited_with_princess"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "return_eggs_to_nest",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action return_to_home_and_reunite :precondition: ill-typed crossed_lake:?h:location->entity"
+    },
+    {
+      "kind": "rejected_operator_merge",
+      "left": "separate_at_crossroads",
+      "right": "return_home_and_reunite_with_father",
+      "reason": "action arrive_at_crossroads_and_reunite :effect: ill-typed at:?b:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed at:?f:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed at:?h:object->location; action arrive_at_crossroads_and_reunite :effect: ill-typed has:?b:object->entity; action arrive_at_crossroads_and_reunite :effect: ill-typed reunited_with_father:?f:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?b:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?f:object->entity; action arrive_at_crossroads_and_reunite :precondition: ill-typed at:?h:object->location; action arrive_at_crossroads_and_reunite :precondition: ill-typed crossed_lake:?f:object->entity"
+    },
+    {
+      "kind": "operator",
+      "left": "sail_to_rock",
+      "right": "return_home_and_reunite_with_father",
+      "result": "move_to_destination_and_resolve_state",
+      "reason": "The action `sail_to_rock` in domain_1 and `return_home_and_reunite_with_father` in domain_2 both involve moving an entity to a specific location (rock_sea or father_house) and potentially changing its state (e.g., no longer lost). The preconditions and effects of these actions are related to the movement and state changes of entities. Although the specific predicates used are different (e.g., `has ship`, `at house` vs. `crossed_lake`, `at father_house`), the core intention of the actions is similar: to move an entity to a destination and potentially resolve a state (like being lost). Therefore, we can merge these two actions into a single action that encompasses both scenarios. The new action name could be `move_to_destination_and_resolve_state`.",
+      "similarity": 0.37640202045440674,
+      "verifier": "gemma3:4b"
+    },
+    {
+      "kind": "constant",
+      "left": "father",
+      "right": "father",
+      "result": "hans_np__c_father",
+      "reason": "preserve distinct source identity and avoid case-insensitive collisions"
+    }
+  ]
+}

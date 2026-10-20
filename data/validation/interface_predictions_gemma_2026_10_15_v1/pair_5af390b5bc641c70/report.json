@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_5af390b5bc641c70",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_5af390b5bc641c70",
+    "label": "equivalent",
+    "right_from_left": [
+      5,
+      1
+    ],
+    "rationale": "The predicates `at` on both sides of the pair express the same spatial relationship: the location of an entity. In the HANS_NP side, `at ?h ?forest` and `at ?g ?forest` indicate that the entities `?h` and `?g` are located at the `?forest` location. Similarly, in the WOE side, `at ?poor ?loc` and `at ?woe ?loc` indicate that the entities `?poor` and `?woe` are located at the `?loc` location. The arguments are simply different entity names, but the core meaning – indicating the spatial location – is identical. The action contexts provide further evidence of this equivalence, as both sides use the `at` predicate to describe the location of entities within their respective actions. The predicates are used in identical ways, and the arguments are simply different entities. The action contexts demonstrate that the same effect is achieved by using different entities in the same spatial relationship.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:bow_to_guests",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:encounter_bitter_woe",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:invite_rich_brother_to_feast",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:make_sign_of_cross",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:sing_cheerful_song",
+        "quote": "(at ?poor ?loc)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_5af390b5bc641c70",
+    "nonbijective_argument_map:pair_5af390b5bc641c70"
+  ]
+}

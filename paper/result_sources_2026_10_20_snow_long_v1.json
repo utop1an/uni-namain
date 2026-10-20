@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "reports": {
+    "long_snow_search": {
+      "path": "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "f27ca17e1819751b5dc6555fc55f197fd85af11b9de9daa21b4ed4a12a3a272e",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "binary_unchanged",
+        "runner_unchanged"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts"
+      ],
+      "scope": "One authored scene x 23 conditions, including 12 predeclared schema removals; contextualized source behavior and eight new scene rules."
+    },
+    "long_snow_execution": {
+      "path": "data\\validation\\snow_long_case_audit_2026_10_20_v2\\report.json",
+      "sha256": "f1e78cca0ab93d3217878fcd0ad0c9e9e01541979008c05190bd0f50c8283597",
+      "terminal_status": "complete",
+      "denominator": "task_count",
+      "row_id": "id",
+      "count_field": "status_counts",
+      "required_true": [
+        "hashes_unchanged",
+        "compiled_source_behavior_modified"
+      ],
+      "metrics": [
+        "task_count",
+        "status_counts",
+        "primary_plan_length",
+        "source_steps",
+        "new_scenario_steps",
+        "primary_state_count",
+        "step_deletion_checks",
+        "step_deletion_checks_failed_as_expected",
+        "schema_removal_count",
+        "schema_removal_status_counts",
+        "semantic_limits"
+      ],
+      "scope": "One authored scene x 23 conditions, including 12 predeclared schema removals; contextualized source behavior and eight new scene rules."
+    }
+  },
+  "excluded_pending": [
+    "Automatic scene/role induction",
+    "Independent narrative quality and semantic judgments",
+    "Untouched-source success",
+    "General shortest-plan guarantees"
+  ]
+}

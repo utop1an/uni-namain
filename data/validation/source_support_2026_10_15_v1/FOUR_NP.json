@@ -1,0 +1,455 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "entity_at",
+    "has",
+    "item_at"
+  ],
+  "reachable_predicates": [
+    "dragon_dead",
+    "eggs_fetched",
+    "eggs_sewn",
+    "eggs_shot",
+    "entity_at",
+    "half_kingdom",
+    "has",
+    "is_astronomer",
+    "is_hunter",
+    "is_tailor",
+    "is_thief",
+    "item_at",
+    "princess_rescued",
+    "reward_received",
+    "ship_broken",
+    "ship_repaired"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "learn_astronomer_trade",
+        "learn_hunter_trade",
+        "learn_tailor_trade",
+        "learn_thief_trade",
+        "leave_home",
+        "reunite_at_crossroads",
+        "sail_to_rock",
+        "separate_at_crossroads"
+      ],
+      "new_predicates": [
+        "is_astronomer",
+        "is_hunter",
+        "is_tailor",
+        "is_thief"
+      ]
+    },
+    {
+      "actions": [
+        "count_eggs",
+        "fetch_eggs",
+        "locate_princess",
+        "obtain_ship",
+        "shoot_dragon",
+        "steal_princess"
+      ],
+      "new_predicates": [
+        "dragon_dead",
+        "eggs_fetched",
+        "princess_rescued",
+        "ship_broken"
+      ]
+    },
+    {
+      "actions": [
+        "receive_reward",
+        "repair_ship",
+        "shoot_eggs",
+        "swim_after_ship_break"
+      ],
+      "new_predicates": [
+        "eggs_shot",
+        "half_kingdom",
+        "reward_received",
+        "ship_repaired"
+      ]
+    },
+    {
+      "actions": [
+        "return_home_with_princess",
+        "sew_eggs"
+      ],
+      "new_predicates": [
+        "eggs_sewn"
+      ]
+    },
+    {
+      "actions": [
+        "return_eggs_to_nest"
+      ],
+      "new_predicates": []
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "count_eggs",
+      "condition": [
+        "and",
+        [
+          "is_astronomer",
+          "?a"
+        ],
+        [
+          "has",
+          "?a",
+          "telescope"
+        ],
+        [
+          "entity_at",
+          "?a",
+          "tree"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "fetch_eggs",
+      "condition": [
+        "and",
+        [
+          "is_thief",
+          "?t"
+        ],
+        [
+          "entity_at",
+          "?t",
+          "tree"
+        ],
+        [
+          "item_at",
+          "eggs",
+          "tree"
+        ]
+      ],
+      "adds": [
+        "eggs_fetched",
+        "has"
+      ]
+    },
+    {
+      "action": "learn_astronomer_trade",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "has",
+        "is_astronomer"
+      ]
+    },
+    {
+      "action": "learn_hunter_trade",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "has",
+        "is_hunter"
+      ]
+    },
+    {
+      "action": "learn_tailor_trade",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "has",
+        "is_tailor"
+      ]
+    },
+    {
+      "action": "learn_thief_trade",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "is_thief"
+      ]
+    },
+    {
+      "action": "leave_home",
+      "condition": [
+        "entity_at",
+        "?b",
+        "house"
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    },
+    {
+      "action": "locate_princess",
+      "condition": [
+        "and",
+        [
+          "is_astronomer",
+          "?a"
+        ],
+        [
+          "has",
+          "?a",
+          "telescope"
+        ]
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    },
+    {
+      "action": "obtain_ship",
+      "condition": [
+        "is_astronomer",
+        "?a"
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "receive_reward",
+      "condition": [
+        "princess_rescued",
+        "?e"
+      ],
+      "adds": [
+        "half_kingdom",
+        "reward_received"
+      ]
+    },
+    {
+      "action": "repair_ship",
+      "condition": [
+        "and",
+        [
+          "is_tailor",
+          "?t"
+        ],
+        [
+          "has",
+          "?t",
+          "needle"
+        ],
+        [
+          "ship_broken"
+        ]
+      ],
+      "adds": [
+        "ship_repaired"
+      ]
+    },
+    {
+      "action": "return_eggs_to_nest",
+      "condition": [
+        "and",
+        [
+          "is_thief",
+          "?t"
+        ],
+        [
+          "eggs_sewn",
+          "brother_tailor"
+        ],
+        [
+          "entity_at",
+          "?t",
+          "tree"
+        ],
+        [
+          "has",
+          "?t",
+          "eggs"
+        ]
+      ],
+      "adds": [
+        "item_at"
+      ]
+    },
+    {
+      "action": "return_home_with_princess",
+      "condition": [
+        "and",
+        [
+          "ship_repaired"
+        ],
+        [
+          "entity_at",
+          "?a",
+          "sea"
+        ]
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    },
+    {
+      "action": "reunite_at_crossroads",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    },
+    {
+      "action": "sail_to_rock",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?a",
+          "ship"
+        ],
+        [
+          "entity_at",
+          "?a",
+          "house"
+        ]
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    },
+    {
+      "action": "separate_at_crossroads",
+      "condition": [
+        "entity_at",
+        "?b",
+        "cross_way"
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "sew_eggs",
+      "condition": [
+        "and",
+        [
+          "is_tailor",
+          "?t"
+        ],
+        [
+          "has",
+          "?t",
+          "needle"
+        ],
+        [
+          "eggs_shot",
+          "brother_hunter"
+        ]
+      ],
+      "adds": [
+        "eggs_sewn"
+      ]
+    },
+    {
+      "action": "shoot_dragon",
+      "condition": [
+        "and",
+        [
+          "is_hunter",
+          "?h"
+        ],
+        [
+          "has",
+          "?h",
+          "gun"
+        ],
+        [
+          "entity_at",
+          "dragon",
+          "rock_sea"
+        ]
+      ],
+      "adds": [
+        "dragon_dead",
+        "ship_broken"
+      ]
+    },
+    {
+      "action": "shoot_eggs",
+      "condition": [
+        "and",
+        [
+          "is_hunter",
+          "?h"
+        ],
+        [
+          "has",
+          "?h",
+          "gun"
+        ],
+        [
+          "eggs_fetched",
+          "brother_thief"
+        ]
+      ],
+      "adds": [
+        "eggs_shot"
+      ]
+    },
+    {
+      "action": "steal_princess",
+      "condition": [
+        "and",
+        [
+          "is_thief",
+          "?t"
+        ],
+        [
+          "entity_at",
+          "?t",
+          "rock_sea"
+        ],
+        [
+          "entity_at",
+          "princess",
+          "rock_sea"
+        ],
+        [
+          "entity_at",
+          "dragon",
+          "rock_sea"
+        ]
+      ],
+      "adds": [
+        "entity_at",
+        "princess_rescued"
+      ]
+    },
+    {
+      "action": "swim_after_ship_break",
+      "condition": [
+        "ship_broken"
+      ],
+      "adds": [
+        "entity_at"
+      ]
+    }
+  ],
+  "source_domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+  "source_problem_sha256": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

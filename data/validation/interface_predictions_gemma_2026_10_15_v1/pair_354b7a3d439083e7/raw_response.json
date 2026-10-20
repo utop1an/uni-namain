@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:33:52.8826105Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_354b7a3d439083e7\", \"label\": \"complementary\", \"right_from_left\": [3, 1], \"rationale\": \"The predicate `left_turn_rule` in NAUG describes a rule governing movement, specifically a left turn, while `escaped` in PIGS_NP describes a state of being free from constraints or pursuit. The `left_turn_rule` predicate is associated with actions that dictate movement and direction, whereas `escaped` describes a state resulting from that movement. The two predicates describe different aspects of a situation: one about a specific action and the other about a state resulting from that action. The action contexts for `left_turn_rule` involve movement and direction, while the contexts for `escaped` involve a state of freedom from constraints. The use of `left_turn_rule ?c` in NAUG's action contexts indicates a rule being applied to an entity, while `escaped ?p` in PIGS_NP indicates that entity has achieved a state of freedom. These are complementary because one describes a process and the other describes a result of that process. The arguments `?c` and `?p` are both entities, but their roles are distinct. The `left_turn_rule` predicate is used to describe a rule, while the `escaped` predicate is used to describe a state. The action contexts for `left_turn_rule` involve actions that dictate movement and direction, while the contexts for `escaped` involve a state of freedom from constraints. The two predicates are related because the `left_turn_rule` predicate can lead to an `escaped` state, but they are not interchangeable. The `left_turn_rule` predicate is a rule, while the `escaped` predicate is a state. The two predicates are complementary because one describes a process and the other describes a result of that process.\", \"evidence\": [ {\"side\": 1, \"ref\": \"PIGS_NP:action:pig_collects_apples_and_escapes\", \"quote\": \"(escaped ?p)\"}, {\"side\": 1, \"ref\": \"PIGS_NP:action:wolf_flees_from_rolling_object\", \"quote\": \"(escaped ?w)\"}, {\"side\": 0, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(left_turn_rule ?c)\"}, {\"side\": 0, \"ref\": \"NAUG:action:turn_left_on_meeting\", \"quote\": \"(left_turn_rule ?c)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5774687600,
+  "load_duration": 2184200,
+  "prompt_eval_count": 909,
+  "prompt_eval_duration": 175500000,
+  "eval_count": 575,
+  "eval_duration": 5481949000
+}

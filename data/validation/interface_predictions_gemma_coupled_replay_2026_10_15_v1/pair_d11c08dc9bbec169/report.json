@@ -1,0 +1,43 @@
+{
+  "candidate_id": "pair_d11c08dc9bbec169",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_d11c08dc9bbec169",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The `invited` predicate in MUSI describes an invitation extended by one entity to another, while the `has` predicate in PUSS describes possession of an item by an entity. These predicates represent distinct relationships. The `invited` predicate signifies a request or offer, whereas `has` denotes ownership. The action contexts demonstrate that `invited` is used to establish a relationship between entities, while `has` is used to describe the state of an entity's possessions. The different action preconditions and effects further highlight their distinct roles. For example, `invite_cat` creates an invitation, whereas `buy_boots` establishes possession of boots by a cat. Therefore, they are complementary because they describe different aspects of an entity's relationships and possessions.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(has ?puss ?boots)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_catch_rabbits",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:give_bag_to_cat",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(has ?jack ?suit)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:invite_cat",
+        "quote": "(invited ?donkey ?cat)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:invite_cock",
+        "quote": "(invited ?donkey ?cock)"
+      }
+    ]
+  },
+  "errors": []
+}

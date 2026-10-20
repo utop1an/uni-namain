@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:49:06.8676318Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_e98cbdc579c23be6\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'eggs_fetched' in FOUR_NP describes the action of retrieving eggs, while 'on_list' in NAUG describes an entity being present on a list. These predicates represent distinct concepts: one relates to an action and its object, and the other relates to an entity's status. The action contexts for 'eggs_fetched' involve retrieving eggs from a tree, while the action context for 'on_list' involves crossing out a comet. The 'eggs_fetched' predicate refers to an entity ('?t'), and the 'on_list' predicate refers to an entity ('?c'). The two predicates describe different aspects of the world, and thus are complementary. The 'occurrences' within each source show the predicates are used in distinct contexts. The 'type_hierarchy' for both predicates is 'entity', but this is a broad category and does not imply equivalence. The 'story_or_learner_provenance' is not supplied, so we cannot determine the source of these predicates.\", \"evidence\": [ {\"side\": 0, \"ref\": \"FOUR_NP:action:fetch_eggs\", \"quote\": \"(eggs_fetched ?t)\"}, {\"side\": 1, \"ref\": \"NAUG:action:cross_out_comet\", \"quote\": \"(on_list ?c)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3478231800,
+  "load_duration": 3690500,
+  "prompt_eval_count": 718,
+  "prompt_eval_duration": 146172000,
+  "eval_count": 328,
+  "eval_duration": 3211832000
+}

@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_0fb0695e46dd0530",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_0fb0695e46dd0530",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'at' is used to express location in both the BIRT and WOE narratives. In BIRT, it describes the location of entities like trees, palaces, and locations within actions like 'approach_beech_tree', 'receive_queen_kiss', and 'travel_to_trysting_place'. In WOE, it describes the location of entities like the poor, woe, and guests within actions like 'allow_woe_to_ride_on_shoulder', 'bow_to_guests', and 'encounter_bitter_woe'. Despite the different contexts (a fantastical story vs. a narrative about a poor man), both predicates fundamentally represent spatial positioning. The BIRT narrative focuses on a structured, somewhat magical environment, while the WOE narrative depicts a more grounded, realistic setting. Therefore, they are complementary – both describe location, but within distinct and contrasting worlds. The argument roles are interchangeable; the left argument (entity/location) is supplied by both sources, but the specific entities and locations differ, reflecting the different narratives.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:bow_to_guests",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:encounter_bitter_woe",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:invite_rich_brother_to_feast",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:make_sign_of_cross",
+        "quote": "(at ?poor ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:sing_cheerful_song",
+        "quote": "(at ?poor ?loc)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_0fb0695e46dd0530",
+    "non_equivalent_has_argument_map:pair_0fb0695e46dd0530"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sources": [
+    "HANS_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 4,
+    "constants": 34,
+    "predicates": 15,
+    "operators": 15
+  },
+  "predicate_maps": {
+    "HANS_NP": {
+      "at": "d000__p_at",
+      "bird_heard": "d000__p_bird_heard",
+      "bread_given": "d000__p_bread_given",
+      "captured": "d000__p_captured",
+      "collected": "d000__p_collected",
+      "crossed_lake": "d000__p_crossed_lake",
+      "crumb_on_path": "d000__p_crumb_on_path",
+      "dead": "d000__p_dead",
+      "duck_helped": "d000__p_duck_helped",
+      "fire_lit": "d000__p_fire_lit",
+      "has": "d000__p_has",
+      "locked": "d000__p_locked",
+      "lost": "d000__p_lost",
+      "pebble_on_path": "d000__p_pebble_on_path",
+      "reunited_with_father": "d000__p_reunited_with_father"
+    }
+  },
+  "constant_maps": {
+    "HANS_NP": {
+      "apple": "d000__c_apple",
+      "bird": "d000__c_bird",
+      "branch": "d000__c_branch",
+      "bread_piece": "d000__c_bread_piece",
+      "brushwood": "d000__c_brushwood",
+      "cake": "d000__c_cake",
+      "cottage": "d000__c_cottage",
+      "crumb": "d000__c_crumb",
+      "dead_tree": "d000__c_dead_tree",
+      "door": "d000__c_door",
+      "duck": "d000__c_duck",
+      "father": "d000__c_father",
+      "father_house": "d000__c_father_house",
+      "forest": "d000__c_forest",
+      "grettel": "d000__c_grettel",
+      "hansel": "d000__c_hansel",
+      "hill": "d000__c_hill",
+      "kettle": "d000__c_kettle",
+      "lake": "d000__c_lake",
+      "milk": "d000__c_milk",
+      "mother": "d000__c_mother",
+      "nut": "d000__c_nut",
+      "oven": "d000__c_oven",
+      "pancake": "d000__c_pancake",
+      "path": "d000__c_path",
+      "pearl": "d000__c_pearl",
+      "pebble": "d000__c_pebble",
+      "precious_stone": "d000__c_precious_stone",
+      "roof": "d000__c_roof",
+      "room": "d000__c_room",
+      "stable_location": "d000__c_stable_location",
+      "sugar_window": "d000__c_sugar_window",
+      "window": "d000__c_window",
+      "witch": "d000__c_witch"
+    }
+  },
+  "action_maps": {
+    "HANS_NP": {
+      "abandon_children_in_forest": "d000__a_abandon_children_in_forest",
+      "leave_children_at_fire": "d000__a_leave_children_at_fire",
+      "drop_pebble_on_path": "d000__a_drop_pebble_on_path",
+      "follow_pebbles_home": "d000__a_follow_pebbles_home",
+      "drop_breadcrumb_on_path": "d000__a_drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "d000__a_follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "d000__a_wander_forest_seeking_way_out",
+      "hear_bird_and_follow_to_witch_house": "d000__a_hear_bird_and_follow_to_witch_house",
+      "enter_witch_house": "d000__a_enter_witch_house",
+      "witch_captures_children": "d000__a_witch_captures_children",
+      "push_witch_into_oven": "d000__a_push_witch_into_oven",
+      "escape_from_stable": "d000__a_escape_from_stable",
+      "collect_treasure": "d000__a_collect_treasure",
+      "call_duck_for_crossing": "d000__a_call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "d000__a_return_home_and_reunite_with_father"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "HANS_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

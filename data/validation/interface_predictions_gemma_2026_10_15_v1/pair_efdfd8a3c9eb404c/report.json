@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_efdfd8a3c9eb404c",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_efdfd8a3c9eb404c",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `has` appears in both sources with identical parameters and declarations: `(has ?e - entity ?i - item)`. The action contexts demonstrate that `has` is used to represent possession or holding of an item. In BIRT, `has` is used in the context of eating a pellet and receiving a pellet, while in JACK_NP, it's used in the context of stealing items. Despite the different scenarios, the core meaning of `has` – representing possession – remains consistent across both sources. The action contexts provide the same argument roles (`?e` and `?i`) and the same predicate form, indicating an equivalent relationship. The different action contexts simply describe different situations where this relationship holds true.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BIRT:action:eat_pellet_and_shrink",
+        "quote": "(has ?n ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:receive_pellet_from_gnome",
+        "quote": "(has ?n ?p)"
+      },
+      {
+        "side": 0,
+        "ref": "BIRT:action:turn_key_on_beech",
+        "quote": "(has ?n ?k)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(has ?j ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_gold_bags",
+        "quote": "(has ?j ?bag1)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(has ?j ?harp)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_efdfd8a3c9eb404c"
+  ]
+}

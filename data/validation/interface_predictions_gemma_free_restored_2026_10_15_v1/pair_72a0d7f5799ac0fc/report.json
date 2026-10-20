@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_72a0d7f5799ac0fc",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_72a0d7f5799ac0fc",
+    "label": "incompatible",
+    "right_from_left": [
+      1,
+      2
+    ],
+    "rationale": "The `fled` predicate in the `MUSI` source describes an event where a `robber` moves to a `location`. The `has` predicate in the `SNOW` source describes possession of an `item` by an `entity`. These predicates describe fundamentally different relationships: movement versus ownership. The `fled` predicate implies a change of location, while the `has` predicate describes a state of possession. The action contexts further illustrate this difference: `fled` describes an action taken by the robber, while `has` describes a state of the entity. The parameters and type hierarchies are also distinct, with `fled` relating to entities and locations, and `has` relating to entities and items. The provided action contexts do not provide any overlap in meaning or purpose. The predicates are incompatible because they describe different aspects of the story's events.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_prepare_glass_coffin_for_snow_white",
+        "quote": "(has ?d ?coffin)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_remove_comb_rescue_snow_white",
+        "quote": "(has ?d ?comb)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:huntsman_spares_snow_white_and_brings_boar_heart",
+        "quote": "(has ?h ?heart)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:queen_pricks_finger",
+        "quote": "(has ?q ?needle)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:queen_sews_at_window",
+        "quote": "(has ?q needle)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:snow_white_eats_vegetables_and_bread_and_drinks_wine",
+        "quote": "(has ?c ?plate)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_72a0d7f5799ac0fc",
+    "non_equivalent_has_argument_map:pair_72a0d7f5799ac0fc"
+  ]
+}

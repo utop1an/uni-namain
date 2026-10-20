@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_631ac0fedac32a3d",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The Naug side focuses on the *location* of entities, specifically using the `at` predicate to determine where something is. The Puss side uses `castle_owned_by` to define ownership relationships between locations (castles) and entities (owners). These predicates address distinct aspects of a scene: Naug describes spatial relationships, while Puss describes ownership relationships. The `at` predicate is about *where* something is, while `castle_owned_by` is about *who* owns something. They are related because a castle's location is relevant to its ownership, but they are not interchangeable. The `at` predicate is about the position of an entity, while `castle_owned_by` is about the relationship between a castle and its owner. The action contexts for Naug all involve the `at` predicate, indicating spatial positioning, whereas the Puss side does not contain any predicates related to location. The `at` predicate is a fundamental spatial predicate, while `castle_owned_by` is a relationship predicate. The two predicates are complementary because they describe different aspects of the same scene.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:call_comet_forward",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:give_order",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(at ?c courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:call_comet_forward",
+      "quote": "(at ?master courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:give_order",
+      "quote": "(at ?master courtyard)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(at ?c courtyard)"
+    }
+  ]
+}

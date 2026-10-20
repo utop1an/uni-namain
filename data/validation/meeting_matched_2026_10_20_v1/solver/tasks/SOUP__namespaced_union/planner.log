@@ -1,0 +1,49 @@
+INFO     planner time limit: 20s
+INFO     planner memory limit: 4096 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 19s
+INFO     translator memory limit: 4096 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.030s CPU, 0.032s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.005s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.020s CPU, 0.055s wall-clock]
+Preparing model... [0.020s CPU, 0.018s wall-clock]
+Generated 1271 rules.
+Computing model... [2.110s CPU, 2.117s wall-clock]
+298238 relevant atoms
+13967 auxiliary atoms
+312205 final queue length
+1390782 total queue pushes
+Completing instantiation... [7.470s CPU, 7.479s wall-clock]
+Instantiating: [9.670s CPU, 9.724s wall-clock]
+Computing fact groups...
+Finding invariants...
+501 initial candidates
+Finding invariants: [0.100s CPU, 0.093s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+844 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.100s CPU, 0.098s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.270s CPU, 0.270s wall-clock]
+Translating task: [7.970s CPU, 7.972s wall-clock]
+181655 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...

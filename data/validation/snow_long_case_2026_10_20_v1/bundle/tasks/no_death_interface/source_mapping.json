@@ -1,0 +1,1556 @@
+{
+  "sources": [
+    "HANS_NP",
+    "JACK_NP",
+    "SNOW"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 0,
+    "constants": 96,
+    "predicates": 57,
+    "operators": 56
+  },
+  "predicate_maps": {
+    "HANS_NP": {
+      "at": "d000__p_at",
+      "bird_heard": "d000__p_bird_heard",
+      "bread_given": "d000__p_bread_given",
+      "captured": "d000__p_captured",
+      "collected": "d000__p_collected",
+      "crossed_lake": "d000__p_crossed_lake",
+      "crumb_on_path": "d000__p_crumb_on_path",
+      "dead": "d000__p_dead",
+      "duck_helped": "d000__p_duck_helped",
+      "fire_lit": "d000__p_fire_lit",
+      "has": "shared__p_possession",
+      "locked": "d000__p_locked",
+      "lost": "d000__p_lost",
+      "pebble_on_path": "d000__p_pebble_on_path",
+      "reunited_with_father": "d000__p_reunited_with_father"
+    },
+    "JACK_NP": {
+      "asleep": "d001__p_asleep",
+      "at": "d001__p_at",
+      "at_item": "d001__p_at_item",
+      "beanstalk_grown": "d001__p_beanstalk_grown",
+      "climbing_down": "d001__p_climbing_down",
+      "dead": "d001__p_dead",
+      "distracted": "d001__p_distracted",
+      "empty": "d001__p_empty",
+      "has": "d001__p_has",
+      "has_breakfast": "d001__p_has_breakfast",
+      "inside": "d001__p_inside",
+      "intact": "d001__p_intact",
+      "offers": "d001__p_offers",
+      "on": "d001__p_on",
+      "planted": "d001__p_planted"
+    },
+    "SNOW": {
+      "alive": "d002__p_alive",
+      "at": "d002__p_at",
+      "at_item": "d002__p_at_item",
+      "awake": "d002__p_awake",
+      "dead": "d002__p_dead",
+      "disguised_as": "d002__p_disguised_as",
+      "envious": "d002__p_envious",
+      "fair": "d002__p_fair",
+      "fairest": "d002__p_fairest",
+      "has": "shared__p_possession",
+      "in_coffin": "d002__p_in_coffin",
+      "laced": "d002__p_laced",
+      "poisoned": "d002__p_poisoned",
+      "sleeping": "d002__p_sleeping",
+      "visited": "d002__p_visited",
+      "wearing": "d002__p_wearing"
+    }
+  },
+  "constant_maps": {
+    "HANS_NP": {
+      "apple": "d000__c_apple",
+      "bird": "d000__c_bird",
+      "branch": "d000__c_branch",
+      "bread_piece": "d000__c_bread_piece",
+      "brushwood": "d000__c_brushwood",
+      "cake": "d000__c_cake",
+      "cottage": "d000__c_cottage",
+      "crumb": "d000__c_crumb",
+      "dead_tree": "d000__c_dead_tree",
+      "door": "d000__c_door",
+      "duck": "d000__c_duck",
+      "father": "d000__c_father",
+      "father_house": "d000__c_father_house",
+      "forest": "d000__c_forest",
+      "grettel": "d000__c_grettel",
+      "hansel": "d000__c_hansel",
+      "hill": "d000__c_hill",
+      "kettle": "d000__c_kettle",
+      "lake": "d000__c_lake",
+      "milk": "d000__c_milk",
+      "mother": "d000__c_mother",
+      "nut": "d000__c_nut",
+      "oven": "d000__c_oven",
+      "pancake": "d000__c_pancake",
+      "path": "d000__c_path",
+      "pearl": "d000__c_pearl",
+      "pebble": "d000__c_pebble",
+      "precious_stone": "d000__c_precious_stone",
+      "roof": "d000__c_roof",
+      "room": "d000__c_room",
+      "stable_location": "d000__c_stable_location",
+      "sugar_window": "d000__c_sugar_window",
+      "window": "d000__c_window",
+      "witch": "d000__c_witch"
+    },
+    "JACK_NP": {
+      "axe": "d001__c_axe",
+      "beanstalk": "d001__c_beanstalk",
+      "brown_hen": "d001__c_brown_hen",
+      "butcher": "d001__c_butcher",
+      "castle_road": "d001__c_castle_road",
+      "cottage": "d001__c_cottage",
+      "fairy_maiden": "d001__c_fairy_maiden",
+      "garden": "d001__c_garden",
+      "giant": "d001__c_giant",
+      "giant_castle": "d001__c_giant_castle",
+      "giant_dog": "d001__c_giant_dog",
+      "giant_wife": "d001__c_giant_wife",
+      "gold_bag_1": "d001__c_gold_bag_1",
+      "gold_bag_2": "d001__c_gold_bag_2",
+      "golden_harp": "d001__c_golden_harp",
+      "jack": "d001__c_jack",
+      "jack_mother": "d001__c_jack_mother",
+      "kettle": "d001__c_kettle",
+      "magic_beans": "d001__c_magic_beans",
+      "market": "d001__c_market",
+      "milky_white": "d001__c_milky_white",
+      "oak_tree_club": "d001__c_oak_tree_club",
+      "oven": "d001__c_oven",
+      "window": "d001__c_window"
+    },
+    "SNOW": {
+      "apple": "d002__c_apple",
+      "bed": "d002__c_bed",
+      "blood_drop": "d002__c_blood_drop",
+      "boar": "d002__c_boar",
+      "boar_heart": "d002__c_boar_heart",
+      "candle": "d002__c_candle",
+      "coffin": "d002__c_coffin",
+      "comb": "d002__c_comb",
+      "cottage": "d002__c_cottage",
+      "dove": "d002__c_dove",
+      "dwarf1": "d002__c_dwarf1",
+      "dwarf2": "d002__c_dwarf2",
+      "dwarf3": "d002__c_dwarf3",
+      "dwarf4": "d002__c_dwarf4",
+      "dwarf5": "d002__c_dwarf5",
+      "dwarf6": "d002__c_dwarf6",
+      "dwarf7": "d002__c_dwarf7",
+      "forest": "d002__c_forest",
+      "fork": "d002__c_fork",
+      "golden_letter": "d002__c_golden_letter",
+      "huntsman": "d002__c_huntsman",
+      "iron_slippers": "d002__c_iron_slippers",
+      "king": "d002__c_king",
+      "knife": "d002__c_knife",
+      "lace": "d002__c_lace",
+      "looking_glass": "d002__c_looking_glass",
+      "mountain": "d002__c_mountain",
+      "mug": "d002__c_mug",
+      "needle": "d002__c_needle",
+      "owl": "d002__c_owl",
+      "plate": "d002__c_plate",
+      "prince": "d002__c_prince",
+      "queen": "d002__c_queen",
+      "raven": "d002__c_raven",
+      "red_hot_shoes": "d002__c_red_hot_shoes",
+      "salt": "d002__c_salt",
+      "snow_white": "d002__c_snow_white",
+      "spoon": "d002__c_spoon"
+    }
+  },
+  "action_maps": {
+    "HANS_NP": {
+      "abandon_children_in_forest": "d000__a_abandon_children_in_forest",
+      "leave_children_at_fire": "d000__a_leave_children_at_fire",
+      "drop_pebble_on_path": "d000__a_drop_pebble_on_path",
+      "follow_pebbles_home": "d000__a_follow_pebbles_home",
+      "drop_breadcrumb_on_path": "d000__a_drop_breadcrumb_on_path",
+      "follow_breadcrumbs_home": "d000__a_follow_breadcrumbs_home",
+      "wander_forest_seeking_way_out": "d000__a_wander_forest_seeking_way_out",
+      "hear_bird_and_follow_to_witch_house": "d000__a_hear_bird_and_follow_to_witch_house",
+      "enter_witch_house": "d000__a_enter_witch_house",
+      "witch_captures_children": "d000__a_witch_captures_children",
+      "push_witch_into_oven": "d000__a_push_witch_into_oven",
+      "escape_from_stable": "d000__a_escape_from_stable",
+      "collect_treasure": "d000__a_collect_treasure",
+      "call_duck_for_crossing": "d000__a_call_duck_for_crossing",
+      "return_home_and_reunite_with_father": "d000__a_return_home_and_reunite_with_father"
+    },
+    "JACK_NP": {
+      "sell_cow_for_beans": "d001__a_sell_cow_for_beans",
+      "plant_beans": "d001__a_plant_beans",
+      "grow_beanstalk": "d001__a_grow_beanstalk",
+      "climb_beanstalk": "d001__a_climb_beanstalk",
+      "ask_giant_wife_for_breakfast": "d001__a_ask_giant_wife_for_breakfast",
+      "hide_in_kettle": "d001__a_hide_in_kettle",
+      "steal_gold_bags": "d001__a_steal_gold_bags",
+      "return_down_beanstalk": "d001__a_return_down_beanstalk",
+      "hide_in_oven": "d001__a_hide_in_oven",
+      "steal_hen": "d001__a_steal_hen",
+      "steal_harp": "d001__a_steal_harp",
+      "cut_beanstalk": "d001__a_cut_beanstalk"
+    },
+    "SNOW": {
+      "queen_sews_at_window": "d002__a_queen_sews_at_window",
+      "queen_pricks_finger": "d002__a_queen_pricks_finger",
+      "queen_wishes_child_white_red_black": "d002__a_queen_wishes_child_white_red_black",
+      "child_is_born_and_queen_dies": "d002__a_child_is_born_and_queen_dies",
+      "king_marries_stepmother": "d002__a_king_marries_stepmother",
+      "stepmother_asks_looking_glass_fairest": "d002__a_stepmother_asks_looking_glass_fairest",
+      "stepmother_becomes_envious_of_snow_white": "d002__a_stepmother_becomes_envious_of_snow_white",
+      "stepmother_orders_huntsman_to_kill_snow_white": "d002__a_stepmother_orders_huntsman_to_kill_snow_white",
+      "huntsman_spares_snow_white_and_brings_boar_heart": "d002__a_huntsman_spares_snow_white_and_brings_boar_heart",
+      "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart": "d002__a_stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "snow_white_flees_into_forest": "d002__a_snow_white_flees_into_forest",
+      "snow_white_finds_dwarfs_cottage": "d002__a_snow_white_finds_dwarfs_cottage",
+      "snow_white_eats_vegetables_and_bread_and_drinks_wine": "d002__a_snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "snow_white_sleeps_in_seventh_bed": "d002__a_snow_white_sleeps_in_seventh_bed",
+      "dwarfs_return_and_discover_snow_white": "d002__a_dwarfs_return_and_discover_snow_white",
+      "dwarfs_offer_snow_white_to_maintain_house": "d002__a_dwarfs_offer_snow_white_to_maintain_house",
+      "stepmother_disguises_as_old_woman_and_visits_cottage": "d002__a_stepmother_disguises_as_old_woman_and_visits_cottage",
+      "stepmother_laces_snow_white_tightly": "d002__a_stepmother_laces_snow_white_tightly",
+      "dwarfs_cut_laces_rescue_snow_white": "d002__a_dwarfs_cut_laces_rescue_snow_white",
+      "stepmother_makes_poisonous_comb_and_visits_cottage": "d002__a_stepmother_makes_poisonous_comb_and_visits_cottage",
+      "stepmother_comb_poison_snow_white": "d002__a_stepmother_comb_poison_snow_white",
+      "dwarfs_remove_comb_rescue_snow_white": "d002__a_dwarfs_remove_comb_rescue_snow_white",
+      "stepmother_makes_poisonous_apple_and_visits_cottage": "d002__a_stepmother_makes_poisonous_apple_and_visits_cottage",
+      "snow_white_eats_poisoned_apple_and_dies": "d002__a_snow_white_eats_poisoned_apple_and_dies",
+      "dwarfs_prepare_glass_coffin_for_snow_white": "d002__a_dwarfs_prepare_glass_coffin_for_snow_white",
+      "prince_discovers_coffin_and_moves_it": "d002__a_prince_discovers_coffin_and_moves_it",
+      "apple_piece_falls_out_reviving_snow_white": "d002__a_apple_piece_falls_out_reviving_snow_white",
+      "prince_marries_snow_white": "d002__a_prince_marries_snow_white",
+      "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies": "d002__a_stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "HANS_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    },
+    "JACK_NP": {
+      "types": {
+        "entity": "d001__t_entity",
+        "item": "d001__t_item",
+        "location": "d001__t_location",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001",
+      "objects": {}
+    },
+    "SNOW": {
+      "types": {
+        "entity": "d002__t_entity",
+        "item": "d002__t_item",
+        "location": "d002__t_location",
+        "object": "d002__t_object"
+      },
+      "prefix": "d002",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d001__t_entity": "d001__t_object",
+    "d001__t_item": "d001__t_object",
+    "d001__t_location": "d001__t_object",
+    "d002__t_entity": "d002__t_object",
+    "d002__t_item": "d002__t_object",
+    "d002__t_location": "d002__t_object",
+    "d000__t_object": "object",
+    "d001__t_object": "object",
+    "d002__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d001__t_entity": "typeguard__d001__t_entity",
+    "d001__t_item": "typeguard__d001__t_item",
+    "d001__t_location": "typeguard__d001__t_location",
+    "d002__t_entity": "typeguard__d002__t_entity",
+    "d002__t_item": "typeguard__d002__t_item",
+    "d002__t_location": "typeguard__d002__t_location",
+    "d000__t_object": "typeguard__d000__t_object",
+    "d001__t_object": "typeguard__d001__t_object",
+    "d002__t_object": "typeguard__d002__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_bird"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bird"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_duck"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_duck"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_father"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_father"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_grettel"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_grettel"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_hansel"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_hansel"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_mother"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_mother"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_witch"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_witch"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_apple"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_apple"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_bread_piece"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bread_piece"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_brushwood"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_brushwood"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_cake"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cake"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_crumb"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_crumb"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_kettle"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_kettle"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_milk"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_milk"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_nut"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_nut"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_oven"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_oven"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_pancake"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_pancake"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_pearl"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_pearl"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_pebble"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_pebble"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_precious_stone"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_precious_stone"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_sugar_window"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_sugar_window"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_branch"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_branch"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_cottage"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cottage"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_dead_tree"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_dead_tree"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_door"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_door"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_father_house"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_father_house"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_hill"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_hill"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_lake"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_lake"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_path"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_path"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_roof"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_roof"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_room"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_room"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_stable_location"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_stable_location"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_window"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_window"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_brown_hen"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_brown_hen"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_butcher"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_butcher"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_fairy_maiden"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_fairy_maiden"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_giant"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_giant"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_giant_dog"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_giant_dog"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_giant_wife"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_giant_wife"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_jack"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_jack"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_jack_mother"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_jack_mother"
+    ],
+    [
+      "typeguard__d001__t_entity",
+      "d001__c_milky_white"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_milky_white"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_axe"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_axe"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_gold_bag_1"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_gold_bag_1"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_gold_bag_2"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_gold_bag_2"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_golden_harp"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_golden_harp"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_magic_beans"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_magic_beans"
+    ],
+    [
+      "typeguard__d001__t_item",
+      "d001__c_oak_tree_club"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_oak_tree_club"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_beanstalk"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_beanstalk"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_castle_road"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_castle_road"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_cottage"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_cottage"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_garden"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_garden"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_giant_castle"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_giant_castle"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_kettle"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_kettle"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_market"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_market"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_oven"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_oven"
+    ],
+    [
+      "typeguard__d001__t_location",
+      "d001__c_window"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_window"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_boar"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_boar"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dove"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dove"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf1"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf1"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf2"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf2"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf3"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf3"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf4"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf4"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf5"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf5"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf6"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf6"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_dwarf7"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_dwarf7"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_huntsman"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_huntsman"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_king"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_king"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_owl"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_owl"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_prince"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_prince"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_queen"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_queen"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_raven"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_raven"
+    ],
+    [
+      "typeguard__d002__t_entity",
+      "d002__c_snow_white"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_snow_white"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_apple"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_apple"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_bed"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_bed"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_blood_drop"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_blood_drop"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_boar_heart"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_boar_heart"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_candle"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_candle"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_coffin"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_coffin"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_comb"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_comb"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_fork"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_fork"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_golden_letter"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_golden_letter"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_iron_slippers"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_iron_slippers"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_knife"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_knife"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_lace"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_lace"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_looking_glass"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_looking_glass"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_mug"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_mug"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_needle"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_needle"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_plate"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_plate"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_red_hot_shoes"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_red_hot_shoes"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_salt"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_salt"
+    ],
+    [
+      "typeguard__d002__t_item",
+      "d002__c_spoon"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_spoon"
+    ],
+    [
+      "typeguard__d002__t_location",
+      "d002__c_cottage"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_cottage"
+    ],
+    [
+      "typeguard__d002__t_location",
+      "d002__c_forest"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_forest"
+    ],
+    [
+      "typeguard__d002__t_location",
+      "d002__c_mountain"
+    ],
+    [
+      "typeguard__d002__t_object",
+      "d002__c_mountain"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_bird": "d000__t_entity",
+    "d000__c_duck": "d000__t_entity",
+    "d000__c_father": "d000__t_entity",
+    "d000__c_grettel": "d000__t_entity",
+    "d000__c_hansel": "d000__t_entity",
+    "d000__c_mother": "d000__t_entity",
+    "d000__c_witch": "d000__t_entity",
+    "d000__c_apple": "d000__t_item",
+    "d000__c_bread_piece": "d000__t_item",
+    "d000__c_brushwood": "d000__t_item",
+    "d000__c_cake": "d000__t_item",
+    "d000__c_crumb": "d000__t_item",
+    "d000__c_kettle": "d000__t_item",
+    "d000__c_milk": "d000__t_item",
+    "d000__c_nut": "d000__t_item",
+    "d000__c_oven": "d000__t_item",
+    "d000__c_pancake": "d000__t_item",
+    "d000__c_pearl": "d000__t_item",
+    "d000__c_pebble": "d000__t_item",
+    "d000__c_precious_stone": "d000__t_item",
+    "d000__c_sugar_window": "d000__t_item",
+    "d000__c_branch": "d000__t_location",
+    "d000__c_cottage": "d000__t_location",
+    "d000__c_dead_tree": "d000__t_location",
+    "d000__c_door": "d000__t_location",
+    "d000__c_father_house": "d000__t_location",
+    "d000__c_forest": "d000__t_location",
+    "d000__c_hill": "d000__t_location",
+    "d000__c_lake": "d000__t_location",
+    "d000__c_path": "d000__t_location",
+    "d000__c_roof": "d000__t_location",
+    "d000__c_room": "d000__t_location",
+    "d000__c_stable_location": "d000__t_location",
+    "d000__c_window": "d000__t_location",
+    "d001__c_brown_hen": "d001__t_entity",
+    "d001__c_butcher": "d001__t_entity",
+    "d001__c_fairy_maiden": "d001__t_entity",
+    "d001__c_giant": "d001__t_entity",
+    "d001__c_giant_dog": "d001__t_entity",
+    "d001__c_giant_wife": "d001__t_entity",
+    "d001__c_jack": "d001__t_entity",
+    "d001__c_jack_mother": "d001__t_entity",
+    "d001__c_milky_white": "d001__t_entity",
+    "d001__c_axe": "d001__t_item",
+    "d001__c_gold_bag_1": "d001__t_item",
+    "d001__c_gold_bag_2": "d001__t_item",
+    "d001__c_golden_harp": "d001__t_item",
+    "d001__c_magic_beans": "d001__t_item",
+    "d001__c_oak_tree_club": "d001__t_item",
+    "d001__c_beanstalk": "d001__t_location",
+    "d001__c_castle_road": "d001__t_location",
+    "d001__c_cottage": "d001__t_location",
+    "d001__c_garden": "d001__t_location",
+    "d001__c_giant_castle": "d001__t_location",
+    "d001__c_kettle": "d001__t_location",
+    "d001__c_market": "d001__t_location",
+    "d001__c_oven": "d001__t_location",
+    "d001__c_window": "d001__t_location",
+    "d002__c_boar": "d002__t_entity",
+    "d002__c_dove": "d002__t_entity",
+    "d002__c_dwarf1": "d002__t_entity",
+    "d002__c_dwarf2": "d002__t_entity",
+    "d002__c_dwarf3": "d002__t_entity",
+    "d002__c_dwarf4": "d002__t_entity",
+    "d002__c_dwarf5": "d002__t_entity",
+    "d002__c_dwarf6": "d002__t_entity",
+    "d002__c_dwarf7": "d002__t_entity",
+    "d002__c_huntsman": "d002__t_entity",
+    "d002__c_king": "d002__t_entity",
+    "d002__c_owl": "d002__t_entity",
+    "d002__c_prince": "d002__t_entity",
+    "d002__c_queen": "d002__t_entity",
+    "d002__c_raven": "d002__t_entity",
+    "d002__c_snow_white": "d002__t_entity",
+    "d002__c_apple": "d002__t_item",
+    "d002__c_bed": "d002__t_item",
+    "d002__c_blood_drop": "d002__t_item",
+    "d002__c_boar_heart": "d002__t_item",
+    "d002__c_candle": "d002__t_item",
+    "d002__c_coffin": "d002__t_item",
+    "d002__c_comb": "d002__t_item",
+    "d002__c_fork": "d002__t_item",
+    "d002__c_golden_letter": "d002__t_item",
+    "d002__c_iron_slippers": "d002__t_item",
+    "d002__c_knife": "d002__t_item",
+    "d002__c_lace": "d002__t_item",
+    "d002__c_looking_glass": "d002__t_item",
+    "d002__c_mug": "d002__t_item",
+    "d002__c_needle": "d002__t_item",
+    "d002__c_plate": "d002__t_item",
+    "d002__c_red_hot_shoes": "d002__t_item",
+    "d002__c_salt": "d002__t_item",
+    "d002__c_spoon": "d002__t_item",
+    "d002__c_cottage": "d002__t_location",
+    "d002__c_forest": "d002__t_location",
+    "d002__c_mountain": "d002__t_location"
+  },
+  "predicate_orders": {
+    "HANS_NP": {
+      "at": [
+        0,
+        1
+      ],
+      "bird_heard": [
+        0,
+        1
+      ],
+      "bread_given": [
+        0
+      ],
+      "captured": [
+        0
+      ],
+      "collected": [
+        0,
+        1
+      ],
+      "crossed_lake": [
+        0
+      ],
+      "crumb_on_path": [
+        0
+      ],
+      "dead": [
+        0
+      ],
+      "duck_helped": [
+        0,
+        1
+      ],
+      "fire_lit": [
+        0
+      ],
+      "has": [
+        0,
+        1
+      ],
+      "locked": [
+        0
+      ],
+      "lost": [
+        0
+      ],
+      "pebble_on_path": [
+        0
+      ],
+      "reunited_with_father": [
+        0
+      ]
+    },
+    "JACK_NP": {
+      "asleep": [
+        0
+      ],
+      "at": [
+        0,
+        1
+      ],
+      "at_item": [
+        0,
+        1
+      ],
+      "beanstalk_grown": [],
+      "climbing_down": [
+        0
+      ],
+      "dead": [
+        0
+      ],
+      "distracted": [
+        0
+      ],
+      "empty": [
+        0
+      ],
+      "has": [
+        0,
+        1
+      ],
+      "has_breakfast": [
+        0
+      ],
+      "inside": [
+        0,
+        1
+      ],
+      "intact": [
+        0
+      ],
+      "offers": [
+        0,
+        1
+      ],
+      "on": [
+        0,
+        1
+      ],
+      "planted": [
+        0
+      ]
+    },
+    "SNOW": {
+      "alive": [
+        0
+      ],
+      "at": [
+        0,
+        1
+      ],
+      "at_item": [
+        0,
+        1
+      ],
+      "awake": [
+        0
+      ],
+      "dead": [
+        0
+      ],
+      "disguised_as": [
+        0,
+        1
+      ],
+      "envious": [
+        0
+      ],
+      "fair": [
+        0
+      ],
+      "fairest": [
+        0
+      ],
+      "has": [
+        0,
+        1
+      ],
+      "in_coffin": [
+        0
+      ],
+      "laced": [
+        0,
+        1
+      ],
+      "poisoned": [
+        0
+      ],
+      "sleeping": [
+        0
+      ],
+      "visited": [
+        0,
+        1
+      ],
+      "wearing": [
+        0,
+        1
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "HANS_NP": {
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "bird_heard": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "bread_given": [
+        "d000__t_entity"
+      ],
+      "captured": [
+        "d000__t_entity"
+      ],
+      "collected": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "crossed_lake": [
+        "d000__t_entity"
+      ],
+      "crumb_on_path": [
+        "d000__t_location"
+      ],
+      "dead": [
+        "d000__t_entity"
+      ],
+      "duck_helped": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "fire_lit": [
+        "d000__t_location"
+      ],
+      "has": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "locked": [
+        "d000__t_location"
+      ],
+      "lost": [
+        "d000__t_entity"
+      ],
+      "pebble_on_path": [
+        "d000__t_location"
+      ],
+      "reunited_with_father": [
+        "d000__t_entity"
+      ]
+    },
+    "JACK_NP": {
+      "asleep": [
+        "d001__t_entity"
+      ],
+      "at": [
+        "d001__t_entity",
+        "d001__t_location"
+      ],
+      "at_item": [
+        "d001__t_item",
+        "d001__t_location"
+      ],
+      "beanstalk_grown": [],
+      "climbing_down": [
+        "d001__t_entity"
+      ],
+      "dead": [
+        "d001__t_entity"
+      ],
+      "distracted": [
+        "d001__t_entity"
+      ],
+      "empty": [
+        "d001__t_item"
+      ],
+      "has": [
+        "d001__t_entity",
+        "d001__t_item"
+      ],
+      "has_breakfast": [
+        "d001__t_entity"
+      ],
+      "inside": [
+        "d001__t_entity",
+        "d001__t_item"
+      ],
+      "intact": [
+        "d001__t_location"
+      ],
+      "offers": [
+        "d001__t_entity",
+        "d001__t_item"
+      ],
+      "on": [
+        "d001__t_item",
+        "d001__t_location"
+      ],
+      "planted": [
+        "d001__t_item"
+      ]
+    },
+    "SNOW": {
+      "alive": [
+        "d002__t_entity"
+      ],
+      "at": [
+        "d002__t_entity",
+        "d002__t_location"
+      ],
+      "at_item": [
+        "d002__t_item",
+        "d002__t_location"
+      ],
+      "awake": [
+        "d002__t_entity"
+      ],
+      "dead": [
+        "d002__t_entity"
+      ],
+      "disguised_as": [
+        "d002__t_entity",
+        "d002__t_entity"
+      ],
+      "envious": [
+        "d002__t_entity"
+      ],
+      "fair": [
+        "d002__t_entity"
+      ],
+      "fairest": [
+        "d002__t_entity"
+      ],
+      "has": [
+        "d002__t_entity",
+        "d002__t_item"
+      ],
+      "in_coffin": [
+        "d002__t_entity"
+      ],
+      "laced": [
+        "d002__t_entity",
+        "d002__t_item"
+      ],
+      "poisoned": [
+        "d002__t_item"
+      ],
+      "sleeping": [
+        "d002__t_entity"
+      ],
+      "visited": [
+        "d002__t_entity",
+        "d002__t_location"
+      ],
+      "wearing": [
+        "d002__t_entity",
+        "d002__t_item"
+      ]
+    }
+  },
+  "source_sha256": {
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e"
+    },
+    "type_groups": [
+      {
+        "members": [
+          "HANS_NP:entity",
+          "JACK_NP:entity",
+          "SNOW:entity"
+        ],
+        "evidence": "Explicit shared character roles"
+      },
+      {
+        "members": [
+          "HANS_NP:item",
+          "SNOW:item"
+        ],
+        "evidence": "Explicit shared comb prop"
+      }
+    ],
+    "predicate_groups": [
+      {
+        "id": "possession",
+        "evidence": "Authored shared entity-item possession, not independent gold",
+        "members": [
+          {
+            "predicate": "HANS_NP:has",
+            "order": [
+              0,
+              1
+            ]
+          },
+          {
+            "predicate": "SNOW:has",
+            "order": [
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

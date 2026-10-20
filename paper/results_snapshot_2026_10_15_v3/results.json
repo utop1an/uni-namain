@@ -1,0 +1,144 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-14T17:21:06.292960+00:00",
+  "index_sha256": "6eee8cf89599c773bbb561ca254c369eddb167b8547db81cb459bf085085fab6",
+  "results": {
+    "original_source_planning": {
+      "path": "data\\validation\\downward_sources_2026_10_15_v1\\report.json",
+      "sha256": "1649924466bb8cb17fcb63a5e1e68f1788cf43e0f81ce86da5a9147a213603f8",
+      "scope": "Original local source worlds and goals",
+      "metrics": {
+        "task_count": 15,
+        "status_counts": {
+          "solved": 6,
+          "unsolvable": 8,
+          "memory_limit": 1
+        }
+      }
+    },
+    "auxiliary_probe_planning": {
+      "path": "data\\validation\\downward_probes_2026_10_15_v1\\report.json",
+      "sha256": "dce9396b860f00a918903e864866b46389c1dcb84de342f0bebaca2f59a4c435",
+      "scope": "Auxiliary goals; original initial worlds retained",
+      "metrics": {
+        "task_count": 45,
+        "status_counts": {
+          "solved": 26,
+          "unsolvable": 19
+        }
+      }
+    },
+    "current_source_trace_replay": {
+      "path": "data\\validation\\downward_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "ecc682fab4396e48965ad852f517c0fd9d9a32f8ca720173c7ce74f921cbbf9e",
+      "scope": "Post-capture-fix membership compilation; availability remains 6/15",
+      "metrics": {
+        "source_count": 15,
+        "source_plan_count": 6,
+        "valid_translations": 6,
+        "counts": {
+          "VALID": 6,
+          "no_source_plan_evidence": 9
+        }
+      }
+    },
+    "current_probe_trace_replay": {
+      "path": "data\\validation\\probe_type_replay_2026_10_15_v2\\report.json",
+      "sha256": "4841039fe26215a90d52c8f2843d90c63d5edb316b682eaa24500d5ba2d2e019",
+      "scope": "Post-capture-fix membership compilation; auxiliary probe denominator 45",
+      "metrics": {
+        "probe_count": 45,
+        "available_probe_plans": 26,
+        "validated_probe_plans": 26,
+        "counts": {
+          "VALID": 26,
+          "no_probe_plan_evidence": 19
+        }
+      }
+    },
+    "current_probe_state_equivalence": {
+      "path": "data\\validation\\probe_type_states_2026_10_15_v2\\report.json",
+      "sha256": "7448e8682cacbebef2c1704c01356bac1ee07a26f7faffea88a575f4dadddc76",
+      "scope": "All source atoms along available probe trajectories, not all reachable states",
+      "metrics": {
+        "probe_count": 45,
+        "counts": {
+          "PASS": 26,
+          "no_valid_probe_trace": 19
+        },
+        "truth_comparisons": 52116,
+        "states_compared": 73
+      }
+    },
+    "goal_directed_development": {
+      "path": "data\\validation\\downward_composed_2026_10_15_v1\\report.json",
+      "sha256": "6a7e363b8be0ff3e63a399730c285d5f48fa71eca55427e4bff4b8065c65f566",
+      "scope": "Authored worlds/interfaces; same-export solver comparison",
+      "metrics": {
+        "task_count": 18,
+        "status_counts": {
+          "unsolvable": 9,
+          "solved": 9
+        }
+      }
+    },
+    "initial_only_development": {
+      "path": "data\\validation\\initial_only_development_2026_10_15_v2\\report.json",
+      "sha256": "5f5cf8df93bdf799a3b79c05397c48a25d3cbb06bdd62fd99164f067af333906",
+      "scope": "Historical state-projection run before capture fix; 12 validated generated outcomes",
+      "metrics": {
+        "task_count": 6,
+        "counts": {
+          "outcomes_generated": 4,
+          "no_outcomes": 2
+        }
+      }
+    },
+    "finite_transition_control": {
+      "path": "data\\validation\\exhaustive_preservation_2026_10_15_v2\\report.json",
+      "sha256": "814e9f791745358f412783a7aafed840a7839606afa833e551eb0e833c88e6fa",
+      "scope": "Authored 256-state control after capture fix",
+      "metrics": {
+        "counts": {
+          "states": 256,
+          "ground_action_instances": 17,
+          "applicability_checks": 4352,
+          "applicable_transitions": 2048,
+          "goal_checks": 256,
+          "mismatches": 0
+        }
+      }
+    },
+    "capture_control": {
+      "path": "data\\validation\\quantifier_capture_2026_10_15_v1\\exhaustive_report.json",
+      "sha256": "5404eb86c3e37825c6bf40282b59592a17b7357464d25e0c62142ac495586a5e",
+      "scope": "Authored 16-state capture regression",
+      "metrics": {
+        "states": 16,
+        "action_bindings_checked": 32,
+        "before_mismatches": 8,
+        "after_mismatches": 0
+      }
+    },
+    "source_action_necessity": {
+      "path": "data\\validation\\downward_action_removal_2026_10_15_v1\\report.json",
+      "sha256": "245c3d4fd0227e1c65297e9e77e4007cf765382c7aaa712a076cde496d5dd87a",
+      "scope": "Source-action removal on six authored explicit-pair conditions; 18 tasks",
+      "metrics": {
+        "task_count": 18,
+        "status_counts": {
+          "unsolvable": 13,
+          "solved": 5
+        }
+      }
+    }
+  },
+  "excluded_pending": [
+    "Full fresh UniDomain reference still running",
+    "Coupled-schema live intervention not started",
+    "Independent semantic annotation files absent",
+    "Independent-source evaluation absent"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "4db707fadd62a35869faa4a95601f59eadda90c6319e41b2f38a450a240466d2"
+}

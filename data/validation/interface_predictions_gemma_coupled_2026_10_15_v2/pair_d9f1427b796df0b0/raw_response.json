@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:38:12.3682294Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_d9f1427b796df0b0\", \"label\": \"complementary\", \"right_from_left\": null, \"rationale\": \"The predicate `arrested` describes a state of being detained, typically by a law enforcement entity, while the predicate `has` describes possession of an item. These predicates represent fundamentally different concepts. `arrested` relates to legal status, whereas `has` relates to ownership. The action contexts further illustrate this difference: `arrested` involves a coercive action, while `has` describes a voluntary relationship. The `arrest_meteor` action explicitly involves detaining an entity, while the `buy_boots` action involves acquiring an item. Therefore, they are complementary – they describe distinct relationships between entities and items, but they are not interchangeable. The use of `entity` as a type parameter in both predicates reinforces this distinction.\", \"evidence\": [ {\"side\": 0, \"ref\": \"NAUG:action:arrest_meteor\", \"quote\": \"(arrested ?c ?m)\"}, {\"side\": 1, \"ref\": \"PUSS:action:buy_boots\", \"quote\": \"(has ?puss ?boots)\"}, {\"side\": 1, \"ref\": \"PUSS:action:cat_catch_rabbits\", \"quote\": \"(has ?puss ?bag)\"}, {\"side\": 1, \"ref\": \"PUSS:action:give_bag_to_cat\", \"quote\": \"(has ?puss ?bag)\"}, {\"side\": 1, \"ref\": \"PUSS:action:king_send_groom_fetch_suit\", \"quote\": \"(has ?groom ?suit)\"}, {\"side\": 1, \"ref\": \"PUSS:action:master_wear_suit\", \"quote\": \"(has ?jack ?suit)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4123354200,
+  "load_duration": 2810500,
+  "prompt_eval_count": 1173,
+  "prompt_eval_duration": 187941000,
+  "eval_count": 404,
+  "eval_duration": 3832479000
+}

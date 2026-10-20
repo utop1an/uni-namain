@@ -1,0 +1,401 @@
+{
+  "status": "complete",
+  "task_count": 18,
+  "frozen_tasks_sha256": "d468c7ff2e8b0a65158a948b247c62e2b9c0f4cdc1a38e2b395216b73a68f883",
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "elapsed_seconds": 36.078,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__all_domains",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.578,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "elapsed_seconds": 31.828,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "elapsed_seconds": 28.985,
+      "validation": "VALID",
+      "plan_length": 4,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__all_domains",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.25,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "elapsed_seconds": 33.11,
+      "validation": "VALID",
+      "plan_length": 4,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "elapsed_seconds": 31.078,
+      "validation": "VALID",
+      "plan_length": 3,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__all_domains",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.672,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "elapsed_seconds": 30.859,
+      "validation": "VALID",
+      "plan_length": 3,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "solved",
+      "elapsed_seconds": 31.188,
+      "validation": "VALID",
+      "plan_length": 3,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__all_domains",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.266,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "solved",
+      "elapsed_seconds": 35.5,
+      "validation": "VALID",
+      "plan_length": 3,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "elapsed_seconds": 38.282,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__all_domains",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.765,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "elapsed_seconds": 34.485,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "status": "incomplete",
+      "elapsed_seconds": 29.907,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__all_domains",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "status": "time_limit",
+      "elapsed_seconds": 62.468,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT",
+        "BUFF",
+        "CHIC_NP",
+        "FOUR_NP",
+        "HANS_NP",
+        "JACK_NP",
+        "MUSI",
+        "NAUG",
+        "PIGS_NP",
+        "PUSS",
+        "REMA_NP",
+        "SNOW",
+        "SOUP",
+        "WOE"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "status": "incomplete",
+      "elapsed_seconds": 38.953,
+      "validation": null,
+      "plan_length": null,
+      "domain_unchanged": true,
+      "selected": [
+        "ACCO",
+        "BIRT"
+      ],
+      "reason": null,
+      "source_problem_facts_imported": false
+    }
+  ],
+  "scope": "Authored matched-world development cases using observed source domains; not independent test or narrative-quality evaluation",
+  "status_counts": {
+    "incomplete": 6,
+    "time_limit": 6,
+    "solved": 6
+  },
+  "frozen_tasks_unchanged": true,
+  "implementation_unchanged": true,
+  "sources_unchanged": true,
+  "limit": "Matched inputs support mechanical comparison only; authored hypotheses and observed sources are not semantic gold"
+}

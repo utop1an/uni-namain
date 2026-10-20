@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:42:50.978173Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_4bac60ea7ff9d794\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicates `house` and `stone_at` represent different aspects of the environment. `house` describes a structure, while `stone_at` describes the location of a stone. The actions associated with each predicate involve distinct processes: building a house, destroying it, hiding something under a stone, and moving stones. The preconditions and effects of the actions further highlight these differences. For example, `house` actions involve building, intactness, and door states, whereas `stone_at` actions relate to the spatial positioning of stones. The predicates are complementary because they both deal with spatial relationships but focus on fundamentally different objects – a building versus a stone – and their respective states. The use of `?h` and `?i` in `house` and `?s` and `?l` in `stone_at` further emphasizes this distinction, representing the 'thing' and 'location' respectively. The action contexts demonstrate this by describing actions like 'build_house' and 'hide_woe_under_stone', which are distinct operations. The fact that both predicates use 'item' and 'location' as parameters reinforces their complementary relationship. The `story_or_learner_provenance` is not supplied, so we cannot determine if this relationship was learned or observed. The argument order is reversed to highlight the complementary relationship.\", \"evidence\": [ {\"side\": 1, \"ref\": \"WOE:action:hide_woe_under_stone\", \"quote\": \"(stone_at ?stone ?loc)\"}, {\"side\": 1, \"ref\": \"WOE:action:move_heavy_stone\", \"quote\": \"(stone_at ?stone ?loc)\"}, {\"side\": 1, \"ref\": \"WOE:action:rich_brother_attempt_to_move_stone\", \"quote\": \"(stone_at ?stone ?loc)\"}, {\"side\": 0, \"ref\": \"PIGS_NP:action:build_house\", \"quote\": \"(house ?h ?i)\"}, {\"side\": 0, \"ref\": \"PIGS_NP:action:wolf_blows_house_down\", \"quote\": \"(house ?h ?i)\"}, {\"side\": 0, \"ref\": \"PIGS_NP:action:wolf_fails_to_blow_house\", \"quote\": \"(house ?h ?i)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5330559700,
+  "load_duration": 2348300,
+  "prompt_eval_count": 1291,
+  "prompt_eval_duration": 212337000,
+  "eval_count": 551,
+  "eval_duration": 5048816000
+}

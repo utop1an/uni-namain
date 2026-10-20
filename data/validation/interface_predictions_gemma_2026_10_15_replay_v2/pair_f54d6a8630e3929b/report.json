@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_f54d6a8630e3929b",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_f54d6a8630e3929b",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `entity_at` appears in both sources with identical syntax and semantic meaning: it describes the spatial location of an entity. The action contexts demonstrate this consistently. The arguments `?e` and `?l` in the first source represent the entity and location respectively, mirroring the arguments `?t` and `?l` in the second source. The action contexts show that `entity_at` is used to specify the location of entities within the world. The different action references (FOUR_NP vs. PUSS) do not alter the fundamental relationship being expressed by the predicate. The arguments are permuted, but the core meaning remains the same. The use of `?e` and `?l` in the first source is equivalent to `?t` and `?l` in the second source, representing the same concepts.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:count_eggs",
+        "quote": "(entity_at ?a tree)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:fetch_eggs",
+        "quote": "(entity_at ?t tree)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_astronomer_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_hunter_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_tailor_trade",
+        "quote": "(entity_at ?b cross_way)"
+      },
+      {
+        "side": 0,
+        "ref": "FOUR_NP:action:learn_thief_trade",
+        "quote": "(entity_at ?b cross_way)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_f54d6a8630e3929b",
+    "missing_both_side_evidence:pair_f54d6a8630e3929b"
+  ]
+}

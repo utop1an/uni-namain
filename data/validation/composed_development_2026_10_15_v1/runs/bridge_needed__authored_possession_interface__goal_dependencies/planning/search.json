@@ -1,0 +1,22 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [],
+  "engine_status": "SOLVED_SATISFICING",
+  "status": "solved",
+  "length": 4,
+  "plan": "SequentialPlan:\n    d001__a_turn_key_on_beech(q__hero, q__token, q__stage)\n    d000__a_arrange_exhibition(q__hero, q__hero, q__token)\n    d000__a_perform_show(q__hero, q__token)\n    d000__a_receive_orders_from_nobility(q__hero)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

@@ -1,0 +1,556 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "alive",
+    "has"
+  ],
+  "reachable_predicates": [
+    "alive",
+    "at",
+    "at_item",
+    "awake",
+    "dead",
+    "disguised_as",
+    "envious",
+    "fair",
+    "fairest",
+    "has",
+    "in_coffin",
+    "laced",
+    "poisoned",
+    "sleeping",
+    "visited",
+    "wearing"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "child_is_born_and_queen_dies",
+        "huntsman_spares_snow_white_and_brings_boar_heart",
+        "king_marries_stepmother",
+        "prince_marries_snow_white",
+        "queen_pricks_finger",
+        "queen_wishes_child_white_red_black",
+        "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+        "snow_white_finds_dwarfs_cottage",
+        "snow_white_flees_into_forest",
+        "snow_white_sleeps_in_seventh_bed",
+        "stepmother_asks_looking_glass_fairest",
+        "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+        "stepmother_disguises_as_old_woman_and_visits_cottage",
+        "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+        "stepmother_laces_snow_white_tightly",
+        "stepmother_makes_poisonous_apple_and_visits_cottage",
+        "stepmother_makes_poisonous_comb_and_visits_cottage"
+      ],
+      "new_predicates": [
+        "at",
+        "dead",
+        "disguised_as",
+        "fair",
+        "fairest",
+        "laced",
+        "poisoned",
+        "sleeping",
+        "visited",
+        "wearing"
+      ]
+    },
+    {
+      "actions": [
+        "apple_piece_falls_out_reviving_snow_white",
+        "dwarfs_cut_laces_rescue_snow_white",
+        "dwarfs_offer_snow_white_to_maintain_house",
+        "dwarfs_prepare_glass_coffin_for_snow_white",
+        "dwarfs_remove_comb_rescue_snow_white",
+        "dwarfs_return_and_discover_snow_white",
+        "queen_sews_at_window",
+        "snow_white_eats_poisoned_apple_and_dies",
+        "stepmother_becomes_envious_of_snow_white",
+        "stepmother_comb_poison_snow_white"
+      ],
+      "new_predicates": [
+        "awake",
+        "envious",
+        "in_coffin"
+      ]
+    },
+    {
+      "actions": [
+        "prince_discovers_coffin_and_moves_it",
+        "stepmother_orders_huntsman_to_kill_snow_white"
+      ],
+      "new_predicates": [
+        "at_item"
+      ]
+    }
+  ],
+  "unfired_actions": [],
+  "rules": [
+    {
+      "action": "apple_piece_falls_out_reviving_snow_white",
+      "condition": [
+        "and",
+        [
+          "dead",
+          "?c"
+        ],
+        [
+          "poisoned",
+          "?apple"
+        ]
+      ],
+      "adds": [
+        "alive"
+      ]
+    },
+    {
+      "action": "child_is_born_and_queen_dies",
+      "condition": [
+        "and",
+        [
+          "not",
+          [
+            "alive",
+            "?c"
+          ]
+        ],
+        [
+          "alive",
+          "?q"
+        ]
+      ],
+      "adds": [
+        "alive",
+        "dead"
+      ]
+    },
+    {
+      "action": "dwarfs_cut_laces_rescue_snow_white",
+      "condition": [
+        "and",
+        [
+          "laced",
+          "?c",
+          "?lace"
+        ],
+        [
+          "dead",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "alive",
+        "awake"
+      ]
+    },
+    {
+      "action": "dwarfs_offer_snow_white_to_maintain_house",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?d"
+        ],
+        [
+          "alive",
+          "?c"
+        ],
+        [
+          "sleeping",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "awake"
+      ]
+    },
+    {
+      "action": "dwarfs_prepare_glass_coffin_for_snow_white",
+      "condition": [
+        "dead",
+        "?c"
+      ],
+      "adds": [
+        "has",
+        "in_coffin"
+      ]
+    },
+    {
+      "action": "dwarfs_remove_comb_rescue_snow_white",
+      "condition": [
+        "and",
+        [
+          "dead",
+          "?c"
+        ],
+        [
+          "poisoned",
+          "?comb"
+        ],
+        [
+          "has",
+          "?d",
+          "?comb"
+        ]
+      ],
+      "adds": [
+        "alive"
+      ]
+    },
+    {
+      "action": "dwarfs_return_and_discover_snow_white",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?d"
+        ],
+        [
+          "sleeping",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "awake"
+      ]
+    },
+    {
+      "action": "huntsman_spares_snow_white_and_brings_boar_heart",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?h"
+        ],
+        [
+          "alive",
+          "?c"
+        ],
+        [
+          "alive",
+          "?b"
+        ]
+      ],
+      "adds": [
+        "dead",
+        "has"
+      ]
+    },
+    {
+      "action": "king_marries_stepmother",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?k"
+        ],
+        [
+          "alive",
+          "?s"
+        ]
+      ],
+      "adds": [
+        "fair"
+      ]
+    },
+    {
+      "action": "prince_discovers_coffin_and_moves_it",
+      "condition": [
+        "and",
+        [
+          "in_coffin",
+          "?c"
+        ],
+        [
+          "alive",
+          "?p"
+        ]
+      ],
+      "adds": [
+        "at_item"
+      ]
+    },
+    {
+      "action": "prince_marries_snow_white",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?p"
+        ],
+        [
+          "alive",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "fair"
+      ]
+    },
+    {
+      "action": "queen_pricks_finger",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?q"
+        ],
+        [
+          "has",
+          "?q",
+          "?needle"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "queen_sews_at_window",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?q"
+        ],
+        [
+          "at",
+          "?q",
+          "?l"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "queen_wishes_child_white_red_black",
+      "condition": [
+        "alive",
+        "?q"
+      ],
+      "adds": [
+        "fair"
+      ]
+    },
+    {
+      "action": "snow_white_eats_poisoned_apple_and_dies",
+      "condition": [
+        "and",
+        [
+          "poisoned",
+          "?apple"
+        ],
+        [
+          "alive",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "condition": [
+        "alive",
+        "?c"
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "snow_white_finds_dwarfs_cottage",
+      "condition": [
+        "alive",
+        "?c"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "snow_white_flees_into_forest",
+      "condition": [
+        "alive",
+        "?c"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "snow_white_sleeps_in_seventh_bed",
+      "condition": [
+        "alive",
+        "?c"
+      ],
+      "adds": [
+        "sleeping"
+      ]
+    },
+    {
+      "action": "stepmother_asks_looking_glass_fairest",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?s"
+        ],
+        [
+          "has",
+          "?s",
+          "?g"
+        ]
+      ],
+      "adds": [
+        "fairest"
+      ]
+    },
+    {
+      "action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "condition": [
+        "alive",
+        "?s"
+      ],
+      "adds": [
+        "dead",
+        "wearing"
+      ]
+    },
+    {
+      "action": "stepmother_becomes_envious_of_snow_white",
+      "condition": [
+        "and",
+        [
+          "fairest",
+          "?c"
+        ],
+        [
+          "fair",
+          "?c"
+        ],
+        [
+          "alive",
+          "?s"
+        ]
+      ],
+      "adds": [
+        "envious"
+      ]
+    },
+    {
+      "action": "stepmother_comb_poison_snow_white",
+      "condition": [
+        "and",
+        [
+          "has",
+          "?s",
+          "?comb"
+        ],
+        [
+          "poisoned",
+          "?comb"
+        ],
+        [
+          "alive",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+      "condition": [
+        "alive",
+        "?s"
+      ],
+      "adds": [
+        "disguised_as",
+        "visited"
+      ]
+    },
+    {
+      "action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "condition": [
+        "has",
+        "?s",
+        "?heart"
+      ],
+      "adds": []
+    },
+    {
+      "action": "stepmother_laces_snow_white_tightly",
+      "condition": [
+        "and",
+        [
+          "alive",
+          "?c"
+        ],
+        [
+          "has",
+          "?c",
+          "?lace"
+        ]
+      ],
+      "adds": [
+        "dead",
+        "laced"
+      ]
+    },
+    {
+      "action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "condition": [
+        "alive",
+        "?s"
+      ],
+      "adds": [
+        "has",
+        "poisoned",
+        "visited"
+      ]
+    },
+    {
+      "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+      "condition": [
+        "alive",
+        "?s"
+      ],
+      "adds": [
+        "has",
+        "poisoned",
+        "visited"
+      ]
+    },
+    {
+      "action": "stepmother_orders_huntsman_to_kill_snow_white",
+      "condition": [
+        "and",
+        [
+          "envious",
+          "?s"
+        ],
+        [
+          "alive",
+          "?h"
+        ],
+        [
+          "alive",
+          "?c"
+        ]
+      ],
+      "adds": [
+        "fair"
+      ]
+    }
+  ],
+  "source_domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+  "source_problem_sha256": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

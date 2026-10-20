@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "date": "2026-10-19",
+  "status": "design_fixed_execution_not_frozen",
+  "supersedes_for_new_runs": "paper/evaluation_protocol_2026_10_15.json",
+  "historical_results_unchanged": true,
+  "research_questions": [
+    "Do action context, participant roles and joint consistency improve correspondence precision and argument maps?",
+    "Do independently assessed interfaces enable semantically warranted cross-source solutions on supplied worlds without source-local regressions?",
+    "What preservation guarantees and computational costs arise, and how does whole-domain selection affect them?"
+  ],
+  "development": {
+    "observed_local_sources": 15,
+    "external_observed_family": "Basketball",
+    "existing_100_pair_packet": "data/annotation/interface_development_2026_10_15_v1/packet.json",
+    "independent_labels_available": false,
+    "upstream_local_learning_provenance": "unknown",
+    "relabel_as_unseen_test": false
+  },
+  "candidate_test_admission": {
+    "target_unseen_families": [3, 5],
+    "target_is_not_observed_count": true,
+    "required": ["artifact provenance and hashes", "family overlap audit", "supported semantics audit", "split before tuning", "world and goals fixed independently of success", "explicit identity and membership assumptions"],
+    "inspection_used_for_tuning_moves_case_to_development": true,
+    "unsupported_intentional_or_epistemic_semantics": "reject or evaluate in a separately declared setting; do not silently strip"
+  },
+  "interface_conditions": ["name_type_baseline", "context_llm", "context_role_permutation", "context_role_permutation_joint_consistency"],
+  "planning_conditions": ["source_isolated", "namespaced_union", "zero_merge_membership", "independently_reviewed_alignment", "automatic_alignment", "fresh_unidomain"],
+  "selection_conditions": ["all_domains", "goal_dependencies"],
+  "comparability": {
+    "fixed": ["explicit world", "objects and identities", "goal meaning", "planner version and configuration", "search wall and memory budget"],
+    "unsupported_representations": "retain as unsupported rows; do not change worlds to force comparability",
+    "source_isolated_cross_source_goal": "retain not_representable when appropriate, not solver-unsolvable",
+    "zero_merge_membership": "separate encoding control to isolate predicate alignment from representation changes",
+    "budgets": "TBD before execution; no run is preregistered by this design document",
+    "stochastic_repeats_target": 3,
+    "cache_continuation": "separate extended-budget condition",
+    "initial_only": "separate generated-outcome evaluation, never original-goal success"
+  },
+  "semantic_scoring": {
+    "reference": "two declared-independent judgments, raw files retained; agreement alone is not semantic truth",
+    "primary_subset": "exact label and argument-map consensus excluding uncertain",
+    "other_rows": "missing, disagreement and uncertain retained as separate coverage counts; adjudication separate version",
+    "failure_policy": "invalid, failed and excluded outputs stay in the definite-reference denominator",
+    "metrics": ["label confusion", "merge precision", "merge recall", "exact-map merge precision", "exact-map merge recall", "permutation accuracy", "annotation coverage", "output-status counts"],
+    "sampling": "existing stratified sample supports descriptive sample metrics only; no unweighted population prevalence",
+    "candidate_generation_recall": "requires a separately defined independently labeled candidate universe",
+    "analysis_unit": "source family; do not treat correlated tasks or predicate pairs as independent domains"
+  },
+  "execution_freeze_required": ["source and task bytes", "family split", "candidate inclusion rules", "interface inputs", "code and dependency hashes", "model digest", "prompt and decoding options", "seeds", "worker count", "per-stage and total budgets", "failure and stop rules"],
+  "decision_gates": [
+    {"date": "2026-10-22", "deliverable": "contribution and data admission decisions"},
+    {"date": "2026-11-05", "deliverable": "independent labels and frozen test bundle"},
+    {"date": "2026-11-12", "deliverable": "matched results; choose supported paper scope"},
+    {"date": "2026-11-19", "deliverable": "ablations, scaling and proof review"},
+    {"date": "2026-11-26", "deliverable": "evidence-backed manuscript"},
+    {"date": "2026-12-03", "deliverable": "reproduction and adversarial review"}
+  ],
+  "do_not_claim": ["automatic semantic accuracy from format checks", "narrative quality from plan validity", "unseen-family generalization from known-source variants", "novelty from module flattening or static membership alone"]
+}

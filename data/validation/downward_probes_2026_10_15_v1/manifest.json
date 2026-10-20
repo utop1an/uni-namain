@@ -1,0 +1,498 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "0128e134c39c21e02ca4086a260a50177e71c7db07527e8e08c0636eb1056768",
+  "budget": {
+    "wall_seconds": 60,
+    "overall_cpu_seconds": 60,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "ACCO__probe_0",
+      "source": "ACCO",
+      "goal": [
+        "has",
+        "princess",
+        "pack"
+      ],
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "e71d36255508e6c33b88a65d45c2cc7b3bf75d62f9e3e7f3a7afe479e974c661"
+    },
+    {
+      "id": "ACCO__probe_1",
+      "source": "ACCO",
+      "goal": [
+        "contained_in",
+        "box",
+        "teakettle"
+      ],
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "c9fd4a13f64a33a4d51e8514603fd7a11f0d4a3bbb083fd33879ca0606b9939d"
+    },
+    {
+      "id": "ACCO__probe_2",
+      "source": "ACCO",
+      "goal": [
+        "has",
+        "friend",
+        "temple_treasure"
+      ],
+      "domain_sha256": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "problem_sha256": "06eb89f6eff7f06cc9ba79cf713f816dac20a5424f06c9a27da793510f006a18"
+    },
+    {
+      "id": "BIRT__probe_0",
+      "source": "BIRT",
+      "goal": [
+        "stairs_descended",
+        "nora"
+      ],
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "b923613b99ccab8baa37ad1a4bfb5a447ff1616842f6c2c8bf218a56ceeebf8e"
+    },
+    {
+      "id": "BIRT__probe_1",
+      "source": "BIRT",
+      "goal": [
+        "pellet_eaten",
+        "grandmotherkin"
+      ],
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "15c147ea664c4a97c1cde4674c6d7c0dabbd382db76a3119f51dbfcba947aa24"
+    },
+    {
+      "id": "BIRT__probe_2",
+      "source": "BIRT",
+      "goal": [
+        "door_open",
+        "door"
+      ],
+      "domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "problem_sha256": "dca88eb5ca9de4844f6606524aba5bccd5cdc5f14bcd627a9496fe0cc04eede5"
+    },
+    {
+      "id": "BUFF__probe_0",
+      "source": "BUFF",
+      "goal": [
+        "countryman_performs_with_real_pig",
+        "buffoon",
+        "little_pig"
+      ],
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "432e029159c80adc6bb38e2092865be129e30615a2b032ec0ec48fb5e65bba54"
+    },
+    {
+      "id": "BUFF__probe_1",
+      "source": "BUFF",
+      "goal": [
+        "imitates_pig",
+        "countryman"
+      ],
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "9f60c6a60831c22fd474cb5473c3fa00953a580cd90fcc21c34297c80fcc7dc0"
+    },
+    {
+      "id": "BUFF__probe_2",
+      "source": "BUFF",
+      "goal": [
+        "audience_calls_for_kickout",
+        "rich_nobleman",
+        "audience"
+      ],
+      "domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "problem_sha256": "d9cb27ce088cded99538b4291c114ecf27f3de8d73000ca47a073409518d681b"
+    },
+    {
+      "id": "CHIC_NP__probe_0",
+      "source": "CHIC_NP",
+      "goal": [
+        "met",
+        "Goose-loose",
+        "Duck-luck"
+      ],
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "e7af7cbbd2e12c169c825fa25859869eb4ef436fb10c537e2279aa6ce67c861b"
+    },
+    {
+      "id": "CHIC_NP__probe_1",
+      "source": "CHIC_NP",
+      "goal": [
+        "following_fox",
+        "Hen-len"
+      ],
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "1cb334873966ce13dd15639abe1a8bfe48cfc6c0bdfed4cc37bd14c4174d3586"
+    },
+    {
+      "id": "CHIC_NP__probe_2",
+      "source": "CHIC_NP",
+      "goal": [
+        "met",
+        "Duck-luck",
+        "Goose-loose"
+      ],
+      "domain_sha256": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "problem_sha256": "2a131274d7518740a1791a41cb27c58ed8c714013b974232e2381d5e26696e30"
+    },
+    {
+      "id": "FOUR_NP__probe_0",
+      "source": "FOUR_NP",
+      "goal": [
+        "reward_received",
+        "brother_astronomer"
+      ],
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "418224b7fc275580ee816560ca65b90f92fabe33b3bf8292f36283f1cb64dfe3"
+    },
+    {
+      "id": "FOUR_NP__probe_1",
+      "source": "FOUR_NP",
+      "goal": [
+        "is_hunter",
+        "brother_thief"
+      ],
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "e9893e037cac0b566f4e8344179b7e6ab57bf442792978649c7920582aaa0e80"
+    },
+    {
+      "id": "FOUR_NP__probe_2",
+      "source": "FOUR_NP",
+      "goal": [
+        "has",
+        "king",
+        "telescope"
+      ],
+      "domain_sha256": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "problem_sha256": "134f5d4caa992fb8ff95ce7a2f5308171c126efe1c8c25f4786b08760d031692"
+    },
+    {
+      "id": "HANS_NP__probe_0",
+      "source": "HANS_NP",
+      "goal": [
+        "pebble_on_path",
+        "stable_location"
+      ],
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "5490d71c79af9326f4ed7077dc1d472034c666f11fcd8d73bf7c65f02924b284"
+    },
+    {
+      "id": "HANS_NP__probe_1",
+      "source": "HANS_NP",
+      "goal": [
+        "collected",
+        "mother",
+        "crumb"
+      ],
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "5c90cdf8e5f5f9424d523a0c68bddbabf03307ae78bea4e347fd3359f4bdf3be"
+    },
+    {
+      "id": "HANS_NP__probe_2",
+      "source": "HANS_NP",
+      "goal": [
+        "at",
+        "father",
+        "room"
+      ],
+      "domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "problem_sha256": "810816cf7de7d7bccf3787832e6117cf7a74692c0fcddef6fb7c5a325cd93971"
+    },
+    {
+      "id": "JACK_NP__probe_0",
+      "source": "JACK_NP",
+      "goal": [
+        "dead",
+        "jack"
+      ],
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "d053d095f0ed2eaefe8f8d3bee5502e9cf9292af04fcebb65e445857b197e941"
+    },
+    {
+      "id": "JACK_NP__probe_1",
+      "source": "JACK_NP",
+      "goal": [
+        "inside",
+        "jack",
+        "oak_tree_club"
+      ],
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "53a4a2796b1fc58281bf8bad9e5c9d7f584e25b51762d70af6c7b45fb0b98c87"
+    },
+    {
+      "id": "JACK_NP__probe_2",
+      "source": "JACK_NP",
+      "goal": [
+        "has_breakfast",
+        "brown_hen"
+      ],
+      "domain_sha256": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "problem_sha256": "b23fa6ac4ff68e2b3da997b7d1876a86f6d3fbae4dcbad4713acd7122879b1a5"
+    },
+    {
+      "id": "MUSI__probe_0",
+      "source": "MUSI",
+      "goal": [
+        "kick",
+        "ass",
+        "ass"
+      ],
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "10992f0633f22ddc6aaf96842a0cdb746c626364553820fab6f4d05a14c87104"
+    },
+    {
+      "id": "MUSI__probe_1",
+      "source": "MUSI",
+      "goal": [
+        "agreed",
+        "messenger",
+        "captain"
+      ],
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "31cc20c9f9abc2a118938b9070a0deacebe3b80dbfadaeaba2ae4d9ec84be63f"
+    },
+    {
+      "id": "MUSI__probe_2",
+      "source": "MUSI",
+      "goal": [
+        "resting",
+        "cat"
+      ],
+      "domain_sha256": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "problem_sha256": "ced4c280a6ba64fde6a1f70143665fb5088d2515cb1d3a4a4c7a3e15f33044b4"
+    },
+    {
+      "id": "NAUG__probe_0",
+      "source": "NAUG",
+      "goal": [
+        "delivered",
+        "short_tail_73",
+        "bungo"
+      ],
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "6fb4bc7da4cb91b2fa99d76cc9b695cd45ba27785be0a8556e6a1772d73707f0"
+    },
+    {
+      "id": "NAUG__probe_1",
+      "source": "NAUG",
+      "goal": [
+        "arrested",
+        "long_tail_45",
+        "meteor_keeper"
+      ],
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "b3fa41f38e10008c2d30e9924876d4751ab0d1d72199f5fa778caa57257c3fa6"
+    },
+    {
+      "id": "NAUG__probe_2",
+      "source": "NAUG",
+      "goal": [
+        "traveling",
+        "comet_master"
+      ],
+      "domain_sha256": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "problem_sha256": "8d70d15f8cdc4c8b29d4fb56e9e955449393b5d981c0e8284c1add0251f7cb51"
+    },
+    {
+      "id": "PIGS_NP__probe_0",
+      "source": "PIGS_NP",
+      "goal": [
+        "puffed",
+        "pig1"
+      ],
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "b0e2566e6dcfd7f8f22137902d1d2aa1291bc0823699fffc759e318e3aa472e7"
+    },
+    {
+      "id": "PIGS_NP__probe_1",
+      "source": "PIGS_NP",
+      "goal": [
+        "has",
+        "man_straw",
+        "pot_of_water"
+      ],
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "f1dee44a917237fa4cc8d153f73742a4037e2f1d23b230de56e3d98d994f00db"
+    },
+    {
+      "id": "PIGS_NP__probe_2",
+      "source": "PIGS_NP",
+      "goal": [
+        "huffed",
+        "pig1"
+      ],
+      "domain_sha256": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "problem_sha256": "41d5d78edab08752cad836a31d6b244379323683f43388917ce8a6774f0794e4"
+    },
+    {
+      "id": "PUSS__probe_0",
+      "source": "PUSS",
+      "goal": [
+        "has",
+        "jack",
+        "suit"
+      ],
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "5f0bd05f493a7646a57f1e1b965e6979c4f39759627a8dd5118745fd252876c3"
+    },
+    {
+      "id": "PUSS__probe_1",
+      "source": "PUSS",
+      "goal": [
+        "contains",
+        "mill",
+        "hare"
+      ],
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "25f83da077021e6d03f6fd0de50f517b03d6aba5d6884e3efacf63f76fa08e7e"
+    },
+    {
+      "id": "PUSS__probe_2",
+      "source": "PUSS",
+      "goal": [
+        "rescued_by",
+        "groom",
+        "princess"
+      ],
+      "domain_sha256": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "problem_sha256": "a1ac032be90a9626f750a82914e91471178c5a0ee27077602f274259f33c00ef"
+    },
+    {
+      "id": "REMA_NP__probe_0",
+      "source": "REMA_NP",
+      "goal": [
+        "with_all_my_heart_spoken"
+      ],
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "f42c1687e0c0b18b06218c423e6d12c22b3b7ce23755a2d18fe29045e8b9d3ab"
+    },
+    {
+      "id": "REMA_NP__probe_1",
+      "source": "REMA_NP",
+      "goal": [
+        "grandmother_mangle_spoken"
+      ],
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "a94db9f3462222289ddb4b8ea665ab2f60dc05ff95a2949e69455f40d896ed61"
+    },
+    {
+      "id": "REMA_NP__probe_2",
+      "source": "REMA_NP",
+      "goal": [
+        "at",
+        "impostor_butterman",
+        "city"
+      ],
+      "domain_sha256": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "problem_sha256": "065738921849beaeed575fa17292ffbf8600d5880a9f2a5d419477faf3ac3ebc"
+    },
+    {
+      "id": "SNOW__probe_0",
+      "source": "SNOW",
+      "goal": [
+        "fair",
+        "dwarf2"
+      ],
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "c2686d217bc9b0f57140bb5d9acbc3ff4f8ca098d549509b59a003971daffdd4"
+    },
+    {
+      "id": "SNOW__probe_1",
+      "source": "SNOW",
+      "goal": [
+        "dead",
+        "boar"
+      ],
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "dd37cf250bbba7330d759a83cb381cfa8415acd9e974d236d5166c919689d5dd"
+    },
+    {
+      "id": "SNOW__probe_2",
+      "source": "SNOW",
+      "goal": [
+        "visited",
+        "king",
+        "forest"
+      ],
+      "domain_sha256": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "problem_sha256": "999dceb3510457f087536a221d547a2c0edd57c67c74134813da68126d36789c"
+    },
+    {
+      "id": "SOUP__probe_0",
+      "source": "SOUP",
+      "goal": [
+        "has_imagination",
+        "old_lady_mouse"
+      ],
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "76162b1c0fee730268f4af0593bdcbf274d48e248f27e40fab4933c2937f3821"
+    },
+    {
+      "id": "SOUP__probe_1",
+      "source": "SOUP",
+      "goal": [
+        "holds",
+        "old_lady_mouse",
+        "violet"
+      ],
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "d61c8310890a0a1bbe474a8ada33f02579824e9b36bab80754bc34c78fe12e28"
+    },
+    {
+      "id": "SOUP__probe_2",
+      "source": "SOUP",
+      "goal": [
+        "holds",
+        "jailer",
+        "sausage_skewer"
+      ],
+      "domain_sha256": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "problem_sha256": "c3286fb4fc9a43db2c11b801a8a80ab466adaf3781d23415b0b3ae610de47b94"
+    },
+    {
+      "id": "WOE__probe_0",
+      "source": "WOE",
+      "goal": [
+        "invited",
+        "bitter_woe",
+        "wife"
+      ],
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "12b5f5db03eb10b11b654bcfb761468531018a6a7489cedd1d66bd6322b61d49"
+    },
+    {
+      "id": "WOE__probe_1",
+      "source": "WOE",
+      "goal": [
+        "employed",
+        "bitter_woe",
+        "rich_brother"
+      ],
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "8aff67d8dc7e87f686d2418a2953347a921986610eadcacf5bd5728bebc2f0f0"
+    },
+    {
+      "id": "WOE__probe_2",
+      "source": "WOE",
+      "goal": [
+        "singing",
+        "rich_brother"
+      ],
+      "domain_sha256": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+      "problem_sha256": "c9aff9b1b94159eb8ed31b8422c6a057b4522bedb02bfbb7cf549ea1d279863b"
+    }
+  ],
+  "task_count": 45,
+  "mode": "synthetic_source_effect_probes",
+  "composed_origin": null,
+  "probe_origin": "data\\validation\\source_effect_probes_2026_10_15_v1",
+  "probe_manifest_sha256": "e9bc3df6e5e1d2faf3623322bf583595aca375cd1829be2f127afe2329d916aa",
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

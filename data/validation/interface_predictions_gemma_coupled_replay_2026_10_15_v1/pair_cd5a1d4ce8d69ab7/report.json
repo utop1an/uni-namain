@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_cd5a1d4ce8d69ab7",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_cd5a1d4ce8d69ab7",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates 'crossed_out' and 'rich' represent fundamentally different concepts. 'crossed_out' describes a state of removal or negation applied to an entity, while 'rich' describes a property of an entity indicating wealth or abundance. The action contexts further highlight this difference: 'crossed_out' requires a prior burned state and results in removal from a list, whereas 'rich' is established through a need for help and a brother's assistance. The 'rich' predicate's action context explicitly depends on the existence of a 'rich' entity, while 'crossed_out' is a standalone effect. These distinctions suggest complementary relationships, where one predicate describes a state change and the other describes a characteristic. The type hierarchies for both predicates are consistent with objects, further supporting this complementary relationship. The action contexts provide distinct mechanisms for establishing each predicate, reinforcing their different meanings. The 'crossed_out' predicate is about negation, while 'rich' is about abundance. The supplied action contexts and their parameters confirm this.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "NAUG:action:cross_out_comet",
+        "quote": "(crossed_out ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:request_help_from_rich_brother",
+        "quote": "(rich ?rich)"
+      },
+      {
+        "side": 1,
+        "ref": "WOE:action:rich_brother_attempt_to_move_stone",
+        "quote": "(rich ?rich)"
+      }
+    ]
+  },
+  "errors": []
+}

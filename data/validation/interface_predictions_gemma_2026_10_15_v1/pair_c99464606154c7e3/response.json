@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_c99464606154c7e3",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "Both ACCO and FOUR_NP use the `has` predicate to express possession. In ACCO, `has` is used to describe relationships between items and entities within an exhibition context (e.g., `has ?t ?k` - a kettle has a value). In FOUR_NP, `has` is used to describe possession of items by characters (e.g., `has ?a telescope` - an astronomer has a telescope). The arguments `?e` and `?i` represent entities and items respectively, and the core meaning of expressing possession is consistent across both narratives. The action contexts demonstrate this consistent usage, where `has` is a precondition or effect of actions related to acquiring or utilizing items. The differing contexts (exhibition vs. adventure) do not alter the fundamental meaning of the predicate. The argument order is permuted, but the predicate's role is equivalent.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:arrange_exhibition",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:count_eggs",
+      "quote": "(has ?a eggs)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:hang_kettle",
+      "quote": "(has ?pr ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:fetch_eggs",
+      "quote": "(has ?t eggs)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:kettle_transform_to_fur_badger",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:learn_astronomer_trade",
+      "quote": "(has ?b telescope)"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_4c3ccf5aa0322ab4",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_4c3ccf5aa0322ab4",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `traveling` appears in both the NAUG and PIGS_NP sources. In NAUG, it's a precondition for several actions like `approach_sun`, `arrest_meteor`, `avoid_body`, `speak_to_meteor`, and `start_travel`. These actions involve entities moving through space. In PIGS_NP, `house_destroyed` is a consequence of actions like `wolf_blows_house_down`, which describes a wolf destroying a house. The `traveling` predicate is used as a precondition for the wolf's actions, indicating the house's destruction is linked to the movement of the wolf. The exact same predicate name and type are used in both sources, and the contexts demonstrate a similar usage – `traveling` as a condition for an action or a result. The argument order is reversed, but the meaning is interchangeable. The action contexts show that `traveling` is a necessary condition for the actions in both sources, and the outcome of `house_destroyed` is dependent on the `traveling` of the wolf.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "NAUG:action:approach_sun",
+        "quote": "(traveling ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:arrest_meteor",
+        "quote": "(traveling ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:avoid_body",
+        "quote": "(traveling ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:burn_up",
+        "quote": "(traveling ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:speak_to_meteor",
+        "quote": "(traveling ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(traveling ?c)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_4c3ccf5aa0322ab4",
+    "nonbijective_argument_map:pair_4c3ccf5aa0322ab4"
+  ]
+}

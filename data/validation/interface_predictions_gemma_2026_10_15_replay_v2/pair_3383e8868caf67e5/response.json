@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_3383e8868caf67e5",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    2
+  ],
+  "rationale": "The predicate `entity_at` appears in both the FOUR_NP and MUSI narratives with the same signature and parameters. In FOUR_NP, it's used to describe the location of entities like 'tree', 'cross_way', 'house', 'rock_sea', and 'sea'. In MUSI, it's used to describe the location of entities like 'donkey', 'cat', 'cock', and 'hound'. The action contexts demonstrate that `entity_at` is consistently used to specify a location for an entity, regardless of the source narrative. The parameters `?e - entity` and `?l - location` are identical in both predicates, indicating interchangeable roles. The action contexts show that the predicates are used in similar scenarios, such as describing the location of an entity relative to a specific place. Therefore, the predicates are equivalent.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "MUSI:action:cat_agrees",
+      "quote": "(invited ?donkey ?cat)"
+    },
+    {
+      "side": 1,
+      "ref": "MUSI:action:cock_agrees",
+      "quote": "(invited ?donkey ?cock)"
+    },
+    {
+      "side": 1,
+      "ref": "MUSI:action:hound_agrees",
+      "quote": "(invited ?donkey ?hound)"
+    },
+    {
+      "side": 1,
+      "ref": "MUSI:action:invite_cat",
+      "quote": "(invited ?donkey ?cat)"
+    },
+    {
+      "side": 1,
+      "ref": "MUSI:action:invite_cock",
+      "quote": "(invited ?donkey ?cock)"
+    },
+    {
+      "side": 1,
+      "ref": "MUSI:action:invite_hound",
+      "quote": "(invited ?donkey ?hound)"
+    }
+  ]
+}

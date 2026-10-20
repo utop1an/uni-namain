@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:34:58.9137766Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_631ac0fedac32a3d\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The NAUG side describes the *location* of entities, specifically using the predicate 'at'. The PUSS side describes *ownership* of a location, using the predicate 'castle_owned_by'. These predicates represent distinct aspects of a scene: the spatial position of entities versus the ownership of a location. 'at' focuses on where something is, while 'castle_owned_by' focuses on who owns a castle. The action contexts in NAUG consistently use 'at' to specify location, while PUSS's predicate focuses on ownership. Therefore, they are complementary, describing different relationships about the same locations.\", \"evidence\": [ {\"side\": 0, \"ref\": \"NAUG:action:call_comet_forward\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:call_comet_forward\", \"quote\": \"(at ?master courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(at ?master courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(at ?c courtyard)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3589974800,
+  "load_duration": 2047000,
+  "prompt_eval_count": 788,
+  "prompt_eval_duration": 147966000,
+  "eval_count": 359,
+  "eval_duration": 3303816000
+}

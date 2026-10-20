@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_850fc31c7a05359f",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_850fc31c7a05359f",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate `imitates_pig` in the BUFF source describes an action of mimicking a pig, focusing on the performer's behavior. Conversely, the predicate `crumb_on_path` in the HANS_NP source describes the presence of a crumb on a path, focusing on a spatial location and its state. These predicates represent distinct aspects of a scenario: one concerns an action (mimicry) and the other concerns a state (crumb presence). They are complementary because they describe different properties of the environment and its inhabitants. The `imitates_pig` predicate requires a performer, while `crumb_on_path` requires a location. The action contexts further highlight this difference: BUFF's `perform_pig_imitation_without_apparatus` involves a performer and a platform, while HANS_NP's `drop_breadcrumb_on_path` involves an entity, a crumb, and a location. The `crumb_on_path` predicate is triggered by the `perform_pig_imitation_without_apparatus` action, but the two predicates are not interchangeable; one describes an action, the other a state resulting from that action. The `crumb_on_path` predicate is triggered by the `follow_breadcrumbs_home` action, but the two predicates are not interchangeable; one describes an action, the other a state resulting from that action.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BUFF:action:perform_pig_imitation_without_apparatus",
+        "quote": "(imitates_pig ?performer)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:drop_breadcrumb_on_path",
+        "quote": "(crumb_on_path ?path_loc)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:follow_breadcrumbs_home",
+        "quote": "(crumb_on_path ?path_loc)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_850fc31c7a05359f"
+  ]
+}

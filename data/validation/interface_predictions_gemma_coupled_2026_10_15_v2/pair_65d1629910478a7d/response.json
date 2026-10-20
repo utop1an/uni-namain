@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_65d1629910478a7d",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The `at_item` predicate in JACK_NP describes the location of an item, while the `house` predicate in PIGS_NP describes a location as a house. The `at_item` predicate is about the presence of an item at a location, while the `house` predicate is about a location being a house. These predicates describe different aspects of spatial relationships. JACK_NP uses `at_item` to track the presence of objects, while PIGS_NP uses `house` to define a location as a building. The actions involving these predicates also reflect this difference: JACK_NP actions involve placing items at locations, while PIGS_NP actions involve building and destroying houses. The predicates are complementary because they both deal with locations, but they describe different types of locations and their associated objects. The use of `?i` and `?l` in `at_item` and `?h` and `?i` in `house` further highlights this distinction. The parameters are distinct, referring to different types of entities and locations. The action contexts demonstrate this difference in how the predicates are used.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_blows_house_down",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_fails_to_blow_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:plant_beans",
+      "quote": "(at_item ?beans ?loc)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(at_item ?beans ?l)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_gold_bags",
+      "quote": "(at_item ?bag1 giant_castle)"
+    }
+  ]
+}

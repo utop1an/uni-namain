@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_14632952b220f647",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_14632952b220f647",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'has' appears in both ACCO and JACK_NP narratives, consistently representing possession or presence of an entity or item. In ACCO, 'has' is used to describe the state of objects related to exhibitions, kettles, and transformations. In JACK_NP, 'has' describes the possession of items by entities (e.g., 'j' possessing 'beans') and the presence of items at locations. The arguments '?e' and '?i' represent the same concept of an entity and an item respectively across both sources. The action contexts demonstrate that 'has' is used to establish preconditions and effects within each narrative, indicating interchangeable usage. The exact phrasing and parameters differ, but the core meaning of 'has' – denoting possession or presence – remains consistent. The action contexts provide sufficient evidence to support this equivalence. Specifically, the occurrences of `(has ?t ?k)` in ACCO and `(has ?j ?beans)` in JACK_NP demonstrate this.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:arrange_exhibition",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:hang_kettle",
+        "quote": "(has ?pr ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:kettle_transform_to_fur_badger",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:perform_show",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:return_kettle_to_temple",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:sell_kettle_to_tinker",
+        "quote": "(has ?pr ?k)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_14632952b220f647",
+    "missing_both_side_evidence:pair_14632952b220f647"
+  ]
+}

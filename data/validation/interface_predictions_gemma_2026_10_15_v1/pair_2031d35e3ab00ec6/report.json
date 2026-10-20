@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_2031d35e3ab00ec6",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_2031d35e3ab00ec6",
+    "label": "equivalent",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate 'at' is used identically in both sources. In JACK_NP, it describes the location of entities like 'j' (Jack) and 'giant_castle', while in WOE, it describes the location of entities like 'poor', 'woe', and 'loc'. The action contexts consistently use 'at' to specify spatial relationships. The parameters of the predicate are also identical, referencing 'entity' and 'location' in both cases. Therefore, the predicate 'at' is interchangeable between the two sources, with the argument order being permuted. The exact excerpts confirm this: JACK_NP: 'at ?j giant_castle', WOE: 'at ?poor ?loc'.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:ask_giant_wife_for_breakfast",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:climb_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_kettle",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:hide_in_oven",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:return_down_beanstalk",
+        "quote": "(at ?j giant_castle)"
+      },
+      {
+        "side": 0,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(at ?j ?l)"
+      }
+    ]
+  },
+  "errors": [
+    "label_argument_map_disagreement:pair_2031d35e3ab00ec6",
+    "missing_both_side_evidence:pair_2031d35e3ab00ec6"
+  ]
+}

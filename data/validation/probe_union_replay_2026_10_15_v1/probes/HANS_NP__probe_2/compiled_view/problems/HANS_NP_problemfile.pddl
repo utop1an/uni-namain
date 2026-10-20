@@ -1,0 +1,1 @@
+(define (problem Hansel_And_Grettel_problem) (:domain narrative_union) (:init (d005__p_at d005__c_father d005__c_father_house) (d005__p_at d005__c_hansel d005__c_father_house) (d005__p_at d005__c_grettel d005__c_father_house) (d005__p_at d005__c_mother d005__c_father_house) (d005__p_has d005__c_hansel d005__c_pebble)) (:goal (and (d005__p_at d005__c_father d005__c_room))))

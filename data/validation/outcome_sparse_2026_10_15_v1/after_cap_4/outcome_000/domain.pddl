@@ -1,0 +1,8 @@
+(define (domain t) (:requirements :adl :typing)
+              (:types person - object) (:constants a b c - person)
+              (:predicates (owned ?x - person) (ready ?x - person) (done ?x - person)
+               (unused ?a ?b ?c ?d ?e ?f ?g - person))
+              (:action advance :parameters (?p - person)
+               :precondition (and (owned ?p) (ready ?p))
+               :effect (and (not (ready ?p))
+                 (forall (?q - person) (when (owned ?q) (done ?q))))))

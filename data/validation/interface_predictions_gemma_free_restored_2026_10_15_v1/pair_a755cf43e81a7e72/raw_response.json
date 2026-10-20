@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:49:28.7402875Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_a755cf43e81a7e72\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate `gold_star_on` indicates the presence of a gold star, likely a reward or objective. The predicate `at` describes the location of entities. These predicates are complementary because `gold_star_on` describes a state (presence of a reward) while `at` describes a spatial relationship (location). The `gold_star_on` predicate is about the *existence* of something, while `at` is about *where* something is. The action contexts demonstrate this: `at` is used to specify locations for actions like `abandon_children_in_forest` and `collect_treasure`, while `gold_star_on` is not directly involved in these actions, but would be relevant if the gold star were present at a particular location. The parameters of both predicates are entities and items, which is a reasonable mapping. The use of `at` to define location is a more fundamental spatial relationship than the presence of a gold star, making them complementary. The action contexts show `at` is used to define the location of objects and entities, while `gold_star_on` is not directly related to location but could be used to describe the location of the gold star.\", \"evidence\": [ {\"side\": 1, \"ref\": \"HANS_NP:action:abandon_children_in_forest\", \"quote\": \"(at ?h ?forest)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:call_duck_for_crossing\", \"quote\": \"(at ?h ?lake)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:collect_treasure\", \"quote\": \"(at ?h ?cottage)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:drop_breadcrumb_on_path\", \"quote\": \"(at ?h ?path_loc)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:drop_pebble_on_path\", \"quote\": \"(at ?h ?path_loc)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:enter_witch_house\", \"quote\": \"(at ?h ?cottage)\"} ]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5801088500,
+  "load_duration": 3776600,
+  "prompt_eval_count": 3170,
+  "prompt_eval_duration": 494397000,
+  "eval_count": 525,
+  "eval_duration": 5180006000
+}

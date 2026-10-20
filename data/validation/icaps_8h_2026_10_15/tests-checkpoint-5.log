@@ -1,0 +1,26 @@
+..C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+{"processed": 1, "total": 1, "candidate_id": "pair_fixture", "status": "checked"}
+{"processed": 1, "total": 1, "candidate_id": "pair_fixture", "status": "checked"}
+{"processed": 1, "total": 1, "candidate_id": "pair_fixture", "status": "failed"}
+...............C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+{"candidate": "pair_e1b09dad788fc21c", "refs": ["BIRT:predicate:at", "PUSS:predicate:at"], "status": "checked", "decision": "accept"}
+{"candidate": "pair_e1b09dad788fc21c", "refs": ["BIRT:predicate:at", "PUSS:predicate:at"], "status": "failed", "decision": null}
+Fusing node 0 (0p/0o) + 1 (0p/0o) -> 5
+Fusing node 2 (0p/0o) + 3 (0p/0o) -> 6
+Fusing node 4 (0p/0o) + 5 (0p/0o) -> 7
+Fusing node 6 (0p/0o) + 7 (0p/0o) -> 8
+{"source": "A", "search": {"grounding_policy": "typed_cartesian_with_static_positive_projection", "states": 3, "ground_candidates": 2, "viable_ground_actions": 2, "status": "solved", "length": 1, "plan": "SequentialPlan:\n    tell(king, friend)", "validation": {"status": "VALID", "engine": "sequential_plan_validator", "version": "1.3.0", "details": "status: VALID\nengine: sequential_plan_validator"}}, "elapsed_seconds": 4.578, "mapped": {"length": 1, "validation": {"status": "VALID", "engine": "sequential_plan_validator", "version": "1.3.0", "details": "status: VALID\nengine: sequential_plan_validator"}}, "preservation_evidence": "validated_translated_plan"}
+{"source": "B", "search": {"status": "missing_problem"}, "elapsed_seconds": 0.0, "preservation_evidence": "no_valid_source_plan"}
+........................................................................C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+..
+----------------------------------------------------------------------
+Ran 91 tests in 48.209s
+
+OK

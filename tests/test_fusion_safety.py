@@ -2,10 +2,10 @@ import copy,json,tempfile,unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
-from merge_domains import Domain,Predicate,parse_domain,validate_domain
-from unidomain_ollama_fusion import fuse_pair
-from rcnc.planning import run_query
-from build_narrative_union import build
+from rcnc.pddl import Domain, Predicate, parse_domain, validate_domain
+from unidomain.fusion import fuse_pair
+from archive.rcnc.planning import run_query
+from rcnc.domain_union import build
 ROOT=Path(__file__).resolve().parents[1]
 
 class FusionSafetyTests(unittest.TestCase):
@@ -40,19 +40,19 @@ class FusionSafetyTests(unittest.TestCase):
   self.assertEqual(before,left);self.assertEqual(2,len(d.predicates));self.assertEqual([],validate_domain(d))
   self.assertTrue(any(x['kind']=='rejected_predicate_merge' for x in d.decisions))
  def test_validator_rejects_historical_structural_failures(self):
-  d=parse_domain(ROOT/'data/merged_strict/meta_domain.pddl',apply_reviewed_semantics=False)
+  d=parse_domain(ROOT/'data/merged_strict/meta_domain.pddl')
   errors='\n'.join(validate_domain(d))
   for expected in ('case-insensitive duplicate king','undeclared symbol ?h','wrong arity dead','ill-typed captured'):
    self.assertIn(expected,errors)
  def test_quantified_source_actions_remain_supported(self):
   for p in (ROOT/'data/narra-domains').glob('*_domainfile.pddl'):
-   self.assertEqual([],validate_domain(parse_domain(p,apply_reviewed_semantics=False)),p.name)
+   self.assertEqual([],validate_domain(parse_domain(p)),p.name)
  def test_missing_initial_requests_input_without_compiling(self):
-  with tempfile.TemporaryDirectory() as td,patch('rcnc.planning.compile_query',side_effect=AssertionError('must not compile')):
+  with tempfile.TemporaryDirectory() as td,patch('archive.rcnc.planning.compile_query',side_effect=AssertionError('must not compile')):
    r=run_query({'goal':{'positive':[]}},ROOT/'data/narra-domains',Path(td)/'out')
    self.assertEqual('needs_initial_state',r['status'])
  def test_constant_rename_does_not_rewrite_same_spelled_predicate(self):
-  from merge_domains import rewrite_problem
+  from rcnc.pddl import rewrite_problem
   d=self.domain('A','ready');d.constant_maps={'A':{'ready':'a_object'}}
   with tempfile.TemporaryDirectory() as td:
    root=Path(td);p=root/'A_problemfile.pddl';p.write_text('(define (problem p) (:domain A) (:init (ready ready)) (:goal (ready ready)))')
@@ -65,7 +65,7 @@ class FusionSafetyTests(unittest.TestCase):
     (inputs/f'{name}_domainfile.pddl').write_text(f'(define (domain {name}) (:requirements :strips :typing) (:types person - object) (:constants {constant} - person) (:predicates (ready ?p - person)) (:action act :parameters () :precondition (and) :effect (ready {constant})))')
     (inputs/f'{name}_problemfile.pddl').write_text(f'(define (problem p) (:domain {name}) (:init) (:goal (ready {constant})))')
    r=build(inputs,root/'out');self.assertTrue(r['valid']);self.assertEqual(2,r['counts']['operators']);self.assertEqual(2,r['counts']['constants'])
-   from validate_narrative_pipeline import bounded_plan
+   from rcnc.reference_planning import bounded_plan
    for name in ('A','B'):
     original=bounded_plan(inputs/f'{name}_domainfile.pddl',inputs/f'{name}_problemfile.pddl',root/(name+'_original'))
     mapped=bounded_plan(root/'out/meta_domain.pddl',root/'out/problems'/f'{name}_problemfile.pddl',root/(name+'_mapped'))

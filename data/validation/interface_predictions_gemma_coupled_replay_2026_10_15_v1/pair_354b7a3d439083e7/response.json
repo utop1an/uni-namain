@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_354b7a3d439083e7",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate `left_turn_rule` in NAUG describes a rule governing movement, specifically a left turn, while `escaped` in PIGS_NP describes a state of being free from constraints or pursuit. The `left_turn_rule` predicate is associated with actions that dictate movement and direction, whereas `escaped` describes a state of freedom. The two predicates represent distinct concepts: one related to navigation and the other to a state of being. The action contexts for `left_turn_rule` involve movement and constraints, while the contexts for `escaped` involve a state change and freedom. Therefore, they are complementary, as one describes a process and the other a result or state. The arguments `?c` and `?p`, `?w` are entities, and the types are consistent across both sources. The action contexts provide different scenarios for each predicate, further supporting their distinct roles.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_collects_apples_and_escapes",
+      "quote": "(escaped ?p)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_flees_from_rolling_object",
+      "quote": "(escaped ?w)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:give_order",
+      "quote": "(left_turn_rule ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:turn_left_on_meeting",
+      "quote": "(left_turn_rule ?c)"
+    }
+  ]
+}

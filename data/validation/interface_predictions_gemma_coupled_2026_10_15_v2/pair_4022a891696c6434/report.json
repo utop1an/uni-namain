@@ -1,0 +1,25 @@
+{
+  "candidate_id": "pair_4022a891696c6434",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_4022a891696c6434",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates 'owned_by' and 'wearing' describe different relationships between entities and items. 'owned_by' indicates possession, while 'wearing' indicates an item is being worn by an entity. These relationships represent distinct properties of an object and its associated item. The 'wearing' predicate describes a state (an item being worn), while 'owned_by' describes a relationship of ownership. The action context for 'SNOW' demonstrates that 'wearing' is an effect of placing an item on an entity, while 'owned_by' is a static relationship. The two predicates are complementary because they describe different aspects of the same situation. The 'story_or_learner_provenance' is not supplied, so we cannot determine the source of this judgment.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+        "quote": "(wearing ?s ?slippers)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+        "quote": "(wearing ?s ?slippers)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_4022a891696c6434"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_468ae18a21ae9404",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_468ae18a21ae9404",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates `boat_available` and `on` describe different aspects of the scene. `boat_available` indicates the availability of a boat at a location, while `on` describes the spatial relationship between an item and a location. They represent distinct properties of objects and their positions. The `boat_available` predicate requires a boat to be present at a location, whereas the `on` predicate simply states that an item is located on a specific entity. These predicates are complementary because they capture different spatial relationships and object states. The action contexts further support this: `travel_by_leaf_boat_under_pond` uses `boat_available` to check if a boat is present at a location, while the `steal_harp` and `steal_hen` actions use `on` to describe the location of the harp and hen relative to the giant castle. The `on` predicate is used to describe the location of an item relative to a location, while `boat_available` is used to describe the availability of a boat at a location. The two predicates are not interchangeable because they describe different things. The `boat_available` predicate is about the state of a boat, while the `on` predicate is about the spatial relationship between an item and a location. The action contexts demonstrate this difference. Specifically, `(boat_available ?b ?pond)` checks if a boat is available at a pond, while `(on ?harp giant_castle)` simply states that the harp is on the giant castle.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "BIRT:action:travel_by_leaf_boat_under_pond",
+        "quote": "(boat_available ?b ?pond)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(on ?harp giant_castle)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_468ae18a21ae9404"
+  ]
+}

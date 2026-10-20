@@ -1,0 +1,69 @@
+{
+  "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+  "candidate_count": 100,
+  "agreement": {
+    "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+    "candidate_count": 100,
+    "annotation_files": 2,
+    "paired_completed": 0,
+    "raw_agreement": null,
+    "cohen_kappa": null,
+    "limit": "Declared independence is not verified; agreement is not semantic truth. Uncertain remains a label; missing judgments are not disagreements.",
+    "validation": [
+      {
+        "valid": false,
+        "errors": [
+          "missing_annotator_id",
+          "independence_not_declared"
+        ],
+        "total": 100,
+        "completed": 0,
+        "unreviewed_or_missing": 100,
+        "label_counts": {
+          "equivalent": 0,
+          "permuted_equivalent": 0,
+          "abstraction": 0,
+          "complementary": 0,
+          "incompatible": 0,
+          "uncertain": 0
+        },
+        "limit": "Checks completeness and citation provenance, not semantic truth or actual annotator independence"
+      },
+      {
+        "valid": false,
+        "errors": [
+          "missing_annotator_id",
+          "independence_not_declared"
+        ],
+        "total": 100,
+        "completed": 0,
+        "unreviewed_or_missing": 100,
+        "label_counts": {
+          "equivalent": 0,
+          "permuted_equivalent": 0,
+          "abstraction": 0,
+          "complementary": 0,
+          "incompatible": 0,
+          "uncertain": 0
+        },
+        "limit": "Checks completeness and citation provenance, not semantic truth or actual annotator independence"
+      }
+    ],
+    "status": "invalid_annotations"
+  },
+  "scope": "Sample-descriptive comparison with exact two-rater consensus; declared independence is not verified and agreement is not truth. No population prevalence or held-out generalization estimate.",
+  "status": "needs_valid_independent_annotations",
+  "input_sha256": {
+    "data\\annotation\\interface_development_2026_10_15_v1\\packet.json": "a18a764717da39bcc1b62df0d104b03486ebc87346b5452c93c961cd8f167fbf",
+    "data\\annotation\\interface_development_2026_10_15_v1\\annotation_template.json": "62e875ac2fecc2881592bda9c6a8d6f930710f12b86e127bdfecd777da620cdb",
+    "data\\validation\\interface_predictions_gemma_coupled_2026_10_15_v2\\report.json": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+    "data\\validation\\interface_predictions_gemma_coupled_2026_10_15_v2\\manifest.json": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+  },
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\scripts\\annotation\\evaluate_interface_predictions.py": "6ccd41d7b82c98bc71e866c6e8573c933c9afccabd05803b068bb7fd89ba545c",
+    "rcnc\\interface_evaluation.py": "fb147da27b1abbb73159b436687dc80f174fc10d1ae44b7f3441172c73e70d86",
+    "rcnc\\interface_annotation.py": "c16a8fd30fff295ffc25ab288d60800a164e84a4ef45c7bad56ef189141303c2",
+    "rcnc\\annotation_agreement.py": "5307404cb276890051b8cc3418f0937859d44e5ea78a9e137e1b9bc485e2e403",
+    "scripts\\annotation\\run_annotation_predictions.py": "7d4f12a5a2807b4ae48eb2fc7d2a4030a7ff5a09611744d50cf7794210b3b2b0"
+  }
+}

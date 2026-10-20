@@ -1,0 +1,1 @@
+(define (problem other) (:domain narrative_aligned) (:init (typeguard__d000__t_person d000__c_a) (typeguard__d000__t_object d000__c_a) (typeguard__d001__t_foreign d001__c_outsider) (typeguard__d001__t_object d001__c_outsider)) (:goal (d001__p_other)))

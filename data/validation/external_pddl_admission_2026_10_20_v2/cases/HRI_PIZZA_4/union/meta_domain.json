@@ -1,0 +1,115 @@
+{
+  "sources": [
+    "HRI_PIZZA_4"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 33,
+    "constants": 0,
+    "predicates": 7,
+    "operators": 3
+  },
+  "predicate_maps": {
+    "HRI_PIZZA_4": {
+      "isEmpty": "d000__p_isempty",
+      "isLiquid": "d000__p_isliquid",
+      "isSolid": "d000__p_issolid",
+      "isWarm": "d000__p_iswarm",
+      "onTable": "d000__p_ontable",
+      "surfaceContainsLiquid": "d000__p_surfacecontainsliquid",
+      "surfaceContainsSolid": "d000__p_surfacecontainssolid"
+    }
+  },
+  "constant_maps": {
+    "HRI_PIZZA_4": {}
+  },
+  "action_maps": {
+    "HRI_PIZZA_4": {
+      "addLiquidTopping": "d000__a_addliquidtopping",
+      "addSolidTopping": "d000__a_addsolidtopping",
+      "bakePizza": "d000__a_bakepizza"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "HRI_PIZZA_4": {
+      "types": {
+        "CONTAINER": "d000__t_container",
+        "FACILITY": "d000__t_facility",
+        "LIQUID_INGREDIENT": "d000__t_liquid_ingredient",
+        "SOLID_INGREDIENT": "d000__t_solid_ingredient",
+        "SURFACE": "d000__t_surface",
+        "basilicum": "d000__t_basilicum",
+        "bottle_for_olive_oil": "d000__t_bottle_for_olive_oil",
+        "bottle_for_tomato_sauce": "d000__t_bottle_for_tomato_sauce",
+        "bowl_for_basilicum": "d000__t_bowl_for_basilicum",
+        "bowl_for_gorgonzola": "d000__t_bowl_for_gorgonzola",
+        "bowl_for_mozzarella": "d000__t_bowl_for_mozzarella",
+        "bowl_for_mushrooms": "d000__t_bowl_for_mushrooms",
+        "bowl_for_olives": "d000__t_bowl_for_olives",
+        "bowl_for_oregano": "d000__t_bowl_for_oregano",
+        "bowl_for_peperoni": "d000__t_bowl_for_peperoni",
+        "bowl_for_pepper": "d000__t_bowl_for_pepper",
+        "bowl_for_salami": "d000__t_bowl_for_salami",
+        "bowl_for_salt": "d000__t_bowl_for_salt",
+        "gorgonzola": "d000__t_gorgonzola",
+        "mozzarella": "d000__t_mozzarella",
+        "mushrooms": "d000__t_mushrooms",
+        "olive_oil": "d000__t_olive_oil",
+        "olives": "d000__t_olives",
+        "oregano": "d000__t_oregano",
+        "oven": "d000__t_oven",
+        "peperoni": "d000__t_peperoni",
+        "pepper": "d000__t_pepper",
+        "plate": "d000__t_plate",
+        "salami": "d000__t_salami",
+        "salt": "d000__t_salt",
+        "table": "d000__t_table",
+        "tomato_sauce": "d000__t_tomato_sauce",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {
+        "basilicum": "d000__o_basilicum",
+        "bottle_for_olive_oil": "d000__o_bottle_for_olive_oil",
+        "bottle_for_tomato_sauce": "d000__o_bottle_for_tomato_sauce",
+        "bowl_for_basilicum": "d000__o_bowl_for_basilicum",
+        "bowl_for_gorgonzola": "d000__o_bowl_for_gorgonzola",
+        "bowl_for_mozzarella": "d000__o_bowl_for_mozzarella",
+        "bowl_for_mushrooms": "d000__o_bowl_for_mushrooms",
+        "bowl_for_olives": "d000__o_bowl_for_olives",
+        "bowl_for_oregano": "d000__o_bowl_for_oregano",
+        "bowl_for_peperoni": "d000__o_bowl_for_peperoni",
+        "bowl_for_pepper": "d000__o_bowl_for_pepper",
+        "bowl_for_salami": "d000__o_bowl_for_salami",
+        "bowl_for_salt": "d000__o_bowl_for_salt",
+        "gorgonzola": "d000__o_gorgonzola",
+        "mozzarella": "d000__o_mozzarella",
+        "mushrooms": "d000__o_mushrooms",
+        "olive_oil": "d000__o_olive_oil",
+        "olives": "d000__o_olives",
+        "oregano": "d000__o_oregano",
+        "oven": "d000__o_oven",
+        "peperoni": "d000__o_peperoni",
+        "pepper": "d000__o_pepper",
+        "plate": "d000__o_plate",
+        "salami": "d000__o_salami",
+        "salt": "d000__o_salt",
+        "table": "d000__o_table",
+        "tomato_sauce": "d000__o_tomato_sauce"
+      }
+    }
+  },
+  "source_sha256": {
+    "HRI_PIZZA_4_domainfile.pddl": "65a2bdd7abccb208dfdb8aeaeef60fe86bff5345c1764223a35455ede0bf5559",
+    "HRI_PIZZA_4_problemfile.pddl": "3ba8f1e38441e8a82dc9be2029d28f888295eb4e0096086a4c6a1c9c0d551bd9"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

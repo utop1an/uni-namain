@@ -1,0 +1,96 @@
+{
+  "status": "frozen_before_search",
+  "mode": "external_source_preservation",
+  "task_count": 10,
+  "tasks": [
+    {
+      "id": "p1-basketball",
+      "family": "Basketball",
+      "problem_id": "p1-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "8f982814f5c98445263af6d0770b8435dfb6e505757ecfb585bd99df7e867e1b"
+    },
+    {
+      "id": "p10-basketball",
+      "family": "Basketball",
+      "problem_id": "p10-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "7852767c379d45d800df689054bdb3c63b4476060024421f3e1ce4f953a51139"
+    },
+    {
+      "id": "p2-basketball",
+      "family": "Basketball",
+      "problem_id": "p2-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "9e99e7a79d8a0358466b21455ac44b9a395bb6f5fe07d84745004273bf37f629"
+    },
+    {
+      "id": "p3-basketball",
+      "family": "Basketball",
+      "problem_id": "p3-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "a6009b2662ee66eb55b02416b31c201e53d80f42500c3d88d8fc40fd01305043"
+    },
+    {
+      "id": "p4-basketball",
+      "family": "Basketball",
+      "problem_id": "p4-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "46aedf4b2756b216e3e1dea4071da264bea6ce2e1f4b06c88c440452ffeeebcd"
+    },
+    {
+      "id": "p5-basketball",
+      "family": "Basketball",
+      "problem_id": "p5-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "214c49b0a9efb5deac55e2d532cdf3e228d3941981d12daff9b53c2126c67451"
+    },
+    {
+      "id": "p6-basketball",
+      "family": "Basketball",
+      "problem_id": "p6-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "807716fab1d76fda810849bd12ff9acf3a55ce1b3cbd17af262888abc55ea71a"
+    },
+    {
+      "id": "p7-basketball",
+      "family": "Basketball",
+      "problem_id": "p7-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "5b2be818a8c2b44ac64b703ba879733aa9491b96a9759907299dbe2f908fe3e9"
+    },
+    {
+      "id": "p8-basketball",
+      "family": "Basketball",
+      "problem_id": "p8-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "9d0a3f1483fa00d683076a2305c085c617ccc74d7da91b0f95e852d88dad8a8a"
+    },
+    {
+      "id": "p9-basketball",
+      "family": "Basketball",
+      "problem_id": "p9-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "4c0d0bec19d3fec5fd8394bd9a711a9e6a8a43ea9676298f007c0c5cd917c2b8"
+    }
+  ],
+  "family_count": 1,
+  "upstream_snapshot": "data/validation/basketball_full_snapshot_2026_10_15_v1/manifest.json",
+  "packaging": "Domain bytes unchanged; only problem :domain header added and redundant problem requirements removed",
+  "budget": {
+    "seconds": 60,
+    "memory_mb": 4096
+  },
+  "next_comparison": "Replay any available native plans in a fixed union and zero-merge membership model including the existing 15 sources; keep these 10 cases separate from prior corpus",
+  "scope": "External-source mechanical validation after compatibility inspection; one family, not ten domains; no semantic alignment or narrative quality claim; concurrent timing descriptive only"
+}

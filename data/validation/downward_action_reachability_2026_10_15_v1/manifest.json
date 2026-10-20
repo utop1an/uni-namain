@@ -1,0 +1,1665 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "d1219d029ded3e81256903fa8d245685936326e676794bfc638309ae88925c04",
+  "budget": {
+    "wall_seconds": 20,
+    "overall_cpu_seconds": 20,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "ACCO__arrange_exhibition",
+      "source": "ACCO",
+      "target_action": "arrange_exhibition",
+      "domain_sha256": "3d60cdc1e281fafc8e679033a15e3c460e9ab18e6aa1a7c93bc53b694aab72c4",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__call_novices",
+      "source": "ACCO",
+      "target_action": "call_novices",
+      "domain_sha256": "b4d763f33ac6e1353f2bd1ce96c5ab205b2a325547f0b01ff0c6ddb4ddb97b06",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__force_kettle_into_box",
+      "source": "ACCO",
+      "target_action": "force_kettle_into_box",
+      "domain_sha256": "6c5564cd35822d702391007b44e7cb9e3b80630321084361d0b3c487da5f4e60",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__hang_kettle",
+      "source": "ACCO",
+      "target_action": "hang_kettle",
+      "domain_sha256": "f3e77f932ec55d7f0d61f71a39c9f515a614e5da3cb3298f2be2cfb8562896d2",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__kettle_jump_and_fly",
+      "source": "ACCO",
+      "target_action": "kettle_jump_and_fly",
+      "domain_sha256": "a90fe34e2e824dc677e7e7ee5f3db4268cdff719b729bdd3ad4526a2b354732a",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__kettle_revert_shape",
+      "source": "ACCO",
+      "target_action": "kettle_revert_shape",
+      "domain_sha256": "309be366b228cf139b6bbadcea882f7cf8ee371fd379a1369093941e8061c788",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__kettle_transform_to_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_badger",
+      "domain_sha256": "b28066f6bf33d5e3d806129ad0db0aa7a7d9f68338ab4297b4bfe2eca9512104",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__kettle_transform_to_fur_badger",
+      "source": "ACCO",
+      "target_action": "kettle_transform_to_fur_badger",
+      "domain_sha256": "18f3b0438e3c866763b9025f663df8ab3c61e7b74cccfb1a1b571be1ad4d60cf",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__knock_down_kettle",
+      "source": "ACCO",
+      "target_action": "knock_down_kettle",
+      "domain_sha256": "467205d3f6c2b397de6fda1405dd7e19c0a96714fb354ea4ac52236e0b30bb0b",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__perform_show",
+      "source": "ACCO",
+      "target_action": "perform_show",
+      "domain_sha256": "7306ccfba85fd3ede3d409db99a4b7003bf52e2470dcc31783093def48f2466c",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__pursue_kettle",
+      "source": "ACCO",
+      "target_action": "pursue_kettle",
+      "domain_sha256": "a8e251986c5a5e233c7fa0520398ec74532fa79cd188f260c3acbb629ba7cda7",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__receive_orders_from_nobility",
+      "source": "ACCO",
+      "target_action": "receive_orders_from_nobility",
+      "domain_sha256": "53e374f2428114643af1d81e45a0d634778ee7de2c8011e8fcb218281143bc80",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__return_kettle_to_temple",
+      "source": "ACCO",
+      "target_action": "return_kettle_to_temple",
+      "domain_sha256": "6c740d913df4fae627ab91d6fedc5090c7e9e27a8549390f6cfed9f556d9952d",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__sell_kettle_to_tinker",
+      "source": "ACCO",
+      "target_action": "sell_kettle_to_tinker",
+      "domain_sha256": "c77f24270402b338b3dbd6174110d9a2b1bee6f7a12150fe2ab3d8649dc68403",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__show_kettle_to_friend",
+      "source": "ACCO",
+      "target_action": "show_kettle_to_friend",
+      "domain_sha256": "abb681c9eec993f7aac96a2b0a9acdd4659ec86166302205b3ac407b72592a0c",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__tinker_carry_home",
+      "source": "ACCO",
+      "target_action": "tinker_carry_home",
+      "domain_sha256": "9f482d7c3df538a87026e74d610c1011ebae3a53a88a0d104de3f3d04aeb4ecb",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "ACCO__worship_kettle_as_saint",
+      "source": "ACCO",
+      "target_action": "worship_kettle_as_saint",
+      "domain_sha256": "0d9a05be335f22e484bba20b630a0c9895dab3e6f8a3675f1f16abe033d23efb",
+      "problem_sha256": "5c80d89d2681bc7eb94e7501ff92993b99c866247194a2cf64301716d14af165"
+    },
+    {
+      "id": "BIRT__accept_dryad_invitation",
+      "source": "BIRT",
+      "target_action": "accept_dryad_invitation",
+      "domain_sha256": "40ab4a5bc970295ad7b6ec41d717f9cca95730b3a2e805259775213c445d204a",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__approach_beech_tree",
+      "source": "BIRT",
+      "target_action": "approach_beech_tree",
+      "domain_sha256": "a440564b9bc0780fdc2aac01daf7a91691eb8215ca41477c79ba43b50cb4a4c2",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__eat_pellet_and_shrink",
+      "source": "BIRT",
+      "target_action": "eat_pellet_and_shrink",
+      "domain_sha256": "2233cb78d2685a7ccfafeedf37e8657d3e7da0e13f2b564bf4149ff2e974ee97",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__enter_tree_and_descend_stairs",
+      "source": "BIRT",
+      "target_action": "enter_tree_and_descend_stairs",
+      "domain_sha256": "053e565813f48c39f958d7ae0527ed35e817a7b05fa8ec329c104795d34e2965",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__hear_tapping_on_beech",
+      "source": "BIRT",
+      "target_action": "hear_tapping_on_beech",
+      "domain_sha256": "bf4bb5727706488c9bd2e0f28b23be499681c834abf13361ba79b5e16184bede",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__receive_pellet_from_gnome",
+      "source": "BIRT",
+      "target_action": "receive_pellet_from_gnome",
+      "domain_sha256": "ffefe5c63877780bd448c30c9506f41c80ce13a55d473e39aa7ebc8fcfe1ecd8",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__receive_queen_kiss",
+      "source": "BIRT",
+      "target_action": "receive_queen_kiss",
+      "domain_sha256": "1b7542ff18358284bfe3ca6b842515ce3341920b7f16d7d33b7e37a634b2181a",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__return_to_bench_and_share_story",
+      "source": "BIRT",
+      "target_action": "return_to_bench_and_share_story",
+      "domain_sha256": "f0e84951b68e2fe2332a46ba2d78b08dcc2824792a86c23a173bbe4c0b9ae524",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__travel_by_leaf_boat_under_pond",
+      "source": "BIRT",
+      "target_action": "travel_by_leaf_boat_under_pond",
+      "domain_sha256": "12869278e0845911c91f7a2c15396e420193fc29765971c26b55df305c21da8e",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__travel_to_trysting_place",
+      "source": "BIRT",
+      "target_action": "travel_to_trysting_place",
+      "domain_sha256": "a4328d37ab404482948cbc45b77e21438b2fb0fdd1489873b53b572d15e93d6b",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__turn_key_on_beech",
+      "source": "BIRT",
+      "target_action": "turn_key_on_beech",
+      "domain_sha256": "eca3cafe8e3e3e85df4c3d28264dd7eba78a10be6ff37552aaf65132a181bd20",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BIRT__witness_queen_birthday_ceremony",
+      "source": "BIRT",
+      "target_action": "witness_queen_birthday_ceremony",
+      "domain_sha256": "8e7e856c06586d9a03ee188e5cbaa415dd30342c04c3e80e3ce3091127956424",
+      "problem_sha256": "f36e04c9be144da7eac7af59103a2a8dc8138af968a466c8616ed868c9f9aabe"
+    },
+    {
+      "id": "BUFF__audience_applaud_performance",
+      "source": "BUFF",
+      "target_action": "audience_applaud_performance",
+      "domain_sha256": "5d972df8921c5d4ba0e7cbd5d6ef77d2bc0570080d588ba7b5ad2e9482b44909",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__audience_criticize_countryman_and_call_for_kickout",
+      "source": "BUFF",
+      "target_action": "audience_criticize_countryman_and_call_for_kickout",
+      "domain_sha256": "99bc79ea8147880631ee31bd1ad69e49182bd82d0883d995872f9909d2809540",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__audience_demand_shake_cloak_for_pig",
+      "source": "BUFF",
+      "target_action": "audience_demand_shake_cloak_for_pig",
+      "domain_sha256": "16e63bd29b0b651b5287455a22705d3dfce8acbca852327a34b177f61e3f7830",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__countryman_declare_intent_to_repeat_trick",
+      "source": "BUFF",
+      "target_action": "countryman_declare_intent_to_repeat_trick",
+      "domain_sha256": "383551d2b8d548b0f34fb49c978e97eb23c013897438a5b0a37ac34f1460a949",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__countryman_perform_pig_imitation_with_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_perform_pig_imitation_with_real_pig",
+      "domain_sha256": "3e4414513fe7d0eea7396e1e9ee5ea18082a0fdd095eb7976c7a59389cfee718",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__countryman_reveal_real_pig",
+      "source": "BUFF",
+      "target_action": "countryman_reveal_real_pig",
+      "domain_sha256": "260a27966c3d1e010df374952c55e34b1b9135b610f77c8e94b68d20851ac2b4",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__open_theater_and_announce_reward",
+      "source": "BUFF",
+      "target_action": "open_theater_and_announce_reward",
+      "domain_sha256": "98ec34656618be816e50c3385842110a22b64f569368b9324dd56a198e59ba4f",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "BUFF__perform_pig_imitation_without_apparatus",
+      "source": "BUFF",
+      "target_action": "perform_pig_imitation_without_apparatus",
+      "domain_sha256": "9ab5a8ec816e46b5644a4692ef322df5a725fb6a6406e9e0195be7163416d60e",
+      "problem_sha256": "034ef61d43d7af7ec0e279ba92e33b691eee481252426bc19a4e76d3706a25f6"
+    },
+    {
+      "id": "CHIC_NP__be_eaten_by_fox",
+      "source": "CHIC_NP",
+      "target_action": "be_eaten_by_fox",
+      "domain_sha256": "b3686df2ff9221d0450b65fcb0bc85c0ba696a1d523fde169c5801f1b1fde25d",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__decide_to_tell_king",
+      "source": "CHIC_NP",
+      "target_action": "decide_to_tell_king",
+      "domain_sha256": "13c223ffb9c0cebb2898ef25f07322943ec1bf528b004b6623036bbd63ca5e96",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__follow_fox",
+      "source": "CHIC_NP",
+      "target_action": "follow_fox",
+      "domain_sha256": "1c2bc022486d8fc8a218dd95c9019b7fedbc073f3a446d75e91e43263e4dccbb",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__go_to_wood",
+      "source": "CHIC_NP",
+      "target_action": "go_to_wood",
+      "domain_sha256": "822c076e08c5956ded77be2f3ce160d9bcf4babf299214dc8e92e89ed6fe7ad7",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__inform_about_sky_fall",
+      "source": "CHIC_NP",
+      "target_action": "inform_about_sky_fall",
+      "domain_sha256": "811592ea231e6b2a175eeda8d9b478ec6f5b67752d3d81ef22d4b767b94d1be0",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__meet_character",
+      "source": "CHIC_NP",
+      "target_action": "meet_character",
+      "domain_sha256": "5afe5e1236aab328cd9fb19233cd2a146fa1148a773d54e42786913e9ce0039e",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "CHIC_NP__turn_back",
+      "source": "CHIC_NP",
+      "target_action": "turn_back",
+      "domain_sha256": "694c66e73b6af30114580402d4967d7de5ae50173f58f5f7b1e94f8ebc4efe27",
+      "problem_sha256": "4ac2890b7539d44678e8a271c8df58f762cd6e3da28c38edf142e85205a11e74"
+    },
+    {
+      "id": "FOUR_NP__count_eggs",
+      "source": "FOUR_NP",
+      "target_action": "count_eggs",
+      "domain_sha256": "85debe7639e451d60f66b6ac30447cf735da84cd212399fd728d034f44a5d1ed",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__fetch_eggs",
+      "source": "FOUR_NP",
+      "target_action": "fetch_eggs",
+      "domain_sha256": "37cdbae6cb422912843adeb0e91509ea3bdd6f1625ec78a0abd6699c83ee6954",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__learn_astronomer_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_astronomer_trade",
+      "domain_sha256": "2775424f3f3ffb4bdc4ad651d3a9ac5057a6f0a77ec0818bc0c9bfdbba1c9e93",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__learn_hunter_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_hunter_trade",
+      "domain_sha256": "c7e4cec8644aafc33bdee648df1336c2db37f56306ab697fb13a4aa7432b0fba",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__learn_tailor_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_tailor_trade",
+      "domain_sha256": "be37c4dd537fd588f5f8e1da51da26914f10e92800171d262bb42b0bedfab98f",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__learn_thief_trade",
+      "source": "FOUR_NP",
+      "target_action": "learn_thief_trade",
+      "domain_sha256": "b96046ce319aea510cd3ef0b878c76d6dba6c2fd7fda8f22a5b1abb666224c7a",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__leave_home",
+      "source": "FOUR_NP",
+      "target_action": "leave_home",
+      "domain_sha256": "be82a2465b1f94464b27ef9c4f14efb5bf107f10522633c466f049b1a6bf620b",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__locate_princess",
+      "source": "FOUR_NP",
+      "target_action": "locate_princess",
+      "domain_sha256": "b862f52ffd2bba1428b5626c5e4d5f4bb32365a6b57e7992596f348cc16666af",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__obtain_ship",
+      "source": "FOUR_NP",
+      "target_action": "obtain_ship",
+      "domain_sha256": "2031d7e62a577c414696d0bd759dfa6516663c86aeb0fcc8f730a66ec23cd22f",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__receive_reward",
+      "source": "FOUR_NP",
+      "target_action": "receive_reward",
+      "domain_sha256": "fc46659e5a5a1297edbb3dd3e389a7afb65a7489d6338bc699d7d6bd7b47d9ad",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__repair_ship",
+      "source": "FOUR_NP",
+      "target_action": "repair_ship",
+      "domain_sha256": "7539f7d3bbd5a826c71a42937aa6f384d881b8f2a180c26a5293bf0b62ec48b6",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__return_eggs_to_nest",
+      "source": "FOUR_NP",
+      "target_action": "return_eggs_to_nest",
+      "domain_sha256": "d56971a34dc499da34b7ff386f190a3e9239ff2a4fad2ed9fc61c8af4c5f59b4",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__return_home_with_princess",
+      "source": "FOUR_NP",
+      "target_action": "return_home_with_princess",
+      "domain_sha256": "c3f790c14898c7fdd6d4c5309535bd6fabc4f49fdae68c21e68b7e5baa43b9ce",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__reunite_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "reunite_at_crossroads",
+      "domain_sha256": "010a3b183a3326a5e759899c675d59f64a4b272345967b3fb9d291075cdc2024",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__sail_to_rock",
+      "source": "FOUR_NP",
+      "target_action": "sail_to_rock",
+      "domain_sha256": "bf87590bf03161f7aa35e2164d58685eada35a1418d4b3cdc43ec4a5d31d7a52",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__separate_at_crossroads",
+      "source": "FOUR_NP",
+      "target_action": "separate_at_crossroads",
+      "domain_sha256": "74d55ce1dad3add59845e3db1515f8a225fc63185c882b360f531f4358e1bb48",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__sew_eggs",
+      "source": "FOUR_NP",
+      "target_action": "sew_eggs",
+      "domain_sha256": "b43f631c2062837bd23a96b805ea65688ca23107cad159f95ccc190af4a258d8",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__shoot_dragon",
+      "source": "FOUR_NP",
+      "target_action": "shoot_dragon",
+      "domain_sha256": "19f588517df5b5cf34a67ddbd998db947cbbf76f5f91773c0ff4e2e662ecf127",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__shoot_eggs",
+      "source": "FOUR_NP",
+      "target_action": "shoot_eggs",
+      "domain_sha256": "0ea8baa9ac1f389105fd32df6fa421441859b2aa670a8407ec9992abcf113013",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__steal_princess",
+      "source": "FOUR_NP",
+      "target_action": "steal_princess",
+      "domain_sha256": "76d70eddcc19218b4512abf5558e8c13a8bb5276d210d60252dc17cb0541d2e1",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "FOUR_NP__swim_after_ship_break",
+      "source": "FOUR_NP",
+      "target_action": "swim_after_ship_break",
+      "domain_sha256": "8f4bcdc1c6c65f51c7ac7d75a08adc53ce8c1a320a95d47c56faada546d8b517",
+      "problem_sha256": "f08c7dad3a09d8e35ca2625542327d09bcb024b6117a1a4a6c66496b37e275b0"
+    },
+    {
+      "id": "HANS_NP__abandon_children_in_forest",
+      "source": "HANS_NP",
+      "target_action": "abandon_children_in_forest",
+      "domain_sha256": "bc403a2b8303a803453ec122a073a7f56b2a3cd755657fa38fc1721c2268952b",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__call_duck_for_crossing",
+      "source": "HANS_NP",
+      "target_action": "call_duck_for_crossing",
+      "domain_sha256": "c670cede99d4df7fae9b8378dc14f8152309fda622919bd9c000d18fdd4382e3",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__collect_treasure",
+      "source": "HANS_NP",
+      "target_action": "collect_treasure",
+      "domain_sha256": "a491fbdd14fb5b8341c55a44db0ee25e7d0c63dbca7c14ea79db5d018f0cf0df",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__drop_breadcrumb_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_breadcrumb_on_path",
+      "domain_sha256": "61207fd5b62d7fe48e6b67bbd2d41b2f6e1d3115055284b785579f175c2b33bf",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__drop_pebble_on_path",
+      "source": "HANS_NP",
+      "target_action": "drop_pebble_on_path",
+      "domain_sha256": "c8ea695ef41014b762aa81dcb43a648227f2a98314f8429e23265fb801029d2e",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__enter_witch_house",
+      "source": "HANS_NP",
+      "target_action": "enter_witch_house",
+      "domain_sha256": "6c3cb0cee8e7d0f709d9cc550058baa537d7cd220d6c3451d20a24a4669e4e59",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__escape_from_stable",
+      "source": "HANS_NP",
+      "target_action": "escape_from_stable",
+      "domain_sha256": "9b9b7536999ef2b48697d5f81b940b23869b6cfcff80f00261367ed7a36fa964",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__follow_breadcrumbs_home",
+      "source": "HANS_NP",
+      "target_action": "follow_breadcrumbs_home",
+      "domain_sha256": "402839d3a6b902ce22e24a9f7bffa5a551e76608637c4e3ea1aa3bd67f2bdcec",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__follow_pebbles_home",
+      "source": "HANS_NP",
+      "target_action": "follow_pebbles_home",
+      "domain_sha256": "ba295763a91543f55f97b336bfb8b9106c26fcefcc24b5b3642adf51eaad7a64",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__hear_bird_and_follow_to_witch_house",
+      "source": "HANS_NP",
+      "target_action": "hear_bird_and_follow_to_witch_house",
+      "domain_sha256": "7955f7cc48afa91f2104be99715c5aed1ca9b3b6812b5615ccfb5517866bf4bb",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__leave_children_at_fire",
+      "source": "HANS_NP",
+      "target_action": "leave_children_at_fire",
+      "domain_sha256": "860cafd8eeb16f006631aa76f98c8bc940def23d4e9b35083582c21ab49aedf9",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__push_witch_into_oven",
+      "source": "HANS_NP",
+      "target_action": "push_witch_into_oven",
+      "domain_sha256": "5bf0f8b32e2d6b45f18700de79ededa0b808b343e3bdebe98712d34bc96a622a",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__return_home_and_reunite_with_father",
+      "source": "HANS_NP",
+      "target_action": "return_home_and_reunite_with_father",
+      "domain_sha256": "b8d01cef63d76ce3b14adbe303f5fe2ff9d5795195f4a97599a11cddc02c03e8",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__wander_forest_seeking_way_out",
+      "source": "HANS_NP",
+      "target_action": "wander_forest_seeking_way_out",
+      "domain_sha256": "f35ff61ce8c2eacf0e250ee028982f5daffb66a3e835c0fb5cec4a339e7f950e",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "HANS_NP__witch_captures_children",
+      "source": "HANS_NP",
+      "target_action": "witch_captures_children",
+      "domain_sha256": "6eef79eb99a7c6fc48aace6434b9504302502a06c47112b1d9131526b0d11838",
+      "problem_sha256": "8d7689f3bae5bcd33083d6f68ab4025b0cba902311bc89db09bd8c9e12d8d119"
+    },
+    {
+      "id": "JACK_NP__ask_giant_wife_for_breakfast",
+      "source": "JACK_NP",
+      "target_action": "ask_giant_wife_for_breakfast",
+      "domain_sha256": "c1d6d467127becedcb576284701b4786d35d2c804be61dc0c15c08a241fed1fb",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__climb_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "climb_beanstalk",
+      "domain_sha256": "dc2815a47374d077dc49f3a12c869dd19e44640d5687403805400bca50d9e988",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__cut_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "cut_beanstalk",
+      "domain_sha256": "c1077f2e8e29faf6ca0442bb08eae71822f5071d47aa06a5ccabc4fb7f00d252",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__grow_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "grow_beanstalk",
+      "domain_sha256": "8227bc3e018ce19cf6a4b6edeaa98b6f7b1b1483b161061baca5eb52abf5890f",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__hide_in_kettle",
+      "source": "JACK_NP",
+      "target_action": "hide_in_kettle",
+      "domain_sha256": "9eb672a766fb37452e3edf5ec18a22f64b3d468071f90465bf945595b3799393",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__hide_in_oven",
+      "source": "JACK_NP",
+      "target_action": "hide_in_oven",
+      "domain_sha256": "d56d752ab343f81fd1a8f12f15ec5d7ae249c9111f6a35fdc9f5cffa7bf54aab",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__plant_beans",
+      "source": "JACK_NP",
+      "target_action": "plant_beans",
+      "domain_sha256": "c4393aec8778b122eaa3b2323bb8c3506f6e4854038ce65a6cf590470fec04d3",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__return_down_beanstalk",
+      "source": "JACK_NP",
+      "target_action": "return_down_beanstalk",
+      "domain_sha256": "df342947eafc3bd52b072f1c5f918f88edfb1b106b08c2138eee55022691d371",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__sell_cow_for_beans",
+      "source": "JACK_NP",
+      "target_action": "sell_cow_for_beans",
+      "domain_sha256": "d9e627d0a6f60be0a0ffd26b451346a0dece4ac86026dfa12d7084f36d755160",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__steal_gold_bags",
+      "source": "JACK_NP",
+      "target_action": "steal_gold_bags",
+      "domain_sha256": "8059552d6d7819833736bc3041bd495bcb9de4b639afb6da0e28f1ececd716f8",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__steal_harp",
+      "source": "JACK_NP",
+      "target_action": "steal_harp",
+      "domain_sha256": "fa0edef33891943199bc8e6a904e15e7626ae8cdb1e409ec63a315376a33ff22",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "JACK_NP__steal_hen",
+      "source": "JACK_NP",
+      "target_action": "steal_hen",
+      "domain_sha256": "e711fddcad44955f435e7b33ee5839aa40a32e44a133ccf7aa1dc19f89ffba15",
+      "problem_sha256": "edd8f138f17e944d1a50fe88cebbc6ead3232275767330a32fe88a404c4131e6"
+    },
+    {
+      "id": "MUSI__approach_cottage",
+      "source": "MUSI",
+      "target_action": "approach_cottage",
+      "domain_sha256": "208fd71559463b928eb669d3c3169b283d1df4233b5461437c6769397fb87c72",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__cat_agrees",
+      "source": "MUSI",
+      "target_action": "cat_agrees",
+      "domain_sha256": "9553cd0851a215f5b3428970d253c69b6d8a55f7ec79369b8fa10dc2b1daba2c",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__cat_attack_messenger",
+      "source": "MUSI",
+      "target_action": "cat_attack_messenger",
+      "domain_sha256": "e228285366963db9ad9306e4a506fad55c653a1d3382286f8b2de95678d349e4",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__choose_sleep_spot",
+      "source": "MUSI",
+      "target_action": "choose_sleep_spot",
+      "domain_sha256": "c702ceffeed2f86d99bd6063293c2e641c09cf8df8f322e50d7ed268def29491",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__cock_agrees",
+      "source": "MUSI",
+      "target_action": "cock_agrees",
+      "domain_sha256": "0ea5f701b8f7610ecbd1a94eb59a99cc7ae2ee430dcae2735a2ed98aa242ff44",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__cock_crow_alert",
+      "source": "MUSI",
+      "target_action": "cock_crow_alert",
+      "domain_sha256": "152a60375a09df0ac191c3673723c72b1b0b5b681a9d4c71a639197e8fc4d5f2",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__dog_bite_messenger",
+      "source": "MUSI",
+      "target_action": "dog_bite_messenger",
+      "domain_sha256": "381bda0dbda02dc592e59779d24dd3b8166cfd2897d566f120fa05b350a88a12",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__donkey_kick_messenger",
+      "source": "MUSI",
+      "target_action": "donkey_kick_messenger",
+      "domain_sha256": "6753713be07977391de768d749387496f520c35d01cba0b473855baa78e6528f",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__eat_feast",
+      "source": "MUSI",
+      "target_action": "eat_feast",
+      "domain_sha256": "2862ea1132bb24b4c576eecdc439ae20d149fa06ed7d0324565e0ae7ae5e3f26",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__extinguish_light",
+      "source": "MUSI",
+      "target_action": "extinguish_light",
+      "domain_sha256": "9f9bcf3e6b386c72585fcdec786220fc34687326f6674d869ebf45ef57e94a7e",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__hound_agrees",
+      "source": "MUSI",
+      "target_action": "hound_agrees",
+      "domain_sha256": "95503f328d414417416e432c1cf9ceb672dfb20c512d3817ae632d489c6c27d6",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__invite_cat",
+      "source": "MUSI",
+      "target_action": "invite_cat",
+      "domain_sha256": "9008ae994244d870b97bd471e4f95014c47fca64391c6f329591531e370e986e",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__invite_cock",
+      "source": "MUSI",
+      "target_action": "invite_cock",
+      "domain_sha256": "4d6c60e44fadd1068a3ba715005dbe913ed8ce4eedee745667dcb140af4f2f74",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__invite_hound",
+      "source": "MUSI",
+      "target_action": "invite_hound",
+      "domain_sha256": "affc542ad6b361c01ce9a39d2c0bb8c6bab4b4cc8c82915060c13d9e02685ef2",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__messenger_attempt_light",
+      "source": "MUSI",
+      "target_action": "messenger_attempt_light",
+      "domain_sha256": "3ff590ec0e6968dc8bcd97caff680d318e28ec47a18183d736ccd9c0dbcb5460",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__plan_scaring_robbers",
+      "source": "MUSI",
+      "target_action": "plan_scaring_robbers",
+      "domain_sha256": "ab436005ca9889b31ca791a20e803c8315539129b837df20934dcc03566be4d3",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__rest_in_forest",
+      "source": "MUSI",
+      "target_action": "rest_in_forest",
+      "domain_sha256": "98ef59372b0bd8ea7fe9205e4a4a2f189b4ffa285085eefe64a0e968582d7eb2",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__robbers_flee",
+      "source": "MUSI",
+      "target_action": "robbers_flee",
+      "domain_sha256": "a63fa5b8f03240d3e84fc64b32c62a60cf9abc502d14351d9829d900d9a060fb",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__robbers_retreat",
+      "source": "MUSI",
+      "target_action": "robbers_retreat",
+      "domain_sha256": "0ec9b0bfba5e62b2d2113beac7a679dba4324fe03a34b091e75ffb29c5ab0c32",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__run_away",
+      "source": "MUSI",
+      "target_action": "run_away",
+      "domain_sha256": "bb16cf6f9520a9f6951b5e175804efcf97d17cc77f732a505dc348bfe7f933db",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__signal_and_make_noise",
+      "source": "MUSI",
+      "target_action": "signal_and_make_noise",
+      "domain_sha256": "75c23435e2a995143de03bbbe0da1e0bdb1537fe6277f240179136a8e44d2221",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__spot_light",
+      "source": "MUSI",
+      "target_action": "spot_light",
+      "domain_sha256": "8a1da41806cbffab64fc776f94b43003b866b05b4f93dc4bce57285684026dee",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__stack_animals",
+      "source": "MUSI",
+      "target_action": "stack_animals",
+      "domain_sha256": "ced08629b3fd6347289cd910883615edaec18f31f60024a3bc2e6d23041fb373",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "MUSI__travel_together",
+      "source": "MUSI",
+      "target_action": "travel_together",
+      "domain_sha256": "1cabfadfa30439fa37e9d13f03e60d1ba53ba3bdd6168cfbaa0afab18f7b06ff",
+      "problem_sha256": "106e3d429ffa68eb8e1da1893f2d3c9680c1ede569f76c8173d39412b8723881"
+    },
+    {
+      "id": "NAUG__approach_sun",
+      "source": "NAUG",
+      "target_action": "approach_sun",
+      "domain_sha256": "375f2c1e9af55ede2d98ec4f9599277e23064fae058f556d8bf0bd893ad2e33c",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__arrest_meteor",
+      "source": "NAUG",
+      "target_action": "arrest_meteor",
+      "domain_sha256": "a5ca41b0bb7211278c7e673d7c5c85da2a27b84c5a2cdc26f19f7ca97fabd1b9",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__avoid_body",
+      "source": "NAUG",
+      "target_action": "avoid_body",
+      "domain_sha256": "86b0099c94325e55ce3ab9a8b091707b682411ac25a9f7ecddeb8e25c37eaa85",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__burn_up",
+      "source": "NAUG",
+      "target_action": "burn_up",
+      "domain_sha256": "d07811e7e6633dbb6b0fdca86405345e1c0d6454a6ae1ab17530bd1b2b802a48",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__call_comet_forward",
+      "source": "NAUG",
+      "target_action": "call_comet_forward",
+      "domain_sha256": "4ef76d895215067cbc33e86c0a5f1dc2853a62e06fb749eb3688829352fef5e6",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__cross_out_comet",
+      "source": "NAUG",
+      "target_action": "cross_out_comet",
+      "domain_sha256": "91b2f3a4887f7f323034afecd7a4686f402d84e96f5b7016fc944969a256c37a",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__deliver_meteor_to_bungo",
+      "source": "NAUG",
+      "target_action": "deliver_meteor_to_bungo",
+      "domain_sha256": "4f1b59d87705c6ec908cd41697ff2df0e78924ff379393c933b943a50c8b803d",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__give_order",
+      "source": "NAUG",
+      "target_action": "give_order",
+      "domain_sha256": "721c6739c891ac5bdceb83cab0882558b35e1b3a3590ce796097222c9d79ec1d",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__prohibit_speaking_to_meteor",
+      "source": "NAUG",
+      "target_action": "prohibit_speaking_to_meteor",
+      "domain_sha256": "586fd6f5ff93fdabfe482d3c6043b43c1c31c14268b2f4b6ff0b58a51289fc36",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__punish_meteor",
+      "source": "NAUG",
+      "target_action": "punish_meteor",
+      "domain_sha256": "0839563f94f86228d99090a8cb8fef2adf6cbb22296bf0d6eb3b2e9b56bcab83",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__speak_to_meteor",
+      "source": "NAUG",
+      "target_action": "speak_to_meteor",
+      "domain_sha256": "2446d389247e3e6f65f66dbaa5ec5e9532fc48586e9947783805b28e12643bdf",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__start_travel",
+      "source": "NAUG",
+      "target_action": "start_travel",
+      "domain_sha256": "1b27482ff0d3968532a2a6496aa1269e8807f1cda66d4c26a87914d731c0e80e",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "NAUG__turn_left_on_meeting",
+      "source": "NAUG",
+      "target_action": "turn_left_on_meeting",
+      "domain_sha256": "c0cfd8d05eee1618e5d65d4e678a0e085bc7a8b9cb43a4e3536ebbeccf69783c",
+      "problem_sha256": "dc5e02244ab86f93a2c417bf43a3cbf00bf50065c8f4f472525fb2f4de3ba9b0"
+    },
+    {
+      "id": "PIGS_NP__ask_for_material",
+      "source": "PIGS_NP",
+      "target_action": "ask_for_material",
+      "domain_sha256": "3d17e1ac57d98b339896a1177ce889c602f88300316b8e97e3bed5e8823d8475",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__build_house",
+      "source": "PIGS_NP",
+      "target_action": "build_house",
+      "domain_sha256": "577d32eb352f8efe7cfa2b72a8edd2f4cd9c05b2dc19c061340269288bd1b152",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_buys_butter_churn_and_hides",
+      "source": "PIGS_NP",
+      "target_action": "pig_buys_butter_churn_and_hides",
+      "domain_sha256": "3e89e34e6348920b5898892c11f20f56927c7fd7804a9a0b6cc1137bb426f0fa",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_collects_apples_and_escapes",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_apples_and_escapes",
+      "domain_sha256": "b02b3bec512bfd43ebfbbefc1e726014ed97f177270db121559e473c35890fb3",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_collects_turnips",
+      "source": "PIGS_NP",
+      "target_action": "pig_collects_turnips",
+      "domain_sha256": "a85b6fc3815829c533c9107a3b75cb4dc5e89862901b004709e151103addc5dd",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_prepares_boiling_pot_and_fire",
+      "source": "PIGS_NP",
+      "target_action": "pig_prepares_boiling_pot_and_fire",
+      "domain_sha256": "8d8fce71809b47fe7623dff31af1e3370d5a835f905ff937a94739c043c90941",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_refuses_entry",
+      "source": "PIGS_NP",
+      "target_action": "pig_refuses_entry",
+      "domain_sha256": "996e45673c5d03576767658318cf129b59de8f8e8331aeff8ce1e1448a2b1dcc",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__pig_rolls_churn_down_hill",
+      "source": "PIGS_NP",
+      "target_action": "pig_rolls_churn_down_hill",
+      "domain_sha256": "64af9317f8eb202657d31bd9da8a60142d0af0948ddcb10faff46189777df9ca",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__receive_material",
+      "source": "PIGS_NP",
+      "target_action": "receive_material",
+      "domain_sha256": "2cf7c343d8e354d122c385a49d4ee06e1ffddbf3054bdf62431eb6e064205495",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__send_sons_on_journey",
+      "source": "PIGS_NP",
+      "target_action": "send_sons_on_journey",
+      "domain_sha256": "6c5a7bf8b9f47f0cfede5632af644d0dd231ca5634d703e7988d98b734c0ffa9",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_attempts_chimney_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_attempts_chimney_entry",
+      "domain_sha256": "67e15ab43796317bbeeb7e34df941641c6137e34d960d4f832d271da2330068c",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_blows_house_down",
+      "source": "PIGS_NP",
+      "target_action": "wolf_blows_house_down",
+      "domain_sha256": "9d3f29314f2ce18edeb38965cee8c4ef750cb48fd0a19f68695e64ac626b41c0",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_eats_pig",
+      "source": "PIGS_NP",
+      "target_action": "wolf_eats_pig",
+      "domain_sha256": "2affa7ce5aa74cbb99d51ef7144712dc8a2fb87b48784bd7e04b20193884fce1",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_fails_to_blow_house",
+      "source": "PIGS_NP",
+      "target_action": "wolf_fails_to_blow_house",
+      "domain_sha256": "36a17b05d3f01c7d879f247d93e5b86dfd45fae486c166e9c73f4dba2e92d21b",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_falls_into_pot_and_is_boiled",
+      "source": "PIGS_NP",
+      "target_action": "wolf_falls_into_pot_and_is_boiled",
+      "domain_sha256": "560a05b95b37e574f5c6e00fe4e5e00b21e93c21f4a103c093ccc2331dacd988",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_flees_from_rolling_object",
+      "source": "PIGS_NP",
+      "target_action": "wolf_flees_from_rolling_object",
+      "domain_sha256": "87cfde178bf4dba211cad13c99bed3a2911ab8d33d715509825a1dbe7f2a9342",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_huff_and_puff",
+      "source": "PIGS_NP",
+      "target_action": "wolf_huff_and_puff",
+      "domain_sha256": "d6a275b20dd9180c9e09de19a606919101d1b1254cd458773864c09fad44035b",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_knocks_and_requests_entry",
+      "source": "PIGS_NP",
+      "target_action": "wolf_knocks_and_requests_entry",
+      "domain_sha256": "2de19b01214062946709581947e4ec9197da1b98e44cd06fe14c6feb84a78560",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_apple_orchard",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_apple_orchard",
+      "domain_sha256": "97732cd0d882f1664a22867c953b4e87886e5941d886766b30779d0f9253bc55",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_fair_trip",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_fair_trip",
+      "domain_sha256": "fb2797273a214b093206a901bb036a82e762ac2f3d0a81c3fe89316ae57afd83",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PIGS_NP__wolf_promises_turnip_field",
+      "source": "PIGS_NP",
+      "target_action": "wolf_promises_turnip_field",
+      "domain_sha256": "55ca474349cb6412710e0c54e0e1decdd4f1ee88f85509491e6a7933f44b79f1",
+      "problem_sha256": "97870738680611f8e2119ad73c0ff5471d8e895d57057b42eba330f80c274584"
+    },
+    {
+      "id": "PUSS__buy_boots",
+      "source": "PUSS",
+      "target_action": "buy_boots",
+      "domain_sha256": "bcf5b8f62ebe6946188a3cb700a2c94948c0698e1ce4843cf9bf0f2c69060ee8",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_call_for_help",
+      "source": "PUSS",
+      "target_action": "cat_call_for_help",
+      "domain_sha256": "e0c6fb0bb3f32b95d74bb63eaee885a29b0fb0c8b430840d22c89d73bfe1e015",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_catch_rabbits",
+      "source": "PUSS",
+      "target_action": "cat_catch_rabbits",
+      "domain_sha256": "6b1a5af5394dfadf9d39416936e854e813051823fdafc423c37bb2984c193b73",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_deliver_gifts_to_king",
+      "source": "PUSS",
+      "target_action": "cat_deliver_gifts_to_king",
+      "domain_sha256": "dd5e762acc79e94a207900063da1672146692731110180f1e81af7ebc16081e5",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_disentchant_prisoners",
+      "source": "PUSS",
+      "target_action": "cat_disentchant_prisoners",
+      "domain_sha256": "1829ab3246841923cf518f73275e25cd7e30f60a15bf21f6dcdffb5992850678",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_eat_mouse",
+      "source": "PUSS",
+      "target_action": "cat_eat_mouse",
+      "domain_sha256": "a391e7ba5cf7745be59b8af039768744e9448b3c527e9e29d89da8099bfb49c9",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_lion",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_lion",
+      "domain_sha256": "ce3f597f64ddc37a6b9ababd8466a794b3c5b00aef045823ca2acf081d63b2bf",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_ogre_transform_mouse",
+      "source": "PUSS",
+      "target_action": "cat_ogre_transform_mouse",
+      "domain_sha256": "ec8fe2808aaf910d29e4fe3b6fe913a60b786d3f6057339d906a6901e4046fd1",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_open_castle_gates",
+      "source": "PUSS",
+      "target_action": "cat_open_castle_gates",
+      "domain_sha256": "44d51dd98cb3fe99a71419f94a8f91466e876e27ae3d0d0585726379bb2519f4",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__cat_persuade_master_to_bathe",
+      "source": "PUSS",
+      "target_action": "cat_persuade_master_to_bathe",
+      "domain_sha256": "7537547b160bebd7ef7801da4f07782aa94dbc89f5e43756926913cb0ba3cc6d",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__give_bag_to_cat",
+      "source": "PUSS",
+      "target_action": "give_bag_to_cat",
+      "domain_sha256": "44c44351db458de10fe0b8d450bca0feddbb05fb2c1594867f5c941e9782ff2c",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__king_send_groom_fetch_suit",
+      "source": "PUSS",
+      "target_action": "king_send_groom_fetch_suit",
+      "domain_sha256": "88f9a256a82d63f6822ef4cebcd2083d362bf276fbf9eb4033a87df63a298227",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__master_marry_princess",
+      "source": "PUSS",
+      "target_action": "master_marry_princess",
+      "domain_sha256": "3d988985c1be9bc903262146ca0dbe11df9dd78faa2a3ddc6db203c95eef1e90",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "PUSS__master_wear_suit",
+      "source": "PUSS",
+      "target_action": "master_wear_suit",
+      "domain_sha256": "be3a3ce90b68a723df7c2d983de8beb0120e9b1425088b88363d7ead98928ef3",
+      "problem_sha256": "0b2690d8789a11d4e9a336bcaaf49c3cc1eee1df911e4130686872a68a85df9f"
+    },
+    {
+      "id": "REMA_NP__arrive_at_marble_palace",
+      "source": "REMA_NP",
+      "target_action": "arrive_at_marble_palace",
+      "domain_sha256": "2487ac86d70bcd0bdc8672a7a9e59194c6bf8a2cb50c41695f436861d83bf215",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__encounter_impostor_king",
+      "source": "REMA_NP",
+      "target_action": "encounter_impostor_king",
+      "domain_sha256": "91ca97048d76190602b0be191d34b8651b1d25c37a1bf5fe38e643fd924fd578",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__encounter_robbers_in_forest",
+      "source": "REMA_NP",
+      "target_action": "encounter_robbers_in_forest",
+      "domain_sha256": "e53201a61e214b8168fb857bb96180a89b1a1d40ae5297226cf25aad01e77c58",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__king_proposes_marriage",
+      "source": "REMA_NP",
+      "target_action": "king_proposes_marriage",
+      "domain_sha256": "d7290659b8d5f3920a1f04e566eaca4e33000c0b171339463b56c906a9d2f444",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__king_requests_information_and_gifts",
+      "source": "REMA_NP",
+      "target_action": "king_requests_information_and_gifts",
+      "domain_sha256": "69565f6f69e6604184ef4f19fd0a89dda77234c78f84545e667bc95399fc2792",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__princess_accepts_with_heart",
+      "source": "REMA_NP",
+      "target_action": "princess_accepts_with_heart",
+      "domain_sha256": "7451b4724e2b82b037bc7ea6a1af41b4cbd4e6024210318dbe4c4c994589236b",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__receive_rubies_from_impostor",
+      "source": "REMA_NP",
+      "target_action": "receive_rubies_from_impostor",
+      "domain_sha256": "4718b38cf7fb2f94ec85801ae8f3c1c36a5f94bbdde3f72adcdd40c3b89b238e",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__receive_sapphires_from_robber_chief",
+      "source": "REMA_NP",
+      "target_action": "receive_sapphires_from_robber_chief",
+      "domain_sha256": "5715caa2aa42214a2c5434e2f200e34c344d4d8d3edde297923321dd0c3f7514",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__run_away_from_palace",
+      "source": "REMA_NP",
+      "target_action": "run_away_from_palace",
+      "domain_sha256": "43ee60e241277098f6d63a630252d6cdf02f6b94f3388717a0047afd46a6e917",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__suitors_retire_due_to_phrase",
+      "source": "REMA_NP",
+      "target_action": "suitors_retire_due_to_phrase",
+      "domain_sha256": "49fafae4fccba4a20b4b11f469aa2a03e3586a84f86cde3f3767c5c6eac12081",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__utter_phrase_grandmother_mangle",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_grandmother_mangle",
+      "domain_sha256": "2fa92be86e6db95cb4d0c943c732a5048c0a10d705423511f4dcfe7d6828d0a3",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "REMA_NP__utter_phrase_price_of_butter",
+      "source": "REMA_NP",
+      "target_action": "utter_phrase_price_of_butter",
+      "domain_sha256": "878eae199a996d992d0f4917c817f4920ce988c1f12d796329625b85c2652b83",
+      "problem_sha256": "ef5de3780f4363f9f53b8903f5a427aa9e194ad9380421ade69a5470947359b7"
+    },
+    {
+      "id": "SNOW__apple_piece_falls_out_reviving_snow_white",
+      "source": "SNOW",
+      "target_action": "apple_piece_falls_out_reviving_snow_white",
+      "domain_sha256": "bd3a9fdb5401a09480752232ad5199b24d70e432c10a64b1ee541a03c5796f60",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__child_is_born_and_queen_dies",
+      "source": "SNOW",
+      "target_action": "child_is_born_and_queen_dies",
+      "domain_sha256": "1a5312602d987a827f353f5f8263738ba240f2267810e84f880e7d734d1e3bf9",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__dwarfs_cut_laces_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_cut_laces_rescue_snow_white",
+      "domain_sha256": "c65c8b3619e31953418851550469975f6b5f90c816a9944862ba6cfd2516f497",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__dwarfs_offer_snow_white_to_maintain_house",
+      "source": "SNOW",
+      "target_action": "dwarfs_offer_snow_white_to_maintain_house",
+      "domain_sha256": "1bb06e6b8e01b608592dd8ffaefae4bc4990ea76d3c988f6b8d761cfff8a3654",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__dwarfs_prepare_glass_coffin_for_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_prepare_glass_coffin_for_snow_white",
+      "domain_sha256": "e9ae775b5a52141d426fd06dfee2044254dd50139912a24c1fc10ce9d378f947",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__dwarfs_remove_comb_rescue_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_remove_comb_rescue_snow_white",
+      "domain_sha256": "e2d0cb36d5fac3980a3785bbf450946f24751f4963f40eb769a4b45deda6527e",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__dwarfs_return_and_discover_snow_white",
+      "source": "SNOW",
+      "target_action": "dwarfs_return_and_discover_snow_white",
+      "domain_sha256": "f779e8d71c75203a6ac1ba4003f5a0d0f598511be5f1817bd164898f46f4df7a",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__huntsman_spares_snow_white_and_brings_boar_heart",
+      "source": "SNOW",
+      "target_action": "huntsman_spares_snow_white_and_brings_boar_heart",
+      "domain_sha256": "b0f04f88e299a5c5e1d825f7916a8d21d074d47f85acefe5fddc519285c94790",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__king_marries_stepmother",
+      "source": "SNOW",
+      "target_action": "king_marries_stepmother",
+      "domain_sha256": "679c8bca1978e9d1329766cdd0ae58b8b037059a45fb737972855e9015d83444",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__prince_discovers_coffin_and_moves_it",
+      "source": "SNOW",
+      "target_action": "prince_discovers_coffin_and_moves_it",
+      "domain_sha256": "24253dbf5aac09e631558908a857b0198fe7a903bb16a83b340cdebe3ab40b88",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__prince_marries_snow_white",
+      "source": "SNOW",
+      "target_action": "prince_marries_snow_white",
+      "domain_sha256": "5344435f497847f9467a09507dbd3dee6e5d851564f182cc24411cd3f05a75e8",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__queen_pricks_finger",
+      "source": "SNOW",
+      "target_action": "queen_pricks_finger",
+      "domain_sha256": "17e8cd30ebc056f09dfa8eebf24c30e74d4bc0fc4ec4e6c1bd30d5ec199eda91",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__queen_sews_at_window",
+      "source": "SNOW",
+      "target_action": "queen_sews_at_window",
+      "domain_sha256": "5c1801db040e6c1f6b0f3741ea7c8701d761a94f50076943f6f55abbc058595f",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__queen_wishes_child_white_red_black",
+      "source": "SNOW",
+      "target_action": "queen_wishes_child_white_red_black",
+      "domain_sha256": "07c13349c6f7801c5ef5918351a01a99510353a0d05cc77b77683644cafc2242",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__snow_white_eats_poisoned_apple_and_dies",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_poisoned_apple_and_dies",
+      "domain_sha256": "dbef3c9f4a54309d138a07e000c5e770711a25b10747b1b162eb32a27c4a5d7f",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "source": "SNOW",
+      "target_action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "domain_sha256": "428f2d07f4c29952f62bfe17544f9d7bd4f7d9863da14be922e52d818088a5b6",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__snow_white_finds_dwarfs_cottage",
+      "source": "SNOW",
+      "target_action": "snow_white_finds_dwarfs_cottage",
+      "domain_sha256": "d8a8c924e59cbb05a236b90f88b56c816224b47f6749d29c2dce736d9800937e",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__snow_white_flees_into_forest",
+      "source": "SNOW",
+      "target_action": "snow_white_flees_into_forest",
+      "domain_sha256": "410a0e8afedf0e8ad63d82c4a359c223c7696ba04a2cfdfffa510de29587616d",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__snow_white_sleeps_in_seventh_bed",
+      "source": "SNOW",
+      "target_action": "snow_white_sleeps_in_seventh_bed",
+      "domain_sha256": "7ed7db46670e6497a623098786bb87c54a911e6366f884d34978b4088863b1e6",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_asks_looking_glass_fairest",
+      "source": "SNOW",
+      "target_action": "stepmother_asks_looking_glass_fairest",
+      "domain_sha256": "25dc7829bb67f6ecf59d43a372fe12020f74df1fb802e2caf6555e4af09502d7",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "source": "SNOW",
+      "target_action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "domain_sha256": "fa931c35dc3dfbd89ca04ea8462e264fcc6cbc7e605257a525f0bdb00fb41138",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_becomes_envious_of_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_becomes_envious_of_snow_white",
+      "domain_sha256": "a0dd7b679d5fba97c5a6a1a3b15238dc5469dab185bcb43aeaefca3a3c1f6ea7",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_comb_poison_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_comb_poison_snow_white",
+      "domain_sha256": "a716232ef17ffa0d18985005db90873f520ce4e65b6815ff5c52f97a631f925a",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_disguises_as_old_woman_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+      "domain_sha256": "7ce3635a8b42f4eece8d6daf21dc7d70067bc514d8e8b1417b6ad76be8437f5d",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "source": "SNOW",
+      "target_action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "domain_sha256": "f9a8e8a7497643f9c83a54f4663149723f4e34c9536286ebd9f03cf4ad37c301",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_laces_snow_white_tightly",
+      "source": "SNOW",
+      "target_action": "stepmother_laces_snow_white_tightly",
+      "domain_sha256": "af9b56c2646eaf6008b420ea04464f03578bd3e2cee6b5a3f7a203a7a62991bb",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_apple_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+      "domain_sha256": "463faabbf9537593f66af3cd5037930367e86ad55a9681320fa5c6d8f2ae5e3d",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_makes_poisonous_comb_and_visits_cottage",
+      "source": "SNOW",
+      "target_action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+      "domain_sha256": "30fe11b417d9f7be00046c0044ed03619321a1350f8d3637c8f271b6c91d13e8",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SNOW__stepmother_orders_huntsman_to_kill_snow_white",
+      "source": "SNOW",
+      "target_action": "stepmother_orders_huntsman_to_kill_snow_white",
+      "domain_sha256": "d8a0863f2df111f512d600c7e15e07b98c932621fbe482ad24fe625de952b47c",
+      "problem_sha256": "905286f9c52f95176f82da3f03151c87a55424a39f6223645f38a4edae8910bb"
+    },
+    {
+      "id": "SOUP__claim_queenhood",
+      "source": "SOUP",
+      "target_action": "claim_queenhood",
+      "domain_sha256": "4c6b4d94cee4939c0f49366e8cd38c795b00cc6e5695c5ce27fcc5b04fef425b",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__escape_jail",
+      "source": "SOUP",
+      "target_action": "escape_jail",
+      "domain_sha256": "a8f20bb4b112504149728f93b680ad6e337823d5aeeefc05ec2c650a441000a7",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__give_skewer_to_elves",
+      "source": "SOUP",
+      "target_action": "give_skewer_to_elves",
+      "domain_sha256": "f7d45ed6b71995d36676efdc33d95e461bf6a0c95107f5be26d67d233b28e6f2",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__learn_wisdom_from_ants",
+      "source": "SOUP",
+      "target_action": "learn_wisdom_from_ants",
+      "domain_sha256": "769332e9f7665acad0c310261a5a76b6e64920e042729f2ed701b967c3f6931e",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__prepare_soup_by_elf_effect",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_elf_effect",
+      "domain_sha256": "dc4531b5fc47a20adae355cef8554c4bb438d0dd74ac75715a858f3983f0bb67",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__prepare_soup_by_king_tail",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_king_tail",
+      "domain_sha256": "5c448b0c10494815f02bcf1b38b7fd49bdad7d78aa54b856dd36f3a1484e208b",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__prepare_soup_by_poet_imagination",
+      "source": "SOUP",
+      "target_action": "prepare_soup_by_poet_imagination",
+      "domain_sha256": "c88521ee0dc83fcf3307463264d8b6b85ff25f796f704ca3226037ba750769de",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__read_and_digest_books",
+      "source": "SOUP",
+      "target_action": "read_and_digest_books",
+      "domain_sha256": "eaf3c01aa821b43e04f6aeabce282e3276673c46346c7fbb2f0af012f1be67cc",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__receive_anointed_skewer",
+      "source": "SOUP",
+      "target_action": "receive_anointed_skewer",
+      "domain_sha256": "e3243edbfa68d7c809a4cd547e5279c78259874760d1a4987ab1061fef8b0deb",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__receive_feather",
+      "source": "SOUP",
+      "target_action": "receive_feather",
+      "domain_sha256": "fd510a9dba8c6d3616f8a530b399372d282836a59d3d32a7f118ad928ce9e884",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__run_in_cage",
+      "source": "SOUP",
+      "target_action": "run_in_cage",
+      "domain_sha256": "8474f6f22ab786543d7b8b79f217f8c66907a51b2fa998438a087e10dc9a84ef",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "SOUP__travel_to",
+      "source": "SOUP",
+      "target_action": "travel_to",
+      "domain_sha256": "ca0f52b3046d2b8af2c9b4e6a9ab13d121a1fbcdcf1653a1819d1b0c74b6b4ac",
+      "problem_sha256": "e6be52071fa5844ec34a01fb0de1aaf470f83452fc019dfb2496758e96730229"
+    },
+    {
+      "id": "WOE__accept_woe_as_burden",
+      "source": "WOE",
+      "target_action": "accept_woe_as_burden",
+      "domain_sha256": "077d2faf4ea1c40159113817282ca23a0739f7533ecf462db6521861e1267467",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__allow_woe_to_ride_on_shoulder",
+      "source": "WOE",
+      "target_action": "allow_woe_to_ride_on_shoulder",
+      "domain_sha256": "5c0dc49d785268eaee5e0a1362d7ee05ba3455c0129de0dcbb66ecffb9877868",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__bow_to_guests",
+      "source": "WOE",
+      "target_action": "bow_to_guests",
+      "domain_sha256": "811bf8a3d21d09f98b2a7e106aee95cc1d88033048fb2bd3748b3dfbb9cade9c",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__encounter_bitter_woe",
+      "source": "WOE",
+      "target_action": "encounter_bitter_woe",
+      "domain_sha256": "daf90f92e6686e022655dfad77b4463dc75498803ba686d941ef92cfae3d59d0",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__hide_woe_under_stone",
+      "source": "WOE",
+      "target_action": "hide_woe_under_stone",
+      "domain_sha256": "f2f546be4979e794882a7c0f023d8ac2b87ca33bdc56f7a0443dcbf44eabb152",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__invite_rich_brother_to_feast",
+      "source": "WOE",
+      "target_action": "invite_rich_brother_to_feast",
+      "domain_sha256": "da84b4ff849d812b9d8a261bc991ab17bc9511a268719b4ee61945ce33aa7467",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__make_sign_of_cross",
+      "source": "WOE",
+      "target_action": "make_sign_of_cross",
+      "domain_sha256": "dc56942b35025b9707b7002968a2074f98167f7538d2d8daa630506e4917a0c9",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__move_heavy_stone",
+      "source": "WOE",
+      "target_action": "move_heavy_stone",
+      "domain_sha256": "8ddaf2caa7a4f3082e071cb2046eb9019175505a76c7a9d63b7c3f0a7d8323ac",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__perform_work_for_rich_brother",
+      "source": "WOE",
+      "target_action": "perform_work_for_rich_brother",
+      "domain_sha256": "77a4a9a6dfd4d60b57b379920c5eef808c85114fd3328c4272527abb6853f581",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__receive_payment",
+      "source": "WOE",
+      "target_action": "receive_payment",
+      "domain_sha256": "c97da009c76a98ca9161dcbaac8d5cca33897d27f5ce684cd6b47328e5d74618",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__request_help_from_rich_brother",
+      "source": "WOE",
+      "target_action": "request_help_from_rich_brother",
+      "domain_sha256": "b83d795bd4d3c96056345fbc64c19c694340f825bb8af3f859d7294ca9d18e1d",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__rich_brother_attempt_to_move_stone",
+      "source": "WOE",
+      "target_action": "rich_brother_attempt_to_move_stone",
+      "domain_sha256": "c5885bd428c8f37db7ed69553b8fe0829efc1463c055fe564e3d9a9abfba7375",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__sing_cheerful_song",
+      "source": "WOE",
+      "target_action": "sing_cheerful_song",
+      "domain_sha256": "cf88efbce0cb2547885abb72142613afb12e146667ca6bc3cead73802af5ba7c",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__spend_money_on_drink",
+      "source": "WOE",
+      "target_action": "spend_money_on_drink",
+      "domain_sha256": "0dbc13a2c712b0405d5d8c0019d95a26e3b84f5be6c254f07a2acb96671c4e09",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__stay_for_banquet",
+      "source": "WOE",
+      "target_action": "stay_for_banquet",
+      "domain_sha256": "11e468788394ad49075307b12b45dd3094de85cf33e66a9cf4b17860e238e266",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__take_gold_pot_and_hide",
+      "source": "WOE",
+      "target_action": "take_gold_pot_and_hide",
+      "domain_sha256": "43c60996341cf0f67853474b83fec3fab2397047864b066f6b57307722af359b",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    },
+    {
+      "id": "WOE__trade_assets_for_money",
+      "source": "WOE",
+      "target_action": "trade_assets_for_money",
+      "domain_sha256": "a0f026bc43c03416a38a0abf816100eb50bf700ea2c433b07a4fd11fb6cccb0b",
+      "problem_sha256": "f4554ded89cadd3ab9aa906054b7793f0846cb6eb7f034271ad48893e5ac25af"
+    }
+  ],
+  "task_count": 234,
+  "mode": "source_action_reachability",
+  "task_bundle_origin": "data\\validation\\source_action_reachability_tasks_2026_10_15_v1",
+  "task_bundle_manifest_sha256": "b04b7ba8e25530f10a1575a276bf32f5af59260bef9d871b244cf24e1dfa5059",
+  "composed_origin": null,
+  "probe_origin": null,
+  "probe_manifest_sha256": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

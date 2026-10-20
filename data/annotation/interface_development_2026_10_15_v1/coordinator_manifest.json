@@ -1,0 +1,865 @@
+{
+  "version": 1,
+  "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+  "seed": "icaps-development-v1",
+  "per_stratum": 24,
+  "selection_policy": "SHA256-ranked sample without replacement within name/type-spelling strata; equal arity only",
+  "all_cross_source_pairs": 25868,
+  "different_arity_excluded": 14458,
+  "equal_arity_pairs": 11410,
+  "selected_pairs": 100,
+  "strata": {
+    "different_name/different_type_names": {
+      "eligible": 6183,
+      "selected": 24,
+      "omitted": 6159
+    },
+    "different_name/permuted_type_names": {
+      "eligible": 58,
+      "selected": 24,
+      "omitted": 34
+    },
+    "different_name/same_order_type_names": {
+      "eligible": 5036,
+      "selected": 24,
+      "omitted": 5012
+    },
+    "same_name/different_type_names": {
+      "eligible": 4,
+      "selected": 4,
+      "omitted": 0
+    },
+    "same_name/same_order_type_names": {
+      "eligible": 129,
+      "selected": 24,
+      "omitted": 105
+    }
+  },
+  "selection": [
+    {
+      "id": "pair_845db7922f0a1dcd",
+      "refs": [
+        "ACCO:four_legged",
+        "CHIC_NP:decided_to_tell_king"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_72a0d7f5799ac0fc",
+      "refs": [
+        "MUSI:fled",
+        "SNOW:has"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_e2697e615aa24da1",
+      "refs": [
+        "MUSI:invited",
+        "PUSS:at_item"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_72119776bc2352fa",
+      "refs": [
+        "ACCO:contained_in",
+        "MUSI:sleeping_at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_c084c33f9e7074eb",
+      "refs": [
+        "ACCO:located",
+        "SOUP:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_f89ed0ed229ba90b",
+      "refs": [
+        "ACCO:captured",
+        "BIRT:gloomy"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_850fc31c7a05359f",
+      "refs": [
+        "BUFF:imitates_pig",
+        "HANS_NP:crumb_on_path"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_d4f67b9f31fa4d81",
+      "refs": [
+        "BIRT:kissed_by",
+        "SNOW:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_ecba684bbc686752",
+      "refs": [
+        "ACCO:four_legged",
+        "NAUG:punished"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_c60c70a3c338f01a",
+      "refs": [
+        "PIGS_NP:under",
+        "REMA_NP:has"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_d11c08dc9bbec169",
+      "refs": [
+        "MUSI:invited",
+        "PUSS:has"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_444e52e70f7a6796",
+      "refs": [
+        "SNOW:fair",
+        "SOUP:anointed"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_0ed2593cd66a5292",
+      "refs": [
+        "PIGS_NP:boiling",
+        "PUSS:drowning"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_d9f1427b796df0b0",
+      "refs": [
+        "NAUG:arrested",
+        "PUSS:has"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_d8bf899f2132fa73",
+      "refs": [
+        "PIGS_NP:at",
+        "PUSS:promised_to_serve"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_4c3ccf5aa0322ab4",
+      "refs": [
+        "NAUG:traveling",
+        "PIGS_NP:house_destroyed"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_f6b0b61f20a26ba5",
+      "refs": [
+        "ACCO:performing_show",
+        "HANS_NP:fire_lit"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_cd5c7db4c4c8dd1a",
+      "refs": [
+        "SNOW:laced",
+        "WOE:gold_at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_4d3bf80efae69a95",
+      "refs": [
+        "NAUG:crossed_out",
+        "WOE:banquet_at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_a755cf43e81a7e72",
+      "refs": [
+        "BIRT:gold_star_on",
+        "HANS_NP:at"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_3383e8868caf67e5",
+      "refs": [
+        "FOUR_NP:entity_at",
+        "MUSI:invited"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_5e6b07fea8368e96",
+      "refs": [
+        "CHIC_NP:at",
+        "PIGS_NP:under"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_c3d3d3944afaf166",
+      "refs": [
+        "JACK_NP:has",
+        "PIGS_NP:under"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_9893097a2f375294",
+      "refs": [
+        "BIRT:at",
+        "WOE:work_done"
+      ],
+      "stratum": "different_name/different_type_names"
+    },
+    {
+      "id": "pair_e4ff7f6eef9123bc",
+      "refs": [
+        "ACCO:owned_by",
+        "REMA_NP:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_771f4bb9bb52e057",
+      "refs": [
+        "PIGS_NP:house",
+        "SNOW:at_item"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_631ac0fedac32a3d",
+      "refs": [
+        "NAUG:at",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_96ad380cac551f38",
+      "refs": [
+        "PIGS_NP:at",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_ada5d08cb7b94320",
+      "refs": [
+        "ACCO:owned_by",
+        "PIGS_NP:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_1b8c4a8b72749715",
+      "refs": [
+        "ACCO:owned_by",
+        "JACK_NP:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_9b3cda35ad31c6e1",
+      "refs": [
+        "FOUR_NP:item_at",
+        "PIGS_NP:house"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_8034e8135b162a5d",
+      "refs": [
+        "ACCO:owned_by",
+        "PUSS:wearing"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_f54d6a8630e3929b",
+      "refs": [
+        "FOUR_NP:entity_at",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_99f69d839ec1c694",
+      "refs": [
+        "ACCO:owned_by",
+        "PIGS_NP:material_requested"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_93641b9b0488b68a",
+      "refs": [
+        "ACCO:owned_by",
+        "FOUR_NP:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_261a255ed2b4b9df",
+      "refs": [
+        "ACCO:owned_by",
+        "SNOW:laced"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_8d993c2ea358f3c4",
+      "refs": [
+        "PUSS:castle_owned_by",
+        "REMA_NP:at"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_f07cae9822f5c3ab",
+      "refs": [
+        "BUFF:crowd_present",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_4bcb1cf993ce45d2",
+      "refs": [
+        "ACCO:owned_by",
+        "SNOW:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_4bac60ea7ff9d794",
+      "refs": [
+        "PIGS_NP:house",
+        "WOE:stone_at"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_441a3e86e21d41a4",
+      "refs": [
+        "JACK_NP:at",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_758dc3dc309ce5ca",
+      "refs": [
+        "ACCO:owned_by",
+        "WOE:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_7e6fabe5ba62ce3a",
+      "refs": [
+        "HANS_NP:at",
+        "PUSS:castle_owned_by"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_73cad6872aa0f288",
+      "refs": [
+        "ACCO:owned_by",
+        "JACK_NP:offers"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_4022a891696c6434",
+      "refs": [
+        "ACCO:owned_by",
+        "SNOW:wearing"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_65d1629910478a7d",
+      "refs": [
+        "JACK_NP:at_item",
+        "PIGS_NP:house"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_f49de975e1d95d74",
+      "refs": [
+        "ACCO:owned_by",
+        "BIRT:has"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_539d1ef455aa2720",
+      "refs": [
+        "ACCO:owned_by",
+        "HANS_NP:collected"
+      ],
+      "stratum": "different_name/permuted_type_names"
+    },
+    {
+      "id": "pair_468ae18a21ae9404",
+      "refs": [
+        "BIRT:boat_available",
+        "JACK_NP:on"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_ea19ed64190bcd16",
+      "refs": [
+        "MUSI:making_noise",
+        "NAUG:punished"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_a2d5d08b00d71a16",
+      "refs": [
+        "JACK_NP:empty",
+        "WOE:concealed"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_34eb6bde8556d6d2",
+      "refs": [
+        "HANS_NP:bird_heard",
+        "PIGS_NP:at"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_b42885efd3f3d00c",
+      "refs": [
+        "BIRT:knighted",
+        "SNOW:envious"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_7413175d8f3f3953",
+      "refs": [
+        "CHIC_NP:turned_back",
+        "FOUR_NP:reward_received"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_23ce9ad14840ddf8",
+      "refs": [
+        "BUFF:pig_found",
+        "PUSS:married"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_17b7521c6a482fef",
+      "refs": [
+        "BUFF:cloak_shaken",
+        "JACK_NP:has"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_8a4f1ab733cca76e",
+      "refs": [
+        "HANS_NP:lost",
+        "NAUG:traveling"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_21c51d1aca34acf2",
+      "refs": [
+        "PIGS_NP:boiling",
+        "WOE:stone_moved"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_2e92dd94f09569f3",
+      "refs": [
+        "HANS_NP:reunited_with_father",
+        "SNOW:awake"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_cd5a1d4ce8d69ab7",
+      "refs": [
+        "NAUG:crossed_out",
+        "WOE:rich"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_7c861e1d4b89d3bf",
+      "refs": [
+        "JACK_NP:dead",
+        "WOE:has_strength"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_e98cbdc579c23be6",
+      "refs": [
+        "FOUR_NP:eggs_fetched",
+        "NAUG:on_list"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_4271de078e9816aa",
+      "refs": [
+        "NAUG:has_mission",
+        "SNOW:sleeping"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_354b7a3d439083e7",
+      "refs": [
+        "NAUG:left_turn_rule",
+        "PIGS_NP:escaped"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_d606f96c0a50355a",
+      "refs": [
+        "FOUR_NP:princess_rescued",
+        "JACK_NP:asleep"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_1fe4656a9e924488",
+      "refs": [
+        "HANS_NP:has",
+        "JACK_NP:offers"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_820e874fc4dc007d",
+      "refs": [
+        "MUSI:attempt_light",
+        "SOUP:soup_effect_created"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_f5f75f72d7e5a807",
+      "refs": [
+        "NAUG:burned",
+        "SOUP:has_feeling"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_025ba82c2dca75d9",
+      "refs": [
+        "CHIC_NP:going_to_wood",
+        "HANS_NP:dead"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_b57565597488fc84",
+      "refs": [
+        "BUFF:reward_announced",
+        "JACK_NP:distracted"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_66b8b6d8311a8875",
+      "refs": [
+        "ACCO:exhibition_ready",
+        "PIGS_NP:alive"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_9ca31308ae5e43a3",
+      "refs": [
+        "CHIC_NP:met",
+        "SNOW:disguised_as"
+      ],
+      "stratum": "different_name/same_order_type_names"
+    },
+    {
+      "id": "pair_aa88eff3ace9a29b",
+      "refs": [
+        "BIRT:inside",
+        "PIGS_NP:inside"
+      ],
+      "stratum": "same_name/different_type_names"
+    },
+    {
+      "id": "pair_0cabe7d088bf490a",
+      "refs": [
+        "BIRT:inside",
+        "JACK_NP:inside"
+      ],
+      "stratum": "same_name/different_type_names"
+    },
+    {
+      "id": "pair_e4b6f30ba798f298",
+      "refs": [
+        "ACCO:captured",
+        "SOUP:captured"
+      ],
+      "stratum": "same_name/different_type_names"
+    },
+    {
+      "id": "pair_dd9e4993b59a79c8",
+      "refs": [
+        "ACCO:captured",
+        "HANS_NP:captured"
+      ],
+      "stratum": "same_name/different_type_names"
+    },
+    {
+      "id": "pair_6c5bf48657624763",
+      "refs": [
+        "MUSI:at",
+        "PIGS_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_2031d35e3ab00ec6",
+      "refs": [
+        "JACK_NP:at",
+        "WOE:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_3073427e43b5096d",
+      "refs": [
+        "CHIC_NP:at",
+        "HANS_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_5af390b5bc641c70",
+      "refs": [
+        "HANS_NP:at",
+        "WOE:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_7060fed9791deccc",
+      "refs": [
+        "BIRT:at",
+        "PUSS:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_ef7430c5f466eb2f",
+      "refs": [
+        "PUSS:wearing",
+        "SNOW:wearing"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_2aa5ac616114039c",
+      "refs": [
+        "NAUG:at",
+        "REMA_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_14632952b220f647",
+      "refs": [
+        "ACCO:has",
+        "JACK_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_c99464606154c7e3",
+      "refs": [
+        "ACCO:has",
+        "FOUR_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_51f25a7ced16df50",
+      "refs": [
+        "SNOW:at",
+        "WOE:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_0144468d6aba2916",
+      "refs": [
+        "MUSI:at",
+        "SNOW:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_67dd7e3e347984b6",
+      "refs": [
+        "PIGS_NP:alive",
+        "PUSS:alive"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_0fb0695e46dd0530",
+      "refs": [
+        "BIRT:at",
+        "WOE:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_73b1d3651d9d6bf1",
+      "refs": [
+        "HANS_NP:at",
+        "PIGS_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_d6852ba3e4e9f548",
+      "refs": [
+        "ACCO:has",
+        "REMA_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_aaa5a79c448dd45b",
+      "refs": [
+        "NAUG:at",
+        "SNOW:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_172a62dea9b31ebc",
+      "refs": [
+        "ACCO:has",
+        "SNOW:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_3f126383032786ea",
+      "refs": [
+        "FOUR_NP:has",
+        "HANS_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_efdfd8a3c9eb404c",
+      "refs": [
+        "BIRT:has",
+        "JACK_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_ea045e070b42f32a",
+      "refs": [
+        "JACK_NP:at",
+        "REMA_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_e3448d00c03b2a57",
+      "refs": [
+        "BIRT:at",
+        "NAUG:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_978af286844034aa",
+      "refs": [
+        "JACK_NP:has",
+        "PIGS_NP:has"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_6340089a043f86dd",
+      "refs": [
+        "PIGS_NP:at",
+        "REMA_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    },
+    {
+      "id": "pair_e816004ef74c7c47",
+      "refs": [
+        "BIRT:at",
+        "JACK_NP:at"
+      ],
+      "stratum": "same_name/same_order_type_names"
+    }
+  ],
+  "independent_labels_completed": 0,
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "packet_generator_sha256": "9873d63f20430898329367db958edbac5f3fb48afb862ee4ca9e7144a08fb04d",
+  "limits": [
+    "No goals, problem files, plans or model predictions are read",
+    "Source name/type spelling strata are not semantic gold labels",
+    "Equal-arity restriction excludes abstraction through argument addition or removal",
+    "Two independent annotators and adjudication are still required"
+  ]
+}

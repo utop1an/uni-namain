@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_c3d3d3944afaf166",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate 'has' in JACK_NP describes possession, while 'under' in PIGS_NP describes spatial relationships. 'Has' relates an entity to an item, while 'under' relates an item to a location. These predicates represent distinct aspects of the scene's state – one focuses on ownership, and the other on spatial arrangement. The action contexts further support this distinction: JACK_NP actions involve acquiring items ('has') through selling or stealing, while PIGS_NP actions involve placing items ('under') within a spatial context. The two predicates cannot share the same argument roles because they describe fundamentally different relationships. The 'has' predicate is used to describe the state of possession, while the 'under' predicate describes the spatial relationship between two objects. The action contexts demonstrate this difference in usage. Specifically, JACK_NP uses 'has' to describe the possession of items by entities, while PIGS_NP uses 'under' to describe the spatial relationship between items and locations. Therefore, the predicates are complementary because they describe different aspects of the scene's state.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(under ?pot chimney)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_gold_bags",
+      "quote": "(has ?j ?bag1)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_harp",
+      "quote": "(has ?j ?harp)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_hen",
+      "quote": "(has ?j ?hen)"
+    }
+  ]
+}

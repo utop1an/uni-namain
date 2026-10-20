@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:34:34.6902058Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_0cabe7d088bf490a\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate 'inside' is used in both sources, but with different arguments. BIRT uses 'inside' to describe the location of entities and items within locations, while JACK_NP uses 'inside' to describe the location of entities within items. This represents a different conceptualization of 'inside' – one focused on spatial relationships within a larger environment versus one focused on containment within a smaller object. The action contexts further support this distinction: BIRT's actions involve navigating through locations and rooms, while JACK_NP's actions involve hiding entities within objects. The differing parameter types ('location' vs. 'item') reinforce this complementary relationship. The use of 'entity' and 'item' as arguments further highlights the difference in scope. The action contexts show that BIRT's 'inside' is used to describe the location of an entity *within* a location, while JACK_NP's 'inside' is used to describe the location of an entity *within* an item. Therefore, the predicates are complementary because they describe the same concept ('inside') but from different perspectives and with different arguments, and are not interchangeable. The argument order is reversed to reflect this.\", \"evidence\": [\n{\n\"side\": 1,\n\"ref\": \"JACK_NP:action:hide_in_kettle\",\n\"quote\": \"(inside ?j ?kettle)\"\n},\n{\n\"side\": 1,\n\"ref\": \"JACK_NP:action:hide_in_oven\",\n\"quote\": \"(inside ?j ?oven)\"\n},\n{\n\"side\": 0,\n\"ref\": \"BIRT:action:enter_tree_and_descend_stairs\",\n\"quote\": \"(inside ?n ?t)\"\n},\n{\n\"side\": 0,\n\"ref\": \"BIRT:action:receive_pellet_from_gnome\",\n\"quote\": \"(inside ?n ?t)\"\n},\n{\n\"side\": 0,\n\"ref\": \"BIRT:action:turn_key_on_beech\",\n\"quote\": \"(inside dryad ?t)\"\n}\n]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4755861900,
+  "load_duration": 3027200,
+  "prompt_eval_count": 1039,
+  "prompt_eval_duration": 181253000,
+  "eval_count": 501,
+  "eval_duration": 4469213000
+}

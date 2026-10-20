@@ -1,0 +1,427 @@
+{
+  "status": "complete",
+  "frontier_report_sha256": "1c306dcdaea3eb2074684daf97a727f3ab7849d0755122f2df4aec42cf6f596a",
+  "distinct_unverified_action_mappings": 14,
+  "counts": {
+    "arity_changed": 10,
+    "formal_names_or_order_changed": 3,
+    "ordered_types_changed": 1
+  },
+  "rows": [
+    {
+      "node": "24",
+      "source": "MUSI",
+      "source_action": "extinguish_light",
+      "target_action": "attempt_entry",
+      "source_signature": [
+        [
+          "?cottage",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?w",
+          "entity"
+        ],
+        [
+          "?h",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "24",
+      "source": "MUSI",
+      "source_action": "run_away",
+      "target_action": "start_journey",
+      "source_signature": [
+        [
+          "?donkey",
+          "entity"
+        ],
+        [
+          "?from",
+          "location"
+        ],
+        [
+          "?to",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?c",
+          "entity"
+        ],
+        [
+          "?l1",
+          "location"
+        ],
+        [
+          "?l2",
+          "location"
+        ]
+      ],
+      "category": "formal_names_or_order_changed"
+    },
+    {
+      "node": "24",
+      "source": "MUSI",
+      "source_action": "cock_crow_alert",
+      "target_action": "request_entry",
+      "source_signature": [
+        [
+          "?cock",
+          "entity"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?w",
+          "entity"
+        ],
+        [
+          "?h",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "24",
+      "source": "MUSI",
+      "source_action": "robbers_retreat",
+      "target_action": "retreat_to_location",
+      "source_signature": [
+        [
+          "?robber",
+          "entity"
+        ],
+        [
+          "?cottage",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?e",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "formal_names_or_order_changed"
+    },
+    {
+      "node": "25",
+      "source": "SOUP",
+      "source_action": "claim_queenhood",
+      "target_action": "queen_ascend_to_throne",
+      "source_signature": [
+        [
+          "?m",
+          "entity"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?q",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "ACCO",
+      "source_action": "arrange_exhibition",
+      "target_action": "perform_and_applaud",
+      "source_signature": [
+        [
+          "?s",
+          "entity"
+        ],
+        [
+          "?t",
+          "entity"
+        ],
+        [
+          "?k",
+          "item"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?s",
+          "entity"
+        ],
+        [
+          "?t",
+          "entity"
+        ],
+        [
+          "?a",
+          "entity"
+        ],
+        [
+          "?c",
+          "item"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "ACCO",
+      "source_action": "perform_show",
+      "target_action": "prepare_to_show",
+      "source_signature": [
+        [
+          "?t",
+          "entity"
+        ],
+        [
+          "?k",
+          "item"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?t",
+          "entity"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "ACCO",
+      "source_action": "return_kettle_to_temple",
+      "target_action": "transport_item",
+      "source_signature": [
+        [
+          "?t",
+          "entity"
+        ],
+        [
+          "?k",
+          "item"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?item",
+          "item"
+        ],
+        [
+          "?location",
+          "location"
+        ]
+      ],
+      "category": "ordered_types_changed"
+    },
+    {
+      "node": "26",
+      "source": "BIRT",
+      "source_action": "travel_to_trysting_place",
+      "target_action": "move_to_location",
+      "source_signature": [
+        [
+          "?n",
+          "entity"
+        ],
+        [
+          "?b",
+          "location"
+        ],
+        [
+          "?c",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?e",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "BIRT",
+      "source_action": "receive_queen_kiss",
+      "target_action": "interact",
+      "source_signature": [
+        [
+          "?n",
+          "entity"
+        ],
+        [
+          "?q",
+          "entity"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?e1",
+          "entity"
+        ],
+        [
+          "?e2",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "BIRT",
+      "source_action": "return_to_bench_and_share_story",
+      "target_action": "return_to_location",
+      "source_signature": [
+        [
+          "?g",
+          "entity"
+        ],
+        [
+          "?m",
+          "entity"
+        ],
+        [
+          "?n",
+          "entity"
+        ],
+        [
+          "?bench",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?e",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "CHIC_NP",
+      "source_action": "decide_to_tell_king",
+      "target_action": "prepare_to_show",
+      "source_signature": [
+        [
+          "?e",
+          "entity"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?t",
+          "entity"
+        ]
+      ],
+      "category": "formal_names_or_order_changed"
+    },
+    {
+      "node": "26",
+      "source": "HANS_NP",
+      "source_action": "return_home_and_reunite_with_father",
+      "target_action": "move_to_destination_and_resolve_state",
+      "source_signature": [
+        [
+          "?father",
+          "entity"
+        ],
+        [
+          "?g",
+          "entity"
+        ],
+        [
+          "?h",
+          "entity"
+        ],
+        [
+          "?father_house",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?e",
+          "entity"
+        ],
+        [
+          "?l",
+          "location"
+        ]
+      ],
+      "category": "arity_changed"
+    },
+    {
+      "node": "26",
+      "source": "HANS_NP",
+      "source_action": "collect_treasure",
+      "target_action": "open_door",
+      "source_signature": [
+        [
+          "?g",
+          "entity"
+        ],
+        [
+          "?h",
+          "entity"
+        ],
+        [
+          "?pearl",
+          "item"
+        ],
+        [
+          "?precious_stone",
+          "item"
+        ],
+        [
+          "?cottage",
+          "location"
+        ]
+      ],
+      "target_signature": [
+        [
+          "?nobleman",
+          "entity"
+        ],
+        [
+          "?theater",
+          "location"
+        ],
+        [
+          "?reward",
+          "item"
+        ]
+      ],
+      "category": "arity_changed"
+    }
+  ],
+  "scope": "Classifies missing transport evidence only. Same-arity variable renaming may be benign; no role permutation is guessed. Not an execution-failure rate or final-root result."
+}

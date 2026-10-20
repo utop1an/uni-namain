@@ -1,0 +1,187 @@
+{
+  "target": "ICAPS 2027 main-track submission",
+  "status": "working_plan_not_completion_claim",
+  "snow_long_meeting_case_2026_10_20": {
+    "brief": "output/pdf/icaps_meeting_2026_10_21_snow_long_case.pdf",
+    "audit": "data/validation/snow_long_case_audit_2026_10_20_v2/report.json",
+    "fresh_solver_calls": 23,
+    "primary": {"plan_steps": 12, "contextualized_source_steps": 4, "new_scene_steps": 8, "observed_seconds": 8.172, "states_checked": 13},
+    "step_deletion_failures": "12/12; 11 blocked subsequent applicability and 1 missed the final goal",
+    "whole_schema_removals": "12/12 solver-reported unsolvable; all frozen before long-case search",
+    "formal_results": {"solved": 2, "unsolvable": 20, "wall_time_limit": 1},
+    "scope": "Authored world, role/life/event adapters plus explicit custody/tool/travel/preparation rules. Single-source controls retain all common scene rules. No automatic role learning or independent narrative-quality claim.",
+    "test_checkpoint": "178 tests passed; redundant-padding negative test detected"
+  },
+  "snow_shared_roles_meeting_case_2026_10_20": {
+    "brief": "output/pdf/icaps_meeting_2026_10_21_snow_roles_case.pdf",
+    "audit": "data/validation/snow_roles_case_audit_2026_10_20_v2/report.json",
+    "fresh_solver_calls": 11,
+    "budget": "20-second wall/CPU, 4096 MB, single worker; same FD release and alias",
+    "formal_results": {"solved": 2, "unsolvable": 8, "wall_time_limit": 1},
+    "scenario_contract_results": {"pass": 1, "fail": 1, "no_plan": 9},
+    "primary": "Four actions across HANS_NP/JACK_NP/SNOW; one object bound to Snow White, giant and witch; five states checked with no simultaneous alive/dead",
+    "scope": "Authored role permissions, state-consistency adapter and rescue-event goal modify compiled behavior; not an unchanged-source or independently judged narrative result",
+    "next_priority": "Independent review of role/interface contracts and revival causality; separate authored controlled scenarios from automatic inference and unrestricted source benchmarks",
+    "test_checkpoint": "177 tests passed"
+  },
+  "acco_birt_meeting_case_2026_10_20": {
+    "brief": "output/pdf/icaps_meeting_2026_10_21_acco_birt_case.pdf",
+    "report": "data/validation/acco_birt_case_audit_2026_10_20_v1/report.json",
+    "fresh_solver_calls": 5,
+    "condition": "One authored shared-object bridge task; 20 seconds wall/CPU, 4096 MB, single worker",
+    "success": "4-step BIRT-to-ACCO plan validates; no-interface and both single-source-action controls report unsolvable; no-shared-identity control also reports unsolvable",
+    "source_selection": "Static-universe selector retains both sources with shared memberships; control separates them",
+    "semantic_status": "Author code review and executable risk witnesses only; independent labels remain zero; source actions unchanged",
+    "meeting_use": "Positive interface-mechanism example with matched controls and explicit narrative-semantic limitations",
+    "test_checkpoint": "176 tests passed"
+  },
+  "selection_optimization_2026_10_20_checkpoint": {
+    "results": "data/validation/selection_results_2026_10_20_v2/results.json",
+    "brief": "output/pdf/icaps_meeting_2026_10_21_selection_update.pdf",
+    "new_solver_invocations": 30,
+    "budget": "Same Fast Downward 26.6 lama-first, 20-second wall/CPU, 4096 MB, one worker",
+    "fresh_control": "3 solved / 8 unsolvable / 4 limits",
+    "fresh_optimized": "4 solved / 8 unsolvable / 3 limits; CHIC_NP recovered",
+    "selector_scope": "Whole domains in static source-universe dependency components for original source worlds/goals; explicit shared identities and nullary interfaces retain dependencies; foreign goals rejected",
+    "remaining_limits": ["HANS_NP", "MUSI", "SNOW"],
+    "next_priority": "Freeze explicit shared-object, cross-source-necessary planning tasks and independent interface judgments; evaluate selector retention on those tasks before claiming fusion performance",
+    "test_checkpoint": "175 tests passed; 4 original-goal plan replays pass, 23457 truth comparisons, zero mismatches"
+  },
+  "meeting_2026_10_21_checkpoint": {
+    "results": "data/validation/meeting_results_2026_10_20_v1/results.json",
+    "brief": "output/pdf/icaps_meeting_2026_10_21.pdf",
+    "new_solver_invocations": 75,
+    "design": "60 fixed original-world/representation cases plus 15 separately frozen exploratory selection cases; 15 unique original worlds",
+    "budget": "Fast Downward 26.6 lama-first; 20 seconds wall/CPU, 4096 MB, one solver worker",
+    "source_isolated": {"solved": 4, "unsolvable": 8, "wall_time_limit": 3},
+    "each_full_pool_representation": {"solved": 0, "unsolvable": 8, "wall_time_limit": 7},
+    "exploratory_selected_machine": {"solved": 3, "unsolvable": 8, "wall_time_limit": 4},
+    "new_original_goal_replay": "4/4 available fresh native plans valid in fixed machine model; 64 states, 23457 truth comparisons, 0 mismatches; 11 sources without fresh plan evidence retained",
+    "new_action_prefix_replay": "146/146 available historical traces pass in fixed machine model; 459 states, 354757 comparisons, 0 mismatches; 88 missing traces retained in 234-task denominator",
+    "historical_reports_rechecked": 34,
+    "test_checkpoint": "169 tests passed; dated engineering check, not semantic accuracy",
+    "limits": "Original-goal regression and computational diagnosis only; no independent interface labels, narrative evaluation or complete fresh UniDomain comparison"
+  },
+  "new_run_evaluation_design": "paper/evaluation_protocol_2026_10_19_v1.json",
+  "new_run_freeze_status": "Design recorded; unseen test inputs, model configuration and execution budgets remain unfrozen",
+  "offline_semantic_evaluator": "scripts/annotation/evaluate_interface_predictions.py",
+  "candidate_bridge_checkpoint": {
+    "report": "data/validation/candidate_alignment_2026_10_20_v2/report.json",
+    "alignment": "data/validation/candidate_alignment_2026_10_20_v2/alignment.json",
+    "condition": "Offline machine hypotheses with explicit aligned-slot role-type inference, not reviewed semantic interfaces",
+    "exported_groups": 5,
+    "role_type_hypotheses": 10,
+    "conservative_control": "data/validation/candidate_alignment_conservative_2026_10_20_v1/report.json",
+    "conservative_exported_groups": 0,
+    "independent_domain_parse": true,
+    "planner_called": false
+  },
+  "new_source_admission_checkpoint": {
+    "reports": [
+      "data/validation/external_pddl_admission_2026_10_20_v2/report.json",
+      "data/validation/external_pddl_extension_admission_2026_10_20_v1/report.json"
+    ],
+    "fixed_candidate_pairs": 15,
+    "compatible_cases": 6,
+    "compatible_scenario_families": 4,
+    "annotation_selected_sources": 3,
+    "narrative_families_admitted": 0,
+    "independent_pristine_test_families": 0,
+    "previous_lbl_lbp_screen": "data/validation/source_admission_2026_10_20_v2/report.json",
+    "boundary": "Auxiliary compatibility evidence only. Four source name-policy failures parse unchanged under an explicit isolated parser policy and compile under default settings. Duplicate declarations and unsupported semantics remain rejected. No best-run substitution or independent-lineage count from provider/family counts."
+  },
+  "external_annotation_delivery": {
+    "report": "data/annotation/external_interface_pilot_2026_10_20_v1/report.json",
+    "viewer": "data/annotation/external_interface_pilot_2026_10_20_v1/delivery/index.html",
+    "candidate_pairs": 48,
+    "independent_labels_completed": 0,
+    "contacted_annotators": false,
+    "role": "External auxiliary annotation pilot; explicit provenance, no predictions or solver outcomes"
+  },
+  "official_cfp": "https://icaps27.icaps-conference.org/calls/cfp/",
+  "abstract_deadline": "2026-12-07T23:59:00-12:00",
+  "paper_deadline": "2026-12-14T23:59:00-12:00",
+  "milestones": [
+    {
+      "target_date": "2026-10-22",
+      "deliverable": "Freeze research question, source provenance, correspondence schema, comparative protocol and evaluation split",
+      "acceptance": "Every claimed source has provenance or an explicit unknown label; observed local sources are not relabeled as independent held-out domains; all baseline worlds/goals and budgets are fixed"
+    },
+    {
+      "target_date": "2026-11-05",
+      "deliverable": "Independent interface assessment and proposal-method development",
+      "acceptance": "Blind annotation packets, raw judgments and disagreements retained; model acceptance and plan success never used as gold labels",
+      "dependency": "Independent annotators and suitable source material; additional unobserved sources required for independent-domain claims"
+    },
+    {
+      "target_date": "2026-11-12",
+      "deliverable": "Complete matched baseline runs",
+      "acceptance": "Source-isolated, union, fresh UniDomain reference, alignment and selection conditions run on the same supplied worlds/goals; all failures and resource limits retained"
+    },
+    {
+      "target_date": "2026-11-19",
+      "deliverable": "Complete ablations, scaling checks and narrative assessment",
+      "acceptance": "Permutation, universe guards, explicit membership and action-variant ablations; independent narrative judgments if narrative-quality claims are retained"
+    },
+    {
+      "target_date": "2026-11-26",
+      "deliverable": "Complete evidence-backed AAAI-format manuscript",
+      "acceptance": "Every abstract/introduction claim maps to a completed experiment or reviewed proof; plots and tables generated from completed manifests"
+    },
+    {
+      "target_date": "2026-12-03",
+      "deliverable": "Internal adversarial review and reproducibility check",
+      "acceptance": "Novelty, methodological validity, missing comparisons, anonymity, page limits and artifact reproduction checked"
+    },
+    {
+      "target_date": "2026-12-07",
+      "deliverable": "User-reviewed abstract ready for submission",
+      "acceptance": "No claims added beyond available evidence; actual submission requires the user's separate instruction"
+    },
+    {
+      "target_date": "2026-12-14",
+      "deliverable": "User-reviewed final manuscript and artifact package",
+      "acceptance": "Final claims, references, anonymity and formatting verified; actual submission requires the user's separate instruction"
+    }
+  ],
+  "current_major_gaps": [
+    "Automatic semantic correspondence accuracy has not been established",
+    "Current local domains lack verified upstream learning provenance",
+    "Independent semantic annotations and blinded multi-family semantic evaluation are absent; one external development family now has mechanical replay evidence",
+    "No matched fresh UniDomain comparison is complete",
+    "Narrative candidate ranking, coherence assessment and intentionality evidence are incomplete",
+    "The source-local preservation proof needs independent technical review"
+  ],
+  "next_engineering_evidence": [
+    "Full fresh UniDomain reference ended with a host-interrupted worker error; retain its terminal report and intermediate audits. A cache continuation would be a separately labeled extended-budget condition, not a fresh three-hour success.",
+    "Obtain independent semantic annotations and repeat schema-policy comparisons; completed restored-service control is 0 checked/96 invalid/4 truncated versus 52/46/2 for coupled fields, not semantic accuracy.",
+    "Apply joint permutation consistency audit only to structurally checked proposals; no automatic promotion to reviewed interfaces",
+    "Broaden matched composed tasks beyond the existing authored ACCO/BIRT worlds only with explicit initial worlds and provenance",
+    "Audit the current source-local theorem against modularity/compilation prior work; obtain independent technical review before submission"
+  ],
+  "completed_development_evidence": {
+    "finite_transition_controls": "256 states, 4352 applications, 2048 transitions; four corruption controls detected",
+    "capture_regression": "16 valuations, 32 bindings; eight pre-fix and zero post-fix mismatches",
+    "semantic_negative": "Authored false interface passes plan and source-trace validation",
+    "source_action_removal": "18 tasks: 5 valid plans, 13 solver-reported unsolvable, no cutoffs; both action sources necessary only for the specific authored bridge case",
+    "external_Basketball": "10 native valid plans; 10/10 preserved in each of two fixed16-source models; each80states38560comparisons; header-only packaging; one external development family",
+    "action_invocation": "234 tasks:146solved50unsolvable38wall limits;146prefixes preserved in each fixed model,459states354757comparisons0mismatches. Three solver bundles witness166actions;50solverunreachable18unresolved.",
+    "formula_boundary": "14conditionforms128valuations3584applicability1984transitions0mismatch; quantified-guard mutation yields1024mismatches."
+  },
+  "contribution_gate": {
+    "not_sufficient": [
+      "Pre-search module flattening",
+      "Type-to-predicate compilation",
+      "Structural validation of LLM output",
+      "Plan success on authored worlds",
+      "Static unary membership predicates allowing multiple type membership; already explicit in Casciani et al. LM4Plan2025"
+    ],
+    "required_decision": "Define and test a narrower scientific contribution involving independently assessed interface inference or a systematic, useful preservation-aware composition method. Current engineering evidence alone does not establish main-track novelty.",
+    "prior_work": [
+      "https://doi.org/10.1609/icaps.v33i1.27203",
+      "https://arxiv.org/abs/2404.07751v1",
+      "https://www.diag.uniroma1.it/degiacomo/papers/2025/LM4Plan@ICAPS25cdmw.pdf"
+    ]
+  },
+  "annotation_delivery": "Offline100pair viewer v2 supports JSON generation/import, no predictions/outcomes, no actual independent labels created. Direct browser download unconfirmed; copyJSON fallback verified."
+}

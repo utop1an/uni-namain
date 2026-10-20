@@ -1,0 +1,905 @@
+{
+  "objective": "Advance the ICAPS 2027 December submission for eight hours through verified implementation, experiments, and paper preparation",
+  "start_utc": "2026-10-14T14:20:03Z",
+  "stop_utc": "2026-10-14T22:20:03Z",
+  "timezone": "Australia/Sydney",
+  "status": "checkpointed_after_host_interruption_not_eight_continuous_hours",
+  "official_cfp": "https://icaps27.icaps-conference.org/calls/cfp/",
+  "abstract_deadline": "2026-12-07T23:59:00-12:00",
+  "paper_deadline": "2026-12-14T23:59:00-12:00",
+  "priorities": [
+    "Establish source-preserving pre-search domain baseline with complete schema and source-plan evidence",
+    "Integrate explicit initial-state/goal requests with saved domain, mappings and bounded planning",
+    "Add transparent domain-selection and alignment inputs without silently accepting semantic guesses",
+    "Prepare reproducible development evaluation and claim-evidence boundaries for paper drafting"
+  ],
+  "constraints": [
+    "No inferred or pooled initial states; goal-only requests require initial state",
+    "Keep existing experiments immutable; no promotion of observed development examples to held-out evidence",
+    "Separate semantic, structural, solver, and resource-limit conclusions",
+    "Do not submit the paper or contact others"
+  ],
+  "first_checkpoint": {
+    "baseline_tests": 64,
+    "object_scope_fix_tests": 67,
+    "focused_regression_tests": 5,
+    "schema_audit": "data/validation/union_scope_fix_2026_10_15/schema_audit_v2.json",
+    "schema_audit_status": "PASS",
+    "source_count": 15,
+    "actions_checked": 234,
+    "predicates_checked": 236,
+    "running_experiment": "data/validation/union_regression_2026_10_15_v1/report.json",
+    "running_experiment_note": "Built before object-root fix; do not relabel as fixed-version evidence. Await all 15 rows before final reporting.",
+    "solver_diagnostic": "Unified Planning 1.3.0 GrounderHelper._purge_items_list removes the same object twice when multiple static conditions exclude it; reproduced on HANS_NP. Traceback saved in .tmp/hans-diagnostic.log. No dependency files changed."
+  },
+  "second_checkpoint": {
+    "full_suite_previous": 76,
+    "mode_validation": "data/validation/pipeline_modes_2026_10_15_v1/report.json",
+    "mode_validation_status": "PASS",
+    "modes": [
+      "initial_goal",
+      "initial_only",
+      "goal_only_request"
+    ],
+    "completed_legacy_run": "data/validation/union_regression_2026_10_15_v1/report.json",
+    "legacy_counts": {
+      "state_limit": 4,
+      "time_limit": 6,
+      "unsolvable": 2,
+      "error": 3
+    },
+    "active_heuristic_run": "data/validation/union_regression_2026_10_15_pyperplan_v1/report.json",
+    "active_process_session": 9925,
+    "next_priority": "Complete heuristic run; add explicit, provenance-preserving alignment and domain selection without treating names or LLM accept labels as semantic ground truth"
+  },
+  "third_checkpoint": {
+    "heuristic_run": "data/validation/union_regression_2026_10_15_pyperplan_v1/report.json",
+    "heuristic_status": "complete",
+    "heuristic_counts": {
+      "solved": 4,
+      "incomplete": 8,
+      "time_limit": 3
+    },
+    "translated_plans_validated": 4,
+    "type_encoding_regression": "data/validation/type_encoding_regression_2026_10_15_v1/report.json",
+    "type_encoding_source_plans": 4,
+    "type_encoding_validated": 4,
+    "new_components": [
+      "explicit hash-pinned alignment with argument permutations",
+      "source type membership compilation",
+      "explicit multi-source request entity membership",
+      "deterministic whole-domain dependency selection",
+      "safe static parameter projection"
+    ],
+    "evidence_boundary": "Alignment and selection semantic tests are synthetic engineering controls; no automatic semantic correctness or independent generalization claim"
+  },
+  "fourth_checkpoint": {
+    "method_draft": "paper/icaps2027_method_draft.tex",
+    "latex_compile": "success",
+    "claim_evidence": "paper/claim_evidence.json",
+    "submission_workplan": "paper/submission_workplan.json",
+    "literature_verified": [
+      "UniDomain",
+      "Riedl and Young 2010",
+      "Haslum 2012",
+      "Cardona Rivera et al. 2024",
+      "THYPE 2020",
+      "Narrative Blending 2021"
+    ],
+    "active_reference_run": "data/validation/union_regression_2026_10_15_static_projection_v1/report.json",
+    "active_process_session": 89816,
+    "next": "Exhaustive finite-state preservation audit and persistent semantic-negative controls; complete ongoing reference run"
+  },
+  "fifth_checkpoint": {
+    "completed_reference_run": "data/validation/union_regression_2026_10_15_static_projection_v1/report.json",
+    "reference_counts": {
+      "state_limit": 5,
+      "ground_action_limit": 3,
+      "unsolvable": 2,
+      "time_limit": 5,
+      "error": 0
+    },
+    "exhaustive_preservation": "data/validation/exhaustive_preservation_2026_10_15_v1/report.json",
+    "mutation_controls": "data/validation/exhaustive_mutations_2026_10_15_v1/report.json",
+    "semantic_negative": "data/validation/semantic_negative_2026_10_15_v1/report.json",
+    "annotation_packet": "data/annotation/interface_development_2026_10_15_v1",
+    "independent_annotation_count": 0,
+    "annotation_component_tests": 4,
+    "latex_compile": "success",
+    "next": "Run frozen outcome-blind local-model predictions on the same packet; retain no-gold boundary; establish matched composed-task baseline experiments",
+    "active_machine_prediction_run": "data/validation/interface_predictions_gemma_2026_10_15_v1",
+    "active_machine_prediction_session": 41014,
+    "prediction_component_tests": 3,
+    "full_suite_tests": 91,
+    "full_suite_seconds": 48.209,
+    "full_suite_log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-5.log"
+  },
+  "sixth_checkpoint": {
+    "prediction_run": "data/validation/interface_predictions_gemma_2026_10_15_v1/report.json",
+    "prediction_counts": {
+      "invalid": 95,
+      "failed_token_limit": 5,
+      "checked": 0
+    },
+    "prediction_replay": "data/validation/interface_predictions_gemma_2026_10_15_replay_v2/replay_audit.json",
+    "prediction_replay_status": "PASS_100_of_100",
+    "prediction_limit": "Output contract failure, not semantic accuracy; zero independent annotations",
+    "fresh_reference_run": "data/validation/unidomain_reference_2026_10_15_v1",
+    "fresh_reference_session": 23474,
+    "fresh_reference_status": "running",
+    "reference_budget_seconds": 10800,
+    "reference_workers": 1,
+    "composed_development_run": "data/validation/composed_development_2026_10_15_v1",
+    "composed_development_session": 36850,
+    "composed_development_status": "running",
+    "composed_development_total": 18,
+    "concurrency_caveat": "Model inference and compilation overlap other experiments; wall times are descriptive only",
+    "additional_focused_tests": {
+      "reference_wrapper": 2,
+      "prediction_replay_unicode": 3
+    },
+    "latex_compile": "success",
+    "next": "Finish both live runs; audit source and code hashes; evaluate source-plan mapping limits in reference; freeze schema-contract intervention separately without relabeling old outcomes"
+  },
+  "seventh_checkpoint": {
+    "composed_run_status": "complete",
+    "composed_run_total": 18,
+    "composed_counts": {
+      "solved": 6,
+      "incomplete": 6,
+      "time_limit": 6
+    },
+    "composed_audit": "data/validation/composed_development_2026_10_15_v1/audit_v1.json",
+    "composed_audit_status": "PASS",
+    "freshly_validated_plans": 6,
+    "unidomain_reference_status": "running",
+    "unidomain_reference_session": 23474,
+    "downward_release": "26.6",
+    "downward_url": "https://www.fast-downward.org/latest/files/release26.6/fast-downward-26.6.tar.gz",
+    "downward_tar_sha256": "482e161f9ecb6b41358a80db557d7c5cfafce504ed8f20896bcee4406d8b7750",
+    "downward_build_session": 4952,
+    "downward_build_status": "running",
+    "downward_build_note": "Initial CMake lookup raced unfinished pip target copying; dependency session 59261 subsequently completed. Current build proceeds. Before any planner run rerun build helper with GIT_CEILING_DIRECTORIES now added, so tarball does not inherit parent repository Git revision; incremental relink expected.",
+    "downward_wrapper": "run_downward_reference.py",
+    "downward_wrapper_focused_tests": 3,
+    "composed_audit_focused_tests": 2,
+    "full_suite_session": 86412,
+    "next": "Finish/reconfigure Fast Downward build, smoke test and run 15-source plus same-export 18-condition references; monitor ongoing UniDomain fusion",
+    "latex_compile": "success",
+    "full_suite_result": {
+      "tests": 98,
+      "seconds": 66.913,
+      "status": "PASS",
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-7.log"
+    }
+  },
+  "eighth_checkpoint": {
+    "downward_build": "complete",
+    "build_provenance": "data/validation/icaps_8h_2026_10_15/downward_build_provenance.json",
+    "downward_smoke": "data/validation/downward_smoke_2026_10_15_v1/report.json",
+    "downward_source_run": "data/validation/downward_sources_2026_10_15_v1/report.json",
+    "downward_source_counts": {
+      "solved": 6,
+      "unsolvable": 8,
+      "memory_limit": 1
+    },
+    "source_plan_replay_union": "data/validation/downward_union_replay_2026_10_15_v1/report.json",
+    "source_plan_replay_type_encoding": "data/validation/downward_type_replay_2026_10_15_v1/report.json",
+    "source_plan_replays": "6/6 valid in each fixed model; source availability 6/15",
+    "same_export_comparison": "data/validation/downward_composed_2026_10_15_v1/comparison_audit.json",
+    "same_export_counts": {
+      "solved": 9,
+      "unsolvable": 9
+    },
+    "same_export_audit": "PASS",
+    "unidomain_reference_session": 23474,
+    "unidomain_reference_status": "running",
+    "coupled_schema_policy": "Implemented, not yet live-evaluated; preserve baseline 95 invalid/5 truncated",
+    "next": "Monitor full fusion; diagnose source unreachability; evaluate coupled schema separately after local fusion contention clears; audit fusion result and comparable source replays"
+  },
+  "ninth_checkpoint": {
+    "source_support_report": "data/validation/source_support_2026_10_15_v1/report.json",
+    "source_support_crosscheck": "data/validation/source_support_2026_10_15_v1/solver_crosscheck.json",
+    "support_certificates": [
+      "BUFF",
+      "JACK_NP",
+      "PUSS"
+    ],
+    "support_focused_tests": 4,
+    "source_support_limit": "Predicate relaxation explains 3 of 8 unsolvable tasks; remaining 12 sources not declared solvable",
+    "unidomain_session": 23474,
+    "unidomain_status": "running",
+    "next": "Collect additional source-prefix preservation evidence without treating original unreachable goals as success; continue fusion monitoring; keep independent annotations pending"
+  },
+  "tenth_checkpoint": {
+    "source_effect_probes": "data/validation/source_effect_probes_2026_10_15_v1/manifest.json",
+    "probe_planner_report": "data/validation/downward_probes_2026_10_15_v1/report.json",
+    "probe_denominator": 45,
+    "probe_counts": {
+      "solved": 26,
+      "unsolvable": 19
+    },
+    "probe_union_replay": "data/validation/probe_union_replay_2026_10_15_v1/report.json",
+    "probe_type_replay": "data/validation/probe_type_replay_2026_10_15_v1/report.json",
+    "probe_replays": "26/26 valid in each fixed model; 13 sources with available probes; auxiliary goals only",
+    "sparse_outcome_audit": "data/validation/outcome_sparse_2026_10_15_v1/report.json",
+    "full_tests": {
+      "count": 105,
+      "seconds": 56.292,
+      "status": "PASS",
+      "log": "data\\validation\\icaps_8h_2026_10_15\\tests-checkpoint-10.log"
+    },
+    "initial_only_development": {
+      "status": "running",
+      "session": 82557,
+      "report": "data/validation/initial_only_development_2026_10_15_v1/report.json",
+      "observed": "first two conditions reached 60-second wall limit"
+    },
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474
+    },
+    "latex_compile": "success",
+    "next": "Complete initial-only development denominator; diagnose eager grounding; inspect every-step source truth preservation; finish full fusion and separately test coupled output schema; independent semantic labels remain absent"
+  },
+  "eleventh_checkpoint": {
+    "probe_state_audits": [
+      "data/validation/probe_union_states_2026_10_15_v1/report.json",
+      "data/validation/probe_type_states_2026_10_15_v1/report.json"
+    ],
+    "state_audit_each_model": {
+      "traces": 26,
+      "states": 73,
+      "truth_comparisons": 52116,
+      "mismatches": 0,
+      "unavailable_traces": 19
+    },
+    "state_audit_focused_tests": 1,
+    "initial_only_development": "data/validation/initial_only_development_2026_10_15_v1/report.json",
+    "initial_only_complete_counts": {
+      "time_limit": 6
+    },
+    "initial_only_hashes_unchanged": true,
+    "profile": "data/validation/icaps_8h_2026_10_15/outcome-grounding-profile.log",
+    "profile_finding": "GrounderHelper.ground_action before BFS; 35-second diagnostic stopped intentionally",
+    "next_implementation_candidate": "State-positive projection and lazy grounding during BFS: maintain full true-atom set per state from explicit false-default initial state and actual expanded effect targets; restrict only conjunctive positive conditions using current-state facts; dynamic deletions and quantifiers must update indexes soundly. Preserve source/action/parameter order and compare complete outcomes with dense reference on finite controls. Distinguish new unique visited grounding budget and visited effect-target basis. This design is planned, not implemented or verified.",
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "deadline_approx_utc": "2026-10-14T18:38:00Z"
+    },
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twelfth_checkpoint": {
+    "state_projected_outcomes": "implemented and verified on finite controls and six development conditions",
+    "new_module": "rcnc/state_grounding.py",
+    "new_budget_meaning": "unique visited projected bindings; effect targets on visited state-changing transitions; distinct from eager baseline",
+    "same_input_run": "data/validation/initial_only_development_2026_10_15_v2/report.json",
+    "counts": {
+      "outcomes_generated": 4,
+      "no_outcomes_reachable_space_exhausted": 2,
+      "valid_outcomes": 12
+    },
+    "comparison_audit": "data/validation/initial_only_development_2026_10_15_v2/comparison_audit.json",
+    "endpoint_negative_control": "data/validation/initial_only_development_2026_10_15_v2/endpoint_audit_negative_control.json",
+    "finite_control": "data/validation/outcome_sparse_2026_10_15_v2/report.json",
+    "full_suite": {
+      "tests": 107,
+      "seconds": 52.352,
+      "status": "PASS",
+      "log": "data\\validation\\icaps_8h_2026_10_15\\tests-checkpoint-12.log"
+    },
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "last_observed_calls": 2070
+    },
+    "next": "Audit source provenance and independent evaluation design while full fusion continues; evaluate coupled annotation schema only after fusion contention clears; preserve zero independent labels and original-goal denominators",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirteenth_checkpoint": {
+    "source_provenance": "data/validation/source_provenance_2026_10_15_v1/report.json",
+    "source_files": 30,
+    "sources": 15,
+    "identical_to_first_local_commit": 30,
+    "upstream_verified": 0,
+    "prospective_protocol": "paper/evaluation_protocol_2026_10_15.json",
+    "annotation_agreement_tool": "summarize_interface_agreement.py",
+    "annotation_readiness": "data/validation/annotation_readiness_2026_10_15_v1/report.json",
+    "independent_annotation_files": 0,
+    "agreement_focused_tests": 2,
+    "external_candidate_metadata": [
+      "https://github.com/sgware/sabre-benchmarks",
+      "https://cs.uky.edu/~sgware/projects/microtales/"
+    ],
+    "literature_additions": [
+      "https://doi.org/10.1609/aaai.v34i02.5534",
+      "https://ceur-ws.org/Vol-4090/paper13.pdf"
+    ],
+    "external_candidate_limit": "Metadata/literature inspected, no imported or evaluated independent test sources, no attribution of existing PDDL to these papers",
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "last_observed_calls": 2280
+    },
+    "next": "Continue concrete semantic proposal and evaluation tooling; full fusion still running. Coupled-schema live run awaits completion to avoid local model contention; independent labels cannot be fabricated.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "fourteenth_checkpoint": {
+    "schema_audit": "data/validation/interface_schema_audit_2026_10_15_v1/report.json",
+    "schema_controls": 1340,
+    "packet_pairs": 100,
+    "saved_complete_responses": 95,
+    "old_schema_accepts_saved": 95,
+    "coupled_schema_accepts_saved": 0,
+    "comparison_tool": "compare_annotation_predictions.py",
+    "baseline_recheck": "data/validation/interface_schema_audit_2026_10_15_v1/baseline_recheck.json",
+    "comparison_test": "synthetic invalid-to-checked intervention and option-drift rejection passed",
+    "new_dependency": "jsonschema 4.26.0, requirements-schema-validation.txt included by requirements-planning.txt",
+    "full_tests": {
+      "count": 110,
+      "seconds": 49.631,
+      "status": "PASS",
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-14.log"
+    },
+    "coupled_live_run_status": "not_started; waiting for fusion to release local model to avoid contention",
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "last_observed_calls": 2500
+    },
+    "next": "Continue preservation/comparison audits while fresh full fusion runs. Then run full 100-pair coupled schema with frozen options, replay and compare; never call structural acceptance semantic accuracy.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "fifteenth_checkpoint": {
+    "fusion_mapping_auditor": "audit_fusion_mapping.py",
+    "intermediate_node_audit": "data/validation/fusion_node15_audit_2026_10_15_v1/report.json",
+    "scope": "intermediate ACCO/BIRT node 15 only, not final full-reference result",
+    "counts": {
+      "source_actions": 29,
+      "mapped_actions": 28,
+      "rename_only_ast_equal": 27,
+      "rewritten_ast_no_verified_parameter_map": 2
+    },
+    "independent_parse": "VALID",
+    "changed_actions": [
+      {
+        "source": "ACCO",
+        "action": "tinker_carry_home",
+        "target": "activate_beech",
+        "ordered_formals_equal": false
+      },
+      {
+        "source": "BIRT",
+        "action": "turn_key_on_beech",
+        "target": "activate_beech",
+        "ordered_formals_equal": true
+      }
+    ],
+    "mapping_audit_focused_tests": 1,
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474
+    },
+    "next": "Prepare diagnostic source-plan transport restricted to unchanged ordered formal parameter declarations; do not infer parameter permutations for rewritten signatures. Existing adapter rewrites problem predicates positionally, so label any such probe as conditional positional transport, not semantic preservation. Validate original and exported plans independently and retain all missing-map/unavailable cases. Run on final root only after completion; intermediate node results stay separate.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "sixteenth_checkpoint": {
+    "transport_tool": "probe_fusion_source_plans.py",
+    "transport_result": "data/validation/fusion_node15_transport_2026_10_15_v2/report.json",
+    "failure_witness": "data/validation/fusion_node15_transport_2026_10_15_v1/failure_witness.json",
+    "node_scope": "ACCO/BIRT intermediate node 15 only, not final full fusion",
+    "result": "Both original traces VALID; ACCO positional transport VALID, BIRT INVALID at step 5 due has(nora,key)",
+    "transport_limit": "Require unchanged ordered formal parameter names/types for used actions; native positional predicate export remains a declared assumption, not semantic role evidence",
+    "transport_focused_tests": 1,
+    "source_provenance_question": "Optional async request for upstream paper/repo/generator path sent; continue with unknown provenance absent response",
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "last_observed_calls": 2920
+    },
+    "next": "Continue full reference monitoring and final audit preparation; after completion run coupled-schema experiment. Keep intermediate preservation failure separate from final model evaluation.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "seventeenth_checkpoint": {
+    "defect": "Conditional-effect guard relocation captured a same-spelled action parameter under a forall binder",
+    "fix": "Capture-avoiding alpha-renaming before effect compilation; fresh names avoid case-insensitive collisions and retain lexical scope",
+    "counterexample": "data/validation/quantifier_capture_2026_10_15_v1/report.json",
+    "capture_exhaustive": "data/validation/quantifier_capture_2026_10_15_v1/exhaustive_report.json",
+    "capture_counts": {
+      "states": 16,
+      "action_bindings": 32,
+      "before_mismatches": 8,
+      "after_mismatches": 0
+    },
+    "parser_limit": "UP 1.3.0 rejects nested forall effects; nested shadowing is AST-only tested, not claimed execution-supported",
+    "original_exhaustive_rerun": "data/validation/exhaustive_preservation_2026_10_15_v2/report.json",
+    "mutation_rerun": "data/validation/exhaustive_mutations_2026_10_15_v2/report.json",
+    "new_compiled_model": "data/validation/type_encoding_regression_2026_10_15_v2/compiled",
+    "source_replay": "data/validation/downward_type_replay_2026_10_15_v2/report.json",
+    "probe_replay": "data/validation/probe_type_replay_2026_10_15_v2/report.json",
+    "replay_counts": {
+      "original_valid": 6,
+      "original_available": 6,
+      "original_total": 15,
+      "probe_valid": 26,
+      "probe_available": 26,
+      "probe_total": 45
+    },
+    "probe_state_audit": {
+      "status": "running",
+      "session": 56785,
+      "output": "data/validation/probe_type_states_2026_10_15_v2"
+    },
+    "full_tests": {
+      "count": 114,
+      "seconds": 55.054,
+      "status": "PASS",
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-17.log"
+    },
+    "latex_compile": "success",
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474,
+      "last_observed_calls": 3310
+    },
+    "next": "Finish new compiled-model state audit; preserve historical results; continue full fusion and later coupled-schema run. Source provenance optional question remains unanswered.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "eighteenth_checkpoint": {
+    "post_fix_state_audit": "data/validation/probe_type_states_2026_10_15_v2/report.json",
+    "post_fix_state_counts": {
+      "traces": 26,
+      "states": 73,
+      "truth_comparisons": 52116,
+      "mismatches": 0,
+      "unavailable_traces": 19
+    },
+    "result_index": "paper/result_sources_2026_10_15_v2.json",
+    "result_snapshot": "paper/results_snapshot_2026_10_15_v2/results.json",
+    "verified_completed_reports": 9,
+    "snapshot_test": "Rejects incomplete denominator and inconsistent summary counts even when hashes are refreshed",
+    "pending_excluded": [
+      "Full fresh UniDomain run",
+      "Coupled-schema live experiment",
+      "Independent semantic labels",
+      "Independent-source evaluation"
+    ],
+    "unidomain_reference": {
+      "status": "running",
+      "session": 23474
+    },
+    "next": "Develop global permutation-cycle and same-source-collision checks for checked machine interface hypotheses, without promoting them to independent evidence; use actual coupled-schema output after model is free. Continue full fusion monitoring.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "nineteenth_checkpoint": {
+    "interface_graph": {
+      "module": "rcnc/interface_graph.py",
+      "runner": "audit_interface_graph.py",
+      "focused_tests": 5,
+      "triangle_permutation_controls": 216,
+      "policy": "withhold whole inconsistent components; no greedy repair; no type inference or automatic adoption",
+      "baseline_report": "data/validation/interface_graph_free_2026_10_15_v1/report.json",
+      "baseline_total_candidates": 100,
+      "baseline_usable_edges": 0,
+      "limit": "No semantic accuracy or real positive-component coverage established"
+    },
+    "full_fusion": {
+      "session": 23474,
+      "status": "running",
+      "last_log_calls": 3630
+    },
+    "next": "Wait for full fusion terminal state before coupled schema local model run. Add actual coupled-result graph audit once available. Continue research work until deadline.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twentieth_checkpoint": {
+    "source_action_removal": {
+      "bundle": "data/validation/action_removal_tasks_2026_10_15_v1",
+      "run": "data/validation/downward_action_removal_2026_10_15_v1",
+      "status": "complete",
+      "tasks": 18,
+      "solved": 5,
+      "unsolvable": 13,
+      "cutoffs": 0,
+      "independent_audit": "PASS",
+      "interpretation": "Both source action sets necessary for this authored bridge case; source-ready controls survive BIRT removal; not narrative quality"
+    },
+    "full_tests": {
+      "count": 121,
+      "status": "PASS",
+      "seconds": 53.109,
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-20.log"
+    },
+    "result_snapshot": "paper/results_snapshot_2026_10_15_v3/results.json",
+    "verified_reports": 10,
+    "full_fusion": {
+      "session": 23474,
+      "status": "running",
+      "last_observed_calls": 3850
+    },
+    "next": "Continue full fusion to terminal state; defer coupled-schema model experiment until model is free. Review remaining evidence and methodology gaps; do not count new controls as independent semantic evidence.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_first_checkpoint": {
+    "literature_checks": [
+      {
+        "key": "lindsay2023modularity",
+        "primary_source": "https://ojs.aaai.org/index.php/ICAPS/article/view/27203",
+        "full_text_sections": "Modularity and compilation algorithms",
+        "consequence": "Pre-search flattening is established prior work; independent-model interface evidence must carry any intended distinction"
+      },
+      {
+        "key": "smirnov2024consistent",
+        "primary_source": "https://arxiv.org/html/2404.07751v1",
+        "full_text_sections": "III and VI",
+        "consequence": "Structured output and consistency checks alone are not a sufficient novelty claim"
+      }
+    ],
+    "paper_compile": "success",
+    "workplan_updated": "Completed finite checks and action-removal evidence separated from remaining priorities; explicit contribution gate added",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Continue active fusion monitoring; prepare reproducibility/evidence checks and subsequent coupled-schema run without model contention",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_second_checkpoint": {
+    "reproduction_protocol": "paper/reproduction_protocol_2026_10_15.json",
+    "cli_audit": "paper/reproduction_protocol_cli_audit_2026_10_15.json",
+    "cli_audit_status": "PASS",
+    "verified_entries": 8,
+    "implementation_hashes": 12,
+    "python_version": "3.12.10",
+    "boundary": "Historical composed and initial-only exports are pre-capture-fix; current type v2 replays are post-fix. Combined protocol is documented and CLI-checked, not newly end-to-end executed.",
+    "README": "Added reproduction instructions, source action removal commands, schema/graph boundaries; changed example fusion output away from historical merged_strict",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live",
+      "last_observed_calls": 4050
+    },
+    "next": "Continue substantive evaluation work while full fusion runs; only start coupled-schema local model run after it terminates; keep all remaining scientific gaps explicit.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_third_checkpoint": {
+    "coverage_audit": "data/validation/source_trace_coverage_2026_10_15_v1/report.json",
+    "status": "complete",
+    "fresh_valid_plans": 32,
+    "declared_actions": 234,
+    "covered_actions": 61,
+    "uncovered_actions": 173,
+    "original_plan_actions": 31,
+    "auxiliary_plan_actions": 38,
+    "conditional_effect_schema_coverage": "0 of 1",
+    "source_universal_effects": "None found in original source text; current quantified-effect controls authored",
+    "paper": "Added explicit schema-versus-branch coverage boundary",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Investigate whether uncovered conditional-effect action can be exercised from unchanged source initial state; any added explicit control world must be labeled authored and separate. Full fusion and coupled-schema pending.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_fourth_checkpoint": {
+    "conditional_prefix_audit": "data/validation/conditional_prefixes_2026_10_15_v1/report.json",
+    "status": "PASS",
+    "prefixes": 2,
+    "states": 5,
+    "truth_comparisons": 2605,
+    "guard_conditions": [
+      false,
+      true
+    ],
+    "original_initial_state_unchanged": true,
+    "limit": "Authored executable prefixes, not original-goal solutions; original random-probe coverage unchanged. Source action accepts initially possessed pebble as generic item for dropping breadcrumbs.",
+    "paper_updated": true,
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Full fusion still pending; coupled-schema experiment deferred until model free. Continue work toward submission with explicit coverage and source-quality boundaries.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_fifth_checkpoint": {
+    "raw_declaration_fix": "build_narrative_union.py check_raw_declarations rejects duplicates before dictionary loss",
+    "counterexample": "data/validation/duplicate_input_guard_2026_10_15_v1",
+    "valid_source_byte_equality": {
+      "compiled_domains": 1,
+      "compiled_problems": 15,
+      "status": "PASS"
+    },
+    "full_tests": {
+      "count": 124,
+      "seconds": 53.7,
+      "status": "PASS",
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-25.log"
+    },
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn",
+      "last_observed_calls": 4330
+    },
+    "reproduction_note": "Protocol and CLI audit at checkpoint22 are frozen older hashes; current union code advanced. Valid local-source PDDL is unchanged, but future rebuilds have new implementation metadata.",
+    "next": "Finish full fusion and subsequent coupled-schema model experiment. Remaining time can address evaluation scope and artifact organization without confusing additional engineering with semantic evidence.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_sixth_checkpoint": {
+    "external_source_inspection": "data\\validation\\external_source_admission_2026_10_15_v1",
+    "upstream_commit": "d9327b3ec2706a468c580c332d3f848ffb4c47fc",
+    "snapshot_files": 15,
+    "git_blob_integrity": "Verified raw bytes against pinned repository tree",
+    "families_inspected": 6,
+    "raw_parser_passes": 0,
+    "raw_union_passes": 0,
+    "experiment_admission": false,
+    "important_distinction": "Raw incompatibility includes missing packaging headers as well as genuine unsupported intentionality and declaration problems; no semantic features stripped",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Inspect packaging-only Basketball adapter and source attribution, without modifying source actions/world. Continue full fusion; follow with coupled-schema model run.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_seventh_checkpoint": {
+    "packaging_adapter": "package_external_problem.py",
+    "focused_tests": {
+      "count": 2,
+      "status": "PASS"
+    },
+    "basketball_upstream": "data/validation/basketball_full_snapshot_2026_10_15_v1",
+    "packaged_cases": "data/validation/basketball_packaged_full_2026_10_15_v1",
+    "cases": 10,
+    "parser_passes": 10,
+    "domain_bytes_unchanged": true,
+    "problem_changes": "Only add missing :domain and remove already-domain-declared problem requirements; objects/init/goals AST unchanged",
+    "frozen_native_tasks": "data/validation/basketball_native_tasks_2026_10_15_v1",
+    "native_planner": {
+      "session": 57802,
+      "output": "data/validation/downward_basketball_native_2026_10_15_v1",
+      "status": "complete",
+      "task_count": 10,
+      "solved": 10,
+      "invalid_plans": 0,
+      "cutoffs": 0
+    },
+    "full_fusion": {
+      "session": 23474,
+      "status": "running; re-poll next turn"
+    },
+    "runner_freeze": "Native run terminal, runner hash unchanged; session57802 closed",
+    "next": "Complete 10-case native external run, then compile fixed16-source pool including Basketball and replay all available native plans with complete mapped-atom state audit. One external family only; no semantic inference or independent label claim. Coupled-schema model run waits for fusion terminal.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_eighth_checkpoint": {
+    "fixed_external_pool": "data/validation/basketball_fixed_pool_2026_10_15_v1",
+    "source_count": 16,
+    "external_family_count": 1,
+    "native_valid_plans": 10,
+    "union_replay": "data/validation/basketball_union_replay_2026_10_15_v1/report.json",
+    "membership_replay": "data/validation/basketball_membership_replay_2026_10_15_v1/report.json",
+    "per_representation": {
+      "valid_replays": 10,
+      "states": 80,
+      "truth_comparisons": 38560,
+      "mismatches": 0,
+      "hashes_unchanged": true
+    },
+    "classification": "External development validation, not blinded independent semantic test",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn",
+      "last_observed_calls": 4730
+    },
+    "next": "Continue full fusion; once terminal, audit and start coupled-schema run. Update evidence inventory with external and coverage audits; inspect replay coverage of new external actions without changing held-out claims.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "twenty_ninth_checkpoint": {
+    "intermediate_frontier": "data/validation/fusion_frontier_2026_10_15_v1",
+    "nodes": [
+      24,
+      25,
+      26
+    ],
+    "source_count_disjoint": 15,
+    "source_actions": 234,
+    "rename_only_equal": 166,
+    "rewritten_actions": 68,
+    "all_target_domains_parse": true,
+    "available_source_plans": 6,
+    "transport_unverified_plans": 6,
+    "distinct_unverified_action_mappings": 14,
+    "mapping_categories": {
+      "arity_changed": 10,
+      "ordered_types_changed": 1,
+      "formal_names_or_order_changed": 3
+    },
+    "interpretation": "Missing transport evidence, not six failed executions; frontier not final reference. Original node15 counterexample remains separately valid.",
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Await final fusion terminal state, retain final versus intermediate distinction; update result inventory for recent completed external and coverage evidence; do not edit frozen fusion implementation.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirtieth_checkpoint": {
+    "external_world_audits": [
+      "data/validation/basketball_union_replay_2026_10_15_v1/world_audit.json",
+      "data/validation/basketball_membership_replay_2026_10_15_v1/world_audit.json"
+    ],
+    "world_cases_per_representation": 10,
+    "world_audits": "PASS; in-memory foreign-narrative-fact injection correctly produces FAIL",
+    "schema_audit": "data/validation/basketball_fixed_pool_2026_10_15_v1/schema_audit.json",
+    "schema_status": "PASS",
+    "result_index": "paper/result_sources_2026_10_15_v4.json",
+    "result_snapshot": "paper/results_snapshot_2026_10_15_v4/results.json",
+    "verified_reports": 18,
+    "full_fusion": {
+      "session": 23474,
+      "status": "confirmed_live_this_turn"
+    },
+    "next": "Full fusion still pending; preserve final-root scope. Coupled-schema local run must follow after model becomes free. Inventory now includes external development and coverage bounds; do not aggregate heterogeneous denominators.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_first_checkpoint": {
+    "time_utc": "2026-10-14T18:00:00Z",
+    "action_reachability": {
+      "bundle": "data/validation/source_action_reachability_tasks_2026_10_15_v1",
+      "tasks": 234,
+      "status": "running",
+      "session": 36001,
+      "solver_output": "data/validation/downward_action_reachability_2026_10_15_v1",
+      "seconds_per_task": 20,
+      "memory_mb": 4096,
+      "workers": 1,
+      "controls": "4 focused tests passed; fresh unconditional monitor preserves original effect subtree and records invocation even with false conditional guard",
+      "next_audit": "audit_action_reachability.py --bundle data/validation/source_action_reachability_tasks_2026_10_15_v1 --solved data/validation/downward_action_reachability_2026_10_15_v1 --output data/validation/action_reachability_audit_2026_10_15_v1",
+      "scope": "Unchanged original worlds, executable prefixes; not original-goal success or effect-branch coverage"
+    },
+    "fusion": {
+      "session": 23474,
+      "status": "live",
+      "latest_observed_calls": 5330
+    },
+    "next": "Finish action reachability and full original-atom trace audit. At fusion terminal audit root or retain timeout frontier; then run coupled schema 100-pair local experiment. Keep eight-hour goal active until deadline.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_second_checkpoint": {
+    "time_utc": "2026-10-14T18:03:30Z",
+    "classification": "progress",
+    "new_auditors": [
+      "audit_action_reachability.py",
+      "replay_action_reachability.py"
+    ],
+    "focused_controls": "5 tests passed including complete monitor audit and fixed union replay with an unmet original goal",
+    "full_test_run": {
+      "session": 82741,
+      "status": "running",
+      "log": "data/validation/icaps_8h_2026_10_15/tests-checkpoint-26.log"
+    },
+    "paper": "Added explicit observer projection argument and running-protocol boundary; built-in LaTeX compilation succeeded, not final format or visual QA",
+    "documentation": "README reproduction instructions plus evaluation protocol; latest completed result inventory remains v4",
+    "live_jobs": {
+      "source_action_reachability": 36001,
+      "full_fusion": 23474
+    },
+    "next": "Poll all three handles; after action run complete execute instrumentation audit, then fixed union and membership prefix replays. After fusion terminal audit root/frontier and launch coupled-schema fixed100 local run. Do not edit frozen planner runner or fusion files during jobs.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_third_checkpoint": {
+    "classification": "progress",
+    "full_tests": "131 PASS, 60.818 seconds, tests-checkpoint-26.log, session82741 terminalexit0",
+    "formula_controls": "14forms128states3584applicability1984transitions128goals0mismatches",
+    "mutation": "quantified condition guards removed:1024mismatches detected,11actions changed",
+    "artifacts": [
+      "data/validation/formula_boundaries_2026_10_15_v1/report.json",
+      "data/validation/formula_mutation_2026_10_15_v1/report.json"
+    ],
+    "paper": "finite formula evidence and explicit scope added, claim_evidence updated",
+    "next": "Poll source-action run36001 and fusion23474. When234tasks terminal run audit_action_reachability then replay_action_reachability against union_scope_fix_2026_10_15/union and type_encoding_regression_2026_10_15_v2/compiled. Add completed reports and formula controls to next result snapshot. Coupled-schema run only after fusion terminal.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_fourth_checkpoint": {
+    "classification": "progress_and_verified_wait",
+    "coverage_summary": "summarize_action_reachability.py distinguishes target-task solver outcomes from any audited-prefix invocation witnesses and surfaces unsolvable/witness conflicts",
+    "tests": "3 focused summary controls PASS; latest full suite remains131tests checkpoint26",
+    "paper": "Added Figure semantic-negative from archived CAPTURE/BURIAL domains and query. Exact initial alive(hero), goal buried(hero); independent compile success, visual QA pending",
+    "live_jobs": {
+      "source_action_reachability": 36001,
+      "full_fusion": 23474
+    },
+    "next": "After action solver terminal: audit_action_reachability, both fixed-model replay_action_reachability runs, summarize_action_reachability. Add completed reports plus formula controls to new evidence inventory. Full fusion budget expires near18:38UTC; then audit terminal root or frontier and run coupled schema.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_fifth_checkpoint": {
+    "classification": "progress",
+    "summary_extension": "Optional --prior-coverage freshly validates original/auxiliary plans, checks original worlds unchanged except goal/name, detects inconsistent solver-unreachable claims. Four focused classification tests PASS.",
+    "paper": "Added common-world compatibility boundary and verified Casciani2025 prior work; compilation PASS",
+    "prior_work": "https://www.diag.uniroma1.it/degiacomo/papers/2025/LM4Plan@ICAPS25cdmw.pdf, sections3/4: static unary multi-membership typing and invariant-based refinement are established",
+    "live_sessions": {
+      "action_reachability": 36001,
+      "fusion": 23474
+    },
+    "next": "Await terminal234action solver; run audit_action_reachability, both fixed-model replay_action_reachability, summarize_action_reachability with --prior-coverage data/validation/source_trace_coverage_2026_10_15_v1/report.json. Integrate formula+finalaction results in new versioned inventory. At fusion terminal(~18:38UTC budget), root/frontieraudit then100coupled schema.",
+    "eight_hour_deadline_utc": "2026-10-14T22:20:03Z"
+  },
+  "thirty_sixth_checkpoint": {
+    "classification": "progress_after_host_interruption",
+    "host_interruption": {
+      "fusion_finished_utc": "2026-10-14T18:29:30.810021+00:00",
+      "resumed_clock_utc": "2026-10-15T03:28:17Z",
+      "last_reported_active_seconds_at_resume": 14998,
+      "goal_tool_later_returned": null,
+      "timing_boundary": "Original wall-clock8h window passed during interruption; cannot claim8h continuous work. Do not silently recreate a goal if app state is now absent."
+    },
+    "completed_action_experiment": {
+      "tasks": 234,
+      "solved": 146,
+      "unsolvable": 50,
+      "wall_time_limit": 38,
+      "instrumentation_and_each_fixed_model_replay": {
+        "PASS": 146,
+        "no_trace": 88,
+        "states": 459,
+        "comparisons": 354757,
+        "mismatches": 0
+      },
+      "combined_witnessed_actions": 166,
+      "solver_unreachable": 50,
+      "unresolved": 18,
+      "summary_consistent": true
+    },
+    "fusion": {
+      "status": "worker_error",
+      "elapsed_seconds": 10285.922,
+      "cached_responses": 6460,
+      "completed_nodes": 13,
+      "node27_audit": "data/validation/fusion_node27_audit_2026_10_15_v1",
+      "node27_transport": "2unverifiedparametertransport6nosourceplan",
+      "namespace_diagnostic": "data/validation/fusion_node27_namespace_diagnostic_2026_10_15_v1/report.json; strictUPrejects type/fluent entity/location overlap; same PDDL parses with error_used_nameFalse, no semantic-validity claim"
+    },
+    "coupled_schema": {
+      "v1": "failed0processedlocalservicestopped",
+      "v2": "complete52checked46invalid2failed",
+      "offline_replay": "identicalcounts complete",
+      "graph": "7equivalenceedges5consistentcomponents0withheld; no semanticgold/adoption",
+      "service_version": "0.33.2",
+      "same_restored_service_free_control_session": 12975,
+      "free_output": "data/validation/interface_predictions_gemma_free_restored_2026_10_15_v1",
+      "ollama_service_session": 79545
+    },
+    "annotation_viewer": {
+      "files": [
+        "build_annotation_viewer.py",
+        "annotation_viewer.html"
+      ],
+      "current": "data/annotation/interface_viewer_2026_10_15_v2/index.html",
+      "browser_checks": "blank rejection, complete/unreviewed transitions, navigation retention,100rowJSONexportstructure, localimport successful; screenshotinitial0labels inspected",
+      "synthetic_test_only": ".tmp/annotation-ui-test.json; independence null, backend rejects exactly independence_not_declared; not humanlabels",
+      "download_status": "direct browser download not confirmed; visibleJSONcopyfallback provided",
+      "local_server_session": 21751,
+      "tab": "closed after test"
+    },
+    "paper": "action outcomes+scope, fusioninterruption+namespaceboundary updated; compilePASS",
+    "evidence_inventory": "paper/result_sources_2026_10_15_v5.json;27verifiedreports",
+    "next": "Finish freecontrol12975, capture runtimeversion, offline replay, compare same-environmentfree/coupled and graph. Freeze UIQA report and instructions. Consider separate extended-budget cache-replay fusion continuation only after localmodelfree; preserve original interrupted reference and never call continuation a fresh3h run."
+  },
+  "thirty_seventh_checkpoint": {
+    "utc": "2026-10-15T03:53:02.916637+00:00",
+    "tests": "137 passed, tests-checkpoint-27.log",
+    "paired_free_counts": {
+      "checked": 0,
+      "invalid": 96,
+      "failed": 4
+    },
+    "paired_coupled_counts": {
+      "checked": 52,
+      "invalid": 46,
+      "failed": 2
+    },
+    "offline_replays": "Both match live counts",
+    "evidence_index": "paper/result_sources_2026_10_15_v6.json",
+    "independent_semantic_labels": 0,
+    "time_boundary": "Host interruption around 2026-10-14T18:29:30Z; resumed 2026-10-15T03:28:17Z. Eight continuous hours not completed; downtime excluded. Goal tool returned null after resume.",
+    "fusion": "Terminal worker error; no final root; no continuation launched"
+  }
+}

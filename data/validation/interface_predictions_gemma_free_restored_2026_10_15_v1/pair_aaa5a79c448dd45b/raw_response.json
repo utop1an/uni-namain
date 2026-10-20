@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:43:08.6270147Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_aaa5a79c448dd45b\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate `at` is used to describe the location of entities in both NAUG and SNOW. However, the contexts of use are distinct. NAUG uses `at` primarily in the context of actions related to movement, orders, and summoning, focusing on spatial relationships within a defined area (courtyard). SNOW uses `at` to describe the location of characters within a narrative context, specifically relating to finding locations (cottage, forest) and the character's presence within them. The NAUG actions are about *doing* something at a location, while the SNOW actions are about *being* at a location. This difference in application constitutes a complementary relationship; they both express location but in different domains and with different implications. The action contexts provide evidence for this distinction: NAUG's actions involve commands and movement, while SNOW's actions are part of a story-driven sequence of events. The exact excerpts containing the predicate occurrence on both sides support this: NAUG: `(at ?c courtyard)` and `(at ?master courtyard)` relate to commands and movement, while SNOW: `(at ?q ?l)` and `(at ?c ?cottage)` and `(at ?c ?f)` relate to character presence within a narrative setting.\", \"evidence\": [ {\"side\": 0, \"ref\": \"NAUG:action:call_comet_forward\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:give_order\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 0, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(at ?c courtyard)\"}, {\"side\": 1, \"ref\": \"SNOW:action:queen_sews_at_window\", \"quote\": \"(at ?q ?l)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_finds_dwarfs_cottage\", \"quote\": \"(at ?c ?cottage)\"}, {\"side\": 1, \"ref\": \"SNOW:action:snow_white_flees_into_forest\", \"quote\": \"(at ?c ?f)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4936538900,
+  "load_duration": 2062600,
+  "prompt_eval_count": 1055,
+  "prompt_eval_duration": 180424000,
+  "eval_count": 523,
+  "eval_duration": 4693795000
+}

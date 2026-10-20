@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:32:57.5019983Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_dd9e4993b59a79c8\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate 'captured' appears in both sources, but with different argument types and contexts. ACCO uses 'captured ?i - item' in the context of actions related to physically containing an item (kettle), while HANS_NP uses 'captured ?c - entity' within the context of capturing a person (child) as part of a larger escape scenario. The action preconditions and effects further differentiate the roles: ACCO's actions focus on the physical containment of an item, while HANS_NP's actions involve capturing a person within a location. Therefore, despite sharing the same predicate name, their usage and associated actions are complementary, representing distinct concepts of 'captured'. The argument types differ (item vs. entity), and the action contexts highlight this difference. The ACCO actions are about containing an object, while the HANS_NP actions are about capturing a person.\", \"evidence\": [ {\"side\": 0, \"ref\": \"ACCO:action:force_kettle_into_box\", \"quote\": \"(captured ?k)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:escape_from_stable\", \"quote\": \"(captured ?h)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:witch_captures_children\", \"quote\": \"(captured ?h)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3524510800,
+  "load_duration": 2791700,
+  "prompt_eval_count": 952,
+  "prompt_eval_duration": 177515000,
+  "eval_count": 335,
+  "eval_duration": 3273411000
+}

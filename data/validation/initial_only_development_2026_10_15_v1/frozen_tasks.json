@@ -1,0 +1,489 @@
+{
+  "parent_manifest_sha256": "d468c7ff2e8b0a65158a948b247c62e2b9c0f4cdc1a38e2b395216b73a68f883",
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "tasks": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "solver": "typed_cartesian",
+        "seconds": 60,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "max_depth": 3,
+        "max_states": 5000,
+        "max_ground_actions": 100000,
+        "max_ground_fluents": 100000,
+        "max_outcomes": 3
+      }
+    }
+  ],
+  "implementation_sha256": {
+    "run_initial_only_development.py": "718c74fe00e90e1dc5a972084b743e313edd677c4ce60f226b3b039fdcbea45d",
+    "rcnc/outcome_planning.py": "cbdaeaa6dec9efefea87566a9cc8bc75284504126bc6a1d7916ba0aee018a3b0",
+    "rcnc/narrative_pipeline.py": "6057f317b3c224c5e6310092f1cba612552207fcc42adfc0ac5091cc0efd0a39",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931",
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "run_narrative_pipeline.py": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  },
+  "scope": "Six authored development worlds/interfaces without goals; generated outcomes are not task success or narrative quality"
+}

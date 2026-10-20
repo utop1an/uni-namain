@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_51f25a7ced16df50",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `at` is used to describe the location of entities in both the SNOW and WOE narratives. However, the contexts surrounding its use differ significantly. In SNOW, `at` is primarily used to describe the location of characters (Snow White, dwarves, etc.) and objects (cottages, forests) within a fairy tale setting. The preconditions and effects often relate to narrative events like sewing, finding, or fleeing. In WOE, `at` is used to describe the location of a character (Woe) and a person (poor) within a more grounded, potentially realistic, scenario involving fatigue, bowing, and encounters. The actions and their preconditions highlight a focus on physical presence and states of being. The differing contexts – a fairy tale versus a more realistic scenario – suggest that the predicate is being used to represent different types of spatial relationships. Therefore, they are complementary because they both describe location but within distinct domains with different implications. The argument roles are interchangeable, but the predicates are not equivalent.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "SNOW:action:queen_sews_at_window",
+      "quote": "(at ?q ?l)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:allow_woe_to_ride_on_shoulder",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 0,
+      "ref": "SNOW:action:snow_white_finds_dwarfs_cottage",
+      "quote": "(at ?c ?cottage)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:bow_to_guests",
+      "quote": "(at ?poor ?loc)"
+    },
+    {
+      "side": 0,
+      "ref": "SNOW:action:snow_white_flees_into_forest",
+      "quote": "(at ?c ?f)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:encounter_bitter_woe",
+      "quote": "(at ?poor ?loc)"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "sources": [
+    "A"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 1,
+    "constants": 0,
+    "predicates": 2,
+    "operators": 1
+  },
+  "predicate_maps": {
+    "A": {
+      "p": "d000__p_p",
+      "q": "d000__p_q"
+    }
+  },
+  "constant_maps": {
+    "A": {}
+  },
+  "action_maps": {
+    "A": {
+      "a": "d000__a_a"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "A": {
+      "types": {
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "A_domainfile.pddl": "e897a5c7bfe6d2fad2ee256499dcefbe7634363ce165ffcb1c7207d5d4e8e374",
+    "A_problemfile.pddl": "f369be50601be4700346e3e689ff4cd3be69f19674c9e8eac4dc9fc5192071c6"
+  },
+  "implementation_sha256": {
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

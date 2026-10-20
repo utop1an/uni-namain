@@ -1,0 +1,65 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-19T16:48:30.179789+00:00",
+  "index_sha256": "effdc1622fbd72a508b24d7a85f7b4bc8483c4970f2f3e470f1bb966be44c08d",
+  "results": {
+    "acco_birt_search": {
+      "path": "data\\validation\\acco_birt_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "abc7d8662fc8c8b5890cade2378ebe15b34a3af9c61848abfa0355ddd0559d62",
+      "scope": "One authored bridge world x five conditions; 20-second matched search or offline audit, not independent semantic evaluation",
+      "metrics": {
+        "task_count": 5,
+        "status_counts": {
+          "solved": 1,
+          "unsolvable": 4
+        }
+      }
+    },
+    "acco_birt_case_audit": {
+      "path": "data\\validation\\acco_birt_case_audit_2026_10_20_v1\\report.json",
+      "sha256": "9ba58b20e53a5a955491dc0a64acb2eb85a8fdde71be946e432759e2a8b9aac9",
+      "scope": "One authored bridge world x five conditions; 20-second matched search or offline audit, not independent semantic evaluation",
+      "metrics": {
+        "task_count": 5,
+        "status_counts": {
+          "solved": 1,
+          "unsolvable": 4
+        },
+        "plan_sources": [
+          "ACCO",
+          "BIRT"
+        ],
+        "independent_semantic_labels": 0,
+        "semantic_review": [
+          {
+            "action": "BIRT:turn_key_on_beech",
+            "risk": "Only at is required; key possession and beech identity are not checked. Any item-typed argument becomes possessed. Door/dryad side effects also occur.",
+            "status": "author_code_review_risk_not_independent_label"
+          },
+          {
+            "action": "ACCO:arrange_exhibition",
+            "risk": "Sponsor parameter is unused; any held item can support an exhibition.",
+            "status": "author_code_review_risk_not_independent_label"
+          },
+          {
+            "action": "ACCO:perform_show",
+            "risk": "Requires exhibition_ready and possession, but does not encode suitability of the item or audience; sets global reputation.",
+            "status": "author_code_review_risk_not_independent_label"
+          },
+          {
+            "action": "ACCO:receive_orders_from_nobility",
+            "risk": "Global reputation permits any ACCO entity to become wealthy, including an entity that did not perform.",
+            "status": "author_code_review_risk_not_independent_label"
+          }
+        ]
+      }
+    }
+  },
+  "excluded_pending": [
+    "Independent interface labels",
+    "Narrative quality evaluation",
+    "Automatic-interface success on independent worlds"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "e89bac77086ca897e0b0536704e7ae99f5004ba2dee6e5e1407ddb3b3b37164e"
+}

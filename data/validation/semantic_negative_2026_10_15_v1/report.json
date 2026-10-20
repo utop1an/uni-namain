@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scope": "Authored semantic-negative control, not independent human annotation or real-domain failure prevalence",
+  "semantic_oracle": {
+    "relation": "incompatible",
+    "basis": "The authored source vocabulary distinguishes captured-alive from dead; capture has no death effect"
+  },
+  "same_narrative_initial_and_goal": true,
+  "distinct_predicates_status": "unsolvable",
+  "incompatible_alignment_status": "solved",
+  "incompatible_alignment_plan": {
+    "grounding_policy": "typed_cartesian_with_static_positive_projection",
+    "states": 3,
+    "ground_candidates": 3,
+    "viable_ground_actions": 3,
+    "status": "solved",
+    "length": 2,
+    "plan": "SequentialPlan:\n    d001__a_capture_alive(q__hero)\n    d000__a_bury(q__hero)",
+    "validation": {
+      "status": "VALID",
+      "engine": "sequential_plan_validator",
+      "version": "1.3.0",
+      "details": "status: VALID\nengine: sequential_plan_validator"
+    }
+  },
+  "source_plans": [
+    {
+      "source": "CAPTURE",
+      "source_search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 2,
+        "ground_candidates": 1,
+        "viable_ground_actions": 1,
+        "status": "solved",
+        "length": 1,
+        "plan": "SequentialPlan:\n    capture_alive(prisoner)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "translated": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      }
+    },
+    {
+      "source": "BURIAL",
+      "source_search": {
+        "grounding_policy": "typed_cartesian_with_static_positive_projection",
+        "states": 2,
+        "ground_candidates": 1,
+        "viable_ground_actions": 1,
+        "status": "solved",
+        "length": 1,
+        "plan": "SequentialPlan:\n    bury(corpse)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "translated": {
+        "length": 1,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      }
+    }
+  ],
+  "all_available_source_plans_preserved": true,
+  "conclusion": "An explicitly wrong cross-source correspondence can preserve both source plans and produce a valid composed plan; neither check establishes semantic alignment correctness",
+  "implementation_sha256": "94f81e387257cdb1d0c1acede48716eb3315e789ee052e224618d173b44e222d"
+}

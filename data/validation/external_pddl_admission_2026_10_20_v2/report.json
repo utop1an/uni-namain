@@ -1,0 +1,540 @@
+{
+  "status": "complete",
+  "candidate_count": 13,
+  "rows": [
+    {
+      "id": "QM_QUEST",
+      "provider": "questmaster",
+      "family": "questmaster_adventure_example",
+      "role": "narrative_candidate",
+      "domain": "resources/valid_domain.pddl",
+      "problem": "resources/valid_problem.pddl",
+      "annotation_selected": true,
+      "status": "not_admitted",
+      "lineage": "QuestMasterAI example artifact; exact production history unknown",
+      "domain_sha256": "58b4b7be03b503d1a9c1a9f785f2dbfd61ca443e91b69c12c1657997c7476840",
+      "problem_sha256": "d9df0bb9301ee571d6e62ae0a17cf39dc1e2823206540921e8b00d70004a2bb9",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/resources/valid_domain.pddl",
+        "problem": "https://raw.githubusercontent.com/umbertocicciaa/QuestMasterAI/caf6d8f79e53f73a97f5d9d95b7c8770f385bacb/resources/valid_problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: Source structural errors: ['action fight_serpent :effect: undeclared symbol cave', 'action fight_serpent :effect: undeclared symbol fight', 'action fight_serpent :precondition: undeclared symbol cave', 'action flee_cave :effect: undeclared symbol beach_end', 'action flee_cave :effect: undeclared symbol cave', 'action flee_cave :precondition: undeclared symbol cave', 'action follow_map :effect: undeclared symbol cave', 'action follow_map :effect: undeclared symbol hut', 'action follow_map :precondition: undeclared symbol hut', 'action go_cave_from_start :effect: undeclared symbol cave', 'action go_cave_from_start :effect: undeclared symbol start', 'action go_cave_from_start :precondition: undeclared symbol start', 'action go_hut :effect: undeclared symbol hut', 'action go_hut :effect: undeclared symbol start', 'action go_hut :precondition: undeclared symbol start', 'action open_chest :precondition: undeclared symbol fight']",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_HOUSEHOLD_0",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_0/domain.pddl",
+      "problem": "results/household/run_0/problem.pddl",
+      "annotation_selected": true,
+      "status": "admitted_compatibility_only",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "86be709799df5999089b5de7566c5978eebb47cbdd9007c7f4c5bcb932c889e4",
+      "problem_sha256": "4cc096b04dfe3ed1818167f39b5397596a96dcf0751965fd14043425719702c6",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_0/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_0/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [
+            ":disjunctive-preconditions",
+            ":equality",
+            ":existential-preconditions",
+            ":strips",
+            ":typing"
+          ],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "d604d9da9af69cf7f121295e33118d7de022d3442843a5a38797cbd4179393ea"
+      },
+      "original_parser": {
+        "status": "rejected_default_policy",
+        "error": "UPProblemDefinitionError: Name apple already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled.",
+        "diagnostic": "same_bytes_parsed_with_error_used_name_false"
+      },
+      "counts": {
+        "requirements": 5,
+        "types": 12,
+        "constants": 0,
+        "predicates": 7,
+        "operators": 7
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    },
+    {
+      "id": "HRI_HOUSEHOLD_1",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_1/domain.pddl",
+      "problem": "results/household/run_1/problem.pddl",
+      "annotation_selected": false,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "b8416782db1e3be20d385830b2167a428dabce73ab2ed2fe764ea972618d2bb5",
+      "problem_sha256": "4bb227c0430ec17c08ead13aa2ed1ebf2e0f23ba5f83b27100e5e7562cd9826c",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_1/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_1/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\household\\run_1\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_HOUSEHOLD_2",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_2/domain.pddl",
+      "problem": "results/household/run_2/problem.pddl",
+      "annotation_selected": false,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "48d4b31a838533c24cb7d479103ef5597f4891095c5caf1b7dd44df6f3180377",
+      "problem_sha256": "50d0902a5a292cfcbeff9544ac64666c52d9d87a8bf8b7ccfc145d03e1407a3f",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_2/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_2/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\household\\run_2\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_HOUSEHOLD_3",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_3/domain.pddl",
+      "problem": "results/household/run_3/problem.pddl",
+      "annotation_selected": false,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "ead3291d997b188d5c2bc51fa6304d5b8d28ca30392b6f31aff07d289b85466a",
+      "problem_sha256": "a02b7795fa2ee99dbe0ebb59da819f266a9d1f78a661686204e2c1a70519443a",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_3/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_3/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\household\\run_3\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_HOUSEHOLD_4",
+      "provider": "hri",
+      "family": "hri_household",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/household/run_4/domain.pddl",
+      "problem": "results/household/run_4/problem.pddl",
+      "annotation_selected": false,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "7dd364a210d5de718f947631c73a9952352c78a4712a24cefc710a60f81b7009",
+      "problem_sha256": "e313935c7e75ed8ed5bba603c06d1b8dbe76cffb4ca89aed922661d93b98b8b6",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_4/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/household/run_4/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\household\\run_4\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_PIZZA_0",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_0/domain.pddl",
+      "problem": "results/pizza/run_0/problem.pddl",
+      "annotation_selected": true,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "2d4f96ba0efbdd4be0d0c04fb0d7524aa29f4d510b5aafcd82caba254319d52e",
+      "problem_sha256": "b1bfc58de7026062da3b4ade1c1efd45eb1337c3d2c4262ee9390c57fb74610c",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_0/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_0/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\pizza\\run_0\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_PIZZA_1",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_1/domain.pddl",
+      "problem": "results/pizza/run_1/problem.pddl",
+      "annotation_selected": false,
+      "status": "admitted_compatibility_only",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "15389465d4d46aa8b5778ecae31518af8295195c348b7224c501d7a95430e723",
+      "problem_sha256": "6f57b1eca32703b5fa8e90c93f9c1ffd7c29fbd576fe66d4998bd646a79048c2",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_1/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_1/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [
+            ":disjunctive-preconditions",
+            ":equality",
+            ":existential-preconditions",
+            ":strips",
+            ":typing"
+          ],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "cff57ef73633800198d7896b62c399a9ad2be4725a4a242eff3fccff1210cb70"
+      },
+      "original_parser": {
+        "status": "rejected_default_policy",
+        "error": "UPProblemDefinitionError: Name basilicum already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled.",
+        "diagnostic": "same_bytes_parsed_with_error_used_name_false"
+      },
+      "counts": {
+        "requirements": 5,
+        "types": 22,
+        "constants": 0,
+        "predicates": 8,
+        "operators": 7
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    },
+    {
+      "id": "HRI_PIZZA_2",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_2/domain.pddl",
+      "problem": "results/pizza/run_2/problem.pddl",
+      "annotation_selected": false,
+      "status": "not_admitted",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "f4fa996d3654754416c3317ab308779e8a7744bd2b26ec8e894718f76d67a9d6",
+      "problem_sha256": "d1a89bf65fc7ab0970950909b5cf8219e9d8dac2fc8d5f02def426f4d44d2951",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_2/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_2/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "unchanged"
+      },
+      "error": "ValueError: data\\validation\\external_pddl_snapshot_2026_10_20_v1\\hri\\files\\results\\pizza\\run_2\\domain.pddl: duplicate :types",
+      "failure_category": "unsupported_or_structural_source"
+    },
+    {
+      "id": "HRI_PIZZA_3",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_3/domain.pddl",
+      "problem": "results/pizza/run_3/problem.pddl",
+      "annotation_selected": false,
+      "status": "admitted_compatibility_only",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "772a4469647a533c897600c6a9f077cd89c4bbb4476bd291e9c22c00d1bf2748",
+      "problem_sha256": "056ea2991c47464a4b149b2b0ccbd6a118cda22b2c2678add366d23ede7de6b2",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_3/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_3/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [
+            ":disjunctive-preconditions",
+            ":equality",
+            ":existential-preconditions",
+            ":strips",
+            ":typing"
+          ],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "36df99cb3cb200aab821f0621ad725236818faf7e6efecbc2d28f0d81769737e"
+      },
+      "original_parser": {
+        "status": "rejected_default_policy",
+        "error": "UPProblemDefinitionError: Name basilicum already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled.",
+        "diagnostic": "same_bytes_parsed_with_error_used_name_false"
+      },
+      "counts": {
+        "requirements": 5,
+        "types": 19,
+        "constants": 0,
+        "predicates": 8,
+        "operators": 4
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    },
+    {
+      "id": "HRI_PIZZA_4",
+      "provider": "hri",
+      "family": "hri_pizza",
+      "role": "non_narrative_generated_auxiliary",
+      "domain": "results/pizza/run_4/domain.pddl",
+      "problem": "results/pizza/run_4/problem.pddl",
+      "annotation_selected": false,
+      "status": "admitted_compatibility_only",
+      "lineage": "Generating consistent PDDL domains with Large Language Models; household description reused from GuanSuns, not independent of that source",
+      "domain_sha256": "65a2bdd7abccb208dfdb8aeaeef60fe86bff5345c1764223a35455ede0bf5559",
+      "problem_sha256": "ae1eeae507f567579dbbbd408733351421c3430ae34c4d24d8bfc8ec93f12181",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_4/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/HRI-EU/pddl-domains/56aefa8d2c9dd4985fcdea9cfc1cb75f2ab6a438/results/pizza/run_4/problem.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [
+            ":disjunctive-preconditions",
+            ":equality",
+            ":existential-preconditions",
+            ":strips",
+            ":typing"
+          ],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "3ba8f1e38441e8a82dc9be2029d28f888295eb4e0096086a4c6a1c9c0d551bd9"
+      },
+      "original_parser": {
+        "status": "rejected_default_policy",
+        "error": "UPProblemDefinitionError: Name basilicum already defined! Different elements of a problem can have the same name if the environment flag error_used_name is disabled.",
+        "diagnostic": "same_bytes_parsed_with_error_used_name_false"
+      },
+      "counts": {
+        "requirements": 5,
+        "types": 33,
+        "constants": 0,
+        "predicates": 7,
+        "operators": 3
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    },
+    {
+      "id": "IPC_GRIPPER",
+      "provider": "ipc",
+      "family": "ipc_gripper",
+      "role": "classical_auxiliary",
+      "domain": "gripper/domain.pddl",
+      "problem": "gripper/prob01.pddl",
+      "annotation_selected": true,
+      "status": "admitted_compatibility_only",
+      "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution",
+      "domain_sha256": "894b97e04557b9dce4198a3fe85f20d8a946e2b2dff9ddd42b8bcffd0a95e27c",
+      "problem_sha256": "968130f7f9f914a4e12c81d31af6de8d223881b5d219a672ac2c28a942256d14",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/gripper/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/gripper/prob01.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "968130f7f9f914a4e12c81d31af6de8d223881b5d219a672ac2c28a942256d14"
+      },
+      "original_parser": {
+        "status": "parsed_default_policy"
+      },
+      "counts": {
+        "requirements": 2,
+        "types": 1,
+        "constants": 0,
+        "predicates": 7,
+        "operators": 3
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    },
+    {
+      "id": "IPC_MICONIC",
+      "provider": "ipc",
+      "family": "ipc_miconic",
+      "role": "classical_auxiliary",
+      "domain": "miconic/domain.pddl",
+      "problem": "miconic/s1-0.pddl",
+      "annotation_selected": true,
+      "status": "admitted_compatibility_only",
+      "lineage": "Fast Downward classical benchmark mirror; original per-domain authorship requires separate attribution",
+      "domain_sha256": "433893873319a41c8b1cb91455319b9884f68bbc75368bbac681ef768d1a3b3a",
+      "problem_sha256": "3f7f25cdfd6a488c303fbbd84ae06bc3c56beaa10de0d9af761bfeb9191d9cb7",
+      "source_urls": {
+        "domain": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/miconic/domain.pddl",
+        "problem": "https://raw.githubusercontent.com/aibasel/downward-benchmarks/e21d49c2cb61d147a46c5966f2581bf6fd422b9f/miconic/s1-0.pddl"
+      },
+      "exact_local_domain_matches": [],
+      "story_overlap": "not established by byte screening; no pristine held-out claim",
+      "learning_run_provenance": "Repository-level description only; exact model/prompt/seed/training history unknown",
+      "independent_source_lineage_claim": false,
+      "packaging": {
+        "status": "header_only_policy_checked",
+        "changes": {
+          "domain_header_added": false,
+          "problem_requirements_removed": [],
+          "requirements_already_in_domain": true,
+          "other_problem_sections_identical": true
+        },
+        "domain_bytes_unchanged": true,
+        "packaged_problem_sha256": "3f7f25cdfd6a488c303fbbd84ae06bc3c56beaa10de0d9af761bfeb9191d9cb7"
+      },
+      "original_parser": {
+        "status": "parsed_default_policy"
+      },
+      "counts": {
+        "requirements": 2,
+        "types": 1,
+        "constants": 0,
+        "predicates": 8,
+        "operators": 4
+      },
+      "limit": "No semantic fidelity, narrative quality, plan success or learned-domain generalization established"
+    }
+  ],
+  "snapshot_manifest_sha256": "a4d9d65310cf54673a3f18d366717ab64ffd98e5c5c4d45ef9e3846ecb03a0f4",
+  "selection_sha256": "d54ffe93a6a156f726eba2a203cd3f1ee2ddc3c3c90929d78a4b356676db5e57",
+  "admission_policy": "Unchanged source domain; optional header-only problem packaging; structural checks, independent parsing, namespaced compilation; no solver or model outcomes",
+  "header_packaging_enabled": true,
+  "parser_name_overlap_diagnostic_enabled": true,
+  "independent_semantic_labels": 0,
+  "planner_called": false,
+  "implementation_sha256": {
+    "C:\\anu\\uninamain\\scripts\\audit\\admit_external_pddl.py": "adcc1ec988eeff7ab75a5abcde48a1c9e65f7a674845c7a026bdb442abf03e29",
+    "rcnc\\domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "rcnc\\domain_catalog.py": "2fd3c102213c64f8d24c9df50e19ee3af30269e97bac548b6bf9d2a3fdbe6e73",
+    "rcnc\\pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "rcnc\\domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "scripts\\data\\package_external_problem.py": "0eb4a33ef6d2e7fa6935c3dd02b9c93894463ac34237a4126e32408d9e16e5f4"
+  },
+  "local_sha256": {
+    "data\\narra-domains\\ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\narra-domains\\ACCO_problemfile.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\narra-domains\\BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\narra-domains\\BIRT_problemfile.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\narra-domains\\BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "data\\narra-domains\\BUFF_problemfile.pddl": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+    "data\\narra-domains\\CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\narra-domains\\CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\narra-domains\\FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "data\\narra-domains\\FOUR_NP_problemfile.pddl": "dba529c7d701f3d6890bf8b9ef86fe6a9a933156be71363bc272e9d8605cfaba",
+    "data\\narra-domains\\HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\narra-domains\\HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\narra-domains\\JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "data\\narra-domains\\JACK_NP_problemfile.pddl": "b28ed1572afa11868c531bda82eaf239ee043c71a0a1f2004889caf65a576b83",
+    "data\\narra-domains\\MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "data\\narra-domains\\MUSI_problemfile.pddl": "c04fd4a25f19f64a85bd679cdbd0faeaddfdda23437018b84c9a475a89d16f24",
+    "data\\narra-domains\\NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "data\\narra-domains\\NAUG_problemfile.pddl": "6d582f2d4cb0c56e536f20c8283c215e09a66aa7841cc7803e00bfb4c8c047bd",
+    "data\\narra-domains\\PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "data\\narra-domains\\PIGS_NP_problemfile.pddl": "ed0fa6f28de71067d84f27b1557101390f71387db9d38e8a6f178f9dd96df7bc",
+    "data\\narra-domains\\PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "data\\narra-domains\\PUSS_problemfile.pddl": "bd470f75fcf31e1409dd8228dbb52f90d45be0dc6c505721ba23888859d6b96a",
+    "data\\narra-domains\\REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "data\\narra-domains\\REMA_NP_problemfile.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09",
+    "data\\narra-domains\\SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "data\\narra-domains\\SNOW_problemfile.pddl": "52d0ba05d9b1f821e370bf8852cca70c87defb9d243ae0b8e1d3b678f6e9ba78",
+    "data\\narra-domains\\SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\narra-domains\\SOUP_problemfile.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\narra-domains\\WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4",
+    "data\\narra-domains\\WOE_problemfile.pddl": "0a4c572c0392800f5a32482f1703b68d6024074b38c4f183c0af1c6af528cfa6"
+  },
+  "counts": {
+    "not_admitted": 7,
+    "admitted_compatibility_only": 6
+  },
+  "annotation_selected_admitted": [
+    "HRI_HOUSEHOLD_0",
+    "IPC_GRIPPER",
+    "IPC_MICONIC"
+  ],
+  "missing_artifact_lead": {
+    "provider": "nl2plan",
+    "family": "dungeoncrawl",
+    "decision": "not_admitted_no_published_PDDL; do not regenerate with a model or infer an equivalent domain"
+  },
+  "scope": "Compatibility admission and annotation-pilot inputs; auxiliary classical domains are not narrative evidence. No outcome-driven repairs or best-run selection."
+}

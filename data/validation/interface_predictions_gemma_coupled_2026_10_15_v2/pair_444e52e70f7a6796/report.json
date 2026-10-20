@@ -1,0 +1,43 @@
+{
+  "candidate_id": "pair_444e52e70f7a6796",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_444e52e70f7a6796",
+    "label": "uncertain",
+    "right_from_left": null,
+    "rationale": "The predicate 'fair' appears in both sources, but its usage and context differ significantly. In 'SNOW', 'fair' is used as a precondition and effect within actions related to characters' states (e.g., 'king_marries_stepmother', 'prince_marries_snow_white'). The actions involve characters being 'fair' or causing other entities to be 'fair'. The precondition `(and (alive ?k) (alive ?s))` suggests a state of being alive is a prerequisite for 'fairness'. In 'SOUP', 'anointed' is used to describe the state of a 'sausage_skewer'. The action `prepare_soup_by_elf_effect` uses 'anointed' to describe the skewer, and the action `receive_anointed_skewer` further reinforces this. The predicates are related to different concepts: 'fair' describes a character's state or a condition, while 'anointed' describes a specific item's state. The contexts are distinct, and there's no clear connection between the two predicates based on the provided information. Therefore, a definitive relation cannot be established, and 'uncertain' is the most appropriate label. The action contexts and parameter lists are different, further supporting this uncertainty.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(anointed sausage_skewer)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:receive_anointed_skewer",
+        "quote": "(anointed sausage_skewer)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(anointed sausage_skewer)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:receive_anointed_skewer",
+        "quote": "(anointed sausage_skewer)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:receive_anointed_skewer",
+        "quote": "(anointed sausage_skewer)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(anointed sausage_skewer)"
+      }
+    ]
+  },
+  "errors": []
+}

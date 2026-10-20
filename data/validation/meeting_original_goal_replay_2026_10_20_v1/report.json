@@ -1,0 +1,188 @@
+{
+  "status": "complete",
+  "source_count": 15,
+  "rows": [
+    {
+      "source": "ACCO",
+      "native_status": "solved",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "PASS",
+      "mapped_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 6,
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 219,
+        "states_compared": 7,
+        "truth_comparisons": 1533,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "BIRT",
+      "native_status": "solved",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "PASS",
+      "mapped_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 12,
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 733,
+        "states_compared": 13,
+        "truth_comparisons": 9529,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "BUFF",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "CHIC_NP",
+      "native_status": "solved",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "PASS",
+      "mapped_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 40,
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 280,
+        "states_compared": 41,
+        "truth_comparisons": 11480,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "FOUR_NP",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "HANS_NP",
+      "native_status": "wall_time_limit",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "JACK_NP",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "MUSI",
+      "native_status": "wall_time_limit",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "NAUG",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "PIGS_NP",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "PUSS",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "REMA_NP",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "SNOW",
+      "native_status": "wall_time_limit",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "SOUP",
+      "native_status": "solved",
+      "pooled_machine_search_status": "wall_time_limit",
+      "status": "PASS",
+      "mapped_validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan_length": 2,
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 305,
+        "states_compared": 3,
+        "truth_comparisons": 915,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "WOE",
+      "native_status": "unsolvable",
+      "pooled_machine_search_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    }
+  ],
+  "scope": "Fresh native plans for unchanged original goals, mapped to the fixed machine-interface model; not new solver invocations, cross-source semantic labels or narrative quality",
+  "counts": {
+    "PASS": 4,
+    "no_native_original_goal_plan": 11
+  },
+  "original_goal_plans": 4,
+  "valid_translations": 4,
+  "states_compared": 64,
+  "truth_comparisons": 23457,
+  "mismatch_count": 0,
+  "frozen_sha256": {
+    "data\\validation\\meeting_matched_2026_10_20_v1\\report.json": "c17675851c2977e9ebf19ab98b751e973a00495568dee2baf8ec3612df280ea8",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\bundle\\manifest.json": "8222611aeaf388d6e3bdec276fbce372d498e91b5b1363c882e3156867965ac7",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\models\\machine_interfaces\\meta_domain.pddl": "d2fabe697d29d0750f73aad5c76e3e40a3ea8c4ab163032e6b9feefee0215994",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\models\\machine_interfaces\\meta_domain.json": "051296279cbdd60e19365d8012ee484a2036c1c80f1049de0f1c85ad377f1743",
+    "C:\\anu\\uninamain\\scripts\\experiments\\replay_meeting_original_goals.py": "a590af00393218431e2b00498e5ca44d1e1f22beb8bc8e56aafb316eaa368ee5",
+    "rcnc\\trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b",
+    "scripts\\experiments\\run_union_regression.py": "c47370f168170af4b9e1458f38558cf34e0a3c51ee74cc28b8e98b0447a45299",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\ACCO_problemfile.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\ACCO__source_isolated\\plan.txt": "6368c4c03033c883f3a7f4820d333ef313aae412a3971c7539f2405ab750f6b2",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\BIRT_problemfile.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\BIRT__source_isolated\\plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\CHIC_NP__source_isolated\\plan.txt": "bf3c1c87d98ba83b4fe9f8fe8ee1a1dafe70ce3163ea79fa0741f3a6fa09b9b9",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\SOUP_problemfile.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\SOUP__source_isolated\\plan.txt": "77c7ee92a4a29c6c80527feb4935d318f1b01b0fa7f965e6ffe2b35faefcdaaf"
+  },
+  "hashes_unchanged": true
+}

@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_93641b9b0488b68a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_93641b9b0488b68a",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The `owned_by` predicate describes ownership, while the `has` predicate describes possession. These represent distinct relationships. `owned_by` indicates a relationship between an entity and an item, signifying that the entity is the owner of the item. Conversely, `has` indicates that an entity possesses an item. The action contexts further illustrate this difference: `owned_by` is used to describe the ownership of items (e.g., `owned_by ?i - item ?e - entity`), while `has` is used to describe possession (e.g., `has ?a telescope`). The different action contexts and parameters reinforce this complementary relationship. The `owned_by` predicate focuses on the origin of an item, while the `has` predicate focuses on the current holder. The use of `item` and `entity` in the `owned_by` predicate clarifies that it describes the item's ownership, whereas `has` simply states possession.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:count_eggs",
+        "quote": "(has ?a telescope)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:fetch_eggs",
+        "quote": "(has ?t eggs)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_astronomer_trade",
+        "quote": "(has ?b telescope)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_hunter_trade",
+        "quote": "(has ?b gun)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_tailor_trade",
+        "quote": "(has ?b needle)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:locate_princess",
+        "quote": "(has ?a telescope)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_93641b9b0488b68a",
+    "non_equivalent_has_argument_map:pair_93641b9b0488b68a"
+  ]
+}

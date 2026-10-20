@@ -1,0 +1,1 @@
+(define (problem The_Birthday_Honors_Of_The_Fairy_Queen_problem) (:domain narrative_union) (:init (d001__p_at d001__c_nora d001__c_cottage) (d001__p_gloomy d001__c_nora)) (:goal (and (d001__p_door_open d001__c_door))))

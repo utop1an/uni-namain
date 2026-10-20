@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-18",
+  "scope": "Code relocation only; historical data and frozen manifests unchanged",
+  "files": [
+    {
+      "original_path": "run_rcnc_audit.py",
+      "archive_path": "archive/rcnc/run_rcnc_audit.py",
+      "original_sha256": "b12646272c2c8b4b6316da1917bcee9962ff180b7adb065eeaa444fa2a52cb34"
+    },
+    {
+      "original_path": "run_rcnc_experiment.py",
+      "archive_path": "archive/rcnc/run_rcnc_experiment.py",
+      "original_sha256": "4a077e250d9f1915431c8d0e9a43afbc4722a15dfd28f1b2ecb36bcf7f3ffdc6"
+    },
+    {
+      "original_path": "run_rcnc_interfaces.py",
+      "archive_path": "archive/rcnc/run_rcnc_interfaces.py",
+      "original_sha256": "8d13c8b0eaad962ecaeeed5c92b839574732bdaca338506298b1587b1c9709ea"
+    },
+    {
+      "original_path": "run_rcnc_lifting.py",
+      "archive_path": "archive/rcnc/run_rcnc_lifting.py",
+      "original_sha256": "a4256eb2e43c074b96089af07d2d9dd160639a8c229d230cc2e7b837b148dfc6"
+    },
+    {
+      "original_path": "run_rcnc_lifting_matrix.py",
+      "archive_path": "archive/rcnc/run_rcnc_lifting_matrix.py",
+      "original_sha256": "b46f1727225c8f6f8a37858daaf132c8813f66e78b941299d741fa7d4ac07cbf"
+    },
+    {
+      "original_path": "run_rcnc_matrix.py",
+      "archive_path": "archive/rcnc/run_rcnc_matrix.py",
+      "original_sha256": "b2ba4440b0aa23e19ab5a8d7783daf783f864877848b6e022ba0ef0ad12984b5"
+    },
+    {
+      "original_path": "run_rcnc_planning.py",
+      "archive_path": "archive/rcnc/run_rcnc_planning.py",
+      "original_sha256": "f4efac741c584477510a30eea384b3ac190307870f14d040fb0ab0530ada786c"
+    },
+    {
+      "original_path": "run_rcnc_semantics.py",
+      "archive_path": "archive/rcnc/run_rcnc_semantics.py",
+      "original_sha256": "d35853179eab3bc8818d7b2c836fbecbf3f3f99dc17c0a755a3b18041f41604c"
+    },
+    {
+      "original_path": "run_rcnc_smoke_suite.py",
+      "archive_path": "archive/rcnc/run_rcnc_smoke_suite.py",
+      "original_sha256": "7c598cfd295b095e12ea18a8d2276547657452b29b4b222bfbdfafc2c0f97ded"
+    },
+    {
+      "original_path": "validate_narrative_pipeline.py",
+      "archive_path": "archive/rcnc/validate_narrative_pipeline.py",
+      "original_sha256": "ed56aaf731b233d4dc30935184a42c6020bb232e773dcde9280f05cef6018315"
+    }
+  ],
+  "assets": [
+    {
+      "original_path": "annotation_viewer.html",
+      "current_path": "templates/annotation_viewer.html",
+      "sha256": "328138f07b01bef6f347c34e5f3afeb737a38d1b50783ff8086f6f1bb3357303"
+    }
+  ]
+}

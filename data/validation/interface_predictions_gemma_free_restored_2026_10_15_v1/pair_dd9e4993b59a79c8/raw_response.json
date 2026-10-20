@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:45:31.8168971Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_dd9e4993b59a79c8\", \"label\": \"complementary\", \"right_from_left\": [2, 1], \"rationale\": \"The predicate 'captured' appears in both sources, but with different argument types. ACCO uses 'captured ?i - item' indicating an item is captured, while HANS_NP uses 'captured ?c - entity' indicating an entity is captured. The action contexts further solidify this difference: ACCO's actions involve capturing *items* (e.g., 'force_kettle_into_box', 'knock_down_kettle'), while HANS_NP's actions involve capturing *entities* (e.g., 'escape_from_stable', 'witch_captures_children'). This difference in argument types represents a complementary relationship – both describe the state of being captured, but in the context of different things being captured. The action contexts demonstrate this distinction through their parameters and effects. The 'captured' predicate is used to describe the state of an item in ACCO and the state of an entity in HANS_NP. The use of 'item' and 'entity' as argument types further emphasizes this complementary relationship. The use of 'i' and 'c' as variable names are local to each source and do not affect the relationship.\", \"evidence\": [ {\"side\": 0, \"ref\": \"ACCO:action:force_kettle_into_box\", \"quote\": \"(captured ?k)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:escape_from_stable\", \"quote\": \"(captured ?h)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:witch_captures_children\", \"quote\": \"(captured ?h)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3970768700,
+  "load_duration": 2361800,
+  "prompt_eval_count": 952,
+  "prompt_eval_duration": 171535000,
+  "eval_count": 395,
+  "eval_duration": 3698959000
+}

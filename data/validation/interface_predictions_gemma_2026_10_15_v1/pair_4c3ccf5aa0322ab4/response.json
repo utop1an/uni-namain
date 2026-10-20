@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_4c3ccf5aa0322ab4",
+  "label": "equivalent",
+  "right_from_left": [
+    4,
+    1
+  ],
+  "rationale": "The predicate `traveling` appears in both the NAUG and PIGS_NP sources. In NAUG, it is a precondition for several actions like `approach_sun`, `arrest_meteor`, `avoid_body`, `speak_to_meteor`, and `start_travel`. The action contexts consistently use `traveling ?c` to indicate that the entity `?c` is in motion. In PIGS_NP, `house_destroyed ?h` is a result of actions performed by a wolf, and the precondition includes `traveling ?c`. The shared predicate `traveling` represents the state of movement, and its presence in both sources suggests an interchangeable relationship. The arguments `?c` represent the same entity across both sources, although the specific entities involved may differ. The action contexts demonstrate that `traveling` is a necessary condition for various actions in both narratives, reinforcing the equivalence. The exact excerpts containing the predicate occurrence on both sides are: NAUG: `(traveling ?c)` in `approach_sun`, `arrest_meteor`, `avoid_body`, `speak_to_meteor`, `start_travel`, and `turn_left_on_meeting`; PIGS_NP: `(house_destroyed ?h)` in `wolf_blows_house_down` and `(house_destroyed ?h)` in `wolf_eats_pig`.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "NAUG:action:approach_sun",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:arrest_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:avoid_body",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:burn_up",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:speak_to_meteor",
+      "quote": "(traveling ?c)"
+    },
+    {
+      "side": 0,
+      "ref": "NAUG:action:start_travel",
+      "quote": "(traveling ?c)"
+    }
+  ]
+}

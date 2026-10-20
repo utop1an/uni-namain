@@ -1,0 +1,58 @@
+{
+  "status": "outcomes_generated",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "difference_basis": "complete_positive_state_symmetric_difference",
+  "grounding_basis": "unique_current_state_projected_bindings",
+  "fluent_budget_basis": "effect_targets_of_visited_applicable_bindings",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 10,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 4,
+    "max_outcomes": 3
+  },
+  "states": 2,
+  "ground_candidates": 1,
+  "outcomes": [
+    {
+      "index": 0,
+      "length": 1,
+      "changes": [
+        {
+          "atom": [
+            "done",
+            "a"
+          ],
+          "value": true
+        },
+        {
+          "atom": [
+            "done",
+            "b"
+          ],
+          "value": true
+        },
+        {
+          "atom": [
+            "ready",
+            "a"
+          ],
+          "value": false
+        }
+      ],
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "plan": "SequentialPlan:\n    advance(a)"
+    }
+  ],
+  "ground_fluents_tracked": 3,
+  "expanded_effect_instances": 4,
+  "applicability_checks": 1,
+  "stop_reason": "reachable_space_exhausted"
+}

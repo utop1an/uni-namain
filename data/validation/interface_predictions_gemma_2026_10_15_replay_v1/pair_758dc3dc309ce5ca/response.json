@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_758dc3dc309ce5ca",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicates `owned_by` and `has` describe different relationships between entities. `owned_by` indicates ownership (a person owns an item), while `has` indicates possession (an entity has an item). The action contexts further illustrate this difference: `owned_by` is used in the context of a payment relationship, while `has` is used in contexts related to consumption, hiding, and trading. The `WOE` source uses `has` to describe possession, while `ACCO` uses `owned_by` to describe ownership. These predicates represent distinct aspects of the system's state, and therefore are complementary. The action contexts provide evidence for this distinction, as the predicates appear in different contexts and have different effects. The `WOE` source's actions involve possession and consumption, while the `ACCO` source's actions involve ownership and payment. The use of `?i` and `?e` in the declarations and parameters further highlights the different roles of these predicates. The `item` and `entity` types are used to distinguish between the things being owned and the things that own them.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "WOE:action:receive_payment",
+      "quote": "(has ?employer ?money)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:receive_payment",
+      "quote": "(has ?employer ?bread)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:spend_money_on_drink",
+      "quote": "(has ?poor ?money)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:spend_money_on_drink",
+      "quote": "(has ?poor ?wine)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:take_gold_pot_and_hide",
+      "quote": "(has ?poor ?gold)"
+    },
+    {
+      "side": 1,
+      "ref": "WOE:action:trade_assets_for_money",
+      "quote": "(has ?poor ?asset)"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "candidate_id": "pair_1b8c4a8b72749715",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_1b8c4a8b72749715",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates `owned_by` and `has` describe different relationships between entities. `owned_by` indicates ownership (a thing belongs to an entity), while `has` indicates possession (an entity holds an item). These relationships are distinct and cannot be directly interchangeable. The `owned_by` predicate requires a subject (the owner) and an object (the owned item), while the `has` predicate requires a holder (the entity possessing the item). The action contexts further illustrate this difference: `owned_by` is used in contexts related to transactions and transfers of ownership, whereas `has` is used in contexts related to holding or possessing items. The `JACK_NP` source provides examples of actions that utilize each predicate differently, reinforcing the complementary relationship. Specifically, `owned_by` is used in the `sell_cow_for_beans` action to describe the ownership transfer of a cow, while `has` is used in the `steal_gold_bags` and `steal_harp` actions to describe the possession of items by a giant. The use of `?i` and `?e` in the declarations further highlights the distinct roles of the arguments. The `story_or_learner_provenance` is not supplied, but the action contexts provide sufficient evidence to support the complementary relationship.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(has ?j ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_gold_bags",
+        "quote": "(has ?j ?bag1)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(has ?j ?harp)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_hen",
+        "quote": "(has ?j ?hen)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_1b8c4a8b72749715"
+  ]
+}

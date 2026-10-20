@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "files": [
+    {
+      "original_path": "pddl_checks.py",
+      "current_path": "rcnc/pddl_checks.py",
+      "original_sha256": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+    },
+    {
+      "original_path": "run_narrative_pipeline.py",
+      "current_path": "run_narrative_pipeline.py",
+      "original_sha256": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+      "cli": "rcnc/pipeline_cli.py",
+      "worker": "rcnc/planning_worker.py"
+    }
+  ],
+  "scope": "Preserve structural checks, CLI arguments, worker dispatch, report/error and process-exit contracts; historical locks remain unchanged."
+}

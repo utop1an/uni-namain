@@ -1,0 +1,28 @@
+{
+  "candidate_id": "pair_dd9e4993b59a79c8",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate `captured` appears in both sources with identical declarations and type hierarchies, indicating a shared concept of an object being held or detained. However, the arguments differ: ACCO uses `?i` as the argument, representing an `item`, while HANS_NP uses `?c` as the argument, representing an `entity`. The action contexts demonstrate different scenarios: ACCO's actions involve capturing and containing items, while HANS_NP's actions involve capturing entities within a location. This difference in argument types and the specific actions performed suggests that `captured` represents complementary aspects of the same underlying concept – one focuses on capturing objects (items) and the other on capturing entities. The preconditions and effects of the actions further highlight these distinctions. ACCO's actions are about containing items, while HANS_NP's actions are about locking stable locations and capturing entities. Therefore, the predicates are complementary, describing related but distinct ways of being 'captured'.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:force_kettle_into_box",
+      "quote": "(captured ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:escape_from_stable",
+      "quote": "(captured ?h)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:knock_down_kettle",
+      "quote": "(captured ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:witch_captures_children",
+      "quote": "(captured ?h)"
+    }
+  ]
+}

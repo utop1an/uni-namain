@@ -1,0 +1,324 @@
+{
+  "sources": [
+    "CHIC_NP"
+  ],
+  "counts": {
+    "requirements": 5,
+    "types": 0,
+    "constants": 14,
+    "predicates": 13,
+    "operators": 7
+  },
+  "predicate_maps": {
+    "CHIC_NP": {
+      "at": "d000__p_at",
+      "decided_to_tell_king": "d000__p_decided_to_tell_king",
+      "eaten_by_fox": "d000__p_eaten_by_fox",
+      "following_fox": "d000__p_following_fox",
+      "going_to_wood": "d000__p_going_to_wood",
+      "informed_about_sky_fall": "d000__p_informed_about_sky_fall",
+      "met": "d000__p_met",
+      "sky_fell_on_head": "d000__p_sky_fell_on_head",
+      "turned_back": "d000__p_turned_back"
+    }
+  },
+  "constant_maps": {
+    "CHIC_NP": {
+      "Acorn": "d000__c_acorn",
+      "Chicken-licken": "d000__c_chicken-licken",
+      "Cock-lock": "d000__c_cock-lock",
+      "Drake-lake": "d000__c_drake-lake",
+      "Duck-luck": "d000__c_duck-luck",
+      "Fox-lox": "d000__c_fox-lox",
+      "FoxHole": "d000__c_foxhole",
+      "Gander-lander": "d000__c_gander-lander",
+      "Goose-loose": "d000__c_goose-loose",
+      "Hen-len": "d000__c_hen-len",
+      "King": "d000__c_king",
+      "Sky": "d000__c_sky",
+      "Turkey-lurkey": "d000__c_turkey-lurkey",
+      "Wood": "d000__c_wood"
+    }
+  },
+  "action_maps": {
+    "CHIC_NP": {
+      "go_to_wood": "d000__a_go_to_wood",
+      "turn_back": "d000__a_turn_back",
+      "meet_character": "d000__a_meet_character",
+      "inform_about_sky_fall": "d000__a_inform_about_sky_fall",
+      "decide_to_tell_king": "d000__a_decide_to_tell_king",
+      "follow_fox": "d000__a_follow_fox",
+      "be_eaten_by_fox": "d000__a_be_eaten_by_fox"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "CHIC_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_chicken-licken"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_chicken-licken"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_cock-lock"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_cock-lock"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_drake-lake"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_drake-lake"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_duck-luck"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_duck-luck"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_fox-lox"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_fox-lox"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_gander-lander"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_gander-lander"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_goose-loose"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_goose-loose"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_hen-len"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_hen-len"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_king"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_king"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_turkey-lurkey"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_turkey-lurkey"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_acorn"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_acorn"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_sky"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_sky"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_foxhole"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_foxhole"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_wood"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_wood"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_chicken-licken": "d000__t_entity",
+    "d000__c_cock-lock": "d000__t_entity",
+    "d000__c_drake-lake": "d000__t_entity",
+    "d000__c_duck-luck": "d000__t_entity",
+    "d000__c_fox-lox": "d000__t_entity",
+    "d000__c_gander-lander": "d000__t_entity",
+    "d000__c_goose-loose": "d000__t_entity",
+    "d000__c_hen-len": "d000__t_entity",
+    "d000__c_king": "d000__t_entity",
+    "d000__c_turkey-lurkey": "d000__t_entity",
+    "d000__c_acorn": "d000__t_item",
+    "d000__c_sky": "d000__t_item",
+    "d000__c_foxhole": "d000__t_location",
+    "d000__c_wood": "d000__t_location"
+  },
+  "predicate_orders": {
+    "CHIC_NP": {
+      "at": [
+        0,
+        1
+      ],
+      "decided_to_tell_king": [
+        0
+      ],
+      "eaten_by_fox": [
+        0
+      ],
+      "following_fox": [
+        0
+      ],
+      "going_to_wood": [
+        0
+      ],
+      "informed_about_sky_fall": [
+        0,
+        1
+      ],
+      "met": [
+        0,
+        1
+      ],
+      "sky_fell_on_head": [
+        0
+      ],
+      "turned_back": [
+        0
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "CHIC_NP": {
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "decided_to_tell_king": [
+        "d000__t_entity"
+      ],
+      "eaten_by_fox": [
+        "d000__t_entity"
+      ],
+      "following_fox": [
+        "d000__t_entity"
+      ],
+      "going_to_wood": [
+        "d000__t_entity"
+      ],
+      "informed_about_sky_fall": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "met": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "sky_fell_on_head": [
+        "d000__t_entity"
+      ],
+      "turned_back": [
+        "d000__t_entity"
+      ]
+    }
+  },
+  "source_sha256": {
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "machine_hypothesis",
+    "source_sha256": {
+      "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+    },
+    "type_groups": [],
+    "predicate_groups": [],
+    "semantic_status": "unverified_machine_assumptions",
+    "role_type_policy": "aligned_slot_hypothesis",
+    "object_identity_inferred": false,
+    "initial_facts_inferred": false,
+    "proposal_provenance": {
+      "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+      "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+    }
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

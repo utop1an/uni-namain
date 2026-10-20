@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_c60c70a3c338f01a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_c60c70a3c338f01a",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      2
+    ],
+    "rationale": "The predicate `under` in `PIGS_NP` describes a spatial relationship (something is beneath something else), while `has` in `REMA_NP` describes ownership or possession. The `under` predicate specifies a vertical spatial relationship, while `has` describes a relationship of possession. These predicates describe fundamentally different aspects of the world: location versus ownership. The `under` predicate is used in the context of preparing a boiling pot, while `has` is used to describe the king's possession of items. Therefore, they are complementary because they represent distinct types of relationships. The action contexts provide specific instances of these predicates, further highlighting their different roles. Specifically, `(under ?pot chimney)` indicates the pot's location, while `(has ?p ?r)` and `(has ?k ?r)` indicate the king's possession of items. The different action contexts and parameters reinforce the complementary nature of the predicates. The use of `?i` and `?l` as variables for item and location respectively, further supports this distinction.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+        "quote": "(under ?pot chimney)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:king_requests_information_and_gifts",
+        "quote": "(has ?p ?r)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_rubies_from_impostor",
+        "quote": "(has ?i ?r)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_sapphires_from_robber_chief",
+        "quote": "(has ?c ?s)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_c60c70a3c338f01a"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "source": "ACCO",
+      "native_status": "solved",
+      "status": "PASS",
+      "plan_length": 6,
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 219,
+        "states_compared": 7,
+        "truth_comparisons": 1533,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "BIRT",
+      "native_status": "solved",
+      "status": "PASS",
+      "plan_length": 12,
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 733,
+        "states_compared": 13,
+        "truth_comparisons": 9529,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "BUFF",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "CHIC_NP",
+      "native_status": "solved",
+      "status": "PASS",
+      "plan_length": 40,
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 280,
+        "states_compared": 41,
+        "truth_comparisons": 11480,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "FOUR_NP",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "HANS_NP",
+      "native_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "JACK_NP",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "MUSI",
+      "native_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "NAUG",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "PIGS_NP",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "PUSS",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "REMA_NP",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "SNOW",
+      "native_status": "wall_time_limit",
+      "status": "no_native_original_goal_plan"
+    },
+    {
+      "source": "SOUP",
+      "native_status": "solved",
+      "status": "PASS",
+      "plan_length": 2,
+      "validation": {
+        "status": "VALID",
+        "engine": "sequential_plan_validator",
+        "version": "1.3.0",
+        "details": "status: VALID\nengine: sequential_plan_validator"
+      },
+      "state_audit": {
+        "status": "PASS",
+        "source_ground_atoms": 305,
+        "states_compared": 3,
+        "truth_comparisons": 915,
+        "mismatch_count": 0,
+        "first_mismatches": []
+      }
+    },
+    {
+      "source": "WOE",
+      "native_status": "unsolvable",
+      "status": "no_native_original_goal_plan"
+    }
+  ],
+  "task_count": 15,
+  "counts": {
+    "PASS": 4,
+    "no_native_original_goal_plan": 11
+  },
+  "states_compared": 64,
+  "truth_comparisons": 23457,
+  "mismatch_count": 0,
+  "frozen_sha256": {
+    "data\\validation\\meeting_matched_2026_10_20_v1\\report.json": "c17675851c2977e9ebf19ab98b751e973a00495568dee2baf8ec3612df280ea8",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\bundle\\manifest.json": "2f7f24f38d14fa9155380f93f95add0d60c28cebe6459e3f794644c7b671c283",
+    "C:\\anu\\uninamain\\scripts\\experiments\\replay_world_selected_goals.py": "037eedef87f1b83a0b9e9e5252b11fa41adcaccdca35d2898eb64e97ff506b0f",
+    "rcnc\\trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b",
+    "scripts\\experiments\\run_union_regression.py": "c47370f168170af4b9e1458f38558cf34e0a3c51ee74cc28b8e98b0447a45299",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\ACCO__source_isolated\\domain.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\ACCO__source_isolated\\problem.pddl": "19871e01883487906bb5845cb1852fe7da5da71220558738624c8374f1af71c4",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\ACCO\\compiled\\meta_domain.json": "a9459f2fe70c153ce0fc1dffc38c7a8f7b2b9e99948a4872d69e655aa6bc4118",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\ACCO\\compiled\\meta_domain.pddl": "e761c53314e93f311eb2c6dcdd9e687e11fea9a116467655faf23176e303ab3f",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\ACCO\\compiled\\problems\\ACCO_problemfile.pddl": "c7be42ab0c1b2ee631f69e299588b15db2b794393050d37ac6f31b230c9a8129",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\ACCO__source_isolated\\plan.txt": "6368c4c03033c883f3a7f4820d333ef313aae412a3971c7539f2405ab750f6b2",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\BIRT__source_isolated\\domain.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\BIRT__source_isolated\\problem.pddl": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\BIRT\\compiled\\meta_domain.json": "49062fa7425ec81be1a856e49139c0bb334d12866258f1c43bd63cdadd440211",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\BIRT\\compiled\\meta_domain.pddl": "5a07c6c419ec9a26ddf1dc69c6164a7de3e7f1c8a68f1354ecd90f5c511b2b0a",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\BIRT\\compiled\\problems\\BIRT_problemfile.pddl": "83ae2b7cb22524831337e32ef3f970cf15fea407351e35814b843942597a2863",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\BIRT__source_isolated\\plan.txt": "35bd562238f33ccb6f20542cde12a52c5a9705c8a4465a61c7565448884cceb1",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\CHIC_NP__source_isolated\\domain.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\CHIC_NP__source_isolated\\problem.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\CHIC_NP\\compiled\\meta_domain.json": "3a6b3cf8796866c478fd817fc8ff148a9e84f0353c9036dd3c9787531753f86f",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\CHIC_NP\\compiled\\meta_domain.pddl": "a58dc81cde25eba0f393d69b0c9e92de28a2f0c8229b96f9e654db0b0ba0bba0",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\CHIC_NP\\compiled\\problems\\CHIC_NP_problemfile.pddl": "97973882e3194f9f761f778667e1c4af50ef4ac54a7c72f544d13586045f8058",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\CHIC_NP__source_isolated\\plan.txt": "bf3c1c87d98ba83b4fe9f8fe8ee1a1dafe70ce3163ea79fa0741f3a6fa09b9b9",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\SOUP__source_isolated\\domain.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\SOUP__source_isolated\\problem.pddl": "3a5e03a07fba1385ab0b17f39cf5b95eaa4b51cc843598f33ae06e9bd210a11e",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\SOUP\\compiled\\meta_domain.json": "5a8d653ffbc1b4e6ec61631cae4934758ae9ef1f0aceb75f1f36f7f09363687b",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\SOUP\\compiled\\meta_domain.pddl": "e3353c0543c022912e53304bf7755e33f52789691ae9f0df0de4a626ca29139d",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\models\\SOUP\\compiled\\problems\\SOUP_problemfile.pddl": "06713238089188391d34e6c27b6c10b7ac096fb9900bc87c5a27584b8746db9f",
+    "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\SOUP__source_isolated\\plan.txt": "77c7ee92a4a29c6c80527feb4935d318f1b01b0fa7f965e6ffe2b35faefcdaaf"
+  },
+  "hashes_unchanged": true,
+  "scope": "Available original-goal source plans only; no new solver calls or independent semantic labels"
+}

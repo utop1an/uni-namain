@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "decision_basis": "authored_assumption",
+  "source_sha256": {
+    "A_domainfile.pddl": "9002eb48b53b1ef7d88031f008115e3dee06f8ba029315b6a9f619e119897c97",
+    "B_domainfile.pddl": "df59c7099b7e7a56e28a0f600a21a84bb1687e07a4ae0bf71b84b90e650641f9"
+  },
+  "type_groups": [
+    {
+      "members": [
+        "A:person",
+        "B:person"
+      ],
+      "evidence": "Synthetic role type correspondence"
+    }
+  ],
+  "predicate_groups": [
+    {
+      "id": "relation",
+      "evidence": "Synthetic reversed-role correspondence",
+      "members": [
+        {
+          "predicate": "A:rel",
+          "order": [
+            1,
+            0
+          ]
+        },
+        {
+          "predicate": "B:reverse_rel",
+          "order": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

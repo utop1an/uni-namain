@@ -1,0 +1,107 @@
+test_argument_permutation_enables_valid_composition_and_wrong_direction_does_not (test_aligned_domain.AlignedDomainTests.test_argument_permutation_enables_valid_composition_and_wrong_direction_does_not) ... ok
+test_pipeline_uses_explicit_shared_membership_and_rejects_implicit_identity (test_aligned_domain.AlignedDomainTests.test_pipeline_uses_explicit_shared_membership_and_rejects_implicit_identity) ... ok
+test_reified_type_guards_preserve_universal_source_plan (test_aligned_domain.AlignedDomainTests.test_reified_type_guards_preserve_universal_source_plan) ... C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+ok
+test_rejects_stale_sources_missing_type_correspondence_and_nonpermutations (test_aligned_domain.AlignedDomainTests.test_rejects_stale_sources_missing_type_correspondence_and_nonpermutations) ... ok
+test_initial_only_fallback_and_explicit_selection_conflict (test_domain_catalog.DomainCatalogTests.test_initial_only_fallback_and_explicit_selection_conflict) ... ok
+test_selection_excludes_unrelated_domain_but_keeps_all_selected_actions (test_domain_catalog.DomainCatalogTests.test_selection_excludes_unrelated_domain_but_keeps_all_selected_actions) ... ok
+test_bad_operator_does_not_replace_sources (test_fusion_safety.FusionSafetyTests.test_bad_operator_does_not_replace_sources) ... ok
+test_bad_predicate_update_rolls_back_both_sides (test_fusion_safety.FusionSafetyTests.test_bad_predicate_update_rolls_back_both_sides) ... ok
+test_case_collisions_and_rejected_same_names_preserve_both_sources (test_fusion_safety.FusionSafetyTests.test_case_collisions_and_rejected_same_names_preserve_both_sources) ... ok
+test_constant_rename_does_not_rewrite_same_spelled_predicate (test_fusion_safety.FusionSafetyTests.test_constant_rename_does_not_rewrite_same_spelled_predicate) ... ok
+test_missing_initial_requests_input_without_compiling (test_fusion_safety.FusionSafetyTests.test_missing_initial_requests_input_without_compiling) ... ok
+test_quantified_source_actions_remain_supported (test_fusion_safety.FusionSafetyTests.test_quantified_source_actions_remain_supported) ... ok
+test_union_keeps_case_distinct_source_identities (test_fusion_safety.FusionSafetyTests.test_union_keeps_case_distinct_source_identities) ... ok
+test_validator_rejects_historical_structural_failures (test_fusion_safety.FusionSafetyTests.test_validator_rejects_historical_structural_failures) ... ok
+test_compiled_quantifiers_negation_and_conditionals_lift_to_valid_source_plan (test_heuristic_planning.HeuristicPlanningTests.test_compiled_quantifiers_negation_and_conditionals_lift_to_valid_source_plan) ... C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+ok
+test_all_source_domains_parse_and_reference_declared_predicates (test_merge_domains.DomainFusionTests.test_all_source_domains_parse_and_reference_declared_predicates) ... ok
+test_fusion_preserves_all_actions_and_builds_valid_problems (test_merge_domains.DomainFusionTests.test_fusion_preserves_all_actions_and_builds_valid_problems) ... ok
+test_reviewed_location_aliases_are_unified (test_merge_domains.DomainFusionTests.test_reviewed_location_aliases_are_unified) ... ok
+test_duplicate_static_exclusions_do_not_crash (test_merged_planning.MergedPlanningTests.test_duplicate_static_exclusions_do_not_crash) ... ok
+test_unsolvable_is_distinct_from_each_resource_limit (test_merged_planning.MergedPlanningTests.test_unsolvable_is_distinct_from_each_resource_limit) ... ok
+test_domain_and_manifest_exist_before_search_and_plan_validates (test_narrative_pipeline.NarrativePipelineTests.test_domain_and_manifest_exist_before_search_and_plan_validates) ... ok
+test_explicit_empty_initial_does_not_import_source_world (test_narrative_pipeline.NarrativePipelineTests.test_explicit_empty_initial_does_not_import_source_world) ... ok
+test_goal_only_never_builds_or_plans (test_narrative_pipeline.NarrativePipelineTests.test_goal_only_never_builds_or_plans) ... ok
+test_initial_only_emits_valid_changed_endpoints_without_inventing_facts (test_narrative_pipeline.NarrativePipelineTests.test_initial_only_emits_valid_changed_endpoints_without_inventing_facts) ... ok
+test_rejects_foreign_identity_unknown_symbols_and_partial_states (test_narrative_pipeline.NarrativePipelineTests.test_rejects_foreign_identity_unknown_symbols_and_partial_states) ... ok
+test_allowed_objects_cannot_widen_types (test_rcnc_constraints.ParameterConstraintTests.test_allowed_objects_cannot_widen_types) ... ok
+test_grounding_excludes_unsupported_object_without_changing_initial (test_rcnc_constraints.ParameterConstraintTests.test_grounding_excludes_unsupported_object_without_changing_initial) ... ok
+test_parameterized_guard_blocks_semantically_disallowed_plan (test_rcnc_constraints.ParameterConstraintTests.test_parameterized_guard_blocks_semantically_disallowed_plan) ... ok
+test_unknown_parameter_or_missing_evidence_is_rejected (test_rcnc_constraints.ParameterConstraintTests.test_unknown_parameter_or_missing_evidence_is_rejected) ... ok
+test_action_family_is_independent_of_unidomain_merge (test_rcnc_experiment.RCNCExperimentTests.test_action_family_is_independent_of_unidomain_merge) ... ok
+test_cross_domain_causal_stories_are_generated (test_rcnc_experiment.RCNCExperimentTests.test_cross_domain_causal_stories_are_generated) ... ok
+test_fixed_constants_are_lifted_into_slots (test_rcnc_experiment.RCNCExperimentTests.test_fixed_constants_are_lifted_into_slots) ... ok
+test_full_experiment_writes_auditable_outputs (test_rcnc_experiment.RCNCExperimentTests.test_full_experiment_writes_auditable_outputs) ... ok
+test_predicate_factorization_preserves_state_values (test_rcnc_experiment.RCNCExperimentTests.test_predicate_factorization_preserves_state_values) ... ok
+test_abstention_and_malformed_response (test_rcnc_interfaces.InterfaceProposalTests.test_abstention_and_malformed_response) ... ok
+test_candidates_are_cross_source_typed_deterministic_and_budgeted (test_rcnc_interfaces.InterfaceProposalTests.test_candidates_are_cross_source_typed_deterministic_and_budgeted) ... ok
+test_context_retains_argument_order_polarity_and_full_action (test_rcnc_interfaces.InterfaceProposalTests.test_context_retains_argument_order_polarity_and_full_action) ... ok
+test_direction_mismatch_cannot_be_accepted (test_rcnc_interfaces.InterfaceProposalTests.test_direction_mismatch_cannot_be_accepted) ... ok
+test_fabricated_or_one_sided_or_declaration_only_evidence_rejected (test_rcnc_interfaces.InterfaceProposalTests.test_fabricated_or_one_sided_or_declaration_only_evidence_rejected) ... ok
+test_generated_evidence_options_are_actual_candidate_literals (test_rcnc_interfaces.InterfaceProposalTests.test_generated_evidence_options_are_actual_candidate_literals) ... ok
+{"candidate": "pair_e1b09dad788fc21c", "refs": ["BIRT:predicate:at", "PUSS:predicate:at"], "status": "checked", "decision": "accept"}
+test_offline_replay_checks_source_identity_and_does_not_call_network (test_rcnc_interfaces.InterfaceProposalTests.test_offline_replay_checks_source_identity_and_does_not_call_network) ... ok
+test_overlapping_acceptances_withheld_without_transitive_merge (test_rcnc_interfaces.InterfaceProposalTests.test_overlapping_acceptances_withheld_without_transitive_merge) ... ok
+{"candidate": "pair_e1b09dad788fc21c", "refs": ["BIRT:predicate:at", "PUSS:predicate:at"], "status": "failed", "decision": null}
+test_transport_failures_are_not_semantic_rejections (test_rcnc_interfaces.InterfaceProposalTests.test_transport_failures_are_not_semantic_rejections) ... ok
+test_unsupported_context_is_excluded_not_flattened (test_rcnc_interfaces.InterfaceProposalTests.test_unsupported_context_is_excluded_not_flattened) ... ok
+test_assignment_budget_is_not_unsolvability (test_rcnc_lifting.LiftingTests.test_assignment_budget_is_not_unsolvability) ... ok
+test_distinct_roles_prevent_identity_collapse (test_rcnc_lifting.LiftingTests.test_distinct_roles_prevent_identity_collapse) ... ok
+test_fixed_and_lifted_identity_cannot_conflict (test_rcnc_lifting.LiftingTests.test_fixed_and_lifted_identity_cannot_conflict) ... ok
+test_global_identity_cannot_switch_between_steps (test_rcnc_lifting.LiftingTests.test_global_identity_cannot_switch_between_steps) ... ok
+test_parameterized_pddl_preserves_initial_and_rejects_role_switch (test_rcnc_lifting.LiftingTests.test_parameterized_pddl_preserves_initial_and_rejects_role_switch) ... ok
+test_wrong_type_and_unproven_capability_rejected (test_rcnc_lifting.LiftingTests.test_wrong_type_and_unproven_capability_rejected) ... ok
+test_artifacts_and_reuse_rejected (test_rcnc_planning.PlanningTests.test_artifacts_and_reuse_rejected) ... ok
+test_direct_literal_extraction_cannot_flatten_conditional_effects (test_rcnc_planning.PlanningTests.test_direct_literal_extraction_cannot_flatten_conditional_effects) ... ok
+test_limits_do_not_claim_unsolvability (test_rcnc_planning.PlanningTests.test_limits_do_not_claim_unsolvability) ... ok
+test_missing_initial_fact_is_not_invented (test_rcnc_planning.PlanningTests.test_missing_initial_fact_is_not_invented) ... ok
+test_negative_precondition_is_not_supported_by_add (test_rcnc_planning.PlanningTests.test_negative_precondition_is_not_supported_by_add) ... ok
+test_non_strips_quarantined (test_rcnc_planning.PlanningTests.test_non_strips_quarantined) ... ok
+test_real_source_four_step_plan_and_fixed_initial_state (test_rcnc_planning.PlanningTests.test_real_source_four_step_plan_and_fixed_initial_state) ... ok
+test_replay_detects_deletion_and_negative_preconditions (test_rcnc_planning.PlanningTests.test_replay_detects_deletion_and_negative_preconditions) ... ok
+test_unknown_initial_object_rejected (test_rcnc_planning.PlanningTests.test_unknown_initial_object_rejected) ... ok
+test_wrong_type_and_missing_global_constant_binding_rejected (test_rcnc_planning.PlanningTests.test_wrong_type_and_missing_global_constant_binding_rejected) ... ok
+test_annotation_or_task_change_rejected (test_rcnc_protocol.ProtocolTests.test_annotation_or_task_change_rejected) ... ok
+test_refreeze_and_path_escape_rejected (test_rcnc_protocol.ProtocolTests.test_refreeze_and_path_escape_rejected) ... ok
+test_unchanged_bundle_verifies (test_rcnc_protocol.ProtocolTests.test_unchanged_bundle_verifies) ... ok
+test_automatic_pool_includes_alternative_move (test_rcnc_selection.SelectionTests.test_automatic_pool_includes_alternative_move) ... ok
+test_external_validator_accepts_real_plan_and_rejects_missing_step (test_rcnc_selection.SelectionTests.test_external_validator_accepts_real_plan_and_rejects_missing_step) ... ok
+test_initial_fact_achiever_retained_for_threat_repair (test_rcnc_selection.SelectionTests.test_initial_fact_achiever_retained_for_threat_repair) ... ok
+test_missing_required_validator_cannot_report_success (test_rcnc_selection.SelectionTests.test_missing_required_validator_cannot_report_success) ... ok
+test_negative_precondition_requires_delete_support (test_rcnc_selection.SelectionTests.test_negative_precondition_requires_delete_support) ... ok
+test_relevance_preserves_small_signed_strips_optima (test_rcnc_selection.SelectionTests.test_relevance_preserves_small_signed_strips_optima) ... ok
+test_fabricated_quote_and_unknown_parameter_rejected (test_rcnc_semantics.SemanticProposalTests.test_fabricated_quote_and_unknown_parameter_rejected) ... ok
+test_incompatible_interface_or_missing_side_citation_rejected (test_rcnc_semantics.SemanticProposalTests.test_incompatible_interface_or_missing_side_citation_rejected) ... ok
+test_kind_specific_schema_excludes_other_record_kinds (test_rcnc_semantics.SemanticProposalTests.test_kind_specific_schema_excludes_other_record_kinds) ... ok
+test_replay_has_explicit_provenance_and_no_planner_inputs (test_rcnc_semantics.SemanticProposalTests.test_replay_has_explicit_provenance_and_no_planner_inputs) ... ok
+test_valid_proposal_remains_unverified (test_rcnc_semantics.SemanticProposalTests.test_valid_proposal_remains_unverified) ... ok
+test_projection_preserves_all_applicable_instances_before_and_after_dynamic_change (test_static_grounding.StaticGroundingTests.test_projection_preserves_all_applicable_instances_before_and_after_dynamic_change) ... ok
+Fusing node 0 (0p/0o) + 1 (0p/0o) -> 5
+Fusing node 2 (0p/0o) + 3 (0p/0o) -> 6
+Fusing node 4 (0p/0o) + 5 (0p/0o) -> 7
+Fusing node 6 (0p/0o) + 7 (0p/0o) -> 8
+test_odd_node_is_inserted_first_in_next_layer (test_unidomain_official_alignment.OfficialFusionAlignmentTests.test_odd_node_is_inserted_first_in_next_layer) ... ok
+test_predicate_candidates_preserve_similarity_order (test_unidomain_official_alignment.OfficialFusionAlignmentTests.test_predicate_candidates_preserve_similarity_order) ... ok
+test_prompts_match_official_normalized_fingerprints (test_unidomain_official_alignment.OfficialFusionAlignmentTests.test_prompts_match_official_normalized_fingerprints) ... ok
+test_same_arity_type_change_uses_llm_action_update (test_unidomain_official_alignment.OfficialFusionAlignmentTests.test_same_arity_type_change_uses_llm_action_update) ... ok
+{"source": "A", "search": {"grounding_policy": "typed_cartesian_with_static_positive_projection", "states": 3, "ground_candidates": 2, "viable_ground_actions": 2, "status": "solved", "length": 1, "plan": "SequentialPlan:\n    tell(king, friend)", "validation": {"status": "VALID", "engine": "sequential_plan_validator", "version": "1.3.0", "details": "status: VALID\nengine: sequential_plan_validator"}}, "elapsed_seconds": 4.5, "mapped": {"length": 1, "validation": {"status": "VALID", "engine": "sequential_plan_validator", "version": "1.3.0", "details": "status: VALID\nengine: sequential_plan_validator"}}, "preservation_evidence": "validated_translated_plan"}
+{"source": "B", "search": {"status": "missing_problem"}, "elapsed_seconds": 0.0, "preservation_evidence": "no_valid_source_plan"}
+test_complete_report_keeps_denominator_and_refuses_overwrite (test_union_regression.UnionRegressionTests.test_complete_report_keeps_denominator_and_refuses_overwrite) ... ok
+test_schema_audit_accepts_grouped_parameter_declarations (test_union_regression.UnionRegressionTests.test_schema_audit_accepts_grouped_parameter_declarations) ... ok
+test_schema_audit_detects_wrong_effect_direction (test_union_regression.UnionRegressionTests.test_schema_audit_detects_wrong_effect_direction) ... ok
+test_universal_object_scope_does_not_expand_to_other_sources (test_union_regression.UnionRegressionTests.test_universal_object_scope_does_not_expand_to_other_sources) ... C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+C:\anu\uninamain\.venv\Lib\site-packages\unified_planning\io\pddl_reader.py:498: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  vars_res = self._pp_parameters.parseString(vars_string)
+ok
+test_validates_source_constants_and_problem_objects_in_order (test_union_regression.UnionRegressionTests.test_validates_source_constants_and_problem_objects_in_order) ... ok
+
+----------------------------------------------------------------------
+Ran 84 tests in 46.070s
+
+OK

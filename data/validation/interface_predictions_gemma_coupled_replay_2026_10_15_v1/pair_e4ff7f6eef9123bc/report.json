@@ -1,0 +1,45 @@
+{
+  "candidate_id": "pair_e4ff7f6eef9123bc",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_e4ff7f6eef9123bc",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicate `owned_by` indicates ownership of an item by an entity, while `has` indicates possession of an item by an entity. These predicates describe different aspects of the relationship between an entity and an item. `owned_by` specifies a legal or formal ownership, whereas `has` describes a more general state of possession. The action contexts further support this distinction: `owned_by` is used in contexts where ownership is established or transferred (e.g., `king_requests_information_and_gifts`), while `has` is used in contexts where possession is simply stated or acquired (e.g., `receive_rubies_from_impostor`, `receive_sapphires_from_robber_chief`). The different parameters and effects of the actions also highlight this difference. The `owned_by` action involves establishing a new ownership relationship, while the `has` action simply asserts or modifies an existing possession relationship. Therefore, the predicates are complementary because they represent distinct ways of describing the same relationship between an entity and an item.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:king_requests_information_and_gifts",
+        "quote": "(has ?p ?r)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:king_requests_information_and_gifts",
+        "quote": "(has ?p ?s)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_rubies_from_impostor",
+        "quote": "(has ?i ?r)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_rubies_from_impostor",
+        "quote": "(has ?i ?r)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_sapphires_from_robber_chief",
+        "quote": "(has ?c ?s)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:receive_sapphires_from_robber_chief",
+        "quote": "(has ?p ?s)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_e4ff7f6eef9123bc"
+  ]
+}

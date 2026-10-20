@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_34eb6bde8556d6d2",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `bird_heard` and `at` represent fundamentally different aspects of the world. `bird_heard` indicates the *detection* of a bird's presence and sound, while `at` specifies the *location* of an entity. They describe different properties of the same entities. The `bird_heard` predicate requires a location (`?l`) where a bird is heard, while the `at` predicate simply states the location of an entity (`?e`). The action contexts demonstrate this difference: `bird_heard` is used to describe a sensory event, and `at` is used to describe spatial relationships. The `hear_bird_and_follow_to_witch_house` action uses `bird_heard` to indicate a sound event and `at` to specify locations. The `at` predicate is used to describe the location of entities, while `bird_heard` describes a sensory event. Therefore, they are complementary because they describe different aspects of the same entities and are used in different contexts.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(at ?p town_fair)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:send_sons_on_journey",
+      "quote": "(at ?m pig_home)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_eats_pig",
+      "quote": "(at ?p ?h)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:wolf_knocks_and_requests_entry",
+      "quote": "(at ?w ?h)"
+    }
+  ]
+}

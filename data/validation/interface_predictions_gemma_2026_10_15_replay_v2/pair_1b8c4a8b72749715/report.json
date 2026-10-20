@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_1b8c4a8b72749715",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_1b8c4a8b72749715",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `owned_by` indicates ownership of an entity (`?i`), while the predicate `has` indicates possession of an entity or item (`?e`). `owned_by` describes a state of ownership, while `has` describes a state of possession. They represent different aspects of the same relationship – something can be owned by someone, and that same thing can be possessed by someone. The `owned_by` predicate focuses on the *owner*, while the `has` predicate focuses on the *possessor* and the item they hold. The action contexts for `has` demonstrate possession of items, while the `owned_by` predicate would typically be used to determine the owner of those items. Therefore, they are complementary predicates describing different facets of the same situation. The action contexts for `has` show the effect of acquiring items, while the `owned_by` predicate would describe the original owner of those items. The parameters are also different: `owned_by` takes an item as the owner, while `has` takes an entity as the possessor.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(has ?j ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_gold_bags",
+        "quote": "(has ?j ?bag1)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(has ?j ?harp)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_hen",
+        "quote": "(has ?j ?hen)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(has ?j ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_gold_bags",
+        "quote": "(has ?j ?bag2)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_1b8c4a8b72749715",
+    "non_equivalent_has_argument_map:pair_1b8c4a8b72749715"
+  ]
+}

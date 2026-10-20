@@ -1,0 +1,23 @@
+{
+  "status": "packaged",
+  "changes": {
+    "domain_header_added": true,
+    "problem_requirements_removed": [
+      ":adl",
+      ":typing",
+      ":negative-preconditions"
+    ],
+    "requirements_already_in_domain": true,
+    "other_problem_sections_identical": true
+  },
+  "original_domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+  "original_problem_sha256": "f06fb8629bf3f6e46cc54fa0001a71cbd493ac9541e76941d3b71ee565040878",
+  "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+  "problem_sha256": "5b2be818a8c2b44ac64b703ba879733aa9491b96a9759907299dbe2f908fe3e9",
+  "implementation_sha256": "44ae5c9815f303f110991461c96247b4613ae3cee0cf43d0e15b588d80792daa",
+  "scope": "Declared packaging adapter; original bytes retained. No actions, objects, initial facts or goals repaired. Parsing does not establish semantic correctness or planning success.",
+  "parser_status": "PASS",
+  "actions": 8,
+  "objects": 28,
+  "predicates": 17
+}

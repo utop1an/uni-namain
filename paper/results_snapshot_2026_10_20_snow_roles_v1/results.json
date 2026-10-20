@@ -1,0 +1,61 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-19T17:16:43.344436+00:00",
+  "index_sha256": "b58487c5e24e1341b4c34923dda57f52c6842ad8fda04a598abab94a9be28c7b",
+  "results": {
+    "snow_role_search": {
+      "path": "data\\validation\\snow_roles_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "8e7ae09707e76a219149cd52ddc316062a0c579d9a52399936df7b0e9b9a639b",
+      "scope": "One authored shared-role world x eleven conditions; explicit compiled role/life/event changes. Formal success differs from scenario-contract success.",
+      "metrics": {
+        "task_count": 11,
+        "status_counts": {
+          "solved": 2,
+          "unsolvable": 8,
+          "wall_time_limit": 1
+        }
+      }
+    },
+    "snow_role_execution": {
+      "path": "data\\validation\\snow_roles_case_audit_2026_10_20_v2\\report.json",
+      "sha256": "2696fef0d4b423e0ecc197f8979fbc8ad77bd25d11a34641a99c9aaea4ba51f4",
+      "scope": "One authored shared-role world x eleven conditions; explicit compiled role/life/event changes. Formal success differs from scenario-contract success.",
+      "metrics": {
+        "task_count": 11,
+        "status_counts": {
+          "solved": 2,
+          "unsolvable": 8,
+          "wall_time_limit": 1
+        },
+        "scenario_contract_pass_count": 1,
+        "scenario_contract_fail_count": 1,
+        "primary_plan_length": 4,
+        "primary_trace_states": 5,
+        "role_identity": {
+          "single_object": "q__snow_white",
+          "roles": [
+            "snow_white",
+            "giant",
+            "witch"
+          ],
+          "immutable_facts_checked_in_every_primary_state": true
+        },
+        "semantic_limits": [
+          "Role guards are authored and make uncast roles unavailable; not automatically learned role equivalences.",
+          "Life synchronization and ending descent are authored changes to compiled effects; unrestricted source preservation is not claimed.",
+          "The goal explicitly observes a comb rescue, rather than only asking for final alive status.",
+          "Source has is non-exclusive; recovery does not check cause of death or physical comb attachment.",
+          "Visited is an abstract historical flag, with no complete travel/time model. No independently evaluated narrative quality."
+        ]
+      }
+    }
+  },
+  "excluded_pending": [
+    "Independent semantic and narrative judgments",
+    "Automatic role/interface induction",
+    "Unrestricted source-model success within the same budget",
+    "Independent-domain generalization"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "e89bac77086ca897e0b0536704e7ae99f5004ba2dee6e5e1407ddb3b3b37164e"
+}

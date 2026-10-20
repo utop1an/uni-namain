@@ -3,9 +3,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from rcnc.constraints import allowed_parameters
-from rcnc.lifting import run_lifted_query
-from rcnc.planning import compile_query
+from archive.rcnc.constraints import allowed_parameters
+from archive.rcnc.lifting import run_lifted_query
+from archive.rcnc.planning import compile_query
 from rcnc.validation import validate_artifacts
 
 ROOT=Path(__file__).resolve().parents[1]

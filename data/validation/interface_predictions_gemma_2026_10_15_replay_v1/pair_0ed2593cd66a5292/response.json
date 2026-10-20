@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_0ed2593cd66a5292",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'boiling' appears in both narratives, but its usage and implications differ significantly. In 'PIGS_NP', 'boiling' describes a process applied to a pot, indicating a state of heated liquid, likely for cooking. This is explicitly stated in the action 'pig_prepares_boiling_pot_and_fire' where `(boiling ?pot)` is an effect. Conversely, in 'PUSS', 'drowning' is a negative state, and 'drowning ?jack' is a precondition for the action 'cat_persuade_master_to_bathe'. The 'boiling' predicate in 'PUSS' is used to describe the state of the river, where Jack is drowning, and is a cause of the effect. Therefore, the two predicates are related to water and its state, but one describes a process while the other describes a negative outcome. The action contexts provide distinct meanings and implications for the predicate. The 'boiling' predicate in 'PIGS_NP' is associated with a cooking action, while in 'PUSS' it is associated with a fatal event. The use of 'boiling' in 'PUSS' is a consequence of the 'drowning' event, not a process in itself.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:pig_prepares_boiling_pot_and_fire",
+      "quote": "(boiling ?pot)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_persuade_master_to_bathe",
+      "quote": "(drowning ?jack)"
+    }
+  ]
+}

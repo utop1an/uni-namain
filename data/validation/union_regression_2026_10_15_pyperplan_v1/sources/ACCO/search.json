@@ -1,0 +1,22 @@
+{
+  "engine": "pyperplan",
+  "search": "gbf",
+  "heuristic": "hff",
+  "versions": {
+    "unified-planning": "1.3.0",
+    "up-pyperplan": "1.1.0",
+    "pyperplan": "2.1"
+  },
+  "budget_policy": "external_process_wall_clock_only",
+  "compilations": [],
+  "engine_status": "SOLVED_SATISFICING",
+  "status": "solved",
+  "length": 6,
+  "plan": "SequentialPlan:\n    sell_kettle_to_tinker(priest, tinker, pack, teakettle)\n    arrange_exhibition(badger, priest, pack)\n    perform_show(priest, pack)\n    receive_orders_from_nobility(tinker)\n    return_kettle_to_temple(tinker, teakettle)\n    worship_kettle_as_saint(teakettle)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

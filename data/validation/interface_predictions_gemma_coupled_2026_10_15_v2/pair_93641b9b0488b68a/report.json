@@ -1,0 +1,45 @@
+{
+  "candidate_id": "pair_93641b9b0488b68a",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_93641b9b0488b68a",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The `owned_by` predicate describes ownership, while the `has` predicate describes possession. These represent distinct relationships. `owned_by` indicates a subject-object relationship where one entity *owns* another, while `has` indicates a subject-object relationship where one entity *possesses* another. The action contexts further illustrate this difference: `owned_by` is used to describe the ownership of items (e.g., `owned_by ?i - item ?e - entity`), while `has` is used to describe the possession of items by entities (e.g., `has ?e - entity ?i - item`). The different action contexts and parameters reinforce this distinction. For example, `owned_by` would be used to describe who owns a ship, while `has` would be used to describe what a character possesses (e.g., a gun, a telescope). The `action_contexts` show that `owned_by` is used to describe the ownership of items, while `has` is used to describe the possession of items by entities. Therefore, they are complementary predicates because they describe different aspects of the same objects and entities.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:count_eggs",
+        "quote": "(has ?a telescope)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:fetch_eggs",
+        "quote": "(has ?t eggs)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_astronomer_trade",
+        "quote": "(has ?b telescope)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_hunter_trade",
+        "quote": "(has ?b gun)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:learn_tailor_trade",
+        "quote": "(has ?b needle)"
+      },
+      {
+        "side": 1,
+        "ref": "FOUR_NP:action:locate_princess",
+        "quote": "(has ?a telescope)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_93641b9b0488b68a"
+  ]
+}

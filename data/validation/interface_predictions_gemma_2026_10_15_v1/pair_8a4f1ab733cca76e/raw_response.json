@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:33:43.3458574Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_8a4f1ab733cca76e\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate 'lost' appears in both sources, but its usage and context differ significantly. In HANS_NP, 'lost' describes the state of children due to abandonment or being left at locations (fire, forest). The actions explicitly *cause* the 'lost' state (e.g., `abandon_children_in_forest`, `leave_children_at_fire`). Conversely, in NAUG, 'traveling' is used to describe the state of an entity, and 'lost' is a consequence of actions like 'burn_up' or 'start_travel', representing a disrupted journey. The two predicates describe distinct aspects of an entity's situation: one focuses on a state resulting from actions, the other on the process of movement. The action contexts demonstrate this difference; HANS_NP actions *produce* the 'lost' state, while NAUG actions describe a state that *could* lead to a 'lost' state. Therefore, they are complementary – they relate to the same entity but represent different facets of its situation.\", \"evidence\": [ {\"side\": 1, \"ref\": \"NAUG:action:approach_sun\", \"quote\": \"(traveling ?c)\"}, {\"side\": 1, \"ref\": \"NAUG:action:arrest_meteor\", \"quote\": \"(traveling ?c)\"}, {\"side\": 1, \"ref\": \"NAUG:action:avoid_body\", \"quote\": \"(traveling ?c)\"}, {\"side\": 1, \"ref\": \"NAUG:action:burn_up\", \"quote\": \"(traveling ?c)\"}, {\"side\": 1, \"ref\": \"NAUG:action:speak_to_meteor\", \"quote\": \"(traveling ?c)\"}, {\"side\": 1, \"ref\": \"NAUG:action:start_travel\", \"quote\": \"(traveling ?c)\"} ]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5298434200,
+  "load_duration": 2329100,
+  "prompt_eval_count": 2063,
+  "prompt_eval_duration": 355631000,
+  "eval_count": 450,
+  "eval_duration": 4774355000
+}

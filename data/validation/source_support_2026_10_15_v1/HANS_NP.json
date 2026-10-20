@@ -1,0 +1,433 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "has"
+  ],
+  "reachable_predicates": [
+    "at",
+    "bread_given",
+    "captured",
+    "collected",
+    "crossed_lake",
+    "crumb_on_path",
+    "dead",
+    "duck_helped",
+    "fire_lit",
+    "has",
+    "locked",
+    "lost",
+    "pebble_on_path",
+    "reunited_with_father"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "abandon_children_in_forest",
+        "call_duck_for_crossing",
+        "collect_treasure",
+        "drop_breadcrumb_on_path",
+        "drop_pebble_on_path",
+        "enter_witch_house",
+        "follow_breadcrumbs_home",
+        "push_witch_into_oven",
+        "wander_forest_seeking_way_out",
+        "witch_captures_children"
+      ],
+      "new_predicates": [
+        "bread_given",
+        "captured",
+        "collected",
+        "crossed_lake",
+        "crumb_on_path",
+        "dead",
+        "duck_helped",
+        "fire_lit",
+        "locked",
+        "lost",
+        "pebble_on_path"
+      ]
+    },
+    {
+      "actions": [
+        "escape_from_stable",
+        "follow_pebbles_home",
+        "leave_children_at_fire",
+        "return_home_and_reunite_with_father"
+      ],
+      "new_predicates": [
+        "reunited_with_father"
+      ]
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "hear_bird_and_follow_to_witch_house",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?branch"
+        ],
+        [
+          "at",
+          "?g",
+          "?branch"
+        ],
+        [
+          "bird_heard",
+          "?h",
+          "?branch"
+        ],
+        [
+          "bird_heard",
+          "?g",
+          "?branch"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "abandon_children_in_forest",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "at",
+        "bread_given",
+        "fire_lit",
+        "lost"
+      ]
+    },
+    {
+      "action": "call_duck_for_crossing",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?lake"
+        ],
+        [
+          "at",
+          "?g",
+          "?lake"
+        ],
+        [
+          "at",
+          "?duck",
+          "?lake"
+        ]
+      ],
+      "adds": [
+        "crossed_lake",
+        "duck_helped"
+      ]
+    },
+    {
+      "action": "collect_treasure",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?g",
+          "?cottage"
+        ]
+      ],
+      "adds": [
+        "collected",
+        "has"
+      ]
+    },
+    {
+      "action": "drop_breadcrumb_on_path",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?path_loc"
+        ],
+        [
+          "has",
+          "?h",
+          "?crumb"
+        ]
+      ],
+      "adds": [
+        "crumb_on_path"
+      ]
+    },
+    {
+      "action": "drop_pebble_on_path",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?path_loc"
+        ],
+        [
+          "has",
+          "?h",
+          "?peb"
+        ]
+      ],
+      "adds": [
+        "pebble_on_path"
+      ]
+    },
+    {
+      "action": "enter_witch_house",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?g",
+          "?cottage"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "escape_from_stable",
+      "condition": [
+        "and",
+        [
+          "captured",
+          "?h"
+        ],
+        [
+          "locked",
+          "?stable"
+        ],
+        [
+          "at",
+          "?g",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?h",
+          "?stable"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "follow_breadcrumbs_home",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?path_loc"
+        ],
+        [
+          "at",
+          "?g",
+          "?path_loc"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "follow_pebbles_home",
+      "condition": [
+        "and",
+        [
+          "pebble_on_path",
+          "?path_loc"
+        ],
+        [
+          "at",
+          "?h",
+          "?path_loc"
+        ],
+        [
+          "at",
+          "?g",
+          "?path_loc"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "hear_bird_and_follow_to_witch_house",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?branch"
+        ],
+        [
+          "at",
+          "?g",
+          "?branch"
+        ],
+        [
+          "bird_heard",
+          "?h",
+          "?branch"
+        ],
+        [
+          "bird_heard",
+          "?g",
+          "?branch"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "leave_children_at_fire",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?forest"
+        ],
+        [
+          "at",
+          "?g",
+          "?forest"
+        ],
+        [
+          "fire_lit",
+          "?forest"
+        ],
+        [
+          "bread_given",
+          "?h"
+        ],
+        [
+          "bread_given",
+          "?g"
+        ]
+      ],
+      "adds": [
+        "lost"
+      ]
+    },
+    {
+      "action": "push_witch_into_oven",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?g",
+          "?room"
+        ],
+        [
+          "at",
+          "?witch",
+          "?room"
+        ]
+      ],
+      "adds": [
+        "dead"
+      ]
+    },
+    {
+      "action": "return_home_and_reunite_with_father",
+      "condition": [
+        "and",
+        [
+          "crossed_lake",
+          "?h"
+        ],
+        [
+          "crossed_lake",
+          "?g"
+        ],
+        [
+          "at",
+          "?father",
+          "?father_house"
+        ]
+      ],
+      "adds": [
+        "at",
+        "reunited_with_father"
+      ]
+    },
+    {
+      "action": "wander_forest_seeking_way_out",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?forest"
+        ],
+        [
+          "at",
+          "?g",
+          "?forest"
+        ]
+      ],
+      "adds": [
+        "lost"
+      ]
+    },
+    {
+      "action": "witch_captures_children",
+      "condition": [
+        "and",
+        [
+          "at",
+          "?h",
+          "?cottage"
+        ],
+        [
+          "at",
+          "?g",
+          "?cottage"
+        ],
+        [
+          "not",
+          [
+            "locked",
+            "?stable"
+          ]
+        ]
+      ],
+      "adds": [
+        "at",
+        "captured",
+        "locked"
+      ]
+    }
+  ],
+  "source_domain_sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+  "source_problem_sha256": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from rcnc.interface_proposals import (build_candidates, pair_input, check_judgment,
+from archive.rcnc.interface_proposals import (build_candidates, pair_input, check_judgment,
     draft_interfaces, run_interfaces, write_json, response_schema)
 
 ROOT = Path(__file__).resolve().parents[1]

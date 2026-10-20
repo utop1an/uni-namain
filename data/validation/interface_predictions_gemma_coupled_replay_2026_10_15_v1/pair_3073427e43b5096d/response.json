@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_3073427e43b5096d",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates `at` in both CHIC_NP and HANS_NP have identical declarations and parameter types: `(at ?e - entity ?l - location)`. This indicates they represent the same concept – specifying the location of an entity. The action contexts further confirm this, as both predicates are used to express location information within the narrative. The differing source names do not negate this equivalence, as the core meaning and usage are identical. The action contexts demonstrate that the predicates are used to describe the spatial relationships of entities within the story.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:be_eaten_by_fox",
+      "quote": "(at ?e ?l)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:go_to_wood",
+      "quote": "(at ?e Wood)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:meet_character",
+      "quote": "(at ?e1 ?l)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:go_to_wood",
+      "quote": "(at ?e Wood)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:meet_character",
+      "quote": "(at ?e2 ?l)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:abandon_children_in_forest",
+      "quote": "(at ?h ?forest)"
+    }
+  ]
+}

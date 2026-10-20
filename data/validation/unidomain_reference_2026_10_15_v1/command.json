@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "C:\\anu\\uninamain\\.venv\\Scripts\\python.exe",
+    "C:\\anu\\uninamain\\unidomain_ollama_fusion.py",
+    "--input",
+    "C:\\anu\\uninamain\\data\\validation\\unidomain_reference_2026_10_15_v1\\inputs",
+    "--output",
+    "C:\\anu\\uninamain\\data\\validation\\unidomain_reference_2026_10_15_v1\\fusion",
+    "--cache-dir",
+    "C:\\anu\\uninamain\\data\\validation\\unidomain_reference_2026_10_15_v1\\cache",
+    "--model",
+    "gemma3:4b",
+    "--num-workers",
+    "1",
+    "--predicate-threshold",
+    "0.3",
+    "--operator-threshold",
+    "0.3"
+  ],
+  "environment_overrides": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "USE_TF": "0",
+    "TRANSFORMERS_NO_TF": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  }
+}

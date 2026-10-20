@@ -1,0 +1,1 @@
+(define (problem source_b_problem) (:domain narrative_aligned) (:init (typeguard__d000__t_apprentice d000__c_a) (typeguard__d000__t_person d000__c_a) (typeguard__d000__t_object d000__c_a) (typeguard__d001__t_person d001__c_outsider) (typeguard__d001__t_object d001__c_outsider)) (:goal (shared__p_relation d001__c_outsider d001__c_outsider)))

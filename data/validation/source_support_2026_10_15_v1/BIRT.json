@@ -1,0 +1,252 @@
+{
+  "status": "not_proved_unreachable",
+  "initial_predicates": [
+    "at",
+    "gloomy"
+  ],
+  "reachable_predicates": [
+    "at",
+    "corridor_reached",
+    "door_open",
+    "gloomy",
+    "has",
+    "inside",
+    "invitation_offered",
+    "joyful",
+    "kissed_by",
+    "pellet_eaten",
+    "shrunk",
+    "sound_heard",
+    "stairs_descended",
+    "story_shared"
+  ],
+  "unreachable_goal_atoms": [],
+  "goal_may_hold_in_relaxation": true,
+  "layers": [
+    {
+      "actions": [
+        "hear_tapping_on_beech",
+        "receive_queen_kiss",
+        "return_to_bench_and_share_story",
+        "travel_to_trysting_place",
+        "turn_key_on_beech",
+        "witness_queen_birthday_ceremony"
+      ],
+      "new_predicates": [
+        "door_open",
+        "has",
+        "inside",
+        "invitation_offered",
+        "joyful",
+        "kissed_by",
+        "sound_heard",
+        "story_shared"
+      ]
+    },
+    {
+      "actions": [
+        "accept_dryad_invitation",
+        "approach_beech_tree",
+        "eat_pellet_and_shrink",
+        "enter_tree_and_descend_stairs",
+        "receive_pellet_from_gnome"
+      ],
+      "new_predicates": [
+        "corridor_reached",
+        "pellet_eaten",
+        "shrunk",
+        "stairs_descended"
+      ]
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "travel_by_leaf_boat_under_pond",
+      "condition": [
+        "and",
+        [
+          "stairs_descended",
+          "?n"
+        ],
+        [
+          "boat_available",
+          "?b",
+          "?pond"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "accept_dryad_invitation",
+      "condition": [
+        "invitation_offered",
+        "?d",
+        "?n"
+      ],
+      "adds": []
+    },
+    {
+      "action": "approach_beech_tree",
+      "condition": [
+        "sound_heard",
+        "?n",
+        "?t"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "eat_pellet_and_shrink",
+      "condition": [
+        "has",
+        "?n",
+        "?p"
+      ],
+      "adds": [
+        "pellet_eaten",
+        "shrunk"
+      ]
+    },
+    {
+      "action": "enter_tree_and_descend_stairs",
+      "condition": [
+        "and",
+        [
+          "inside",
+          "?n",
+          "?t"
+        ],
+        [
+          "inside",
+          "?d",
+          "?t"
+        ],
+        [
+          "door_open",
+          "door"
+        ]
+      ],
+      "adds": [
+        "corridor_reached",
+        "stairs_descended"
+      ]
+    },
+    {
+      "action": "hear_tapping_on_beech",
+      "condition": [
+        "at",
+        "?n",
+        "bench"
+      ],
+      "adds": [
+        "sound_heard"
+      ]
+    },
+    {
+      "action": "receive_pellet_from_gnome",
+      "condition": [
+        "and",
+        [
+          "inside",
+          "?n",
+          "?t"
+        ],
+        [
+          "inside",
+          "?g",
+          "?t"
+        ]
+      ],
+      "adds": [
+        "has"
+      ]
+    },
+    {
+      "action": "receive_queen_kiss",
+      "condition": [
+        "at",
+        "?n",
+        "palace"
+      ],
+      "adds": [
+        "joyful",
+        "kissed_by"
+      ]
+    },
+    {
+      "action": "return_to_bench_and_share_story",
+      "condition": [
+        "at",
+        "?n",
+        "palace"
+      ],
+      "adds": [
+        "at",
+        "story_shared"
+      ]
+    },
+    {
+      "action": "travel_by_leaf_boat_under_pond",
+      "condition": [
+        "and",
+        [
+          "stairs_descended",
+          "?n"
+        ],
+        [
+          "boat_available",
+          "?b",
+          "?pond"
+        ]
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "travel_to_trysting_place",
+      "condition": [
+        "at",
+        "?n",
+        "?c"
+      ],
+      "adds": [
+        "at"
+      ]
+    },
+    {
+      "action": "turn_key_on_beech",
+      "condition": [
+        "at",
+        "?n",
+        "?t"
+      ],
+      "adds": [
+        "door_open",
+        "has",
+        "inside",
+        "invitation_offered"
+      ]
+    },
+    {
+      "action": "witness_queen_birthday_ceremony",
+      "condition": [
+        "at",
+        "?n",
+        "?palace"
+      ],
+      "adds": [
+        "joyful",
+        "story_shared"
+      ]
+    }
+  ],
+  "source_domain_sha256": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+  "source_problem_sha256": "beecc0f91809a811b598f8ce45d0410290e75258ad47454965bf61f1b15b9df8",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

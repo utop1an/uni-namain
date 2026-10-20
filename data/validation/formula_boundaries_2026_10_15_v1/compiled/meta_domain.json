@@ -1,0 +1,173 @@
+{
+  "sources": [
+    "A",
+    "B"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 0,
+    "constants": 2,
+    "predicates": 10,
+    "operators": 15
+  },
+  "predicate_maps": {
+    "A": {
+      "p": "d000__p_p",
+      "r": "d000__p_r",
+      "e": "d000__p_e",
+      "done": "d000__p_done"
+    },
+    "B": {
+      "other": "d001__p_other"
+    }
+  },
+  "constant_maps": {
+    "A": {
+      "a": "d000__c_a"
+    },
+    "B": {
+      "outsider": "d001__c_outsider"
+    }
+  },
+  "action_maps": {
+    "A": {
+      "negated_all": "d000__a_negated_all",
+      "negated_exists": "d000__a_negated_exists",
+      "implication": "d000__a_implication",
+      "disjunction": "d000__a_disjunction",
+      "equality": "d000__a_equality",
+      "inequality": "d000__a_inequality",
+      "all_exists": "d000__a_all_exists",
+      "exists_all": "d000__a_exists_all",
+      "shadowed_parameter": "d000__a_shadowed_parameter",
+      "shadowed_nested": "d000__a_shadowed_nested",
+      "vacuous_all": "d000__a_vacuous_all",
+      "empty_exists": "d000__a_empty_exists",
+      "negative_empty_exists": "d000__a_negative_empty_exists",
+      "negative_vacuous_all": "d000__a_negative_vacuous_all"
+    },
+    "B": {
+      "touch": "d001__a_touch"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "A": {
+      "types": {
+        "person": "d000__t_person",
+        "vacant": "d000__t_vacant",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {
+        "b": "d000__o_b"
+      }
+    },
+    "B": {
+      "types": {
+        "foreign": "d001__t_foreign",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_person": "d000__t_object",
+    "d000__t_vacant": "d000__t_object",
+    "d001__t_foreign": "d001__t_object",
+    "d000__t_object": "object",
+    "d001__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_person": "typeguard__d000__t_person",
+    "d000__t_vacant": "typeguard__d000__t_vacant",
+    "d001__t_foreign": "typeguard__d001__t_foreign",
+    "d000__t_object": "typeguard__d000__t_object",
+    "d001__t_object": "typeguard__d001__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_person",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d001__t_foreign",
+      "d001__c_outsider"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_outsider"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_a": "d000__t_person",
+    "d001__c_outsider": "d001__t_foreign"
+  },
+  "predicate_orders": {
+    "A": {
+      "p": [
+        0
+      ],
+      "r": [
+        0,
+        1
+      ],
+      "e": [
+        0
+      ],
+      "done": []
+    },
+    "B": {
+      "other": []
+    }
+  },
+  "source_predicate_types": {
+    "A": {
+      "p": [
+        "d000__t_person"
+      ],
+      "r": [
+        "d000__t_person",
+        "d000__t_person"
+      ],
+      "e": [
+        "d000__t_vacant"
+      ],
+      "done": []
+    },
+    "B": {
+      "other": []
+    }
+  },
+  "source_sha256": {
+    "A_domainfile.pddl": "4f5e0d07eaea196002624e8636af8ca8b3bcd0d228a1429a6bfc3113eb558d32",
+    "A_problemfile.pddl": "86dfeac3407cf9859d4e3aa64b75089434a0ae82306105ca24dc5ff155dcc1dd",
+    "B_domainfile.pddl": "eeee408a5ccb4bb7afd42b3618315c07a7cfdbd7ac210b1b547d6f4a8a675d53",
+    "B_problemfile.pddl": "a4cebdf8f62948763d919e50462ef0ea9aaea7ab99cb053100e444acfa39c23d"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "A_domainfile.pddl": "4f5e0d07eaea196002624e8636af8ca8b3bcd0d228a1429a6bfc3113eb558d32",
+      "B_domainfile.pddl": "eeee408a5ccb4bb7afd42b3618315c07a7cfdbd7ac210b1b547d6f4a8a675d53"
+    },
+    "type_groups": [],
+    "predicate_groups": []
+  },
+  "implementation_sha256": {
+    "build_aligned_domain.py": "ea0f270d44544b3ae3d317ee08c0e7f4950518aaf153f64723932e5d4e082df9",
+    "build_narrative_union.py": "066108af3a6b14b396fc5b3a46f2729ff1d032013e6d3b61765b7af781e3e504",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

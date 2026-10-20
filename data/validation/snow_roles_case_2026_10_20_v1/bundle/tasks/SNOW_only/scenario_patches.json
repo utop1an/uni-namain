@@ -1,0 +1,1199 @@
+[
+  {
+    "source": "SNOW",
+    "action": "queen_sews_at_window",
+    "parameter_guards": [
+      [
+        "case_role_queen",
+        "?q"
+      ],
+      [
+        "case_role_place_l",
+        "?l"
+      ]
+    ],
+    "effect_before": [
+      "shared__p_possession",
+      "?q",
+      "d002__c_needle"
+    ],
+    "effect_after": [
+      "shared__p_possession",
+      "?q",
+      "d002__c_needle"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "queen_pricks_finger",
+    "parameter_guards": [
+      [
+        "case_role_queen",
+        "?q"
+      ],
+      [
+        "case_role_prop_blood",
+        "?blood"
+      ],
+      [
+        "case_role_prop_needle",
+        "?needle"
+      ]
+    ],
+    "effect_before": [
+      "shared__p_possession",
+      "?q",
+      "?blood"
+    ],
+    "effect_after": [
+      "shared__p_possession",
+      "?q",
+      "?blood"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "queen_wishes_child_white_red_black",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_queen",
+        "?q"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_fair",
+      "?c"
+    ],
+    "effect_after": [
+      "d002__p_fair",
+      "?c"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "child_is_born_and_queen_dies",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_queen",
+        "?q"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "shared__p_death",
+        "?q"
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?q"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?q"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?q"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?q"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "king_marries_stepmother",
+    "parameter_guards": [
+      [
+        "case_role_king",
+        "?k"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_fair",
+      "?s"
+    ],
+    "effect_after": [
+      "d002__p_fair",
+      "?s"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_asks_looking_glass_fairest",
+    "parameter_guards": [
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_prop_g",
+        "?g"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_fairest",
+      "?s"
+    ],
+    "effect_after": [
+      "d002__p_fairest",
+      "?s"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_becomes_envious_of_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_envious",
+      "?s"
+    ],
+    "effect_after": [
+      "d002__p_envious",
+      "?s"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_orders_huntsman_to_kill_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_huntsman",
+        "?h"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_fair",
+      "?s"
+    ],
+    "effect_after": [
+      "d002__p_fair",
+      "?s"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "huntsman_spares_snow_white_and_brings_boar_heart",
+    "parameter_guards": [
+      [
+        "case_role_boar",
+        "?b"
+      ],
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_huntsman",
+        "?h"
+      ],
+      [
+        "case_role_prop_heart",
+        "?heart"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "shared__p_possession",
+        "?h",
+        "?heart"
+      ],
+      [
+        "shared__p_death",
+        "?b"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "shared__p_possession",
+        "?h",
+        "?heart"
+      ],
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?b"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?b"
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+    "parameter_guards": [
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_prop_heart",
+        "?heart"
+      ]
+    ],
+    "effect_before": [
+      "not",
+      [
+        "shared__p_possession",
+        "?s",
+        "?heart"
+      ]
+    ],
+    "effect_after": [
+      "not",
+      [
+        "shared__p_possession",
+        "?s",
+        "?heart"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "snow_white_flees_into_forest",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_place_f",
+        "?f"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_at",
+      "?c",
+      "?f"
+    ],
+    "effect_after": [
+      "d002__p_at",
+      "?c",
+      "?f"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "snow_white_finds_dwarfs_cottage",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_hut",
+        "?cottage"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_at",
+      "?c",
+      "?cottage"
+    ],
+    "effect_after": [
+      "d002__p_at",
+      "?c",
+      "?cottage"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "snow_white_eats_vegetables_and_bread_and_drinks_wine",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prop_mug",
+        "?mug"
+      ],
+      [
+        "case_role_prop_plate",
+        "?plate"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "shared__p_possession",
+        "?c",
+        "?plate"
+      ],
+      [
+        "shared__p_possession",
+        "?c",
+        "?mug"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "shared__p_possession",
+        "?c",
+        "?plate"
+      ],
+      [
+        "shared__p_possession",
+        "?c",
+        "?mug"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "snow_white_sleeps_in_seventh_bed",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prop_bed",
+        "?bed"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_sleeping",
+      "?c"
+    ],
+    "effect_after": [
+      "d002__p_sleeping",
+      "?c"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "dwarfs_return_and_discover_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_rescuer",
+        "?d"
+      ],
+      [
+        "d002__p_alive",
+        "?d"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_awake",
+      "?d"
+    ],
+    "effect_after": [
+      "d002__p_awake",
+      "?d"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "dwarfs_offer_snow_white_to_maintain_house",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_rescuer",
+        "?d"
+      ],
+      [
+        "d002__p_alive",
+        "?d"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_awake",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_sleeping",
+          "?c"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_awake",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_sleeping",
+          "?c"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_disguises_as_old_woman_and_visits_cottage",
+    "parameter_guards": [
+      [
+        "case_role_old_woman",
+        "?old_woman"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_hut",
+        "?cottage"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_disguised_as",
+        "?s",
+        "?old_woman"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_disguised_as",
+        "?s",
+        "?old_woman"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_laces_snow_white_tightly",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_prop_lace",
+        "?lace"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_laced",
+        "?c",
+        "?lace"
+      ],
+      [
+        "shared__p_death",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_sleeping",
+          "?c"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_laced",
+        "?c",
+        "?lace"
+      ],
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?c"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?c"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_sleeping",
+          "?c"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "dwarfs_cut_laces_rescue_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_rescuer",
+        "?d"
+      ],
+      [
+        "case_role_prop_lace",
+        "?lace"
+      ],
+      [
+        "d002__p_alive",
+        "?d"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "d002__p_awake",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_laced",
+          "?c",
+          "?lace"
+        ]
+      ],
+      [
+        "not",
+        [
+          "shared__p_death",
+          "?c"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "d002__p_awake",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_laced",
+          "?c",
+          "?lace"
+        ]
+      ],
+      [
+        "not",
+        [
+          "shared__p_death",
+          "?c"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_makes_poisonous_comb_and_visits_cottage",
+    "parameter_guards": [
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_comb",
+        "?comb"
+      ],
+      [
+        "case_role_hut",
+        "?cottage"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_poisoned",
+        "?comb"
+      ],
+      [
+        "shared__p_possession",
+        "?s",
+        "?comb"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_poisoned",
+        "?comb"
+      ],
+      [
+        "shared__p_possession",
+        "?s",
+        "?comb"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_comb_poison_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_comb",
+        "?comb"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "shared__p_death",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?c"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?c"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "dwarfs_remove_comb_rescue_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_rescuer",
+        "?d"
+      ],
+      [
+        "case_role_comb",
+        "?comb"
+      ],
+      [
+        "d002__p_alive",
+        "?d"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "shared__p_death",
+          "?c"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_poisoned",
+          "?comb"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "and",
+        [
+          "d002__p_alive",
+          "?c"
+        ],
+        [
+          "not",
+          [
+            "shared__p_death",
+            "?c"
+          ]
+        ],
+        [
+          "not",
+          [
+            "d002__p_poisoned",
+            "?comb"
+          ]
+        ]
+      ],
+      [
+        "case_rescued_with_comb",
+        "?c"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_makes_poisonous_apple_and_visits_cottage",
+    "parameter_guards": [
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_prop_apple",
+        "?apple"
+      ],
+      [
+        "case_role_hut",
+        "?cottage"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_poisoned",
+        "?apple"
+      ],
+      [
+        "shared__p_possession",
+        "?s",
+        "?apple"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_poisoned",
+        "?apple"
+      ],
+      [
+        "shared__p_possession",
+        "?s",
+        "?apple"
+      ],
+      [
+        "d002__p_visited",
+        "?s",
+        "?cottage"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "snow_white_eats_poisoned_apple_and_dies",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prop_apple",
+        "?apple"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "shared__p_death",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?c"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?c"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?c"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "dwarfs_prepare_glass_coffin_for_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_rescuer",
+        "?d"
+      ],
+      [
+        "case_role_prop_coffin",
+        "?coffin"
+      ],
+      [
+        "d002__p_alive",
+        "?d"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_in_coffin",
+        "?c"
+      ],
+      [
+        "shared__p_possession",
+        "?d",
+        "?coffin"
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_in_coffin",
+        "?c"
+      ],
+      [
+        "shared__p_possession",
+        "?d",
+        "?coffin"
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "prince_discovers_coffin_and_moves_it",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prince",
+        "?p"
+      ],
+      [
+        "case_role_prop_coffin",
+        "?coffin"
+      ],
+      [
+        "case_role_place_mountain",
+        "?mountain"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_at_item",
+      "?coffin",
+      "?mountain"
+    ],
+    "effect_after": [
+      "d002__p_at_item",
+      "?coffin",
+      "?mountain"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "apple_piece_falls_out_reviving_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prop_apple",
+        "?apple"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "shared__p_death",
+          "?c"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_poisoned",
+          "?apple"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_alive",
+        "?c"
+      ],
+      [
+        "not",
+        [
+          "shared__p_death",
+          "?c"
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_poisoned",
+          "?apple"
+        ]
+      ]
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "prince_marries_snow_white",
+    "parameter_guards": [
+      [
+        "case_role_snow_white",
+        "?c"
+      ],
+      [
+        "case_role_prince",
+        "?p"
+      ]
+    ],
+    "effect_before": [
+      "d002__p_fair",
+      "?p"
+    ],
+    "effect_after": [
+      "d002__p_fair",
+      "?p"
+    ]
+  },
+  {
+    "source": "SNOW",
+    "action": "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+    "parameter_guards": [
+      [
+        "case_role_witch",
+        "?s"
+      ],
+      [
+        "case_role_prop_slippers",
+        "?slippers"
+      ]
+    ],
+    "effect_before": [
+      "and",
+      [
+        "d002__p_wearing",
+        "?s",
+        "?slippers"
+      ],
+      [
+        "shared__p_death",
+        "?s"
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?s"
+        ]
+      ]
+    ],
+    "effect_after": [
+      "and",
+      [
+        "d002__p_wearing",
+        "?s",
+        "?slippers"
+      ],
+      [
+        "and",
+        [
+          "shared__p_death",
+          "?s"
+        ],
+        [
+          "not",
+          [
+            "d002__p_alive",
+            "?s"
+          ]
+        ]
+      ],
+      [
+        "not",
+        [
+          "d002__p_alive",
+          "?s"
+        ]
+      ]
+    ]
+  }
+]

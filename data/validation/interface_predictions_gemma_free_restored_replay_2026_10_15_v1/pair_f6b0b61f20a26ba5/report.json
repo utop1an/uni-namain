@@ -1,0 +1,33 @@
+{
+  "candidate_id": "pair_f6b0b61f20a26ba5",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_f6b0b61f20a26ba5",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'performing_show' relates to an entity ('?e') performing a show, while 'fire_lit' relates to a location ('?l') having a fire lit. These predicates describe fundamentally different events: one concerns a performance, and the other concerns the presence of a fire. They cannot be interchangeable because they represent distinct phenomena. The action contexts further support this by describing actions related to each predicate – 'perform_show' involves a show, and 'fire_lit' involves a fire. The 'performing_show' action requires an entity to be performing, while 'fire_lit' requires a location to have a fire lit. The 'abandon_children_in_forest' action explicitly states 'fire_lit ?forest', indicating the fire is present at the location. The 'leave_children_at_fire' action also explicitly states 'fire_lit ?forest'. These contexts highlight the distinct roles of the predicates. The 'entity' and 'location' types further reinforce this distinction, as 'performing_show' deals with entities and 'fire_lit' deals with locations. The 'ACCO' source describes a show, while the 'HANS_NP' source describes a fire. Therefore, the predicates are complementary, related but not interchangeable.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:perform_show",
+        "quote": "(performing_show ?t)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:abandon_children_in_forest",
+        "quote": "(fire_lit ?forest)"
+      },
+      {
+        "side": 1,
+        "ref": "HANS_NP:action:leave_children_at_fire",
+        "quote": "(fire_lit ?forest)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_f6b0b61f20a26ba5"
+  ]
+}

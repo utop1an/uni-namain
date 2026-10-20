@@ -1,0 +1,24 @@
+{
+  "status": "unsolvable",
+  "planner_called": true,
+  "method": "source_preserving_union_explicit_request",
+  "scope": "Execution baseline; no inferred semantic equivalences or narrative-quality claim",
+  "mode": "initial_goal",
+  "search": {
+    "grounding_policy": "typed_cartesian_no_static_parameter_pruning",
+    "states": 1,
+    "ground_candidates": 1,
+    "viable_ground_actions": 0,
+    "status": "unsolvable"
+  },
+  "domain_unchanged": true,
+  "selection": {
+    "policy": "all_domains",
+    "selected": [
+      "HEAR",
+      "WARN"
+    ],
+    "excluded": [],
+    "action_subset_selection": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_978af286844034aa",
+  "label": "equivalent",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'has' is used identically in both sources, with the same parameter types and action contexts. In JACK_NP, 'has' is used to describe possession of items (e.g., 'has ?j ?beans' after selling a cow, 'has ?j ?bag1' and 'has ?j ?bag2' after stealing bags). In PIGS_NP, 'has' is similarly used to describe possession of items (e.g., 'has ?p ?i' in various actions like building a house, buying items, or collecting resources). The action contexts demonstrate that 'has' consistently represents the state of an entity possessing an item. The parameter types and the overall usage of 'has' are identical across both sources, confirming that the predicate represents the same relationship. The exact occurrences of the predicate are identical in terms of the arguments involved.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:sell_cow_for_beans",
+      "quote": "(has ?j ?beans)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_gold_bags",
+      "quote": "(has ?j ?bag1)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_harp",
+      "quote": "(has ?j ?harp)"
+    },
+    {
+      "side": 0,
+      "ref": "JACK_NP:action:steal_hen",
+      "quote": "(has ?j ?hen)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(has ?p ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:pig_buys_butter_churn_and_hides",
+      "quote": "(has ?p ?c)"
+    }
+  ]
+}

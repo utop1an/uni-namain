@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_99f69d839ec1c694",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'owned_by' indicates ownership of an item, while 'material_requested' indicates a request for a specific entity (presumably a material). These predicates describe different aspects of an object's state and relationships. 'owned_by' focuses on possession, while 'material_requested' focuses on a need or demand. The action contexts further support this distinction: 'ask_for_material' initiates a request, and 'receive_material' confirms fulfillment of that request. The preconditions and effects of these actions highlight their separate roles. The 'owned_by' predicate describes a static state, whereas 'material_requested' describes a dynamic process. The parameters of both predicates are also distinct: 'owned_by' takes an 'item' as the left argument and an 'entity' as the right argument, while 'material_requested' takes an 'entity' as the left argument and an 'item' as the right argument. The action contexts show that 'material_requested' is triggered by the 'has_bundle' action, while 'owned_by' does not have such a direct trigger. Therefore, they are complementary predicates.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:ask_for_material",
+      "quote": "(material_requested ?p ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "PIGS_NP:action:receive_material",
+      "quote": "(material_requested ?p ?i)"
+    }
+  ]
+}

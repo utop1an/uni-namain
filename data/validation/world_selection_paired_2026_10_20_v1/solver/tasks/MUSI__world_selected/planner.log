@@ -1,0 +1,23 @@
+INFO     planner time limit: 20s
+INFO     planner memory limit: 4096 MB
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 19s
+INFO     translator memory limit: 4096 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl problem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.007s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.035s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 233 rules.
+Computing model... [4.050s CPU, 4.046s wall-clock]
+295878 relevant atoms
+60882 auxiliary atoms
+356760 final queue length
+2467199 total queue pushes
+Completing instantiation... 

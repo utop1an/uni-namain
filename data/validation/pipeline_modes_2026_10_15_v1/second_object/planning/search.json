@@ -1,0 +1,15 @@
+{
+  "grounding_policy": "typed_cartesian_no_static_parameter_pruning",
+  "states": 2,
+  "ground_candidates": 1,
+  "viable_ground_actions": 1,
+  "status": "solved",
+  "length": 1,
+  "plan": "SequentialPlan:\n    d000__a_hear_report(q__helper)",
+  "validation": {
+    "status": "VALID",
+    "engine": "sequential_plan_validator",
+    "version": "1.3.0",
+    "details": "status: VALID\nengine: sequential_plan_validator"
+  }
+}

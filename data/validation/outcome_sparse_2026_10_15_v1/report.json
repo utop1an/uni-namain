@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checks": {
+    "dense_tight_cap_exhausted": true,
+    "sparse_tight_cap_valid": true,
+    "same_complete_changes_and_plans_nonbinding_cap": true,
+    "sparse_cap_does_not_change_result": true
+  },
+  "scope": "Authored finite fixture, not narrative quality or corpus-wide performance",
+  "implementation_sha256": {
+    "outcome_before.py": "a8b0eaa039bf80236f781aca59c40ff6a930d51e36c3d74c0a1dfa23d1a542b6",
+    "outcome_after.py": "cbdaeaa6dec9efefea87566a9cc8bc75284504126bc6a1d7916ba0aee018a3b0"
+  },
+  "runs": {
+    "before_cap_4": {
+      "status": "no_outcomes",
+      "stop_reason": "ground_fluent_limit",
+      "states": 1,
+      "ground_candidates": 0
+    },
+    "before_cap_3000": {
+      "status": "outcomes_generated",
+      "stop_reason": "reachable_space_exhausted",
+      "states": 2,
+      "ground_candidates": 2
+    },
+    "after_cap_4": {
+      "status": "outcomes_generated",
+      "stop_reason": "reachable_space_exhausted",
+      "states": 2,
+      "ground_candidates": 2
+    },
+    "after_cap_3000": {
+      "status": "outcomes_generated",
+      "stop_reason": "reachable_space_exhausted",
+      "states": 2,
+      "ground_candidates": 2
+    }
+  }
+}

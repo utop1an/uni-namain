@@ -1,0 +1,1443 @@
+{
+  "version": 1,
+  "status": "frozen_before_search",
+  "task_count": 18,
+  "scope": "Authored matched-world development cases using observed source domains; not independent test or narrative-quality evaluation",
+  "source_sha256": {
+    "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+    "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+    "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+    "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+    "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+    "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+    "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+    "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+    "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+    "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+  },
+  "implementation_sha256": {
+    "run_composed_development.py": "5d0cff667958a9b513b89b17534db2234adb9421628b8012f9d028b236e5af50",
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "run_narrative_pipeline.py": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+    "rcnc/__init__.py": "ec4c8e3ab868ae7ab8f0771ea60aa23aff5065dfbf5bf333ad2d706a86e832ab",
+    "rcnc/constraints.py": "803c3fb68347aa8340584591b785fc5a76d58a0f5a55d8b5fcf730ea0fba873c",
+    "rcnc/domain_catalog.py": "83ceba2120bdabc863ff1e26773b740994e5ee8c5349e835593203bf40417e8a",
+    "rcnc/experiment.py": "517b2521f6c8c985624d540f84bac1536b2661b87dc6b2a7c83cd799bc365263",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "rcnc/interface_annotation.py": "9873d63f20430898329367db958edbac5f3fb48afb862ee4ca9e7144a08fb04d",
+    "rcnc/interface_proposals.py": "4c30fdb4ec8e327712aee376c8b64c9d40dade429b2fc9ce66a03cf98388cd23",
+    "rcnc/lifting.py": "587bef767641a161057b97b14f390bcd84fa75777357216e9897012ed24b1974",
+    "rcnc/merged_planning.py": "3ec67dd62cbcc9ad62033fad6bad7298d9fb9cca894212a567772d8d8adf9f20",
+    "rcnc/narrative_pipeline.py": "6057f317b3c224c5e6310092f1cba612552207fcc42adfc0ac5091cc0efd0a39",
+    "rcnc/outcome_planning.py": "a8b0eaa039bf80236f781aca59c40ff6a930d51e36c3d74c0a1dfa23d1a542b6",
+    "rcnc/planning.py": "09fbfa5c0a84c4cd8f8cd8df4b246696752beda6a0cded9244820d75d33ad03d",
+    "rcnc/protocol.py": "35787931d1a575fab4dff21bf673a1ecd71246c51f1ede7d74b709a154c85785",
+    "rcnc/selection.py": "ace55f853eb5b49af92d4e5445fd06755fa91d878158baa1288d31869dd730d6",
+    "rcnc/semantic_proposals.py": "d66170450b256facc67ab750a2a695f14e985a5ad3890780a6f3f5ff82980a99",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164"
+  },
+  "solver": "pyperplan",
+  "budget_seconds_per_search": 60.0,
+  "input_world_policy": "Explicit author-supplied initial facts only; no source problem files read or copied",
+  "interface_status": "author_hypothesis_not_independently_supported",
+  "baseline": "Zero predicate merges with same membership representation and explicitly shared entities",
+  "source_model_caveat": "BIRT turn_key_on_beech can create possession of arbitrary typed items; this observed source generality is retained, not repaired or claimed narratively plausible",
+  "semantic_accuracy": "not_measured",
+  "tasks": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__all_domains",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "bridge_needed__zero_merge_membership__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "goal_dependencies"
+      }
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__all_domains",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__goal_dependencies",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "BIRT:at",
+            "hero",
+            "stage"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "goal_dependencies"
+      }
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__all_domains",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "goal_dependencies"
+      }
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__all_domains",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__goal_dependencies",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [
+          [
+            "ACCO:has",
+            "hero",
+            "token"
+          ]
+        ],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "goal_dependencies"
+      }
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__all_domains",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [],
+          "predicate_groups": []
+        },
+        "selection": "goal_dependencies"
+      }
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "explicit_pair",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sources": [
+          "ACCO",
+          "BIRT"
+        ]
+      }
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__all_domains",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "all_domains",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "all_domains"
+      }
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__goal_dependencies",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "policy": "goal_dependencies",
+      "query": {
+        "objects": {
+          "hero": [
+            "ACCO:entity",
+            "BIRT:entity"
+          ],
+          "token": [
+            "ACCO:item",
+            "BIRT:item"
+          ],
+          "stage": "BIRT:location"
+        },
+        "goal": {
+          "positive": [
+            [
+              "ACCO:wealthy",
+              "hero"
+            ]
+          ]
+        },
+        "solver": "pyperplan",
+        "seconds": 60.0,
+        "initial": [],
+        "alignment": {
+          "version": 1,
+          "decision_basis": "authored_assumption",
+          "source_sha256": {
+            "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+            "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+            "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+            "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+            "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+            "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+            "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+            "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+            "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+            "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+            "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+            "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+            "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+            "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+            "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+          },
+          "type_groups": [
+            {
+              "members": [
+                "ACCO:entity",
+                "BIRT:entity"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            },
+            {
+              "members": [
+                "ACCO:item",
+                "BIRT:item"
+              ],
+              "evidence": "Explicit experiment-author role correspondence; independent review pending"
+            }
+          ],
+          "predicate_groups": [
+            {
+              "id": "possession",
+              "evidence": "Experiment-author hypothesis: ACCO has and BIRT has denote the same entity-item possession relation; not gold",
+              "members": [
+                {
+                  "predicate": "ACCO:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "predicate": "BIRT:has",
+                  "order": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "selection": "goal_dependencies"
+      }
+    }
+  ]
+}

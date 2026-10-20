@@ -1,0 +1,316 @@
+{
+  "sources": [
+    "REMA_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 0,
+    "constants": 16,
+    "predicates": 10,
+    "operators": 12
+  },
+  "predicate_maps": {
+    "REMA_NP": {
+      "at": "d000__p_at",
+      "grandmother_mangle_spoken": "d000__p_grandmother_mangle_spoken",
+      "has": "d000__p_has",
+      "married": "d000__p_married",
+      "price_of_butter_spoken": "d000__p_price_of_butter_spoken",
+      "with_all_my_heart_spoken": "d000__p_with_all_my_heart_spoken"
+    }
+  },
+  "constant_maps": {
+    "REMA_NP": {
+      "back_door": "d000__c_back_door",
+      "back_stairs": "d000__c_back_stairs",
+      "bag_of_rubies": "d000__c_bag_of_rubies",
+      "bag_of_sapphires": "d000__c_bag_of_sapphires",
+      "city": "d000__c_city",
+      "crown": "d000__c_crown",
+      "father_king": "d000__c_father_king",
+      "forest": "d000__c_forest",
+      "impostor_butterman": "d000__c_impostor_butterman",
+      "king_at_palace": "d000__c_king_at_palace",
+      "market_place": "d000__c_market_place",
+      "oak_tree": "d000__c_oak_tree",
+      "palace": "d000__c_palace",
+      "princess": "d000__c_princess",
+      "robber_chief": "d000__c_robber_chief",
+      "sceptre": "d000__c_sceptre"
+    }
+  },
+  "action_maps": {
+    "REMA_NP": {
+      "run_away_from_palace": "d000__a_run_away_from_palace",
+      "encounter_impostor_king": "d000__a_encounter_impostor_king",
+      "utter_phrase_price_of_butter": "d000__a_utter_phrase_price_of_butter",
+      "receive_rubies_from_impostor": "d000__a_receive_rubies_from_impostor",
+      "encounter_robbers_in_forest": "d000__a_encounter_robbers_in_forest",
+      "utter_phrase_grandmother_mangle": "d000__a_utter_phrase_grandmother_mangle",
+      "receive_sapphires_from_robber_chief": "d000__a_receive_sapphires_from_robber_chief",
+      "arrive_at_marble_palace": "d000__a_arrive_at_marble_palace",
+      "king_requests_information_and_gifts": "d000__a_king_requests_information_and_gifts",
+      "king_proposes_marriage": "d000__a_king_proposes_marriage",
+      "princess_accepts_with_heart": "d000__a_princess_accepts_with_heart",
+      "suitors_retire_due_to_phrase": "d000__a_suitors_retire_due_to_phrase"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "REMA_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "bound_variable_policy": "capture_avoiding_alpha_renaming_before_effect_guard_relocation",
+  "source_type_parents": {
+    "d000__t_entity": "d000__t_object",
+    "d000__t_item": "d000__t_object",
+    "d000__t_location": "d000__t_object",
+    "d000__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_entity": "typeguard__d000__t_entity",
+    "d000__t_item": "typeguard__d000__t_item",
+    "d000__t_location": "typeguard__d000__t_location",
+    "d000__t_object": "typeguard__d000__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_father_king"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_father_king"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_impostor_butterman"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_impostor_butterman"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_king_at_palace"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_king_at_palace"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_princess"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_princess"
+    ],
+    [
+      "typeguard__d000__t_entity",
+      "d000__c_robber_chief"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_robber_chief"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_bag_of_rubies"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bag_of_rubies"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_bag_of_sapphires"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_bag_of_sapphires"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_crown"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_crown"
+    ],
+    [
+      "typeguard__d000__t_item",
+      "d000__c_sceptre"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_sceptre"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_back_door"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_back_door"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_back_stairs"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_back_stairs"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_city"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_city"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_forest"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_market_place"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_market_place"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_oak_tree"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_oak_tree"
+    ],
+    [
+      "typeguard__d000__t_location",
+      "d000__c_palace"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_palace"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_father_king": "d000__t_entity",
+    "d000__c_impostor_butterman": "d000__t_entity",
+    "d000__c_king_at_palace": "d000__t_entity",
+    "d000__c_princess": "d000__t_entity",
+    "d000__c_robber_chief": "d000__t_entity",
+    "d000__c_bag_of_rubies": "d000__t_item",
+    "d000__c_bag_of_sapphires": "d000__t_item",
+    "d000__c_crown": "d000__t_item",
+    "d000__c_sceptre": "d000__t_item",
+    "d000__c_back_door": "d000__t_location",
+    "d000__c_back_stairs": "d000__t_location",
+    "d000__c_city": "d000__t_location",
+    "d000__c_forest": "d000__t_location",
+    "d000__c_market_place": "d000__t_location",
+    "d000__c_oak_tree": "d000__t_location",
+    "d000__c_palace": "d000__t_location"
+  },
+  "predicate_orders": {
+    "REMA_NP": {
+      "at": [
+        0,
+        1
+      ],
+      "grandmother_mangle_spoken": [],
+      "has": [
+        0,
+        1
+      ],
+      "married": [
+        0,
+        1
+      ],
+      "price_of_butter_spoken": [],
+      "with_all_my_heart_spoken": []
+    }
+  },
+  "source_predicate_types": {
+    "REMA_NP": {
+      "at": [
+        "d000__t_entity",
+        "d000__t_location"
+      ],
+      "grandmother_mangle_spoken": [],
+      "has": [
+        "d000__t_entity",
+        "d000__t_item"
+      ],
+      "married": [
+        "d000__t_entity",
+        "d000__t_entity"
+      ],
+      "price_of_butter_spoken": [],
+      "with_all_my_heart_spoken": []
+    }
+  },
+  "source_sha256": {
+    "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+    "REMA_NP_problemfile.pddl": "b30998d74635d30419d0e59f9e3a69e21a056bc2d278c16ead86709c93879d09"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "machine_hypothesis",
+    "source_sha256": {
+      "ACCO_domainfile.pddl": "7c0c81b479062be40705ac2deda9c7329c2e292e9569bb2f172c516ca8734fed",
+      "BIRT_domainfile.pddl": "a64e8c3aea1eb0d1adffd4047cadcfa2b095894ab0b3f840cdeb67cdf54b301d",
+      "BUFF_domainfile.pddl": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+      "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+      "FOUR_NP_domainfile.pddl": "c6279c55ef4e6f064ec7363bceff58bdf058911909de2e40908ffe9104e298d0",
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "MUSI_domainfile.pddl": "5c8896072eb5be35cffb3b49696a425acd22c117a3b69ddd92f48429276ee517",
+      "NAUG_domainfile.pddl": "77be3a7998334c9dc56f9e09ccc430589b7f241bf91f953eebe7099986f2fb04",
+      "PIGS_NP_domainfile.pddl": "fca73d595816075974a90e8026bfdbb023cc7fbd4a15d20269e0582acf2fe98e",
+      "PUSS_domainfile.pddl": "377481d58979a69a9d9c580372bf274dd7810b99435f86801de6eca2bcf3c218",
+      "REMA_NP_domainfile.pddl": "d484b7f7e8c34d9556e3d7a795beb2fe7e00d4ad2b670a3ffff8087b00102dda",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e",
+      "SOUP_domainfile.pddl": "da27a402afb7e5562de81c0d54f7ca9c2719674db3afe351295927c8d0e8d1de",
+      "WOE_domainfile.pddl": "e6b9a1c71acc19447a26132a0b02c04d133733d349b9b265397f8ae2020619e4"
+    },
+    "type_groups": [],
+    "predicate_groups": [],
+    "semantic_status": "unverified_machine_assumptions",
+    "role_type_policy": "aligned_slot_hypothesis",
+    "object_identity_inferred": false,
+    "initial_facts_inferred": false,
+    "proposal_provenance": {
+      "packet_sha256": "81efa3dcae715489e24883a96b55858b72d4b39406ee03eaffe2463fec48046f",
+      "prediction_report_sha256": "9495d75bf1023b1ade59dabf24581ab894da2224c27b2566dfb4e10862ac2b53",
+      "prediction_manifest_sha256": "cc6ba86919e90464b8631d214929ee471c7643eb9f4edfd2096a88cb0376ed80"
+    }
+  },
+  "implementation_sha256": {
+    "aligned_domain.py": "d68a06c46b32cb3d485be1c7a8a5e47ee63387d542474f5ace30bdac73b349bb",
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

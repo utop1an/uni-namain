@@ -1,0 +1,79 @@
+{
+  "sources": [
+    "CHIC_NP"
+  ],
+  "counts": {
+    "requirements": 4,
+    "types": 4,
+    "constants": 14,
+    "predicates": 9,
+    "operators": 7
+  },
+  "predicate_maps": {
+    "CHIC_NP": {
+      "at": "d000__p_at",
+      "decided_to_tell_king": "d000__p_decided_to_tell_king",
+      "eaten_by_fox": "d000__p_eaten_by_fox",
+      "following_fox": "d000__p_following_fox",
+      "going_to_wood": "d000__p_going_to_wood",
+      "informed_about_sky_fall": "d000__p_informed_about_sky_fall",
+      "met": "d000__p_met",
+      "sky_fell_on_head": "d000__p_sky_fell_on_head",
+      "turned_back": "d000__p_turned_back"
+    }
+  },
+  "constant_maps": {
+    "CHIC_NP": {
+      "Acorn": "d000__c_acorn",
+      "Chicken-licken": "d000__c_chicken-licken",
+      "Cock-lock": "d000__c_cock-lock",
+      "Drake-lake": "d000__c_drake-lake",
+      "Duck-luck": "d000__c_duck-luck",
+      "Fox-lox": "d000__c_fox-lox",
+      "FoxHole": "d000__c_foxhole",
+      "Gander-lander": "d000__c_gander-lander",
+      "Goose-loose": "d000__c_goose-loose",
+      "Hen-len": "d000__c_hen-len",
+      "King": "d000__c_king",
+      "Sky": "d000__c_sky",
+      "Turkey-lurkey": "d000__c_turkey-lurkey",
+      "Wood": "d000__c_wood"
+    }
+  },
+  "action_maps": {
+    "CHIC_NP": {
+      "go_to_wood": "d000__a_go_to_wood",
+      "turn_back": "d000__a_turn_back",
+      "meet_character": "d000__a_meet_character",
+      "inform_about_sky_fall": "d000__a_inform_about_sky_fall",
+      "decide_to_tell_king": "d000__a_decide_to_tell_king",
+      "follow_fox": "d000__a_follow_fox",
+      "be_eaten_by_fox": "d000__a_be_eaten_by_fox"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "CHIC_NP": {
+      "types": {
+        "entity": "d000__t_entity",
+        "item": "d000__t_item",
+        "location": "d000__t_location",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {}
+    }
+  },
+  "source_sha256": {
+    "CHIC_NP_domainfile.pddl": "26a1b792fe6421c2e452c901d0461460764ad18ef906afc3bbc4bd0092a5d41f",
+    "CHIC_NP_problemfile.pddl": "600eb9367bf855b17012165650cd5a5042a403a56aaa7e796bb6dfad2d6975c2"
+  },
+  "implementation_sha256": {
+    "domain_union.py": "7ccc3bbd9ddbceb6b33f5e76a23b5a1a7e63eb6c28e92476a1bc49f2db0985c8",
+    "domain_building.py": "fc8e79f7706aeba3b7aa45ad6624b3192a67f9eac5e3f7be9f0365e1d8f0cf0b",
+    "pddl.py": "7016744274a331dad0a697d581fc6fdebda0bdc74759af45a173198d45e53695",
+    "pddl_checks.py": "aa2864655fb21605b0673b1fa2070302d2a254e91080668db851bc78084b6ad6"
+  }
+}

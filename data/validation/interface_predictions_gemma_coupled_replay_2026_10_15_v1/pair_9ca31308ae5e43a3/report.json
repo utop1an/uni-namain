@@ -1,0 +1,23 @@
+{
+  "candidate_id": "pair_9ca31308ae5e43a3",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_9ca31308ae5e43a3",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicate 'met' in CHIC_NP describes a relationship of acquaintance or meeting between two entities, while 'disguised_as' in SNOW describes a transformation of one entity into another. 'Met' implies a direct interaction or recognition, whereas 'disguised_as' describes a state of being, not necessarily an interaction. The 'met' predicate is used to establish a connection between characters, while 'disguised_as' describes a change in appearance or identity. These predicates represent distinct aspects of a narrative; one focuses on relationships, and the other on transformation. The action contexts further support this distinction: 'meet_character' establishes a meeting, while 'stepmother_disguises_as_old_woman_and_visits_cottage' describes a transformation and subsequent visit. The use of 'met' in the 'meet_character' action is for establishing a connection, while 'disguised_as' is for describing a state of being. The two predicates are complementary because they describe different facets of the story's events.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "CHIC_NP:action:meet_character",
+        "quote": "(met ?e1 ?e2)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:stepmother_disguises_as_old_woman_and_visits_cottage",
+        "quote": "(disguised_as ?s ?old_woman)"
+      }
+    ]
+  },
+  "errors": []
+}

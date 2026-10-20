@@ -1,0 +1,102 @@
+{
+  "status": "complete",
+  "task_count": 6,
+  "rows": [
+    {
+      "id": "bridge_needed__zero_merge_membership__explicit_pair",
+      "world": "bridge_needed",
+      "method": "zero_merge_membership",
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcome_count": 3,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 4,
+      "ground_candidates": 12,
+      "validations": [
+        "VALID",
+        "VALID",
+        "VALID"
+      ]
+    },
+    {
+      "id": "bridge_needed__authored_possession_interface__explicit_pair",
+      "world": "bridge_needed",
+      "method": "authored_possession_interface",
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcome_count": 3,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 4,
+      "ground_candidates": 12,
+      "validations": [
+        "VALID",
+        "VALID",
+        "VALID"
+      ]
+    },
+    {
+      "id": "source_ready_control__zero_merge_membership__explicit_pair",
+      "world": "source_ready_control",
+      "method": "zero_merge_membership",
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcome_count": 3,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 3,
+      "ground_candidates": 21,
+      "validations": [
+        "VALID",
+        "VALID",
+        "VALID"
+      ]
+    },
+    {
+      "id": "source_ready_control__authored_possession_interface__explicit_pair",
+      "world": "source_ready_control",
+      "method": "authored_possession_interface",
+      "status": "outcomes_generated",
+      "stop_reason": "outcome_limit",
+      "outcome_count": 3,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 3,
+      "ground_candidates": 21,
+      "validations": [
+        "VALID",
+        "VALID",
+        "VALID"
+      ]
+    },
+    {
+      "id": "empty_world_control__zero_merge_membership__explicit_pair",
+      "world": "empty_world_control",
+      "method": "zero_merge_membership",
+      "status": "no_outcomes",
+      "stop_reason": "reachable_space_exhausted",
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 0,
+      "ground_candidates": 9,
+      "validations": []
+    },
+    {
+      "id": "empty_world_control__authored_possession_interface__explicit_pair",
+      "world": "empty_world_control",
+      "method": "authored_possession_interface",
+      "status": "no_outcomes",
+      "stop_reason": "reachable_space_exhausted",
+      "outcome_count": 0,
+      "domain_unchanged": true,
+      "ground_fluents_tracked": 0,
+      "ground_candidates": 9,
+      "validations": []
+    }
+  ],
+  "scope": "Six authored development worlds/interfaces without goals; generated outcomes are not task success or narrative quality",
+  "counts": {
+    "outcomes_generated": 4,
+    "no_outcomes": 2
+  },
+  "frozen_tasks_unchanged": true,
+  "implementation_unchanged": true,
+  "sources_unchanged": true
+}

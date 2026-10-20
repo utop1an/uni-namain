@@ -1,0 +1,82 @@
+{
+  "status": "frozen_before_sampling",
+  "tasks": [
+    {
+      "id": "full_pool_CHIC_NP",
+      "origin": "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\CHIC_NP__machine_interfaces",
+      "domain_sha256": "d2fabe697d29d0750f73aad5c76e3e40a3ea8c4ab163032e6b9feefee0215994",
+      "problem_sha256": "d601be024bcd97255484182289d92228114b56c535aaffdec873639f7ef8c8ca"
+    },
+    {
+      "id": "full_pool_ACCO",
+      "origin": "data\\validation\\meeting_matched_2026_10_20_v1\\solver\\tasks\\ACCO__machine_interfaces",
+      "domain_sha256": "d2fabe697d29d0750f73aad5c76e3e40a3ea8c4ab163032e6b9feefee0215994",
+      "problem_sha256": "d751748ab00d0fac64263e2d6ea9a7884b568bd84ab909ee7676eef9d5d33026"
+    },
+    {
+      "id": "graph_closure_CHIC_NP",
+      "origin": "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\tasks\\CHIC_NP__graph_closure_control",
+      "domain_sha256": "f56edd6de2f0bc6fb35c2f2bba2553c8734365495fc5582a1789df3fe16e0078",
+      "problem_sha256": "d4c0d3558ce9022e713181c5c82fb1f2f8b83875706ac358da629d6499cdd5c0"
+    },
+    {
+      "id": "world_selected_CHIC_NP",
+      "origin": "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\tasks\\CHIC_NP__world_selected",
+      "domain_sha256": "a58dc81cde25eba0f393d69b0c9e92de28a2f0c8229b96f9e654db0b0ba0bba0",
+      "problem_sha256": "97973882e3194f9f761f778667e1c4af50ef4ac54a7c72f544d13586045f8058"
+    },
+    {
+      "id": "world_selected_HANS_NP",
+      "origin": "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\tasks\\HANS_NP__world_selected",
+      "domain_sha256": "978a7b37e33be320749db1cf9440e9a6aca28e1f80a8a0691f38a92695947607",
+      "problem_sha256": "d8d76b7357cfccb89db33a7bd0a447ed39a6528521e7a0341a8e230a634a4c38"
+    }
+  ],
+  "frozen_sha256": {
+    "C:\\anu\\uninamain\\scripts\\experiments\\sample_downward_translation.py": "a7ac7f9d5f9923625b77e7525827ffa0517f1afd5e4fab516a1850f1829340d4",
+    "C:\\anu\\uninamain\\scripts\\experiments\\run_translation_diagnostics.py": "6fc0cecc714fe5259a2c449e5c3759ac9c7131258b03707a4a5d8f967f0c9b14",
+    "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\report.json": "c0e0474ac655a858d747e80de56e2d43ca4eb95405b4efee244b3c044d54e939",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\axiom_rules.py": "936207bfbd21672d1b5fa897e8924095c029a871c453b3fdc5c3ae8cdaa16a8b",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\build_model.py": "ba775d7e798a2d9fed4678bbd08462dc14b67caf150db1addfa99ffde6182ef5",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\constraints.py": "e8c2bc25c354d93812d5e589eb6d576e3060ab8c308c96e116deb495ecec94b4",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\fact_groups.py": "1148c227d44f5327dcf0d7156ab3c941f315b28f625f2d2e6f1d38cd93f120c7",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\graph.py": "bad344fee7fa4f43dda086d74b41d7962ba13ea1c498a1b837de0f289ff5b936",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\greedy_join.py": "c9801d46194f6081042c33c868cbd7c46bc10a1c8f7b16b6dc293d9f1a2f8cee",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\instantiate.py": "86d805e067cb36c0000166f28e1ce16cd00ec6013abe6588cd76c18419a8fa91",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\invariants.py": "88b2b662223e619806dcb0629cf902a82582f6f585271be7ae84bad6caa79cad",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\invariant_finder.py": "a91ca832800d41fd7381cd96b99c21ee2d3e48a6d277c3481e8cfc2db7818307",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\main.py": "817cb0f5d65ac123483be37956dcfc2c6ff5e328d9054597724a89f5b24043ac",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\normalize.py": "818efcc1d4d3103cf200bee2deb854b2d2287ad88dd33c863ad44cbc951c3e08",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\options.py": "dc9ab014a2e3307a8afecbc57908c99af50c4d17c8177d7f69714934a91608b2",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_to_prolog.py": "923d79a43b998d198fcdcae27bebcc0e7e6f497de1433daaffeeb7eb32f46ad2",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\sas_tasks.py": "b773d22cbe66295e044727918c6fc7a24b60a4a2d7dbfd42adc24f7555dcb7b0",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\sccs.py": "a8b52e176e0e848691e3beeb6e07b8fe84ee49e5e039071a79a46ad184156964",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\simplify.py": "6ed181de48cc37b0a205d235a988c339d2d1bd3116d0b103c344b08c1a28c658",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\split_rules.py": "f6ee13777a1e27387df69c0789aff178ae7a8bb73c74c0a741492c12f8be97f0",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\timers.py": "54a73e19b79b56fa44aa67c9a80aaf4b5472ad597ef39831480e578f3570faad",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\tools.py": "99835d34ab2fb2b79f7e0090143ffd57ce73740b4e48f262725dc04ccc5f537a",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\variable_order.py": "003ff6b7d421d4a68884a850e71a06fcd21c9c855b19b3fc95a1e3a895b2ee62",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\__main__.py": "13a736b8a7acfe9b3375a105eaac50f2c65c4534d5b105df0a36d85df34852e9",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\actions.py": "810b1c467e871426f4b8783d48acc09cfc0d5212dc53f3dffbe40269e45e4ea7",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\axioms.py": "dd486da036927e006f53e3297467f2356e7088d6452fa89f95179a46e17d9a0c",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\conditions.py": "0cca2070ab8885723a2ff5b272d0e3cb3532bed71f3940421679b0fd859a7342",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\effects.py": "66f7b83953903200e07d4fb44e97123d87a9fdeb20f64458f93b6933e171c50d",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\functions.py": "9eddda855ce805fa2f584f26af622147137041f589882a8e6962ae3543f81075",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\f_expression.py": "6e9c8f2a80a2c27b350037ffa26ad7de81433bbcf1dcce0fb82d94049d0ed9ca",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\pddl_types.py": "2bbff424d9568e7d7507c3bf4eb686f7ff9a7e9c3fda3bac8ab893c9ce7fec6a",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\predicates.py": "41a01f7f11490e3ff86d7f3378252cd93b4c6bdaf69a80ed8655f85ef5c43536",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\tasks.py": "634861acf0e30c00e947cc9b2cdf9c3a38973d27b224888b6fd4f61f086bc641",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl\\__init__.py": "facda6a0d97c1dd1494e4efc11d3044d8b7473fcd5e84ca70d824bd87cd63fae",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\lisp_parser.py": "c48c1d530ab927242279ef4f30588515d2206e64061747fde94845af3eb9300a",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\parse_error.py": "f761398b67ebbf9863f70c4e6c966c66a8f94fa6e096f3f3bddbdca3fbd6d599",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\parsing_functions.py": "a3c5fddd8aad15da837a042c1ae9ed6f964d511962f5c9675a635a5779b5bd97",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\pddl_file.py": "261a1f60524e11561af234aaa6956228cf4f3b1d31cc575b61a5573adc00b9df",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\warning.py": "5c676375e77a6d10aa0273e0733f1ea8a8d7ac626b928c99e1d3a951f9f28546",
+    ".tmp\\fast-downward-26.6\\builds\\release\\bin\\fast_downward\\translate\\pddl_parser\\__init__.py": "c95f5e054d8235d930e7170761e17c86fb55dc1777cf8cc0bdc56e89a62fef16"
+  },
+  "scope": "5 instrumented translator-only calls; never counted as planning trials",
+  "seconds_per_diagnostic": 20,
+  "memory_mb": 4096,
+  "workers": 1
+}

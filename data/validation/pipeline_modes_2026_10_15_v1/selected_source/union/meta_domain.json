@@ -1,0 +1,46 @@
+{
+  "sources": [
+    "HEAR"
+  ],
+  "counts": {
+    "requirements": 2,
+    "types": 2,
+    "constants": 0,
+    "predicates": 2,
+    "operators": 1
+  },
+  "predicate_maps": {
+    "HEAR": {
+      "messenger_present": "d000__p_messenger_present",
+      "rumor_known": "d000__p_rumor_known"
+    }
+  },
+  "constant_maps": {
+    "HEAR": {}
+  },
+  "action_maps": {
+    "HEAR": {
+      "hear_report": "d000__a_hear_report"
+    }
+  },
+  "decisions": [],
+  "method": "namespaced_union_no_semantic_merge",
+  "object_universe_policy": "per_source_root_type",
+  "namespaces": {
+    "HEAR": {
+      "types": {
+        "person": "d000__t_person",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000"
+    }
+  },
+  "source_sha256": {
+    "HEAR_domainfile.pddl": "8f17f3e7b9b825f6396018daa5b5198f50636d733b7ac9a0c775d44721e550ee"
+  },
+  "implementation_sha256": {
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

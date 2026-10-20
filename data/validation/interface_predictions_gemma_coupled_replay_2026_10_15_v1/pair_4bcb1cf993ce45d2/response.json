@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_4bcb1cf993ce45d2",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicates `owned_by` and `has` describe different relationships between entities. `owned_by` indicates ownership, while `has` indicates possession or containment. The action contexts demonstrate this difference: `owned_by` is used when determining who owns an item (e.g., `queen_pricks_finger` - the queen owns the needle), while `has` is used to describe the relationship between entities that possess or contain something (e.g., `dwarfs_prepare_glass_coffin_for_snow_white` - the dwarfs have the coffin). The use of `has` in the SNOW actions consistently describes a possession relationship, while `owned_by` is used to express ownership. Therefore, they are complementary predicates, representing distinct aspects of relationships between entities. The action contexts provide evidence for this distinction.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_pricks_finger",
+      "quote": "(has ?q ?needle)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:queen_sews_at_window",
+      "quote": "(has ?q needle)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:snow_white_eats_vegetables_and_bread_and_drinks_wine",
+      "quote": "(has ?c ?plate)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_asks_looking_glass_fairest",
+      "quote": "(has ?s ?g)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_comb_poison_snow_white",
+      "quote": "(has ?s ?comb)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_eats_boar_heart_thinking_it_is_snow_white_heart",
+      "quote": "(has ?s ?heart)"
+    }
+  ]
+}

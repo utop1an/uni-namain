@@ -3,9 +3,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from rcnc.planning import GroundAction, compile_query, replay, solve, run_query
-from rcnc.experiment import Literal, ActionFrame, build_causal_edges, unsupported_logic, extract_domain_frames, iter_raw_literals
-from merge_domains import parse_domain, parse_sexpr, section
+from archive.rcnc.planning import GroundAction, compile_query, replay, solve, run_query
+from archive.rcnc.experiment import Literal, ActionFrame, build_causal_edges, unsupported_logic, extract_domain_frames, iter_raw_literals
+from rcnc.pddl import parse_domain, parse_sexpr, section
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT/'data/narra-domains'
@@ -30,7 +30,7 @@ class PlanningTests(unittest.TestCase):
     def test_non_strips_quarantined(self):
         for op in ('when','or','exists','forall','='):
             self.assertTrue(unsupported_logic([op,['p','?x'],['q','?x']]))
-        domain = parse_domain(INPUT/'HANS_NP_domainfile.pddl', apply_reviewed_semantics=False)
+        domain = parse_domain(INPUT/'HANS_NP_domainfile.pddl')
         _, actions, _ = extract_domain_frames(domain)
         self.assertLess(len(actions), len(domain.actions))
 
@@ -85,7 +85,7 @@ class PlanningTests(unittest.TestCase):
             out=Path(td)
             result=run_query(self.query(),INPUT,out)
             self.assertEqual('solved',result['status'])
-            domain=parse_domain(out/'domain.pddl',apply_reviewed_semantics=False)
+            domain=parse_domain(out/'domain.pddl')
             self.assertEqual(result['ground_actions'],len(domain.actions))
             problem=parse_sexpr((out/'problem.pddl').read_text(encoding='utf-8'))
             state={tuple(f) for f in section(problem, ':init')[1:]}

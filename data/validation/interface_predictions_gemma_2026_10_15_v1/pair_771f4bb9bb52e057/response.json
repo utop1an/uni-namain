@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_771f4bb9bb52e057",
+  "label": "complementary",
+  "right_from_left": [
+    7,
+    1
+  ],
+  "rationale": "The PIGS_NP predicate 'house' represents a structure, specifically a building, while the SNOW predicate 'at_item' describes the location of an item. The 'house' predicate requires arguments for a location ('?h') and an item ('?i'), representing the house's location and the item within it. Conversely, 'at_item' requires an item ('?i') and a location ('?l'), indicating where the item is situated. These predicates describe fundamentally different aspects of spatial relationships: one defines a structure and its contents, while the other simply specifies an item's location. The action contexts further support this distinction; PIGS_NP actions relate to building and destroying houses, while SNOW actions involve moving items to locations. Therefore, they are complementary because they both deal with spatial relationships but focus on different entities and their respective roles. The use of 'house' and 'at_item' in the action contexts confirms this complementary relationship. Specifically, the PIGS_NP action 'build_house' creates a 'house' (house ?h ?i), and the SNOW action 'prince_discovers_coffin_and_moves_it' places a 'coffin' at a 'mountain' (at_item ?coffin ?mountain). The different arguments and effects of the actions highlight their distinct roles.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "PIGS_NP:action:build_house",
+      "quote": "(house ?h ?i)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:prince_discovers_coffin_and_moves_it",
+      "quote": "(at_item ?coffin ?mountain)"
+    }
+  ]
+}

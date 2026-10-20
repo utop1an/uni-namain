@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:30:20.8321313Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_21c51d1aca34acf2\", \"label\": \"complementary\", \"right_from_left\": [1, 0], \"rationale\": \"The predicate 'boiling' appears in both sources, but its usage and context differ significantly. In 'PIGS_NP', 'boiling' describes a state of the pot, directly related to the pig's actions and the preparation of food. The action 'pig_prepares_boiling_pot_and_fire' explicitly sets the pot to 'boiling'. Conversely, in 'WOE', 'stone_moved' describes the movement of a stone, a consequence of actions taken by other entities. The 'boiling' predicate is only present as a precondition for the 'wolf_falls_into_pot_and_is_boiled' action, indicating a state that enables the wolf's demise. Therefore, 'boiling' in 'PIGS_NP' relates to cooking, while 'stone_moved' in 'WOE' relates to physical movement. These are distinct concepts, despite sharing the same predicate name. The action contexts highlight this difference: 'boiling' is an active process, while 'stone_moved' is a passive result. The predicate types are also different: 'boiling' is an object state, while 'stone_moved' is an event.\", \"evidence\": [\n{\n\"side\": 0,\n\"ref\": \"PIGS_NP:action:pig_prepares_boiling_pot_and_fire\",\n\"quote\": \"(boiling ?pot)\"\n},\n{\n\"side\": 1,\n\"ref\": \"WOE:action:hide_woe_under_stone\",\n\"quote\": \"(stone_moved ?stone)\"\n}\n]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4462160200,
+  "load_duration": 3729800,
+  "prompt_eval_count": 1067,
+  "prompt_eval_duration": 247942000,
+  "eval_count": 392,
+  "eval_duration": 4023213000
+}

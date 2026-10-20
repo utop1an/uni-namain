@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:32:53.9474948Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_7c861e1d4b89d3bf\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'dead' describes a state of being deceased, while 'has_strength' describes a physical capability. These predicates represent distinct aspects of an entity's condition. One describes a negative outcome (death), while the other describes a positive attribute (strength). The action contexts further support this by describing scenarios where death results from a specific action ('cut_beanstalk') and strength is a precondition for another action ('move_heavy_stone'). The 'dead' predicate is a consequence of the 'cut_beanstalk' action, while 'has_strength' is a prerequisite for the 'move_heavy_stone' action. These predicates are complementary because they describe different properties of an entity and are linked through distinct action contexts. The 'dead' predicate is a result of an action, while 'has_strength' is a property that enables actions. The action contexts provide evidence for this complementary relationship. Specifically, the 'cut_beanstalk' action leads to the 'dead' state of the giant, and the 'has_strength' predicate is required for the 'move_heavy_stone' action. The 'dead' predicate is not a consequence of 'has_strength', and vice versa. The 'dead' predicate is a negative state, while 'has_strength' is a positive attribute. The 'dead' predicate is a result of an action, while 'has_strength' is a property that enables actions.\", \"evidence\": [ {\"side\": 0, \"ref\": \"JACK_NP:action:cut_beanstalk\", \"quote\": \"(dead ?giant)\"}, {\"side\": 1, \"ref\": \"WOE:action:move_heavy_stone\", \"quote\": \"(has_strength ?carrier)\"}, {\"side\": 1, \"ref\": \"WOE:action:perform_work_for_rich_brother\", \"quote\": \"(has_strength ?worker)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4463415000,
+  "load_duration": 2070700,
+  "prompt_eval_count": 737,
+  "prompt_eval_duration": 158071000,
+  "eval_count": 446,
+  "eval_duration": 4163505000
+}

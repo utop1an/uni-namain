@@ -1,0 +1,46 @@
+{
+  "candidate_id": "pair_2aa5ac616114039c",
+  "status": "checked",
+  "response": {
+    "candidate_id": "pair_2aa5ac616114039c",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "Both predicates use the same declaration `(at ?e - entity ?l - location)` with identical parameters `?e` as 'entity' and `?l` as 'location'. The action contexts in both sources consistently use 'at' to describe the spatial location of entities. The only difference is the source of the predicate – NAUG and REMA_NP – but the predicate's meaning and usage are identical. The action contexts demonstrate that 'at' is used to specify the location of entities within a scene, and the predicate's purpose is to represent this spatial relationship. The identical parameter types and the consistent use of 'at' across both sources confirm that the predicates are interchangeable.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "NAUG:action:call_comet_forward",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:give_order",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:start_travel",
+        "quote": "(at ?c courtyard)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:arrive_at_marble_palace",
+        "quote": "(at ?p palace)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:encounter_impostor_king",
+        "quote": "(at ?p city)"
+      },
+      {
+        "side": 1,
+        "ref": "REMA_NP:action:encounter_robbers_in_forest",
+        "quote": "(at ?p forest)"
+      }
+    ]
+  },
+  "errors": []
+}

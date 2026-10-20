@@ -1,0 +1,170 @@
+{
+  "objects": {
+    "snow_white": [
+      "HANS_NP:entity",
+      "JACK_NP:entity",
+      "SNOW:entity"
+    ],
+    "rescuer": [
+      "HANS_NP:entity",
+      "SNOW:entity"
+    ],
+    "companion": [
+      "HANS_NP:entity",
+      "SNOW:entity"
+    ],
+    "jack": [
+      "JACK_NP:entity",
+      "SNOW:entity"
+    ],
+    "comb": [
+      "HANS_NP:item",
+      "SNOW:item"
+    ],
+    "gem": "HANS_NP:item",
+    "axe": "JACK_NP:item",
+    "hut": [
+      "HANS_NP:location",
+      "SNOW:location"
+    ],
+    "outside": "HANS_NP:location",
+    "workshop": "JACK_NP:location"
+  },
+  "initial": [
+    [
+      "SNOW:alive",
+      "snow_white"
+    ],
+    [
+      "SNOW:alive",
+      "rescuer"
+    ],
+    [
+      "SNOW:alive",
+      "companion"
+    ],
+    [
+      "SNOW:alive",
+      "jack"
+    ],
+    [
+      "JACK_NP:intact",
+      "JACK_NP:beanstalk"
+    ],
+    [
+      "HANS_NP:at",
+      "rescuer",
+      "outside"
+    ],
+    [
+      "HANS_NP:at",
+      "companion",
+      "outside"
+    ],
+    [
+      "SNOW:at",
+      "snow_white",
+      "hut"
+    ],
+    [
+      "JACK_NP:at",
+      "jack",
+      "workshop"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "SNOW:alive",
+        "snow_white"
+      ]
+    ],
+    "negative": [
+      [
+        "JACK_NP:dead",
+        "snow_white"
+      ],
+      [
+        "JACK_NP:intact",
+        "JACK_NP:beanstalk"
+      ]
+    ]
+  },
+  "sources": [
+    "HANS_NP",
+    "JACK_NP",
+    "SNOW"
+  ],
+  "alignment": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+      "JACK_NP_domainfile.pddl": "3170fe93df47e0b5699d6161f2acd10e5bdf4f8cc3d7b65fbd3683bcaa6e4c53",
+      "SNOW_domainfile.pddl": "e0fbaea9a40cbd7679e657a3abbac6e14b91438185a26a5add53f79bd426ac2e"
+    },
+    "type_groups": [
+      {
+        "members": [
+          "HANS_NP:entity",
+          "JACK_NP:entity",
+          "SNOW:entity"
+        ],
+        "evidence": "Explicit shared character roles"
+      },
+      {
+        "members": [
+          "HANS_NP:item",
+          "SNOW:item"
+        ],
+        "evidence": "Explicit shared comb prop"
+      }
+    ],
+    "predicate_groups": [
+      {
+        "id": "death",
+        "evidence": "Authored Boolean death interface; life adapter separately declared",
+        "members": [
+          {
+            "predicate": "HANS_NP:dead",
+            "order": [
+              0
+            ]
+          },
+          {
+            "predicate": "JACK_NP:dead",
+            "order": [
+              0
+            ]
+          },
+          {
+            "predicate": "SNOW:dead",
+            "order": [
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "id": "possession",
+        "evidence": "Authored shared entity-item possession, not independent gold",
+        "members": [
+          {
+            "predicate": "HANS_NP:has",
+            "order": [
+              0,
+              1
+            ]
+          },
+          {
+            "predicate": "SNOW:has",
+            "order": [
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

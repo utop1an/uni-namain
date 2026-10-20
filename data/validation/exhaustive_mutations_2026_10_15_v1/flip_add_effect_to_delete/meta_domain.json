@@ -1,0 +1,202 @@
+{
+  "sources": [
+    "A",
+    "B"
+  ],
+  "counts": {
+    "requirements": 3,
+    "types": 0,
+    "constants": 2,
+    "predicates": 8,
+    "operators": 9
+  },
+  "predicate_maps": {
+    "A": {
+      "ready": "d000__p_ready",
+      "done": "d000__p_done",
+      "rel": "shared__p_relation"
+    },
+    "B": {
+      "reverse_rel": "shared__p_relation"
+    }
+  },
+  "constant_maps": {
+    "A": {
+      "a": "d000__c_a"
+    },
+    "B": {
+      "outsider": "d001__c_outsider"
+    }
+  },
+  "action_maps": {
+    "A": {
+      "prepare": "d000__a_prepare",
+      "conditional": "d000__a_conditional",
+      "clear_all": "d000__a_clear_all",
+      "finish_all": "d000__a_finish_all",
+      "link": "d000__a_link",
+      "follow": "d000__a_follow",
+      "absent": "d000__a_absent",
+      "apprentice_step": "d000__a_apprentice_step"
+    },
+    "B": {
+      "foreign": "d001__a_foreign"
+    }
+  },
+  "decisions": [],
+  "method": "explicit_predicate_alignment_with_type_membership",
+  "semantic_status": "assumptions_not_independently_verified",
+  "type_encoding": "static_membership",
+  "namespaces": {
+    "A": {
+      "types": {
+        "person": "d000__t_person",
+        "apprentice": "d000__t_apprentice",
+        "object": "d000__t_object"
+      },
+      "prefix": "d000",
+      "objects": {
+        "b": "d000__o_b"
+      }
+    },
+    "B": {
+      "types": {
+        "person": "d001__t_person",
+        "object": "d001__t_object"
+      },
+      "prefix": "d001",
+      "objects": {}
+    }
+  },
+  "source_type_parents": {
+    "d000__t_person": "d000__t_object",
+    "d000__t_apprentice": "d000__t_person",
+    "d001__t_person": "d001__t_object",
+    "d000__t_object": "object",
+    "d001__t_object": "object"
+  },
+  "type_guards": {
+    "d000__t_person": "typeguard__d000__t_person",
+    "d000__t_apprentice": "typeguard__d000__t_apprentice",
+    "d001__t_person": "typeguard__d001__t_person",
+    "d000__t_object": "typeguard__d000__t_object",
+    "d001__t_object": "typeguard__d001__t_object"
+  },
+  "constant_membership_facts": [
+    [
+      "typeguard__d000__t_apprentice",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d000__t_person",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d000__t_object",
+      "d000__c_a"
+    ],
+    [
+      "typeguard__d001__t_person",
+      "d001__c_outsider"
+    ],
+    [
+      "typeguard__d001__t_object",
+      "d001__c_outsider"
+    ]
+  ],
+  "source_constant_types": {
+    "d000__c_a": "d000__t_apprentice",
+    "d001__c_outsider": "d001__t_person"
+  },
+  "predicate_orders": {
+    "A": {
+      "ready": [
+        0
+      ],
+      "done": [
+        0
+      ],
+      "rel": [
+        1,
+        0
+      ]
+    },
+    "B": {
+      "reverse_rel": [
+        0,
+        1
+      ]
+    }
+  },
+  "source_predicate_types": {
+    "A": {
+      "ready": [
+        "d000__t_person"
+      ],
+      "done": [
+        "d000__t_person"
+      ],
+      "rel": [
+        "d000__t_person",
+        "d000__t_person"
+      ]
+    },
+    "B": {
+      "reverse_rel": [
+        "d001__t_person",
+        "d001__t_person"
+      ]
+    }
+  },
+  "source_sha256": {
+    "A_domainfile.pddl": "9002eb48b53b1ef7d88031f008115e3dee06f8ba029315b6a9f619e119897c97",
+    "A_problemfile.pddl": "76d08de54bbbe655973be72f3129805b8454922c79b66738449bd9c24f872e4d",
+    "B_domainfile.pddl": "df59c7099b7e7a56e28a0f600a21a84bb1687e07a4ae0bf71b84b90e650641f9",
+    "B_problemfile.pddl": "0bc9dc2e0b458550ea1f3ce7f4384cbbe25ef02e218d16518a7390008b5ce7fb"
+  },
+  "alignment_specification": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "A_domainfile.pddl": "9002eb48b53b1ef7d88031f008115e3dee06f8ba029315b6a9f619e119897c97",
+      "B_domainfile.pddl": "df59c7099b7e7a56e28a0f600a21a84bb1687e07a4ae0bf71b84b90e650641f9"
+    },
+    "type_groups": [
+      {
+        "members": [
+          "A:person",
+          "B:person"
+        ],
+        "evidence": "Synthetic role type correspondence"
+      }
+    ],
+    "predicate_groups": [
+      {
+        "id": "relation",
+        "evidence": "Synthetic reversed-role correspondence",
+        "members": [
+          {
+            "predicate": "A:rel",
+            "order": [
+              1,
+              0
+            ]
+          },
+          {
+            "predicate": "B:reverse_rel",
+            "order": [
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "implementation_sha256": {
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa"
+  }
+}

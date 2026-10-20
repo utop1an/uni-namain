@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_c99464606154c7e3",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_c99464606154c7e3",
+    "label": "equivalent",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "Both sides of the predicate pair use the `has` predicate to express possession. In ACCO, `has` is used to describe the relationship between items and entities (e.g., `has ?t ?k` - kettle has a value). In FOUR_NP, `has` is used to describe the possession of items by entities (e.g., `has ?a telescope` - astronomer has a telescope). The arguments `?e` and `?i` represent entities and items respectively, and the action contexts demonstrate similar usage patterns. The core meaning of 'has' is interchangeable across both narratives. The action contexts provide supporting evidence for this equivalence, as both narratives utilize `has` to describe relationships between objects and entities.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:arrange_exhibition",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:hang_kettle",
+        "quote": "(has ?pr ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:kettle_transform_to_fur_badger",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:perform_show",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:return_kettle_to_temple",
+        "quote": "(has ?t ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:sell_kettle_to_tinker",
+        "quote": "(has ?pr ?k)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_c99464606154c7e3"
+  ]
+}

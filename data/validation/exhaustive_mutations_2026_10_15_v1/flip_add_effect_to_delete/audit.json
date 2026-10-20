@@ -1,0 +1,184 @@
+{
+  "status": "FAIL",
+  "counts": {
+    "states": 256,
+    "ground_action_instances": 17,
+    "applicability_checks": 4352,
+    "applicable_transitions": 2048,
+    "goal_checks": 256,
+    "mismatches": 256
+  },
+  "state_atoms": [
+    "ready(a)",
+    "ready(b)",
+    "done(a)",
+    "done(b)",
+    "rel(a, a)",
+    "rel(b, a)",
+    "rel(a, b)",
+    "rel(b, b)"
+  ],
+  "counterexamples": [
+    {
+      "kind": "projected_successor",
+      "state_mask": 0,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 0,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 1,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 2,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 4,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 4,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 5,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 6,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 8,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 8,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 9,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 10,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 12,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 12,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 13,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 14,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 16,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 16,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 17,
+      "action": "prepare(b)",
+      "detail": [
+        "ready(b)"
+      ]
+    },
+    {
+      "kind": "projected_successor",
+      "state_mask": 18,
+      "action": "prepare(a)",
+      "detail": [
+        "ready(a)"
+      ]
+    }
+  ],
+  "scope": "Exhaustive states of one finite authored fixture; not a proof for all domains or semantic-alignment evaluation"
+}

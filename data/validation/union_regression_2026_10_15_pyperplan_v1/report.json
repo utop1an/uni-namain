@@ -1,0 +1,446 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-14T14:40:43.396197+00:00",
+  "scope": "Development source-plan regression; no semantic alignment or narrative-quality claim",
+  "source_count": 15,
+  "source_order": [
+    "ACCO",
+    "BIRT",
+    "BUFF",
+    "CHIC_NP",
+    "FOUR_NP",
+    "HANS_NP",
+    "JACK_NP",
+    "MUSI",
+    "NAUG",
+    "PIGS_NP",
+    "PUSS",
+    "REMA_NP",
+    "SNOW",
+    "SOUP",
+    "WOE"
+  ],
+  "budget_per_source": {
+    "seconds": 120.0
+  },
+  "solver": "pyperplan",
+  "runtime": {
+    "python": "3.12.10",
+    "unified_planning": "1.3.0"
+  },
+  "implementation_sha256": {
+    "run_union_regression.py": "d16522307e525ad85cc416327060c75813a756f3ae3609adf15ea9be5e8a0a46",
+    "validate_narrative_pipeline.py": "ed56aaf731b233d4dc30935184a42c6020bb232e773dcde9280f05cef6018315",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "rcnc/merged_planning.py": "ff14e9db178f1501f735f5181b6620e4aa7235a85a8904f6753161f667e2f03b",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "audit_union_preservation.py": "fda4784e22c450c1e72fe5d10650b7861be336742380925e0c7f87303bbff033"
+  },
+  "merged_before_planning": true,
+  "merged_domain_sha256": "5b3e303c8f9ff31b097b1c0c53cd8a992049805d27fafe982d8919e9bbee4e41",
+  "rows": [
+    {
+      "source": "ACCO",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [],
+        "engine_status": "SOLVED_SATISFICING",
+        "status": "solved",
+        "length": 6,
+        "plan": "SequentialPlan:\n    sell_kettle_to_tinker(priest, tinker, pack, teakettle)\n    arrange_exhibition(badger, priest, pack)\n    perform_show(priest, pack)\n    receive_orders_from_nobility(tinker)\n    return_kettle_to_temple(tinker, teakettle)\n    worship_kettle_as_saint(teakettle)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "elapsed_seconds": 5.203,
+      "mapped": {
+        "length": 6,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "preservation_evidence": "validated_translated_plan"
+    },
+    {
+      "source": "BIRT",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 12,
+            "fluents": 19
+          }
+        ],
+        "engine_status": "SOLVED_SATISFICING",
+        "status": "solved",
+        "length": 8,
+        "plan": "SequentialPlan:\n    turn_key_on_beech(nora, key, cottage)\n    travel_to_trysting_place(nora, bench, cottage)\n    witness_queen_birthday_ceremony(nora, grandmotherkin, bench)\n    travel_to_trysting_place(nora, palace, bench)\n    receive_queen_kiss(nora, fairy_queen)\n    return_to_bench_and_share_story(grandmother, mother, nora, bench)\n    turn_key_on_beech(nora, lantern, bench)\n    eat_pellet_and_shrink(nora, lantern)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "elapsed_seconds": 16.015,
+      "mapped": {
+        "length": 8,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "preservation_evidence": "validated_translated_plan"
+    },
+    {
+      "source": "BUFF",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 8,
+            "fluents": 16
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 4.968,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "CHIC_NP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_quantifiers_remover",
+            "actions": 7,
+            "fluents": 9
+          },
+          {
+            "engine": "up_disjunctive_conditions_remover",
+            "actions": 16,
+            "fluents": 9
+          },
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 16,
+            "fluents": 17
+          }
+        ],
+        "engine_status": "SOLVED_SATISFICING",
+        "status": "solved",
+        "length": 36,
+        "plan": "SequentialPlan:\n    meet_character(chicken-licken, drake-lake, wood)\n    meet_character(goose-loose, cock-lock, wood)\n    meet_character(duck-luck, gander-lander, wood)\n    meet_character(turkey-lurkey, hen-len, wood)\n    inform_about_sky_fall(chicken-licken, drake-lake)\n    inform_about_sky_fall(drake-lake, chicken-licken)\n    inform_about_sky_fall(turkey-lurkey, hen-len)\n    inform_about_sky_fall(goose-loose, cock-lock)\n    inform_about_sky_fall(hen-len, turkey-lurkey)\n    inform_about_sky_fall(cock-lock, goose-loose)\n    inform_about_sky_fall(duck-luck, gander-lander)\n    inform_about_sky_fall(gander-lander, duck-luck)\n    decide_to_tell_king(drake-lake)\n    decide_to_tell_king(goose-loose)\n    decide_to_tell_king(chicken-licken)\n    decide_to_tell_king(gander-lander)\n    decide_to_tell_king(duck-luck)\n    decide_to_tell_king(cock-lock)\n    decide_to_tell_king(turkey-lurkey)\n    decide_to_tell_king(hen-len)\n    follow_fox(chicken-licken)\n    follow_fox(drake-lake)\n    follow_fox(turkey-lurkey)\n    follow_fox(goose-loose)\n    follow_fox(hen-len)\n    follow_fox(cock-lock)\n    follow_fox(duck-luck)\n    follow_fox(gander-lander)\n    be_eaten_by_fox(chicken-licken, wood)\n    be_eaten_by_fox(drake-lake, wood)\n    be_eaten_by_fox(turkey-lurkey, wood)\n    be_eaten_by_fox(goose-loose, wood)\n    be_eaten_by_fox(hen-len, wood)\n    be_eaten_by_fox(cock-lock, wood)\n    be_eaten_by_fox(duck-luck, wood)\n    be_eaten_by_fox(gander-lander, wood)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "elapsed_seconds": 7.11,
+      "mapped": {
+        "length": 36,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "preservation_evidence": "validated_translated_plan"
+    },
+    {
+      "source": "FOUR_NP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 5.016,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "HANS_NP",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 120.031,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "JACK_NP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 12,
+            "fluents": 16
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 5.61,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "MUSI",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 120.015,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "NAUG",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 13,
+            "fluents": 19
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 5.078,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "PIGS_NP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 10.938,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "PUSS",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 14,
+            "fluents": 18
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 7.734,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "REMA_NP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_negative_conditions_remover",
+            "actions": 12,
+            "fluents": 9
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 4.766,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "SNOW",
+      "search": {
+        "status": "time_limit"
+      },
+      "elapsed_seconds": 120.015,
+      "preservation_evidence": "no_valid_source_plan"
+    },
+    {
+      "source": "SOUP",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_disjunctive_conditions_remover",
+            "actions": 13,
+            "fluents": 13
+          }
+        ],
+        "engine_status": "SOLVED_SATISFICING",
+        "status": "solved",
+        "length": 2,
+        "plan": "SequentialPlan:\n    prepare_soup_by_king_tail(jailer)\n    claim_queenhood(third_traveler_mouse)",
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "elapsed_seconds": 9.0,
+      "mapped": {
+        "length": 2,
+        "validation": {
+          "status": "VALID",
+          "engine": "sequential_plan_validator",
+          "version": "1.3.0",
+          "details": "status: VALID\nengine: sequential_plan_validator"
+        }
+      },
+      "preservation_evidence": "validated_translated_plan"
+    },
+    {
+      "source": "WOE",
+      "search": {
+        "engine": "pyperplan",
+        "search": "gbf",
+        "heuristic": "hff",
+        "versions": {
+          "unified-planning": "1.3.0",
+          "up-pyperplan": "1.1.0",
+          "pyperplan": "2.1"
+        },
+        "budget_policy": "external_process_wall_clock_only",
+        "compilations": [
+          {
+            "engine": "up_quantifiers_remover",
+            "actions": 17,
+            "fluents": 22
+          },
+          {
+            "engine": "up_disjunctive_conditions_remover",
+            "actions": 21,
+            "fluents": 22
+          }
+        ],
+        "engine_status": "UNSOLVABLE_INCOMPLETELY",
+        "status": "incomplete"
+      },
+      "elapsed_seconds": 5.016,
+      "preservation_evidence": "no_valid_source_plan"
+    }
+  ],
+  "search_counts": {
+    "solved": 4,
+    "incomplete": 8,
+    "time_limit": 3
+  },
+  "preservation_counts": {
+    "validated_translated_plan": 4,
+    "no_valid_source_plan": 11
+  },
+  "merged_domain_unchanged": true,
+  "finished_utc": "2026-10-14T14:48:20.162719+00:00"
+}

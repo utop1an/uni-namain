@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:45:27.8078162Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_7c861e1d4b89d3bf\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicates 'dead' and 'has_strength' describe different aspects of an entity's state. 'dead' indicates a state of cessation of life, while 'has_strength' indicates a capacity for physical exertion. These are distinct properties. The 'dead' predicate is triggered by the action 'cut_beanstalk' which results in the giant's death. The 'has_strength' predicate is used in actions like 'move_heavy_stone' and 'perform_work_for_rich_brother', indicating the entity's ability to perform physical tasks. The action contexts highlight that 'dead' is a consequence of a specific action, while 'has_strength' is a precondition for other actions. Therefore, they are complementary, describing distinct states and their relationship to actions. The 'cut_beanstalk' action explicitly states that the giant is dead, while the 'has_strength' predicate is used to describe the giant's ability to climb, implying the giant had strength before the action. The 'action' contexts provide the evidence for this complementary relationship.\", \"evidence\": [ {\"side\": 0, \"ref\": \"JACK_NP:action:cut_beanstalk\", \"quote\": \"(dead ?giant)\"}, {\"side\": 1, \"ref\": \"WOE:action:move_heavy_stone\", \"quote\": \"(has_strength ?carrier)\"}, {\"side\": 1, \"ref\": \"WOE:action:perform_work_for_rich_brother\", \"quote\": \"(has_strength ?worker)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3761656100,
+  "load_duration": 2584400,
+  "prompt_eval_count": 737,
+  "prompt_eval_duration": 144631000,
+  "eval_count": 375,
+  "eval_duration": 3500349000
+}

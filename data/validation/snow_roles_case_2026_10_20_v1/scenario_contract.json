@@ -1,0 +1,302 @@
+{
+  "status": "authored_before_search",
+  "role_objects": {
+    "snow_white": "snow_white",
+    "giant": "snow_white",
+    "witch": "snow_white",
+    "rescuer": "rescuer",
+    "companion": "companion",
+    "cutter": "jack",
+    "comb": "comb",
+    "gem": "gem",
+    "axe": "axe",
+    "hut": "hut"
+  },
+  "parameter_roles": {
+    "HANS_NP": {
+      "abandon_children_in_forest": {
+        "?father": "father",
+        "?g": "companion",
+        "?h": "rescuer",
+        "?mother": "mother",
+        "?forest": "hut"
+      },
+      "leave_children_at_fire": {
+        "?father": "father",
+        "?g": "companion",
+        "?h": "rescuer",
+        "?mother": "mother",
+        "?forest": "hut"
+      },
+      "drop_pebble_on_path": {
+        "?h": "rescuer",
+        "?peb": "prop_peb",
+        "?path_loc": "hut"
+      },
+      "follow_pebbles_home": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?home": "hut",
+        "?path_loc": "hut"
+      },
+      "drop_breadcrumb_on_path": {
+        "?h": "rescuer",
+        "?crumb": "prop_crumb",
+        "?path_loc": "hut"
+      },
+      "follow_breadcrumbs_home": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?home": "hut",
+        "?path_loc": "hut"
+      },
+      "wander_forest_seeking_way_out": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?forest": "hut"
+      },
+      "hear_bird_and_follow_to_witch_house": {
+        "?bird": "bird",
+        "?g": "companion",
+        "?h": "rescuer",
+        "?branch": "hut",
+        "?cottage": "hut"
+      },
+      "enter_witch_house": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?cottage": "hut"
+      },
+      "witch_captures_children": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?witch": "witch",
+        "?cottage": "hut",
+        "?stable": "hut"
+      },
+      "push_witch_into_oven": {
+        "?g": "companion",
+        "?witch": "witch",
+        "?oven": "prop_oven",
+        "?room": "hut"
+      },
+      "escape_from_stable": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?cottage": "hut",
+        "?stable": "hut"
+      },
+      "collect_treasure": {
+        "?g": "companion",
+        "?h": "rescuer",
+        "?pearl": "comb",
+        "?precious_stone": "gem",
+        "?cottage": "hut"
+      },
+      "call_duck_for_crossing": {
+        "?duck": "duck",
+        "?g": "companion",
+        "?h": "rescuer",
+        "?lake": "hut"
+      },
+      "return_home_and_reunite_with_father": {
+        "?father": "father",
+        "?g": "companion",
+        "?h": "rescuer",
+        "?father_house": "hut"
+      }
+    },
+    "JACK_NP": {
+      "sell_cow_for_beans": {
+        "?b": "butcher",
+        "?cow": "cow",
+        "?j": "cutter",
+        "?beans": "prop_beans",
+        "?l": "place_l"
+      },
+      "plant_beans": {
+        "?beans": "prop_beans",
+        "?loc": "place_loc"
+      },
+      "grow_beanstalk": {
+        "?beans": "prop_beans"
+      },
+      "climb_beanstalk": {
+        "?j": "cutter"
+      },
+      "ask_giant_wife_for_breakfast": {
+        "?j": "cutter",
+        "?wife": "giant_wife"
+      },
+      "hide_in_kettle": {
+        "?j": "cutter",
+        "?kettle": "prop_kettle"
+      },
+      "steal_gold_bags": {
+        "?j": "cutter",
+        "?bag1": "prop_bag1",
+        "?bag2": "prop_bag2"
+      },
+      "return_down_beanstalk": {
+        "?j": "cutter"
+      },
+      "hide_in_oven": {
+        "?j": "cutter",
+        "?oven": "prop_oven"
+      },
+      "steal_hen": {
+        "?giant": "giant",
+        "?j": "cutter",
+        "?hen": "prop_hen"
+      },
+      "steal_harp": {
+        "?giant": "giant",
+        "?j": "cutter",
+        "?harp": "prop_harp"
+      },
+      "cut_beanstalk": {
+        "?giant": "giant",
+        "?mother": "cutter",
+        "?axe": "axe"
+      }
+    },
+    "SNOW": {
+      "queen_sews_at_window": {
+        "?q": "queen",
+        "?l": "place_l"
+      },
+      "queen_pricks_finger": {
+        "?q": "queen",
+        "?blood": "prop_blood",
+        "?needle": "prop_needle"
+      },
+      "queen_wishes_child_white_red_black": {
+        "?c": "snow_white",
+        "?q": "queen"
+      },
+      "child_is_born_and_queen_dies": {
+        "?c": "snow_white",
+        "?q": "queen"
+      },
+      "king_marries_stepmother": {
+        "?k": "king",
+        "?s": "witch"
+      },
+      "stepmother_asks_looking_glass_fairest": {
+        "?s": "witch",
+        "?g": "prop_g"
+      },
+      "stepmother_becomes_envious_of_snow_white": {
+        "?c": "snow_white",
+        "?s": "witch"
+      },
+      "stepmother_orders_huntsman_to_kill_snow_white": {
+        "?c": "snow_white",
+        "?h": "huntsman",
+        "?s": "witch"
+      },
+      "huntsman_spares_snow_white_and_brings_boar_heart": {
+        "?b": "boar",
+        "?c": "snow_white",
+        "?h": "huntsman",
+        "?heart": "prop_heart"
+      },
+      "stepmother_eats_boar_heart_thinking_it_is_snow_white_heart": {
+        "?s": "witch",
+        "?heart": "prop_heart"
+      },
+      "snow_white_flees_into_forest": {
+        "?c": "snow_white",
+        "?f": "place_f"
+      },
+      "snow_white_finds_dwarfs_cottage": {
+        "?c": "snow_white",
+        "?cottage": "hut"
+      },
+      "snow_white_eats_vegetables_and_bread_and_drinks_wine": {
+        "?c": "snow_white",
+        "?mug": "prop_mug",
+        "?plate": "prop_plate"
+      },
+      "snow_white_sleeps_in_seventh_bed": {
+        "?c": "snow_white",
+        "?bed": "prop_bed"
+      },
+      "dwarfs_return_and_discover_snow_white": {
+        "?c": "snow_white",
+        "?d": "rescuer"
+      },
+      "dwarfs_offer_snow_white_to_maintain_house": {
+        "?c": "snow_white",
+        "?d": "rescuer"
+      },
+      "stepmother_disguises_as_old_woman_and_visits_cottage": {
+        "?old_woman": "old_woman",
+        "?s": "witch",
+        "?cottage": "hut"
+      },
+      "stepmother_laces_snow_white_tightly": {
+        "?c": "snow_white",
+        "?s": "witch",
+        "?lace": "prop_lace"
+      },
+      "dwarfs_cut_laces_rescue_snow_white": {
+        "?c": "snow_white",
+        "?d": "rescuer",
+        "?lace": "prop_lace"
+      },
+      "stepmother_makes_poisonous_comb_and_visits_cottage": {
+        "?s": "witch",
+        "?comb": "comb",
+        "?cottage": "hut"
+      },
+      "stepmother_comb_poison_snow_white": {
+        "?c": "snow_white",
+        "?s": "witch",
+        "?comb": "comb"
+      },
+      "dwarfs_remove_comb_rescue_snow_white": {
+        "?c": "snow_white",
+        "?d": "rescuer",
+        "?comb": "comb"
+      },
+      "stepmother_makes_poisonous_apple_and_visits_cottage": {
+        "?s": "witch",
+        "?apple": "prop_apple",
+        "?cottage": "hut"
+      },
+      "snow_white_eats_poisoned_apple_and_dies": {
+        "?c": "snow_white",
+        "?apple": "prop_apple"
+      },
+      "dwarfs_prepare_glass_coffin_for_snow_white": {
+        "?c": "snow_white",
+        "?d": "rescuer",
+        "?coffin": "prop_coffin"
+      },
+      "prince_discovers_coffin_and_moves_it": {
+        "?c": "snow_white",
+        "?p": "prince",
+        "?coffin": "prop_coffin",
+        "?mountain": "place_mountain"
+      },
+      "apple_piece_falls_out_reviving_snow_white": {
+        "?c": "snow_white",
+        "?apple": "prop_apple"
+      },
+      "prince_marries_snow_white": {
+        "?c": "snow_white",
+        "?p": "prince"
+      },
+      "stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies": {
+        "?s": "witch",
+        "?slippers": "prop_slippers"
+      }
+    }
+  },
+  "role_policy": "Static parameter permissions on every source action. Uncast roles have no legal binding; all 56 source templates retained before source-removal controls.",
+  "life_adapter": "Positive writes to the predicate aligned with SNOW:dead also delete SNOW:alive for that object, preserving conditional contexts. JACK cut_beanstalk also ends climbing_down.",
+  "rescue_observer": "SNOW dwarfs_remove_comb_rescue_snow_white additionally sets case_rescued_with_comb(?c); required by the authored goal. No fixed complete action sequence is supplied.",
+  "negative_controls": "Same role contract and qualified world/goal; interfaces or action sources removed explicitly. Identity control removes SNOW/HANS membership of snow_white.",
+  "scope": "Authored role-constrained scenario, not unrestricted source preservation or automatically learned alignment. Source files remain unchanged; compiled permissions/effects are modified and versioned."
+}

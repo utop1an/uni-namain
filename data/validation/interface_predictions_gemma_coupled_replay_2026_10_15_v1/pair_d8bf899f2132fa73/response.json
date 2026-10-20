@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_d8bf899f2132fa73",
+  "label": "complementary",
+  "right_from_left": null,
+  "rationale": "The predicate `at` appears in both sources, but its usage and context differ significantly. In `PIGS_NP`, `at` describes the spatial location of entities (pig, butter churn, etc.) within a scene, driven by actions like building, buying, and preparing. The locations are concrete places like 'town_fair', 'pig_home', and 'chimney'. In contrast, `promised_to_serve` in `PUSS` describes a relationship between entities (`servant` and `master`), not a spatial location. The `promised_to_serve` predicate is a consequence of an action, not a description of where something is. The action `cat_disentchant_prisoners` establishes the relationship, and the `promised_to_serve` predicate is a result of that action. Therefore, they represent distinct concepts: one about location and spatial relationships, and the other about obligations and relationships between entities. The action contexts highlight this difference; `at` is tied to physical presence and movement, while `promised_to_serve` is a declarative statement about a commitment. The exact excerpts support this: `(at ?p town_fair)` and `(at ?p pig_home)` versus `(promised_to_serve ?person jack)`.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    },
+    {
+      "side": 1,
+      "ref": "PUSS:action:cat_disentchant_prisoners",
+      "quote": "(promised_to_serve ?person jack)"
+    }
+  ]
+}

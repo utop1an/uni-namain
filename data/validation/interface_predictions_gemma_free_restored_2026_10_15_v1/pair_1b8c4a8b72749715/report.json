@@ -1,0 +1,39 @@
+{
+  "candidate_id": "pair_1b8c4a8b72749715",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_1b8c4a8b72749715",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `owned_by` indicates ownership of an entity, while the predicate `has` indicates possession of an item. These predicates describe different aspects of relationships between entities and items. `owned_by` specifies the owner, while `has` specifies the holder. They cannot be interchangeable because `owned_by` describes a relationship of ownership, while `has` describes a relationship of possession. The action contexts for `has` demonstrate that it describes the current state of an item being held by an entity, whereas `owned_by` describes a more permanent state of ownership. The action contexts for `owned_by` do not provide information about the current state of possession, but rather the entity that owns the item. The `JACK_NP` source provides examples of actions that utilize `has` to describe the current state of an item being held by an entity, while `owned_by` is not used in these actions. Therefore, the predicates are complementary because they describe different aspects of the same relationships between entities and items. The action contexts for `owned_by` do not provide information about the current state of possession, but rather the entity that owns the item. The action contexts for `has` demonstrate that it describes the current state of an item being held by an entity, whereas `owned_by` describes a more permanent state of ownership. The action contexts for `owned_by` do not provide information about the current state of possession, but rather the entity that owns the item. The action contexts for `has` demonstrate that it describes the current state of an item being held by an entity, whereas `owned_by` describes a more permanent state of ownership. The action contexts for `owned_by` do not provide information about the current state of possession, but rather the entity that owns the item. The action contexts for `has` demonstrate that it describes the current state of an item being held by an entity, whereas `owned_by` describes a more permanent state of ownership.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:sell_cow_for_beans",
+        "quote": "(has ?j ?beans)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_gold_bags",
+        "quote": "(has ?j ?bag1)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_harp",
+        "quote": "(has ?j ?harp)"
+      },
+      {
+        "side": 1,
+        "ref": "JACK_NP:action:steal_hen",
+        "quote": "(has ?j ?hen)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_1b8c4a8b72749715",
+    "non_equivalent_has_argument_map:pair_1b8c4a8b72749715"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-20T02:58:52.780111+00:00",
+  "index_sha256": "e831dabe30f1c4620fa174c03cc6ea3856a3fbd619894a906c9d124fb90a66d4",
+  "results": {
+    "long_snow_search": {
+      "path": "data\\validation\\snow_long_case_2026_10_20_v1\\solver\\report.json",
+      "sha256": "f27ca17e1819751b5dc6555fc55f197fd85af11b9de9daa21b4ed4a12a3a272e",
+      "scope": "One authored scene x 23 conditions, including 12 predeclared schema removals; contextualized source behavior and eight new scene rules.",
+      "metrics": {
+        "task_count": 23,
+        "status_counts": {
+          "solved": 2,
+          "unsolvable": 20,
+          "wall_time_limit": 1
+        }
+      }
+    },
+    "long_snow_execution": {
+      "path": "data\\validation\\snow_long_case_audit_2026_10_20_v2\\report.json",
+      "sha256": "f1e78cca0ab93d3217878fcd0ad0c9e9e01541979008c05190bd0f50c8283597",
+      "scope": "One authored scene x 23 conditions, including 12 predeclared schema removals; contextualized source behavior and eight new scene rules.",
+      "metrics": {
+        "task_count": 23,
+        "status_counts": {
+          "solved": 2,
+          "unsolvable": 20,
+          "wall_time_limit": 1
+        },
+        "primary_plan_length": 12,
+        "source_steps": 4,
+        "new_scenario_steps": 8,
+        "primary_state_count": 13,
+        "step_deletion_checks": 12,
+        "step_deletion_checks_failed_as_expected": 12,
+        "schema_removal_count": 12,
+        "schema_removal_status_counts": {
+          "unsolvable": 12
+        },
+        "semantic_limits": [
+          "Comb-based revival still does not test death cause; it is an explicit magical scenario assumption.",
+          "Role permissions, life consistency, object custody, tools, travel and preparation are authored additions, not learned automatically.",
+          "Common scenario rules remain available in single-source controls; these are not native-source goal tests."
+        ]
+      }
+    }
+  },
+  "excluded_pending": [
+    "Automatic scene/role induction",
+    "Independent narrative quality and semantic judgments",
+    "Untouched-source success",
+    "General shortest-plan guarantees"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "e89bac77086ca897e0b0536704e7ae99f5004ba2dee6e5e1407ddb3b3b37164e"
+}

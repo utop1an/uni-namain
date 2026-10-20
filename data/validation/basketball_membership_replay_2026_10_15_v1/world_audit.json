@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "problem_count": 10,
+  "rows": [
+    {
+      "id": "p1-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p10-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 44,
+      "observed_narrative_true_atoms": 44,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p2-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p3-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p4-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p5-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p6-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 43,
+      "observed_narrative_true_atoms": 43,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p7-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 43,
+      "observed_narrative_true_atoms": 43,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p8-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 44,
+      "observed_narrative_true_atoms": 44,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    },
+    {
+      "id": "p9-basketball",
+      "status": "PASS",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 42,
+      "extra_true_atoms": [],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": []
+    }
+  ],
+  "negative_control": {
+    "injected_atom": "d000__p_airborne(d000__c_badger)",
+    "audit": {
+      "status": "FAIL",
+      "expected_narrative_true_atoms": 42,
+      "observed_narrative_true_atoms": 43,
+      "extra_true_atoms": [
+        [
+          "d000__p_airborne",
+          [
+            "d000__c_badger"
+          ]
+        ]
+      ],
+      "missing_true_atoms": [],
+      "foreign_narrative_declarations": [
+        "d000__p_airborne(d000__c_badger)"
+      ]
+    },
+    "scope": "In-memory negative control; archived problem files unchanged"
+  },
+  "frozen_sha256": {
+    "data\\validation\\basketball_fixed_pool_2026_10_15_v1\\membership\\meta_domain.json": "0f3e388386f0f64aa1a90ba28300489236b335c3a6a21df82bbe987a7c3918ed",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\report.json": "c6017a49967d88113c6d077d16bfdf40e2b80d009a64bd873644a10429e0c1c9",
+    "C:\\anu\\uninamain\\audit_external_worlds.py": "79e8c2fd52e2fcc30a07aad97ccdebe2c39b1fa9479240d11ddb574962910136",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p1-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p1-basketball\\problem.pddl": "8f982814f5c98445263af6d0770b8435dfb6e505757ecfb585bd99df7e867e1b",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p1-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p1-basketball\\problem.pddl": "e8fce8d0db7cb691f9023154d470668454c85a507438141c79c99fb06cc799b0",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p10-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p10-basketball\\problem.pddl": "7852767c379d45d800df689054bdb3c63b4476060024421f3e1ce4f953a51139",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p10-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p10-basketball\\problem.pddl": "531c30ac84835838524a46d8817e279ee9a38f11bface37831dfe7da7e790b9e",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p2-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p2-basketball\\problem.pddl": "9e99e7a79d8a0358466b21455ac44b9a395bb6f5fe07d84745004273bf37f629",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p2-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p2-basketball\\problem.pddl": "c82dae74644b9c324df017c1601aeb16d3d8df36898ce409b326f25cda43742c",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p3-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p3-basketball\\problem.pddl": "a6009b2662ee66eb55b02416b31c201e53d80f42500c3d88d8fc40fd01305043",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p3-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p3-basketball\\problem.pddl": "44279e5c5d273a5db4fde4d55a80500520e5c550dd3c20f8a0e5655ccd344107",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p4-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p4-basketball\\problem.pddl": "46aedf4b2756b216e3e1dea4071da264bea6ce2e1f4b06c88c440452ffeeebcd",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p4-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p4-basketball\\problem.pddl": "f4e82ef3fffc4d3a445caf56db991923b331c1bf0ae031867a501a8650951354",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p5-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p5-basketball\\problem.pddl": "214c49b0a9efb5deac55e2d532cdf3e228d3941981d12daff9b53c2126c67451",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p5-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p5-basketball\\problem.pddl": "f72096e59ec1f1a8c32544a87d65a70367f5f2848a20791f52617ca478440e13",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p6-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p6-basketball\\problem.pddl": "807716fab1d76fda810849bd12ff9acf3a55ce1b3cbd17af262888abc55ea71a",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p6-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p6-basketball\\problem.pddl": "5bee45a3a81a16d75a38450bd4783bcefb15214edc3dfefae44cc6dde4aa4d2b",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p7-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p7-basketball\\problem.pddl": "5b2be818a8c2b44ac64b703ba879733aa9491b96a9759907299dbe2f908fe3e9",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p7-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p7-basketball\\problem.pddl": "334b135d47f8be28e23fbd45c77f35af213732a6cad3071328600a488166006a",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p8-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p8-basketball\\problem.pddl": "9d0a3f1483fa00d683076a2305c085c617ccc74d7da91b0f95e852d88dad8a8a",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p8-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p8-basketball\\problem.pddl": "272cc75af113819a543f5f95d73b8be9094fc6f21ac59f681c32fdb6de29c04d",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p9-basketball\\domain.pddl": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+    "data\\validation\\downward_basketball_native_2026_10_15_v1\\tasks\\p9-basketball\\problem.pddl": "4c0d0bec19d3fec5fd8394bd9a711a9e6a8a43ea9676298f007c0c5cd917c2b8",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p9-basketball\\domain.pddl": "b2af403e55963d123c8e679482e6aecbc2eddda421920c23285a980ed3be41e7",
+    "data\\validation\\basketball_membership_replay_2026_10_15_v1\\tasks\\p9-basketball\\problem.pddl": "cdb4766e4408de261095c5914a0269319aad08ddb0136309c669d2476bd1abd8"
+  },
+  "hashes_unchanged": true,
+  "scope": "Parsed initial-world correspondence plus absence of all foreign narrative declarations; type-membership facts explicitly separated; no story-quality claim"
+}

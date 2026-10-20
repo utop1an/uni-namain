@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_2e92dd94f09569f3",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_2e92dd94f09569f3",
+    "label": "complementary",
+    "right_from_left": [
+      2,
+      1
+    ],
+    "rationale": "The predicate 'reunited_with_father' (HANS_NP) describes a state of familial connection, specifically the act of being together with one's father. The predicate 'awake' (SNOW) describes a state of consciousness, indicating that an entity is not asleep. These predicates represent distinct aspects of an entity's situation: one relates to relationships and presence, the other to state of being. The 'reunited_with_father' predicate requires a specific entity ('?c') to be related to a father, while 'awake' simply requires an entity ('?e') to be conscious. They cannot be interchangeable because they describe fundamentally different properties. The action contexts further support this distinction: 'reunited_with_father' involves a specific relationship and its effect, while 'awake' is a state change with a different set of preconditions and effects. The 'awake' predicate is applied to different entities in different actions, while 'reunited_with_father' is applied to the same entity in the context of reuniting with the father. The action contexts demonstrate distinct effects and preconditions, solidifying their complementary relationship. The 'source' SNOW's 'awake' predicate is applied to different entities in different actions, while 'reunited_with_father' is applied to the same entity in the context of reuniting with the father.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "HANS_NP:action:return_home_and_reunite_with_father",
+        "quote": "(reunited_with_father ?h)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_cut_laces_rescue_snow_white",
+        "quote": "(awake ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_offer_snow_white_to_maintain_house",
+        "quote": "(awake ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "SNOW:action:dwarfs_return_and_discover_snow_white",
+        "quote": "(awake ?d)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_2e92dd94f09569f3"
+  ]
+}

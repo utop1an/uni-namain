@@ -1,0 +1,17 @@
+{
+  "status": "no_outcomes",
+  "mode": "initial_only",
+  "policy": "first_noninitial_states_in_bfs_order",
+  "scope": "Generated reachable outcomes, not success on specified goals or narrative-quality ranking",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 10,
+    "max_ground_actions": 100000,
+    "max_ground_fluents": 4,
+    "max_outcomes": 3
+  },
+  "states": 1,
+  "ground_candidates": 0,
+  "outcomes": [],
+  "stop_reason": "ground_fluent_limit"
+}

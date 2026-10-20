@@ -1,0 +1,31 @@
+{
+  "candidate_id": "pair_444e52e70f7a6796",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_444e52e70f7a6796",
+    "label": "uncertain",
+    "right_from_left": [
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "rationale": "The predicate 'fair' appears in both sources, but its usage and context differ significantly. In 'SNOW', 'fair' is used as a precondition and effect within actions related to character states (e.g., 'king_marries_stepmother', 'prince_marries_snow_white'). The actions involve characters being 'fair' or causing other entities to be 'fair'. In 'SOUP', 'anointed' is used to describe the state of an item ('sausage_skewer'), and it's an effect of an action. The 'anointed' predicate describes a specific item's state, not a general quality like 'fair'. The contexts are distinct; 'fair' relates to character attributes and relationships, while 'anointed' relates to item properties. The predicate declarations are different, and the parameters are different. Therefore, while both predicates use the word 'anointed' or 'fair', they represent distinct concepts and cannot be considered equivalent. The action contexts provide further evidence of this difference. The exact excerpts containing the predicate occurrence on BOTH sides are: (:action king_marries_stepmother :parameters (?k ?s - entity) :precondition (and (alive ?k) (alive ?s)) :effect (fair ?s)) and (:action prepare_soup_by_elf_effect :parameters (?m - entity) :precondition (and (holds ?m sausage_skewer) (anointed sausage_skewer) (at ?m kitchen)) :effect (soup_effect_created ?m))",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "SNOW:action:king_marries_stepmother",
+        "quote": "(fair ?s)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(anointed sausage_skewer)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_444e52e70f7a6796"
+  ]
+}

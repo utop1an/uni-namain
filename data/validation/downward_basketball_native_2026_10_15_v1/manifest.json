@@ -1,0 +1,107 @@
+{
+  "status": "frozen_before_search",
+  "planner": "Fast Downward",
+  "release": "26.6",
+  "alias": "lama-first",
+  "binary_sha256": "2918e08c4fbd98956f113291b569031042714dbf285a7fbfbee9147cfa35f677",
+  "version_file_sha256": "1e2d07fdaccde32193988a69f38d2b9e2e25406a45169551918b4578443e4b8e",
+  "returncodes_sha256": "bad96eaef6e0c8f27524215184b557dc35204bb62255119830179fedf1cd6693",
+  "alias_sha256": "0cf279d4e5b6366b33156167d6b9f77a20feea032b73ef63546e80785e5379d2",
+  "runner_sha256": "a7ea74504915586c28ada096d98a9969286b5896d8d7997417580f63b6bf2294",
+  "budget": {
+    "wall_seconds": 60,
+    "overall_cpu_seconds": 60,
+    "memory_mb": 4096
+  },
+  "tasks": [
+    {
+      "id": "p1-basketball",
+      "family": "Basketball",
+      "problem_id": "p1-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "8f982814f5c98445263af6d0770b8435dfb6e505757ecfb585bd99df7e867e1b"
+    },
+    {
+      "id": "p10-basketball",
+      "family": "Basketball",
+      "problem_id": "p10-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "7852767c379d45d800df689054bdb3c63b4476060024421f3e1ce4f953a51139"
+    },
+    {
+      "id": "p2-basketball",
+      "family": "Basketball",
+      "problem_id": "p2-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "9e99e7a79d8a0358466b21455ac44b9a395bb6f5fe07d84745004273bf37f629"
+    },
+    {
+      "id": "p3-basketball",
+      "family": "Basketball",
+      "problem_id": "p3-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "a6009b2662ee66eb55b02416b31c201e53d80f42500c3d88d8fc40fd01305043"
+    },
+    {
+      "id": "p4-basketball",
+      "family": "Basketball",
+      "problem_id": "p4-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "46aedf4b2756b216e3e1dea4071da264bea6ce2e1f4b06c88c440452ffeeebcd"
+    },
+    {
+      "id": "p5-basketball",
+      "family": "Basketball",
+      "problem_id": "p5-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "214c49b0a9efb5deac55e2d532cdf3e228d3941981d12daff9b53c2126c67451"
+    },
+    {
+      "id": "p6-basketball",
+      "family": "Basketball",
+      "problem_id": "p6-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "807716fab1d76fda810849bd12ff9acf3a55ce1b3cbd17af262888abc55ea71a"
+    },
+    {
+      "id": "p7-basketball",
+      "family": "Basketball",
+      "problem_id": "p7-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "5b2be818a8c2b44ac64b703ba879733aa9491b96a9759907299dbe2f908fe3e9"
+    },
+    {
+      "id": "p8-basketball",
+      "family": "Basketball",
+      "problem_id": "p8-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "9d0a3f1483fa00d683076a2305c085c617ccc74d7da91b0f95e852d88dad8a8a"
+    },
+    {
+      "id": "p9-basketball",
+      "family": "Basketball",
+      "problem_id": "p9-basketball",
+      "representation": "packaged_native",
+      "domain_sha256": "312c564985b608ae0a74f37db7d4829c7cd57349e09184281e0b84dd3685bdc1",
+      "problem_sha256": "4c0d0bec19d3fec5fd8394bd9a711a9e6a8a43ea9676298f007c0c5cd917c2b8"
+    }
+  ],
+  "task_count": 10,
+  "mode": "external_source_preservation",
+  "task_bundle_origin": "data\\validation\\basketball_native_tasks_2026_10_15_v1",
+  "task_bundle_manifest_sha256": "f930d4535eb75e421c6cf2c5539b9e7a05fdc4878582744b14e14552dacd1213",
+  "composed_origin": null,
+  "probe_origin": null,
+  "probe_manifest_sha256": null,
+  "scope": "Solver reference coverage; no model repair or semantic/narrative quality claim",
+  "timing_caveat": "Concurrent workstation workloads; descriptive wall times only"
+}

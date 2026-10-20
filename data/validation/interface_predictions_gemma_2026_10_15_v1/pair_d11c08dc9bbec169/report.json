@@ -1,0 +1,48 @@
+{
+  "candidate_id": "pair_d11c08dc9bbec169",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_d11c08dc9bbec169",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The `invited` predicate in MUSI describes an invitation extended by one entity to another, while the `has` predicate in PUSS describes possession of an item by an entity. These predicates represent distinct relationships. The `invited` predicate signifies a request or offer, whereas `has` denotes ownership. The action contexts demonstrate this difference: `invited` is used to establish invitations, while `has` is used to describe ownership relationships. The `invite_*` actions create invitations, and the `agreed` effect confirms the invitation. Conversely, the `has` actions describe what entities own. The two predicates describe fundamentally different aspects of the world, and therefore are complementary. The arguments `?inviter` and `?invitee` in `invited` represent the inviter and invitee, respectively, while `?e` and `?i` in `has` represent the entity and item, respectively. The different action contexts further solidify this distinction.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:buy_boots",
+        "quote": "(has ?puss ?boots)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:cat_catch_rabbits",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:give_bag_to_cat",
+        "quote": "(has ?puss ?bag)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(has ?jack ?suit)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:cat_agrees",
+        "quote": "(invited ?donkey ?cat)"
+      },
+      {
+        "side": 0,
+        "ref": "MUSI:action:cock_agrees",
+        "quote": "(invited ?donkey ?cock)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_d11c08dc9bbec169"
+  ]
+}

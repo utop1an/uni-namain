@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_93641b9b0488b68a",
+  "label": "complementary",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate `owned_by` indicates possession, while `has` indicates a relationship of containing or possessing. `owned_by` specifies the owner of an item, while `has` specifies that an entity possesses an item. These predicates describe different aspects of possession. The action contexts for `has` demonstrate how it is used to describe the possession of items by entities, while the action contexts for `owned_by` are not present. The `owned_by` predicate would typically be used to describe the ownership of an item by an entity, whereas `has` describes a relationship of containing or possessing. The two predicates are complementary because they describe different facets of possession. The use of `has` in the FOUR_NP narrative focuses on the relationship between entities and items, while `owned_by` would be used to describe the ownership of an item by an entity. The action contexts for `has` demonstrate how it is used to describe the possession of items by entities, while the action contexts for `owned_by` are not present.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:count_eggs",
+      "quote": "(has ?a telescope)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:fetch_eggs",
+      "quote": "(has ?t eggs)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:learn_astronomer_trade",
+      "quote": "(has ?b telescope)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:learn_hunter_trade",
+      "quote": "(has ?b gun)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:learn_tailor_trade",
+      "quote": "(has ?b needle)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:locate_princess",
+      "quote": "(has ?a telescope)"
+    }
+  ]
+}

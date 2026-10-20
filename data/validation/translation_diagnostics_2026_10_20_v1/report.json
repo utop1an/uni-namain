@@ -1,0 +1,229 @@
+{
+  "status": "incomplete",
+  "task_count": 5,
+  "rows": [
+    {
+      "id": "full_pool_CHIC_NP",
+      "exit_code": 24,
+      "sampling": null
+    },
+    {
+      "id": "full_pool_ACCO",
+      "exit_code": 24,
+      "sampling": null
+    },
+    {
+      "id": "graph_closure_CHIC_NP",
+      "exit_code": 24,
+      "sampling": null
+    },
+    {
+      "id": "world_selected_CHIC_NP",
+      "exit_code": 0,
+      "sampling": {
+        "status": "translation_complete",
+        "scope": "Instrumented translator-only diagnostic; excluded from planning-success counts and timing comparisons",
+        "wall_budget_seconds": 20,
+        "memory_mb": 4096,
+        "sampling_interval_seconds": 0.01,
+        "elapsed_seconds": 0.20206071300003714,
+        "samples": 16,
+        "top_frames": [
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "_path_stat",
+            "samples": 4
+          },
+          {
+            "file": "pddl_file.py",
+            "function": "parse_pddl_file",
+            "samples": 2
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "get_data",
+            "samples": 2
+          },
+          {
+            "file": "__init__.py",
+            "function": "search_function",
+            "samples": 1
+          },
+          {
+            "file": "latin_1.py",
+            "function": "decode",
+            "samples": 1
+          },
+          {
+            "file": "parsing_functions.py",
+            "function": "check_for_duplicates",
+            "samples": 1
+          },
+          {
+            "file": "build_model.py",
+            "function": "unify",
+            "samples": 1
+          },
+          {
+            "file": "conditions.py",
+            "function": "__hash__",
+            "samples": 1
+          },
+          {
+            "file": "simplify.py",
+            "function": "register_variable",
+            "samples": 1
+          },
+          {
+            "file": "codecs.py",
+            "function": "__init__",
+            "samples": 1
+          },
+          {
+            "file": "sas_tasks.py",
+            "function": "output",
+            "samples": 1
+          }
+        ],
+        "stack_presence": [
+          {
+            "file": "main.py",
+            "function": "main",
+            "samples": 16
+          },
+          {
+            "file": "sample_downward_translation.py",
+            "function": "run",
+            "samples": 16
+          },
+          {
+            "file": "sample_downward_translation.py",
+            "function": "<module>",
+            "samples": 16
+          },
+          {
+            "file": "main.py",
+            "function": "pddl_to_sas",
+            "samples": 9
+          },
+          {
+            "file": "instantiate.py",
+            "function": "explore",
+            "samples": 7
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_find_and_load",
+            "samples": 6
+          },
+          {
+            "file": "pddl_to_prolog.py",
+            "function": "split_rules",
+            "samples": 6
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_handle_fromlist",
+            "samples": 6
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_call_with_frames_removed",
+            "samples": 6
+          },
+          {
+            "file": "pddl_to_prolog.py",
+            "function": "translate",
+            "samples": 6
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_find_and_load_unlocked",
+            "samples": 6
+          },
+          {
+            "file": "pddl_file.py",
+            "function": "open",
+            "samples": 5
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_load_unlocked",
+            "samples": 5
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "exec_module",
+            "samples": 5
+          },
+          {
+            "file": "pddl_file.py",
+            "function": "parse_pddl_file",
+            "samples": 4
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "_path_stat",
+            "samples": 4
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "get_code",
+            "samples": 4
+          },
+          {
+            "file": "split_rules.py",
+            "function": "<module>",
+            "samples": 3
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "find_spec",
+            "samples": 2
+          },
+          {
+            "file": "<frozen importlib._bootstrap>",
+            "function": "_find_spec",
+            "samples": 2
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "_get_spec",
+            "samples": 2
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "path_stats",
+            "samples": 2
+          },
+          {
+            "file": "<frozen importlib._bootstrap_external>",
+            "function": "get_data",
+            "samples": 2
+          },
+          {
+            "file": "__init__.py",
+            "function": "search_function",
+            "samples": 1
+          },
+          {
+            "file": "lisp_parser.py",
+            "function": "parse_nested_list",
+            "samples": 1
+          }
+        ],
+        "current_action_samples": {},
+        "grounded_actions": null,
+        "grounded_actions_by_schema": {}
+      }
+    },
+    {
+      "id": "world_selected_HANS_NP",
+      "exit_code": 24,
+      "sampling": null
+    }
+  ],
+  "manifest_sha256": "f9fb187b3759723663a9c714a26f4dba2ce45cb2f94bbdb43b25461ce8410f02",
+  "hashes_unchanged": true,
+  "scope": "5 instrumented translator-only calls; never counted as planning trials"
+}

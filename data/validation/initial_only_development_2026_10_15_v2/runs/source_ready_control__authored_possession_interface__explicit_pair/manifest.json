@@ -1,0 +1,104 @@
+{
+  "selection": {
+    "policy": "explicit_sources",
+    "selected": [
+      "ACCO",
+      "BIRT"
+    ],
+    "excluded": [
+      "BUFF",
+      "CHIC_NP",
+      "FOUR_NP",
+      "HANS_NP",
+      "JACK_NP",
+      "MUSI",
+      "NAUG",
+      "PIGS_NP",
+      "PUSS",
+      "REMA_NP",
+      "SNOW",
+      "SOUP",
+      "WOE"
+    ],
+    "source_reasons": {
+      "ACCO": [
+        "explicit_request"
+      ],
+      "BIRT": [
+        "explicit_request"
+      ],
+      "BUFF": [
+        "outside_query_and_dependency_closure"
+      ],
+      "CHIC_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "FOUR_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "HANS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "JACK_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "MUSI": [
+        "outside_query_and_dependency_closure"
+      ],
+      "NAUG": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PIGS_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "PUSS": [
+        "outside_query_and_dependency_closure"
+      ],
+      "REMA_NP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SNOW": [
+        "outside_query_and_dependency_closure"
+      ],
+      "SOUP": [
+        "outside_query_and_dependency_closure"
+      ],
+      "WOE": [
+        "outside_query_and_dependency_closure"
+      ]
+    },
+    "relevant_action_references_for_explanation_only": [],
+    "action_subset_selection": false,
+    "optimal_or_minimal_subset_claim": false,
+    "scope": "Unsigned predicate dependency over-approximation; no reachability or semantic-equivalence claim",
+    "omitted_alignment_groups": []
+  },
+  "solver": "typed_cartesian",
+  "catalog_sha256": "2f0bb32ececa826fc85a8a9fb12fb1f9a960eff12bbb9a410d25c3ba0ac5ad83",
+  "budget": {
+    "max_states": 5000,
+    "max_depth": 3,
+    "max_ground_actions": 100000,
+    "max_outcomes": 3,
+    "max_ground_fluents": 100000,
+    "seconds": 60
+  },
+  "merged_before_planning": true,
+  "domain_sha256": "0c6b7493a54dde7c628ea0a2a07610cb5f7495cb6716f3204cd474390bef2e0a",
+  "problem_sha256": "5325b9ca76e3027c32d86d3017c94dcbc4012522a6b4f062daa477b639f4b891",
+  "implementation_sha256": {
+    "run_narrative_pipeline.py": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
+    "rcnc/narrative_pipeline.py": "03a73f240e6864262219083de128dd9aa8a19a782e701bb2a2e0b94235bc2a5c",
+    "rcnc/merged_planning.py": "3ec67dd62cbcc9ad62033fad6bad7298d9fb9cca894212a567772d8d8adf9f20",
+    "rcnc/validation.py": "0c833f01fe7281bb00961a7a69e42027c8b8a45f6071f4c34cf51459ab87d164",
+    "build_narrative_union.py": "dda6e1ab96ac1e15c49e7cbefc1a915fc31f3c65cabda1f235069af060ced939",
+    "merge_domains.py": "930c0a2e5a03d2ed224237bff5f0b0f5ddfcb41683c1bd3ac8a88676971a05e9",
+    "pddl_checks.py": "148d215f738c485c69c50792e649ead84162dee3a95edc50e724e4a019030faa",
+    "rcnc/heuristic_planning.py": "e68e687426e7afe823d08b673ce41f6eb74c771d19881dba04e7b420f30636fe",
+    "rcnc/outcome_planning.py": "e9a08be4c43ca998144cdf47e0d1693257b6159ea394eb42e34789b14c6c228d",
+    "build_aligned_domain.py": "9bd64c81f18cb850fc5742e8ae66126fdbd35a26e67d7c0b5dc8088ece4ecfb2",
+    "rcnc/domain_catalog.py": "83ceba2120bdabc863ff1e26773b740994e5ee8c5349e835593203bf40417e8a",
+    "rcnc/grounding.py": "b0069974dd9d1254ff176f7f67ebbb359d0f72037fb97c81fb1ed2560b846931",
+    "rcnc/state_grounding.py": "d35db3d1fb1acbffe0a2a1ac47a91e31667199cbc0518db303480fec48f40911"
+  }
+}

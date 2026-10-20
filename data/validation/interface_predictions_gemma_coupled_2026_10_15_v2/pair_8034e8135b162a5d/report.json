@@ -1,0 +1,40 @@
+{
+  "candidate_id": "pair_8034e8135b162a5d",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_8034e8135b162a5d",
+    "label": "complementary",
+    "right_from_left": null,
+    "rationale": "The predicates 'owned_by' and 'wearing' describe different relationships between entities and items. 'owned_by' indicates possession, while 'wearing' indicates an item is being worn by an entity. These relationships represent distinct properties of an item and its associated entity. The action contexts further support this by demonstrating how 'wearing' is an effect of having an item, while 'owned_by' is a fundamental relationship. The 'owned_by' predicate describes ownership, while 'wearing' describes a state of being. The action 'master_wear_suit' shows how an item can be 'wearing' on an entity, but this does not imply ownership. Therefore, they are complementary.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      },
+      {
+        "side": 1,
+        "ref": "PUSS:action:master_wear_suit",
+        "quote": "(wearing ?jack ?suit)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_8034e8135b162a5d"
+  ]
+}

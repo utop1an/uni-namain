@@ -1,0 +1,43 @@
+(define (domain pizza)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types CONTAINER DOUGH INGREDIENT LIQUID OVEN PIZZA basilicum bottle bowl gorgonzola mozzarella mushrooms olive_oil olives oregano oven peperoni pepper pizza pizza_dough plate salami salt tomato_sauce)
+    (:predicates 
+    (containSolidTopping ?pizza - PIZZA)  
+    (inContainer ?ingredient - INGREDIENT ?container - CONTAINER)  
+    (ingredientOnPizza ?ingredient - INGREDIENT ?pizza - PIZZA)  
+    (liquidInContainer ?sauce - LIQUID ?container - CONTAINER)  
+    (liquidOnPizza ?sauce - LIQUID ?pizza - PIZZA)  
+    (ovenWarm ?oven - OVEN)  
+    (pizzaBaked ?pizza - PIZZA)  
+    (pizzaInOven ?pizza - PIZZA ?oven - OVEN))
+    (:action addIngredient
+        :parameters (?ingredient - INGREDIENT ?container - CONTAINER ?pizza - PIZZA)
+        :precondition (and (inContainer ?ingredient ?container) (not (ingredientOnPizza ?ingredient ?pizza)))
+        :effect (and (ingredientOnPizza ?ingredient ?pizza) (containSolidTopping ?pizza))
+    )
+     (:action addTomatoSauce
+        :parameters (?sauce - LIQUID ?container - CONTAINER ?pizza - PIZZA)
+        :precondition (liquidInContainer ?sauce ?container)
+        :effect (liquidOnPizza ?sauce ?pizza)
+    )
+     (:action bakePizza
+        :parameters (?pizza - PIZZA ?oven - OVEN)
+        :precondition (pizzaInOven ?pizza ?oven)
+        :effect (pizzaBaked ?pizza)
+    )
+     (:action drizzleOliveOil
+        :parameters (?oil - LIQUID ?container - CONTAINER ?pizza - PIZZA)
+        :precondition (and (liquidInContainer ?oil ?container) (containSolidTopping ?pizza))
+        :effect (liquidOnPizza ?oil ?pizza)
+    )
+     (:action removePizza
+        :parameters (?pizza - PIZZA ?oven - OVEN)
+        :precondition (and (pizzaBaked ?pizza) (pizzaInOven ?pizza ?oven))
+        :effect (not (pizzaInOven ?pizza ?oven))
+    )
+     (:action transferToOven
+        :parameters (?oven - OVEN ?pizza - PIZZA)
+        :precondition (ovenWarm ?oven)
+        :effect (pizzaInOven ?pizza ?oven)
+    )
+)

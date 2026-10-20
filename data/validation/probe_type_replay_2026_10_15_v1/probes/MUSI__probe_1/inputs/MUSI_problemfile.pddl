@@ -1,0 +1,1 @@
+(define (problem The_Musicians_Of_Bremen_problem) (:domain The_Musicians_Of_Bremen) (:init (at ass road_to_bremen) (at hound road_to_bremen) (at cat road_to_bremen) (at cock road_to_bremen) (at robber robbers_cottage) (at captain robbers_cottage) (at messenger robbers_cottage) (light_on robbers_cottage)) (:goal (and (agreed messenger captain))))

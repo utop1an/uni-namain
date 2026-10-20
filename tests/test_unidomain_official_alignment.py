@@ -6,14 +6,14 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from merge_domains import Domain, Predicate
-from unidomain_ollama_fusion import (
+from rcnc.pddl import Domain, Predicate
+from unidomain.fusion import (
     FusionRuntime,
     parse_action,
     predicate_text,
-    run,
     update_actions_for_predicate,
 )
+from unidomain.pipeline import run
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -141,7 +141,7 @@ class OfficialFusionAlignmentTests(unittest.TestCase):
                 ),
             )
 
-            def fake_parse(path, apply_reviewed_semantics=False):
+            def fake_parse(path):
                 return empty_domain(path.name.removesuffix("_domainfile.pddl"))
 
             def fake_fuse(left, right, runtime):
@@ -150,11 +150,11 @@ class OfficialFusionAlignmentTests(unittest.TestCase):
                 return merged
 
             with (
-                patch("unidomain_ollama_fusion.parse_domain", side_effect=fake_parse),
-                patch("unidomain_ollama_fusion.fuse_pair", side_effect=fake_fuse),
-                patch("unidomain_ollama_fusion.write_node"),
-                patch("unidomain_ollama_fusion.write_domain"),
-                patch("unidomain_ollama_fusion.validate_domain", return_value=[]),
+                patch("unidomain.pipeline.parse_domain", side_effect=fake_parse),
+                patch("unidomain.pipeline.fuse_pair", side_effect=fake_fuse),
+                patch("unidomain.pipeline.write_node"),
+                patch("unidomain.pipeline.write_domain"),
+                patch("unidomain.pipeline.validate_domain", return_value=[]),
             ):
                 run(input_dir, base / "output", runtime=runtime, num_workers=2)
 

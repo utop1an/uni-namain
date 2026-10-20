@@ -1,0 +1,205 @@
+{
+  "source": "data\\validation\\meeting_matched_2026_10_20_v1\\inputs\\HANS_NP_domainfile.pddl",
+  "sha256": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+  "constant_counts_by_type": {
+    "item": 14,
+    "entity": 7,
+    "location": 13
+  },
+  "actions": [
+    {
+      "schema": "collect_treasure",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?pearl": "item",
+        "?precious_stone": "item",
+        "?cottage": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 124852,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "hear_bird_and_follow_to_witch_house",
+      "parameter_types": {
+        "?bird": "entity",
+        "?g": "entity",
+        "?h": "entity",
+        "?branch": "location",
+        "?cottage": "location"
+      },
+      "unused_parameters": [
+        "?bird"
+      ],
+      "constant_only_typed_binding_upper_bound": 57967,
+      "unused_parameter_multiplicity": 7
+    },
+    {
+      "schema": "witch_captures_children",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?witch": "entity",
+        "?cottage": "location",
+        "?stable": "location"
+      },
+      "unused_parameters": [
+        "?witch"
+      ],
+      "constant_only_typed_binding_upper_bound": 57967,
+      "unused_parameter_multiplicity": 7
+    },
+    {
+      "schema": "abandon_children_in_forest",
+      "parameter_types": {
+        "?father": "entity",
+        "?g": "entity",
+        "?h": "entity",
+        "?mother": "entity",
+        "?forest": "location"
+      },
+      "unused_parameters": [
+        "?father",
+        "?mother"
+      ],
+      "constant_only_typed_binding_upper_bound": 31213,
+      "unused_parameter_multiplicity": 49
+    },
+    {
+      "schema": "leave_children_at_fire",
+      "parameter_types": {
+        "?father": "entity",
+        "?g": "entity",
+        "?h": "entity",
+        "?mother": "entity",
+        "?forest": "location"
+      },
+      "unused_parameters": [
+        "?father",
+        "?mother"
+      ],
+      "constant_only_typed_binding_upper_bound": 31213,
+      "unused_parameter_multiplicity": 49
+    },
+    {
+      "schema": "push_witch_into_oven",
+      "parameter_types": {
+        "?g": "entity",
+        "?witch": "entity",
+        "?oven": "item",
+        "?room": "location"
+      },
+      "unused_parameters": [
+        "?oven"
+      ],
+      "constant_only_typed_binding_upper_bound": 8918,
+      "unused_parameter_multiplicity": 14
+    },
+    {
+      "schema": "follow_pebbles_home",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?home": "location",
+        "?path_loc": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 8281,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "follow_breadcrumbs_home",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?home": "location",
+        "?path_loc": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 8281,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "escape_from_stable",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?cottage": "location",
+        "?stable": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 8281,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "call_duck_for_crossing",
+      "parameter_types": {
+        "?duck": "entity",
+        "?g": "entity",
+        "?h": "entity",
+        "?lake": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 4459,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "return_home_and_reunite_with_father",
+      "parameter_types": {
+        "?father": "entity",
+        "?g": "entity",
+        "?h": "entity",
+        "?father_house": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 4459,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "drop_pebble_on_path",
+      "parameter_types": {
+        "?h": "entity",
+        "?peb": "item",
+        "?path_loc": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 1274,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "drop_breadcrumb_on_path",
+      "parameter_types": {
+        "?h": "entity",
+        "?crumb": "item",
+        "?path_loc": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 1274,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "wander_forest_seeking_way_out",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?forest": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 637,
+      "unused_parameter_multiplicity": 1
+    },
+    {
+      "schema": "enter_witch_house",
+      "parameter_types": {
+        "?g": "entity",
+        "?h": "entity",
+        "?cottage": "location"
+      },
+      "unused_parameters": [],
+      "constant_only_typed_binding_upper_bound": 637,
+      "unused_parameter_multiplicity": 1
+    }
+  ],
+  "scope": "Static constant-only products; these are not independent reachability or success measurements"
+}

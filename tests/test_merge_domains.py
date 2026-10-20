@@ -2,7 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from merge_domains import parse_domain, parse_sexpr, run, validate_domain
+from rcnc.pddl import parse_sexpr, validate_domain
+from archive.domain_merge import parse_domain, run
 
 
 ROOT = Path(__file__).resolve().parents[1]

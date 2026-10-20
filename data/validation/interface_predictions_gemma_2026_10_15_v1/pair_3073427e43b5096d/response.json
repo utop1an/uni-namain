@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_3073427e43b5096d",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicates `at` are used to express location. In both CHIC_NP and HANS_NP, the predicate `at` is declared with the same signature: `(at ?e - entity ?l - location)`. This means that both sources represent the same concept of an entity being located at a location. The action contexts demonstrate this by using `at` to specify the location of entities in various actions. The differing action names and source origins do not change the fundamental meaning of the predicate; it simply describes the spatial relationship between an entity and a location. The arguments `?e` and `?l` represent the same concept of an entity and a location respectively, regardless of the source. The provided action contexts confirm this by showing how both sources use `at` to define the location of entities in their respective actions. The numerical indices (1 and 0) indicate the order of the arguments in the predicate, which is consistent across both sources. The use of `right_from_left[j]` is used to indicate the argument order, where j=1 is the right argument and 0 is the left argument. The fact that the predicate is used identically in both sources, with the same parameters and effect, strongly suggests equivalence. The different action contexts simply demonstrate how this equivalence is applied in different scenarios.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:be_eaten_by_fox",
+      "quote": "(at ?e ?l)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:go_to_wood",
+      "quote": "(at ?e Wood)"
+    },
+    {
+      "side": 0,
+      "ref": "CHIC_NP:action:meet_character",
+      "quote": "(at ?e1 ?l)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:abandon_children_in_forest",
+      "quote": "(at ?h ?forest)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:call_duck_for_crossing",
+      "quote": "(at ?h ?lake)"
+    },
+    {
+      "side": 1,
+      "ref": "HANS_NP:action:collect_treasure",
+      "quote": "(at ?h ?cottage)"
+    }
+  ]
+}

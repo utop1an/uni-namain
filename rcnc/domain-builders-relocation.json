@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "files": [
+    {
+      "original_path": "build_narrative_union.py",
+      "implementation_path": "rcnc/domain_union.py",
+      "original_sha256": "45bd45c905ab47913210fedb7c12284147ab5a740796d299904f8f1a5f1ec714"
+    },
+    {
+      "original_path": "build_aligned_domain.py",
+      "implementation_path": "rcnc/aligned_domain.py",
+      "original_sha256": "9028277a7f84bdb172c6ed2fe30af57540c808e14213f1724868b2affe7dd93b"
+    }
+  ],
+  "shared_helpers": "rcnc/domain_building.py",
+  "cli": "rcnc/domain_builder_cli.py",
+  "scope": "Preserve namespace, membership, binding and output contracts; existing historical data and locks unchanged."
+}

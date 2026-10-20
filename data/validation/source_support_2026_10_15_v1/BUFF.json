@@ -1,0 +1,198 @@
+{
+  "status": "predicate_relaxation_proves_unreachable",
+  "initial_predicates": [
+    "crowd_present",
+    "on_platform",
+    "reward_announced",
+    "theater_opened"
+  ],
+  "reachable_predicates": [
+    "audience_calls_for_kickout",
+    "audience_demands_shake_cloak",
+    "countryman_declares_intent",
+    "countryman_performs_with_real_pig",
+    "crowd_present",
+    "imitates_pig",
+    "on_platform",
+    "performs_without_apparatus",
+    "pig_revealed",
+    "reward_announced",
+    "theater_opened"
+  ],
+  "unreachable_goal_atoms": [
+    "(cloak_shaken buffoon cloak)",
+    "(applause_given audience buffoon)"
+  ],
+  "goal_may_hold_in_relaxation": false,
+  "layers": [
+    {
+      "actions": [
+        "audience_demand_shake_cloak_for_pig",
+        "countryman_declare_intent_to_repeat_trick",
+        "open_theater_and_announce_reward",
+        "perform_pig_imitation_without_apparatus"
+      ],
+      "new_predicates": [
+        "audience_demands_shake_cloak",
+        "countryman_declares_intent",
+        "imitates_pig",
+        "performs_without_apparatus"
+      ]
+    },
+    {
+      "actions": [
+        "countryman_perform_pig_imitation_with_real_pig"
+      ],
+      "new_predicates": [
+        "countryman_performs_with_real_pig"
+      ]
+    },
+    {
+      "actions": [
+        "audience_criticize_countryman_and_call_for_kickout"
+      ],
+      "new_predicates": [
+        "audience_calls_for_kickout"
+      ]
+    },
+    {
+      "actions": [
+        "countryman_reveal_real_pig"
+      ],
+      "new_predicates": [
+        "pig_revealed"
+      ]
+    }
+  ],
+  "unfired_actions": [
+    {
+      "action": "audience_applaud_performance",
+      "condition": [
+        "and",
+        [
+          "cloak_shaken",
+          "?performer",
+          "?cloak"
+        ],
+        [
+          "not",
+          [
+            "pig_found",
+            "?performer",
+            "?pig"
+          ]
+        ]
+      ],
+      "adds": [
+        "applause_given"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "action": "audience_applaud_performance",
+      "condition": [
+        "and",
+        [
+          "cloak_shaken",
+          "?performer",
+          "?cloak"
+        ],
+        [
+          "not",
+          [
+            "pig_found",
+            "?performer",
+            "?pig"
+          ]
+        ]
+      ],
+      "adds": [
+        "applause_given"
+      ]
+    },
+    {
+      "action": "audience_criticize_countryman_and_call_for_kickout",
+      "condition": [
+        "countryman_performs_with_real_pig",
+        "?countryman",
+        "?pig"
+      ],
+      "adds": [
+        "audience_calls_for_kickout"
+      ]
+    },
+    {
+      "action": "audience_demand_shake_cloak_for_pig",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "audience_demands_shake_cloak"
+      ]
+    },
+    {
+      "action": "countryman_declare_intent_to_repeat_trick",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "countryman_declares_intent"
+      ]
+    },
+    {
+      "action": "countryman_perform_pig_imitation_with_real_pig",
+      "condition": [
+        "and",
+        [
+          "countryman_declares_intent",
+          "?countryman"
+        ],
+        [
+          "on_platform",
+          "?countryman",
+          "?platform"
+        ]
+      ],
+      "adds": [
+        "countryman_performs_with_real_pig"
+      ]
+    },
+    {
+      "action": "countryman_reveal_real_pig",
+      "condition": [
+        "audience_calls_for_kickout",
+        "?audience",
+        "?countryman"
+      ],
+      "adds": [
+        "pig_revealed"
+      ]
+    },
+    {
+      "action": "open_theater_and_announce_reward",
+      "condition": [
+        "and"
+      ],
+      "adds": [
+        "reward_announced",
+        "theater_opened"
+      ]
+    },
+    {
+      "action": "perform_pig_imitation_without_apparatus",
+      "condition": [
+        "on_platform",
+        "?performer",
+        "?platform"
+      ],
+      "adds": [
+        "imitates_pig",
+        "performs_without_apparatus"
+      ]
+    }
+  ],
+  "source_domain_sha256": "4cf43d796cdccb96bc43a040a432e318d589a9cbd423d42322e0dee7f247d1bb",
+  "source_problem_sha256": "0f77eeb9ba8e21ae142ce9747375ef63d44880b8b0693255c094b3bdcedf3672",
+  "scope": "Predicate-symbol over-approximation; negative/quantified constraints may be ignored; no solvability inference from a reachable abstract goal"
+}

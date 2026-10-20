@@ -1,0 +1,176 @@
+{
+  "status": "translation_complete",
+  "scope": "Instrumented translator-only diagnostic; excluded from planning-success counts and timing comparisons",
+  "wall_budget_seconds": 20,
+  "memory_mb": 4096,
+  "sampling_interval_seconds": 0.01,
+  "elapsed_seconds": 0.05481976499999064,
+  "samples": 5,
+  "top_frames": [
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_load_unlocked",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "_path_stat",
+      "samples": 1
+    },
+    {
+      "file": "build_model.py",
+      "function": "generate",
+      "samples": 1
+    },
+    {
+      "file": "options.py",
+      "function": "get_options",
+      "samples": 1
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "output",
+      "samples": 1
+    }
+  ],
+  "stack_presence": [
+    {
+      "file": "sample_downward_translation.py",
+      "function": "run",
+      "samples": 5
+    },
+    {
+      "file": "sample_downward_translation.py",
+      "function": "<module>",
+      "samples": 5
+    },
+    {
+      "file": "main.py",
+      "function": "main",
+      "samples": 5
+    },
+    {
+      "file": "main.py",
+      "function": "pddl_to_sas",
+      "samples": 4
+    },
+    {
+      "file": "instantiate.py",
+      "function": "explore",
+      "samples": 3
+    },
+    {
+      "file": "sample_downward_translation.py",
+      "function": "explore",
+      "samples": 3
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_find_and_load",
+      "samples": 2
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_call_with_frames_removed",
+      "samples": 2
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_handle_fromlist",
+      "samples": 2
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_find_and_load_unlocked",
+      "samples": 2
+    },
+    {
+      "file": "pddl_to_prolog.py",
+      "function": "translate",
+      "samples": 2
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_load_unlocked",
+      "samples": 2
+    },
+    {
+      "file": "pddl_to_prolog.py",
+      "function": "split_rules",
+      "samples": 2
+    },
+    {
+      "file": "split_rules.py",
+      "function": "<module>",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "_path_is_mode_type",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "exec_module",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_find_spec",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "_path_stat",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "_get_spec",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "find_spec",
+      "samples": 1
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "function": "_path_isfile",
+      "samples": 1
+    },
+    {
+      "file": "build_model.py",
+      "function": "generate",
+      "samples": 1
+    },
+    {
+      "file": "build_model.py",
+      "function": "unify",
+      "samples": 1
+    },
+    {
+      "file": "build_model.py",
+      "function": "compute_model",
+      "samples": 1
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_operator_aux",
+      "samples": 1
+    }
+  ],
+  "current_action_samples": {
+    "d000__a_meet_character": 2
+  },
+  "grounded_actions": 371,
+  "grounded_actions_by_schema": {
+    "d000__a_meet_character": 162,
+    "d000__a_inform_about_sky_fall": 81,
+    "d000__a_decide_to_tell_king": 81,
+    "d000__a_be_eaten_by_fox": 18,
+    "d000__a_go_to_wood": 10,
+    "d000__a_turn_back": 10,
+    "d000__a_follow_fox": 9
+  }
+}

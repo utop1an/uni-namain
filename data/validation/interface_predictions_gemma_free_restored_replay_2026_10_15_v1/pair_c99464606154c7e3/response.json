@@ -1,0 +1,41 @@
+{
+  "candidate_id": "pair_c99464606154c7e3",
+  "label": "equivalent",
+  "right_from_left": [
+    1,
+    0
+  ],
+  "rationale": "The predicate 'has' appears in both ACCO and FOUR_NP narratives. In ACCO, 'has' is used to describe relationships between objects like kettles, exhibitions, and items. In FOUR_NP, 'has' describes possession of items like telescopes, eggs, and ships by various entities. The arguments 'e' and 'i' represent entities and items respectively, and the action contexts demonstrate that 'has' is consistently used to express possession in both narratives. The core meaning of 'has' – indicating ownership or presence – is preserved across the two sources. The action contexts highlight that 'has' is used to describe the state of objects and entities, which aligns with the predicate's definition. The different entities and items involved do not alter the fundamental meaning of the predicate. The argument roles are interchangeable; the left argument is the entity and the right argument is the item, regardless of the specific object involved.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:arrange_exhibition",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:count_eggs",
+      "quote": "(has ?a eggs)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:hang_kettle",
+      "quote": "(has ?pr ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:fetch_eggs",
+      "quote": "(has ?t eggs)"
+    },
+    {
+      "side": 0,
+      "ref": "ACCO:action:kettle_transform_to_fur_badger",
+      "quote": "(has ?t ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "FOUR_NP:action:learn_astronomer_trade",
+      "quote": "(has ?b telescope)"
+    }
+  ]
+}

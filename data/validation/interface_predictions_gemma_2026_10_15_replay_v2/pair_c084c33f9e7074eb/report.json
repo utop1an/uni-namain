@@ -1,0 +1,49 @@
+{
+  "candidate_id": "pair_c084c33f9e7074eb",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_c084c33f9e7074eb",
+    "label": "complementary",
+    "right_from_left": [
+      1,
+      0
+    ],
+    "rationale": "The predicate `located` in ACCO and `at` in SOUP both express spatial relationships between an entity and a location. However, they differ in their semantic nuance. `located` implies a specific, potentially fixed location, while `at` is more general, indicating presence within a location. The ACCO actions often involve precise location specifications (e.g., `morinji`, `jhosiu`), while the SOUP actions use more abstract location terms (e.g., `kitchen`, `library`). The action contexts demonstrate this difference: ACCO actions frequently use `located` to specify the final location of an object after a transformation or movement, whereas SOUP uses `at` to describe the initial or current location of an entity. This distinction makes them complementary – they both describe spatial presence but with different levels of precision and scope. The use of `?obj` and `?e` as parameters further highlights this difference; `obj` is more specific to an object, while `e` is a more general entity. The action contexts show that `located` is used to specify the final location of an object, while `at` is used to describe the initial or current location of an entity. The different parameter names also contribute to this distinction.",
+    "evidence": [
+      {
+        "side": 1,
+        "ref": "SOUP:action:learn_wisdom_from_ants",
+        "quote": "(at ?m ?ant_loc)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_elf_effect",
+        "quote": "(at ?m kitchen)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_king_tail",
+        "quote": "(at mouse_king kitchen)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:read_and_digest_books",
+        "quote": "(at ?m library)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:receive_feather",
+        "quote": "(at ?m ?loc)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:travel_to",
+        "quote": "(at ?m ?orig)"
+      }
+    ]
+  },
+  "errors": [
+    "missing_both_side_evidence:pair_c084c33f9e7074eb",
+    "non_equivalent_has_argument_map:pair_c084c33f9e7074eb"
+  ]
+}

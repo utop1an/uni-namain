@@ -1,0 +1,242 @@
+{
+  "problem_count": 10,
+  "rows": [
+    {
+      "problem": "p1-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "not",
+            [
+              "alive",
+              "alice"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "be96946e22123da487f23ef22ca7d0b4739358ae842019aef72d9a0f1910d7df"
+    },
+    {
+      "problem": "p10-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "under-arrest",
+            "alice"
+          ],
+          [
+            "not",
+            [
+              "alive",
+              "david"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "3590c5ddf0a4caee9029d4e18c8fea98f6e80fd03c4c9902cebd95438e2c3a94"
+    },
+    {
+      "problem": "p2-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "not",
+            [
+              "angry",
+              "alice"
+            ]
+          ],
+          [
+            "not",
+            [
+              "angry",
+              "charlie"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "4ad88a5692f24b3556a2cb0fb7a94fec26bbf33f36b9f1b9869d5577f6ee6389"
+    },
+    {
+      "problem": "p3-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "under-arrest",
+            "bob"
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "b490bc38d3d6689b9d69bf448535e5dbbfbdad5abdb17d91063c1aa13662cbf8"
+    },
+    {
+      "problem": "p4-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "under-arrest",
+            "charlie"
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "d228f8f9df71982b29c579aae8b7205858c18df4a2df014c73c8eb2312b1ed19"
+    },
+    {
+      "problem": "p5-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "under-arrest",
+            "charlie"
+          ],
+          [
+            "not",
+            [
+              "angry",
+              "alice"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "b490bc38d3d6689b9d69bf448535e5dbbfbdad5abdb17d91063c1aa13662cbf8"
+    },
+    {
+      "problem": "p6-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "at",
+            "david",
+            "downtown"
+          ],
+          [
+            "arrester-at",
+            "ahome"
+          ],
+          [
+            "under-arrest",
+            "bob"
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "7a73d84ccf78ab64aabbac1ec0c6baeac5789edc920f1c2a61798ba3fa1db291"
+    },
+    {
+      "problem": "p7-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "knows-clue",
+            "lestrade",
+            "theft",
+            "vase"
+          ],
+          [
+            "not",
+            [
+              "angry",
+              "charlie"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "5a0950a392b256312844e78210258e6ddc4e23cfb4fd516ea98cdf03a5465d67"
+    },
+    {
+      "problem": "p8-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "has",
+            "david",
+            "gun"
+          ],
+          [
+            "has",
+            "david",
+            "vase"
+          ],
+          [
+            "has",
+            "david",
+            "bat"
+          ],
+          [
+            "not",
+            [
+              "alive",
+              "charlie"
+            ]
+          ],
+          [
+            "not",
+            [
+              "angry",
+              "alice"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "c34fe89af75aeca9d19cc6f3287bfa89030813c95a5ed5a1b36693ab2bf495f6"
+    },
+    {
+      "problem": "p9-basketball.pddl",
+      "parser_status": "PASS",
+      "goal": [
+        ":goal",
+        [
+          "and",
+          [
+            "under-arrest",
+            "david"
+          ],
+          [
+            "not",
+            [
+              "alive",
+              "alice"
+            ]
+          ]
+        ]
+      ],
+      "objects_digest": "132d6ffd8c2783034cc0d654759b4090b870354be99004974c5384e16063d9f2",
+      "init_digest": "d228f8f9df71982b29c579aae8b7205858c18df4a2df014c73c8eb2312b1ed19"
+    }
+  ]
+}

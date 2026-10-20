@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_ecba684bbc686752",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicate 'four_legged' in ACCO describes a physical property of an item, indicating it has four legs. The predicate 'punished' in NAUG describes a state of an entity, indicating it has been penalized. These predicates represent distinct concepts: one related to physical characteristics and the other to a consequence or state. The ACCO action 'kettle_transform_to_fur_badger' explicitly sets 'four_legged ?k', while the NAUG action 'punish_meteor' sets 'punished ?m'. There is no overlap in their meaning or application. The action contexts provide different justifications for their respective predicates. The 'four_legged' predicate is tied to physical form and transformation, while 'punished' is tied to a consequence of an action.",
+  "evidence": [
+    {
+      "side": 0,
+      "ref": "ACCO:action:kettle_transform_to_fur_badger",
+      "quote": "(four_legged ?k)"
+    },
+    {
+      "side": 1,
+      "ref": "NAUG:action:punish_meteor",
+      "quote": "(punished ?m)"
+    }
+  ]
+}

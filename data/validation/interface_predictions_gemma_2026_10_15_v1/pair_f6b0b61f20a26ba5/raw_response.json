@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-14T15:30:04.3239554Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_f6b0b61f20a26ba5\", \"label\": \"complementary\", \"right_from_left\": [0, 1], \"rationale\": \"The predicate 'performing_show' in ACCO describes an event involving an entity ('?e') performing a show, while 'fire_lit' in HANS_NP describes the state of a location ('?l') having a fire. These predicates represent fundamentally different concepts: one relates to entertainment and performance, the other to a dangerous environmental condition. The 'performing_show' predicate requires an entity to be performing, while 'fire_lit' simply states that a location has a fire. The action contexts further highlight this difference: 'perform_show' involves preconditions related to exhibition readiness and item possession, whereas 'fire_lit' is a direct state change of a location. The two predicates cannot be interchangeable because they describe distinct phenomena. The 'fire_lit' predicate is a state, while 'performing_show' is an event. The action contexts provide evidence for this complementary relationship. Specifically, 'ACCO:action:perform_show' has the effect 'performing_show ?t', and 'HANS_NP:action:abandon_children_in_forest' has the effect 'fire_lit ?forest'. The 'fire_lit' predicate is a consequence of the 'abandon_children_in_forest' action, which is a completely different scenario than 'performing_show'.\", \"evidence\": [ {\"side\": 0, \"ref\": \"ACCO:action:perform_show\", \"quote\": \"(performing_show ?t)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:abandon_children_in_forest\", \"quote\": \"(fire_lit ?forest)\"}, {\"side\": 1, \"ref\": \"HANS_NP:action:leave_children_at_fire\", \"quote\": \"(fire_lit ?forest)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4186450200,
+  "load_duration": 2128300,
+  "prompt_eval_count": 775,
+  "prompt_eval_duration": 149106000,
+  "eval_count": 425,
+  "eval_duration": 3943366000
+}

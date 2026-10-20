@@ -1,0 +1,41 @@
+{
+  "alignment": {
+    "version": 1,
+    "decision_basis": "authored_assumption",
+    "source_sha256": {
+      "BURIAL_domainfile.pddl": "6e9df4f516ef07dfafe486a29c1a479824050afd1ca20a88617f53e697f4df64",
+      "CAPTURE_domainfile.pddl": "725c1f7af6b10fdaceb758795d743270177ceff4d9854350590f16d513a514f6"
+    },
+    "type_groups": [
+      {
+        "members": [
+          "CAPTURE:person",
+          "BURIAL:person"
+        ],
+        "evidence": "Synthetic shared participant type"
+      }
+    ],
+    "predicate_groups": []
+  },
+  "objects": {
+    "hero": [
+      "CAPTURE:person",
+      "BURIAL:person"
+    ]
+  },
+  "initial": [
+    [
+      "CAPTURE:alive",
+      "hero"
+    ]
+  ],
+  "goal": {
+    "positive": [
+      [
+        "BURIAL:buried",
+        "hero"
+      ]
+    ]
+  },
+  "seconds": 30
+}

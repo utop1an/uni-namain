@@ -1,0 +1,155 @@
+{
+  "status": "verified_snapshot",
+  "created_utc": "2026-10-19T16:39:48.312603+00:00",
+  "index_sha256": "ef14d9b61c5636ef4b4bc6d8afeae66586134d1fda10e58fd7636c87ac2f82d0",
+  "results": {
+    "fresh_paired_selection": {
+      "path": "data\\validation\\world_selection_paired_2026_10_20_v1\\solver\\report.json",
+      "sha256": "c0e0474ac655a858d747e80de56e2d43ca4eb95405b4efee244b3c044d54e939",
+      "scope": "30 fresh solver invocations; 15 original worlds, two source-selection conditions",
+      "metrics": {
+        "task_count": 30,
+        "status_counts": {
+          "solved": 7,
+          "unsolvable": 16,
+          "wall_time_limit": 6,
+          "time_limit": 1
+        }
+      }
+    },
+    "selected_original_goal_replay": {
+      "path": "data\\validation\\world_selected_goal_replay_2026_10_20_v2\\report.json",
+      "sha256": "ce175f98153e2931f9693c9f6eb551f6b15a16ac44206a323c7dc862908dba1a",
+      "scope": "4 available plans replayed; 15 original source rows retained; no new solver invocations",
+      "metrics": {
+        "task_count": 15,
+        "counts": {
+          "PASS": 4,
+          "no_native_original_goal_plan": 11
+        },
+        "states_compared": 64,
+        "truth_comparisons": 23457,
+        "mismatch_count": 0
+      }
+    },
+    "translator_diagnostics": {
+      "path": "data\\validation\\translation_diagnostics_2026_10_20_v2\\report.json",
+      "sha256": "719323b172ce683b3c2a049f722131a94e89d38882dd98e214d5eaf13bea23e1",
+      "scope": "5 instrumented diagnostic calls; 4 wall-limit samples retained; first failed diagnostic block separately retained and excluded",
+      "metrics": {
+        "task_count": 5,
+        "scope": "5 instrumented translator-only calls; never counted as planning trials"
+      }
+    },
+    "verified_selection_comparison": {
+      "path": "data\\validation\\selection_results_2026_10_20_v2\\results.json",
+      "sha256": "6b951c8bce13a208ca8b9a4b193e25dc4bec0bef369d4f61cfb48892f4b05208",
+      "scope": "Earlier 60-case measurement block and fresh 30-case selection block kept separate",
+      "metrics": {
+        "fresh_solver_calls": 30,
+        "source_count": 15,
+        "summary": [
+          {
+            "representation": "source_isolated",
+            "measurement_block": "earlier_60_case_comparison",
+            "task_count": 15,
+            "status_counts": {
+              "solved": 4,
+              "unsolvable": 8,
+              "wall_time_limit": 3
+            },
+            "solved": 4,
+            "unsolvable": 8,
+            "resource_limits": 3,
+            "limits_before_search": 2
+          },
+          {
+            "representation": "namespaced_union",
+            "measurement_block": "earlier_60_case_comparison",
+            "task_count": 15,
+            "status_counts": {
+              "wall_time_limit": 7,
+              "unsolvable": 8
+            },
+            "solved": 0,
+            "unsolvable": 8,
+            "resource_limits": 7,
+            "limits_before_search": 7
+          },
+          {
+            "representation": "zero_merge_membership",
+            "measurement_block": "earlier_60_case_comparison",
+            "task_count": 15,
+            "status_counts": {
+              "wall_time_limit": 7,
+              "unsolvable": 8
+            },
+            "solved": 0,
+            "unsolvable": 8,
+            "resource_limits": 7,
+            "limits_before_search": 7
+          },
+          {
+            "representation": "machine_interfaces",
+            "measurement_block": "earlier_60_case_comparison",
+            "task_count": 15,
+            "status_counts": {
+              "wall_time_limit": 7,
+              "unsolvable": 8
+            },
+            "solved": 0,
+            "unsolvable": 8,
+            "resource_limits": 7,
+            "limits_before_search": 7
+          },
+          {
+            "representation": "world_selected",
+            "measurement_block": "fresh_30_case_paired_selection",
+            "task_count": 15,
+            "status_counts": {
+              "solved": 4,
+              "unsolvable": 8,
+              "wall_time_limit": 3
+            },
+            "solved": 4,
+            "unsolvable": 8,
+            "resource_limits": 3,
+            "limits_before_search": 3
+          },
+          {
+            "representation": "graph_closure_control",
+            "measurement_block": "fresh_30_case_paired_selection",
+            "task_count": 15,
+            "status_counts": {
+              "solved": 3,
+              "unsolvable": 8,
+              "wall_time_limit": 3,
+              "time_limit": 1
+            },
+            "solved": 3,
+            "unsolvable": 8,
+            "resource_limits": 4,
+            "limits_before_search": 3
+          }
+        ],
+        "limitations": [
+          "Exploratory development comparison; deterministic per-source order, optimized condition first; no repeated-seed uncertainty estimate.",
+          "Earlier 60 trials are a separately labeled measurement block; only the two selection conditions were rerun together.",
+          "Observed Windows elapsed time includes WSL launch/response and timeout termination grace; configured Linux limits remain 20 seconds.",
+          "All 15 current worlds have disjoint source universes, so selected models are singletons; this measures removal of irrelevant overhead, not cross-source narrative fusion.",
+          "Sampling runs are instrumented translator-only diagnostics, excluded from solver success and timing comparisons.",
+          "The prior v1 diagnostic block attempted 5 calls: 4 lost samples during timer cleanup and 1 completed; it is retained and excluded. The v2 block retains all 5 reports, including 4 diagnostic wall limits with CPU-signal process exits during teardown.",
+          "Compilation and selection are outside the solver budget. No independent semantic interface labels or narrative quality measurements."
+        ]
+      }
+    }
+  },
+  "excluded_pending": [
+    "Independent interface labels remain zero",
+    "Cross-source necessary shared-object tasks not yet evaluated",
+    "HANS_NP, MUSI and SNOW remain limited",
+    "Complete fresh UniDomain comparison absent"
+  ],
+  "scope": "Versioned development evidence inventory; no aggregate success rate across heterogeneous units",
+  "implementation_sha256": "e89bac77086ca897e0b0536704e7ae99f5004ba2dee6e5e1407ddb3b3b37164e"
+}

@@ -1,0 +1,303 @@
+{
+  "status": "diagnostic_wall_limit",
+  "scope": "Instrumented translator-only diagnostic; excluded from planning-success counts and timing comparisons",
+  "wall_budget_seconds": 20,
+  "memory_mb": 4096,
+  "sampling_interval_seconds": 0.01,
+  "elapsed_seconds": 20.170516298999985,
+  "samples": 1487,
+  "top_frames": [
+    {
+      "file": "conditions.py",
+      "function": "instantiate",
+      "samples": 131
+    },
+    {
+      "file": "conditions.py",
+      "function": "__init__",
+      "samples": 128
+    },
+    {
+      "file": "conditions.py",
+      "function": "<listcomp>",
+      "samples": 94
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_conditions_aux",
+      "samples": 90
+    },
+    {
+      "file": "main.py",
+      "function": "build_sas_operator",
+      "samples": 75
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_operator_aux",
+      "samples": 73
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "_canonical_pre_post",
+      "samples": 56
+    },
+    {
+      "file": "conditions.py",
+      "function": "__eq__",
+      "samples": 51
+    },
+    {
+      "file": "build_model.py",
+      "function": "push",
+      "samples": 50
+    },
+    {
+      "file": "simplify.py",
+      "function": "add_arc",
+      "samples": 44
+    },
+    {
+      "file": "build_model.py",
+      "function": "prepare_effect",
+      "samples": 43
+    },
+    {
+      "file": "main.py",
+      "function": "<lambda>",
+      "samples": 39
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "get_applicability_conditions",
+      "samples": 32
+    },
+    {
+      "file": "main.py",
+      "function": "number_of_values",
+      "samples": 31
+    },
+    {
+      "file": "actions.py",
+      "function": "__init__",
+      "samples": 30
+    },
+    {
+      "file": "main.py",
+      "function": "<listcomp>",
+      "samples": 30
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "listify",
+      "samples": 30
+    },
+    {
+      "file": "simplify.py",
+      "function": "translate_operator",
+      "samples": 30
+    },
+    {
+      "file": "conditions.py",
+      "function": "__hash__",
+      "samples": 27
+    },
+    {
+      "file": "build_model.py",
+      "function": "fire",
+      "samples": 24
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_conditions",
+      "samples": 24
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "__init__",
+      "samples": 24
+    },
+    {
+      "file": "instantiate.py",
+      "function": "instantiate",
+      "samples": 23
+    },
+    {
+      "file": "actions.py",
+      "function": "instantiate",
+      "samples": 22
+    },
+    {
+      "file": "simplify.py",
+      "function": "translate_pre_post",
+      "samples": 22
+    }
+  ],
+  "stack_presence": [
+    {
+      "file": "main.py",
+      "function": "pddl_to_sas",
+      "samples": 1487
+    },
+    {
+      "file": "sample_downward_translation.py",
+      "function": "<module>",
+      "samples": 1487
+    },
+    {
+      "file": "main.py",
+      "function": "main",
+      "samples": 1487
+    },
+    {
+      "file": "sample_downward_translation.py",
+      "function": "run",
+      "samples": 1487
+    },
+    {
+      "file": "sample_downward_translation.py",
+      "function": "explore",
+      "samples": 671
+    },
+    {
+      "file": "instantiate.py",
+      "function": "explore",
+      "samples": 670
+    },
+    {
+      "file": "main.py",
+      "function": "translate_task",
+      "samples": 595
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_operators",
+      "samples": 555
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_operator",
+      "samples": 549
+    },
+    {
+      "file": "instantiate.py",
+      "function": "instantiate",
+      "samples": 515
+    },
+    {
+      "file": "actions.py",
+      "function": "instantiate",
+      "samples": 482
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_operator_aux",
+      "samples": 369
+    },
+    {
+      "file": "conditions.py",
+      "function": "instantiate",
+      "samples": 365
+    },
+    {
+      "file": "simplify.py",
+      "function": "filter_unreachable_propositions",
+      "samples": 216
+    },
+    {
+      "file": "effects.py",
+      "function": "instantiate",
+      "samples": 211
+    },
+    {
+      "file": "main.py",
+      "function": "build_sas_operator",
+      "samples": 205
+    },
+    {
+      "file": "effects.py",
+      "function": "_instantiate",
+      "samples": 191
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_conditions",
+      "samples": 190
+    },
+    {
+      "file": "main.py",
+      "function": "translate_strips_conditions_aux",
+      "samples": 166
+    },
+    {
+      "file": "build_model.py",
+      "function": "compute_model",
+      "samples": 151
+    },
+    {
+      "file": "sas_tasks.py",
+      "function": "__init__",
+      "samples": 141
+    },
+    {
+      "file": "simplify.py",
+      "function": "apply_to_task",
+      "samples": 130
+    },
+    {
+      "file": "simplify.py",
+      "function": "apply_to_operators",
+      "samples": 130
+    },
+    {
+      "file": "build_model.py",
+      "function": "fire",
+      "samples": 128
+    },
+    {
+      "file": "conditions.py",
+      "function": "__init__",
+      "samples": 128
+    }
+  ],
+  "current_action_samples": {
+    "d001__a_collect_treasure": 332,
+    "d001__a_witch_captures_children": 227,
+    "d001__a_abandon_children_in_forest": 96,
+    "d001__a_leave_children_at_fire": 86,
+    "d001__a_follow_breadcrumbs_home": 60,
+    "d001__a_follow_pebbles_home": 39,
+    "d001__a_escape_from_stable": 30,
+    "d001__a_return_home_and_reunite_with_father": 19,
+    "d001__a_push_witch_into_oven": 11,
+    "d001__a_call_duck_for_crossing": 10,
+    "d001__a_drop_pebble_on_path": 3,
+    "d001__a_enter_witch_house": 2,
+    "d001__a_drop_breadcrumb_on_path": 2,
+    "d000__a_inform_about_sky_fall": 1
+  },
+  "grounded_actions": 292117,
+  "grounded_actions_by_schema": {
+    "d001__a_collect_treasure": 124852,
+    "d001__a_witch_captures_children": 57967,
+    "d001__a_abandon_children_in_forest": 31213,
+    "d001__a_leave_children_at_fire": 31213,
+    "d001__a_push_witch_into_oven": 8918,
+    "d001__a_follow_breadcrumbs_home": 8281,
+    "d001__a_escape_from_stable": 8281,
+    "d001__a_follow_pebbles_home": 8281,
+    "d001__a_call_duck_for_crossing": 4459,
+    "d001__a_return_home_and_reunite_with_father": 4459,
+    "d001__a_drop_breadcrumb_on_path": 1274,
+    "d001__a_drop_pebble_on_path": 1274,
+    "d001__a_enter_witch_house": 637,
+    "d001__a_wander_forest_seeking_way_out": 637,
+    "d000__a_meet_character": 162,
+    "d000__a_inform_about_sky_fall": 81,
+    "d000__a_decide_to_tell_king": 81,
+    "d000__a_be_eaten_by_fox": 18,
+    "d000__a_go_to_wood": 10,
+    "d000__a_turn_back": 10,
+    "d000__a_follow_fox": 9
+  }
+}

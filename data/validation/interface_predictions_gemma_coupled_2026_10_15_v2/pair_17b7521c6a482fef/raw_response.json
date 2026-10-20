@@ -1,0 +1,16 @@
+{
+  "model": "gemma3:4b",
+  "created_at": "2026-10-15T03:32:07.9364517Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\"candidate_id\": \"pair_17b7521c6a482fef\", \"label\": \"uncertain\", \"right_from_left\": null, \"rationale\": \"The predicate `cloak_shaken` in the BUFF source describes a state of a cloak being disturbed, likely due to a performance. The `has` predicate in the JACK_NP source describes possession of an item. While both predicates relate to objects, their meanings and contexts are distinct. `cloak_shaken` describes a state change, while `has` describes ownership. The action contexts further highlight this difference: `cloak_shaken` is triggered by an applause, while `has` is part of actions like selling, stealing, and possessing items. The preconditions and effects of the actions also support this distinction. The evidence is insufficient to definitively state equivalence, as the predicates operate in different domains and with different semantics. The `parameters` also differ, with `cloak_shaken` requiring a `performer` and `cloak`, while `has` requires an entity and an item. The `type_hierarchy` is similar, but the predicates are used in different contexts. The fact that the provenance is not supplied adds to the uncertainty.\", \"evidence\": [ {\"side\": 1, \"ref\": \"JACK_NP:action:sell_cow_for_beans\", \"quote\": \"(has ?j ?beans)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:steal_gold_bags\", \"quote\": \"(has ?j ?bag1)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:steal_harp\", \"quote\": \"(has ?j ?harp)\"}, {\"side\": 1, \"ref\": \"JACK_NP:action:steal_hen\", \"quote\": \"(has ?j ?hen)\"}, {\"side\": 0, \"ref\": \"BUFF:action:audience_applaud_performance\", \"quote\": \"(cloak_shaken ?performer ?cloak)\"}]}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4478691300,
+  "load_duration": 2862600,
+  "prompt_eval_count": 1071,
+  "prompt_eval_duration": 199084000,
+  "eval_count": 435,
+  "eval_duration": 4188542999
+}

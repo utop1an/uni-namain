@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_f5f75f72d7e5a807",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_f5f75f72d7e5a807",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicates 'burned' and 'has_feeling' describe fundamentally different aspects of entities. 'burned' indicates a state of being affected by heat, typically related to physical processes like fire or solar radiation, while 'has_feeling' describes an emotional or subjective state. The action contexts further highlight this difference: 'burned' is a precondition for 'cross_out_comet', implying a physical state, whereas 'has_feeling' is a precondition for creating a soup effect, suggesting a mental or emotional state. The types 'entity' are shared, but the predicates operate on distinct properties. The action contexts demonstrate this distinction: 'burned' is a condition for an action, while 'has_feeling' is a precondition for an effect. Therefore, they are complementary, describing different characteristics of the same entity.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "NAUG:action:burn_up",
+        "quote": "(burned ?c)"
+      },
+      {
+        "side": 0,
+        "ref": "NAUG:action:cross_out_comet",
+        "quote": "(burned ?c)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:prepare_soup_by_poet_imagination",
+        "quote": "(has_feeling ?m)"
+      },
+      {
+        "side": 1,
+        "ref": "SOUP:action:read_and_digest_books",
+        "quote": "(has_feeling ?m)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_f5f75f72d7e5a807"
+  ]
+}

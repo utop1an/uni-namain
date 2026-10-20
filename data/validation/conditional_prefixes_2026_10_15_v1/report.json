@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "trace_count": 2,
+  "rows": [
+    {
+      "id": "guard_false",
+      "source_trace": [
+        [
+          "follow_breadcrumbs_home",
+          "grettel",
+          "hansel",
+          "forest",
+          "father_house"
+        ]
+      ],
+      "mapped_trace": [
+        [
+          "d005__a_follow_breadcrumbs_home",
+          "d005__c_grettel",
+          "d005__c_hansel",
+          "d005__c_forest",
+          "d005__c_father_house"
+        ]
+      ],
+      "status": "PASS",
+      "source_ground_atoms": 521,
+      "states_compared": 2,
+      "truth_comparisons": 1042,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "guard_before_follow": false,
+      "changed_atoms_at_follow": [],
+      "branch_control_passed": true
+    },
+    {
+      "id": "guard_true",
+      "source_trace": [
+        [
+          "drop_breadcrumb_on_path",
+          "hansel",
+          "pebble",
+          "father_house"
+        ],
+        [
+          "follow_breadcrumbs_home",
+          "grettel",
+          "hansel",
+          "forest",
+          "father_house"
+        ]
+      ],
+      "mapped_trace": [
+        [
+          "d005__a_drop_breadcrumb_on_path",
+          "d005__c_hansel",
+          "d005__c_pebble",
+          "d005__c_father_house"
+        ],
+        [
+          "d005__a_follow_breadcrumbs_home",
+          "d005__c_grettel",
+          "d005__c_hansel",
+          "d005__c_forest",
+          "d005__c_father_house"
+        ]
+      ],
+      "status": "PASS",
+      "source_ground_atoms": 521,
+      "states_compared": 3,
+      "truth_comparisons": 1563,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "guard_before_follow": true,
+      "changed_atoms_at_follow": [
+        {
+          "atom": "at(grettel, father_house)",
+          "before": true,
+          "after": false
+        },
+        {
+          "atom": "at(hansel, father_house)",
+          "before": true,
+          "after": false
+        },
+        {
+          "atom": "at(grettel, forest)",
+          "before": false,
+          "after": true
+        },
+        {
+          "atom": "at(hansel, forest)",
+          "before": false,
+          "after": true
+        }
+      ],
+      "branch_control_passed": true
+    }
+  ],
+  "frozen_sha256": {
+    "data\\narra-domains\\HANS_NP_domainfile.pddl": "4e8b947634914416d9a30e8397a485144ed3dc2fa3d09f5621227258f878fe57",
+    "data\\narra-domains\\HANS_NP_problemfile.pddl": "fbb1f65d8850690d44d82d0ceec2235f18020d2b851a44488f33626720ec1b88",
+    "data\\validation\\type_encoding_regression_2026_10_15_v2\\compiled\\meta_domain.pddl": "f038f0a73eac1cb7962293026bbed9f00097196d3df720ace2ca18638635f79b",
+    "data\\validation\\type_encoding_regression_2026_10_15_v2\\compiled\\meta_domain.json": "99171be57a65fa9be8bb0fbce5dd8d8e31325d3f910070cebbfadb93dad22167",
+    "data\\validation\\type_encoding_regression_2026_10_15_v2\\compiled\\problems\\HANS_NP_problemfile.pddl": "6549ce7ff28b90204c5921eef75a0be42963ce5d42866e62c344d7ec0773274d",
+    "C:\\anu\\uninamain\\audit_conditional_prefixes.py": "de0ae3fa55b77d8395e2c478a52a839b2155063f06ce3394013597c37acac9f9",
+    "rcnc\\trace_audit.py": "e16c630f47c73d52189328a463bc2eeb63ad3be0f4ff81d5481a5030c61da09b"
+  },
+  "hashes_unchanged": true,
+  "states_compared": 5,
+  "truth_comparisons": 2605,
+  "scope": "Authored executable prefixes from unchanged HANS initial state; original goals unchanged but goal attainment not required or claimed. Separate from the frozen original-goal and 45-probe evaluations.",
+  "source_generality": "drop_breadcrumb_on_path accepts any item, including the initially possessed pebble. This source behavior is retained, not asserted narratively plausible."
+}

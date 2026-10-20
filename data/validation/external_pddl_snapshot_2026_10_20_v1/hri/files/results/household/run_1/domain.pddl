@@ -1,0 +1,31 @@
+(define (domain household)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types Apple DiningTable HOUSEHOLD_OBJECT HandheldVacuumCleaner KitchenCounter LOCATION LunchBox ROBOT Robot SMALL_RECEPTACLE SideTable)
+    (:predicates 
+    (isAt ?robot - ROBOT ?fromLocation - LOCATION)  
+    (isClean ?location - LOCATION)  
+    (isGripperEmpty ?robot - ROBOT)  
+    (isObjectAt ?obj - HOUSEHOLD_OBJECT ?location - LOCATION)  
+    (isObjectHeld ?robot - ROBOT ?obj - HOUSEHOLD_OBJECT)  
+    (isObjectIn ?obj - HOUSEHOLD_OBJECT ?receptacle - SMALL_RECEPTACLE))
+    (:action cleanWith
+        :parameters (?robot - ROBOT ?location - LOCATION ?cleaningTool - HOUSEHOLD_OBJECT)
+        :precondition (and (isAt ?robot ?location) (isObjectHeld ?robot ?cleaningTool) (not (isClean ?location)))
+        :effect (isClean ?location)
+    )
+     (:action move
+        :parameters (?robot - ROBOT ?fromLocation - LOCATION ?toLocation - LOCATION)
+        :precondition (and (isAt ?robot ?fromLocation) (not (isAt ?robot ?toLocation)))
+        :effect (and (not (isAt ?robot ?fromLocation)) (isAt ?robot ?toLocation))
+    )
+     (:action pickUp
+        :parameters (?robot - ROBOT ?location - LOCATION ?obj - HOUSEHOLD_OBJECT)
+        :precondition (and (isAt ?robot ?location) (isObjectAt ?obj ?location) (isGripperEmpty ?robot))
+        :effect (and (not (isObjectAt ?obj ?location)) (not (isGripperEmpty ?robot)) (isObjectHeld ?robot ?obj))
+    )
+     (:action putInReceptacle
+        :parameters (?robot - ROBOT ?location - LOCATION ?obj - HOUSEHOLD_OBJECT ?receptacle - SMALL_RECEPTACLE)
+        :precondition (and (isAt ?robot ?location) (isObjectHeld ?robot ?obj) (not (isObjectIn ?obj ?receptacle)))
+        :effect (and (not (isObjectHeld ?robot ?obj)) (isObjectIn ?obj ?receptacle) (isGripperEmpty ?robot))
+    )
+)

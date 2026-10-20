@@ -1,0 +1,21 @@
+{
+  "candidate_id": "pair_4022a891696c6434",
+  "label": "complementary",
+  "right_from_left": [
+    0,
+    1
+  ],
+  "rationale": "The predicates 'owned_by' and 'wearing' describe different relationships between entities and items. 'owned_by' indicates possession, while 'wearing' indicates an item is being worn by an entity. These relationships represent distinct properties of an object and its associated item. The 'wearing' predicate describes a state (an item being worn), while 'owned_by' describes a relationship of ownership. The action context for 'SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies' explicitly states that the stepmother is 'wearing ?slippers', which is a specific instance of the 'wearing' predicate. This contrasts with the general 'owned_by' predicate, which would describe a different relationship (e.g., the stepmother owning the slippers). The type hierarchies for both predicates are consistent (entity, item, location), but the predicates themselves represent different aspects of the same objects. The action context provides evidence for the 'wearing' predicate, while the 'owned_by' predicate would be used in a different context.",
+  "evidence": [
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "quote": "(wearing ?s ?slippers)"
+    },
+    {
+      "side": 1,
+      "ref": "SNOW:action:stepmother_attends_wedding_and_is_forced_to_wear_hot_slippers_and_dies",
+      "quote": "(wearing ?s ?slippers)"
+    }
+  ]
+}

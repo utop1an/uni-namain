@@ -1,0 +1,38 @@
+{
+  "candidate_id": "pair_f89ed0ed229ba90b",
+  "status": "invalid",
+  "response": {
+    "candidate_id": "pair_f89ed0ed229ba90b",
+    "label": "complementary",
+    "right_from_left": [
+      0,
+      1
+    ],
+    "rationale": "The predicate 'captured' in ACCO describes the state of an item being held or contained, while 'gloomy' in BIRT describes the emotional state of an entity. These predicates represent distinct properties of objects and entities. 'captured' focuses on physical possession, whereas 'gloomy' focuses on emotional state. The action contexts for 'captured' involve actions like 'force_kettle_into_box' and 'pursue_kettle', which relate to physical manipulation and containment, while the action context for 'gloomy' relates to a 'receive_queen_kiss' action, which is a specific event. The predicates are not interchangeable because they describe different aspects of the scene. The 'captured' predicate is used to track the location of an item, while 'gloomy' describes the emotional state of an entity. The use of 'captured' in the ACCO action contexts (force_kettle_into_box, knock_down_kettle, pursue_kettle) indicates a physical state, whereas 'gloomy' in the BIRT action context (receive_queen_kiss) describes an emotional state. Therefore, they are complementary, as they describe different characteristics of the entities involved.",
+    "evidence": [
+      {
+        "side": 0,
+        "ref": "ACCO:action:force_kettle_into_box",
+        "quote": "(captured ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:knock_down_kettle",
+        "quote": "(captured ?k)"
+      },
+      {
+        "side": 0,
+        "ref": "ACCO:action:pursue_kettle",
+        "quote": "(captured ?k)"
+      },
+      {
+        "side": 1,
+        "ref": "BIRT:action:receive_queen_kiss",
+        "quote": "(gloomy ?n)"
+      }
+    ]
+  },
+  "errors": [
+    "non_equivalent_has_argument_map:pair_f89ed0ed229ba90b"
+  ]
+}
