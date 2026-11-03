@@ -3,3 +3,25 @@
 __pycache__/
 *.py[cod]
 .tmp/
+/*.egg-info/
+/build/
+/dist/
+
+# Local runs, temporary exports, archives, and compiled paper products.
+/data/validation/
+/data/benchmarks/
+/data/external/
+/output/
+/archive/
+/paper/*revision_*/
+/paper/*integration_*/
+/paper/results_snapshot_*/
+/paper/result_sources_*.json
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.zip

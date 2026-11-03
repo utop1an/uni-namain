@@ -7,7 +7,7 @@ from rcnc.pddl import (
 
 from .domain_building import (
     check_raw_declarations, require_empty_output, digest, save,
-    implementation_hashes, check_exported_problem,
+    implementation_hashes, check_exported_problem, check_exported_domain,
 )
 
 
@@ -77,17 +77,20 @@ def build(input_dir, output):
     errors=validate_domain(merged)
     if errors:raise ValueError(str(errors))
     write_domain(merged,output/'meta_domain.pddl')
+    domain_parse = check_exported_domain(output/'meta_domain.pddl', capture_errors=True)
     rows=[]
     for problem in sorted((output/'problems').glob('*.pddl')):
         rows.append(check_exported_problem(output/'meta_domain.pddl', problem, capture_errors=True))
     info=domain_summary(merged)
     info.update(method='namespaced_union_no_semantic_merge',object_universe_policy='per_source_root_type',namespaces=namespaces,source_sha256=hashes,
+                compiled_domain_sha256=digest(output/'meta_domain.pddl'), domain_artifact_stage='pre_search_compiler_export',
                 implementation_sha256=implementation_hashes([
                     Path(__file__), Path(__file__).with_name('domain_building.py'),
                     Path(__file__).with_name('pddl.py'), Path(__file__).with_name('pddl_checks.py'),
                 ]))
     save(output/'meta_domain.json', info)
-    report={'valid':all(r['status']=='PARSED' for r in rows),'counts':info['counts'],'problems':rows,
+    report={'valid':domain_parse['status']=='PARSED' and all(r['status']=='PARSED' for r in rows),
+            'domain_parse':domain_parse,'counts':info['counts'],'problems':rows,
             'scope':'All source actions retained under injective namespaces. Independent parsing is not a plan-solvability or narrative-quality claim.'}
     save(output/'validation.json', report)
     return report

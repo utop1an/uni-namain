@@ -1,0 +1,107 @@
+{
+  "direct_glaive": [
+    {
+      "condition": "full",
+      "status": "wall_time_limit",
+      "seconds_limit": 60
+    },
+    {
+      "condition": "union",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    },
+    {
+      "condition": "without_A",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    },
+    {
+      "condition": "without_B",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    },
+    {
+      "condition": "without_C",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    },
+    {
+      "condition": "without_D",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    },
+    {
+      "condition": "separate_identity",
+      "status": "wall_time_limit",
+      "seconds_limit": 15
+    }
+  ],
+  "lama": {
+    "search_status": "plan_found",
+    "steps": 12,
+    "validation": {
+      "status": "ERROR",
+      "version": "1.3.0",
+      "reason": "ParseSyntaxException: Expected W:(A-Za-z, -0-9A-Z_a-z), found ')'  (at char 76), (line:1, col:77)"
+    }
+  },
+  "optimal_original_intentions": [
+    {
+      "steps": 11,
+      "goal": true,
+      "unexplained_steps": 1,
+      "orphan_steps": 1
+    },
+    {
+      "steps": 12,
+      "goal": true,
+      "unexplained_steps": 1,
+      "orphan_steps": 1
+    }
+  ],
+  "revision": {
+    "domain_unchanged": true,
+    "objects_initial_physical_facts_goal_unchanged": true,
+    "source_problem_facts_copied": 0,
+    "new_explicit_intention": [
+      "mira",
+      "apologized(mira,noah)"
+    ],
+    "reason": "Diagnostic identified apologize as the sole unexplained step. Glaive requires a declared motivation for this cross-character event. This authored task revision is separate from the original frozen world and is not a benchmark repair.",
+    "plan_origin": "Fast Downward 26.6 seq-opt-lmcut, 11-step plan on the identical physical domain/state/goal. No plan actions edited.",
+    "previous_physical_search": "data\\validation\\four_domain_long_case_optimal_2026_11_03_v1\\report.json",
+    "old_unexplained_steps": 1,
+    "world_receipt": {
+      "object_maps": {
+        "tiny_stories__story_028": {
+          "mira": "mira",
+          "toy": "toy"
+        },
+        "tiny_stories__story_085": {
+          "mira": "mira",
+          "noah": "noah",
+          "toy": "toy"
+        },
+        "tiny_stories__story_063": {
+          "noah": "noah",
+          "emma": "emma",
+          "walnut": "walnut"
+        },
+        "writing_prompts__wp_060": {
+          "mira": "mira",
+          "coat": "coat"
+        }
+      },
+      "active_sources": [
+        "tiny_stories__story_028",
+        "tiny_stories__story_063",
+        "tiny_stories__story_085",
+        "writing_prompts__wp_060"
+      ],
+      "separate_identity": false,
+      "source_problem_facts_copied": 0,
+      "explicit_fact_count": 4
+    }
+  },
+  "scope": "All unsuccessful conditions retained as outcomes; logs, runtime binaries and intermediate exports omitted."
+}

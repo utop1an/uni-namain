@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.0cm}}
+\toprule
+Stage & Units & Observed & Outcome \\
+\midrule
+Fresh pilot & 2 sources & 117 cache records & Complete; strict domain + 2 worlds \\
+Fresh full build & 15 sources & 11166 cache records & 18,000-second time limit; no root \\
+Original-world comparison & 90 slots & 0 searches & All unavailable \\
+Given-prefix replay & 234 slots & 0 replays & All unavailable \\
+\bottomrule
+\end{tabular}
+\caption{Distinct stages with different units. The pilot takes 260.579 seconds; the full build takes 18000.031 seconds and retains 13 internal nodes. Both downstream registries link to one construction timeout; their 324 unavailable slots are neither planning failures nor 324 independent tasks. Cache records count saved JSON-decoded responses, not all HTTP attempts or tokens. No cache continuation is run, and the larger budget prevents a causal comparison with the earlier 10,800-second run.}
+\label{tab:reference-availability-oct24}
+\end{table*}

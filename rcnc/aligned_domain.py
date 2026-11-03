@@ -17,7 +17,7 @@ from rcnc.pddl import (
 )
 
 from .domain_building import (
-    require_empty_output, save, implementation_hashes, check_exported_problem,
+    require_empty_output, save, digest, implementation_hashes, check_exported_problem, check_exported_domain,
 )
 
 
@@ -194,6 +194,7 @@ def build(inputs, output, specification):
     if errors:
         raise ValueError(f'Compiled domain failed structural checks: {errors}')
     write_domain(merged, output / 'meta_domain.pddl')
+    domain_parse = check_exported_domain(output / 'meta_domain.pddl')
     constants_memberships = [fact for name, typ in base.constants.items()
                             for fact in membership_facts(name, typ, base.types, guards)]
     rows = []
@@ -215,6 +216,8 @@ def build(inputs, output, specification):
         rows.append(check_exported_problem(output/'meta_domain.pddl', destination))
     info = domain_summary(merged)
     info.update(method='explicit_predicate_alignment_with_type_membership',
+                compiled_domain_sha256=digest(output / 'meta_domain.pddl'),
+                domain_artifact_stage='pre_search_compiler_export',
                 semantic_status='assumptions_not_independently_verified',
                 type_encoding='static_membership', namespaces=meta['namespaces'],
                 bound_variable_policy='capture_avoiding_alpha_renaming_before_effect_guard_relocation',
@@ -232,7 +235,7 @@ def build(inputs, output, specification):
                 ]))
     save(output / 'meta_domain.json', info)
     save(output / 'alignment_specification.json', specification)
-    result = {'valid': True, 'problems': rows, 'counts': info['counts'],
+    result = {'valid': True, 'domain_parse': domain_parse, 'problems': rows, 'counts': info['counts'],
               'scope': 'Structural and independent parsing checks under explicit alignment assumptions; no semantic correctness or narrative-quality claim'}
     save(output / 'validation.json', result)
     return result

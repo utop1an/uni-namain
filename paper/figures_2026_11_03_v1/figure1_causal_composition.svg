@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="504" height="226" preserveAspectRatio="xMinYMin meet" viewBox="0 0 504 226" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="504" height="226"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-226)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="197" width="504" height="29" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 0.65; fill: rgb(96%,96%,98%); fill-rule: evenodd;"/>
+			<text x="9" y="215" style="font-family: Bold; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,430) scale(1,-1)">EXPLICIT WORLD</text>
+			<text x="107" y="215" style="font-family: Sans; font-size: 9px;fill: rgb(12%,18%,27%); stroke:none;" transform="translate(0,430) scale(1,-1)">c = Mira   k = brass key   a = archive</text>
+			<text x="9" y="202" style="font-family: Sans; font-size: 9px;fill: rgb(12%,18%,27%); stroke:none;" transform="translate(0,404) scale(1,-1)">Initially: key not held; archive locked; gift route enabled.</text>
+			<text x="417.9765625" y="202" style="font-family: Bold; font-size: 9px;fill: rgb(12%,18%,27%); stroke:none;" transform="translate(0,404) scale(1,-1)">Goal: evidence(c)</text>
+			<rect x="0" y="76" width="151" height="111" rx="6" ry="6" style="stroke: rgb(13%,41%,65%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,96%,98%); fill-rule: evenodd;"/>
+			<circle cx="12" cy="175" r="6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(13%,41%,65%); fill-rule: evenodd;"/>
+			<text x="9.111328125" y="172.3" style="font-family: Bold; font-size: 8px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,344) scale(1,-1)">A</text>
+			<text x="24" y="172" style="font-family: Bold; font-size: 10.3px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,344) scale(1,-1)">Acquire a key</text>
+			<rect x="9" y="144" width="133" height="18" rx="4" ry="4" style="stroke: rgb(79%,86%,92%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="15" y="150" style="font-family: Mono; font-size: 9px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,300) scale(1,-1)">buy(c,k)</text>
+			<text x="103.398681640625" y="150" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,300) scale(1,-1)">payment</text>
+			<rect x="9" y="122" width="133" height="18" rx="4" ry="4" style="stroke: rgb(13%,41%,65%); stroke-linecap: butt; stroke-width: 1.1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="15" y="128" style="font-family: Mono; font-size: 9px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,256) scale(1,-1)">receive(c,k)</text>
+			<text x="124.6611328125" y="128" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,256) scale(1,-1)">gift</text>
+			<rect x="9" y="100" width="133" height="18" rx="4" ry="4" style="stroke: rgb(79%,86%,92%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="15" y="106" style="font-family: Mono; font-size: 9px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,212) scale(1,-1)">steal(c,k)</text>
+			<text x="95.35107421875" y="106" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,212) scale(1,-1)">unguarded</text>
+			<text x="28.0174560546875" y="84" style="font-family: Sans; font-size: 8.5px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,168) scale(1,-1)">can establish held_A(c,k)</text>
+			<rect x="169" y="76" width="166" height="111" rx="6" ry="6" style="stroke: rgb(43%,32%,64%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,94%,98%); fill-rule: evenodd;"/>
+			<text x="190.1689453125" y="172" style="font-family: Bold; font-size: 10px;fill: rgb(43%,32%,64%); stroke:none;" transform="translate(0,344) scale(1,-1)">Interface + shared entities</text>
+			<text x="221.7607421875" y="149" style="font-family: Mono; font-size: 10px;fill: rgb(43%,32%,64%); stroke:none;" transform="translate(0,298) scale(1,-1)">held_A(c,k)</text>
+			<polyline points="252 145, 252 129" style="stroke: rgb(43%,32%,64%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd;"/>
+			<polygon points="252 129, 250.65 132, 253.35 132" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(43%,32%,64%); fill-rule: evenodd;"/>
+			<polygon points="252 145, 253.35 142, 250.65 142" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(43%,32%,64%); fill-rule: evenodd;"/>
+			<text x="221.7607421875" y="115" style="font-family: Mono; font-size: 10px;fill: rgb(43%,32%,64%); stroke:none;" transform="translate(0,230) scale(1,-1)">held_B(k,c)</text>
+			<text x="196.2333984375" y="97" style="font-family: Sans; font-size: 9px;fill: rgb(12%,18%,27%); stroke:none;" transform="translate(0,194) scale(1,-1)">Same Mira; same brass key</text>
+			<text x="198.1424560546875" y="84" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,168) scale(1,-1)">holder / item roles preserved</text>
+			<polyline points="151 131, 169 131" style="stroke: rgb(43%,32%,64%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd; stroke-dasharray: 2, 2;"/>
+			<polygon points="169 131, 166 129.65, 166 132.35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(43%,32%,64%); fill-rule: evenodd;"/>
+			<polyline points="335 131, 353 131" style="stroke: rgb(43%,32%,64%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd; stroke-dasharray: 2, 2;"/>
+			<polygon points="353 131, 350 129.65, 350 132.35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(43%,32%,64%); fill-rule: evenodd;"/>
+			<rect x="353" y="76" width="151" height="111" rx="6" ry="6" style="stroke: rgb(65%,36%,7%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,96%,90%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="175" r="6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(65%,36%,7%); fill-rule: evenodd;"/>
+			<text x="362.111328125" y="172.3" style="font-family: Bold; font-size: 8px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,344) scale(1,-1)">B</text>
+			<text x="377" y="172" style="font-family: Bold; font-size: 10px;fill: rgb(65%,36%,7%); stroke:none;" transform="translate(0,344) scale(1,-1)">Retrieve evidence</text>
+			<rect x="362" y="134" width="133" height="28" rx="4" ry="4" style="stroke: rgb(91%,83%,73%); stroke-linecap: butt; stroke-width: 0.65; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="396.33642578125" y="150" style="font-family: Mono; font-size: 9px;fill: rgb(65%,36%,7%); stroke:none;" transform="translate(0,300) scale(1,-1)">unlock(c,k,a)</text>
+			<text x="390.469970703125" y="139" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,278) scale(1,-1)">requires held_B(k,c)</text>
+			<polyline points="428.5 133, 428.5 124" style="stroke: rgb(65%,36%,7%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd;"/>
+			<polygon points="428.5 124, 427.15 127, 429.85 127" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(65%,36%,7%); fill-rule: evenodd;"/>
+			<rect x="362" y="93" width="133" height="28" rx="4" ry="4" style="stroke: rgb(91%,83%,73%); stroke-linecap: butt; stroke-width: 0.65; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="391.38818359375" y="109" style="font-family: Mono; font-size: 9px;fill: rgb(65%,36%,7%); stroke:none;" transform="translate(0,218) scale(1,-1)">retrieve(c,e,a)</text>
+			<text x="389.7581787109375" y="98" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,196) scale(1,-1)">requires unlocked(a)</text>
+			<text x="377.8216552734375" y="82" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,164) scale(1,-1)">e = evidence in the archive</text>
+			<text x="0" y="62" style="font-family: Bold; font-size: 9px;fill: rgb(12%,18%,27%); stroke:none;" transform="translate(0,124) scale(1,-1)">ONE ENABLED CROSS-SOURCE ROUTE</text>
+			<rect x="0" y="19" width="134" height="29" rx="5" ry="5" style="stroke: rgb(13%,41%,65%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,96%,98%); fill-rule: evenodd;"/>
+			<circle cx="13" cy="33.5" r="6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(13%,41%,65%); fill-rule: evenodd;"/>
+			<text x="10.111328125" y="30.80000000000001" style="font-family: Bold; font-size: 8px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,61) scale(1,-1)">A</text>
+			<text x="27" y="30" style="font-family: Mono; font-size: 9.5px;fill: rgb(13%,41%,65%); stroke:none;" transform="translate(0,60) scale(1,-1)">receive(c,k)</text>
+			<rect x="185" y="19" width="134" height="29" rx="5" ry="5" style="stroke: rgb(65%,36%,7%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,96%,90%); fill-rule: evenodd;"/>
+			<circle cx="198" cy="33.5" r="6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(65%,36%,7%); fill-rule: evenodd;"/>
+			<text x="195.111328125" y="30.80000000000001" style="font-family: Bold; font-size: 8px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,61) scale(1,-1)">B</text>
+			<text x="212" y="30" style="font-family: Mono; font-size: 9.5px;fill: rgb(65%,36%,7%); stroke:none;" transform="translate(0,60) scale(1,-1)">unlock(c,k,a)</text>
+			<rect x="370" y="19" width="134" height="29" rx="5" ry="5" style="stroke: rgb(65%,36%,7%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,96%,90%); fill-rule: evenodd;"/>
+			<circle cx="383" cy="33.5" r="6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(65%,36%,7%); fill-rule: evenodd;"/>
+			<text x="380.111328125" y="30.80000000000001" style="font-family: Bold; font-size: 8px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,61) scale(1,-1)">B</text>
+			<text x="397" y="30" style="font-family: Mono; font-size: 9.5px;fill: rgb(65%,36%,7%); stroke:none;" transform="translate(0,60) scale(1,-1)">retrieve(c,e,a)</text>
+			<text x="143.67041015625" y="41" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,82) scale(1,-1)">key held</text>
+			<polyline points="134 30, 185 30" style="stroke: rgb(12%,18%,27%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="185 30, 181 28.2, 181 31.8" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,18%,27%); fill-rule: evenodd;"/>
+			<text x="327.487548828125" y="41" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,82) scale(1,-1)">unlocked</text>
+			<polyline points="319 30, 370 30" style="stroke: rgb(12%,18%,27%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="370 30, 366 28.2, 366 31.8" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,18%,27%); fill-rule: evenodd;"/>
+			<text x="0" y="4" style="font-family: Italic; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,8) scale(1,-1)">Distinct acquisition events remain separate.</text>
+			<polyline points="291 7, 305 7" style="stroke: rgb(43%,32%,64%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd; stroke-dasharray: 2, 2;"/>
+			<text x="310" y="4" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,8) scale(1,-1)">correspondence</text>
+			<polyline points="408 7, 422 7" style="stroke: rgb(12%,18%,27%); stroke-linecap: butt; stroke-width: 0.8; fill: None; fill-rule: evenodd;"/>
+			<polygon points="422 7, 419 5.65, 419 8.35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,18%,27%); fill-rule: evenodd;"/>
+			<text x="427" y="4" style="font-family: Sans; font-size: 8.5px;fill: rgb(36%,40%,47%); stroke:none;" transform="translate(0,8) scale(1,-1)">causal link</text>
+		</g>
+	</g>
+</svg>

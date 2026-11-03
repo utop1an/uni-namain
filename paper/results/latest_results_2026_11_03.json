@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-03",
+  "status": "updated_compiled_and_reviewed",
+  "scope": "Latest 70-task/37-world composition evidence and a separately authored 11-step case; no new model or planner calls during publication work.",
+  "compact_evidence": "data/research_release/icaps2027_2026_11_03/manifest.json",
+  "reproduction_tool": "scripts/evidence/reproduce_icaps_release.py",
+  "outline": [
+    "Conditional original-plan preservation with unavailable references",
+    "Exhaustive supported-generator tasks with fixed-world representatives",
+    "Unknown action origins and control limitations",
+    "Separate authored long case with full revision history"
+  ],
+  "claim_evidence_map": [
+    {
+      "claim": "Full retains 499/499 available original-plan checks with 401 unavailable slots.",
+      "evidence": "native_results.json and transport_results.json",
+      "status": "conditional_verified"
+    },
+    {
+      "claim": "Full confirms 50/70 and 27/37 compositions, with 10/70 and 5/37 unknown origins.",
+      "evidence": "composition_results.json, world_registry.json, expanded_analysis.json",
+      "status": "conditional_verified"
+    },
+    {
+      "claim": "Predicate-only confirms 56/70 and 30/37; all comparable Full verdicts agree.",
+      "evidence": "composition_results.json",
+      "status": "verified_no_inferred_composition_loss"
+    },
+    {
+      "claim": "A separately revised-intention 11-step case uses all four sources with independent goal branches.",
+      "evidence": "long_case/domain.pddl, problem.pddl, plan.pddl, result.json, attempts.json",
+      "status": "authored_case_only"
+    },
+    {
+      "claim": "The case proves a connected four-source causal chain or independent story quality.",
+      "status": "not_established_do_not_claim"
+    }
+  ],
+  "self_review": [
+    {
+      "dimension": "contribution",
+      "answer": "Describe reusable source-preserving domains and witnessed inter-source causal routes; do not equate action compression with additional combinations."
+    },
+    {
+      "dimension": "writing_clarity",
+      "answer": "Define groups, descriptors, exact worlds, fresh searches, valid plans, and origin-unknown verdicts separately."
+    },
+    {
+      "dimension": "experimental_strength",
+      "answer": "Preserve full denominators, failure summaries, one completed interrupted repeat, and duplicated world contexts; no iid or speedup claims."
+    },
+    {
+      "dimension": "evaluation_completeness",
+      "answer": "Retain semantic identity concern, unavailable reference plans, unknown action origins, and missing connected three/four-source chains."
+    },
+    {
+      "dimension": "method_design_soundness",
+      "answer": "Unchanged parameterized domains precede planning; explicit case revision changes intentions only, with old failures retained."
+    }
+  ],
+  "validation": {
+    "icaps2027_method_draft": {
+      "pages": 9,
+      "references_start": 8,
+      "all_fonts_embedded": true,
+      "no_type3_fonts": true,
+      "sha256": "ed97406e9eef4e00c9b9a019cf997774095767b4f0c4619dfa3dff800ae64733"
+    },
+    "icaps2027_supplement": {
+      "pages": 18,
+      "references_start": 18,
+      "all_fonts_embedded": true,
+      "no_type3_fonts": true,
+      "sha256": "b793d1f2d9d75e298c612ed9f9010801767e2e90e15dc6b2803e59fe84de131b"
+    },
+    "theorem_and_proof_blocks_unchanged": true,
+    "visual_review": {
+      "main_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "supplement_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "tables_and_case_readable": true
+    },
+    "official_style_note": "Unmodified official aaai2027.sty and aaai2027.bst retain upstream whitespace; excluded from whitespace cleanup."
+  },
+  "code_checks": {
+    "targeted_tests_passed": 34,
+    "rebuilt_domain_hashes_matched": 900,
+    "reconstructed_returned_plan_checks": 212,
+    "native_plan_physical_rechecks": 33,
+    "new_model_calls": 0,
+    "new_planner_calls": 0,
+    "staged_snapshot_full_tests": {
+      "passed": 219,
+      "seconds": 106.415,
+      "failures": 0,
+      "errors": 0
+    },
+    "staged_snapshot_release_rebuilt_models": 900,
+    "staged_snapshot_reconstructed_plans": 212,
+    "staged_snapshot_paper_build": "passed; normalized main text identical to reviewed PDF"
+  },
+  "outputs": {
+    "main": "output/pdf/icaps2027_main_2026_11_03_latest_results_v1.pdf",
+    "supplement": "output/pdf/icaps2027_supplement_2026_11_03_latest_results_v1.pdf"
+  },
+  "scientific_gates_closed": false,
+  "git_policy": "Only necessary code, tests, paper sources, vector figure assets, compact final evidence and reproduction documentation; no raw runs, caches, binaries, archives or compiled manuscript PDFs."
+}

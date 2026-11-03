@@ -1,0 +1,341 @@
+{
+  "source_sha256": {
+    "tiny_stories__story_028": {
+      "domain": "6d5309c5b2473e77cacf44542133282e04eba072e4f5f05ecf53c58a66106884",
+      "problem": "3da21697cf4c1277831a3105028627e07c4603d03ccd032ba544aef2640c02f8"
+    },
+    "tiny_stories__story_063": {
+      "domain": "04f267fdffbf84c7efa15278f91bc20481ede243cc272419488475e9e0d73282",
+      "problem": "ea2edfa7a22c844495d403a869f66f0347f799ed4a41bfade63406cfdcc568dd"
+    },
+    "tiny_stories__story_085": {
+      "domain": "f83758144ac54a68837810ddb572a2b822c2f195eeb16aa2dadad07228200068",
+      "problem": "e9c591d76b0b85f7b58bf43b9b1c2d9b82c44f0722d42e026f95b61ced739ee2"
+    },
+    "writing_prompts__wp_060": {
+      "domain": "83f4c2cec9f91f148a85e89cab448160a5900dcf0b8cb5b1903925d8ac1490d8",
+      "problem": "a03742f70a0a34069ef500c88a38b1e399e70107f6e52927502d399634852cfd"
+    }
+  },
+  "predicate_maps": {
+    "tiny_stories__story_028": {
+      "at": [
+        "tiny_stories__story_028_p_at",
+        [
+          0,
+          1
+        ]
+      ],
+      "has": [
+        "shared_p_consensus_bcc397b47b9bb5b4",
+        [
+          0,
+          1
+        ]
+      ],
+      "on-shelf": [
+        "tiny_stories__story_028_p_on-shelf",
+        [
+          0
+        ]
+      ],
+      "organized": [
+        "tiny_stories__story_028_p_organized",
+        [
+          0
+        ]
+      ],
+      "reads": [
+        "tiny_stories__story_028_p_reads",
+        [
+          0
+        ]
+      ],
+      "happy": [
+        "tiny_stories__story_028_p_happy",
+        [
+          0
+        ]
+      ]
+    },
+    "tiny_stories__story_063": {
+      "in-tree": [
+        "tiny_stories__story_063_p_in-tree",
+        [
+          0
+        ]
+      ],
+      "wants-to-eat": [
+        "tiny_stories__story_063_p_wants-to-eat",
+        [
+          0,
+          1
+        ]
+      ],
+      "hard": [
+        "tiny_stories__story_063_p_hard",
+        [
+          0
+        ]
+      ],
+      "broken": [
+        "tiny_stories__story_063_p_broken",
+        [
+          0
+        ]
+      ],
+      "eaten": [
+        "tiny_stories__story_063_p_eaten",
+        [
+          0
+        ]
+      ],
+      "helping": [
+        "tiny_stories__story_063_p_helping",
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "tiny_stories__story_085": {
+      "broken": [
+        "tiny_stories__story_085_p_broken",
+        [
+          0
+        ]
+      ],
+      "has": [
+        "shared_p_consensus_bcc397b47b9bb5b4",
+        [
+          0,
+          1
+        ]
+      ],
+      "playing": [
+        "tiny_stories__story_085_p_playing",
+        [
+          0,
+          1
+        ]
+      ],
+      "apologized": [
+        "tiny_stories__story_085_p_apologized",
+        [
+          0,
+          1
+        ]
+      ],
+      "cleaned": [
+        "tiny_stories__story_085_p_cleaned",
+        [
+          0
+        ]
+      ],
+      "forgiven": [
+        "tiny_stories__story_085_p_forgiven",
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writing_prompts__wp_060": {
+      "at": [
+        "writing_prompts__wp_060_p_at",
+        [
+          0,
+          1
+        ]
+      ],
+      "alive": [
+        "writing_prompts__wp_060_p_alive",
+        [
+          0
+        ]
+      ],
+      "has": [
+        "writing_prompts__wp_060_p_has",
+        [
+          0,
+          1
+        ]
+      ],
+      "clean": [
+        "writing_prompts__wp_060_p_clean",
+        [
+          0
+        ]
+      ],
+      "locked": [
+        "writing_prompts__wp_060_p_locked",
+        [
+          0
+        ]
+      ],
+      "wearing": [
+        "writing_prompts__wp_060_p_wearing",
+        [
+          0,
+          1
+        ]
+      ],
+      "fits": [
+        "writing_prompts__wp_060_p_fits",
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "action_maps": {
+    "tiny_stories__story_028:find": {
+      "name": "tiny_stories__story_028_a_find",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_028:put-on-shelf": {
+      "name": "tiny_stories__story_028_a_put-on-shelf",
+      "order": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tiny_stories__story_028:read": {
+      "name": "tiny_stories__story_028_a_read",
+      "order": [
+        0
+      ]
+    },
+    "tiny_stories__story_028:smell-soap": {
+      "name": "tiny_stories__story_028_a_smell-soap",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_063:climb-tree": {
+      "name": "tiny_stories__story_063_a_climb-tree",
+      "order": [
+        0
+      ]
+    },
+    "tiny_stories__story_063:want-to-eat": {
+      "name": "tiny_stories__story_063_a_want-to-eat",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_063:try-to-eat": {
+      "name": "tiny_stories__story_063_a_try-to-eat",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_063:help": {
+      "name": "tiny_stories__story_063_a_help",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_063:break-object": {
+      "name": "tiny_stories__story_063_a_break-object",
+      "order": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tiny_stories__story_063:eat-together": {
+      "name": "tiny_stories__story_063_a_eat-together",
+      "order": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tiny_stories__story_085:play": {
+      "name": "tiny_stories__story_085_a_play",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_085:break-item": {
+      "name": "tiny_stories__story_085_a_break-item",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_085:apologize": {
+      "name": "tiny_stories__story_085_a_apologize",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_085:clean": {
+      "name": "tiny_stories__story_085_a_clean",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "tiny_stories__story_085:forgive": {
+      "name": "tiny_stories__story_085_a_forgive",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "writing_prompts__wp_060:clean-item": {
+      "name": "writing_prompts__wp_060_a_clean-item",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "writing_prompts__wp_060:lock-door": {
+      "name": "writing_prompts__wp_060_a_lock-door",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "writing_prompts__wp_060:adjust-item": {
+      "name": "writing_prompts__wp_060_a_adjust-item",
+      "order": [
+        0,
+        1
+      ]
+    },
+    "writing_prompts__wp_060:wear-item": {
+      "name": "writing_prompts__wp_060_a_wear-item",
+      "order": [
+        0,
+        1
+      ]
+    }
+  },
+  "decisions": [
+    {
+      "id": "p_consensus_bcc397b47b9bb5b4",
+      "kind": "predicate",
+      "status": "accepted"
+    }
+  ],
+  "source_action_count": 19,
+  "action_count": 19,
+  "business_predicate_count": 24,
+  "intentionality_retained": true,
+  "axioms_supported": false,
+  "scope": "Parameterized domain constructed before search. Source worlds mapped separately; no pooled facts."
+}

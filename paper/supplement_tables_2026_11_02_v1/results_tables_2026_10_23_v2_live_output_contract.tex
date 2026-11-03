@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Schema policy & Checked & Invalid & Failed & Unrequested \\
+\midrule
+free\_fields & 0 & 95 & 5 & 0 \\
+coupled\_fields & 51 & 44 & 5 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Each condition attempted the same 100 known candidates under a 600-second request-admission/socket budget. Both produced 95 responses compliant with their respective JSON schemas, while the common contract checker accepted different counts. Checker acceptance and schema compliance are not semantic accuracy. One sequential paired run does not establish a stochastic or timing improvement.}
+\label{tab:live-contract-oct23}
+\end{table*}

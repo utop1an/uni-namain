@@ -1,0 +1,6 @@
+(define (plan surprise-gifts-solution)
+  (:problem surprise-gifts)
+  (:steps (find tom stone forest)
+          (play tom stone forest)
+          (give tom stone sue forest)
+          (play sue stone forest)))

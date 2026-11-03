@@ -1,0 +1,37 @@
+四域合并后的 11 步计划案例
+
+来源域：A=TinyStories story_028；B=TinyStories story_085；C=TinyStories story_063；D=WritingPrompts wp_060。
+使用已有四域组 k04_0218ded14bc9db22 的 Full 参数化合并域，19 个原动作全部保留，没有动作改写。
+
+明确的物理初始事实：A.reads(mira)、C.hard(walnut)、D.alive(mira)、D.has(mira,coat)。对象与来源类型成员关系另行显式声明，其余普通事实按闭世界为假。
+目标：Mira 已清理、Noah 已原谅 Mira、核桃已被吃掉、Emma 正在帮助 Noah、Mira 穿上外套。
+
+人物意图：原案例给人物声明目标意图；发现 apologize 未得到 Glaive 解释后，另建版本明确增加 Mira 想道歉的意图。物理事实、目标、对象、原域动作及已找到的动作序列不变。旧版本和验证失败结果全部保留。
+
+实际计划（保持规划器输出顺序）：
+1. C: help(emma,noah) — Emma 帮助 Noah。
+2. B: apologize(mira,noah) — Mira 向 Noah 道歉。
+3. D: adjust-item(mira,coat) — Mira 调整外套。
+4. D: wear-item(mira,coat) — Mira 穿上外套。
+5. B: forgive(noah,mira) — Noah 原谅 Mira。
+6. C: break-object(emma,walnut,noah) — Emma 为 Noah 敲开核桃。
+7. C: eat-together(emma,noah,walnut) — Emma 和 Noah 一起吃核桃。
+8. A: find(mira,toy) — Mira 找到玩具。
+9. B: play(mira,toy) — Mira 玩玩具。
+10. B: break-item(mira,toy) — Mira 弄坏玩具。
+11. B: clean(mira,toy) — Mira 执行清理（源域记录 cleaned(mira)）。
+
+因果分支：
+- 第8→9→10→11步；第8→9步是跨域 A→B 因果连接：找到玩具建立持有事实，玩耍需要该事实。
+- 第2→5步：道歉→原谅。
+- 第1→6→7步，且第1→7步：帮助→敲开→一起吃。
+- 第3→4步：调整外套→穿上。
+
+非因果关系按独立目标分支解释。例如穿外套分支与找玩具分支之间没有因果路径和读写冲突；各分支仍服务目标。不是把未解释动作插入计划凑长度。
+
+验证：11步；四个来源实际参与且都对目标有因果贡献；所有步骤均在目标相关因果切片中；44对动作无因果路径且无读写干扰；Glaive目标成立、未解释步骤0、孤立步骤0；独立物理重放通过。
+
+搜索来源：Fast Downward 26.6 seq-opt-lmcut 在相同物理规则/初态/目标上找到11步计划；回到未改变的原始 Glaive 域验证人物意图。原始 Glaive Full 搜索60秒超时。LAMA另返回12步候选，所有结果保留。
+
+范围：这是新构造的单个开发案例，未并入原70任务统计。它证明四来源动作可以出现在同一个经过验证的多步计划中；并不证明四个来源连成一条因果链。四个来源中story_085的原问题尚无有效参考计划，因此本案例不提供四个原计划全部保留的证据。
+语义与叙事质量仍受原始模型约束，未经独立人工评定。

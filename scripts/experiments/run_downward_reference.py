@@ -3,6 +3,7 @@ import argparse
 import ast
 from collections import Counter
 import hashlib
+import importlib.metadata
 import json
 from pathlib import Path
 import shutil
@@ -10,6 +11,7 @@ import subprocess
 import time
 
 from rcnc.validation import validate_artifacts
+from rcnc.domain_building import planning_domain_path, snapshot_implementation
 
 
 def sha(path):
@@ -35,6 +37,13 @@ def exit_status(code):
             21: 'time_limit', 22: 'memory_limit', 23: 'time_limit', 24: 'memory_time_limit',
             31: 'input_error', 33: 'input_error', 34: 'unsupported', 36: 'input_error',
             37: 'unsupported', 124: 'wall_time_limit', 137: 'resource_killed'}.get(code, 'engine_error')
+
+
+def plan_status(validation):
+    """Only an explicit INVALID verdict establishes an invalid plan."""
+    return {'VALID': 'solved', 'INVALID': 'invalid_plan',
+            'ERROR': 'validation_error', 'UNAVAILABLE': 'validation_unavailable',
+            'UNKNOWN': 'validation_unknown'}.get(validation.get('status'), 'validation_unknown')
 
 
 def freeze(inputs, composed, output, planner, seconds, memory_mb, probes=None, task_bundle=None):
@@ -90,7 +99,7 @@ def freeze(inputs, composed, output, planner, seconds, memory_mb, probes=None, t
         for task in frozen['tasks']:
             run = composed/'runs'/task['id']
             previous = json.loads((run/'manifest.json').read_text(encoding='utf-8'))
-            domain, problem = run/'union/meta_domain.pddl', run/'mapped_problem.pddl'
+            domain, problem = planning_domain_path(run, previous), run/'mapped_problem.pddl'
             if sha(domain) != previous['domain_sha256'] or sha(problem) != previous['problem_sha256']:
                 raise ValueError('Prior exported model changed: '+task['id'])
             tasks.append({'id': task['id'], 'domain': domain, 'problem': problem,
@@ -102,10 +111,9 @@ def freeze(inputs, composed, output, planner, seconds, memory_mb, probes=None, t
     if not tasks:
         raise ValueError('No input tasks')
     output.mkdir(parents=True)
-    implementation = output/'implementation'
-    implementation.mkdir()
-    for path in (Path(__file__), Path(__file__).resolve().parents[2]/'rcnc/validation.py'):
-        (implementation/path.name).write_bytes(path.read_bytes())
+    root = Path(__file__).resolve().parents[2]
+    implementation = snapshot_implementation(output,
+        [Path(__file__), root/'rcnc/validation.py', root/'rcnc/domain_building.py'], root=root)
     rows = []
     for task in tasks:
         directory = output/'tasks'/task['id']
@@ -118,6 +126,8 @@ def freeze(inputs, composed, output, planner, seconds, memory_mb, probes=None, t
         'binary_sha256': sha(binary), 'version_file_sha256': sha(version_file),
         'returncodes_sha256': sha(planner/'driver/returncodes.py'),
         'alias_sha256': sha(planner/'driver/aliases.py'), 'runner_sha256': sha(Path(__file__)),
+        'implementation_sha256': implementation,
+        'validator_version': importlib.metadata.version('unified-planning'),
         'budget': {'wall_seconds': seconds, 'overall_cpu_seconds': seconds, 'memory_mb': memory_mb},
         'tasks': rows, 'task_count': len(rows),
         'mode': bundle['mode'] if task_bundle else 'synthetic_source_effect_probes' if probes else 'same_exported_composed_tasks' if composed else 'original_source_tasks',
@@ -152,7 +162,7 @@ def run(inputs, composed, output, planner, seconds=60, memory_mb=4096, probes=No
             row['status'] = row['engine_status']
             if (directory/'plan.txt').exists():
                 row['validation'] = validate_artifacts(directory)
-                row['status'] = 'solved' if row['validation']['status'] == 'VALID' else 'invalid_plan'
+                row['status'] = plan_status(row['validation'])
                 row['plan_length'] = sum(bool(line.strip()) and not line.lstrip().startswith(';') for line in
                                          (directory/'plan.txt').read_text(encoding='utf-8').splitlines())
             elif row['engine_status'].startswith('plan_found'):
@@ -168,7 +178,10 @@ def run(inputs, composed, output, planner, seconds=60, memory_mb=4096, probes=No
         save(output/'report.json', report)
         print(json.dumps(row), flush=True)
     report.update(status='complete', binary_unchanged=sha(planner/'builds/release/bin/downward') == manifest['binary_sha256'],
-                  runner_unchanged=sha(Path(__file__)) == manifest['runner_sha256'])
+                  runner_unchanged=sha(Path(__file__)) == manifest['runner_sha256'],
+                  implementation_unchanged=all(sha(Path(__file__).resolve().parents[2]/p) == h
+                      for p, h in manifest['implementation_sha256'].items()),
+                  validator_unchanged=importlib.metadata.version('unified-planning') == manifest['validator_version'])
     save(output/'report.json', report)
     return report
 

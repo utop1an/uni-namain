@@ -1,0 +1,95 @@
+\section{Learned-Domain First-Repeat Evaluation}
+\label{sec:supp-repeat-one-evaluation}
+
+We evaluate whether a merged narrative planning domain preserves executable source plans and supports new plans that connect actions from different source domains. These are distinct requirements: retaining an original plan does not establish cross-source composition, and finding a composite plan does not establish preservation of every source behavior. We therefore separate a frozen source-preservation experiment from a subsequent, explicitly constructed composition diagnostic. Compression and original-goal search coverage are reported as descriptive properties, not as requirements for successful composition.
+
+\subsection{Data, conditions, and execution protocol}
+
+\paragraph{Source domains and sampling.}
+We use the GPT-4 revised domain--problem artifacts from \emph{There and Back Again}~\cite{kelly2023there}, with the upstream version pinned in the audit record below. The recorded cohort contains 192 published records: 40 previously designated development records and 152 legacy test records. We retain the previously admitted 60-source parser/compiler cohort, comprising 32 TinyStories and 28 WritingPrompts domains; the remaining 92 legacy test records remain documented exclusions. No source-domain repair or new admission decision is performed for this experiment. Because these sources have already been used during development, the legacy split does not establish unseen-source generalization.
+
+The frozen dataset contains 100 balanced source sequences of length ten. We evaluate their prefixes of size $k\in\{2,3,4\}$, yielding 100 groups per size and 300 groups in total. At each size, every source appears either $\lfloor100k/60\rfloor$ or $\lceil100k/60\rceil$ times, and unordered groups are unique within a size. Sampling uses source identifiers rather than semantic labels, alignment decisions, or planning outcomes. The resulting groups contain 538 distinct source pairs. Groups share sources and are nested within sequences, so they are correlated evaluation units rather than 300 independent stories.
+
+\paragraph{Conditions.}
+\emph{Native} searches each original domain--problem pair. \emph{Union} combines source domains while retaining separate predicate and action namespaces. \emph{Predicate-only} adds accepted predicate correspondences while retaining source action variants. \emph{Full} uses exactly the same predicate correspondences and additionally merges eligible action variants with identical mapped effects and acting roles, using disjoined, source-guarded preconditions. Full is evaluated as a domain-composition method; it is not required to outperform Predicate-only on reachability. All 900 parameterized merged domains and their provenance mappings are saved before main-experiment planning.
+
+\paragraph{Alignment and planning.}
+The frozen candidate inventory contains at most eight predicate and four action candidates per source pair, totaling 3,970 predicate and 710 action judgments. Candidates are deduplicated within the repeat. GLM-5.3 Cloud is queried through Ollama with temperature 0, requested seed 2026110101, a 32,768-token context setting, and a 16,384-token generation setting. Provider enforcement of the requested seed is unverified. Correspondences require confidence at least 0.9, valid role permutations and source-local evidence. Multi-source clusters additionally require complete pairwise compatibility, consistent role cycles, and agreement on concept, scope, and aligned role descriptions. Invalid or unavailable judgments do not authorize sharing.
+
+Each search and replay has a 15-second limit. Glaive runs with one planner worker and a 4-GB Java memory limit. We use the separately versioned runtime that corrects false-disjunction substitution and grounding over empty types; historical results from the uncorrected runtime are excluded. The main experiment contains 60 Native searches and 1,800 merged-domain searches: two fixed original source problems per group, under each of three merged-domain conditions. Every source in every group also has a registered original-plan transport slot, totaling 2,700 slots.
+
+\paragraph{Repeat status.}
+This report analyzes the first completed repeat, retained as an \emph{interrupted continuation}. Its serial and ten-client request segments, failed responses, and one administratively interrupted request are preserved; unsuccessful requests are not replaced. Five repeats were registered, but only the first is complete. The second stopped after 576 attempts when the service reported its monthly usage limit, and is excluded from the completed-repeat metrics. We consequently report no across-repeat standard deviation, reproducibility estimate, or significance test. We also avoid confidence intervals that would incorrectly treat overlapping source/group rows as independent observations.
+
+\subsection{Evaluation units and validity criteria}
+
+\paragraph{Source-plan preservation.}
+Let $\mathcal{S}$ be the registered source-plan/domain slots for a condition. Let $E_i$ indicate that slot $i$ has a Native plan passing both Glaive replay and an independent physical state-transition check. Let $V_i$ indicate that its translated plan passes the same checks in the merged domain. We report
+\[
+ P_{\mathrm{available}}=\frac{\sum_{i\in\mathcal{S}}E_iV_i}{\sum_{i\in\mathcal{S}}E_i},
+ \qquad
+ C_{\mathrm{evidence}}=\frac{\sum_{i\in\mathcal{S}}E_i}{|\mathcal{S}|}.
+\]
+Missing Native plans remain unavailable, rather than being counted as successful transports or preservation failures. Preservation is evaluated on explicitly mapped original initial states and goals. Each problem activates only its designated source; facts from unrelated stories are not pooled. This tests individual source-world embeddings, not the consistency of arbitrary joint worlds or preservation of all possible traces.
+
+\paragraph{Returned plans.}
+A returned plan is validated only when Glaive reports goal achievement with zero unexplained steps and the independent physical checker confirms applicability and goal achievement. We distinguish validated plans, unsupported/unknown returns, bounded searches with no returned plan, and time limits. A bounded no-plan result is not a proof of unsolvability. Checking an output schema or replaying a plan does not provide an independent semantic label.
+
+\paragraph{Cross-source composition.}
+For the separate diagnostic, a plan counts as a witnessed composition only if its goal-relevant causal slice contains an edge from an action of one source to an action of another source through a shared predicate. Re-adding an initially true fact does not create such an edge; unrelated actions concatenated before a goal do not count. Ambiguous provenance of a fused action is classified as unknown rather than automatically credited to multiple sources. This measures witnessed composition in the returned plan, not the existence or absence of every possible composite plan.
+
+\subsection{Alignment outcomes and merged artifacts}
+
+The model produced contract-valid responses for 4,117 of 4,680 candidates (87.97\%), of which 206 proposed compatibility (Table~\ref{tab:judgments}). These are automatic judgments, not accuracy measurements. The 561 invalid outputs comprise 389 source-citation mismatches, 96 JSON parsing failures, 69 incomplete/truncated generations, and seven incomplete compact judgments. Two further outcomes are unavailable: a transport failure and an administratively interrupted in-flight request. All remain in the candidate denominator.
+
+\input{icaps2027_sections/revised_repeat01_table_judgments.tex}
+
+Predicate sharing occurs in 120 of 300 groups, and action merging in 19 groups (Table~\ref{tab:models}). Across correlated group occurrences, the compiler accepts 169 predicate clusters and 19 action clusters, representing 95 and 11 distinct member sets, respectively. All accepted clusters in this repeat are pairwise. Eleven of the 19 action-cluster occurrences have different business preconditions while retaining identical mapped effects and acting roles. Thus, this run contains actual action-merge cases, although their occurrence is sparse and is not itself an endpoint of the composition evaluation.
+
+\input{icaps2027_sections/revised_repeat01_table_models.tex}
+
+The action-merge cases do not provide exhaustive branch coverage. Of 38 registered source-branch occurrences in the 19 action clusters, 19 have an available validated Native plan, and 11 are actually exercised by a fused step in a transported Native plan. We rechecked the effect/actor equality conditions for all 19 cluster occurrences; these structural checks do not supply independent evidence of semantic equivalence.
+
+\subsection{Preservation and source-local search results}
+
+All available source plans survive translation into Full. Native search returns 34 plans out of 60 problems: 33 validate, while one contains unsupported counterfactual steps and remains unknown. Sixteen Native searches return no plan within their execution and ten hit the wall-time limit. The 33 validated Native plans supply 499 eligible Full transport slots across the overlapping groups; all 499 validate (Table~\ref{tab:preservation}). The remaining 401 of 900 Full slots are unavailable, giving 55.44\% evidence coverage rather than universal empirical coverage.
+
+\input{icaps2027_sections/revised_repeat01_table_preservation.tex}
+
+Union and Predicate-only have the same transport outcomes as Full. Across all three conditions, 1,497 available slots validate and 1,203 are unavailable; these totals repeatedly reuse the same 33 Native plans and must not be interpreted as independent plan samples. Within the 120 groups with actual predicate sharing, Full validates 206 available transports out of 408 registered slots. Within the 19 groups with actual action merging, it validates 35 available transports out of 69 slots. Neither subset contains an observed transport violation, but unavailable plans and unexercised branches remain evidence gaps.
+
+Fresh source-local search outcomes are identical across the three merged-domain conditions on all 600 matched anchor queries. Per condition, 341 of 600 searches return a plan; 332 validate and nine remain unknown because of counterfactual plan syntax. There are 160 bounded no-plan outcomes and 99 wall-time limits (Table~\ref{tab:search}). Across conditions, the 27 unknown returns all concern repeated uses of \texttt{tiny\_stories\_\_story\_094}. These results are regression evidence: by construction, only one source is active per query. They neither test cross-source generation nor establish that composition is ineffective.
+
+\input{icaps2027_sections/revised_repeat01_table_search.tex}
+
+\subsection{Historical 18-task composition diagnostic}
+
+We evaluated composition in a separately registered posthoc diagnostic using the already constructed first-repeat domains. A restricted generator considers positive producer--consumer predicate interfaces with conjunctive supported preconditions and without constant bindings. It specifies objects, cross-source identity/type assignments, initial facts, intentions, and goals explicitly; it copies no source-problem facts. The original parameterized merged domains remain byte-identical. The generated worlds are structural mechanism fixtures, not original story worlds or independent test stories.
+
+The generator produces a supported task for 35 of the 300 groups: six, twelve, and seventeen at sizes two, three, and four. The other 265 groups are classified as having no task generated by this restricted rule, not as composition failures. Before search, we select the first six generated groups per size under a fixed hash ordering. This gives 18 tasks with 13 distinct explicit worlds. Selection is conditional on accepted interfaces and generator support, but never on search success. We run Union, Predicate-only, Full, and three Full controls that disable the producer source, disable the consumer source, or separate the shared object identities, for 108 searches in total.
+
+Full returns 18 validated plans, of which 17 exhibit a goal-relevant cross-source causal link (Table~\ref{tab:composition}). Predicate-only has the same result, establishing that shared predicates with retained action variants suffice for these witnessed compositions. The remaining Full plan reaches its goal through a single source; this does not prove that a composite alternative is absent. The 17 composite plans span 12 distinct worlds, all have two steps, and all actually use two sources. The counts by selected domain size are 6/6, 6/6, and 5/6; they do not establish three- or four-source causal chains.
+
+\input{icaps2027_sections/revised_repeat01_table_composition.tex}
+
+Fifteen selected tasks have a validated composite Full plan while Union and all three controls return no plan within the fixed budget. This is bounded control evidence for the tested interface/identity assumptions, not a proof that the goal is unreachable without either source. In two further tasks, Full returns a cross-source plan even though a single-source alternative also reaches the goal. These remain witnessed compositions: the objective is to create valid combinations, not to require an increase in original-goal solution coverage.
+
+\paragraph{Example.}
+For \texttt{story\_028} and \texttt{story\_085}, an explicit fixture declares a common character $r_0$ and item $r_1$, initial fact $\mathrm{reads}(r_0)$, and the character's intention and goal $\mathrm{playing}(r_0,r_1)$. Under the closed-world convention, the character initially lacks the item and the item is not broken. The planner returns
+\[
+\mathrm{find}_{028}(r_0,r_1)
+\;\to\;\mathrm{has}_{\mathrm{shared}}(r_0,r_1)
+\;\to\;\mathrm{play}_{085}(r_0,r_1).
+\]
+The arrows show the causal handoff, not a third action. Both physical replay and Glaive's explanation/goal checks pass. Turning off predicate sharing, disabling either source, or separating the identities produces no returned plan in the registered controls. Natural-language realization can narrate these two events, but narrative quality was not evaluated.
+
+\paragraph{Preservation in the same diagnostic models.}
+For the 18 selected Full models, we additionally register all 54 source slots and translate their available Native plans. All 27 available transports validate; the other 27 slots remain unavailable. Fifteen of the 17 composite groups have at least one preserved Native plan, and two groups have available, preserved plans for every selected source. These two groups share one synthetic world. That world identifies a lightbox with the object occupying the \texttt{?bike} role of a pedal-repair action; its broad formal type permits the binding, but its semantic plausibility is unverified. We retain this case as a concrete identity concern, not an independently established semantic error or a clean generalization success.
+
+\subsection{Interpretation and limits}
+
+The completed repeat supports two bounded findings: available source traces are preserved in their original-world embeddings, and the fixed merged domains can produce formally valid cross-source plans under explicitly declared composition worlds. The experiment does not establish preservation of all possible source traces, compatibility of arbitrary pooled worlds, correctness of automatic object identities, or narrative coherence. Output validation and Glaive explanation checks are not substitutes for independent semantic assessment.
+
+The sample and execution also limit statistical interpretation. The source cohort was admitted by an existing parser/compiler contract; groups overlap and nest, and diagnostic tasks repeat explicit worlds. Only one interrupted repeat is complete, with mixed request concurrency and a changing service execution history. We therefore make no five-repeat stability, unseen-source, timing-speedup, or population-level significance claim. The historical 17/18 count and the expanded counts below are conditional diagnostics, not estimates over all 300 groups.
+
+The next evidence needed for the stated objective is broader source-trace availability, independently checked cross-source identity mappings, and fixed tasks requiring longer causal chains involving three or four sources. Additional repetitions can quantify alignment variability after service capacity is restored. None of these gaps is repaired by treating unavailable rows as successes, expanding the same two-event template, or reporting structural compression as the main outcome.

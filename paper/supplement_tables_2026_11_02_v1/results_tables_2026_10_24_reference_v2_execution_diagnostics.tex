@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Strategy & S & U & Time & State & Other & Worlds \\
+\midrule
+Default (correlated pair) & 9 & 2 & 13 & 0 & 0 & 5 \\
+Positive-tuple join & 9 & 2 & 13 & 0 & 0 & 5 \\
+Default (witness pair) & 9 & 2 & 13 & 0 & 0 & 5 \\
+Precondition witness & 10 & 2 & 8 & 4 & 0 & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Two separately registered paired conditions, each with 48 search slots over 24 fixed PDDL representations of the same six known worlds. Every process has a 20-second limit; state limits are 5,000. S: solved, U: solver-reported unsolvable. Worlds counts a solution in any representation. All 18 and 19 saved plan records in the respective conditions independently revalidate. Defaults and worlds repeat across conditions; neither the extra witness representation nor repeated plans add independent-world coverage. Concurrent inference precludes causal timing claims.}
+\label{tab:execution-diagnostics-oct24}
+\end{table*}

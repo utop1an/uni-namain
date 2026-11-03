@@ -1,0 +1,16 @@
+\begin{table*}[htbp]
+\centering\small
+\caption{Fresh source-local searches, per merged condition. All 600 matched query statuses are identical across Union, Predicate-only, and Full.}
+\label{tab:search}
+\begin{tabular}{lrrrrrr}
+\toprule
+$k$ & Queries & Returned & Validated & Unknown & No plan & Time limit \\
+\midrule
+2 & 200 & 114 & 111 & 3 & 54 & 32 \\
+3 & 200 & 114 & 111 & 3 & 53 & 33 \\
+4 & 200 & 113 & 110 & 3 & 53 & 34 \\
+Total & 600 & 341 & 332 & 9 & 160 & 99 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{0.97\linewidth}\small Each query activates one original source. No plan denotes a bounded result, not certified unsolvability. Nine unknown returns per condition have unsupported counterfactual steps.\end{minipage}
+\end{table*}

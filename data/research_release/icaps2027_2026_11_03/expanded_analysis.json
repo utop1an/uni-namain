@@ -1,0 +1,502 @@
+{
+  "status": "verified_expanded_composition_analysis",
+  "created_utc": "2026-11-02T17:01:19.032983+00:00",
+  "row_count": 420,
+  "case_count": 70,
+  "distinct_worlds": 37,
+  "groups": 35,
+  "all_tasks": {
+    "union": {
+      "registered": 70,
+      "valid": 25,
+      "cross_source": 0,
+      "search_status": {
+        "solved": 25,
+        "no_solution_returned": 45
+      },
+      "causal_status": {
+        "no_goal_relevant_cross_source_link": 25,
+        "unavailable_valid_plan": 45
+      }
+    },
+    "predicate_only": {
+      "registered": 70,
+      "valid": 68,
+      "cross_source": 56,
+      "search_status": {
+        "solved": 68,
+        "no_solution_returned": 2
+      },
+      "causal_status": {
+        "no_goal_relevant_cross_source_link": 12,
+        "cross_source_composition": 56,
+        "unavailable_valid_plan": 2
+      }
+    },
+    "full": {
+      "registered": 70,
+      "valid": 68,
+      "cross_source": 50,
+      "search_status": {
+        "solved": 68,
+        "no_solution_returned": 2
+      },
+      "causal_status": {
+        "no_goal_relevant_cross_source_link": 8,
+        "cross_source_composition": 50,
+        "unknown": 10,
+        "unavailable_valid_plan": 2
+      }
+    },
+    "without_producer": {
+      "registered": 70,
+      "valid": 25,
+      "cross_source": 0,
+      "search_status": {
+        "solved": 25,
+        "no_solution_returned": 45
+      },
+      "causal_status": {
+        "no_goal_relevant_cross_source_link": 15,
+        "unavailable_valid_plan": 45,
+        "unknown": 10
+      }
+    },
+    "without_consumer": {
+      "registered": 70,
+      "valid": 1,
+      "cross_source": 0,
+      "search_status": {
+        "no_solution_returned": 69,
+        "solved": 1
+      },
+      "causal_status": {
+        "unavailable_valid_plan": 69,
+        "no_goal_relevant_cross_source_link": 1
+      }
+    },
+    "separate_identity": {
+      "registered": 70,
+      "valid": 25,
+      "cross_source": 0,
+      "search_status": {
+        "solved": 25,
+        "no_solution_returned": 45
+      },
+      "causal_status": {
+        "no_goal_relevant_cross_source_link": 15,
+        "unavailable_valid_plan": 45,
+        "unknown": 10
+      }
+    }
+  },
+  "fixed_world_representatives": {
+    "union": {
+      "registered": 37,
+      "valid": 13,
+      "cross_source": 0,
+      "search_status": {
+        "no_solution_returned": 24,
+        "solved": 13
+      },
+      "causal_status": {
+        "unavailable_valid_plan": 24,
+        "no_goal_relevant_cross_source_link": 13
+      }
+    },
+    "predicate_only": {
+      "registered": 37,
+      "valid": 36,
+      "cross_source": 30,
+      "search_status": {
+        "solved": 36,
+        "no_solution_returned": 1
+      },
+      "causal_status": {
+        "cross_source_composition": 30,
+        "no_goal_relevant_cross_source_link": 6,
+        "unavailable_valid_plan": 1
+      }
+    },
+    "full": {
+      "registered": 37,
+      "valid": 36,
+      "cross_source": 27,
+      "search_status": {
+        "solved": 36,
+        "no_solution_returned": 1
+      },
+      "causal_status": {
+        "cross_source_composition": 27,
+        "unknown": 5,
+        "no_goal_relevant_cross_source_link": 4,
+        "unavailable_valid_plan": 1
+      }
+    },
+    "without_producer": {
+      "registered": 37,
+      "valid": 13,
+      "cross_source": 0,
+      "search_status": {
+        "no_solution_returned": 24,
+        "solved": 13
+      },
+      "causal_status": {
+        "unavailable_valid_plan": 24,
+        "unknown": 5,
+        "no_goal_relevant_cross_source_link": 8
+      }
+    },
+    "without_consumer": {
+      "registered": 37,
+      "valid": 1,
+      "cross_source": 0,
+      "search_status": {
+        "no_solution_returned": 36,
+        "solved": 1
+      },
+      "causal_status": {
+        "unavailable_valid_plan": 36,
+        "no_goal_relevant_cross_source_link": 1
+      }
+    },
+    "separate_identity": {
+      "registered": 37,
+      "valid": 13,
+      "cross_source": 0,
+      "search_status": {
+        "no_solution_returned": 24,
+        "solved": 13
+      },
+      "causal_status": {
+        "unavailable_valid_plan": 24,
+        "unknown": 5,
+        "no_goal_relevant_cross_source_link": 8
+      }
+    }
+  },
+  "by_size": {
+    "2": {
+      "union": {
+        "registered": 8,
+        "search": {
+          "no_solution_returned": 7,
+          "solved": 1
+        },
+        "valid": 1,
+        "causal": {
+          "unavailable_valid_plan": 7,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      },
+      "predicate_only": {
+        "registered": 8,
+        "search": {
+          "solved": 8
+        },
+        "valid": 8,
+        "causal": {
+          "cross_source_composition": 7,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      },
+      "full": {
+        "registered": 8,
+        "search": {
+          "solved": 8
+        },
+        "valid": 8,
+        "causal": {
+          "cross_source_composition": 7,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      },
+      "without_producer": {
+        "registered": 8,
+        "search": {
+          "no_solution_returned": 7,
+          "solved": 1
+        },
+        "valid": 1,
+        "causal": {
+          "unavailable_valid_plan": 7,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      },
+      "without_consumer": {
+        "registered": 8,
+        "search": {
+          "no_solution_returned": 8
+        },
+        "valid": 0,
+        "causal": {
+          "unavailable_valid_plan": 8
+        }
+      },
+      "separate_identity": {
+        "registered": 8,
+        "search": {
+          "no_solution_returned": 7,
+          "solved": 1
+        },
+        "valid": 1,
+        "causal": {
+          "unavailable_valid_plan": 7,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      }
+    },
+    "3": {
+      "union": {
+        "registered": 26,
+        "search": {
+          "no_solution_returned": 14,
+          "solved": 12
+        },
+        "valid": 12,
+        "causal": {
+          "unavailable_valid_plan": 14,
+          "no_goal_relevant_cross_source_link": 12
+        }
+      },
+      "predicate_only": {
+        "registered": 26,
+        "search": {
+          "solved": 25,
+          "no_solution_returned": 1
+        },
+        "valid": 25,
+        "causal": {
+          "cross_source_composition": 20,
+          "unavailable_valid_plan": 1,
+          "no_goal_relevant_cross_source_link": 5
+        }
+      },
+      "full": {
+        "registered": 26,
+        "search": {
+          "solved": 25,
+          "no_solution_returned": 1
+        },
+        "valid": 25,
+        "causal": {
+          "cross_source_composition": 17,
+          "unknown": 5,
+          "unavailable_valid_plan": 1,
+          "no_goal_relevant_cross_source_link": 3
+        }
+      },
+      "without_producer": {
+        "registered": 26,
+        "search": {
+          "no_solution_returned": 14,
+          "solved": 12
+        },
+        "valid": 12,
+        "causal": {
+          "unavailable_valid_plan": 14,
+          "unknown": 5,
+          "no_goal_relevant_cross_source_link": 7
+        }
+      },
+      "without_consumer": {
+        "registered": 26,
+        "search": {
+          "no_solution_returned": 26
+        },
+        "valid": 0,
+        "causal": {
+          "unavailable_valid_plan": 26
+        }
+      },
+      "separate_identity": {
+        "registered": 26,
+        "search": {
+          "no_solution_returned": 14,
+          "solved": 12
+        },
+        "valid": 12,
+        "causal": {
+          "unavailable_valid_plan": 14,
+          "unknown": 5,
+          "no_goal_relevant_cross_source_link": 7
+        }
+      }
+    },
+    "4": {
+      "union": {
+        "registered": 36,
+        "search": {
+          "solved": 12,
+          "no_solution_returned": 24
+        },
+        "valid": 12,
+        "causal": {
+          "no_goal_relevant_cross_source_link": 12,
+          "unavailable_valid_plan": 24
+        }
+      },
+      "predicate_only": {
+        "registered": 36,
+        "search": {
+          "solved": 35,
+          "no_solution_returned": 1
+        },
+        "valid": 35,
+        "causal": {
+          "no_goal_relevant_cross_source_link": 6,
+          "cross_source_composition": 29,
+          "unavailable_valid_plan": 1
+        }
+      },
+      "full": {
+        "registered": 36,
+        "search": {
+          "solved": 35,
+          "no_solution_returned": 1
+        },
+        "valid": 35,
+        "causal": {
+          "no_goal_relevant_cross_source_link": 4,
+          "cross_source_composition": 26,
+          "unknown": 5,
+          "unavailable_valid_plan": 1
+        }
+      },
+      "without_producer": {
+        "registered": 36,
+        "search": {
+          "solved": 12,
+          "no_solution_returned": 24
+        },
+        "valid": 12,
+        "causal": {
+          "no_goal_relevant_cross_source_link": 7,
+          "unavailable_valid_plan": 24,
+          "unknown": 5
+        }
+      },
+      "without_consumer": {
+        "registered": 36,
+        "search": {
+          "no_solution_returned": 35,
+          "solved": 1
+        },
+        "valid": 1,
+        "causal": {
+          "unavailable_valid_plan": 35,
+          "no_goal_relevant_cross_source_link": 1
+        }
+      },
+      "separate_identity": {
+        "registered": 36,
+        "search": {
+          "solved": 12,
+          "no_solution_returned": 24
+        },
+        "valid": 12,
+        "causal": {
+          "no_goal_relevant_cross_source_link": 7,
+          "unavailable_valid_plan": 24,
+          "unknown": 5
+        }
+      }
+    }
+  },
+  "generator_coverage": {
+    "registered_groups": 300,
+    "supported_groups": 35,
+    "outside_generator_coverage": 265,
+    "supported_descriptors": 70,
+    "by_size_groups": {
+      "2": 6,
+      "3": 12,
+      "4": 17
+    }
+  },
+  "same_model_historical_preservation": {
+    "registered_source_slots": 116,
+    "validated": 59,
+    "transport_status": {
+      "replayed": 59,
+      "unavailable_valid_native_plan": 57
+    },
+    "new_searches_or_replays": 0
+  },
+  "paired_cross_source_cases": {
+    "count": 50,
+    "at_least_one_preserved_original": 47,
+    "all_selected_sources_available_preserved": 5,
+    "all_sources_paired_distinct_worlds": 3
+  },
+  "known_identity_risk_cases": 3,
+  "known_identity_risk_worlds": 1,
+  "source_action_pairs": 34,
+  "directed_source_pairs": 26,
+  "actual_action_merge_groups": 6,
+  "actual_action_merge_cases": 17,
+  "actual_action_merge_subset": {
+    "predicate_only": {
+      "registered": 17,
+      "valid": 16,
+      "cross_source": 11,
+      "search_status": {
+        "solved": 16,
+        "no_solution_returned": 1
+      },
+      "causal_status": {
+        "cross_source_composition": 11,
+        "no_goal_relevant_cross_source_link": 5,
+        "unavailable_valid_plan": 1
+      }
+    },
+    "full": {
+      "registered": 17,
+      "valid": 16,
+      "cross_source": 5,
+      "search_status": {
+        "solved": 16,
+        "no_solution_returned": 1
+      },
+      "causal_status": {
+        "cross_source_composition": 5,
+        "no_goal_relevant_cross_source_link": 1,
+        "unknown": 10,
+        "unavailable_valid_plan": 1
+      }
+    }
+  },
+  "physical_rechecks": 212,
+  "execution_input_files_verified": 889,
+  "returned_plan_validation_violations": [],
+  "returned_plan_validation_unknowns": [],
+  "previous18_fresh_search_comparison": {
+    "checks": 108,
+    "search_status_changes": 0,
+    "validity_changes": 0,
+    "causal_status_changes": 0
+  },
+  "inputs_unchanged": true,
+  "calls": {
+    "search": 420,
+    "replay": 212
+  },
+  "new_model_calls": 0,
+  "new_planner_calls_in_this_audit": 0,
+  "independent_semantic_labels": 0,
+  "plan_lengths": {
+    "2": 50
+  },
+  "goal_relevant_source_counts": {
+    "2": 50
+  },
+  "limits": [
+    "Posthoc supported-generator census, conditional on accepted interfaces.",
+    "70 candidate tasks share 37 exact-world keys and overlapping sources; no iid confidence intervals.",
+    "37-world primary table uses representatives fixed before search; context best-of results are not primary.",
+    "Returned-plan causal structure is evaluated; absence of a returned composition does not prove none exists.",
+    "All source-plan evidence is source-local and incomplete; no joint original-world preservation claim.",
+    "Known identity concerns retained; no independent semantic or narrative-quality evaluation.",
+    "This is fresh task execution on saved first-repeat domains, not another LLM merge repeat."
+  ]
+}

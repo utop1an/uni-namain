@@ -1,0 +1,199 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "source": "tiny_stories__story_063",
+      "label": "C",
+      "source_action": "help",
+      "arguments": [
+        "emma",
+        "noah"
+      ]
+    },
+    {
+      "step": 2,
+      "source": "tiny_stories__story_085",
+      "label": "B",
+      "source_action": "apologize",
+      "arguments": [
+        "mira",
+        "noah"
+      ]
+    },
+    {
+      "step": 3,
+      "source": "writing_prompts__wp_060",
+      "label": "D",
+      "source_action": "adjust-item",
+      "arguments": [
+        "mira",
+        "coat"
+      ]
+    },
+    {
+      "step": 4,
+      "source": "writing_prompts__wp_060",
+      "label": "D",
+      "source_action": "wear-item",
+      "arguments": [
+        "mira",
+        "coat"
+      ]
+    },
+    {
+      "step": 5,
+      "source": "tiny_stories__story_085",
+      "label": "B",
+      "source_action": "forgive",
+      "arguments": [
+        "noah",
+        "mira"
+      ]
+    },
+    {
+      "step": 6,
+      "source": "tiny_stories__story_063",
+      "label": "C",
+      "source_action": "break-object",
+      "arguments": [
+        "emma",
+        "walnut",
+        "noah"
+      ]
+    },
+    {
+      "step": 7,
+      "source": "tiny_stories__story_063",
+      "label": "C",
+      "source_action": "eat-together",
+      "arguments": [
+        "emma",
+        "noah",
+        "walnut"
+      ]
+    },
+    {
+      "step": 8,
+      "source": "tiny_stories__story_028",
+      "label": "A",
+      "source_action": "find",
+      "arguments": [
+        "mira",
+        "toy"
+      ]
+    },
+    {
+      "step": 9,
+      "source": "tiny_stories__story_085",
+      "label": "B",
+      "source_action": "play",
+      "arguments": [
+        "mira",
+        "toy"
+      ]
+    },
+    {
+      "step": 10,
+      "source": "tiny_stories__story_085",
+      "label": "B",
+      "source_action": "break-item",
+      "arguments": [
+        "mira",
+        "toy"
+      ]
+    },
+    {
+      "step": 11,
+      "source": "tiny_stories__story_085",
+      "label": "B",
+      "source_action": "clean",
+      "arguments": [
+        "mira",
+        "toy"
+      ]
+    }
+  ],
+  "causal_edges_one_based": [
+    {
+      "from": 3,
+      "to": 4,
+      "fact": [
+        "writing_prompts__wp_060_p_fits",
+        "coat",
+        "mira"
+      ]
+    },
+    {
+      "from": 2,
+      "to": 5,
+      "fact": [
+        "tiny_stories__story_085_p_apologized",
+        "mira",
+        "noah"
+      ]
+    },
+    {
+      "from": 1,
+      "to": 6,
+      "fact": [
+        "tiny_stories__story_063_p_helping",
+        "emma",
+        "noah"
+      ]
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "fact": [
+        "tiny_stories__story_063_p_broken",
+        "walnut"
+      ]
+    },
+    {
+      "from": 1,
+      "to": 7,
+      "fact": [
+        "tiny_stories__story_063_p_helping",
+        "emma",
+        "noah"
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "fact": [
+        "shared_p_consensus_bcc397b47b9bb5b4",
+        "mira",
+        "toy"
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "fact": [
+        "tiny_stories__story_085_p_playing",
+        "mira",
+        "toy"
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "fact": [
+        "tiny_stories__story_085_p_broken",
+        "toy"
+      ]
+    }
+  ],
+  "cross_source_edges_one_based": [
+    {
+      "from": 8,
+      "to": 9,
+      "fact": [
+        "shared_p_consensus_bcc397b47b9bb5b4",
+        "mira",
+        "toy"
+      ]
+    }
+  ]
+}

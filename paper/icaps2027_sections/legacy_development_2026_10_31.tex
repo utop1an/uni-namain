@@ -1,0 +1,64 @@
+\section{31 October Development Evaluation}
+We organize the development evidence around three questions: whether interfaces enable a causal chain requiring both sources, whether available source executions survive composition, and what action compression adds when predicate mappings are fixed. The illustrative archive example in the main paper's conceptual figure is not part of these experiments. The measured composition case in this historical block is the acquire-then-handoff family below; narrative interest and broad plot diversity are not measured.
+
+\subsection{Inputs, Conditions, and Reproducibility}
+This historical development pool comprises 15 known narrative domain/problem pairs with 234 actions and 236 predicates. Upstream learner versions and training provenance are not established for this pool. We retain original worlds and all failed or limited tasks. Explicitly authored composition worlds, original-goal problems, and schema witnesses are different evaluation units. Repeated representations, plans, and sizes of one authored family are correlated observations.
+
+The 31 October 2026 block freezes source bytes, candidate lists, prompts, thresholds, model settings, and planner slots before execution. Candidate retrieval uses typed, same-named effect predicates and complete parameter bijections. It is a restricted opportunity census, not a semantic-recall evaluation. The primary confidence threshold is 0.9. Conditions are no shared predicates, predicate sharing with source variants, and the same predicate sharing plus accepted action merges. Source-removal controls retain the supplied world and vocabulary while removing the designated source's actions.
+
+Model queries use \texttt{glm-5.3:cloud} on 31 October 2026, temperature 0, seed 20261027, context limit 32,768 and output limit 16,384 tokens, one attempt and one worker, with a 240-second request limit and a 900-second overall budget. Prompts provide source formulas and role/event evidence, request separate predicate/action judgments with citations, and exclude task goals, plans, and labels. The manifest records the model digest; a cloud identifier is not a guarantee of immutable server weights. The supplementary record specifies the digest and frozen prompt hashes. Invalid responses are retained without retries.
+
+Planning uses Fast Downward 26.6 with LAMA-first~\cite{helmert2006downward}, a 20-second per-call wall budget, 4096 MiB memory, and one worker. Unified Planning 1.3.0 independently validates returned plans. Direct forward transports receive 30 seconds each and check applicability and goal satisfaction; they do not enumerate all source-atom truth values. The experiments ran on a shared Windows workstation. A complete run-linked hardware and operating-system receipt remains a reproducibility gap; concurrent workloads also preclude isolated speed claims. Artifact hashes identify the frozen implementations and exported models.
+
+\subsection{Candidate Funnel and Action Compression}
+All 105 pairs of the 15 sources remain in the census. Of 234 actions, 225 enter the candidate fragment and nine are outside it. The coarse scan finds 626 pairs across 80 source pairs, narrowed to seven typed action candidates. Nine predicate candidates and seven action candidates produce 16 model requests: 12 outputs pass the contract checker and four are invalid. The action decisions comprise three compatible, two different, and two invalid outputs. Only the previously known BIRT/SOUP travel pair reaches the fixed 0.9 threshold; the gift candidates score 0.85 and 0.88 and remain separate.
+
+Six unique predicate pairs are accepted, represented as seven groups across eight full conditions because two gift cases reuse a predicate judgment. These are not independent semantic labels. Travel compresses its two-source model from 24 actions to 23; no newly discovered action-merge positive is established. The final block contains 25 compiled models and the complete 96-call planning denominator shown in Table~\ref{tab:story-summary}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lr}
+\toprule
+Outcome or evaluation unit & Count\\
+\midrule
+Planner: solved & 25\\
+Planner: reported unsolvable & 58\\
+Planner: wall-time limit & 13\\
+\midrule
+Original-plan transport: valid & 19\\
+Original-plan transport: unavailable & 44\\
+Separate schema witnesses: valid & 42\\
+\bottomrule
+\end{tabular}
+\caption{Complete denominators for the 31 October development block: 96 planner calls and 105 transport slots. The 19 original-plan transports cover four unique original problems; witnesses are separate authored units. Unavailable plans are not successful preservation checks.}
+\label{tab:story-summary}
+\end{table}
+
+\subsection{Preservation and Composition Controls}
+Native planning supplies four original-goal plans from 15 problems; eight are reported unsolvable and three reach the time limit. Across the fixed representations, all 19 available original-plan transports and all 42 separate schema witnesses validate, totaling 216 transported steps without a detected violation. All 25 newly returned plans also revalidate. The 44 slots without a native plan remain unavailable. Three checks specifically exercise the merged action: BIRT's original 12-step trace and a one-step witness for each travel branch. SOUP's original two-step solution does not invoke travel and alone would not test that branch.
+
+An authored acquire-then-handoff family connects PUSS and REMA actions. At one, four, and sixteen items, both predicate-only and full conditions solve in 2, 8, and 32 steps. No-share and either-source-removal controls are reported unsolvable at all three sizes (Table~\ref{tab:handoff}). These are three sizes of one development family, not three independent domains. The source \texttt{buy\_boots} action permits creating possession without payment or item-specific restrictions. We retain this underspecification; mechanical source necessity does not demonstrate realistic purchasing or narrative quality.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Condition & 1 item & 4 items & 16 items\\
+\midrule
+No share & U & U & U\\
+Predicate-only & 2 & 8 & 32\\
+Full & 2 & 8 & 32\\
+Remove PUSS & U & U & U\\
+Remove REMA & U & U & U\\
+\bottomrule
+\end{tabular}
+\caption{Returned plan lengths in one authored composition family. U denotes solver-reported unsolvability. Predicate sharing accounts for the observed reachability gain; full composition adds no success in this family.}
+\label{tab:handoff}
+\end{table}
+
+\subsection{Historical Controls and Evidence Boundaries}
+Earlier frozen preservation bundles address different questions and budgets. A 60-second, 4-GiB LAMA-first run supplies six original-goal plans among 15 sources; all six translate into the same fixed union and zero-merge membership models. A separate action-invocation bundle retains all 234 target schemas: 146 valid prefixes, 50 reported unsolvable targets, and 38 wall-time limits. All 146 returned prefixes replay in both fixed models, with 354,757 mapped source-atom comparisons per representation and no mismatch. Invocation probes replace the goal with an observer flag; they are not original-goal successes or complete conditional-effect coverage. The supplementary evidence ledger preserves these distinct denominators and dated conditions.
+
+A matched 75-call comparison on the same 15 original worlds finds four native successes. Full-domain zero-merge and fixed-interface conditions each solve zero, while static-component restriction recovers four in each condition. Thus that block establishes no source-goal benefit from its fixed interfaces. Separately, fresh reference constructions end at their three-hour and five-hour limits without a final root. A cached condition is a different experiment and fails final validation. Unavailable reference models are not counted as planner failures, and none of these incomplete constructions provides a completed efficacy baseline.
+
+Authored finite-state fixtures exercise permutations, type universes, quantified formulas, conditional effects, and variable capture. Mutation controls show that the checker detects deliberately introduced errors. A separate semantic-negative example equates being captured alive with being dead: both isolated source traces remain valid, yet the false correspondence enables a capture--bury plan. Such controls establish mechanism behavior and checker sensitivity; they cannot estimate real-world semantic accuracy. Full details and retained failure rows appear in the supplement.

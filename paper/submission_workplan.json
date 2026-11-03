@@ -1,14 +1,65 @@
 {
   "target": "ICAPS 2027 main-track submission",
   "status": "working_plan_not_completion_claim",
+  "component_pipeline_checkpoint_2026_10_23": {
+    "evidence_index": "paper/result_sources_2026_10_23_components_v13.json",
+    "handoff": "docs/dev-notes/2026-10-23-icaps-code-experiments-progress.md",
+    "session": "data/validation/icaps_8h_2026_10_23_v1/session.json",
+    "eight_hour_window": "Historical window completed UTC 2026-10-23 02:24; final tool receipt reports 8 hours37 seconds. This is elapsed authorized work, not scientific submission readiness; see the dated final handoff.",
+    "implementation": "Explicit multi-source-goal components, exact-world whole-source-action reduction, Fast Downward API backend, export/provenance hashes and safe implementation snapshots",
+    "fresh_original_world_api": {
+      "audit": "data/validation/original_world_pipeline_audit_2026_10_23_v1/report.json",
+      "unique_original_worlds": 15,
+      "fresh_solver_calls": 30,
+      "all_domains": {
+        "solved": 0,
+        "unsolvable": 8,
+        "wall_time_limit": 7
+      },
+      "static_components": {
+        "solved": 4,
+        "unsolvable": 8,
+        "wall_time_limit": 3
+      },
+      "native_plan_replays": "4 VALID; 26 no-plan rows retained; no claim for missing traces",
+      "remaining_limits": [
+        "HANS_NP",
+        "MUSI",
+        "SNOW"
+      ],
+      "budget": "FD 26.6 lama-first, 20-second search wall/CPU, 4096 MB, one worker; separate supervisor grace",
+      "scope": "Original benchmark initial facts and positive/negative goals explicitly supplied one world at a time. Known development sources and fixed unreviewed interfaces, not independent semantics or a controlled timing study."
+    },
+    "finite_component_control": "416 listed Boolean valuations in six authored finite cases; 1248 searches, zero selection mismatches, four bad-policy controls detected. Repeated v2/v3 runs are not additional independent cases.",
+    "fresh_fusion_status": "Fresh10800stime_limit; separatecached6653sworker_errorwithrootcandidate/failedstrictnamespacevalidation. Allintegritychecks true; no thirdcondition or originalrootcomparison admitted.",
+    "intermediate_fusion_diagnostic": "Nine completed internal nodes frozen before audit. BIRT's original valid trace fails at step 5 in node15 because activate_beech adds has(nora,key). Node22 repeats the same source trace, not another independent case.",
+    "composition_probe_protocol": "paper/composition_probe_protocol_2026_10_23_v1.json executed:72slots,18pairs,6generatedworlds,24FDcalls;3both-source-necessary,2producer-unnecessary,1alignedlimit,12notgenerated",
+    "test_checkpoint": "267passed119.405seconds checkpoint24; currentcodefingerprints equalbefore/after",
+    "unchanged_gaps": "Independent semantic labels remain zero; unknown upstream learning provenance, narrative assessment and novelty/proof-review gates remain open",
+    "posthoc_diagnostics": "Representation12FDcalls:7solved3unsolvable2limits,7exact-primary-model transports VALID and6constructed witnesses VALID. State projection24BFS calls:9solved2unsolvable13limits,9plans VALID. Both separate conditions, primary outcomes unchanged.",
+    "inert_parameter_control": "24same frozen tasks, opt-in full-arity inert representatives:10solved2unsolvable8timeouts4state limits; all10plans VALID. HANS remains limited; no primary replacements or timing/novelty claim.",
+    "world_compatibility": "Two known15source models each9540typed initial atoms plus6authored controls, independent re-enumeration verified. Explicit object maps, no pooled state; closed-world/permutation/nullary conflicts detected; budget case unknown.",
+    "live_output_contract_pair": "Both100attempted under600s each: free0checked95invalid5failed, coupled51/44/5; independent pair auditPASS, semantic labels0. Historical replay counts remain distinct.",
+    "matched_source_worlds": "Completed90slots75freshFDcalls15worlds. Native and bothcomponents4/8/3; bothall0/8/7. All12plansVALID,8compiledinversesVALID.15unavailable slots linked to1freshconstructionfailure."
+  },
   "snow_long_meeting_case_2026_10_20": {
     "brief": "output/pdf/icaps_meeting_2026_10_21_snow_long_case.pdf",
     "audit": "data/validation/snow_long_case_audit_2026_10_20_v2/report.json",
     "fresh_solver_calls": 23,
-    "primary": {"plan_steps": 12, "contextualized_source_steps": 4, "new_scene_steps": 8, "observed_seconds": 8.172, "states_checked": 13},
+    "primary": {
+      "plan_steps": 12,
+      "contextualized_source_steps": 4,
+      "new_scene_steps": 8,
+      "observed_seconds": 8.172,
+      "states_checked": 13
+    },
     "step_deletion_failures": "12/12; 11 blocked subsequent applicability and 1 missed the final goal",
     "whole_schema_removals": "12/12 solver-reported unsolvable; all frozen before long-case search",
-    "formal_results": {"solved": 2, "unsolvable": 20, "wall_time_limit": 1},
+    "formal_results": {
+      "solved": 2,
+      "unsolvable": 20,
+      "wall_time_limit": 1
+    },
     "scope": "Authored world, role/life/event adapters plus explicit custody/tool/travel/preparation rules. Single-source controls retain all common scene rules. No automatic role learning or independent narrative-quality claim.",
     "test_checkpoint": "178 tests passed; redundant-padding negative test detected"
   },
@@ -17,8 +68,16 @@
     "audit": "data/validation/snow_roles_case_audit_2026_10_20_v2/report.json",
     "fresh_solver_calls": 11,
     "budget": "20-second wall/CPU, 4096 MB, single worker; same FD release and alias",
-    "formal_results": {"solved": 2, "unsolvable": 8, "wall_time_limit": 1},
-    "scenario_contract_results": {"pass": 1, "fail": 1, "no_plan": 9},
+    "formal_results": {
+      "solved": 2,
+      "unsolvable": 8,
+      "wall_time_limit": 1
+    },
+    "scenario_contract_results": {
+      "pass": 1,
+      "fail": 1,
+      "no_plan": 9
+    },
     "primary": "Four actions across HANS_NP/JACK_NP/SNOW; one object bound to Snow White, giant and witch; five states checked with no simultaneous alive/dead",
     "scope": "Authored role permissions, state-consistency adapter and rescue-event goal modify compiled behavior; not an unchanged-source or independently judged narrative result",
     "next_priority": "Independent review of role/interface contracts and revival causality; separate authored controlled scenarios from automatic inference and unrestricted source benchmarks",
@@ -43,7 +102,11 @@
     "fresh_control": "3 solved / 8 unsolvable / 4 limits",
     "fresh_optimized": "4 solved / 8 unsolvable / 3 limits; CHIC_NP recovered",
     "selector_scope": "Whole domains in static source-universe dependency components for original source worlds/goals; explicit shared identities and nullary interfaces retain dependencies; foreign goals rejected",
-    "remaining_limits": ["HANS_NP", "MUSI", "SNOW"],
+    "remaining_limits": [
+      "HANS_NP",
+      "MUSI",
+      "SNOW"
+    ],
     "next_priority": "Freeze explicit shared-object, cross-source-necessary planning tasks and independent interface judgments; evaluate selector retention on those tasks before claiming fusion performance",
     "test_checkpoint": "175 tests passed; 4 original-goal plan replays pass, 23457 truth comparisons, zero mismatches"
   },
@@ -53,9 +116,21 @@
     "new_solver_invocations": 75,
     "design": "60 fixed original-world/representation cases plus 15 separately frozen exploratory selection cases; 15 unique original worlds",
     "budget": "Fast Downward 26.6 lama-first; 20 seconds wall/CPU, 4096 MB, one solver worker",
-    "source_isolated": {"solved": 4, "unsolvable": 8, "wall_time_limit": 3},
-    "each_full_pool_representation": {"solved": 0, "unsolvable": 8, "wall_time_limit": 7},
-    "exploratory_selected_machine": {"solved": 3, "unsolvable": 8, "wall_time_limit": 4},
+    "source_isolated": {
+      "solved": 4,
+      "unsolvable": 8,
+      "wall_time_limit": 3
+    },
+    "each_full_pool_representation": {
+      "solved": 0,
+      "unsolvable": 8,
+      "wall_time_limit": 7
+    },
+    "exploratory_selected_machine": {
+      "solved": 3,
+      "unsolvable": 8,
+      "wall_time_limit": 4
+    },
     "new_original_goal_replay": "4/4 available fresh native plans valid in fixed machine model; 64 states, 23457 truth comparisons, 0 mismatches; 11 sources without fresh plan evidence retained",
     "new_action_prefix_replay": "146/146 available historical traces pass in fixed machine model; 459 states, 354757 comparisons, 0 mismatches; 88 missing traces retained in 234-task denominator",
     "historical_reports_rechecked": 34,
@@ -63,7 +138,7 @@
     "limits": "Original-goal regression and computational diagnosis only; no independent interface labels, narrative evaluation or complete fresh UniDomain comparison"
   },
   "new_run_evaluation_design": "paper/evaluation_protocol_2026_10_19_v1.json",
-  "new_run_freeze_status": "Design recorded; unseen test inputs, model configuration and execution budgets remain unfrozen",
+  "new_run_freeze_status": "Known 15-story block frozen before model/search and executed; all 16 requests, 96 planner slots and 105 forward-transport slots retained. Seven action candidates, fixed .9 threshold; no post-output replacements.",
   "offline_semantic_evaluator": "scripts/annotation/evaluate_interface_predictions.py",
   "candidate_bridge_checkpoint": {
     "report": "data/validation/candidate_alignment_2026_10_20_v2/report.json",
@@ -153,11 +228,12 @@
     "The source-local preservation proof needs independent technical review"
   ],
   "next_engineering_evidence": [
-    "Full fresh UniDomain reference ended with a host-interrupted worker error; retain its terminal report and intermediate audits. A cache continuation would be a separately labeled extended-budget condition, not a fresh three-hour success.",
-    "Obtain independent semantic annotations and repeat schema-policy comparisons; completed restored-service control is 0 checked/96 invalid/4 truncated versus 52/46/2 for coupled fields, not semantic accuracy.",
-    "Apply joint permutation consistency audit only to structurally checked proposals; no automatic promotion to reviewed interfaces",
-    "Broaden matched composed tasks beyond the existing authored ACCO/BIRT worlds only with explicit initial worlds and provenance",
-    "Audit the current source-local theorem against modularity/compilation prior work; obtain independent technical review before submission"
+    "Keep this known-story block as a development census and mechanism comparison. Preserve invalid and below-threshold answers; do not tune or relabel this block as held-out validation.",
+    "For more action opportunities, define a new development retrieval version that can align differently named predicates using role/effect structure. Freeze its candidate budget before model outputs and retain matched event-distinction controls.",
+    "Separate candidate scarcity, response-format failure, semantic rejection, confidence threshold and formal rejection in the action-merge funnel. Test any changes on later untouched sources.",
+    "Use actual-merge cases for separately frozen source-count/size and isolated stage-cost controls; predicate-only and full must share exactly the same predicate mapping.",
+    "Retain the acquire-then-handoff family as one authored mechanism example, including its source underspecification. New narrative or semantic claims require their own independent evaluation.",
+    "Obtain independent review of the forward-preservation sufficient conditions and novelty. Current mechanical experiments do not require semantic annotation before proceeding."
   ],
   "completed_development_evidence": {
     "finite_transition_controls": "256 states, 4352 applications, 2048 transitions; four corruption controls detected",
@@ -166,7 +242,68 @@
     "source_action_removal": "18 tasks: 5 valid plans, 13 solver-reported unsolvable, no cutoffs; both action sources necessary only for the specific authored bridge case",
     "external_Basketball": "10 native valid plans; 10/10 preserved in each of two fixed16-source models; each80states38560comparisons; header-only packaging; one external development family",
     "action_invocation": "234 tasks:146solved50unsolvable38wall limits;146prefixes preserved in each fixed model,459states354757comparisons0mismatches. Three solver bundles witness166actions;50solverunreachable18unresolved.",
-    "formula_boundary": "14conditionforms128valuations3584applicability1984transitions0mismatch; quantified-guard mutation yields1024mismatches."
+    "formula_boundary": "14conditionforms128valuations3584applicability1984transitions0mismatch; quantified-guard mutation yields1024mismatches.",
+    "matched_original_worlds_2026_10_23": {
+      "audit": "data/validation/matched_source_worlds_audit_2026_10_23_v1/report.json",
+      "worlds": 15,
+      "registered_slots": 90,
+      "fresh_solver_calls": 75,
+      "native_solved_unsolvable_limits": [
+        4,
+        8,
+        3
+      ],
+      "zero_all_solved_unsolvable_limits": [
+        0,
+        8,
+        7
+      ],
+      "zero_components_solved_unsolvable_limits": [
+        4,
+        8,
+        3
+      ],
+      "machine_all_solved_unsolvable_limits": [
+        0,
+        8,
+        7
+      ],
+      "machine_components_solved_unsolvable_limits": [
+        4,
+        8,
+        3
+      ],
+      "valid_returned_plans": 12,
+      "compiled_inverse_replays_valid": 8,
+      "unavailable_slots": 15,
+      "shared_construction_failures": 1,
+      "scope": "Known original worlds, same20secondFD26.6budget. Components recover native coverage; no interface source-goal gain. Prior30APIcalls repeat these worlds."
+    },
+    "live_candidate_model_2026_10_23": {
+      "audit": "data/validation/live_candidate_bridge_audit_2026_10_23_v1/report.json",
+      "offline_conditions": 4,
+      "unique_pddl_artifacts": 2,
+      "source_action_variants": 234,
+      "coupled_with_explicit_role_hypotheses_groups": 5,
+      "scope": "Machine hypotheses, no independent semantic labels. Three conditions export zero groups; fourth model differs from older fixed machine model."
+    },
+    "constant_scope_admission_fix_2026_10_23": {
+      "before": "data/validation/constant_scope_contract_before_2026_10_23_v1/report.json",
+      "after": "data/validation/constant_scope_contract_after_2026_10_23_v1/report.json",
+      "valid_input_recheck": "data/validation/component_admission_recheck_2026_10_23_v1/report.json",
+      "valid_inputs_accepted_byte_identical": 30,
+      "scope": "Reject malformed mapped worlds missing required constant memberships; no facts inserted. Before/after is invalid-input counterexample, not a valid-world preservation failure."
+    },
+    "live_model_source_replay_2026_10_23": {
+      "audit": "data/validation/live_model_source_replay_audit_2026_10_23_v1/report.json",
+      "source_rows": 15,
+      "available_historical_native_plans": 6,
+      "no_native_plan_evidence": 9,
+      "mapped_plans_valid": 6,
+      "truth_comparisons": 38331,
+      "truth_mismatches": 0,
+      "scope": "One fixed new live model, historical60secondsource-only traces. No new searches; full argument inverse round trips verified; no interface semantic claim."
+    }
   },
   "contribution_gate": {
     "not_sufficient": [
@@ -183,5 +320,2642 @@
       "https://www.diag.uniroma1.it/degiacomo/papers/2025/LM4Plan@ICAPS25cdmw.pdf"
     ]
   },
-  "annotation_delivery": "Offline100pair viewer v2 supports JSON generation/import, no predictions/outcomes, no actual independent labels created. Direct browser download unconfirmed; copyJSON fallback verified."
+  "annotation_delivery": "Offline100pair viewer v2 supports JSON generation/import, no predictions/outcomes, no actual independent labels created. Direct browser download unconfirmed; copyJSON fallback verified.",
+  "development_tables": "paper/results_tables_2026_10_23_v2/manifest.json",
+  "latest_full_test_checkpoint": "417 passed in 211.67 seconds; data/validation/story_opportunities_tests_2026_10_31_v2/tests_checkpoint.json; 346 code hashes unchanged during suite",
+  "live_model_composition_2026_10_23": {
+    "status": "completed_and_audited",
+    "audit": "data/validation/live_model_composition_audit_2026_10_23_v2/report.json",
+    "registered_slots": 96,
+    "ordered_pairs": 24,
+    "generated_worlds": 6,
+    "unsupported_pairs": 18,
+    "candidate_count": 5033,
+    "excluded_candidates": 4886,
+    "supported_candidates": 147,
+    "solver_calls": 24,
+    "solved": 9,
+    "unsolvable": 12,
+    "wall_limits": 3,
+    "both_sources_necessary": 3,
+    "source_removal_still_solved": 2,
+    "aligned_limited": 1,
+    "first_attempt": "v1 retains all24WSL/E_ACCESSDENIEDengine errors; no searches admitted there",
+    "retry_boundary": "One separately frozen same-rule/same-budget infrastructure retry; bothregistries/generation/modelPDDL identical.",
+    "independence_boundary": "All6explicitqueries match oldercohort exactly; no independent newworlds, labels orfamilies."
+  },
+  "live_composition_lineage_2026_10_23": {
+    "report": "data/validation/live_composition_lineage_2026_10_23_v2/report.json",
+    "status": "verified_live_composition_lineage",
+    "four_export_conditions_checked": 4,
+    "scope": "Live response/request files to bridge, alignment and full parameterized model to composition inputs, fifteen source hashes. Provenance only; no extra trials or semantic labels."
+  },
+  "validation_taxonomy_2026_10_23": {
+    "status": "implemented_and_checked",
+    "policy": "OnlyVALID=>solved andINVALID=>invalid_plan. ERROR,UNAVAILABLE,UNKNOWNandfutureverdictsremainseparateunverified statuses.",
+    "targeted_tests": "6passincludingrealvalid,invalidempty,parsernamespaceERROR",
+    "historical_boundary": "Existingreportsimmutable; historicalvalidationpayloadsretained. Newrunner classification only.",
+    "conditional_root_protocol": "paper/cached_root_source_world_protocol_2026_10_23_v1.json"
+  },
+  "frozen_artifact_recheck_2026_10_23": {
+    "report": "data/validation/frozen_artifact_recheck_2026_10_23_v1/report.json",
+    "status": "verified_frozen_artifacts",
+    "completed_runs": 7,
+    "file_checks": 1193,
+    "contract_tests": "2passed; changedinput detected despiteunchanged parentreport; missingarchive and escapinginput rejected",
+    "scope": "Frozeninput+archivedcode byteidentity now; includesfailedWSLattempt. Notnewexperiments, recursiveall-fileclosure, semantics or prererunarchive-timing claim.",
+    "inventory_status": "v13verified92reports;oldv1seven-run1193-filemeasurementpreserved",
+    "latest_report": "data/validation/frozen_artifact_recheck_2026_10_23_v2/report.json",
+    "latest_completed_runs": 10,
+    "latest_file_checks": 1585
+  },
+  "cached_reference_terminal_2026_10_23": {
+    "report": "data/validation/fusion_cached_extended_2026_10_23_v1/report.json",
+    "status": "worker_error",
+    "final_validation_valid": false,
+    "root_candidate_saved": true,
+    "completed_internal_nodes": 14,
+    "extra_elapsed_seconds": 6653.0,
+    "cumulative_observed_elapsed_seconds": 17453.047,
+    "cumulative_registered_worker_budget_seconds": 21600,
+    "new_network_calls": 4105,
+    "cache_hits": 6763,
+    "imported_responses": 6754,
+    "all_integrity_checks_passed": true,
+    "strict_parse_boundary": "All15exportedworlds share location cross-category-name rejection; one shared finalvalidation failure, not15independent planner failures.",
+    "mapping_diagnostic": "data/validation/fusion_failed_root_mapping_2026_10_23_v1/report.json",
+    "source_action_total": 234,
+    "candidate_actions": 164,
+    "rename_only_ast_equal": 122,
+    "rewritten_ast_no_verified_parameter_map": 112,
+    "transport_diagnostic": "data/validation/fusion_failed_root_transport_2026_10_23_v1/report.json",
+    "source_trace_rows": "6unverified_parameter_transport;9no_original_plan_evidence; no valid/invalid mapped-plan conclusion",
+    "namespace_policy_diagnostic": "data/validation/fusion_root_namespace_2026_10_23_v1/report.json",
+    "namespace_export_diagnostic": "data/validation/fusion_root_namespace_export_2026_10_23_v3/report.json",
+    "namespace_export": "Oneposthoccategory-qualified derivative;domain+15problems strictparse,exactASTinverse,originalbytesunchanged,zeroLLM/planner calls. Not a completed reference or semantic/source-preservation result.",
+    "followup_admission": "Optionalchainnoteligible becauseparentnot time_limit;originalrootplanninggate correctlyrejected; no third/fourth cached condition or newplanner calls."
+  },
+  "compiler_reproducibility_2026_10_23": {
+    "archived_replay": "data/validation/archived_compiler_replay_2026_10_23_v1/report.json",
+    "conditions": 4,
+    "unique_pddl_artifacts": 2,
+    "pddl_and_metadata_byte_identical": 4,
+    "loaded_archived_modules_per_condition": 5,
+    "current_parser_recheck": "data/validation/current_compiler_parse_recheck_2026_10_23_v1/report.json",
+    "scope": "Sameknown15sources/100pairpacket. Archivedisolatedcompilerreplayunderrecordedcurrentruntime;notoriginalenvironmentrecovery,inferenceorindependentcases."
+  },
+  "domain_only_parser_admission_2026_10_23": {
+    "before": "data/validation/domain_only_parse_before_2026_10_23_v2/report.json",
+    "after": "data/validation/domain_only_parse_after_2026_10_23_v1/report.json",
+    "fix": "Requireindependentdomainparseinunionandaligneddomain-onlypaths;alignedrequiresbothsourceunionandtransformedparse.",
+    "valid_export_recheck": "Same4conditions retainPDDLbytes;metadataequalexceptrecordedimplementationdigest.",
+    "retained_harness_failure": "data/validation/domain_only_parse_before_2026_10_23_v1/report.json",
+    "falsified_hypothesis": "Duplicateactionfieldsalreadyrejectedbyexistingcompiler;raw_action_fields_before and existing_rejection retained. No newfixorvalid-worldcounterexampleclaimed.",
+    "scope": "Injectedcheckerfailureononeauthoredvaliddomain; validationadmissiononly, nosemanticlabels."
+  },
+  "failed_root_action_alpha_2026_10_23": {
+    "mapping_report": "data/validation/fusion_failed_root_mapping_2026_10_23_v2/report.json",
+    "parameter_gap": "data/validation/parameter_transport_gap_2026_10_23_v2/report.json",
+    "alpha_report": "data/validation/action_alpha_diagnostic_2026_10_23_v1/report.json",
+    "source_aliases": 234,
+    "unchanged_ordered_signatures": 130,
+    "arity_changes_not_inferred": 65,
+    "formal_name_order_changes_examined": 39,
+    "permutations_checked": 176,
+    "unique_structural_maps": 4,
+    "ambiguous": 1,
+    "no_structural_map": 34,
+    "native_plan_step_positions": 82,
+    "unverified_native_step_positions": 38,
+    "scope": "Onefailedcandidate,posthocstructuraldiagnostic. All4uniquepositionalmapsareidentitywithformalrenaming. Sixoriginal-goalplansremainunverifiedunderoldtransportcontract;noargumentstruncated."
+  },
+  "failed_root_prefix_diagnostic_2026_10_23": {
+    "report": "data/validation/reference_prefix_diagnostic_2026_10_23_v2/report.json",
+    "static_audit": "data/validation/reference_prefix_diagnostic_static_audit_2026_10_23_v1/report.json",
+    "failure_details": "data/validation/reference_prefix_diagnostic_audit_2026_10_23_v1/failure_action_details.json",
+    "preparation_failure": "data/validation/icaps_8h_2026_10_23_v1/prefix_preparation_failure_2026_10_23_v1.json",
+    "initial_mismatch_certificate": "data/validation/reference_initial_mismatch_certificate_2026_10_23_v1/report.json",
+    "registered_slots": 234,
+    "audited_source_prefixes": 146,
+    "no_audited_prefix": 88,
+    "unverified_parameter_transport": 75,
+    "admitted_prefixes": 71,
+    "prefix_pass": 61,
+    "target_inapplicable_source_applicable": 3,
+    "unverified_predicate_type_projection": 6,
+    "unverified_invalid_grounding": 1,
+    "full_mapped_steps": 130,
+    "full_mapped_arguments": 301,
+    "truth_comparisons": 149117,
+    "truth_mismatches": 0,
+    "model_calls": 0,
+    "planner_calls": 0,
+    "scope": "Providedprefixexecutabilityandsourceatomprojectionunderfixedmapsontheposthocnamespacequalifiedderivativeofonefailedextra-budgetcandidate. Notoriginalgoals,freshreferencecompletion,semanticaccuracy,unseenfamiliesorall-statespreservation. Staticauditsreconciletruthcountswithoutindependentlyreproducingthem;first-stepCHICcertificateusesdirectclosed-worldliteralcheckswithoutUPsimulator."
+  },
+  "latest_verified_evidence_inventory": {
+    "index": "paper/result_sources_2026_11_03_icaps_revised_v1.json",
+    "snapshot": "paper/results_snapshot_2026_11_03_icaps_revised_v1/results.json",
+    "verified_reports": 233,
+    "scope": "227 historical records and 6 first-repeat assessment reports; heterogeneous inventory, not pooled samples."
+  },
+  "next_code_and_experiments": [
+    "Keep this known-story block as a development census and mechanism comparison. Preserve invalid and below-threshold answers; do not tune or relabel this block as held-out validation.",
+    "For more action opportunities, define a new development retrieval version that can align differently named predicates using role/effect structure. Freeze its candidate budget before model outputs and retain matched event-distinction controls.",
+    "Separate candidate scarcity, response-format failure, semantic rejection, confidence threshold and formal rejection in the action-merge funnel. Test any changes on later untouched sources.",
+    "Use actual-merge cases for separately frozen source-count/size and isolated stage-cost controls; predicate-only and full must share exactly the same predicate mapping.",
+    "Retain the acquire-then-handoff family as one authored mechanism example, including its source underspecification. New narrative or semantic claims require their own independent evaluation.",
+    "Obtain independent review of the forward-preservation sufficient conditions and novelty. Current mechanical experiments do not require semantic annotation before proceeding."
+  ],
+  "compiler_fragment_controls_2026_10_23": {
+    "first_oracle": "data/validation/compiler_fragment_controls_2026_10_23_v1/report.json",
+    "recovered_oracle": "data/validation/compiler_fragment_controls_2026_10_23_v2/report.json",
+    "static_audit": "data/validation/compiler_fragment_controls_audit_2026_10_23_v1/report.json",
+    "authored_source_models": 2,
+    "unique_compiled_models": 1,
+    "states_per_source": 32,
+    "possible_valuations_per_source": 8192,
+    "seed": 1729,
+    "registered_slots_per_condition": 64,
+    "first_oracle_checker_errors": 64,
+    "recovered_pass": 64,
+    "predecessor_fixture_files_byte_identical": 132,
+    "applicability_checks": 896,
+    "both_applicable": 634,
+    "both_inapplicable": 262,
+    "applicability_mismatches": 0,
+    "truth_comparisons": 9074,
+    "truth_mismatches": 0,
+    "full_actual_arguments": 1152,
+    "scope": "Fixedseedauthoredcontrolswithprivateuniverses/noninvolutiveternarypermutation,quantified/disjunctive/implied/equalityconditions,conditionalforall/deleteeffects,andvariableshadowing. Onepre-searchmodel,all14typedbindingsineachof64explicitworlds;firstoracleapplystaticfalseerrorsretained,publicAPIrecoveryseparate. Notexhaustive8192states,independentsemanticlabels,newsourcefamilies,mixed-sourcepreservationorgoal-success."
+  },
+  "prefix_public_applicability_followup_2026_10_23": {
+    "report": "data/validation/prefix_applicability_api_diagnostic_2026_10_23_v1/report.json",
+    "case": "PIGS_NP__wolf_knocks_and_requests_entry",
+    "source_applicable": true,
+    "target_applicable": false,
+    "first_differing_step": 4,
+    "prior_steps_both_applicable": 3,
+    "scope": "Oneposthocerrorclassificationunderpublicis_applicable. Original234rowregistry3FAIL7errorsunchanged;notafourthindependenttaskororiginal-goalverdict."
+  },
+  "checkpoint_consistency_tool_2026_10_23": {
+    "module": "scripts/evidence/check_submission_checkpoint.py",
+    "stale_receipt_control": "data/validation/checkpoint_consistency_before_2026_10_23_v1/report.json",
+    "checks": "Rehashselectedindex/snapshot, currentfulltestcode/logreceipt, structuredclaim/workplanpointers and4tablesexplicitlyagainsthistoricalv8snapshot. Archiveauditinputs;exit1forinconsistentcheckpoint.",
+    "scope": "Internalconsistencyandengineeringcheckonly;scientificsubmissionreadinessnotassessed."
+  },
+  "bounded_eight_hour_window_2026_10_23": {
+    "planned_start_utc": "2026-10-22T18:24:00Z",
+    "actual_goal_start_utc": "2026-10-22T18:24:13+00:00",
+    "earliest_eight_hours_utc": "2026-10-23T02:24:13+00:00",
+    "observed_utc": "2026-10-23T02:24:33.982593+00:00",
+    "actual_elapsed_seconds": 28820.983,
+    "eligible": true,
+    "scope": "Boundedcode/experimentworkwindowonly;notICAPSsubmissionreadiness.",
+    "status": "completed_bounded_eight_hour_window",
+    "scientific_submission_status": "working_draft_not_submission_ready",
+    "full_tests": {
+      "tests": 267,
+      "elapsed_seconds": 119.405,
+      "code_files": 270,
+      "log_sha256": "adeec121d0bd2860d8754fea10453d178bc45babcc2586727cdb6b025d5ff7bb"
+    },
+    "evidence_index": "paper/result_sources_2026_10_23_components_v13.json",
+    "verified_report_count": 92,
+    "final_consistency_audit": "data/validation/checkpoint_consistency_final_2026_10_23_v1/report.json",
+    "independent_semantic_labels": 0,
+    "new_experiments_finished_before_utc": "2026-10-23T01:54:00Z",
+    "remaining_gates": [
+      "Independentsemanticannotations",
+      "Upstreamsourceprovenance",
+      "Independentnovelty/proofreview",
+      "Completedfreshreferencecomparison",
+      "Narrativeassessmentifqualityclaimed"
+    ],
+    "process_boundary": "Allregisteredworkerhandlesobservedterminal;originalownedservicePIDabsent;CIMcommandlineenumerationunavailable,notall-systemabsenceproof",
+    "automation": "icaps pause is a separate tool action after this closure; verify saved status",
+    "before_document_sha256": {
+      "paper/claim_evidence.json": "9733e952753065ef5a5b5b0197576c09c6680aa03e92dec492d7a0ecb4e17d86",
+      "paper/submission_workplan.json": "525d7f0d3c6fd50140ce064fe05b65b2d634e8e1cd326e4ce173f19bcfb71ad0",
+      "data/validation/icaps_8h_2026_10_23_v1/session.json": "adb7c0e909346847116f881750645e2831fdb082e176c4b1b82dad160a6e1bfc",
+      "docs/dev-notes/README.md": "fc54c1a12b68642c8bd46aeed0af5b9c2a40320c66764fc27bb4621303fdfd00",
+      "docs/dev-notes/2026-10-23-icaps-code-experiments-progress.md": "bd4c16b85b5f97c3240185b80e2f539bd22e62e30ba69129c6e0ee70dde6c700",
+      "docs/research/narrative-domain-fusion-plan.md": "0b80e94739e8a491050f6e3bc8ba795e8076a6eb6cd4dfcbd08ff2eed6c5bd0e"
+    },
+    "closure_implementation_sha256": "65feea8444364f5759c9b325be963053b1256f2b1a568226c28dc9d798924738"
+  },
+  "reference_namespace_checkpoint_2026_10_24": {
+    "status": "bounded_window_elapsed_experiments_and_monitors_terminal",
+    "handoff": "docs/dev-notes/2026-10-24-icaps-reference-window.md",
+    "session": "data/validation/icaps_8h_2026_10_24_v1/session.json",
+    "window_utc": [
+      "2026-10-23T19:16:06Z",
+      "2026-10-24T03:16:06Z"
+    ],
+    "build_protocol": "paper/fusion_namespace_fresh_protocol_2026_10_24_v1.json",
+    "conditional_matched_protocol": "paper/namespace_reference_matched_protocol_2026_10_24_v2.json",
+    "implementation": "Predeclared reversible category-qualified final export, raw artifacts retained, strict isolated domain-only and every-world independent parsing; policy and exporter code frozen in fresh/continuation manifests.",
+    "test_receipt": "data/validation/icaps_8h_2026_10_24_v1/tests_checkpoint11.json",
+    "tests_at_checkpoint": 333,
+    "scientific_boundary": "Pilot construction complete;full15source fresh construction timed out withoutroot and downstream90/234slots were not run. Separate2source original-world diagnostic shows a fixedBIRTproducer obstruction. Engineering,planning and self-review supply no independent semantic labels or submission readiness.",
+    "failure_retention": "Old fresh time limit and cached final-validation failure remain unchanged; new category-qualified condition has separate empty caches and budgets.",
+    "pilot_report": "data/validation/fusion_namespace_pilot_2026_10_24_v1/report.json",
+    "pilot_boundary": "Construction completed260.579s,117recordedJSON-decodedresponses/0cachehits,strictdomain+2worldparsesandASTinverse;totalHTTPattemptsunknown. Construction receipt contains no goal planning;the later4call posthoc original-world diagnostic is separately registered and reported.",
+    "full_condition": "data/validation/fusion_namespace_fresh_2026_10_24_v1/manifest.json",
+    "evidence_index": "paper/result_sources_2026_10_24_reference_v6.json",
+    "evidence_snapshot": "paper/results_snapshot_2026_10_24_reference_v6/results.json",
+    "downstream_driver": "data/validation/icaps_8h_2026_10_24_v1/downstream_driver.json",
+    "downstream_tool_session": 43235,
+    "request_counter_limit": "The adapter network-call counter increments only after JSON decoding. Failed HTTP/JSON attempts and total tokens are not exhaustively logged; exact total request cost is unknown. Preserve raw reports and qualify their counters.",
+    "offline_cache_audit": "data/validation/fusion_namespace_pilot_cache_audit_2026_10_24_v1/report.json",
+    "cache_audit_controls": "data/validation/fusion_namespace_cache_audit_controls_2026_10_24_v1/report.json",
+    "cache_audit_scope": "117cached records:82predicate checks,29action checks,6action updates;all recorded keys and duration sum match. This is recorded-response integrity,not semantic accuracy or proof of exact HTTP attempt count.",
+    "terminal_construction": "data/validation/fusion_namespace_fresh_2026_10_24_v1/report.json",
+    "terminal_outcome": "Fresh18000.031s time_limit,13internal nodes,no final root;one construction failure.",
+    "terminal_summary": "data/validation/icaps_8h_2026_10_24_v1/reference_terminal_summary_2026_10_24_v1.json",
+    "terminal_summary_sha256": "2315176fef95faf9d490b4cd3ee5e90917dccc41c8b56ac8a59ad1351abaaf37",
+    "original_world_registry": "data/validation/namespace_reference_matched_2026_10_24_v1/report.json",
+    "original_world_audit": "data/validation/namespace_reference_matched_audit_2026_10_24_v1/report.json",
+    "prefix_registry": "data/validation/fresh_reference_prefixes_2026_10_24_v1/report.json",
+    "prefix_audit": "data/validation/fresh_reference_prefixes_audit_2026_10_24_v1/report.json",
+    "unavailable_scope": "90worldslots+234prefixslots retain the same one parent failure.0actual solver/replay calls;not324planning failures or success-rate trials.",
+    "full_cache_audit": "data/validation/fusion_namespace_fresh_cache_audit_2026_10_24_v1/report.json",
+    "internal_node_diagnostic": "data/validation/fusion_namespace_nodes_2026_10_24_v1/summary.json",
+    "internal_node_scope": "13completed raw nodes,44node/source occurrences,5transported native-plan validations:3VALID/2INVALID.2invalid records repeatBIRT;all13PDDL hashes occurred historically.12rawdomain parsesVALID/1ERROR;not timeout causation or final export.",
+    "new_table_manifest": "paper/results_tables_2026_10_24_reference_v2/manifest.json",
+    "final_namespace_boundary": "Two-source pilot strict export passes. Full run times out before final root/export;15source namespace-repair efficacy is unmeasured.",
+    "post_terminal_metric_guard": "data/validation/witness_metric_guard_2026_10_24_v1/report.json",
+    "post_terminal_world_guard": "data/validation/reference_world_injectivity_2026_10_24_v1/report.json",
+    "guard_scope": "Engineering repairs after terminal experiments,with failing authored controls and passing regressions. No old search/replay rows replaced. Future new-method comparisons require fresh registration/output."
+  },
+  "correlated_projection_checkpoint_2026_10_24": {
+    "protocol": "paper/correlated_projection_protocol_2026_10_24_v1.json",
+    "frozen_run": "data/validation/correlated_projection_2026_10_24_v1",
+    "launch_receipt": "data/validation/icaps_8h_2026_10_24_v1/correlated_driver_launch.json",
+    "scope": "Optional positive tuple join with complete bindings;48strategy slots over24PDDL inputs/sixknown generated worlds. Both variants20seconds perprocess,oneworker,noinertrepresentatives. Inference runs concurrently; no causal runtime or independent semantic/novelty claim. Inspect terminal receipts before reporting outcomes.",
+    "report": "data/validation/correlated_projection_2026_10_24_v1/report.json",
+    "audit": "data/validation/correlated_projection_audit_2026_10_24_v1/report.json",
+    "paired_summary": "data/validation/icaps_8h_2026_10_24_v1/correlated_paired_summary_2026_10_24_v1.json",
+    "outcome": "Eachstrategy9solved/2unsolvable/13time_limits;24pairedstatusesidentical;all18savedplansrevalidatedVALID;noobservedcoveragebenefit",
+    "effect_binding_inventory": "data/validation/effect_binding_inventory_2026_10_24_v1/report.json"
+  },
+  "witness_projection_checkpoint_2026_10_24": {
+    "protocol": "paper/witness_projection_protocol_2026_10_24_v1.json",
+    "frozen_run": "data/validation/witness_projection_2026_10_24_v1",
+    "launch_receipt": "data/validation/icaps_8h_2026_10_24_v1/witness_driver_launch.json",
+    "test_receipt": "data/validation/icaps_8h_2026_10_24_v1/tests_checkpoint4.json",
+    "scope": "New post-hoc48-slot paired diagnostic on same24PDDL/sixknown generated worlds;switch only state-local complete precondition witness selection,other strategy flags false. Inspect terminal before quoting outcomes. Does not establish semantic correctness,novelty,all-action/story-identity coverage or causal speedup.",
+    "report": "data/validation/witness_projection_2026_10_24_v1/report.json",
+    "audit": "data/validation/witness_projection_audit_2026_10_24_v1/report.json",
+    "paired_summary": "data/validation/icaps_8h_2026_10_24_v1/witness_paired_summary_2026_10_24_v1.json",
+    "outcome": "Default9solved/2unsolvable/13time_limits;witness10solved/2unsolvable/8time_limits/4state_limits. All19plansVALID. One BIRT-PIGS full/aligned representation slot recovered,2steps;solved-world sets unchanged at5of6known worlds. No independent semantic or causal speedup claim."
+  },
+  "fresh_reference_prefix_checkpoint_2026_10_24": {
+    "protocol": "paper/fresh_reference_prefix_protocol_2026_10_24_v1.json",
+    "controller": "scripts/experiments/replay_namespace_reference.py",
+    "task_count": 234,
+    "historical_input_files": 2024,
+    "audited_native_prefixes": 146,
+    "no_audited_prefix": 88,
+    "status": "terminal_shared_parent_failure_not_run",
+    "scope": "234provided-prefix slots retained as unavailable after one shared fresh parent construction timeout.0replay processes. Historical146audited/88missing-prefix inventory is not replayed by this condition;not original-goal outcomes,semantic labels or universal preservation.",
+    "registration_status": "registered_before_parent_terminal_not_executed",
+    "report": "data/validation/fresh_reference_prefixes_2026_10_24_v1/report.json",
+    "audit": "data/validation/fresh_reference_prefixes_audit_2026_10_24_v1/report.json",
+    "actual_replay_processes": 0
+  },
+  "grounding_positioning_checkpoint_2026_10_24": {
+    "review": "paper/grounding_positioning_review_2026_10_24_v1.json",
+    "sha256": "262ebc2ccd9e07a08a9d1743bacf92450f365ad612691b803ade6fb65df3d441",
+    "scope": "Verified two primary sources and local mechanism distinction;not independent proof,novelty clearance or baseline execution.",
+    "manuscript_sha256": "eba7fa393eba452b647b8bc3d7229f390c6ff32227de4b34c70a4a8f01ec5ba6",
+    "compilation": "success_current_source_only"
+  },
+  "working_paper_delivery_2026_10_24": {
+    "pdf": "output/pdf/icaps2027_working_checkpoint_2026_10_24_v2.pdf",
+    "pdf_sha256": "50a55d526939da5bdf3998f95efbf5ac3bad8e088a0073da786867635cf6e531",
+    "layout_review": "data/validation/paper_layout_review_2026_10_24_v1/report.json",
+    "scope": "Visual/layout QA of a22page research working draft and unchanged numeric table rows. Not independent semantic review,proof approval,venue-format compliance or submission readiness. Missing local amsthm was supplied only in temporary project dependency files;no global package installation.",
+    "paper_evidence_snapshot": "paper/results_snapshot_2026_10_24_reference_v3/results.json",
+    "later_supplementary_diagnostic": "data/validation/pilot_original_worlds_2026_10_24_v1/report.json"
+  },
+  "code_experiment_self_review_2026_10_24": {
+    "path": "paper/code_experiment_self_review_2026_10_24_v3.json",
+    "status": "author_self_review_not_independent_review",
+    "current_code_checkpoint": "data/validation/icaps_8h_2026_10_24_v1/tests_checkpoint11.json",
+    "scope": "Five-dimension review of current code, terminal experiments, paper and primary prior work. No new model/planner calls or semantic labels. Submission gates remain open."
+  },
+  "http_attempt_accounting_2026_10_24": {
+    "report": "data/validation/http_attempt_accounting_2026_10_24_v1/report.json",
+    "test_receipt": "data/validation/icaps_8h_2026_10_24_v1/tests_checkpoint11.json",
+    "real_model_calls": 0,
+    "scope": "Opt-in future fresh-run client accounting;6offline cases/4damaged-ledger controls and CLI success/incomplete/invalid checks. Original cache/retry counters retained. Historical total HTTP attempts/token cost stay unknown. Unmatched intent leaves dispatch indeterminate;missing server counters stay unknown. Cached continuation with an accounting-enabled parent fails closed until a separate accounting protocol is implemented."
+  },
+  "posthoc_pilot_original_worlds_2026_10_24": {
+    "protocol": "paper/pilot_original_world_protocol_2026_10_24_v1.json",
+    "experiment": "data/validation/pilot_original_worlds_2026_10_24_v1/report.json",
+    "audit": "data/validation/pilot_original_worlds_audit_2026_10_24_v1/report.json",
+    "producer_obstruction": "data/validation/pilot_producer_obstruction_2026_10_24_v2/report.json",
+    "worlds": 2,
+    "slots": 4,
+    "solver_calls": 4,
+    "native": "ACCO/BIRT solved;6/12steps",
+    "pilot_projection": "ACCO solved6steps;BIRT solver-reported unsolvable, independently explained by fixedSTRIPS invariant",
+    "plans_revalidated": 3,
+    "model_calls": 0,
+    "independent_semantic_labels": 0,
+    "scope": "Posthoc2knownworlds,fixedpilotrawPDDLsameasfullNode15. Within-source mapsinjective,explicitworlds/recordedpositionalprojection;notfullfalse-atom/transition equivalence,full15source completion,new independent sample,narrativequality or causal speedup. No repair/private model reconstruction."
+  },
+  "bounded_eight_hour_window_2026_10_24": {
+    "status": "eight_hour_window_elapsed_and_monitors_terminal",
+    "started_utc": "2026-10-23T19:16:06Z",
+    "deadline_utc": "2026-10-24T03:16:06Z",
+    "finalization_observed_utc": "2026-10-24T03:16:31.237075+00:00",
+    "completion_audit": "data/validation/icaps_8h_2026_10_24_v1/window_completion_audit_v1/report.json",
+    "automation_pause_receipt": "data/validation/icaps_8h_2026_10_24_v1/automation_pause_receipt.json",
+    "scope": "Final audit determines bounded task completion;not broader research/project/submission readiness."
+  },
+  "birt_action_policy_2026_10_25": {
+    "protocol": "paper/birt_action_policy_protocol_2026_10_25_v1.json",
+    "experiment": "data/validation/birt_action_policy_2026_10_25_v1/report.json",
+    "audit": "data/validation/birt_action_policy_audit_2026_10_25_v1/report.json",
+    "handoff": "docs/dev-notes/2026-10-25-birt-action-policy.md",
+    "tests": "data/validation/birt_action_policy_session_2026_10_25_v1/tests_checkpoint2.json",
+    "action_delta": "data/validation/birt_action_policy_session_2026_10_25_v1/action_delta_report.json",
+    "state_alias_replay": "data/validation/birt_state_alias_replay_2026_10_25_v1/report.json",
+    "status": "completed_frozen_comparison_and_audit",
+    "registered_solver_calls": 40,
+    "actual_solver_calls": 40,
+    "original_worlds": 2,
+    "original_goal_slots": 12,
+    "authored_probe_goals": 4,
+    "authored_probe_slots": 28,
+    "distinct_probe_initial_worlds": 1,
+    "by_unit_condition": {
+      "original_goal": {
+        "native": {
+          "solved": 2
+        },
+        "rewrite": {
+          "solved": 1,
+          "unsolvable": 1
+        },
+        "variants_all": {
+          "solved": 2
+        },
+        "variants_has_only": {
+          "solved": 2
+        },
+        "variants_no_share": {
+          "solved": 2
+        },
+        "variants_without_has": {
+          "solved": 2
+        }
+      },
+      "authored_probe": {
+        "rewrite": {
+          "unsolvable": 4
+        },
+        "variants_all": {
+          "solved": 4
+        },
+        "variants_has_only": {
+          "solved": 4
+        },
+        "variants_no_share": {
+          "unsolvable": 4
+        },
+        "variants_remove_ACCO": {
+          "unsolvable": 4
+        },
+        "variants_remove_BIRT": {
+          "unsolvable": 4
+        },
+        "variants_without_has": {
+          "unsolvable": 4
+        }
+      }
+    },
+    "new_plans_revalidated": 19,
+    "native_transports_valid": 10,
+    "mechanical_benefit_cases": 4,
+    "model_calls": 0,
+    "independent_semantic_labels": 0,
+    "supported_claim": "Under the declared common41constant universe and fixed prior maps, retaining complete source STRIPS actions restores BIRT original-goal solvability. Four authored goals exhibit HAS-dependent BIRT-to-ACCO reachability with both source-action sets necessary. HAS-only retains this effect without STATE/carried-item aliasing.",
+    "additional_failure": "The all-alias16step combined plan achieves mapped SHRUNK using ACCO.perform_show and no BIRT shrink action. Same plan is executable but goal-invalid under HAS-only; its independently found18step plan includes the shrink action. Action preservation alone does not prevent interface goal conflation.",
+    "signature_boundary": "ACCO.owned_by(item,entity)->carried_item(entity,item) is incompatible but unused in the all/without-HAS tasks; explicitly reported, not silently certified. Used mismatches are rejected. HAS-only/no-sharing split that alias.",
+    "not_established": [
+      "Generalized source-transition or closed-world preservation",
+      "Compatibility of independently supplied conflicting worlds",
+      "Independent semantic interface accuracy or narrative quality",
+      "Unseen-family or independently authored-goal benefit",
+      "Novelty/optimality/statistical timing advantage",
+      "Completed15source reference or submission readiness"
+    ],
+    "paper_boundary": "Current22pagePDF and existing scientific tables remain historical115-recordv3, predating this result."
+  },
+  "expanded_experiments_2026_10_25": {
+    "status": "completed_expanded_development_block",
+    "design": "docs/research/expanded-experiment-design-2026-10-25.md",
+    "reports": {
+      "bidirectional_scaling": {
+        "path": "data/validation/bidirectional_scaling_2026_10_25_v1/report.json",
+        "sha256": "72d542e8f432560559eb78db3949c59fe1a3933a2e6391970a2e84334824f12d"
+      },
+      "bidirectional_scaling_audit": {
+        "path": "data/validation/bidirectional_scaling_audit_2026_10_25_v1/report.json",
+        "sha256": "925d2cbf5c51b4224aad4f173d20d613d8b400bb3ed67a8fa9434f3a79645d8f"
+      },
+      "bidirectional_case_correction": {
+        "path": "data/validation/bidirectional_case_normalization_2026_10_25_v1/report.json",
+        "sha256": "f10edb42654d2e10c7f07c5a37d3b3aee833afc9112dce245f2aa3b4446418e5"
+      },
+      "bidirectional_case_correction_audit": {
+        "path": "data/validation/bidirectional_case_normalization_audit_2026_10_25_v1/report.json",
+        "sha256": "5dd663fe517d17f4726f2b1b2c9c3e1ef875cd755e1b25ed9de17b2a07d6718a"
+      },
+      "long_horizon_scaling": {
+        "path": "data/validation/long_horizon_scaling_2026_10_25_v1/report.json",
+        "sha256": "d0fb8eaba77373feecb5b0479137f646c44f2c292ca33c22ff8b78b7da32efa9"
+      },
+      "long_horizon_scaling_audit": {
+        "path": "data/validation/long_horizon_scaling_audit_2026_10_25_v1/report.json",
+        "sha256": "1ac6e647a1fa5a9742f5331995093fb543bd6da02c2beafb9b9107e788893a45"
+      },
+      "expanded_final_tests": {
+        "path": "data/validation/expanded_experiments_session_2026_10_25_v1/tests_checkpoint2.json",
+        "sha256": "bc382baec3a82ab7f88b742720690e0c2ab97771da8a332ed2f5d351ed9ee1d5"
+      },
+      "expanded_translation_diagnostic": {
+        "path": "data/validation/expanded_experiments_session_2026_10_25_v1/translator_diagnostic.json",
+        "sha256": "1d78822e502394393a1dcb75285a649ba3bba4dbbc069d94c4e4c350d3ce2839"
+      },
+      "expanded_case_adapter_fix": {
+        "path": "data/validation/expanded_experiments_session_2026_10_25_v1/case_fix_audit.json",
+        "sha256": "d9fe39fb8556c144bde20074e715a1e90561acb466f35a7f37aa5126e6b23d90"
+      }
+    },
+    "original_goals": {
+      "native": {
+        "solved": 6,
+        "unsolvable": 8,
+        "memory_limit": 1
+      },
+      "zero": {
+        "solved": 5,
+        "unsolvable": 8,
+        "wall_time_limit": 2
+      },
+      "machine": {
+        "solved": 5,
+        "unsolvable": 8,
+        "wall_time_limit": 2
+      }
+    },
+    "synthetic_controls": {
+      "shared": {
+        "solved": 24
+      },
+      "no_share": {
+        "unsolvable": 24
+      },
+      "remove_source": {
+        "unsolvable": 24
+      }
+    },
+    "goal_plan_transports": {
+      "VALID": 22,
+      "unavailable_no_goal_plan": 38
+    },
+    "primary_trace_statuses": {
+      "time_limit": 491,
+      "pass_sampled": 258,
+      "unavailable_from_pair": 54,
+      "candidate_limit": 7
+    },
+    "primary_audit_counts": {
+      "PASS": 620,
+      "not_replayed": 190
+    },
+    "primary_completed_steps": 62806,
+    "primary_nonempty_independently_verified_prefixes": 620,
+    "correction_trace_statuses": {
+      "time_limit": 54
+    },
+    "correction_audit_counts": {
+      "PASS": 54
+    },
+    "correction_completed_steps": 3101,
+    "scientific_gates": "No new independent semantic labels or held-out source families; no submission-readiness claim.",
+    "priorities": [
+      "Independent interface and narrative assessment",
+      "Held-out source families and independently supplied cross-source goals",
+      "Top-k goal-plan cross-validation and small exhaustive controls",
+      "Native/single-source-compiled/full-pool/selected-pool cost ablation",
+      "Fair fresh rewrite reference and merge-order/model variability"
+    ]
+  },
+  "independent_evaluation_2026_10_26": {
+    "status": "completed_executable_block_pending_independent_humans",
+    "design": "docs/research/independent-evaluation-design-2026-10-26.md",
+    "human_checklist": "docs/research/independent-evaluation-human-checklist-2026-10-26.md",
+    "handoff": "docs/dev-notes/2026-10-26-independent-interface-and-source-evaluation.md",
+    "reports": {
+      "source_snapshot": {
+        "path": "data/external/prospective_sources_2026_10_26_v1/manifest.json",
+        "sha256": "a3e2f6937c4683f9bb982765c991ba9a5eb1a58fd0f973a424e40775cb09bbba"
+      },
+      "source_admission": {
+        "path": "data/validation/prospective_source_admission_2026_10_26_v1/report.json",
+        "sha256": "3da353f48bacaa37c8d2708cbb6d9aa016f3735418bee0ed1441ba0e68f68ebb"
+      },
+      "original_controls": {
+        "path": "data/validation/prospective_sources_2026_10_26_v1/report.json",
+        "sha256": "e6ef4ebd949a6536bf14c683fe4726f2fe3f2509d600bbfc7a453e5fb4b328fc"
+      },
+      "casefold_controls": {
+        "path": "data/validation/prospective_casefold_2026_10_26_v1/report.json",
+        "sha256": "b6640ea807ea39bad93cc67c08f0b2a823cd04dfa4a5dfeb58096ddfdd343617"
+      },
+      "plan_audit": {
+        "path": "data/validation/prospective_sources_audit_2026_10_26_v1/report.json",
+        "sha256": "7868fa4bd1448d78ed612ff0dc4f51859ccf68f4ead9407bc0576464ce630e85"
+      },
+      "human_delivery": {
+        "path": "output/review/independent_evaluation_2026_10_26_v1/report.json",
+        "sha256": "5c205737eab282766ff590b8b9454f1399373703761b88a4ae71a718a6b7ce26"
+      },
+      "intake_audit": {
+        "path": "data/validation/independent_intake_2026_10_26_v1/report.json",
+        "sha256": "300eb5c5e5c75473f11a0226bc234f87451ae7f68db61ce96cf13854f0bbbb38"
+      },
+      "cross_source_registration_v2": {
+        "path": "data/validation/independent_task_registration_2026_10_26_v2/report.json",
+        "sha256": "29f584f2565252a38293b4cacbe00951d5f0fff505f443f3e9d7a758cd2e0bfe"
+      },
+      "tests": {
+        "path": "data/validation/independent_evaluation_session_2026_10_26_v1/tests_checkpoint.json",
+        "sha256": "e28a5387d89c7b70fa1a7610dbc65d11c786decb424dfc01dfc51e0b977c892d"
+      }
+    },
+    "original_slots": 18,
+    "original_solver_calls": 4,
+    "original_solved": 4,
+    "original_unavailable": 14,
+    "separate_casefold_slots": 12,
+    "separate_casefold_solver_calls": 12,
+    "separate_casefold_solved": 12,
+    "valid_bidirectional_transports": 16,
+    "paired_steps": 224,
+    "source_atom_truth_checks": 230376,
+    "new_interface_packet_candidates": 11,
+    "offline_candidate_evaluations": 318,
+    "independent_human_labels": 0,
+    "new_model_calls": 0,
+    "independent_cross_source_tasks_received": 0,
+    "independent_cross_source_planner_calls": 0,
+    "planned_cross_source_slots_v2": 42,
+    "awaiting_task_slots": 14,
+    "unsupported_source_and_missing_task_slots": 28,
+    "new_heldout_narrative_families": 0,
+    "boundaries": [
+      "Original18slotsandseparate12slotcase-onlyfollowupremainseparate;16actualsolvercalls,not30.",
+      "Threeclassicalbenchmarkfamiliesselected;twoenterpostadmissiondevelopmentandoneisrejectedunchanged;notpristineheldoutornarrativeevidence.",
+      "Offlinebaselinesareunverifiedhypothesesandallsemanticmetricsremainunavailablewithoutindependentannotations.",
+      "Initial36slotdesignrefinedto42beforetaskreceipt;neitherregistryisactualcross-sourceefficacydata.",
+      "CurrentPDF/scientifictablesremainhistorical115recordv3;noindependentsemantic,narrative,noveltyorreadinessclaim."
+    ]
+  },
+  "independent_human_work": "docs/research/independent-evaluation-human-checklist-2026-10-26.md",
+  "evaluation_priority_2026_10_26": {
+    "primary": "Forward execution and goal preservation under explicit source mappings/world embeddings, plus mechanically verified cross-source task benefit.",
+    "reverse": "Optional diagnostic; old bidirectional registries and outcomes remain unchanged.",
+    "human_labels": "Not a gate for forward replay or authored mechanical composition. Required before claiming independently verified interface semantics or narrative quality.",
+    "current_design": "docs/research/forward-and-conjunction-design-2026-10-26.md"
+  },
+  "cleanup_and_forward_2026_10_26": {
+    "handoff": "docs/dev-notes/2026-10-26-cleanup-and-forward-experiments.md",
+    "session_report": "data/validation/cleanup_forward_session_2026_10_26_v1/report.json",
+    "forward_audit": "data/validation/forward_preservation_audit_2026_10_26_v1/report.json",
+    "conjunction_audit": "data/validation/birt_conjunction_audit_2026_10_26_v1/report.json",
+    "forward_slots": 90,
+    "forward_completed_sampled": 30,
+    "forward_time_limits": 57,
+    "forward_candidate_limits": 3,
+    "nonempty_prefixes_validated": 74,
+    "completed_steps": 14182,
+    "new_solver_calls": 21,
+    "has_only_conjunction_plan_lengths": [
+      6,
+      7,
+      18
+    ],
+    "negative_control_unsolvable": 15,
+    "independent_semantic_labels": 0
+  },
+  "conditional_merge_2026_10_27": {
+    "design": "docs/research/conditional-merge-design-2026-10-27.md",
+    "handoff": "docs/dev-notes/2026-10-27-conditional-domain-merge.md",
+    "execution": "data/validation/conditional_merge_2026_10_27_v1/report.json",
+    "audit": "data/validation/conditional_merge_audit_2026_10_27_v1/report.json",
+    "sense_cards": "data/validation/conditional_merge_2026_10_27_v1/specification.json",
+    "branch_witness": "data/validation/conditional_merge_branch_witness_2026_10_27_v1/report.json",
+    "implementation": "Conditional predicate alignment and same-effect OR action fusion, complete source guards and many-to-one parameter provenance",
+    "actual_merge": "41to40actions;48to46business predicates plus12membership predicates;2predicate groups and1action group accepted",
+    "semantic_decisions": "Reject STATE false alias and activation/carry event pair; ownership/carry unknown due missing action-use evidence",
+    "semantics_basis": "Assistant-authored machine sense judgments; no new model API calls, no automatic model adapter, no independent labels",
+    "original_preservation": "15original-goal searches solved;12native-plan transports PASS,80steps,47908Boolean truth checks. Native6/12/2steps; primary independently found6/13/2; native12-stepBIRTplanstillvalid.",
+    "cross_source": "All3no-share goals unsolvable; predicate-only and conditional solve2/5/7steps. BIRT/ACCO necessary forhandoff;all3sourcesnecessaryfortheother2goals.7-stepplanusesmergedtravel.",
+    "semantic_control": "Formal-only falseSTATEalias solves shrinking-without-pellet task usingperform_show; conditional model unsolvable",
+    "formal_controls": "Reject strengthened BIRT applicability and changed effect program",
+    "limits": [
+      "Known source families and authored shared world",
+      "Finite replay plus conditional construction argument, not independently reviewed proof",
+      "No independent semantic labels or narrative quality assessment",
+      "No extra reachability or timing benefit attributed to action fusion",
+      "Different-effect action fusion remains unsupported",
+      "SOUP branch witness is post-primary coverage, not another planner solution"
+    ]
+  },
+  "automatic_merge_2026_10_27": {
+    "design": "docs/research/automatic-merge-design-2026-10-27.md",
+    "handoff": "docs/dev-notes/2026-10-27-automatic-semantic-merge.md",
+    "comparison": "data/validation/automatic_merge_comparison_2026_10_27_v1/report.json",
+    "conditions": [
+      {
+        "run": "data/validation/automatic_merge_2026_10_27_v1",
+        "judgments": {
+          "invalid": 9,
+          "checked": 7
+        },
+        "decisions": {
+          "compatible": 2,
+          "uncertain": 2,
+          "different": 3
+        },
+        "model_requests": 16,
+        "planner_calls": 70,
+        "solver_status_counts": {
+          "solved": 16,
+          "unsolvable": 50,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 0,
+        "action_reduction": 0,
+        "replay_status_counts": {
+          "PASS": 21,
+          "not_replayed": 12
+        },
+        "replay_by_unit": {
+          "original": {
+            "PASS": 9,
+            "not_replayed": 12
+          },
+          "witness": {
+            "PASS": 12
+          }
+        },
+        "replayed_steps": 78,
+        "truth_checks": 72654,
+        "cross_source_benefit_count": 0,
+        "cross_source_task_count": 7,
+        "all_sources_necessary_count": 0
+      },
+      {
+        "run": "data/validation/automatic_merge_2026_10_27_v2",
+        "judgments": {
+          "checked": 16
+        },
+        "decisions": {
+          "compatible": 8,
+          "different": 8
+        },
+        "model_requests": 16,
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 28,
+          "unsolvable": 40,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 8,
+        "action_reduction": 0,
+        "replay_status_counts": {
+          "PASS": 21,
+          "not_replayed": 12
+        },
+        "replay_by_unit": {
+          "original": {
+            "PASS": 9,
+            "not_replayed": 12
+          },
+          "witness": {
+            "PASS": 12
+          }
+        },
+        "replayed_steps": 78,
+        "truth_checks": 72654,
+        "cross_source_benefit_count": 5,
+        "cross_source_task_count": 7,
+        "all_sources_necessary_count": 4
+      }
+    ],
+    "implemented": "Frozen model-generated predicate/action sense judgments, fail-closed conversion, semantic plus formal compiler gates and expanded control/audit runner.",
+    "input_scope": "Seven known sources in three bundles;10predicate and6action pairs; authored type mapping and worlds; candidate discovery not automatic.",
+    "v2_actual_merges": "Eight predicate pairs:122to114 business predicates. All122action schemas retained;all6action candidates classified different. No automatic action-fusion result.",
+    "semantic_failure": "shrunk/performing_show falsely merged;one perform_show step satisfies shrinking without pellet in separate diagnostic. Travel pair and alive pair rejected; these observations are authored diagnostics,not independent accuracy measurements.",
+    "preservation": "Per condition:9/21native transport slots PASS across3available source plans;12unavailable retained. Separate4witness goals yield12PASS. Total78steps and72654truth checks per condition.",
+    "cross_source": "v1:0/7. v2:5/7, lengths2/5/7 for ACCO-BIRT-SOUP and2/4 for PUSS-WOE. Predicate-only and full agree;four goals need all bundled sources,anchor handoff needsACCO/BIRT only. SNOW/PIGS2goals unsolvable.",
+    "limits": [
+      "Automatic v1/v2 preserve 32 model calls and142 planner calls as two separate conditions on the same16 pairs and70 matched tasks. Eight v2 predicate reductions and zero action reductions; not independent samples.",
+      "Model v2 falsely accepts shrunk/performing_show; a separate one-step semantic trap succeeds. Format validity, formal preservation and native replay do not establish meaning correctness.",
+      "Five of seven authored cross-source goals gain over no-share, with no additional reachability from action fusion. PUSS source actions admit generic item bindings; no narrative-quality claim.",
+      "Three native source goals solved,three unsolvable andone limited per representation; native9/21 replay slots pass and12are unavailable. Four separate witness goals provide12additional transports,not original-goal success.",
+      "Candidate pairs/type correspondences/worlds are authored;seven sources are known development data. Independent semantic labels,unseen-family transfer,upstream provenance,isolated cost comparisons and independent proof/novelty review remain open.",
+      "The working PDF and scientific tables remain pinned to the historical115-report snapshot; no submission-readiness claim."
+    ],
+    "prompt_prior_knowledge": "No downstream worlds,goals,plans or independent per-item labels are supplied. General prompt explicitly distinguishes shrinking from performing a show and discusses travel variants; some candidate IDs identify controls. Development prior knowledge is present; this is not a blinded semantic evaluation.",
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_27_automatic_merge_v1/report.json"
+  },
+  "semantic_facets_2026_10_28": {
+    "design": "docs/research/semantic-facets-design-2026-10-28.md",
+    "handoff": "docs/dev-notes/2026-10-28-semantic-facets-and-action-merge.md",
+    "domain_candidates": "docs/research/action-merge-domain-candidates-2026-10-28.md",
+    "comparison": "data/validation/semantic_facets_comparison_2026_10_28_v1/report.json",
+    "confidence_sensitivity": "data/validation/semantic_threshold_sensitivity_2026_10_28_v1/report.json",
+    "conditions": [
+      {
+        "name": "baseline",
+        "root": "data/validation/semantic_facets_baseline_2026_10_28_v1",
+        "model": "gemma3:4b",
+        "new_model_requests": 16,
+        "judgment_status_counts": {
+          "checked": 16
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 28,
+          "unsolvable": 40,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 8,
+        "action_reduction": 0,
+        "cross_source_benefit_count": 5,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "solved",
+            "plan_length": 1
+          }
+        ]
+      },
+      {
+        "name": "treatment",
+        "root": "data/validation/semantic_facets_treatment_2026_10_28_v1",
+        "model": "gemma3:4b",
+        "new_model_requests": 16,
+        "judgment_status_counts": {
+          "checked": 15,
+          "invalid": 1
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 16,
+          "unsolvable": 52,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 0,
+        "action_reduction": 0,
+        "cross_source_benefit_count": 0,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "unsolvable",
+            "plan_length": null
+          }
+        ]
+      },
+      {
+        "name": "r1",
+        "root": "data/validation/semantic_facets_r1_2026_10_28_v1",
+        "model": "deepseek-r1:8b",
+        "new_model_requests": 16,
+        "judgment_status_counts": {
+          "invalid": 3,
+          "checked": 13
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 16,
+          "unsolvable": 52,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 1,
+        "action_reduction": 0,
+        "cross_source_benefit_count": 0,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "unsolvable",
+            "plan_length": null
+          }
+        ]
+      },
+      {
+        "name": "glm_v1",
+        "root": "data/validation/semantic_facets_glm_2026_10_28_v1",
+        "model": "glm-5.3:cloud",
+        "new_model_requests": 16,
+        "judgment_status_counts": {
+          "invalid": 16
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 16,
+          "unsolvable": 52,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 0,
+        "action_reduction": 0,
+        "cross_source_benefit_count": 0,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "unsolvable",
+            "plan_length": null
+          }
+        ]
+      },
+      {
+        "name": "glm_v2",
+        "root": "data/validation/semantic_facets_glm_2026_10_28_v2",
+        "model": "glm-5.3:cloud",
+        "new_model_requests": 16,
+        "judgment_status_counts": {
+          "checked": 12,
+          "invalid": 4
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 31,
+          "unsolvable": 37,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 8,
+        "action_reduction": 0,
+        "cross_source_benefit_count": 7,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "unsolvable",
+            "plan_length": null
+          }
+        ]
+      },
+      {
+        "name": "threshold080",
+        "root": "data/validation/semantic_facets_threshold080_2026_10_28_v1",
+        "model": "glm-5.3:cloud",
+        "new_model_requests": 0,
+        "judgment_status_counts": {
+          "checked": 12,
+          "invalid": 4
+        },
+        "planner_calls": 72,
+        "solver_status_counts": {
+          "solved": 31,
+          "unsolvable": 37,
+          "wall_time_limit": 4
+        },
+        "predicate_reduction": 8,
+        "action_reduction": 1,
+        "cross_source_benefit_count": 7,
+        "semantic_controls": [
+          {
+            "id": "anchor__semantic_trap__no_share",
+            "status": "unsolvable",
+            "plan_length": null
+          },
+          {
+            "id": "anchor__semantic_trap__model_full",
+            "status": "unsolvable",
+            "plan_length": null
+          }
+        ]
+      }
+    ],
+    "new_model_requests": 80,
+    "new_planner_calls": 432,
+    "implementation": "Core relation/event,participant correspondence,applicability difference and counterexample facets;conservative verdict conversion;exact output schema in prompt for endpoints ignoring metadata. Formal compiler checks unchanged.",
+    "cloud_authorization": "User explicitly authorized adding configured GLM-5.3cloud to the fixed-public-input comparison.",
+    "actual_action_merge": "Only the separately labeled0.8sensitivity fuses BIRT/SOUP travel:anchor41to40actions,total122to121. Source guards and both old applicability branches retained;effects unchanged.",
+    "limits": [
+      "Five fresh model conditions contain80model requests(48local,32cloud);six matched72-call planning conditions contain432calls. Threshold0.8reuses GLMv2predictions and is posthoc,not another16model calls or independent replication.",
+      "GLMv2semantically accepts travel at0.85confidence. Original0.9threshold retains separate actions;0.8sensitivity permits actual same-effect OR fusion. Confidence is uncalibrated;no threshold accuracy claim.",
+      "State alias is rejected in corrected GLM condition and false-goal probe is unsolvable. Known controls and code/plan validation are not independent semantic labels;four of16GLMv2outputs remain invalid/unknown.",
+      "Seven domains and all composed worlds are known development material. Candidate generation,type correspondences and worlds remain authored. New transport source screening is not a new automatic fusion/planning result.",
+      "Per-condition native replay has9passes and12unavailable slots;12short-witness transports remain separate. Reused SOUP travel witness is not a fresh original-goal solution.",
+      "Model,prompt,format and prediction-cap changes are adaptive sequential development;cloud tag is not an immutable server-weight hash. Concurrent local audits/tests preclude isolated timing claims.",
+      "Independent source lineages,semantic evaluation,isolated construction/grounding/search/memory costs and independent proof/novelty review remain open. WorkingPDF/tables retain historical115-record provenance."
+    ],
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_28_semantic_facets_v1/report.json"
+  },
+  "transport_action_merge_2026_10_28": {
+    "design": "docs/research/transport-action-merge-2026-10-28.md",
+    "handoff": "docs/dev-notes/2026-10-28-transport-action-merge.md",
+    "run": "data/validation/transport_merge_glm_2026_10_28_v1",
+    "audit": "data/validation/transport_merge_audit_2026_10_28_v1/report.json",
+    "new_model_requests": 5,
+    "new_planner_calls": 51,
+    "solver_status_counts": {
+      "solved": 36,
+      "unsolvable": 15
+    },
+    "model_status_counts": {
+      "checked": 4,
+      "invalid": 1
+    },
+    "original_plan_lengths": [
+      27,
+      33,
+      7,
+      23
+    ],
+    "original_transport": {
+      "passed": 20,
+      "slots": 20,
+      "steps": 450,
+      "truth_checks": 1883850
+    },
+    "witness_transport": {
+      "passed": 10,
+      "slots": 10,
+      "steps": 30,
+      "truth_checks": 5100,
+      "scope": "Separate authored traces require posthoc reversible object-name adapter; raw strict failures retained."
+    },
+    "real_merge": {
+      "primary_confidence": 0.9,
+      "predicates_before": 19,
+      "predicates_after": 17,
+      "membership_predicates": 2,
+      "actions_before": 12,
+      "actions_after": 10,
+      "actions": [
+        "load-truck",
+        "unload-truck"
+      ]
+    },
+    "drive_control": "No merge because model response invalid/truncated; not a verified semantic rejection. Non-deployed identity-role formal diagnostic passes, demonstrating semantic limit of preservation check.",
+    "cross_source": {
+      "unique_authored_tasks": 3,
+      "solved": 3,
+      "lengths": [
+        6,
+        6,
+        10
+      ],
+      "no_share_solved": 0,
+      "both_sources_necessary": 3,
+      "predicate_only_solved": 3,
+      "incremental_action_merge_reachability_gain": 0,
+      "measured_speedup": null
+    },
+    "predeclared_sensitivity": "0.8 reuses the same five predictions; same chosen merges and planning outcomes as0.9.",
+    "limits": [
+      "Latest transport comparison adds five model requests and51planner calls;four native plans across five representations are20transports,not20independent problems. Three cross worlds reused at two thresholds are not six independent tasks.",
+      "Transport primary0.9and predeclared0.8both fuse load/unload. Drive response truncated at8192tokens with no final JSON; retained as invalid/unknown,not a semantic rejection or silently retried result.",
+      "Two authored witnesses had strict-parser object/predicate collisions. Separate posthoc reversible object renaming yields10passing transports; raw failures remain. These are not original-goal units or new planner calls.",
+      "Predicate-only already solves all three transport compositions. The action contribution is12to10schema compression and observed preservation,not incremental reachability or measured speedup.",
+      "Transport formulas are near-identical positive controls; candidate selection,type correspondence and cross worlds are authored. Public classical development benchmarks do not establish unseen learned narrative-domain generalization.",
+      "Historical semantic-facet study remains80model/432planner calls;its0.8travel condition was posthoc and reuses GLMv2predictions. New transport0.8was declared before its responses. Do not conflate the two designs.",
+      "Independent semantic accuracy,confidence calibration,heterogeneous event-role positives,source/world replication,isolated build/ground/search/memory costs and independent proof/novelty review remain open. PDF/tables retain historical115-record provenance."
+    ],
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_28_transport_merge_v1/report.json"
+  },
+  "role_identity_merge_2026_10_28": {
+    "design": "docs/research/role-identity-action-merge-2026-10-28.md",
+    "handoff": "docs/dev-notes/2026-10-28-role-identity-and-precondition-merge.md",
+    "runs": [
+      "data/validation/role_contract_merge_2026_10_28_v1",
+      "data/validation/role_identity_merge_2026_10_28_v1"
+    ],
+    "audits": [
+      "data/validation/role_contract_merge_audit_2026_10_28_v1/report.json",
+      "data/validation/role_identity_merge_audit_2026_10_28_v1/report.json"
+    ],
+    "new_model_requests": 27,
+    "new_planner_calls": 252,
+    "drive": {
+      "budget_only": "complete but compatible at 0.8; incorrect generic precondition-witness role; compiled diagnostic merge at 0.8 with no search",
+      "optional_roles": "invalid/truncated at 16384",
+      "role_identity_first": "complete different at 0.92; specific region versus driver roles; rejected at both thresholds"
+    },
+    "remaining_output_failure": "Role-identity condition transport in predicate truncates; retained unknown. Transport load/unload then fail formal identical-effect check, not silently filled from another condition.",
+    "primary_models": [
+      {
+        "bundle": "transport",
+        "source_actions": 12,
+        "actions": 12,
+        "source_predicates": 19,
+        "logical_predicates": 18,
+        "accepted_actions": []
+      },
+      {
+        "bundle": "clearance",
+        "source_actions": 12,
+        "actions": 10,
+        "source_predicates": 21,
+        "logical_predicates": 19,
+        "accepted_actions": [
+          "clearance_load_truck",
+          "clearance_unload_truck"
+        ]
+      },
+      {
+        "bundle": "narrative",
+        "source_actions": 24,
+        "actions": 23,
+        "source_predicates": 31,
+        "logical_predicates": 30,
+        "accepted_actions": [
+          "narrative_travel"
+        ]
+      }
+    ],
+    "per_run_solver_counts": [
+      {
+        "solved": 76,
+        "unsolvable": 50
+      },
+      {
+        "solved": 76,
+        "unsolvable": 50
+      }
+    ],
+    "per_run_replay_by_unit": {
+      "authored_variant": {
+        "PASS": 5,
+        "unavailable_no_native_goal_plan": 5
+      },
+      "narrative_original": {
+        "PASS": 10
+      },
+      "public_original": {
+        "PASS": 25
+      },
+      "reused_witness": {
+        "PASS": 2
+      }
+    },
+    "per_run_replayed_steps": 676,
+    "per_run_truth_checks": 2403470,
+    "per_run_prerequisite_probes_passed": 8,
+    "cross_source": {
+      "positive_development_tasks_per_run": 7,
+      "full_solved": 7,
+      "predicate_only_solved": 7,
+      "both_sources_necessary": 7,
+      "incremental_action_merge_reachability_gain": 0,
+      "measured_speedup": null,
+      "qualification": "Three transport tasks, three authored clearance variants of those templates, and one known narrative composition."
+    },
+    "limits": [
+      "This increment contains 27 fresh GLM calls (5 budget-only, 11 optional-role, 11 role-first) and 252 fresh planner calls. The final audit reuses the five budget-control predictions; never count them twice.",
+      "Budget-only drive is complete but compatible at 0.8, and diagnostic compilation merges the city/driver parameters at 0.8. Optional-role drive still truncates at 16384. Role-first drive is different at 0.92, but its transport in predicate truncates. No overall reliability claim or answer substitution.",
+      "Latest primary 0.9 actually merges permission-controlled load/unload and BIRT/SOUP travel. Original transport load/unload are rejected formally due to the missing in alignment, even though cross-source tasks remain solvable.",
+      "DLOGC is an explicitly authored derivative with two static permission conjuncts, not an independent public domain. Three clearance worlds reuse three transport templates; seven composed tasks are development cases, not seven independent task families.",
+      "Per condition: 35 original transports pass, including one LOG98 problem repeated across bundles; five authored positive transports pass and five no-native-plan slots remain. Two SOUP witness transports reuse an existing plan. Counts and thresholds are correlated.",
+      "All seven positive composed tasks already solve with predicate-only. Same-effect OR action merge shows compression and preserved source behavior, not extra reachability or measured speedup. Concurrent tests/audits preclude isolated performance claims.",
+      "Prompt clarification was developed after observed failures. Independent semantic accuracy, repeated reliability, unseen role-conflict/source/world evaluation, isolated costs and proof/novelty review remain open. PDF/scientific tables retain historical 115-record provenance."
+    ],
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_28_role_identity_v1/report.json"
+  },
+  "semantic_stability_and_costs_2026_10_30": {
+    "design": "docs/research/formal-merge-experiment-protocol-2026-10-30.md",
+    "results": "docs/research/semantic-stability-and-costs-2026-10-30.md",
+    "handoff": "docs/dev-notes/2026-10-30-semantic-stability-and-costs.md",
+    "preservation_conditions": "docs/research/forward-conditional-merge-guarantee.md",
+    "model_calls": 33,
+    "valid_model_responses": 33,
+    "candidate_count": 11,
+    "semantic_decision_agreement": 11,
+    "primary_acceptance_agreement": 10,
+    "drive_rejections": 3,
+    "travel_primary_merges": 2,
+    "travel_repeats": 3,
+    "integrated_planner_calls": 126,
+    "cost_translation_calls": 27,
+    "cost_search_calls": 27,
+    "cost_preserved_wrapper_failures": 27,
+    "cost_sas_operators_predicate_and_full": [
+      23,
+      19,
+      1156
+    ],
+    "new_source_downloads": {
+      "sources": 6,
+      "original_problems": 18,
+      "files": 24,
+      "model_calls": 0,
+      "planner_calls": 0
+    },
+    "limits": [
+      "33 fresh GLM calls are three same-seed/same-request repetitions of 11 known development candidates. All valid; no independent semantic labels.",
+      "All 11 semantic decisions and the ten positive bijections agree. Primary threshold acceptance agrees on 10/11: travel scores .95/.94/.88. Do not replace the .9 primary condition with the .8 sensitivity view.",
+      "Repeat 1 was preselected for 126 fresh integrated planner calls; repeats 2/3 compile only. 35 original transport slots include duplicate problems and representations; five authored positives and two reused witnesses are separate.",
+      "Seven authored composed tasks solve with both predicate-only and full. Same-effect OR action merge adds schema compression, not demonstrated extra reachability.",
+      "Cost v1 retains 27 wrapper failures with no actual translator/search invocations. Fresh corrected v2 has 27 translations and 27 standalone searches, 18 solved/9 unsolvable. These are known worlds, three descriptive repeats; OS caches/background processes are uncontrolled.",
+      "Action merge leaves SAS operator counts unchanged at 23/19/1156 for the three cost cases. No consistent speedup or memory advantage is established. Windows peak working set and GNU time maximum RSS are different measurements.",
+      "Six-source/18-problem public intake is pinned and downloaded only. Candidate enumeration, explicit composed worlds, full execution budget and syntax admission remain pending; no new-source success or learned-narrative generalization claim.",
+      "Forward-preservation sufficient conditions and induction argument are documented, not independently reviewed. PDF/scientific tables retain the historical 115-record snapshot."
+    ],
+    "audit": "data/validation/semantic_stability_audit_2026_10_30_v1/report.json",
+    "cost_report": "data/validation/merge_costs_2026_10_30_v2/report.json",
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_30_stability_cost_v1/report.json"
+  },
+  "prospective_merge_2026_10_30": {
+    "design": "docs/research/prospective-merge-design-2026-10-30.md",
+    "results": "docs/research/prospective-merge-results-2026-10-30.md",
+    "handoff": "docs/dev-notes/2026-10-30-prospective-merge.md",
+    "protocol": "data/validation/formal_merge_2026_10_30_v1/protocol.json",
+    "pre_model_freeze": "data/validation/formal_merge_2026_10_30_v1/pre_model_freeze.json",
+    "sources": 6,
+    "source_pairs": 15,
+    "original_problems": 18,
+    "model_calls": 70,
+    "model_status_counts": {
+      "checked": 65,
+      "invalid": 5
+    },
+    "model_decision_counts": {
+      "compatible": 5,
+      "different": 60
+    },
+    "semantic_gold_labels": 0,
+    "primary_predicate_groups": 2,
+    "primary_action_groups": 0,
+    "solver_task_slots": 308,
+    "planner_calls": 218,
+    "solver_status_counts": {
+      "solved": 185,
+      "wall_time_limit": 13,
+      "unsolvable": 20,
+      "unavailable_source": 90
+    },
+    "by_family_condition": {
+      "authored_cross_positive/full090": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/no_share": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/predicate090": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/remove_gripper": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/remove_rovers": {
+        "unsolvable": 3
+      },
+      "authored_semantic_risk_control/full090": {
+        "unsolvable": 1
+      },
+      "authored_semantic_risk_control/no_share": {
+        "unsolvable": 1
+      },
+      "authored_semantic_risk_control/predicate090": {
+        "unsolvable": 1
+      },
+      "authored_semantic_risk_control/remove_gripper": {
+        "unsolvable": 1
+      },
+      "authored_semantic_risk_control/remove_miconic": {
+        "unsolvable": 1
+      },
+      "native_original/native": {
+        "solved": 17,
+        "wall_time_limit": 1
+      },
+      "original_mapped/full090": {
+        "solved": 56,
+        "wall_time_limit": 4,
+        "unavailable_source": 30
+      },
+      "original_mapped/no_share": {
+        "solved": 56,
+        "wall_time_limit": 4,
+        "unavailable_source": 30
+      },
+      "original_mapped/predicate090": {
+        "solved": 56,
+        "wall_time_limit": 4,
+        "unavailable_source": 30
+      }
+    },
+    "replay_count": 270,
+    "replay_status_counts": {
+      "PASS": 144,
+      "replay_time_limit": 24,
+      "unavailable_native_plan": 12,
+      "unavailable_compilation_or_mapping": 90
+    },
+    "replayed_steps": 5556,
+    "truth_checks": 40301964,
+    "audit_status": "verified",
+    "violations": [],
+    "cross_source": [
+      {
+        "id": "carry_then_sample_1",
+        "bundle": "gripper__rovers",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "unsolvable",
+          "full090": "unsolvable",
+          "remove_gripper": "unsolvable",
+          "remove_rovers": "unsolvable"
+        },
+        "plan_steps": [],
+        "plan_length": null,
+        "positive_benefit": false,
+        "both_sources_necessary": false,
+        "semantic_risk_triggered": false,
+        "scope": "Each payload explicitly belongs to both the graspable-ball and rover roles. No can_traverse facts: a rover cannot relocate itself. This is an authored mechanical assumption, not independently labeled realism."
+      },
+      {
+        "id": "carry_then_sample_2",
+        "bundle": "gripper__rovers",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "unsolvable",
+          "full090": "unsolvable",
+          "remove_gripper": "unsolvable",
+          "remove_rovers": "unsolvable"
+        },
+        "plan_steps": [],
+        "plan_length": null,
+        "positive_benefit": false,
+        "both_sources_necessary": false,
+        "semantic_risk_triggered": false,
+        "scope": "Each payload explicitly belongs to both the graspable-ball and rover roles. No can_traverse facts: a rover cannot relocate itself. This is an authored mechanical assumption, not independently labeled realism."
+      },
+      {
+        "id": "carry_then_sample_4",
+        "bundle": "gripper__rovers",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "unsolvable",
+          "full090": "unsolvable",
+          "remove_gripper": "unsolvable",
+          "remove_rovers": "unsolvable"
+        },
+        "plan_steps": [],
+        "plan_length": null,
+        "positive_benefit": false,
+        "both_sources_necessary": false,
+        "semantic_risk_triggered": false,
+        "scope": "Each payload explicitly belongs to both the graspable-ball and rover roles. No can_traverse facts: a rover cannot relocate itself. This is an authored mechanical assumption, not independently labeled realism."
+      },
+      {
+        "id": "robot_is_not_lift",
+        "bundle": "gripper__miconic",
+        "unit": "authored_semantic_risk_control",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "unsolvable",
+          "full090": "unsolvable",
+          "remove_gripper": "unsolvable",
+          "remove_miconic": "unsolvable"
+        },
+        "plan_steps": [],
+        "plan_length": null,
+        "positive_benefit": false,
+        "both_sources_necessary": false,
+        "semantic_risk_triggered": false,
+        "scope": "Robot and lift are distinct implicit actors. Robot movement must not move the lift. This authored negative expectation never enters model prompts or compiler acceptance."
+      }
+    ],
+    "audit": "data/validation/formal_merge_audit_2026_10_30_v1/report.json",
+    "limits": [
+      "The prospective six-source block is complete, with all 308 slots retained. Five Boolean sources are supported; numeric Transport remains unsupported for merging, while its three raw native tasks are run.",
+      "70 frozen GLM calls contain 60 predicate and 10 action candidates. Invalid responses remain in the denominator. There are no independent semantic labels or model-pretraining unseenness claims.",
+      "The common declaration carrier retains all original source/type membership guards. It is not a semantic equation between rooms, rovers, instruments or other source types.",
+      "Candidate selection is source-only, budgeted and pre-output, but type-carrier design and authored tasks were chosen after source inspection. This is not a blind test of every method-design choice.",
+      "Current source pairs have few compatible action opportunities under full parameter bijection and identical mapped effects. Zero accepted actions here is not an estimate of positive-pair recall or evidence for incremental action-fusion benefit.",
+      "Three carry-then-sample sizes form one authored family. The separate robot/lift world is an authored risk control, not independent gold. No post-output tasks or threshold changes rescue unsuccessful cases.",
+      "Forward replay limits and unavailable native plans remain unknown, not proof successes or preservation counterexamples. Repeated representations of the same original plan are correlated.",
+      "The predeclared .8 condition is compilation-only in this block; no .8 planning, replay or semantic-safety conclusion is available.",
+      "Prior known-world cost measurements remain separate: action merging did not reduce SAS operator counts or show a consistent speed/memory benefit. The prospective solver run is not an isolated cost study.",
+      "The formal sufficient-conditions argument still needs independent review. Narrative quality, learned-domain generalization and broad semantic reliability are unestablished. PDF/scientific tables retain historical 115-record provenance."
+    ],
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_30_prospective_v1/report.json"
+  },
+  "story_opportunities_2026_10_31": {
+    "results": "docs/research/story-opportunity-experiments-2026-10-31.md",
+    "handoff": "docs/dev-notes/2026-10-31-story-opportunities.md",
+    "protocol": "data/validation/story_opportunities_2026_10_31_v1/protocol.json",
+    "pre_model_freeze": "data/validation/story_opportunities_2026_10_31_v1/pre_model_freeze.json",
+    "census": "data/validation/story_opportunities_2026_10_31_v1/census.json",
+    "sources": 15,
+    "source_pairs": 105,
+    "action_count": 234,
+    "predicate_count": 236,
+    "selected_action_pairs": 7,
+    "model_calls": 16,
+    "model_status_counts": {
+      "checked": 12,
+      "invalid": 4
+    },
+    "model_decision_counts": {
+      "compatible": 9,
+      "different": 3
+    },
+    "semantic_gold_labels": 0,
+    "primary_predicate_groups_across_cases": 7,
+    "primary_action_groups_across_cases": 1,
+    "solver_task_slots": 96,
+    "planner_calls": 96,
+    "solver_status_counts": {
+      "solved": 25,
+      "unsolvable": 58,
+      "wall_time_limit": 13
+    },
+    "by_family_condition": {
+      "authored_cross_positive/full090": {
+        "solved": 3
+      },
+      "authored_cross_positive/no_share": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/predicate090": {
+        "solved": 3
+      },
+      "authored_cross_positive/remove_PUSS": {
+        "unsolvable": 3
+      },
+      "authored_cross_positive/remove_REMA_NP": {
+        "unsolvable": 3
+      },
+      "known_semantic_risk/full090": {
+        "unsolvable": 1
+      },
+      "known_semantic_risk/no_share": {
+        "unsolvable": 1
+      },
+      "known_semantic_risk/predicate090": {
+        "unsolvable": 1
+      },
+      "native_original/native": {
+        "solved": 4,
+        "unsolvable": 8,
+        "wall_time_limit": 3
+      },
+      "original_mapped/full090": {
+        "solved": 5,
+        "unsolvable": 10,
+        "wall_time_limit": 1
+      },
+      "original_mapped/no_share": {
+        "solved": 5,
+        "unsolvable": 18,
+        "wall_time_limit": 8
+      },
+      "original_mapped/predicate090": {
+        "solved": 5,
+        "unsolvable": 10,
+        "wall_time_limit": 1
+      }
+    },
+    "transport_count": 105,
+    "transport_status_counts": {
+      "PASS": 61,
+      "unavailable_native_plan": 44
+    },
+    "transport_by_unit": {
+      "original_plan": {
+        "PASS": 19,
+        "unavailable_native_plan": 44
+      },
+      "schema_constructed_witness": {
+        "PASS": 42
+      }
+    },
+    "transported_steps": 216,
+    "action_certificates": [
+      {
+        "case": "a_f7b38a1512771dc4",
+        "condition": "full090",
+        "id": "a_f7b38a1512771dc4",
+        "certificate": {
+          "status": "accepted",
+          "certificate": "source_pre_implies_target_and_identical_add_delete",
+          "scope": "All bindings and states in the supported Boolean fragment under the fixed embedding; no semantic-label claim"
+        }
+      }
+    ],
+    "cross_source": [
+      {
+        "id": "acquire_then_handoff_1",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "solved",
+          "full090": "solved",
+          "remove_PUSS": "unsolvable",
+          "remove_REMA_NP": "unsolvable"
+        },
+        "plan_steps": [
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient0",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "plan_length": 2,
+        "positive_benefit": true,
+        "both_sources_necessary": true,
+        "semantic_risk_triggered": null,
+        "scope": "Authored mechanical family. Only donor has both source memberships; recipients are REMA-only. Source buy_boots can create arbitrary held items in its formula. This underspecification is retained and is not evidence of realistic purchasing or narrative quality."
+      },
+      {
+        "id": "acquire_then_handoff_4",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "solved",
+          "full090": "solved",
+          "remove_PUSS": "unsolvable",
+          "remove_REMA_NP": "unsolvable"
+        },
+        "plan_steps": [
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift3"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient3",
+              "q__gift3"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift2"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient2",
+              "q__gift2"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift1"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient1",
+              "q__gift1"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient0",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "plan_length": 8,
+        "positive_benefit": true,
+        "both_sources_necessary": true,
+        "semantic_risk_triggered": null,
+        "scope": "Authored mechanical family. Only donor has both source memberships; recipients are REMA-only. Source buy_boots can create arbitrary held items in its formula. This underspecification is retained and is not evidence of realistic purchasing or narrative quality."
+      },
+      {
+        "id": "acquire_then_handoff_16",
+        "unit": "authored_cross_positive",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "solved",
+          "full090": "solved",
+          "remove_PUSS": "unsolvable",
+          "remove_REMA_NP": "unsolvable"
+        },
+        "plan_steps": [
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift9"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient9",
+              "q__gift9"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift8"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient8",
+              "q__gift8"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift7"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient7",
+              "q__gift7"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift6"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient6",
+              "q__gift6"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift5"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient5",
+              "q__gift5"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift4"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient4",
+              "q__gift4"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift3"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient3",
+              "q__gift3"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift2"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient2",
+              "q__gift2"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift15"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient15",
+              "q__gift15"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift14"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient14",
+              "q__gift14"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift13"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient13",
+              "q__gift13"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift12"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient12",
+              "q__gift12"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift11"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient11",
+              "q__gift11"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift10"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient10",
+              "q__gift10"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift1"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient1",
+              "q__gift1"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d000__a_buy_boots",
+              "d000__c_coachman",
+              "q__donor",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "PUSS",
+                "action": "buy_boots",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "call": [
+              "d001__a_receive_rubies_from_impostor",
+              "q__donor",
+              "q__recipient0",
+              "q__gift0"
+            ],
+            "possible_origins": [
+              {
+                "source": "REMA_NP",
+                "action": "receive_rubies_from_impostor",
+                "source_to_target_positions": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "plan_length": 32,
+        "positive_benefit": true,
+        "both_sources_necessary": true,
+        "semantic_risk_triggered": null,
+        "scope": "Authored mechanical family. Only donor has both source memberships; recipients are REMA-only. Source buy_boots can create arbitrary held items in its formula. This underspecification is retained and is not evidence of realistic purchasing or narrative quality."
+      },
+      {
+        "id": "show_is_not_shrink",
+        "unit": "known_semantic_risk",
+        "statuses": {
+          "no_share": "unsolvable",
+          "predicate090": "unsolvable",
+          "full090": "unsolvable"
+        },
+        "plan_steps": [],
+        "plan_length": null,
+        "positive_benefit": false,
+        "both_sources_necessary": null,
+        "semantic_risk_triggered": false,
+        "scope": "Known authored false-alias control; no independent label or new story family."
+      }
+    ],
+    "audit": "data/validation/story_opportunities_audit_2026_10_31_v1/report.json",
+    "violations": [],
+    "limits": [
+      "The 15 story domains are known development sources. This block measures coverage and mechanism, not unseen-source generalization.",
+      "The 105-pair census uses same-spelled effect predicates and complete type-name-compatible parameter bijections. Seven selected action pairs are not all semantic opportunities or a recall denominator; nine outside-fragment actions remain documented.",
+      "Sixteen requests include invalid responses; no semantic gold labels, retries, confidence calibration or threshold changes. Compatible subthreshold gift actions remain separate.",
+      "Repeated PUSS/REMA predicate judgments, representations of the same original problem and sizes of one authored cross family are correlated units.",
+      "The new cross family deliberately preserves underspecified source purchase/transfer actions. Mechanical source necessity does not establish realistic events or narrative quality.",
+      "Direct forward validation checks applicability and goals with complete parameter/object maps; it does not enumerate every source truth value or fill old full-state replay timeouts.",
+      "Missing native plans and all solver/transport limits stay unavailable or unknown. Separate source regressions do not prove that conflicting original worlds can be pooled.",
+      "No isolated construction/grounding/search/memory or source-order cost claim comes from this block. Action schema reduction alone does not imply a search benefit.",
+      "Current PDF and scientific tables retain their historical 115-record provenance. The larger inventory is heterogeneous evidence, not an aggregate experiment success count."
+    ],
+    "full_truth_projection_checked": false,
+    "checkpoint_consistency": "data/validation/checkpoint_consistency_2026_10_31_story_opportunities_v1/report.json"
+  },
+  "manuscript_format_update_2026_11_02": {
+    "date": "2026-11-02",
+    "status": "format_and_local_build_verified_research_gates_open",
+    "template_provenance": "paper/template_update_2026_11_02_v1/template_provenance.json",
+    "main_source": "paper/icaps2027_method_draft.tex",
+    "supplement_source": "paper/icaps2027_supplement.tex",
+    "main_pdf": "output/pdf/icaps2027_main_2026_11_02_v1.pdf",
+    "supplement_pdf": "output/pdf/icaps2027_supplement_2026_11_02_v1.pdf",
+    "source_archive": "output/pdf/icaps2027_latex_source_2026_11_02_v1.zip",
+    "pages": {
+      "main_total": 7,
+      "main_body_ends": 6,
+      "references_start": 6,
+      "supplement": 10
+    },
+    "validation": {
+      "official_styles_unchanged": true,
+      "fresh_directory_rebuild": true,
+      "undefined_citations": 0,
+      "overfull_boxes": 0,
+      "all_fonts_embedded": true,
+      "type3_fonts": 0,
+      "pdf_links_or_annotations": 0,
+      "page_size": "US Letter",
+      "visual_review": "All 7 main and 10 supplement pages rendered and inspected; final main theorem title and cross-reference rechecked.",
+      "evidence_inventory": "paper/results_snapshot_2026_11_02_template_v1/results.json",
+      "verified_records": 227,
+      "new_model_calls": 0,
+      "new_planner_calls": 0
+    },
+    "scientific_scope": "Known development sources and authored controls; formatting does not close scientific submission gates.",
+    "claim_evidence_map": [
+      {
+        "claim": "One known 24-to-23 action compression; 96 calls retain 25 solved, 58 unsolvable and 13 limits.",
+        "evidence": "data/validation/story_opportunities_audit_2026_10_31_v1/report.json",
+        "status": "verified_development_only"
+      },
+      {
+        "claim": "19 valid original-plan transports, 44 unavailable; 42 separate witnesses, 216 steps.",
+        "evidence": "data/validation/story_opportunities_audit_2026_10_31_v1/report.json",
+        "status": "verified_direct_feasibility_not_full_truth_projection"
+      },
+      {
+        "claim": "Predicate-only and full both solve the one authored family in 2/8/32 steps.",
+        "evidence": "data/validation/story_opportunities_audit_2026_10_31_v1/report.json",
+        "status": "verified_no_incremental_action_merge_reachability"
+      },
+      {
+        "claim": "Forward trace preservation under explicit assumptions.",
+        "evidence": "docs/research/forward-conditional-merge-guarantee.md",
+        "status": "argument_preserved_independent_review_open"
+      }
+    ],
+    "self_review": {
+      "contribution": "Conditional source-preservation and mechanism analysis; standard compilation ingredients are not claimed novel; independent novelty review open.",
+      "clarity": "Main paper separated from historical ledger; conditional merge distinguished from variants; reference to source-local proposition corrected.",
+      "experimental_strength": "All missing and failed slots remain; no speedup, semantic accuracy, or unseen-domain improvement claimed.",
+      "evaluation_completeness": "Independent semantics/narrative labels, completed fresh baseline, untouched source families, and run-linked hardware/OS receipt remain open.",
+      "method_soundness": "World compatibility and supported action-merge fragment explicit; independent proof review remains open."
+    },
+    "build_command": "powershell -File paper/build_icaps2027.ps1 -OutputDirectory <fresh-directory>",
+    "editor_compiler_note": "Desktop compiler could not use MiKTeX registry in its restricted environment; fallback Tectonic is incompatible with the official PDFLaTeX-only style. External PDFLaTeX/BibTeX build and a fresh-script rebuild succeeded. Final PDF is opened directly.",
+    "preserved_originals": "paper/template_update_2026_11_02_v1",
+    "historical_scope_note": "The original evidence-index wording about the older 115-record PDF is retained as historical metadata; the new main paper separately cites the verified 31 October block. Historical scientific table cells are unchanged."
+  },
+  "literature_audit_2026_11_02": {
+    "date": "2026-11-02",
+    "status": "targeted_primary_source_audit_revised_compiled_and_visually_checked",
+    "review": "paper/literature_audit_2026_11_02_v1/review.json",
+    "report": "paper/literature_audit_2026_11_02_v1/review.md",
+    "original_entries_checked": 15,
+    "added_entries": 9,
+    "total_bibliography_entries": 24,
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_02_literature_v1.pdf",
+      "supplement": "output/pdf/icaps2027_supplement_2026_11_02_literature_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_02_literature_v1.zip"
+    },
+    "scientific_gates_closed": false,
+    "new_model_calls": 0,
+    "new_planner_calls": 0,
+    "scope": "Targeted primary-source literature and citation revision. Original experimental/theoretical sections preserved; independent novelty/proof review remains open."
+  },
+  "motivation_revision_2026_11_02": {
+    "date": "2026-11-02",
+    "status": "motivation_lineage_and_contribution_revised_build_and_visual_checks_passed",
+    "review": "paper/motivation_revision_2026_11_02_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_02_motivation_v1.pdf",
+      "supplement": "output/pdf/icaps2027_supplement_2026_11_02_motivation_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_02_motivation_v1.zip",
+      "revision_notes": "paper/motivation_revision_2026_11_02_v1/review.md"
+    },
+    "main_pages": 8,
+    "references_start_page": 7,
+    "scientific_gates_closed": false,
+    "new_model_calls": 0,
+    "new_planner_calls": 0,
+    "interpretation": "Cross-source causal composition is the motivation; reader interest is a future evaluation target. UniDomain lineage explicit. Existing theory and experimental results preserved."
+  },
+  "revised_repeat01_integration_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "integrated_compiled_and_visually_verified",
+    "review": "paper/revised_repeat01_integration_2026_11_03_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_revised_repeat01_v1.pdf",
+      "supplement": "output/pdf/icaps2027_supplement_2026_11_03_revised_repeat01_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_03_revised_repeat01_v1.zip"
+    },
+    "validation": {
+      "main_pages": 9,
+      "main_references_start": 8,
+      "supplement_pages": 15,
+      "pdf_checks": "paper/revised_repeat01_integration_2026_11_03_v1/pdf_checks.json",
+      "abstract_words": 174,
+      "theorems_proofs_equations_unchanged": true,
+      "bibliography_and_official_styles_unchanged": true,
+      "new_model_calls": 0,
+      "new_planner_calls": 0
+    },
+    "scientific_gates_closed": false,
+    "new_model_calls": 0,
+    "new_planner_calls": 0
+  },
+  "figure_revision_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "figures_revised_compiled_and_visually_verified",
+    "review": "paper/figure_revision_2026_11_03_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_figures_v1.pdf",
+      "figure1": "output/pdf/icaps2027_figure1_2026_11_03_v1.pdf",
+      "figure2": "output/pdf/icaps2027_figure2_2026_11_03_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_03_figures_v1.zip"
+    },
+    "validation": {
+      "pdf_checks": "paper/figure_revision_2026_11_03_v1/pdf_checks.json",
+      "main_pages": 9,
+      "references_start_page": 8,
+      "supplement_pages": 15,
+      "only_figures_captions_and_one_cross_reference_changed": true,
+      "official_styles_bibliography_supplement_and_experiment_sections_unchanged": true,
+      "all_pdf_fonts_embedded": true,
+      "no_type3_fonts": true,
+      "no_raster_images_in_vector_figures": true,
+      "main_pages_and_color_grayscale_figures_visually_reviewed": true
+    },
+    "scope": "Replace the two existing main-paper diagrams with concrete, consistent, editable vector figures; no new experimental or theoretical claims.",
+    "new_model_calls": 0,
+    "new_planner_calls": 0,
+    "scientific_gates_closed": false
+  },
+  "table_clarity_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "revised_verified_compiled_and_visually_checked",
+    "review": "paper/table_clarity_2026_11_03_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_table_clarity_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_03_table_clarity_v1.zip"
+    },
+    "validation": "paper/table_clarity_2026_11_03_v1/checks.json",
+    "main_pages": 9,
+    "references_start_page": 9,
+    "new_model_calls": 0,
+    "new_planner_calls": 0,
+    "scientific_gates_closed": false
+  },
+  "clarity_revision_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "rewritten_compiled_and_visually_reviewed",
+    "review": "paper/clarity_revision_2026_11_03_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_clarity_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_03_clarity_v1.zip"
+    },
+    "main_pages": 9,
+    "references_start_page": 9,
+    "scientific_gates_closed": false,
+    "new_model_calls": 0,
+    "new_planner_calls": 0
+  },
+  "composition_expanded70_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "complete_and_verified",
+    "protocol": "data/validation/revised_multistory_composition_expanded70_2026_11_03_v1/protocol.json",
+    "execution": "data/validation/revised_multistory_composition_expanded70_2026_11_03_v1/report.json",
+    "analysis": "data/validation/revised_multistory_composition_expanded70_audit_2026_11_03_v1/analysis.json",
+    "assessment": "data/validation/revised_multistory_composition_expanded70_audit_2026_11_03_v1/assessment_zh.txt",
+    "evidence_index": "paper/result_sources_2026_11_03_expanded70_v1.json",
+    "verified_snapshot": "paper/results_snapshot_2026_11_03_expanded70_v1/results.json",
+    "scope": "Exhaustive supported-generator expansion on saved first-repeat domains, not another model-judgment repeat. Original 18-task results retained.",
+    "task_count": 70,
+    "exact_world_count": 37,
+    "input_groups": 35,
+    "new_search_calls": 420,
+    "new_returned_plan_replay_calls": 212,
+    "new_model_calls": 0,
+    "full": {
+      "valid": 68,
+      "confirmed_cross_source": 50,
+      "causal_attribution_unknown": 10,
+      "valid_without_cross_source_link": 8,
+      "no_plan_returned": 2
+    },
+    "full_fixed_world_representatives": {
+      "registered": 37,
+      "valid": 36,
+      "confirmed_cross_source": 27,
+      "causal_attribution_unknown": 5
+    },
+    "predicate_only": {
+      "valid": 68,
+      "confirmed_cross_source": 56
+    },
+    "historical_same_model_preservation": {
+      "registered_source_slots": 116,
+      "validated": 59,
+      "transport_status": {
+        "replayed": 59,
+        "unavailable_valid_native_plan": 57
+      },
+      "new_searches_or_replays": 0
+    },
+    "limits": [
+      "Posthoc supported-generator census, conditional on accepted interfaces.",
+      "70 candidate tasks share 37 exact-world keys and overlapping sources; no iid confidence intervals.",
+      "37-world primary table uses representatives fixed before search; context best-of results are not primary.",
+      "Returned-plan causal structure is evaluated; absence of a returned composition does not prove none exists.",
+      "All source-plan evidence is source-local and incomplete; no joint original-world preservation claim.",
+      "Known identity concerns retained; no independent semantic or narrative-quality evaluation.",
+      "This is fresh task execution on saved first-repeat domains, not another LLM merge repeat."
+    ],
+    "scientific_gates_closed": false,
+    "paper_table_status": "Current main-paper Table 2 still reports the historical 18-task study; this new expansion is a separate verified result pending a dedicated paper revision."
+  },
+  "readability_revision_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "rewritten_compiled_and_visually_verified",
+    "review": "paper/readability_revision_2026_11_03_v1/review.json",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_readability_v1.pdf",
+      "supplement": "output/pdf/icaps2027_supplement_2026_11_03_readability_v1.pdf",
+      "source_archive": "output/pdf/icaps2027_latex_source_2026_11_03_readability_v1.zip"
+    },
+    "main_pages": 8,
+    "supplement_pages": 16,
+    "scientific_gates_closed": false,
+    "new_model_calls": 0,
+    "new_planner_calls": 0
+  },
+  "four_domain_long_case_2026_11_03": {
+    "date": "2026-11-03",
+    "status": "verified_single_authored_case",
+    "case": "data/validation/four_domain_long_case_explicit_apology_intention_2026_11_03_v1",
+    "report": "data/validation/four_domain_long_case_explicit_apology_intention_2026_11_03_v1/report.json",
+    "readable_case": "data/validation/four_domain_long_case_explicit_apology_intention_2026_11_03_v1/case_zh.txt",
+    "evidence_index": "paper/result_sources_2026_11_03_long_case_v1.json",
+    "steps": 11,
+    "actual_sources": 4,
+    "goal_relevant_sources": 4,
+    "cross_source_edges": 1,
+    "independent_action_pairs": 44,
+    "source_action_counts": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    },
+    "new_model_calls": 0,
+    "original_domain_unchanged": true,
+    "world_kind": "authored physical world and explicitly revised character intentions",
+    "search_method": "Fast Downward 26.6 seq-opt-lmcut physical search, then original Glaive intentional replay",
+    "initial_attempts_retained": true,
+    "limits": [
+      "Not part of the 70-task benchmark or an additional LLM merge repeat.",
+      "Four domains contribute through independent goal branches; only A-to-B is a cross-source causal edge.",
+      "One explicit apology intention added after diagnosing the original authored world; not an independent semantic evaluation.",
+      "Source B has no validated original-problem reference plan; no claim that all four original plans are preserved.",
+      "Original source semantics and narrative quality have not been independently assessed."
+    ],
+    "scientific_gates_closed": false
+  },
+  "latest_paper_release_2026_11_03": {
+    "status": "updated_verified_compact_research_release",
+    "review": "paper/results/latest_results_2026_11_03.json",
+    "compact_evidence": "data/research_release/icaps2027_2026_11_03/manifest.json",
+    "reproduction_tool": "scripts/evidence/reproduce_icaps_release.py",
+    "outputs": {
+      "main": "output/pdf/icaps2027_main_2026_11_03_latest_results_v1.pdf",
+      "supplement": "output/pdf/icaps2027_supplement_2026_11_03_latest_results_v1.pdf"
+    },
+    "scientific_gates_closed": false
+  }
 }

@@ -1,0 +1,73 @@
+\section{Expanded Composition Diagnostic and Long Case}
+\label{sec:supp-expanded-composition}
+
+\paragraph{Coverage and units.}
+The first-repeat 300-group sample is unchanged. Of its 120 groups with accepted predicate sharing, 83 contain no positive producer-effect/consumer-precondition pair in the generator's supported action fragment, two have such a pair but no distinct positive consumer goal effect, and 35 support task construction. The other 180 groups have no accepted predicate interface. Thus 35/300 measures the coverage of this particular construction rule, not a merge success rate. Seventy-four source actions are excluded for non-STRIPS formulas and three for constant bindings; these action-level exclusions are not an exclusive decomposition of the 85 uncovered predicate-sharing groups. Missing interfaces may reflect genuine incompatibility, candidate-retrieval limits, conservative judgments, or invalid responses; independent semantic labels are absent.
+
+The expanded study retains every supported descriptor: 8, 26, and 36 tasks from 6, 12, and 17 groups at input sizes two, three, and four. Seventy tasks span 37 exact world keys, formed from objects, facts, goals, and intentions. Different merged-domain contexts may share a world key. For the primary deduplicated report, one representative is fixed before search by smallest input size and then seeded case hash. The remaining contexts are retained; no best-of-outcome selection is used. Distinct world keys still share source models and are not independent samples.
+
+\paragraph{Fresh execution.}
+The new matrix contains 420 searches and 212 returned-plan validations. Each call retains the original 15-second, 4-GB, single-worker budget. Inputs, model copies, mappings, identities, goals, and implementation hashes are frozen before search; no new LLM requests or retries occur. All 212 returned plans pass original-domain Glaive explanation/goal checks and independent physical replay, and their physical and causal checks are recomputed offline. The old 18 descriptors are included within the 70; all 108 overlapping search, validity, and causal statuses reproduce. They are not extra independent tasks or a second LLM merge repeat.
+
+\begin{table*}[t]
+\centering
+\caption{All expanded outcomes. C: confirmed goal-relevant cross-source link; U: valid plan with origin-ambiguous causal classification; N: valid plan with no such link; P: no plan returned within budget. Each block retains its full task denominator.}
+\label{tab:expanded-deduplicated}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+& \multicolumn{5}{c}{All 70 descriptors} & \multicolumn{5}{c}{37 fixed world representatives}\\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+Condition & Valid & C & U & N & P & Valid & C & U & N & P\\
+\midrule
+Union & 25 & 0 & 0 & 25 & 45 & 13 & 0 & 0 & 13 & 24\\
+Predicate-only & 68 & 56 & 0 & 12 & 2 & 36 & 30 & 0 & 6 & 1\\
+Full & 68 & 50 & 10 & 8 & 2 & 36 & 27 & 5 & 4 & 1\\
+Full, producer off & 25 & 0 & 10 & 15 & 45 & 13 & 0 & 5 & 8 & 24\\
+Full, consumer off & 1 & 0 & 0 & 1 & 69 & 1 & 0 & 0 & 1 & 36\\
+Full, identities split & 25 & 0 & 10 & 15 & 45 & 13 & 0 & 5 & 8 & 24\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Origin ambiguity.}
+All ten Full unknowns have the reason \texttt{ambiguous\_fused\_source\_attribution}. Six are confirmed cross-source under Predicate-only and four have no cross-source link there. The other 60 classifications agree. The same ambiguity affects ten producer-off and ten identity-split results; zero confirmed links does not establish that all connections disappear. Six of the 35 models actually merge actions, covering 17 descriptors. In that subset, both Predicate-only and Full validate 16 plans; the former confirms 11 combinations, while Full confirms five and leaves ten unknown. This is a provenance limitation, not an established loss of executable behavior. All 50 confirmed Full plans use two actions and two sources.
+
+\paragraph{Original-plan availability.}
+The same 35 saved Full models have 116 source--group slots. Historical, hash-linked checks validate all 59 available original plans; 57 slots remain unavailable. No new original-plan calls are made. Of 50 confirmed composition descriptors, 47 have at least one preserved original plan; five have an available preserved reference for every selected source, spanning three worlds. The existing lightbox/bike concern occurs in three descriptors sharing one world and remains disclosed.
+
+Separately, the 33 sources with validated Native plans induce 57 fully reference-covered groups within the original frozen sample: 31/16/10 at sizes 2/3/4. All 150 original-plan checks pass; 12 groups share predicates and two merge actions. Only six expanded composition descriptors belong to fully covered groups. This is a posthoc availability analysis, not a replacement sampling protocol or a completed new 33-source experiment. The 33 Native plans have lengths 1--20; 18 exceed two steps. Original-plan replay therefore includes multi-step traces even though the automatic composition fixtures remain two-step.
+
+\subsection{An Authored Eleven-Step Case with Four Sources}
+The existing Full model for group \texttt{k04\_0218ded14bc9db22} retains all 19 source actions: A=\texttt{story\_028}, B=\texttt{story\_085}, C=\texttt{story\_063}, and D=\texttt{wp\_060}. No source rule is repaired. We explicitly declare Mira, Noah, Emma, a toy, a walnut, and a coat with source memberships. Mira belongs to A/B/D, Noah to B/C, Emma to C, the toy to A/B, the walnut to C, and the coat to D. Initial ordinary facts are A.\texttt{reads(mira)}, C.\texttt{hard(walnut)}, D.\texttt{alive(mira)}, and D.\texttt{has(mira,coat)}; other facts are false under CWA. No original problem facts are pooled.
+
+The conjunctive goal records Mira as cleaned, Noah as having forgiven Mira, the walnut as eaten, Emma as helping Noah, and Mira as wearing the coat. Initial intentions explicitly cover these goals. The final authored version also states Mira's intention to apologize. Table~\ref{tab:four-source-long-plan} preserves the actual planner order.
+
+\begin{table}[t]
+\centering
+\caption{The separately authored four-source plan. Source labels identify the unchanged original actions.}
+\label{tab:four-source-long-plan}
+\begin{tabular}{rcl}
+\toprule
+Step & Source & Ground action\\
+\midrule
+1 & C & help(emma,noah)\\
+2 & B & apologize(mira,noah)\\
+3 & D & adjust-item(mira,coat)\\
+4 & D & wear-item(mira,coat)\\
+5 & B & forgive(noah,mira)\\
+6 & C & break-object(emma,walnut,noah)\\
+7 & C & eat-together(emma,noah,walnut)\\
+8 & A & find(mira,toy)\\
+9 & B & play(mira,toy)\\
+10 & B & break-item(mira,toy)\\
+11 & B & clean(mira,toy)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Step 8 establishes shared possession for step 9, followed by playing--breaking--cleaning. The other chains are 2$\to$5, 1$\to$6$\to$7 (also 1$\to$7), and 3$\to$4. All four sources and all steps are in the goal-relevant causal slice. Forty-four action pairs have neither a causal path nor read/write interference; independence means separate goal branches, not unexplained filler. This is four-source participation through one cross-source edge plus local branches, not a single chain traversing all four sources.
+
+\paragraph{Search and revision history.}
+The original authored world receives seven direct Glaive searches: 60 seconds for Full and 15 seconds for Union, four source-off controls, and separated identities. All seven time out; they establish no control necessity result. A separate Fast Downward 26.6 LAMA-first search finds 12 physical steps, but UP rejects an empty optional \texttt{:types} declaration in the search export. A separate export omits that empty declaration and uses \texttt{seq-opt-lmcut}, returning the 11-step plan with independent physical validation. For physical search only, intentional annotations are omitted; all action parameters, preconditions, effects, physical facts, and goals are unchanged. Validation returns to the original intentional model.
+
+Both physical candidates initially replay to the goal but have one unexplained/orphan step, the apology. A diagnostic identifies that step; in a separately frozen revision we add only Mira's explicit intention to apologize. The original merged domain, physical initial facts, goal, and 11 actions remain byte-identical. Original-domain Glaive replay then has zero unexplained and orphan steps, with independent physical replay also passing. The old worlds, timeouts, parser error, and failed intention checks are retained. This is an authored development revision, not a blind benchmark success or another model-judgment repeat. Source B still lacks a validated original-problem reference plan, so the case does not establish preservation of all four original plans. Narrative quality and source-model semantics are not independently assessed.

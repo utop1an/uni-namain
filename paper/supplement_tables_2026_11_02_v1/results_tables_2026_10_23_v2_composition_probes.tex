@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llccccc}
+\toprule
+Producer & Consumer & Aligned & Zero & $-P$ & $-C$ & Necessary \\
+\midrule
+HANS\_NP & CHIC\_NP & T & T & U & T & Unresolved \\
+BIRT & PUSS & S & U & U & U & Both \\
+BIRT & PIGS\_NP & S & S & S & U & Not both \\
+JACK\_NP & BIRT & S & U & U & U & Both \\
+JACK\_NP & PIGS\_NP & S & S & S & U & Not both \\
+PIGS\_NP & BIRT & S & U & U & U & Both \\
+\bottomrule
+\end{tabular}
+\caption{All six generated worlds from 18 fixed directed source-pair slots; 12 pairs could not be constructed, retaining 48 unsupported condition slots. S: validated plan; U: solver-reported unsolvable; T: wall limit. $-P$/$-C$ remove the entire producer/consumer action set. Only three generated worlds establish both-source necessity; two remain solvable after a source removal, and one aligned case is limited. These model-derived worlds provide no independent semantic labels.}
+\label{tab:composition-probes-oct23}
+\end{table*}

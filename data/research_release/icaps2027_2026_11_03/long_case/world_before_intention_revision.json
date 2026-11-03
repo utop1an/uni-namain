@@ -1,0 +1,237 @@
+{
+  "id": "four_domain_long_independent_branches",
+  "sources": [
+    "tiny_stories__story_028",
+    "tiny_stories__story_085",
+    "tiny_stories__story_063",
+    "writing_prompts__wp_060"
+  ],
+  "objects": {
+    "mira": {
+      "tiny_stories__story_028": "character",
+      "tiny_stories__story_085": "character",
+      "writing_prompts__wp_060": "character"
+    },
+    "noah": {
+      "tiny_stories__story_085": "character",
+      "tiny_stories__story_063": "character"
+    },
+    "emma": {
+      "tiny_stories__story_063": "character"
+    },
+    "toy": {
+      "tiny_stories__story_028": "item",
+      "tiny_stories__story_085": "item"
+    },
+    "walnut": {
+      "tiny_stories__story_063": "object"
+    },
+    "coat": {
+      "writing_prompts__wp_060": "item"
+    }
+  },
+  "facts": [
+    [
+      "tiny_stories__story_028",
+      [
+        "reads",
+        "mira"
+      ]
+    ],
+    [
+      "tiny_stories__story_063",
+      [
+        "hard",
+        "walnut"
+      ]
+    ],
+    [
+      "writing_prompts__wp_060",
+      [
+        "alive",
+        "mira"
+      ]
+    ],
+    [
+      "writing_prompts__wp_060",
+      [
+        "has",
+        "mira",
+        "coat"
+      ]
+    ]
+  ],
+  "goal": [
+    [
+      "tiny_stories__story_085",
+      [
+        "cleaned",
+        "mira"
+      ]
+    ],
+    [
+      "tiny_stories__story_085",
+      [
+        "forgiven",
+        "noah",
+        "mira"
+      ]
+    ],
+    [
+      "tiny_stories__story_063",
+      [
+        "eaten",
+        "walnut"
+      ]
+    ],
+    [
+      "tiny_stories__story_063",
+      [
+        "helping",
+        "emma",
+        "noah"
+      ]
+    ],
+    [
+      "writing_prompts__wp_060",
+      [
+        "wearing",
+        "mira",
+        "coat"
+      ]
+    ]
+  ],
+  "intentions": [
+    [
+      "mira",
+      "tiny_stories__story_085",
+      [
+        "cleaned",
+        "mira"
+      ]
+    ],
+    [
+      "mira",
+      "tiny_stories__story_085",
+      [
+        "forgiven",
+        "noah",
+        "mira"
+      ]
+    ],
+    [
+      "mira",
+      "tiny_stories__story_063",
+      [
+        "eaten",
+        "walnut"
+      ]
+    ],
+    [
+      "mira",
+      "tiny_stories__story_063",
+      [
+        "helping",
+        "emma",
+        "noah"
+      ]
+    ],
+    [
+      "mira",
+      "writing_prompts__wp_060",
+      [
+        "wearing",
+        "mira",
+        "coat"
+      ]
+    ],
+    [
+      "noah",
+      "tiny_stories__story_085",
+      [
+        "cleaned",
+        "mira"
+      ]
+    ],
+    [
+      "noah",
+      "tiny_stories__story_085",
+      [
+        "forgiven",
+        "noah",
+        "mira"
+      ]
+    ],
+    [
+      "noah",
+      "tiny_stories__story_063",
+      [
+        "eaten",
+        "walnut"
+      ]
+    ],
+    [
+      "noah",
+      "tiny_stories__story_063",
+      [
+        "helping",
+        "emma",
+        "noah"
+      ]
+    ],
+    [
+      "noah",
+      "writing_prompts__wp_060",
+      [
+        "wearing",
+        "mira",
+        "coat"
+      ]
+    ],
+    [
+      "emma",
+      "tiny_stories__story_085",
+      [
+        "cleaned",
+        "mira"
+      ]
+    ],
+    [
+      "emma",
+      "tiny_stories__story_085",
+      [
+        "forgiven",
+        "noah",
+        "mira"
+      ]
+    ],
+    [
+      "emma",
+      "tiny_stories__story_063",
+      [
+        "eaten",
+        "walnut"
+      ]
+    ],
+    [
+      "emma",
+      "tiny_stories__story_063",
+      [
+        "helping",
+        "emma",
+        "noah"
+      ]
+    ],
+    [
+      "emma",
+      "writing_prompts__wp_060",
+      [
+        "wearing",
+        "mira",
+        "coat"
+      ]
+    ]
+  ],
+  "source_problem_facts_copied": 0,
+  "scope": "Authored case with a cross-source chain plus independent goal-relevant branches. Not an automatically sampled benchmark or a four-source causal chain."
+}

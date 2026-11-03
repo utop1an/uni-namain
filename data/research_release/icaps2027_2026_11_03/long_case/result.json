@@ -1,0 +1,571 @@
+{
+  "status": "complete_authored_explicit_intention_long_case",
+  "requirements_met": true,
+  "replay": {
+    "status": "replayed",
+    "returncode": 0,
+    "mode": "replay",
+    "search_calls": 0,
+    "steps": 11,
+    "goal": true,
+    "unexplained_steps": 0,
+    "orphan_steps": 0,
+    "physical": {
+      "status": "replayed",
+      "steps": 11,
+      "initial_goal": false,
+      "goal": true,
+      "applied": [
+        {
+          "action": "tiny_stories__story_063_a_help",
+          "added": [
+            [
+              "tiny_stories__story_063_p_helping",
+              "emma",
+              "noah"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_085_a_apologize",
+          "added": [
+            [
+              "tiny_stories__story_085_p_apologized",
+              "mira",
+              "noah"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "writing_prompts__wp_060_a_adjust-item",
+          "added": [
+            [
+              "writing_prompts__wp_060_p_fits",
+              "coat",
+              "mira"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "writing_prompts__wp_060_a_wear-item",
+          "added": [
+            [
+              "writing_prompts__wp_060_p_wearing",
+              "mira",
+              "coat"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_085_a_forgive",
+          "added": [
+            [
+              "tiny_stories__story_085_p_forgiven",
+              "noah",
+              "mira"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_063_a_break-object",
+          "added": [
+            [
+              "tiny_stories__story_063_p_broken",
+              "walnut"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_063_a_eat-together",
+          "added": [
+            [
+              "tiny_stories__story_063_p_eaten",
+              "walnut"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_028_a_find",
+          "added": [
+            [
+              "shared_p_consensus_bcc397b47b9bb5b4",
+              "mira",
+              "toy"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_085_a_play",
+          "added": [
+            [
+              "tiny_stories__story_085_p_playing",
+              "mira",
+              "toy"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_085_a_break-item",
+          "added": [
+            [
+              "tiny_stories__story_085_p_broken",
+              "toy"
+            ]
+          ],
+          "deleted": []
+        },
+        {
+          "action": "tiny_stories__story_085_a_clean",
+          "added": [
+            [
+              "tiny_stories__story_085_p_cleaned",
+              "mira"
+            ]
+          ],
+          "deleted": []
+        }
+      ],
+      "explicit_negative_initial_facts": 0
+    }
+  },
+  "causal": {
+    "status": "cross_source_composition",
+    "steps": [
+      {
+        "index": 0,
+        "source": "tiny_stories__story_063",
+        "call": [
+          "tiny_stories__story_063_a_help",
+          "emma",
+          "noah"
+        ]
+      },
+      {
+        "index": 1,
+        "source": "tiny_stories__story_085",
+        "call": [
+          "tiny_stories__story_085_a_apologize",
+          "mira",
+          "noah"
+        ]
+      },
+      {
+        "index": 2,
+        "source": "writing_prompts__wp_060",
+        "call": [
+          "writing_prompts__wp_060_a_adjust-item",
+          "mira",
+          "coat"
+        ]
+      },
+      {
+        "index": 3,
+        "source": "writing_prompts__wp_060",
+        "call": [
+          "writing_prompts__wp_060_a_wear-item",
+          "mira",
+          "coat"
+        ]
+      },
+      {
+        "index": 4,
+        "source": "tiny_stories__story_085",
+        "call": [
+          "tiny_stories__story_085_a_forgive",
+          "noah",
+          "mira"
+        ]
+      },
+      {
+        "index": 5,
+        "source": "tiny_stories__story_063",
+        "call": [
+          "tiny_stories__story_063_a_break-object",
+          "emma",
+          "walnut",
+          "noah"
+        ]
+      },
+      {
+        "index": 6,
+        "source": "tiny_stories__story_063",
+        "call": [
+          "tiny_stories__story_063_a_eat-together",
+          "emma",
+          "noah",
+          "walnut"
+        ]
+      },
+      {
+        "index": 7,
+        "source": "tiny_stories__story_028",
+        "call": [
+          "tiny_stories__story_028_a_find",
+          "mira",
+          "toy"
+        ]
+      },
+      {
+        "index": 8,
+        "source": "tiny_stories__story_085",
+        "call": [
+          "tiny_stories__story_085_a_play",
+          "mira",
+          "toy"
+        ]
+      },
+      {
+        "index": 9,
+        "source": "tiny_stories__story_085",
+        "call": [
+          "tiny_stories__story_085_a_break-item",
+          "mira",
+          "toy"
+        ]
+      },
+      {
+        "index": 10,
+        "source": "tiny_stories__story_085",
+        "call": [
+          "tiny_stories__story_085_a_clean",
+          "mira",
+          "toy"
+        ]
+      }
+    ],
+    "causal_edges": [
+      {
+        "from": 2,
+        "to": 3,
+        "fact": [
+          "writing_prompts__wp_060_p_fits",
+          "coat",
+          "mira"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "fact": [
+          "tiny_stories__story_085_p_apologized",
+          "mira",
+          "noah"
+        ]
+      },
+      {
+        "from": 0,
+        "to": 5,
+        "fact": [
+          "tiny_stories__story_063_p_helping",
+          "emma",
+          "noah"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "fact": [
+          "tiny_stories__story_063_p_broken",
+          "walnut"
+        ]
+      },
+      {
+        "from": 0,
+        "to": 6,
+        "fact": [
+          "tiny_stories__story_063_p_helping",
+          "emma",
+          "noah"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "fact": [
+          "shared_p_consensus_bcc397b47b9bb5b4",
+          "mira",
+          "toy"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "fact": [
+          "tiny_stories__story_085_p_playing",
+          "mira",
+          "toy"
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "fact": [
+          "tiny_stories__story_085_p_broken",
+          "toy"
+        ]
+      }
+    ],
+    "cross_source_edges": [
+      {
+        "from": 7,
+        "to": 8,
+        "fact": [
+          "shared_p_consensus_bcc397b47b9bb5b4",
+          "mira",
+          "toy"
+        ]
+      }
+    ],
+    "actual_source_count": 4,
+    "goal_relevant_source_count": 4,
+    "goal_relevant_step_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "all_steps_goal_relevant": true
+  },
+  "independent_pairs": [
+    {
+      "first": 0,
+      "second": 1,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 2,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 3,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 4,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 0,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 2,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 3,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 5,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 6,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 1,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 4,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 5,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 6,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 2,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 4,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 5,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 6,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 3,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 5,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 6,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 4,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 5,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 5,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 5,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 5,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 6,
+      "second": 7,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 6,
+      "second": 8,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 6,
+      "second": 9,
+      "reason": "no causal path and disjoint read/write interference"
+    },
+    {
+      "first": 6,
+      "second": 10,
+      "reason": "no causal path and disjoint read/write interference"
+    }
+  ],
+  "scope": "One separately authored explicit-intention world. No domain repair, no new physical search; original plan transported to identical physical facts/goals with one added declared character intention. Prior failures retained.",
+  "domain_sha256": "bb9e19ccf67d74d6be5f98cc89c44bda1ed8bdbd830d562ac15608e560120279",
+  "problem_sha256": "3cbb94556b793ffd48c5df64e357a3ddca4b2e6402c4b44dd260b055158f5ab3",
+  "plan_sha256": "de9c0a573a27fbf231b4d31fb57d58bef12ec7574d0f9ae2b462c92b997f4c2b"
+}

@@ -1,0 +1,81 @@
+\section{Evaluation}
+We ask two questions. After combining domains, can we still execute the available original plans? Can we also find a plan in which an event from one source enables an event from another toward the goal? The first checks retention of existing behavior; the second checks new combinations. The archive example in Figure~\ref{fig:motivation} illustrates the idea and is not an experimental task.
+
+\subsection{Data and Setup}
+We use the \emph{GPT-4 revised} artifacts of \emph{There and Back Again}~\cite{kelly2023there}. The recorded collection has 192 sources: 40 in the legacy development split and 152 in its test split. Our existing parser/compiler checks admit 60 of the latter, comprising 32 TinyStories and 28 WritingPrompts domains. The other 92 remain documented exclusions. We do not repair the sources. We have already examined the admitted models during development, so their original test-split label does not make this an unseen-source evaluation.
+
+Before model judgments or search, we fix 100 balanced sequences of source identifiers and take their first two, three, and four entries. This gives 100 groups per size, 300 groups in total, and 538 distinct source pairs. Selection uses identifiers rather than semantic scores or planning outcomes. Groups overlap, so their results are correlated. The supplement gives the exact balancing and sampling rules.
+
+We compare four conditions. \emph{Native} plans with an original domain and problem. \emph{Union} puts selected domains together but keeps their predicates and actions separate. \emph{Predicate-only} shares accepted predicates and keeps the source actions separate. \emph{Full} uses the same predicate matches and also combines eligible actions with matching effects and acting roles. This comparison shows whether a result comes from sharing facts or from merging actions. All 900 combined domains and mappings are saved before main-experiment search.
+
+GLM-5.3 Cloud judges candidate matches; acceptance requires confidence at least 0.9 and the evidence, argument, and consistency checks described above. Glaive search and replay each have a 15-second limit, a 4-GB Java limit, and one planner worker. We retain source actors and intentions and use a versioned runtime correcting false-disjunction substitution and empty-type grounding. The main search block has 60 Native calls and 1,800 merged-domain calls: two fixed original problems per group under three conditions. Each such problem activates only its own source, with no imported initial facts. Model options, candidate limits, runtime changes, and complete outcomes are in the supplement.
+
+We report one completed run that was resumed after interruption. Five runs were registered; the second stopped at the service quota and the remaining runs are incomplete. This run retains the serial and ten-client request segments and their unsuccessful outcomes. It therefore supplies neither a five-run stability estimate nor a timing comparison.
+
+\subsection{Checking Original Plans}
+We first record what actually changed in the domains. Of 4,680 model judgments, 4,117 pass the required response checks, 561 are invalid, and two are unavailable. Passing these checks measures usable output, not semantic accuracy. Among the valid judgments, 206 propose compatibility. Predicate sharing occurs in 120 of the 300 groups and action merging in 19. The supplement reports the distinct pairs, repeated merge occurrences, and rejected outputs.
+
+\begin{table}[t]
+\centering
+\caption{Do original plans still execute in Full? Each size has 100 domain groups. Pred./Act. count groups with predicate/action merges. Replayed gives passed/available plan checks; Unavailable counts missing validated reference plans.}
+\label{tab:revised-preservation}
+\begin{tabular}{rrrrr}
+\toprule
+$k$ & Pred. & Act. & Replayed & Unavailable\\
+\midrule
+2 & 15 & 0 & 111/111 & 89\\
+3 & 42 & 7 & 165/165 & 135\\
+4 & 63 & 12 & 223/223 & 177\\
+Total & 120 & 19 & 499/499 & 401\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each source in each group, we try to execute its validated Native plan in the merged domain using the original initial state and goal. Each source--group pair is one test case, giving $N=100(2+3+4)=900$ Full cases. If a validated Native plan exists, we translate and replay it. A pass requires Glaive goal achievement with no unexplained steps, plus an independent applicability and goal check. We report passed/available checks $V/A$ and coverage $A/N$ separately.
+
+Every available Full check passes: $499/499$ (Table~\ref{tab:revised-preservation}). These checks reuse 33 distinct Native plans, of length 1--20, across merged domains. Native search returns 34 plans, of which 33 validate and one uses unsupported counterfactual steps; 16 searches return no plan and ten time out. As a result, 401 of the 900 cases have no validated reference plan. Preservation is 100\% among the tested cases, with 55.44\% evidence coverage. Union and Predicate-only have the same outcomes. The 1,497 passes across all three conditions repeatedly use these 33 plans.
+
+The groups with actual merges also retain every available plan: $206/206$ checks in predicate-sharing groups, out of 408 cases, and $35/35$ in action-merging groups, out of 69 cases. Coverage of merged actions is narrower. The 19 merged actions replace 38 source-action alternatives. A Native plan is available for 19 alternatives, but only 11 are exercised by a merged step. Structural checks pass for all 19 merges, while untested alternatives remain uncovered.
+
+We also run fresh searches on the 600 original problems in each merged condition. All three conditions have identical statuses: 341 returned plans, of which 332 validate and nine remain unknown; 160 no-plan returns and 99 timeouts. The unknowns reuse one source with unsupported counterfactual syntax. These searches check original problems, with only one source active. They do not test whether different sources can interact, and a no-plan return within the budget is not a proof of unsolvability.
+
+\subsection{Combining Events from Different Sources}
+We separately test the unchanged saved domains in explicit constructed worlds. After observing the accepted mappings, a restricted generator seeks a positive fact produced by one source's action and required by another's. It supports conjunctive conditions and no constant bindings. Objects, shared identities, memberships, initial facts, intentions, and goals are declared before search; no original problem facts are pooled.
+
+Only 35 of 300 groups support this rule. Of the remainder, 180 have no accepted shared predicate, 83 lack a supported positive producer--consumer pair, and two lack a distinct positive goal effect. These are interface/generator coverage limits, not 265 established composition failures. The generator excludes 74 source actions with unsupported formulas and three with constant bindings; these action counts do not partition the group counts.
+
+An earlier 18-task diagnostic selected one descriptor per group and six groups per size. We now exhaust all 70 supported descriptors across the 35 groups: 8/26/36 tasks at input sizes 2/3/4. They repeat 37 exact world definitions (objects, facts, goals, intentions). Before the new searches, we fix one representative per world by smallest input size and then seeded hash. Repeated worlds and sources are not independent samples. The old 18 tasks are included, not added as extra observations.
+
+Each task receives six conditions: Union, Predicate-only, Full, and Full with the producer source disabled, consumer source disabled, or object identities separated. The new matrix has 420 searches and 212 returned-plan validations, with the same 15-second per-call limits and no new model judgments. A confirmed composition requires a goal-relevant causal link through a shared fact between different sources. Re-added initial facts and unrelated concatenations do not qualify. Ambiguous merged-action origins remain unknown.
+
+\begin{table}[t]
+\centering
+\caption{Expanded composition diagnostic: all 70 tasks. Valid: executable goal-reaching plan; Cross: confirmed goal-relevant inter-source link; Origin?: valid plan with unresolved action origin. Unknowns are not counted as either confirmed combinations or confirmed non-combinations.}
+\label{tab:revised-composition}
+\begin{tabular}{lrrr}
+\toprule
+Condition & Valid & Cross & Origin?\\
+\midrule
+Union & 25/70 & 0/70 & 0/70\\
+Predicate-only & 68/70 & 56/70 & 0/70\\
+Full & 68/70 & 50/70 & 10/70\\
+Full, producer off & 25/70 & 0/70 & 10/70\\
+Full, consumer off & 1/70 & 0/70 & 0/70\\
+Full, identities split & 25/70 & 0/70 & 10/70\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Full confirms 50 combinations and leaves ten valid plans with ambiguous fused-action provenance (Table~\ref{tab:revised-composition}). Predicate-only confirms 56. Of Full's ten unknowns, six are composite and four non-composite under Predicate-only; the remaining 60 verdicts agree. The count difference therefore does not establish lost composition. Among the 37 fixed world representatives, Full confirms 27, with five origin-unknown, while Predicate-only confirms 30; both return 36 valid plans. Every confirmed automatic combination uses two sources and two actions, even in a four-domain input.
+
+Union and the controls yield no confirmed cross-source plan. Producer-off and identity-split each retain ten origin-unknown cases, so we cannot claim that every connection disappears. All 212 returned plans pass physical and Glaive explanation/goal validation. The original 18 tasks reproduce all 108 previous search, validity, and causal statuses. This is fresh search on the same first-repeat domains, not another LLM merge repeat.
+
+Across the 35 byte-identical Full models, historical original-plan checks pass in all 59 available slots; 57 of 116 remain unavailable. Of the 50 confirmed composition tasks, 47 have some preserved original-plan evidence, and five have a validated reference plan preserved for every selected source, spanning three worlds. A known lightbox/bike identity concern remains in three tasks repeating one world. Formal execution does not certify object meaning or story quality.
+
+\subsection{A Separate Eleven-Step Four-Source Case}
+An authored world in an existing four-domain Full model produces an 11-step plan. The original 19 action rules remain unchanged. Its branches are find--play--break--clean across \texttt{story\_028/085}, apology--forgiveness in \texttt{085}, help--break--eat in \texttt{063}, and adjust--wear in \texttt{wp\_060}. All four sources and all steps contribute to the conjunctive goal; separate branches have no causal dependence. This is four-source participation, not one chain through four sources.
+
+Direct Glaive search reaches its 60-second limit. Fast Downward finds the physical plan, which initially leaves the apology unexplained under Glaive. In a separately frozen revision, we explicitly add Mira's intention to apologize; the domain, physical initial facts, goal, and action sequence are unchanged. Original-domain Glaive replay then has zero unexplained/orphan steps, and independent physical replay passes. The supplement retains the plan and failed attempts. This revised authored case is not pooled with the 70 automatic tasks or treated as independent semantic evidence.
+
+\subsection{Earlier Development Results}
+The supplement retains the separate 15-story study: 96 planner calls, 19 valid original-plan checks, 44 unavailable cases, and 42 authored witnesses. Its acquire-then-handoff family succeeds in 2/8/32 steps with both Predicate-only and Full; a known travel merge reduces 24 actions to 23. These earlier results are not pooled with the learned-domain run. Reference constructions remain incomplete or invalid, so a completed matched comparison is still missing.

@@ -1,0 +1,6 @@
+# Scientific evidence hashes cover exact original bytes on every platform.
+data/research_release/** -text
+
+# Vector source assets use stable line endings; PDF figures are binary sources.
+paper/figures*/*.svg text eol=lf
+paper/figures*/*.pdf binary
