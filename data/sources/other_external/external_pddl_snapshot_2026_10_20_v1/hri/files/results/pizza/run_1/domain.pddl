@@ -1,0 +1,48 @@
+(define (domain pizza)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types AGENT DOUGH INGREDIENT LIQUID_INGREDIENT TOOL basilicum chef gorgonzola mozzarella mushrooms olive_oil olives oregano oven peperoni pepper pizza_dough salami salt table tomato_sauce)
+    (:predicates 
+    (doughHasLiquid ?Dough - DOUGH)  
+    (doughHasSolid ?Dough - DOUGH)  
+    (ingredientReady ?Ingredient - INGREDIENT)  
+    (liquidIngredientReady ?LiquidIngredient - LIQUID_INGREDIENT)  
+    (ovenContains ?Oven - TOOL ?Dough - DOUGH)  
+    (ovenWarm ?Oven - TOOL)  
+    (pizzaCooked ?Dough - DOUGH)  
+    (pizzaReady ?Dough - DOUGH))
+    (:action addLiquidToDough
+        :parameters (?LiquidIngredient - LIQUID_INGREDIENT ?Dough - DOUGH)
+        :precondition (liquidIngredientReady ?LiquidIngredient)
+        :effect (doughHasLiquid ?Dough)
+    )
+     (:action addSolidToDough
+        :parameters (?Ingredient - INGREDIENT ?Dough - DOUGH)
+        :precondition (ingredientReady ?Ingredient)
+        :effect (doughHasSolid ?Dough)
+    )
+     (:action bakePizza
+        :parameters (?Oven - TOOL ?Dough - DOUGH)
+        :precondition (ovenContains ?Oven ?Dough)
+        :effect (and (not (ovenContains ?Oven ?Dough)) (pizzaCooked ?Dough))
+    )
+     (:action chooseLiquid
+        :parameters (?LiquidIngredient - LIQUID_INGREDIENT)
+        :precondition (and )
+        :effect (liquidIngredientReady ?LiquidIngredient)
+    )
+     (:action chooseSolid
+        :parameters (?Ingredient - INGREDIENT)
+        :precondition (and )
+        :effect (ingredientReady ?Ingredient)
+    )
+     (:action placeInOven
+        :parameters (?Dough - DOUGH ?Oven - TOOL)
+        :precondition (and (doughHasSolid ?Dough) (doughHasLiquid ?Dough) (ovenWarm ?Oven))
+        :effect (ovenContains ?Oven ?Dough)
+    )
+     (:action takeOutPizza
+        :parameters (?Dough - DOUGH)
+        :precondition (pizzaCooked ?Dough)
+        :effect (pizzaReady ?Dough)
+    )
+)

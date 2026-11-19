@@ -1,0 +1,30 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(on-shelf ?book - book ?bookshelf - bookshelf)": "Source predicate (on-shelf ?book - book ?bookshelf - bookshelf).",
+        "(fell-down ?book - book)": "Source predicate (fell-down ?book - book).",
+        "(sneezed ?character - character)": "Source predicate (sneezed ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(in-room ?character - character)": "Source predicate (in-room ?character - character).",
+        "(in-kitchen ?character - character)": "Source predicate (in-kitchen ?character - character).",
+        "(likes ?character - character ?item - item)": "Source predicate (likes ?character - character ?item - item).",
+        "(needs-walk ?character - character)": "Source predicate (needs-walk ?character - character).",
+        "(in-herenow ?character - character)": "Source predicate (in-herenow ?character - character).",
+        "(ancient-oath ?dog - character)": "Source predicate (ancient-oath ?dog - character).",
+        "(guardian ?dog - character)": "Source predicate (guardian ?dog - character).",
+        "(master ?character - character)": "Source predicate (master ?character - character).",
+        "(time-of-passing)": "Source predicate (time-of-passing)."
+    },
+    "operators": {
+        "read": "(:action read\n :parameters (?character - character ?book - book)\n :precondition (and (has ?character ?book) (not (fell-down ?book)))\n :effect (and)\n)",
+        "sneeze": "(:action sneeze\n :parameters (?character - character)\n :precondition (and)\n :effect (sneezed ?character)\n)",
+        "book-fall": "(:action book-fall\n :parameters (?book - book ?bookshelf - bookshelf)\n :precondition (on-shelf ?book ?bookshelf)\n :effect (and (fell-down ?book) (not (on-shelf ?book ?bookshelf)))\n)",
+        "get-scared": "(:action get-scared\n :parameters (?character - character)\n :precondition (sneezed ?character)\n :effect (scared ?character)\n)",
+        "move-to-kitchen": "(:action move-to-kitchen\n :parameters (?character - character)\n :precondition (in-room ?character)\n :effect (and (not (in-room ?character)) (in-kitchen ?character))\n)",
+        "move-to-room": "(:action move-to-room\n :parameters (?character - character)\n :precondition (in-kitchen ?character)\n :effect (and (not (in-kitchen ?character)) (in-room ?character))\n)",
+        "remind-ancient-oath": "(:action remind-ancient-oath\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (ancient-oath ?dog))\n :effect (needs-walk ?master)\n)",
+        "bring-to-herenow": "(:action bring-to-herenow\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (not (in-herenow ?master)))\n :effect (in-herenow ?master)\n)",
+        "walk": "(:action walk\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (needs-walk ?master))\n :effect (and (not (needs-walk ?master)) (in-herenow ?master))\n)",
+        "time-of-passing": "(:action time-of-passing\n :parameters ()\n :precondition (not (time-of-passing))\n :effect (time-of-passing)\n)"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character).",
+        "(at ?character - character ?place - object)": "The character is at the specified place, which may be a room or another object.",
+        "(has ?character - character ?item - item)": "The character has the specified item.",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(magic ?character - character)": "Source predicate (magic ?character - character).",
+        "(granted-wish ?wish - object)": "Source predicate (granted-wish ?wish - object).",
+        "(has ?character - character ?item - object)": "The character has the specified object.",
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character).",
+        "(shares ?character - character)": "Source predicate (shares ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "move :parameters (?character - character ?from_place - object ?to_place - object) :precondition (and (not (= ?from_place ?to_place)) (at ?character ?from_place)) :effect (and (not (at ?character ?from_place)) (at ?character ?to_place)))": "(:action move :parameters (?character - character ?from_place - object ?to_place - object) :precondition (and (not (= ?from_place ?to_place)) (at ?character ?from_place)) :effect (and (not (at ?character ?from_place)) (at ?character ?to_place)))",
+        "take-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (in ?item ?place)) :effect (and (not (in ?item ?place)) (has ?character ?item)))": "(:action take-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (in ?item ?place)) :effect (and (not (in ?item ?place)) (has ?character ?item)))",
+        "leave-item": "(:action leave-item\n :parameters (?character - character ?item - item ?place - room)\n :precondition (and (at ?character ?place) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (in ?item ?place))\n)",
+        "sit-down": "(:action sit-down\n :parameters (?character - character)\n :precondition (not (happy ?character))\n :effect (happy ?character)\n)",
+        "become-magic": "(:action become-magic\n :parameters (?character - character)\n :precondition (not (magic ?character))\n :effect (magic ?character)\n)",
+        "grant-wish": "(:action grant-wish\n :parameters (?granter - character ?wish - object)\n :precondition (magic ?granter)\n :effect (granted-wish ?wish)\n)",
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2) (shares ?character1))\n :effect (playing-together ?character1 ?character2)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?receiver - character)\n :precondition (and (not (= ?apologizer ?receiver)) (friends ?apologizer ?receiver))\n :effect (shares ?apologizer)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - object)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "share :parameters (?sharer - character ?object - object ?receiver - character) :precondition (and (has ?sharer ?object) (not (has ?receiver ?object)) (not (= ?sharer ?receiver)) (friends ?sharer ?receiver)) :effect (and (shares ?sharer) (has ?receiver ?object)))": "(:action share :parameters (?sharer - character ?object - object ?receiver - character) :precondition (and (has ?sharer ?object) (not (has ?receiver ?object)) (not (= ?sharer ?receiver)) (friends ?sharer ?receiver)) :effect (and (shares ?sharer) (has ?receiver ?object)))"
+    }
+}

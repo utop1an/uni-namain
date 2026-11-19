@@ -1,0 +1,41 @@
+{
+    "predicates": {
+        "(has-skin ?character - character)": "Source predicate (has-skin ?character - character).",
+        "(kneel ?character - character)": "Source predicate (kneel ?character - character).",
+        "(rewarded ?character - character)": "Source predicate (rewarded ?character - character).",
+        "(tried ?character - character)": "Source predicate (tried ?character - character).",
+        "(voice-happy ?character - character)": "Source predicate (voice-happy ?character - character).",
+        "(wearing-hat ?character - character)": "Source predicate (wearing-hat ?character - character).",
+        "(is-dog ?character - character)": "Source predicate (is-dog ?character - character).",
+        "(is-fairy ?character - character)": "Source predicate (is-fairy ?character - character).",
+        "(has-magic-flower ?character - character)": "Source predicate (has-magic-flower ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(played-together ?character1 - character ?character2 - character)": "Source predicate (played-together ?character1 - character ?character2 - character).",
+        "(liberated ?character - character)": "Source predicate (liberated ?character - character).",
+        "(defeated-illuminati)": "Source predicate (defeated-illuminati).",
+        "(alien-exists ?character - character)": "Source predicate (alien-exists ?character - character).",
+        "(alien-gone ?character - character)": "Source predicate (alien-gone ?character - character)."
+    },
+    "operators": {
+        "try": "(:action try\n :parameters (?character - character)\n :precondition (kneel ?character)\n :effect (tried ?character)\n)",
+        "reward": "(:action reward\n :parameters (?character - character)\n :precondition (voice-happy ?character)\n :effect (rewarded ?character)\n)",
+        "take-skin": "(:action take-skin\n :parameters (?character - character)\n :precondition (and (not (voice-happy ?character)) (has-skin ?character))\n :effect (not (has-skin ?character))\n)",
+        "transform": "(:action transform\n :parameters (?character - character)\n :precondition (is-dog ?character)\n :effect (and (not (is-dog ?character)) (is-fairy ?character))\n)",
+        "give-magic-flower": "(:action give-magic-flower\n :parameters (?giver - character ?receiver - character)\n :precondition (and (not (= ?giver ?receiver)) (is-fairy ?giver))\n :effect (has-magic-flower ?receiver)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "kneel": "(:action kneel\n :parameters (?character - character)\n :precondition (at ?character old-house)\n :effect (kneel ?character)\n)",
+        "evaluate": "(:action evaluate\n :parameters (?character - character)\n :precondition (tried ?character)\n :effect (voice-happy ?character)\n)",
+        "remove-hat": "(:action remove-hat\n :parameters (?remover - character ?wearer - character)\n :precondition (and (not (= ?remover ?wearer)) (wearing-hat ?wearer))\n :effect (not (wearing-hat ?wearer))\n)",
+        "rest": "(:action rest\n :parameters (?character - character)\n :precondition (tired ?character)\n :effect (not (tired ?character))\n)",
+        "disappear": "(:action disappear\n :parameters (?alien - character)\n :precondition (alien-exists ?alien)\n :effect (alien-gone ?alien)\n)",
+        "reappear": "(:action reappear\n :parameters (?alien - character)\n :precondition (alien-gone ?alien)\n :effect (alien-exists ?alien)\n)",
+        "move": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "play-together": "(:action play-together :parameters (?character1 - character ?character2 - character ?place - place) :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2) (at ?character1 ?place) (at ?character2 ?place)) :effect (and (playing-together ?character1 ?character2) (played-together ?character1 ?character2) (happy ?character1) (happy ?character2) (tired ?character1) (tired ?character2)))",
+        "liberate": "(:action liberate\n :parameters (?alien - character ?human - character)\n :precondition (and (alien-exists ?alien) (not (liberated ?human)))\n :effect (liberated ?human)\n)",
+        "defeat-illuminati": "(:action defeat-illuminati\n :parameters (?alien - character)\n :precondition (and (alien-exists ?alien) (not (defeated-illuminati)))\n :effect (defeated-illuminati)\n)"
+    }
+}

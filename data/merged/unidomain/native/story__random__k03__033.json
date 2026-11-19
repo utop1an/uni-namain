@@ -1,0 +1,33 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(imprisoned ?character - character)": "Source predicate (imprisoned ?character - character).",
+        "(served-sentence ?character - character)": "Source predicate (served-sentence ?character - character).",
+        "(has-serum ?character - character)": "Source predicate (has-serum ?character - character).",
+        "(religious ?character - character)": "Source predicate (religious ?character - character).",
+        "(at ?entity - (either character item) ?place - object)": "The character or item is located at the specified place.",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character).",
+        "(shares ?character - character)": "Source predicate (shares ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(at ?item - item ?place - object)": "The character or item is located at the specified place."
+    },
+    "operators": {
+        "take-serum": "(:action take-serum\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (has-serum ?character)))\n :effect (has-serum ?character)\n)",
+        "serve-sentence": "(:action serve-sentence\n :parameters (?character - character)\n :precondition (and (alive ?character) (imprisoned ?character) (not (served-sentence ?character)))\n :effect (served-sentence ?character)\n)",
+        "release": "(:action release\n :parameters (?character - character)\n :precondition (and (alive ?character) (imprisoned ?character) (served-sentence ?character))\n :effect (not (imprisoned ?character))\n)",
+        "convert": "(:action convert\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (religious ?character)))\n :effect (religious ?character)\n)",
+        "abandon-religion": "(:action abandon-religion\n :parameters (?character - character)\n :precondition (and (alive ?character) (religious ?character))\n :effect (not (religious ?character))\n)",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2) (shares ?character1))\n :effect (playing-together ?character1 ?character2)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?receiver - character)\n :precondition (and (not (= ?apologizer ?receiver)) (friends ?apologizer ?receiver))\n :effect (shares ?apologizer)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?item - item ?receiver - character)\n :precondition (and (not (= ?sharer ?receiver)) (has ?sharer ?item) (friends ?sharer ?receiver))\n :effect (and (shares ?sharer) (has ?receiver ?item))\n)",
+        "put :parameters (?character - character ?entity - item ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))": "(:action put :parameters (?character - character ?entity - item ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))"
+    }
+}

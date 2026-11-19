@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?character - character ?location - location)": "Source predicate (at ?character - character ?location - location).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(connected ?location - location ?oldlocation - location)": "Source predicate (connected ?location - location ?oldlocation - location).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(on-ship ?character - character ?ship - ship)": "Source predicate (on-ship ?character - character ?ship - ship).",
+        "(moby-dick-spotted ?ship - ship)": "Source predicate (moby-dick-spotted ?ship - ship).",
+        "(moby-dick-attacking ?ship - ship)": "Source predicate (moby-dick-attacking ?ship - ship).",
+        "(read-moby-dick ?character - character)": "Source predicate (read-moby-dick ?character - character).",
+        "(trained-in-whale-killing ?character - character)": "Source predicate (trained-in-whale-killing ?character - character).",
+        "(battle-stations ?ship - ship)": "Source predicate (battle-stations ?ship - ship)."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing": "(:action take-thing\n :parameters (?taker - character ?thing - item ?location - location)\n :precondition (and (at ?taker ?location) (at ?thing ?location) (not (asleep ?taker)) (not (enchanted ?thing)))\n :effect (and (not (at ?thing ?location)) (has ?taker ?thing))\n)",
+        "disenchant-thing": "(:action disenchant-thing\n :parameters (?caster - character ?thing - item ?book - book ?location - location)\n :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?book) (enchanted ?thing))\n :effect (not (enchanted ?thing))\n)",
+        "spot-moby-dick": "(:action spot-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship))\n :effect (moby-dick-spotted ?ship)\n)",
+        "moby-dick-attack": "(:action moby-dick-attack\n :parameters (?ship - ship)\n :precondition (moby-dick-spotted ?ship)\n :effect (moby-dick-attacking ?ship)\n)",
+        "order-battle-stations": "(:action order-battle-stations\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (moby-dick-spotted ?ship))\n :effect (battle-stations ?ship)\n)",
+        "try-kill-moby-dick": "(:action try-kill-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (trained-in-whale-killing ?character) (moby-dick-attacking ?ship) (battle-stations ?ship))\n :effect (not (moby-dick-attacking ?ship))\n)",
+        "read-moby-dick": "(:action read-moby-dick\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (read-moby-dick ?character)\n)",
+        "train-in-whale-killing": "(:action train-in-whale-killing\n :parameters (?character - character)\n :precondition (read-moby-dick ?character)\n :effect (trained-in-whale-killing ?character)\n)"
+    }
+}

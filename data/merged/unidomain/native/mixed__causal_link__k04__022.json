@@ -1,0 +1,39 @@
+{
+    "predicates": {
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(connected ?location - location ?oldlocation - location)": "Location ?to is connected to location ?from, preserving the original parameter order.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(alive ?character - character)": "The character is alive.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(player ?character - character)": "The character is a player.",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?entity - (either character object))": "The character has the specified entity, which may be a character, an item, or another object.",
+        "(connected ?to - location ?from - location)": "Location ?to is connected to location ?from, preserving the original parameter order.",
+        "(at ?entity - (either item character) ?position - (either location place))": "The specified item or character is at the specified location or place.",
+        "(has ?character - character ?object - object)": "The character has the specified entity, which may be a character or an item.",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The specified item or character is at the specified location or place."
+    },
+    "operators": {
+        "wake-person :parameters (?waker - character ?woken - character ?position - (either location place)) :precondition (and (at ?waker ?position) (at ?woken ?position) (asleep ?woken) (not (asleep ?waker))) :effect (not (asleep ?woken)))": "(:action wake-person :parameters (?waker - character ?woken - character ?position - (either location place)) :precondition (and (at ?waker ?position) (at ?woken ?position) (asleep ?woken) (not (asleep ?waker))) :effect (not (asleep ?woken)))",
+        "take-thing :parameters (?taker - character ?object - object ?position - (either location place)) :precondition (and (at ?taker ?position) (at ?object ?position) (not (asleep ?taker)) (not (enchanted ?object))) :effect (and (not (at ?object ?position)) (has ?taker ?object)))": "(:action take-thing :parameters (?taker - character ?object - object ?position - (either location place)) :precondition (and (at ?taker ?position) (at ?object ?position) (not (asleep ?taker)) (not (enchanted ?object))) :effect (and (not (at ?object ?position)) (has ?taker ?object)))",
+        "disenchant-thing :parameters (?caster - character ?target - item ?held-object - object ?position - location) :precondition (and (at ?caster ?position) (at ?target ?position) (not (asleep ?caster)) (has ?caster ?held-object) (enchanted ?target)) :effect (not (enchanted ?target)))": "(:action disenchant-thing :parameters (?caster - character ?target - item ?held-object - object ?position - location) :precondition (and (at ?caster ?position) (at ?target ?position) (not (asleep ?caster)) (has ?caster ?held-object) (enchanted ?target)) :effect (not (enchanted ?target)))",
+        "request-tow :parameters (?entity - character ?position - location) :precondition (and (alive ?entity) (at ?entity ?position)) :effect (requested-tow ?entity ?position))": "(:action request-tow :parameters (?entity - character ?position - location) :precondition (and (alive ?entity) (at ?entity ?position)) :effect (requested-tow ?entity ?position))",
+        "interrogate-character": "(:action interrogate-character :parameters (?interrogator - character ?detainee - character ?interrogation-position - (either location place)) :precondition (and (player ?interrogator) (at ?interrogator ?interrogation-position) (at ?detainee ?interrogation-position) (apprehended ?detainee)) :effect (knows ?interrogator))",
+        "save-character": "(:action save-character :parameters (?rescuer - character ?captive - character ?other-captive - character ?position - (either location place)) :precondition (and (player ?rescuer) (at ?rescuer ?position) (at ?captive ?position) (captured ?captive) (captured ?other-captive) (not (at ?other-captive ?position))) :effect (and (saved ?captive ?rescuer) (not (alive ?other-captive))))",
+        "move-location": "(:action move-location :parameters (?entity - character ?position - location ?previous_position - location) :precondition (and (player ?entity) (connected ?position ?previous_position) (at ?entity ?previous_position) (knows ?entity) (not (asleep ?entity))) :effect (and (not (at ?entity ?previous_position)) (at ?entity ?position)))",
+        "detect-stasis :parameters (?character - character ?entity - (either character object)) :precondition (and (alive ?character) (has ?character ?entity) (ancient-technology ?entity)) :effect (in-stasis ?entity))": "(:action detect-stasis :parameters (?character - character ?entity - (either character object)) :precondition (and (alive ?character) (has ?character ?entity) (ancient-technology ?entity)) :effect (in-stasis ?entity))",
+        "discover-technology :parameters (?character - character ?entity - object ?position - (either location place)) :precondition (and (alive ?character) (at ?character ?position)) :effect (and (has ?character ?entity) (ancient-technology ?entity)))": "(:action discover-technology :parameters (?character - character ?entity - object ?position - (either location place)) :precondition (and (alive ?character) (at ?character ?position)) :effect (and (has ?character ?entity) (ancient-technology ?entity)))",
+        "transport-entity :parameters (?carrier - character ?entity - (either character object) ?from-position - (either location place) ?to-position - (either location place)) :precondition (and (alive ?carrier) (at ?carrier ?from-position) (has ?carrier ?entity) (requested-tow ?carrier ?to-position)) :effect (and (not (at ?carrier ?from-position)) (at ?carrier ?to-position) (not (has ?carrier ?entity))))": "(:action transport-entity :parameters (?carrier - character ?entity - (either character object) ?from-position - (either location place) ?to-position - (either location place)) :precondition (and (alive ?carrier) (at ?carrier ?from-position) (has ?carrier ?entity) (requested-tow ?carrier ?to-position)) :effect (and (not (at ?carrier ?from-position)) (at ?carrier ?to-position) (not (has ?carrier ?entity))))",
+        "place-victim": "(:action place-victim :parameters (?actor - character ?victim - character ?source-position - location ?destination-position - location) :precondition (and (henchman ?actor) (has ?actor ?victim) (at ?actor ?source-position) (connected ?destination-position ?source-position)) :effect (and (not (has ?actor ?victim)) (at ?victim ?destination-position) (captured ?victim)))"
+    }
+}

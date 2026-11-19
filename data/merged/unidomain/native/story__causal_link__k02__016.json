@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(on-shelf ?book - book ?bookshelf - bookshelf)": "Source predicate (on-shelf ?book - book ?bookshelf - bookshelf).",
+        "(fell-down ?book - book)": "Source predicate (fell-down ?book - book).",
+        "(sneezed ?character - character)": "Source predicate (sneezed ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(in-room ?character - character)": "Source predicate (in-room ?character - character).",
+        "(in-kitchen ?character - character)": "Source predicate (in-kitchen ?character - character).",
+        "(likes ?character - character ?item - item)": "Source predicate (likes ?character - character ?item - item).",
+        "(human ?character - character)": "Source predicate (human ?character - character).",
+        "(crow ?character - character)": "Source predicate (crow ?character - character).",
+        "(in-pain ?character - character)": "Source predicate (in-pain ?character - character).",
+        "(sunlight-available)": "Source predicate (sunlight-available).",
+        "(transformed ?character - character)": "Source predicate (transformed ?character - character)."
+    },
+    "operators": {
+        "read": "(:action read\n :parameters (?character - character ?book - book)\n :precondition (and (has ?character ?book) (not (fell-down ?book)))\n :effect (and)\n)",
+        "sneeze": "(:action sneeze\n :parameters (?character - character)\n :precondition (and)\n :effect (sneezed ?character)\n)",
+        "book-fall": "(:action book-fall\n :parameters (?book - book ?bookshelf - bookshelf)\n :precondition (on-shelf ?book ?bookshelf)\n :effect (and (fell-down ?book) (not (on-shelf ?book ?bookshelf)))\n)",
+        "get-scared": "(:action get-scared\n :parameters (?character - character)\n :precondition (sneezed ?character)\n :effect (scared ?character)\n)",
+        "move-to-kitchen": "(:action move-to-kitchen\n :parameters (?character - character)\n :precondition (in-room ?character)\n :effect (and (not (in-room ?character)) (in-kitchen ?character))\n)",
+        "move-to-room": "(:action move-to-room\n :parameters (?character - character)\n :precondition (in-kitchen ?character)\n :effect (and (not (in-kitchen ?character)) (in-room ?character))\n)",
+        "experience-pain": "(:action experience-pain\n :parameters (?character - character)\n :precondition (human ?character)\n :effect (in-pain ?character)\n)",
+        "transform-into-crow": "(:action transform-into-crow\n :parameters (?character - character)\n :precondition (and (human ?character) (in-pain ?character) (sunlight-available))\n :effect (and (not (human ?character)) (crow ?character) (transformed ?character))\n)",
+        "transform-back-into-human": "(:action transform-back-into-human\n :parameters (?character - character)\n :precondition (crow ?character)\n :effect (and (not (crow ?character)) (human ?character))\n)"
+    }
+}

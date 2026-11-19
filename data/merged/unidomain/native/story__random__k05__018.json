@@ -1,0 +1,43 @@
+{
+    "predicates": {
+        "(hungry ?character - character)": "Source predicate (hungry ?character - character).",
+        "(food-available)": "Source predicate (food-available).",
+        "(alive ?character - character)": "The character is alive.",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(friend ?entity1 - (either character dog) ?entity2 - (either character dog))": "Entity1 is a friend of entity2; each entity may be a character or a dog.",
+        "(has ?character - character ?object - object)": "The character has the object.",
+        "(pranked ?pranker - character ?target - character)": "Source predicate (pranked ?pranker - character ?target - character).",
+        "(practices ?dog1 - dog ?dog2 - dog)": "Source predicate (practices ?dog1 - dog ?dog2 - dog).",
+        "(participates ?dog - dog)": "Source predicate (participates ?dog - dog).",
+        "(wins ?dog - dog)": "Source predicate (wins ?dog - dog).",
+        "(plays-with-toy-stack ?dog - dog)": "Source predicate (plays-with-toy-stack ?dog - dog).",
+        "(found ?character - character ?object - object)": "Source predicate (found ?character - character ?object - object).",
+        "(made-handprint ?character - character)": "Source predicate (made-handprint ?character - character).",
+        "(celebrated ?character - character)": "Source predicate (celebrated ?character - character).",
+        "(friend ?dog1 - dog ?dog2 - dog)": "Entity1 is a friend of entity2; each entity may be a character or a dog."
+    },
+    "operators": {
+        "search-for-food": "(:action search-for-food\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (food-available)\n)",
+        "feed": "(:action feed\n :parameters (?feeder - character ?eater - character)\n :precondition (and (alive ?feeder) (alive ?eater) (hungry ?eater) (food-available))\n :effect (not (hungry ?eater))\n)",
+        "eat": "(:action eat\n :parameters (?eater - character ?eaten - character)\n :precondition (and (alive ?eater) (hungry ?eater) (alive ?eaten))\n :effect (not (alive ?eaten))\n)",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "ask-to-be-friends :parameters (?entity1 - character ?entity2 - character) :precondition (and (alive ?entity1) (alive ?entity2) (not (friend ?entity1 ?entity2))) :effect (friend ?entity1 ?entity2))": "(:action ask-to-be-friends :parameters (?entity1 - character ?entity2 - character) :precondition (and (alive ?entity1) (alive ?entity2) (not (friend ?entity1 ?entity2))) :effect (friend ?entity1 ?entity2))",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "prank": "(:action prank\n :parameters (?pranker - character ?target - character)\n :precondition (and)\n :effect (pranked ?pranker ?target)\n)",
+        "participate-in-race": "(:action participate-in-race\n :parameters (?dog - dog)\n :precondition (not (participates ?dog))\n :effect (participates ?dog)\n)",
+        "win-race": "(:action win-race\n :parameters (?dog - dog ?helper - dog)\n :precondition (and (participates ?dog) (practices ?dog ?helper))\n :effect (wins ?dog)\n)",
+        "play-with-toy-stack": "(:action play-with-toy-stack\n :parameters (?dog - dog)\n :precondition (not (plays-with-toy-stack ?dog))\n :effect (plays-with-toy-stack ?dog)\n)",
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (found ?character ?object))\n :effect (found ?character ?object)\n)",
+        "make-handprint": "(:action make-handprint\n :parameters (?character - character)\n :precondition (found ?character colors)\n :effect (made-handprint ?character)\n)",
+        "show-handprint": "(:action show-handprint\n :parameters (?shower - character ?viewer - character)\n :precondition (and (made-handprint ?shower) (not (= ?shower ?viewer)))\n :effect (celebrated ?viewer)\n)",
+        "celebrate": "(:action celebrate\n :parameters (?celebrator - character ?celebratee - character)\n :precondition (and (celebrated ?celebrator) (not (= ?celebrator ?celebratee)))\n :effect (celebrated ?celebratee)\n)",
+        "practice-running :parameters (?entity1 - dog ?entity2 - dog) :precondition (and (friend ?entity1 ?entity2) (not (practices ?entity1 ?entity2))) :effect (practices ?entity1 ?entity2))": "(:action practice-running :parameters (?entity1 - dog ?entity2 - dog) :precondition (and (friend ?entity1 ?entity2) (not (practices ?entity1 ?entity2))) :effect (practices ?entity1 ?entity2))"
+    }
+}

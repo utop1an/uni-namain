@@ -1,0 +1,43 @@
+{
+    "predicates": {
+        "(sitting ?character - character ?seat - seat)": "Source predicate (sitting ?character - character ?seat - seat).",
+        "(broken ?seat - seat)": "Source predicate (broken ?seat - seat).",
+        "(big ?seat - seat)": "Source predicate (big ?seat - seat).",
+        "(small ?seat - seat)": "Source predicate (small ?seat - seat).",
+        "(important ?character - character)": "Source predicate (important ?character - character).",
+        "(has-weapon ?robot - robot ?weapon - weapon)": "Source predicate (has-weapon ?robot - robot ?weapon - weapon).",
+        "(thrown ?weapon - weapon ?target - robot)": "Source predicate (thrown ?weapon - weapon ?target - robot).",
+        "(damaged ?robot - robot)": "Source predicate (damaged ?robot - robot).",
+        "(destroyed ?robot - robot)": "Source predicate (destroyed ?robot - robot).",
+        "(revolution-started)": "Source predicate (revolution-started).",
+        "(at ?robot - robot ?location - place)": "The character or robot entity is at the specified place.",
+        "(at ?entity - (either character robot) ?place - place)": "The character or robot entity is at the specified place.",
+        "(alive ?entity - (either robot character))": "The robot or character is alive.",
+        "(discovered ?place - place)": "Source predicate (discovered ?place - place).",
+        "(knows-about ?character - character ?place - place)": "Source predicate (knows-about ?character - character ?place - place).",
+        "(is-ceo ?character - character)": "Source predicate (is-ceo ?character - character).",
+        "(is-alien ?character - character)": "Source predicate (is-alien ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(delivered ?item - item)": "Source predicate (delivered ?item - item).",
+        "(at ?character - character ?place - place)": "The character or robot entity is at the specified place.",
+        "(alive ?character - character)": "The robot or character is alive."
+    },
+    "operators": {
+        "become-important": "(:action become-important\n :parameters (?character - character)\n :precondition (not (important ?character))\n :effect (important ?character)\n)",
+        "become-unimportant": "(:action become-unimportant\n :parameters (?character - character)\n :precondition (important ?character)\n :effect (not (important ?character))\n)",
+        "sit :parameters (?entity - character ?seat - seat) :precondition (and (not (sitting ?entity ?seat)) (not (broken ?seat))) :effect (sitting ?entity ?seat))": "(:action sit :parameters (?entity - character ?seat - seat) :precondition (and (not (sitting ?entity ?seat)) (not (broken ?seat))) :effect (sitting ?entity ?seat))",
+        "leave :parameters (?entity - character ?seat - seat) :precondition (sitting ?entity ?seat) :effect (not (sitting ?entity ?seat)))": "(:action leave :parameters (?entity - character ?seat - seat) :precondition (sitting ?entity ?seat) :effect (not (sitting ?entity ?seat)))",
+        "break-seat :parameters (?s - seat) :precondition (not (broken ?s)) :effect (broken ?s))": "(:action break-seat :parameters (?s - seat) :precondition (not (broken ?s)) :effect (broken ?s))",
+        "throw-weapon :parameters (?source - robot ?weapon - weapon ?recipient - robot) :precondition (and (alive ?source) (has-weapon ?source ?weapon) (alive ?recipient)) :effect (thrown ?weapon ?recipient))": "(:action throw-weapon :parameters (?source - robot ?weapon - weapon ?recipient - robot) :precondition (and (alive ?source) (has-weapon ?source ?weapon) (alive ?recipient)) :effect (thrown ?weapon ?recipient))",
+        "damage :parameters (?attacker - (either robot character) ?victim - robot) :precondition (and (alive ?attacker) (alive ?victim) (exists (?weapon - weapon) (thrown ?weapon ?victim))) :effect (and (not (alive ?victim)) (damaged ?victim)))": "(:action damage :parameters (?attacker - (either robot character) ?victim - robot) :precondition (and (alive ?attacker) (alive ?victim) (exists (?weapon - weapon) (thrown ?weapon ?victim))) :effect (and (not (alive ?victim)) (damaged ?victim)))",
+        "destroy :parameters (?entity - (either robot character) ?target - robot) :precondition (and (alive ?entity) (damaged ?target)) :effect (and (not (damaged ?target)) (destroyed ?target)))": "(:action destroy :parameters (?entity - (either robot character) ?target - robot) :precondition (and (alive ?entity) (damaged ?target)) :effect (and (not (damaged ?target)) (destroyed ?target)))",
+        "start-revolution :parameters (?entity - (either robot character)) :precondition (alive ?entity) :effect (revolution-started))": "(:action start-revolution :parameters (?entity - (either robot character)) :precondition (alive ?entity) :effect (revolution-started))",
+        "learn :parameters (?entity - (either robot character) ?place - place) :precondition (and (alive ?entity) (discovered ?place)) :effect (knows-about ?entity ?place))": "(:action learn :parameters (?entity - (either robot character) ?place - place) :precondition (and (alive ?entity) (discovered ?place)) :effect (knows-about ?entity ?place))",
+        "hold-press-conference :parameters (?entity - character ?place - place) :precondition (and (alive ?entity) (is-ceo ?entity) (knows-about ?entity ?place)) :effect (forall (?listener - character) (knows-about ?listener ?place)))": "(:action hold-press-conference :parameters (?entity - character ?place - place) :precondition (and (alive ?entity) (is-ceo ?entity) (knows-about ?entity ?place)) :effect (forall (?listener - character) (knows-about ?listener ?place)))",
+        "reveal :parameters (?entity - character) :precondition (and (alive ?entity) (is-alien ?entity)) :effect (forall (?listener - character) (knows-about ?listener ?entity)))": "(:action reveal :parameters (?entity - character) :precondition (and (alive ?entity) (is-alien ?entity)) :effect (forall (?listener - character) (knows-about ?listener ?entity)))",
+        "discover :parameters (?actor - (either robot character) ?place - place) :precondition (and (alive ?actor) (at ?actor ?place) (not (discovered ?place))) :effect (discovered ?place))": "(:action discover :parameters (?actor - (either robot character) ?place - place) :precondition (and (alive ?actor) (at ?actor ?place) (not (discovered ?place))) :effect (discovered ?place))",
+        "move": "(:action move :parameters (?entity - (either robot character) ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?entity) (at ?entity ?from) (not (at ?entity ?to))) :effect (and (not (at ?entity ?from)) (at ?entity ?to)))",
+        "deliver :parameters (?actor - (either robot character) ?item - item ?destination - place) :precondition (and (alive ?actor) (at ?actor ?destination) (has ?actor ?item)) :effect (and (not (has ?actor ?item)) (delivered ?item)))": "(:action deliver :parameters (?actor - (either robot character) ?item - item ?destination - place) :precondition (and (alive ?actor) (at ?actor ?destination) (has ?actor ?item)) :effect (and (not (has ?actor ?item)) (delivered ?item)))",
+        "pick-up :parameters (?entity - (either robot character) ?item - item ?place - place) :precondition (and (alive ?entity) (at ?entity ?place)) :effect (has ?entity ?item))": "(:action pick-up :parameters (?entity - (either robot character) ?item - item ?place - place) :precondition (and (alive ?entity) (at ?entity ?place)) :effect (has ?entity ?item))"
+    }
+}

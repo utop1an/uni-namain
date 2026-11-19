@@ -1,0 +1,40 @@
+{
+    "predicates": {
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(wearing ?character - character ?item - item)": "The character is wearing the item, which may be a dress.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item or a dress.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "The character is alive.",
+        "(anchored ?light - lightbox)": "Source predicate (anchored ?light - lightbox).",
+        "(charged ?light - lightbox)": "Source predicate (charged ?light - lightbox).",
+        "(created ?character - character ?light - lightbox)": "Source predicate (created ?character - character ?light - lightbox).",
+        "(used ?character - character ?light - lightbox)": "Source predicate (used ?character - character ?light - lightbox).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item or a dress."
+    },
+    "operators": {
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "slip :parameters (?character - character ?item - dress) :precondition (and (wearing ?character ?item) (not (damaged ?item))) :effect (damaged ?item))": "(:action slip :parameters (?character - character ?item - dress) :precondition (and (wearing ?character ?item) (not (damaged ?item))) :effect (damaged ?item))",
+        "get-new-dress :parameters (?character - character ?old-item - dress ?new-object - object) :precondition (and (damaged ?old-item) (wearing ?character ?old-item) (not (has ?character ?new-object))) :effect (and (not (wearing ?character ?old-item)) (has ?character ?new-object)))": "(:action get-new-dress :parameters (?character - character ?old-item - dress ?new-object - object) :precondition (and (damaged ?old-item) (wearing ?character ?old-item) (not (has ?character ?new-object))) :effect (and (not (wearing ?character ?old-item)) (has ?character ?new-object)))",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "clean-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))": "(:action clean-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))",
+        "adjust-item": "(:action adjust-item\n :parameters (?character - character ?object - item)\n :precondition (and (alive ?character) (has ?character ?object) (not (fits ?object ?character)))\n :effect (fits ?object ?character)\n)",
+        "wear-item": "(:action wear-item :parameters (?character - character ?item - item) :precondition (and (alive ?character) (has ?character ?item) (fits ?item ?character) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "charge-lightbox": "(:action charge-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (anchored ?lightbox) (created ?character ?lightbox))\n :effect (charged ?lightbox)\n)",
+        "create-lightbox :parameters (?character - character ?object - lightbox) :precondition (alive ?character) :effect (and (created ?character ?object) (has ?character ?object)))": "(:action create-lightbox :parameters (?character - character ?object - lightbox) :precondition (alive ?character) :effect (and (created ?character ?object) (has ?character ?object)))",
+        "anchor-light :parameters (?character - character ?light - lightbox) :precondition (and (alive ?character) (created ?character ?light) (has ?character ?light)) :effect (anchored ?light))": "(:action anchor-light :parameters (?character - character ?light - lightbox) :precondition (and (alive ?character) (created ?character ?light) (has ?character ?light)) :effect (anchored ?light))",
+        "use-lightbox :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (charged ?object) (created ?character ?object) (has ?character ?object)) :effect (and (used ?character ?object) (not (charged ?object))))": "(:action use-lightbox :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (charged ?object) (created ?character ?object) (has ?character ?object)) :effect (and (used ?character ?object) (not (charged ?object))))"
+    }
+}

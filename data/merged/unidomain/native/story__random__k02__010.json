@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(has-skin ?character - character)": "Source predicate (has-skin ?character - character).",
+        "(kneel ?character - character)": "Source predicate (kneel ?character - character).",
+        "(rewarded ?character - character)": "Source predicate (rewarded ?character - character).",
+        "(tried ?character - character)": "Source predicate (tried ?character - character).",
+        "(voice-happy ?character - character)": "Source predicate (voice-happy ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(sitting ?character - character ?seat - seat)": "Source predicate (sitting ?character - character ?seat - seat).",
+        "(broken ?seat - seat)": "Source predicate (broken ?seat - seat).",
+        "(big ?seat - seat)": "Source predicate (big ?seat - seat).",
+        "(small ?seat - seat)": "Source predicate (small ?seat - seat).",
+        "(important ?character - character)": "Source predicate (important ?character - character)."
+    },
+    "operators": {
+        "try": "(:action try\n :parameters (?character - character)\n :precondition (kneel ?character)\n :effect (tried ?character)\n)",
+        "reward": "(:action reward\n :parameters (?character - character)\n :precondition (voice-happy ?character)\n :effect (rewarded ?character)\n)",
+        "take-skin": "(:action take-skin\n :parameters (?character - character)\n :precondition (and (not (voice-happy ?character)) (has-skin ?character))\n :effect (not (has-skin ?character))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "kneel": "(:action kneel\n :parameters (?character - character)\n :precondition (at ?character old-house)\n :effect (kneel ?character)\n)",
+        "evaluate": "(:action evaluate\n :parameters (?character - character)\n :precondition (tried ?character)\n :effect (voice-happy ?character)\n)",
+        "become-important": "(:action become-important\n :parameters (?character - character)\n :precondition (not (important ?character))\n :effect (important ?character)\n)",
+        "become-unimportant": "(:action become-unimportant\n :parameters (?character - character)\n :precondition (important ?character)\n :effect (not (important ?character))\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sit": "(:action sit\n :parameters (?character - character ?seat - seat)\n :precondition (and (not (sitting ?character ?seat)) (not (broken ?seat)))\n :effect (sitting ?character ?seat)\n)",
+        "leave": "(:action leave\n :parameters (?character - character ?seat - seat)\n :precondition (sitting ?character ?seat)\n :effect (not (sitting ?character ?seat))\n)",
+        "break-seat": "(:action break-seat\n :parameters (?seat - seat)\n :precondition (not (broken ?seat))\n :effect (broken ?seat)\n)"
+    }
+}

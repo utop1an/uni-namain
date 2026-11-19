@@ -1,0 +1,33 @@
+{
+    "predicates": {
+        "(alive ?person - person)": "Source predicate (alive ?person - person).",
+        "(free ?person - person)": "Source predicate (free ?person - person).",
+        "(sheriff ?person - person)": "Source predicate (sheriff ?person - person).",
+        "(belongsto ?item - item ?person - person)": "Source predicate (belongsto ?item - item ?person - person).",
+        "(sick ?person - person ?sickness - sickness)": "Source predicate (sick ?person - person ?sickness - sickness).",
+        "(cures ?item - item ?sickness - sickness)": "Source predicate (cures ?item - item ?sickness - sickness).",
+        "(loves ?lover - person ?love - person)": "Source predicate (loves ?lover - person ?love - person).",
+        "(at ?object - object ?place - place)": "The object, including a character, is at the specified place, including a room.",
+        "(has ?person - person ?item - item)": "The person has the item; corresponding character and thing types must be aligned with person and item in the merged domain.",
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?room - room)": "The object, including a character, is at the specified place, including a room.",
+        "(has ?character - character ?thing - thing)": "The person has the item; corresponding character and thing types must be aligned with person and item in the merged domain."
+    },
+    "operators": {
+        "snakebite": "(:action snakebite\n :parameters (?victim - person)\n :precondition (alive ?victim)\n :effect (and (sick ?victim snakebite))\n)",
+        "die": "(:action die\n :parameters (?person - person ?sickness - sickness)\n :precondition (and (alive ?person) (sick ?person ?sickness))\n :effect (not (alive ?person))\n)",
+        "travel": "(:action travel\n :parameters (?person - person ?from - place ?to - place)\n :precondition (and (alive ?person) (free ?person) (at ?person ?from))\n :effect (and (at ?person ?to) (not (at ?person ?from)))\n)",
+        "forcetravel": "(:action forcetravel\n :parameters (?person - person ?victim - person ?from - place ?to - place)\n :precondition (and (alive ?person) (free ?person) (at ?person ?from) (alive ?victim) (not (free ?victim)) (at ?victim ?from))\n :effect (and (at ?person ?to) (not (at ?person ?from)) (at ?victim ?to) (not (at ?victim ?from)))\n)",
+        "tieup": "(:action tieup\n :parameters (?person - person ?victim - person ?place - place)\n :precondition (and (alive ?person) (free ?person) (at ?person ?place) (alive ?victim) (at ?victim ?place))\n :effect (and (not (free ?victim)))\n)",
+        "untie": "(:action untie\n :parameters (?person - person ?victim - person ?place - place)\n :precondition (and (alive ?person) (free ?person) (at ?person ?place) (alive ?victim) (not (free ?victim)) (at ?victim ?place))\n :effect (free ?victim)\n)",
+        "give": "(:action give\n :parameters (?giver - person ?receiver - person ?item - item ?place - place)\n :precondition (and (alive ?giver) (free ?giver) (at ?giver ?place) (has ?giver ?item) (alive ?receiver) (free ?receiver) (at ?receiver ?place))\n :effect (and (has ?receiver ?item) (not (has ?giver ?item)) (when (belongsto ?item ?giver) (belongsto ?item ?receiver)))\n)",
+        "take": "(:action take\n :parameters (?taker - person ?item - item ?victim - person ?place - place)\n :precondition (and (not (= ?taker ?victim)) (alive ?taker) (free ?taker) (at ?taker ?place) (alive ?victim) (not (free ?victim)) (at ?victim ?place) (has ?victim ?item))\n :effect (and (has ?taker ?item) (not (has ?victim ?item)))\n)",
+        "heal": "(:action heal\n :parameters (?healer - person ?patient - person ?sickness - sickness ?medicine - item ?place - place)\n :precondition (and (cures ?medicine ?sickness) (alive ?healer) (free ?healer) (at ?healer ?place) (has ?healer ?medicine) (alive ?patient) (at ?patient ?place) (sick ?patient ?sickness))\n :effect (and (not (sick ?patient ?sickness)) (not (has ?healer ?medicine)))\n)",
+        "enter :parameters (?object - object ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?object ?placefrom)) :effect (and (not (at ?object ?placefrom)) (at ?object ?roomto)))": "(:action enter :parameters (?object - object ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?object ?placefrom)) :effect (and (not (at ?object ?placefrom)) (at ?object ?roomto)))",
+        "unlock :parameters (?person - person ?key - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?person ?key)) :effect (and (not (locked ?room))))": "(:action unlock :parameters (?person - person ?key - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?person ?key)) :effect (and (not (locked ?room))))",
+        "search-for :parameters (?person - person ?item - item ?place - place) :precondition (and (at ?person ?place) (in ?item ?place)) :effect (and (has ?person ?item) (not (in ?item ?place))))": "(:action search-for :parameters (?person - person ?item - item ?place - place) :precondition (and (at ?person ?place) (in ?item ?place)) :effect (and (has ?person ?item) (not (in ?item ?place))))"
+    }
+}

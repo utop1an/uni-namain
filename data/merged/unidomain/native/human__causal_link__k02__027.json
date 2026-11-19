@@ -1,0 +1,18 @@
+{
+    "predicates": {
+        "(player ?character - character)": "The character is a player.",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(at ?thing - item ?location - location)": "Item ?thing is at location ?location.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(asleep ?character - character)": "The character is asleep.",
+        "(connected ?location - location ?oldlocation - location)": "Location ?location is connected to location ?oldlocation.",
+        "(enchanted ?item - item)": "The item is enchanted.",
+        "(is ?item - item ?thing - thing)": "Relates an item to a thing using the original is relation."
+    },
+    "operators": {
+        "wake-person": "(:action wake-person :parameters (?waker - character ?woken - character ?location - location) :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker))) :effect (not (asleep ?woken)))",
+        "move-location": "(:action move-location :parameters (?character - character ?to - location ?from - location) :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "take-thing": "(:action take-thing :parameters (?taker - character ?thing - item ?location - location) :precondition (and (at ?taker ?location) (at ?thing ?location) (not (asleep ?taker)) (not (enchanted ?thing))) :effect (and (not (at ?thing ?location)) (has ?taker ?thing)))",
+        "disenchant-thing": "(:action disenchant-thing :parameters (?caster - character ?thing - item ?book - book ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?book) (enchanted ?thing)) :effect (not (enchanted ?thing)))"
+    }
+}

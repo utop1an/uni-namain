@@ -1,0 +1,30 @@
+{
+    "predicates": {
+        "(shaking-tree ?character - character)": "Source predicate (shaking-tree ?character - character).",
+        "(wind-blows)": "Source predicate (wind-blows).",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?object - object)": "Character ?character has ?object, which may be an object of any type, including another character.",
+        "(at ?character - character ?location - object)": "Character ?character is at ?location.",
+        "(player ?character - character)": "The character is a player.",
+        "(connected ?to - location ?from - location)": "Location ?from is connected to location ?to.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(has ?character - character ?character2 - character)": "Character ?character has ?object, which may be an object of any type, including another character.",
+        "(at ?thing - character ?location - location)": "Character ?character is at ?location."
+    },
+    "operators": {
+        "stop-shaking-tree": "(:action stop-shaking-tree\n :parameters (?character - character)\n :precondition (shaking-tree ?character)\n :effect (not (shaking-tree ?character))\n)",
+        "start-wind": "(:action start-wind\n :parameters ()\n :precondition (and)\n :effect (wind-blows)\n)",
+        "stop-wind": "(:action stop-wind\n :parameters ()\n :precondition (wind-blows)\n :effect (not (wind-blows))\n)",
+        "wind-blows-object": "(:action wind-blows-object\n :parameters (?object - object)\n :precondition (wind-blows)\n :effect (not (has tim ?object))\n)",
+        "play": "(:action play\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object))\n :effect (and)\n)",
+        "shake-tree": "(:action shake-tree\n :parameters (?character - character ?tree - object)\n :precondition (and (alive ?character) (at ?character ?tree))\n :effect (shaking-tree ?character)\n)",
+        "move-location :parameters (?actor - character ?destination - location ?origin - location) :precondition (and (player ?actor) (connected ?destination ?origin) (at ?actor ?origin) (knows ?actor)) :effect (and (not (at ?actor ?origin)) (at ?actor ?destination)))": "(:action move-location :parameters (?actor - character ?destination - location ?origin - location) :precondition (and (player ?actor) (connected ?destination ?origin) (at ?actor ?origin) (knows ?actor)) :effect (and (not (at ?actor ?origin)) (at ?actor ?destination)))",
+        "interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - object) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))": "(:action interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - object) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))",
+        "save-character :parameters (?saver - character ?saved - character ?notsaved - character ?location - object) :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?location - object) :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "place-victim :parameters (?placer - character ?victim - character ?origin - location ?destination - location) :precondition (and (henchman ?placer) (has ?placer ?victim) (at ?placer ?origin) (connected ?destination ?origin)) :effect (and (not (has ?placer ?victim)) (at ?victim ?destination) (captured ?victim)))": "(:action place-victim :parameters (?placer - character ?victim - character ?origin - location ?destination - location) :precondition (and (henchman ?placer) (has ?placer ?victim) (at ?placer ?origin) (connected ?destination ?origin)) :effect (and (not (has ?placer ?victim)) (at ?victim ?destination) (captured ?victim)))"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a dress.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(anchored ?light - lightbox)": "Source predicate (anchored ?light - lightbox).",
+        "(charged ?light - lightbox)": "Source predicate (charged ?light - lightbox).",
+        "(created ?character - character ?light - lightbox)": "Source predicate (created ?character - character ?light - lightbox).",
+        "(used ?character - character ?light - lightbox)": "Source predicate (used ?character - character ?light - lightbox)."
+    },
+    "operators": {
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))": "(:action put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))",
+        "charge-lightbox": "(:action charge-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (anchored ?lightbox) (created ?character ?lightbox))\n :effect (charged ?lightbox)\n)",
+        "create-lightbox": "(:action create-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (alive ?character)\n :effect (and (created ?character ?lightbox) (has ?character ?lightbox))\n)",
+        "anchor-light": "(:action anchor-light\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (created ?character ?lightbox) (has ?character ?lightbox))\n :effect (anchored ?lightbox)\n)",
+        "use-lightbox": "(:action use-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (charged ?lightbox) (created ?character ?lightbox) (has ?character ?lightbox))\n :effect (and (used ?character ?lightbox) (not (charged ?lightbox)))\n)"
+    }
+}

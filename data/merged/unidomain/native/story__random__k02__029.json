@@ -1,0 +1,30 @@
+{
+    "predicates": {
+        "(sailor ?character - character)": "Source predicate (sailor ?character - character).",
+        "(nice ?character - character)": "Source predicate (nice ?character - character).",
+        "(sailing ?character - character)": "Source predicate (sailing ?character - character).",
+        "(together ?character1 - character ?character2 - character)": "Source predicate (together ?character1 - character ?character2 - character).",
+        "(helping ?helper - character ?helpee - character)": "Source predicate (helping ?helper - character ?helpee - character).",
+        "(president ?character - character)": "Source predicate (president ?character - character).",
+        "(speaker ?character - character)": "Source predicate (speaker ?character - character).",
+        "(vice-president ?character - character)": "Source predicate (vice-president ?character - character).",
+        "(belongs-to ?character - character ?organization - organization)": "Source predicate (belongs-to ?character - character ?organization - organization).",
+        "(economy-collapsed)": "Source predicate (economy-collapsed).",
+        "(real-estate-monopoly)": "Source predicate (real-estate-monopoly).",
+        "(planned-parenthood-defunded)": "Source predicate (planned-parenthood-defunded).",
+        "(planned-parenthood-shutdown)": "Source predicate (planned-parenthood-shutdown).",
+        "(planned-parenthood-criminalized)": "Source predicate (planned-parenthood-criminalized).",
+        "(prison-population-increased)": "Source predicate (prison-population-increased).",
+        "(political-prisoner ?character - character)": "Source predicate (political-prisoner ?character - character)."
+    },
+    "operators": {
+        "learn-to-sail": "(:action learn-to-sail\n :parameters (?character - character)\n :precondition (and)\n :effect (sailor ?character)\n)",
+        "become-nice": "(:action become-nice\n :parameters (?character - character)\n :precondition (and)\n :effect (nice ?character)\n)",
+        "help": "(:action help\n :parameters (?helper - character ?helpee - character)\n :precondition (not (= ?helper ?helpee))\n :effect (helping ?helper ?helpee)\n)",
+        "sail-together": "(:action sail-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (sailor ?character1) (sailor ?character2))\n :effect (together ?character1 ?character2)\n)",
+        "thank": "(:action thank\n :parameters (?thanker - character ?thankee - character)\n :precondition (not (= ?thanker ?thankee))\n :effect (nice ?thanker)\n)",
+        "announce-state-of-the-union": "(:action announce-state-of-the-union\n :parameters (?president - character)\n :precondition (president ?president)\n :effect (and)\n)",
+        "introduce-president": "(:action introduce-president\n :parameters (?speaker - character ?president - character)\n :precondition (and (speaker ?speaker) (president ?president))\n :effect (and)\n)",
+        "attend-state-of-the-union": "(:action attend-state-of-the-union\n :parameters (?vice-president - character)\n :precondition (vice-president ?vice-president)\n :effect (and)\n)"
+    }
+}

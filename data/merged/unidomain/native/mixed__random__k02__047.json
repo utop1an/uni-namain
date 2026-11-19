@@ -1,0 +1,39 @@
+{
+    "predicates": {
+        "(alive ?creature - creature)": "Source predicate (alive ?creature - creature).",
+        "(stunned ?creature - creature)": "Source predicate (stunned ?creature - creature).",
+        "(habitable ?place - place)": "Source predicate (habitable ?place - place).",
+        "(safe ?place - place)": "Source predicate (safe ?place - place).",
+        "(safe ?creature - creature)": "Source predicate (safe ?creature - creature).",
+        "(erupting ?landform - place)": "Source predicate (erupting ?landform - place).",
+        "(at ?creature - creature ?place - place)": "Source predicate (at ?creature - creature ?place - place).",
+        "(fighting ?creature1 - creature ?creature2 - creature)": "Source predicate (fighting ?creature1 - creature ?creature2 - creature).",
+        "(friends ?creature1 - creature ?creature2 - creature)": "Source predicate (friends ?creature1 - creature ?creature2 - creature).",
+        "(captain ?creature - creature ?ship - ship)": "Source predicate (captain ?creature - creature ?ship - ship).",
+        "(guardian ?creature - creature ?place - place)": "Source predicate (guardian ?creature - creature ?place - place).",
+        "(famous ?character - character)": "Source predicate (famous ?character - character).",
+        "(wears-earmuffs ?character - character)": "Source predicate (wears-earmuffs ?character - character).",
+        "(filled-with-ice ?character - character)": "Source predicate (filled-with-ice ?character - character).",
+        "(candidate ?character - character)": "Source predicate (candidate ?character - character).",
+        "(president ?character - character)": "Source predicate (president ?character - character).",
+        "(endured-pain ?character - character)": "Source predicate (endured-pain ?character - character)."
+    },
+    "operators": {
+        "walk": "(:action walk\n :parameters (?creature - creature ?from - landform ?to - landform)\n :precondition (and (not (= ?from ?to)) (alive ?creature) (not (stunned ?creature)) (at ?creature ?from) (habitable ?to) (safe ?to) (forall (?c - creature) (and (not (fighting ?creature ?c)) (not (fighting ?c ?creature)))))\n :effect (and (at ?creature ?to) (not (at ?creature ?from)) (when (not (safe ?creature)) (safe ?creature)))\n)",
+        "teleport-from-ship": "(:action teleport-from-ship\n :parameters (?creature - creature ?from - ship ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?creature) (not (stunned ?creature)) (at ?creature ?from) (habitable ?to) (safe ?to) (captain ?creature ?from))\n :effect (and (at ?creature ?to) (not (at ?creature ?from)) (when (not (safe ?creature)) (safe ?creature)) (forall (?c - creature) (and (not (fighting ?creature ?c)) (not (fighting ?c ?creature)))))\n)",
+        "teleport-to-ship": "(:action teleport-to-ship\n :parameters (?creature - creature ?from - place ?to - ship)\n :precondition (and (not (= ?from ?to)) (alive ?creature) (not (stunned ?creature)) (at ?creature ?from) (habitable ?to) (safe ?to) (captain ?creature ?to))\n :effect (and (at ?creature ?to) (not (at ?creature ?from)) (when (not (safe ?creature)) (safe ?creature)) (forall (?c - creature) (and (not (fighting ?creature ?c)) (not (fighting ?c ?creature)))))\n)",
+        "attack": "(:action attack\n :parameters (?attacker - creature ?victim - creature ?place - place)\n :precondition (and (alive ?attacker) (not (stunned ?attacker)) (at ?attacker ?place) (alive ?victim) (not (stunned ?victim)) (at ?victim ?place))\n :effect (and (fighting ?attacker ?victim))\n)",
+        "kill": "(:action kill\n :parameters (?killer - creature ?victim - creature)\n :precondition (and (alive ?killer) (not (stunned ?killer)) (alive ?victim) (or (fighting ?killer ?victim) (fighting ?victim ?killer)))\n :effect (and (not (alive ?victim)) (when (fighting ?killer ?victim) (not (fighting ?killer ?victim))) (when (fighting ?victim ?killer) (not (fighting ?victim ?killer))))\n)",
+        "stun": "(:action stun\n :parameters (?stunner - creature ?victim - creature)\n :precondition (and (alive ?stunner) (not (stunned ?stunner)) (alive ?victim) (not (stunned ?victim)) (or (fighting ?stunner ?victim) (fighting ?victim ?stunner)))\n :effect (and (stunned ?victim) (when (fighting ?stunner ?victim) (not (fighting ?stunner ?victim))) (when (fighting ?victim ?stunner) (not (fighting ?victim ?stunner))))\n)",
+        "break-free": "(:action break-free\n :parameters (?victim - creature)\n :precondition (and (alive ?victim) (stunned ?victim))\n :effect (not (stunned ?victim))\n)",
+        "make-peace": "(:action make-peace\n :parameters (?peacemaker - creature ?creature - creature ?place - place)\n :precondition (and (alive ?peacemaker) (not (stunned ?peacemaker)) (at ?peacemaker ?place) (alive ?creature) (at ?creature ?place) (not (fighting ?peacemaker ?creature)) (not (fighting ?creature ?peacemaker)))\n :effect (and (friends ?peacemaker ?creature) (friends ?creature ?peacemaker))\n)",
+        "begin-erupt": "(:action begin-erupt\n :parameters (?landform - landform)\n :precondition (and)\n :effect (and (erupting ?landform) (forall (?c - creature) (when (at ?c ?landform) (and (not (safe ?c))))))\n)",
+        "erupt": "(:action erupt\n :parameters (?landform - landform)\n :precondition (erupting ?landform)\n :effect (and (not (habitable ?landform)) (not (erupting ?landform)) (forall (?c - creature) (when (at ?c ?landform) (not (alive ?c)))))\n)",
+        "become-famous": "(:action become-famous\n :parameters (?character - character)\n :precondition (not (famous ?character))\n :effect (famous ?character)\n)",
+        "wear-earmuffs": "(:action wear-earmuffs\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (wears-earmuffs ?character)))\n :effect (wears-earmuffs ?character)\n)",
+        "fill-earmuffs-with-ice": "(:action fill-earmuffs-with-ice\n :parameters (?character - character)\n :precondition (and (famous ?character) (wears-earmuffs ?character) (not (filled-with-ice ?character)))\n :effect (filled-with-ice ?character)\n)",
+        "become-candidate": "(:action become-candidate\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (candidate ?character)))\n :effect (candidate ?character)\n)",
+        "become-president": "(:action become-president\n :parameters (?character - character)\n :precondition (and (candidate ?character) (not (president ?character)))\n :effect (president ?character)\n)",
+        "endure-pain": "(:action endure-pain\n :parameters (?character - character)\n :precondition (and (famous ?character) (filled-with-ice ?character) (not (endured-pain ?character)))\n :effect (endured-pain ?character)\n)"
+    }
+}

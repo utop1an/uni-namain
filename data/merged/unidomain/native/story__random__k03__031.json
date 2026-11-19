@@ -1,0 +1,36 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(in-love ?character1 - character ?character2 - character)": "Source predicate (in-love ?character1 - character ?character2 - character).",
+        "(accepts-past ?character1 - character ?character2 - character)": "Source predicate (accepts-past ?character1 - character ?character2 - character).",
+        "(knows-self ?character - character)": "Source predicate (knows-self ?character - character).",
+        "(sings ?character - character)": "Source predicate (sings ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(wearing-hat ?character - character)": "Source predicate (wearing-hat ?character - character).",
+        "(is-dog ?character - character)": "Source predicate (is-dog ?character - character).",
+        "(is-fairy ?character - character)": "Source predicate (is-fairy ?character - character).",
+        "(has-magic-flower ?character - character)": "Source predicate (has-magic-flower ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(found ?character - character ?item - item)": "Source predicate (found ?character - character ?item - item).",
+        "(played-with ?character - character ?item - item)": "Source predicate (played-with ?character - character ?item - item).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character)."
+    },
+    "operators": {
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (sings ?character)\n)",
+        "fall-in-love": "(:action fall-in-love\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2))\n :effect (in-love ?character1 ?character2)\n)",
+        "accept-past": "(:action accept-past\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2))\n :effect (accepts-past ?character1 ?character2)\n)",
+        "know-self": "(:action know-self\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-self ?character)\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "transform": "(:action transform\n :parameters (?character - character)\n :precondition (is-dog ?character)\n :effect (and (not (is-dog ?character)) (is-fairy ?character))\n)",
+        "give-magic-flower": "(:action give-magic-flower\n :parameters (?giver - character ?receiver - character)\n :precondition (and (not (= ?giver ?receiver)) (is-fairy ?giver))\n :effect (has-magic-flower ?receiver)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2))\n :effect (playing-together ?character1 ?character2)\n)",
+        "fly-high": "(:action fly-high\n :parameters (?character - character)\n :precondition (and (played-with ?character rocket))\n :effect (happy ?character)\n)",
+        "remove-hat": "(:action remove-hat\n :parameters (?remover - character ?wearer - character)\n :precondition (and (not (= ?remover ?wearer)) (wearing-hat ?wearer))\n :effect (not (wearing-hat ?wearer))\n)",
+        "find": "(:action find\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (not (found ?character ?item)))\n :effect (and (found ?character ?item) (has ?character ?item) (happy ?character))\n)",
+        "show": "(:action show\n :parameters (?shower - character ?item - item ?receiver - character ?place - place)\n :precondition (and (not (= ?shower ?receiver)) (at ?shower ?place) (has ?shower ?item) (at ?receiver ?place))\n :effect (happy ?receiver)\n)",
+        "play": "(:action play\n :parameters (?character1 - character ?character2 - character ?item - item ?place - place)\n :precondition (and (not (= ?character1 ?character2)) (at ?character1 ?place) (has ?character1 ?item) (at ?character2 ?place))\n :effect (played-with ?character1 ?item)\n)"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "predicates": {
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(happy ?character - character)": "The character is happy.",
+        "(at ?entity - (either item character) ?place - object)": "The item or character is at the specified location.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(gave-gift ?giver - character ?receiver - character ?item - item)": "Source predicate (gave-gift ?giver - character ?receiver - character ?item - item).",
+        "(at ?character - character ?place - place)": "The item or character is at the specified location."
+    },
+    "operators": {
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "put :parameters (?character - character ?entity - (either item character) ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))": "(:action put :parameters (?character - character ?entity - (either item character) ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))",
+        "make-happy": "(:action make-happy\n :parameters (?character - character ?target - character)\n :precondition (and (not (= ?character ?target)) (not (happy ?target)))\n :effect (happy ?target)\n)",
+        "find :parameters (?entity - character ?item - item ?place - object) :precondition (and (at ?entity ?place) (not (has ?entity ?item))) :effect (has ?entity ?item))": "(:action find :parameters (?entity - character ?item - item ?place - object) :precondition (and (at ?entity ?place) (not (has ?entity ?item))) :effect (has ?entity ?item))",
+        "give :parameters (?giver - character ?item - item ?receiver - character ?location - object) :precondition (and (not (= ?giver ?receiver)) (at ?giver ?location) (has ?giver ?item) (at ?receiver ?location)) :effect (and (not (has ?giver ?item)) (has ?receiver ?item) (gave-gift ?giver ?receiver ?item)))": "(:action give :parameters (?giver - character ?item - item ?receiver - character ?location - object) :precondition (and (not (= ?giver ?receiver)) (at ?giver ?location) (has ?giver ?item) (at ?receiver ?location)) :effect (and (not (has ?giver ?item)) (has ?receiver ?item) (gave-gift ?giver ?receiver ?item)))",
+        "play :parameters (?entity - character ?item - item ?place - object) :precondition (and (at ?entity ?place) (has ?entity ?item)) :effect (happy ?entity))": "(:action play :parameters (?entity - character ?item - item ?place - object) :precondition (and (at ?entity ?place) (has ?entity ?item)) :effect (happy ?entity))"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "predicates": {
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(offered-snack ?giver - character ?receiver - character)": "Source predicate (offered-snack ?giver - character ?receiver - character).",
+        "(snack-is-lie ?giver - character ?receiver - character)": "Source predicate (snack-is-lie ?giver - character ?receiver - character).",
+        "(trusts ?character1 - character ?character2 - character)": "Source predicate (trusts ?character1 - character ?character2 - character).",
+        "(compassionate ?character - character)": "Source predicate (compassionate ?character - character).",
+        "(at ?character - character ?place - object)": "The character is at the specified place or object.",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(wearing-clothes ?character - character)": "Source predicate (wearing-clothes ?character - character).",
+        "(has-device ?character - character ?device - device)": "Source predicate (has-device ?character - character ?device - device).",
+        "(device-on ?device - device)": "Source predicate (device-on ?device - device).",
+        "(device-connected ?device - device)": "Source predicate (device-connected ?device - device).",
+        "(electricity ?place - place)": "Source predicate (electricity ?place - place).",
+        "(working ?device - device)": "Source predicate (working ?device - device).",
+        "(school-canceled)": "Source predicate (school-canceled).",
+        "(at ?character - character ?place - place)": "The character is at the specified place or object."
+    },
+    "operators": {
+        "learn-lesson": "(:action learn-lesson\n :parameters (?character - character)\n :precondition (and (sad ?character) (not (trusts ?character ?character)))\n :effect (and (not (sad ?character)) (happy ?character))\n)",
+        "go-to-place": "(:action go-to-place\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (at ?character1 ?character2)) (happy ?character1))\n :effect (and (at ?character1 ?character2) (not (happy ?character1)))\n)",
+        "offer-snack": "(:action offer-snack\n :parameters (?giver - character ?receiver - character)\n :precondition (and (at ?receiver ?giver) (compassionate ?giver))\n :effect (offered-snack ?giver ?receiver)\n)",
+        "reveal-lie": "(:action reveal-lie\n :parameters (?giver - character ?receiver - character)\n :precondition (and (offered-snack ?giver ?receiver) (not (compassionate ?giver)))\n :effect (and (snack-is-lie ?giver ?receiver) (not (happy ?receiver)) (sad ?receiver))\n)",
+        "run-away": "(:action run-away\n :parameters (?runner - character ?from - character)\n :precondition (and (at ?runner ?from) (sad ?runner))\n :effect (and (not (at ?runner ?from)) (not (trusts ?runner ?from)))\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (not (awake ?character))\n :effect (awake ?character)\n)",
+        "put-on-clothes": "(:action put-on-clothes\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (wearing-clothes ?character)))\n :effect (wearing-clothes ?character)\n)",
+        "turn-on-device": "(:action turn-on-device\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (has-device ?character ?device) (not (device-on ?device)))\n :effect (device-on ?device)\n)",
+        "check-connectivity": "(:action check-connectivity\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (device-on ?device) (has-device ?character ?device))\n :effect (when (device-connected ?device) (working ?device))\n)",
+        "cancel-school": "(:action cancel-school\n :parameters ()\n :precondition (not (school-canceled))\n :effect (school-canceled)\n)",
+        "go-outside :parameters (?character - character ?object - object) :precondition (and (awake ?character) (wearing-clothes ?character) (at ?character ?object)) :effect (and (not (at ?character ?object)) (at ?character outside)))": "(:action go-outside :parameters (?character - character ?object - object) :precondition (and (awake ?character) (wearing-clothes ?character) (at ?character ?object)) :effect (and (not (at ?character ?object)) (at ?character outside)))",
+        "talk :parameters (?speaker - character ?listener - character ?location - object) :precondition (and (awake ?speaker) (awake ?listener) (at ?speaker ?location) (at ?listener ?location)) :effect (and))": "(:action talk :parameters (?speaker - character ?listener - character ?location - object) :precondition (and (awake ?speaker) (awake ?listener) (at ?speaker ?location) (at ?listener ?location)) :effect (and))"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "predicates": {
+        "(at-party ?character - character)": "Source predicate (at-party ?character - character).",
+        "(fast ?character - character)": "Source predicate (fast ?character - character).",
+        "(cake-transformed)": "Source predicate (cake-transformed).",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(at-park ?character - character)": "Source predicate (at-park ?character - character).",
+        "(on-swing ?character - character)": "Source predicate (on-swing ?character - character).",
+        "(swinging ?character - character)": "Source predicate (swinging ?character - character).",
+        "(sharing ?character1 - character ?character2 - character)": "Source predicate (sharing ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "The character is happy.",
+        "(at ?item - item ?place - object)": "Source predicate (at ?item - item ?place - object).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "go-to-party": "(:action go-to-party\n :parameters (?character - character)\n :precondition (not (at-party ?character))\n :effect (at-party ?character)\n)",
+        "magic-trick": "(:action magic-trick\n :parameters (?magician - character)\n :precondition (and (at-party ?magician) (not (cake-transformed)))\n :effect (cake-transformed)\n)",
+        "eat-cake": "(:action eat-cake\n :parameters (?character - character)\n :precondition (and (at-party ?character) (cake-transformed))\n :effect (fast ?character)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (at-party ?character) (fast ?character))\n :effect (and)\n)",
+        "go-to-park": "(:action go-to-park\n :parameters (?character - character)\n :precondition (not (at-park ?character))\n :effect (at-park ?character)\n)",
+        "get-on-swing": "(:action get-on-swing\n :parameters (?character - character)\n :precondition (and (at-park ?character) (not (on-swing ?character)))\n :effect (on-swing ?character)\n)",
+        "start-swinging": "(:action start-swinging\n :parameters (?character - character)\n :precondition (and (on-swing ?character) (not (swinging ?character)))\n :effect (swinging ?character)\n)",
+        "share-swing": "(:action share-swing\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (swinging ?character1) (swinging ?character2))\n :effect (sharing ?character1 ?character2)\n)",
+        "get-off-swing": "(:action get-off-swing\n :parameters (?character - character)\n :precondition (and (on-swing ?character) (swinging ?character))\n :effect (and (not (on-swing ?character)) (not (swinging ?character)) (happy ?character))\n)",
+        "thank": "(:action thank\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (sharing ?character1 ?character2))\n :effect (happy ?character1)\n)",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "put": "(:action put\n :parameters (?character - character ?object - item ?place - object)\n :precondition (and (happy ?character) (has ?character ?object))\n :effect (at ?object ?place)\n)"
+    }
+}

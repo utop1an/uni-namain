@@ -1,0 +1,43 @@
+{
+    "predicates": {
+        "(at ?object - object ?place - location)": "Source predicate (at ?object - object ?place - location).",
+        "(can-fly ?animal - animal)": "Source predicate (can-fly ?animal - animal).",
+        "(can-run ?character - character)": "Source predicate (can-run ?character - character).",
+        "(playing ?character - character ?animal - animal)": "Source predicate (playing ?character - character ?animal - animal).",
+        "(kind ?character - character)": "Source predicate (kind ?character - character).",
+        "(knows-wisdom ?character - character)": "Source predicate (knows-wisdom ?character - character).",
+        "(lost ?character - character)": "Source predicate (lost ?character - character).",
+        "(found ?character - character)": "Source predicate (found ?character - character).",
+        "(happy ?character - character)": "The character is happy.",
+        "(friends ?c1 - character ?c2 - character)": "Character ?c1 is friends with character ?c2.",
+        "(at-carnival ?character - character)": "Source predicate (at-carnival ?character - character).",
+        "(wants-to-play ?character - character)": "Source predicate (wants-to-play ?character - character).",
+        "(played ?character - character)": "Source predicate (played ?character - character).",
+        "(weight-too-low ?character - character)": "Source predicate (weight-too-low ?character - character).",
+        "(upset ?character - character)": "Source predicate (upset ?character - character).",
+        "(comforted ?character - character)": "Source predicate (comforted ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(practice ?character1 - character ?character2 - character)": "Source predicate (practice ?character1 - character ?character2 - character).",
+        "(friend ?character1 - character ?character2 - character)": "Character ?c1 is friends with character ?c2."
+    },
+    "operators": {
+        "play": "(:action play\n :parameters (?character - character ?animal - animal ?place - location)\n :precondition (and (at ?character ?place) (at ?animal ?place))\n :effect (playing ?character ?animal)\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character ?animal - animal)\n :precondition (playing ?character ?animal)\n :effect (not (playing ?character ?animal))\n)",
+        "move": "(:action move\n :parameters (?object - object ?from - location ?to - location)\n :precondition (and (not (= ?from ?to)) (at ?object ?from))\n :effect (and (not (at ?object ?from)) (at ?object ?to))\n)",
+        "can-run": "(:action can-run\n :parameters (?character - character)\n :precondition (and)\n :effect (can-run ?character)\n)",
+        "can-fly": "(:action can-fly\n :parameters (?animal - animal)\n :precondition (and)\n :effect (can-fly ?animal)\n)",
+        "become-kind": "(:action become-kind\n :parameters (?character - character)\n :precondition (not (kind ?character))\n :effect (kind ?character)\n)",
+        "learn-wisdom": "(:action learn-wisdom\n :parameters (?learner - character ?teacher - character)\n :precondition (and (not (knows-wisdom ?learner)) (knows-wisdom ?teacher))\n :effect (knows-wisdom ?learner)\n)",
+        "help": "(:action help\n :parameters (?helper - character ?helpee - character)\n :precondition (and (kind ?helper) (lost ?helpee))\n :effect (found ?helpee)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (and)\n :effect (happy ?character)\n)",
+        "go-to-carnival": "(:action go-to-carnival\n :parameters (?character - character)\n :precondition (and)\n :effect (at-carnival ?character)\n)",
+        "want-to-play": "(:action want-to-play\n :parameters (?character - character)\n :precondition (at-carnival ?character)\n :effect (wants-to-play ?character)\n)",
+        "play-game": "(:action play-game\n :parameters (?character - character)\n :precondition (and (at-carnival ?character) (wants-to-play ?character))\n :effect (and (played ?character) (weight-too-low ?character))\n)",
+        "become-upset": "(:action become-upset\n :parameters (?character - character)\n :precondition (weight-too-low ?character)\n :effect (upset ?character)\n)",
+        "become-ready": "(:action become-ready\n :parameters (?character - character)\n :precondition (exists (?helper - character) (practice ?helper ?character))\n :effect (ready ?character)\n)",
+        "become-friends": "(:action become-friends :parameters (?c1 - character ?c2 - character) :precondition (and (not (friends ?c1 ?c2)) (not (= ?c1 ?c2))) :effect (friends ?c1 ?c2))",
+        "help-practice :parameters (?c1 - character ?c2 - character) :precondition (and (not (= ?c1 ?c2)) (friends ?c1 ?c2) (not (ready ?c2))) :effect (practice ?c1 ?c2))": "(:action help-practice :parameters (?c1 - character ?c2 - character) :precondition (and (not (= ?c1 ?c2)) (friends ?c1 ?c2) (not (ready ?c2))) :effect (practice ?c1 ?c2))",
+        "cheer-up :parameters (?c1 - character ?c2 - character) :precondition (and (not (= ?c1 ?c2)) (upset ?c2) (friends ?c1 ?c2) (sad ?c2)) :effect (and (comforted ?c2) (not (sad ?c2)) (happy ?c2)))": "(:action cheer-up :parameters (?c1 - character ?c2 - character) :precondition (and (not (= ?c1 ?c2)) (upset ?c2) (friends ?c1 ?c2) (sad ?c2)) :effect (and (comforted ?c2) (not (sad ?c2)) (happy ?c2)))"
+    }
+}

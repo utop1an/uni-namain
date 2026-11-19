@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?target - (either character mop))": "The character has a target that is either another character or a mop.",
+        "(clean ?mop - mop)": "Source predicate (clean ?mop - mop).",
+        "(pretty ?mop - mop)": "Source predicate (pretty ?mop - mop).",
+        "(disgusting ?mop - mop)": "Source predicate (disgusting ?mop - mop).",
+        "(selected ?mop - mop)": "Source predicate (selected ?mop - mop).",
+        "(at ?character - character ?place - place)": "The character is at the specified location.",
+        "(has ?character - character ?mop - mop)": "The character has a target that is either another character or a mop."
+    },
+    "operators": {
+        "move-location :parameters (?actor - character ?to - location ?from - location) :precondition (and (player ?actor) (connected ?to ?from) (at ?actor ?from) (knows ?actor)) :effect (and (not (at ?actor ?from)) (at ?actor ?to)))": "(:action move-location :parameters (?actor - character ?to - location ?from - location) :precondition (and (player ?actor) (connected ?to ?from) (at ?actor ?from) (knows ?actor)) :effect (and (not (at ?actor ?from)) (at ?actor ?to)))",
+        "interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))": "(:action interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))",
+        "save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))": "(:action save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))",
+        "place-victim :parameters (?acting-character - character ?target - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target)) (at ?target ?destination-location) (captured ?target)))": "(:action place-victim :parameters (?acting-character - character ?target - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target)) (at ?target ?destination-location) (captured ?target)))",
+        "go-to :parameters (?character - character ?location - location) :precondition (at ?character ?location) :effect (at ?character ?location))": "(:action go-to :parameters (?character - character ?location - location) :precondition (at ?character ?location) :effect (at ?character ?location))",
+        "select-mop :parameters (?character - character ?target - mop ?location - location) :precondition (and (at ?character ?location) (has ?character ?target)) :effect (selected ?target))": "(:action select-mop :parameters (?character - character ?target - mop ?location - location) :precondition (and (at ?character ?location) (has ?character ?target)) :effect (selected ?target))",
+        "receive-target :parameters (?character - character ?dog - character ?target - (either character mop) ?location - location) :precondition (and (at ?character ?location) (at ?dog ?location) (has ?dog ?target)) :effect (and (not (has ?dog ?target)) (has ?character ?target)))": "(:action receive-target :parameters (?character - character ?dog - character ?target - (either character mop) ?location - location) :precondition (and (at ?character ?location) (at ?dog ?location) (has ?dog ?target)) :effect (and (not (has ?dog ?target)) (has ?character ?target)))"
+    }
+}

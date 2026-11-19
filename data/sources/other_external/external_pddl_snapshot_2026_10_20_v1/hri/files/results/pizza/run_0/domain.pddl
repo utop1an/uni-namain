@@ -1,0 +1,33 @@
+(define (domain pizza)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types DOUGH INGREDIENT_LIQUID INGREDIENT_SOLID LOCATION OTHER basil dough gorgonzola mozzarella mushrooms oliveOil olives oregano oven peperoni pepper salami salt table tomatoSauce)
+    (:predicates 
+    (baked ?dough - DOUGH)  
+    (coveredWithLiquid ?dough - DOUGH ?ingredient - INGREDIENT_LIQUID)  
+    (coveredWithSolid ?dough - DOUGH ?ingredient - INGREDIENT_SOLID)  
+    (isLiquid ?ingredient - INGREDIENT_LIQUID)  
+    (isSolid ?ingredient - INGREDIENT_SOLID)  
+    (isWarm ?oven - OTHER)  
+    (onTable ?dough - DOUGH ?location - LOCATION)  
+    (ready ?dough - DOUGH))
+    (:action addLiquid
+        :parameters (?ingredient - INGREDIENT_LIQUID ?dough - DOUGH)
+        :precondition (and (isLiquid ?ingredient) (not (coveredWithLiquid ?dough ?ingredient)))
+        :effect (coveredWithLiquid ?dough ?ingredient)
+    )
+     (:action addSolid
+        :parameters (?ingredient - INGREDIENT_SOLID ?dough - DOUGH)
+        :precondition (and (isSolid ?ingredient) (not (coveredWithSolid ?dough ?ingredient)))
+        :effect (coveredWithSolid ?dough ?ingredient)
+    )
+     (:action bake
+        :parameters (?oven - OTHER ?dough - DOUGH)
+        :precondition (and (isWarm ?oven) (ready ?dough))
+        :effect (baked ?dough)
+    )
+     (:action prepareDough
+        :parameters (?dough - DOUGH ?location - LOCATION)
+        :precondition (onTable ?dough ?location)
+        :effect (ready ?dough)
+    )
+)

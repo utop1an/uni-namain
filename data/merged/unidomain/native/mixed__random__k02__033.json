@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(at ?character - character ?room - room)": "Source predicate (at ?character - character ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(has ?character - character ?thing - thing)": "Source predicate (has ?character - character ?thing - thing).",
+        "(friend ?character1 - character ?character2 - character)": "Source predicate (friend ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(practice ?character1 - character ?character2 - character)": "Source predicate (practice ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "enter": "(:action enter\n :parameters (?character - character ?roomfrom - room ?roomto - room)\n :precondition (and (not (locked ?roomto)) (at ?character ?roomfrom))\n :effect (and (not (at ?character ?roomfrom)) (at ?character ?roomto))\n)",
+        "search-for": "(:action search-for\n :parameters (?character - character ?thing - thing ?room - room)\n :precondition (and (at ?character ?room) (in ?thing ?room))\n :effect (and (has ?character ?thing) (not (in ?thing ?room)))\n)",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friend ?character1 ?character2)\n)",
+        "cheer-up": "(:action cheer-up\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (sad ?character2))\n :effect (and (not (sad ?character2)) (happy ?character2))\n)",
+        "help-practice": "(:action help-practice\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (not (ready ?character2)))\n :effect (practice ?character1 ?character2)\n)",
+        "become-ready": "(:action become-ready\n :parameters (?character - character)\n :precondition (exists (?helper - character) (practice ?helper ?character))\n :effect (ready ?character)\n)"
+    }
+}

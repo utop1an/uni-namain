@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(birthday ?character - character)": "Source predicate (birthday ?character - character).",
+        "(box-closed)": "Source predicate (box-closed).",
+        "(box-open)": "Source predicate (box-open).",
+        "(cake-spoiled)": "Source predicate (cake-spoiled).",
+        "(cake-good)": "Source predicate (cake-good).",
+        "(listened-to-mom ?character - character)": "Source predicate (listened-to-mom ?character - character).",
+        "(waited-for-birthday ?character - character)": "Source predicate (waited-for-birthday ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(digging ?character - character)": "Source predicate (digging ?character - character).",
+        "(found ?character - character ?item - item)": "Source predicate (found ?character - character ?item - item).",
+        "(opened ?character - character ?item - item)": "Source predicate (opened ?character - character ?item - item).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character)."
+    },
+    "operators": {
+        "wait-for-birthday": "(:action wait-for-birthday\n :parameters (?character - character)\n :precondition (and (not (birthday ?character)) (not (waited-for-birthday ?character)))\n :effect (waited-for-birthday ?character)\n)",
+        "listen-to-mom": "(:action listen-to-mom\n :parameters (?character - character)\n :precondition (and (not (listened-to-mom ?character)) (waited-for-birthday ?character))\n :effect (listened-to-mom ?character)\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character)\n :precondition (and (box-closed) (birthday ?character))\n :effect (and (not (box-closed)) (box-open))\n)",
+        "spoil-cake": "(:action spoil-cake\n :parameters ()\n :precondition (and (box-open) (not (listened-to-mom tim)) (cake-good))\n :effect (and (not (cake-good)) (cake-spoiled))\n)",
+        "keep-cake-good": "(:action keep-cake-good\n :parameters ()\n :precondition (and (box-open) (listened-to-mom tim) (cake-good))\n :effect (cake-good)\n)",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - place)\n :precondition (and (not (at ?character ?place)) (has ?character spade))\n :effect (at ?character ?place)\n)",
+        "dig": "(:action dig\n :parameters (?character - character)\n :precondition (and (has ?character spade) (not (digging ?character)))\n :effect (digging ?character)\n)",
+        "find": "(:action find\n :parameters (?character - character ?item - item)\n :precondition (and (digging ?character) (not (found ?character ?item)))\n :effect (and (found ?character ?item) (has ?character ?item))\n)",
+        "open": "(:action open\n :parameters (?character - character ?item - item)\n :precondition (and (found ?character ?item) (not (opened ?character ?item)))\n :effect (opened ?character ?item)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (opened ?character small-box))\n :effect (playing ?character)\n)"
+    }
+}

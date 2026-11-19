@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(hidden ?toy - toy ?place - place)": "Source predicate (hidden ?toy - toy ?place - place).",
+        "(found ?toy - toy)": "Source predicate (found ?toy - toy).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified location."
+    },
+    "operators": {
+        "interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))": "(:action interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))",
+        "place-victim :parameters (?acting-character - character ?target-character - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target-character) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target-character)) (at ?target-character ?destination-location) (captured ?target-character)))": "(:action place-victim :parameters (?acting-character - character ?target-character - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target-character) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target-character)) (at ?target-character ?destination-location) (captured ?target-character)))",
+        "save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))": "(:action save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))",
+        "hide": "(:action hide\n :parameters (?character - character ?toy - toy ?place - place ?location - location)\n :precondition (at ?character ?location)\n :effect (hidden ?toy ?place)\n)",
+        "search :parameters (?character - character ?location - location) :precondition (and (at ?character ?location) (not (searched ?character ?location))) :effect (searched ?character ?location))": "(:action search :parameters (?character - character ?location - location) :precondition (and (at ?character ?location) (not (searched ?character ?location))) :effect (searched ?character ?location))",
+        "find :parameters (?character - character ?toy - toy ?location - location) :precondition (and (at ?character ?location) (hidden ?toy ?location) (searched ?character ?location)) :effect (found ?toy))": "(:action find :parameters (?character - character ?toy - toy ?location - location) :precondition (and (at ?character ?location) (hidden ?toy ?location) (searched ?character ?location)) :effect (found ?toy))",
+        "move-location": "(:action move-location :parameters (?actor - character ?to - location ?from - location) :precondition (and (player ?actor) (connected ?to ?from) (at ?actor ?from) (knows ?actor) (not (= ?from ?to))) :effect (and (not (at ?actor ?from)) (at ?actor ?to)))"
+    }
+}

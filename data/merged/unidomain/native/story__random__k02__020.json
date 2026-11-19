@@ -1,0 +1,20 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a dress.",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(delivered ?item - item)": "Source predicate (delivered ?item - item)."
+    },
+    "operators": {
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))": "(:action put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "deliver": "(:action deliver\n :parameters (?character - character ?item - item ?destination - place)\n :precondition (and (alive ?character) (at ?character ?destination) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (delivered ?item))\n)",
+        "pick-up": "(:action pick-up\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (has ?character ?item)\n)"
+    }
+}

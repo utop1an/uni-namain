@@ -1,0 +1,21 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(gave-gift ?giver - character ?receiver - character ?item - item)": "Source predicate (gave-gift ?giver - character ?receiver - character ?item - item).",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(steal-intention ?character - character ?item - item)": "Source predicate (steal-intention ?character - character ?item - item)."
+    },
+    "operators": {
+        "make-happy": "(:action make-happy\n :parameters (?character - character ?target - character)\n :precondition (and (not (= ?character ?target)) (not (happy ?target)))\n :effect (happy ?target)\n)",
+        "find": "(:action find\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (not (has ?character ?item)))\n :effect (has ?character ?item)\n)",
+        "give": "(:action give\n :parameters (?giver - character ?item - item ?receiver - character ?place - place)\n :precondition (and (not (= ?giver ?receiver)) (at ?giver ?place) (has ?giver ?item) (at ?receiver ?place))\n :effect (and (not (has ?giver ?item)) (has ?receiver ?item) (gave-gift ?giver ?receiver ?item))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (has ?character ?item))\n :effect (happy ?character)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?apologized - character)\n :precondition (and (not (= ?apologizer ?apologized)) (not (friends ?apologizer ?apologized)))\n :effect (friends ?apologizer ?apologized)\n)",
+        "try-steal": "(:action try-steal\n :parameters (?stealer - character ?item - item ?owner - character)\n :precondition (and (not (= ?stealer ?owner)) (has ?owner ?item) (steal-intention ?stealer ?item))\n :effect (and (not (steal-intention ?stealer ?item)) (not (friends ?stealer ?owner)) (has ?stealer ?item) (not (has ?owner ?item)))\n)",
+        "clean-item": "(:action clean-item\n :parameters (?cleaner - character ?item - item)\n :precondition (and (not (clean ?item)) (has ?cleaner ?item))\n :effect (clean ?item)\n)",
+        "drop-in-puddle": "(:action drop-in-puddle\n :parameters (?dropper - character ?item - item)\n :precondition (and (has ?dropper ?item) (clean ?item))\n :effect (not (clean ?item))\n)"
+    }
+}

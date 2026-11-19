@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has-skin ?character - character)": "Source predicate (has-skin ?character - character).",
+        "(kneel ?character - character)": "Source predicate (kneel ?character - character).",
+        "(rewarded ?character - character)": "Source predicate (rewarded ?character - character).",
+        "(tried ?character - character)": "Source predicate (tried ?character - character).",
+        "(voice-happy ?character - character)": "Source predicate (voice-happy ?character - character).",
+        "(at-party ?character - character)": "Source predicate (at-party ?character - character).",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(fast ?character - character)": "Source predicate (fast ?character - character).",
+        "(cake-transformed)": "Source predicate (cake-transformed)."
+    },
+    "operators": {
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "kneel": "(:action kneel\n :parameters (?character - character)\n :precondition (at ?character old-house)\n :effect (kneel ?character)\n)",
+        "try": "(:action try\n :parameters (?character - character)\n :precondition (kneel ?character)\n :effect (tried ?character)\n)",
+        "evaluate": "(:action evaluate\n :parameters (?character - character)\n :precondition (tried ?character)\n :effect (voice-happy ?character)\n)",
+        "reward": "(:action reward\n :parameters (?character - character)\n :precondition (voice-happy ?character)\n :effect (rewarded ?character)\n)",
+        "take-skin": "(:action take-skin\n :parameters (?character - character)\n :precondition (and (not (voice-happy ?character)) (has-skin ?character))\n :effect (not (has-skin ?character))\n)",
+        "go-to-party": "(:action go-to-party\n :parameters (?character - character)\n :precondition (not (at-party ?character))\n :effect (at-party ?character)\n)",
+        "magic-trick": "(:action magic-trick\n :parameters (?magician - character)\n :precondition (and (at-party ?magician) (not (cake-transformed)))\n :effect (cake-transformed)\n)",
+        "eat-cake": "(:action eat-cake\n :parameters (?character - character)\n :precondition (and (at-party ?character) (cake-transformed))\n :effect (fast ?character)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (at-party ?character) (fast ?character))\n :effect (and)\n)"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(interesting ?place - place)": "Source predicate (interesting ?place - place).",
+        "(singing ?character - character)": "Source predicate (singing ?character - character).",
+        "(awake ?character - character)": "The character is awake.",
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(sleeping ?character - character)": "Source predicate (sleeping ?character - character).",
+        "(has-energy ?character - character)": "Source predicate (has-energy ?character - character)."
+    },
+    "operators": {
+        "stop-singing": "(:action stop-singing\n :parameters (?character - character)\n :precondition (singing ?character)\n :effect (not (singing ?character))\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (singing ?character)\n)",
+        "make-friends": "(:action make-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (awake ?character1) (awake ?character2) (not (friends ?character1 ?character2)) (not (= ?character1 ?character2)))\n :effect (friends ?character1 ?character2)\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character)\n :precondition (playing ?character)\n :effect (and (not (playing ?character)) (tired ?character))\n)",
+        "start-playing": "(:action start-playing\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (playing ?character)) (has-energy ?character))\n :effect (playing ?character)\n)",
+        "sleep": "(:action sleep :parameters (?character - character ?place - place) :precondition (and (awake ?character) (at ?character ?place) (interesting ?place) (tired ?character) (not (sleeping ?character))) :effect (and (not (awake ?character)) (sleeping ?character)))",
+        "wake-up": "(:action wake-up :parameters (?character - character) :precondition (and (not (awake ?character)) (sleeping ?character)) :effect (and (awake ?character) (not (sleeping ?character)) (not (tired ?character)) (has-energy ?character)))"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(abducted ?character - character)": "Source predicate (abducted ?character - character).",
+        "(has-translator ?character - character)": "Source predicate (has-translator ?character - character).",
+        "(knows-mistake ?informed - character ?mistaken - character)": "Source predicate (knows-mistake ?informed - character ?mistaken - character).",
+        "(playing-game ?character - character ?character2 - character)": "Source predicate (playing-game ?character - character ?character2 - character).",
+        "(friends ?character - character ?character2 - character)": "Source predicate (friends ?character - character ?character2 - character).",
+        "(performing ?character - character)": "Source predicate (performing ?character - character).",
+        "(applause)": "Source predicate (applause).",
+        "(satisfied ?character - character)": "Source predicate (satisfied ?character - character).",
+        "(disappeared ?character - character)": "Source predicate (disappeared ?character - character).",
+        "(trick-performed)": "Source predicate (trick-performed)."
+    },
+    "operators": {
+        "abduct": "(:action abduct\n :parameters (?abductor - character ?abductee - character ?place - place)\n :precondition (and (not (= ?abductor ?abductee)) (alive ?abductor) (at ?abductor ?place) (alive ?abductee) (at ?abductee ?place))\n :effect (and (abducted ?abductee) (not (at ?abductee ?place)))\n)",
+        "give-translator": "(:action give-translator\n :parameters (?giver - character ?receiver - character)\n :precondition (and (not (= ?giver ?receiver)) (alive ?giver) (alive ?receiver) (abducted ?receiver))\n :effect (has-translator ?receiver)\n)",
+        "reveal-mistake": "(:action reveal-mistake\n :parameters (?mistaken - character ?informed - character)\n :precondition (and (not (= ?mistaken ?informed)) (alive ?mistaken) (alive ?informed) (has-translator ?informed))\n :effect (knows-mistake ?informed ?mistaken)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2) (has-translator ?character1))\n :effect (friends ?character1 ?character2)\n)",
+        "play-game": "(:action play-game\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2) (friends ?character1 ?character2))\n :effect (playing-game ?character1 ?character2)\n)",
+        "stop-game": "(:action stop-game\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2) (playing-game ?character1 ?character2))\n :effect (not (playing-game ?character1 ?character2))\n)",
+        "perform-show": "(:action perform-show\n :parameters (?magician - character)\n :precondition (not (performing ?magician))\n :effect (and (performing ?magician) (applause))\n)",
+        "perform-final-trick": "(:action perform-final-trick\n :parameters (?magician - character)\n :precondition (and (performing ?magician) (not (trick-performed)))\n :effect (and (trick-performed) (disappeared ?magician))\n)",
+        "become-satisfied": "(:action become-satisfied\n :parameters (?character - character)\n :precondition (and (performing ?character) (trick-performed) (applause) (not (satisfied ?character)))\n :effect (satisfied ?character)\n)",
+        "stop-applause": "(:action stop-applause\n :parameters ()\n :precondition (applause)\n :effect (not (applause))\n)"
+    }
+}

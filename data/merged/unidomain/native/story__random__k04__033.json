@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(hiding ?character - character)": "Source predicate (hiding ?character - character).",
+        "(seeking ?character - character)": "Source predicate (seeking ?character - character).",
+        "(found ?seeker - character ?hider - character)": "Source predicate (found ?seeker - character ?hider - character).",
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a dress.",
+        "(clothed ?character - character)": "Source predicate (clothed ?character - character).",
+        "(stuck ?character - character)": "Source predicate (stuck ?character - character).",
+        "(falling ?character - character)": "Source predicate (falling ?character - character).",
+        "(aware-glitch ?character - character)": "Source predicate (aware-glitch ?character - character).",
+        "(alive ?character - character)": "The character is alive.",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place)."
+    },
+    "operators": {
+        "stop-seeking": "(:action stop-seeking\n :parameters (?character - character)\n :precondition (seeking ?character)\n :effect (not (seeking ?character))\n)",
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "start-hiding": "(:action start-hiding\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (hiding ?character)\n)",
+        "start-seeking": "(:action start-seeking\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (seeking ?character)\n)",
+        "find": "(:action find\n :parameters (?seeker - character ?hider - character ?place - place)\n :precondition (and (seeking ?seeker) (hiding ?hider) (at ?seeker ?place) (at ?hider ?place))\n :effect (and (found ?seeker ?hider) (not (hiding ?hider)))\n)",
+        "put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))": "(:action put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))",
+        "become-aware": "(:action become-aware\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (aware-glitch ?character)\n)",
+        "lose-clothes": "(:action lose-clothes\n :parameters (?character - character)\n :precondition (and (alive ?character) (clothed ?character))\n :effect (not (clothed ?character))\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "help-stuck": "(:action help-stuck\n :parameters (?helper - character ?stuck-character - character)\n :precondition (and (alive ?helper) (stuck ?stuck-character) (at ?helper ?stuck-character))\n :effect (and (not (stuck ?stuck-character)) (aware-glitch ?helper))\n)",
+        "fall": "(:action fall\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (falling ?character))\n :effect (and (not (falling ?character)) (at ?character ?place))\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "vomit": "(:action vomit\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (drunk ?character) (at ?character ?place))\n :effect (vomit-stain ?place)\n)",
+        "drink": "(:action drink\n :parameters (?character - character ?drink - drink)\n :precondition (and (alive ?character) (has ?character ?drink))\n :effect (and (drunk ?character) (not (has ?character ?drink)))\n)"
+    }
+}

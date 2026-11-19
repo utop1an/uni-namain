@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(connected ?location - location ?oldlocation - location)": "Source predicate (connected ?location - location ?oldlocation - location).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(wearing ?character - character ?item - item)": "Source predicate (wearing ?character - character ?item - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified location."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing": "(:action take-thing\n :parameters (?taker - character ?thing - item ?location - location)\n :precondition (and (at ?taker ?location) (at ?thing ?location) (not (asleep ?taker)) (not (enchanted ?thing)))\n :effect (and (not (at ?thing ?location)) (has ?taker ?thing))\n)",
+        "disenchant-thing": "(:action disenchant-thing\n :parameters (?caster - character ?thing - item ?book - book ?location - location)\n :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?book) (enchanted ?thing))\n :effect (not (enchanted ?thing))\n)",
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "clean-item": "(:action clean-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (clean ?item)))\n :effect (clean ?item)\n)",
+        "adjust-item": "(:action adjust-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (fits ?item ?character)))\n :effect (fits ?item ?character)\n)",
+        "wear-item": "(:action wear-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (fits ?item ?character) (not (wearing ?character ?item)))\n :effect (wearing ?character ?item)\n)"
+    }
+}

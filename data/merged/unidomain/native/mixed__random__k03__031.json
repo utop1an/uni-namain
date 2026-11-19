@@ -1,0 +1,36 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(riding ?character - character ?vehicle - vehicle)": "Source predicate (riding ?character - character ?vehicle - vehicle).",
+        "(relaxed ?character - character)": "Source predicate (relaxed ?character - character).",
+        "(flying ?character - character)": "Source predicate (flying ?character - character).",
+        "(in-vehicle ?character - character ?vehicle - vehicle)": "Source predicate (in-vehicle ?character - character ?vehicle - vehicle).",
+        "(at ?character - character ?place - place)": "The character is at the specified place, which may be a room.",
+        "(has ?character - character ?item - item)": "The character possesses the specified item.",
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(has ?character - character ?thing - thing)": "The character possesses the specified thing.",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(steal-intention ?character - character ?item - item)": "Source predicate (steal-intention ?character - character ?item - item).",
+        "(at ?character - character ?room - room)": "The character is at the specified place, which may be a room."
+    },
+    "operators": {
+        "stop-riding": "(:action stop-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (riding ?character ?vehicle))\n :effect (not (riding ?character ?vehicle))\n)",
+        "start-flying": "(:action start-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (flying ?character)))\n :effect (flying ?character)\n)",
+        "stop-flying": "(:action stop-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (flying ?character))\n :effect (not (flying ?character))\n)",
+        "try-relax": "(:action try-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (relaxed ?character)))\n :effect (relaxed ?character)\n)",
+        "stop-relax": "(:action stop-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (relaxed ?character))\n :effect (not (relaxed ?character))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "start-riding": "(:action start-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (has ?character ?vehicle) (not (riding ?character ?vehicle)))\n :effect (riding ?character ?vehicle)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?apologized - character)\n :precondition (and (not (= ?apologizer ?apologized)) (not (friends ?apologizer ?apologized)))\n :effect (friends ?apologizer ?apologized)\n)",
+        "enter :parameters (?character - character ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?character ?placefrom)) :effect (and (not (at ?character ?placefrom)) (at ?character ?roomto)))": "(:action enter :parameters (?character - character ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?character ?placefrom)) :effect (and (not (at ?character ?placefrom)) (at ?character ?roomto)))",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "try-steal :parameters (?stealer - character ?thing - thing ?owner - character) :precondition (and (not (= ?stealer ?owner)) (has ?owner ?thing) (steal-intention ?stealer ?thing)) :effect (and (not (steal-intention ?stealer ?thing)) (not (friends ?stealer ?owner)) (has ?stealer ?thing) (not (has ?owner ?thing))))": "(:action try-steal :parameters (?stealer - character ?thing - thing ?owner - character) :precondition (and (not (= ?stealer ?owner)) (has ?owner ?thing) (steal-intention ?stealer ?thing)) :effect (and (not (steal-intention ?stealer ?thing)) (not (friends ?stealer ?owner)) (has ?stealer ?thing) (not (has ?owner ?thing))))",
+        "clean-item :parameters (?cleaner - character ?thing - thing) :precondition (and (not (clean ?thing)) (has ?cleaner ?thing)) :effect (clean ?thing))": "(:action clean-item :parameters (?cleaner - character ?thing - thing) :precondition (and (not (clean ?thing)) (has ?cleaner ?thing)) :effect (clean ?thing))",
+        "drop-in-puddle :parameters (?dropper - character ?thing - thing) :precondition (and (has ?dropper ?thing) (clean ?thing)) :effect (not (clean ?thing)))": "(:action drop-in-puddle :parameters (?dropper - character ?thing - thing) :precondition (and (has ?dropper ?thing) (clean ?thing)) :effect (not (clean ?thing)))",
+        "search-for :parameters (?character - character ?thing - thing ?place - place) :precondition (and (at ?character ?place) (in ?thing ?place)) :effect (and (has ?character ?thing) (not (in ?thing ?place))))": "(:action search-for :parameters (?character - character ?thing - thing ?place - place) :precondition (and (at ?character ?place) (in ?thing ?place)) :effect (and (has ?character ?thing) (not (in ?thing ?place))))"
+    }
+}

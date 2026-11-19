@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(in-box ?character - character ?box - box)": "Source predicate (in-box ?character - character ?box - box).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(at ?box - box ?place - place)": "Source predicate (at ?box - box ?place - place).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(composed ?character - character)": "Source predicate (composed ?character - character).",
+        "(noticed ?character - character ?box - box)": "Source predicate (noticed ?character - character ?box - box).",
+        "(opened ?box - box)": "Source predicate (opened ?box - box).",
+        "(needs-walk ?character - character)": "Source predicate (needs-walk ?character - character).",
+        "(in-herenow ?character - character)": "Source predicate (in-herenow ?character - character).",
+        "(ancient-oath ?dog - character)": "Source predicate (ancient-oath ?dog - character).",
+        "(guardian ?dog - character)": "Source predicate (guardian ?dog - character).",
+        "(master ?character - character)": "Source predicate (master ?character - character).",
+        "(time-of-passing)": "Source predicate (time-of-passing)."
+    },
+    "operators": {
+        "enter": "(:action enter\n :parameters (?character - character ?place - place)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "notice": "(:action notice\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place))\n :effect (noticed ?character ?box)\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place) (noticed ?character ?box) (not (opened ?box)))\n :effect (opened ?box)\n)",
+        "become-nervous": "(:action become-nervous\n :parameters (?character - character)\n :precondition (and)\n :effect (nervous ?character)\n)",
+        "become-composed": "(:action become-composed\n :parameters (?character - character)\n :precondition (and)\n :effect (composed ?character)\n)",
+        "remind-ancient-oath": "(:action remind-ancient-oath\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (ancient-oath ?dog))\n :effect (needs-walk ?master)\n)",
+        "bring-to-herenow": "(:action bring-to-herenow\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (not (in-herenow ?master)))\n :effect (in-herenow ?master)\n)",
+        "walk": "(:action walk\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (needs-walk ?master))\n :effect (and (not (needs-walk ?master)) (in-herenow ?master))\n)",
+        "time-of-passing": "(:action time-of-passing\n :parameters ()\n :precondition (not (time-of-passing))\n :effect (time-of-passing)\n)"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(anchored ?light - lightbox)": "Source predicate (anchored ?light - lightbox).",
+        "(charged ?light - lightbox)": "Source predicate (charged ?light - lightbox).",
+        "(created ?character - character ?light - lightbox)": "Source predicate (created ?character - character ?light - lightbox).",
+        "(used ?character - character ?light - lightbox)": "Source predicate (used ?character - character ?light - lightbox).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "charge-lightbox": "(:action charge-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (anchored ?lightbox) (created ?character ?lightbox))\n :effect (charged ?lightbox)\n)",
+        "create-lightbox :parameters (?character - character ?object - lightbox) :precondition (alive ?character) :effect (and (created ?character ?object) (has ?character ?object)))": "(:action create-lightbox :parameters (?character - character ?object - lightbox) :precondition (alive ?character) :effect (and (created ?character ?object) (has ?character ?object)))",
+        "anchor-light :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (created ?character ?object) (has ?character ?object)) :effect (anchored ?object))": "(:action anchor-light :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (created ?character ?object) (has ?character ?object)) :effect (anchored ?object))",
+        "use-lightbox :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (charged ?object) (created ?character ?object) (has ?character ?object)) :effect (and (used ?character ?object) (not (charged ?object))))": "(:action use-lightbox :parameters (?character - character ?object - lightbox) :precondition (and (alive ?character) (charged ?object) (created ?character ?object) (has ?character ?object)) :effect (and (used ?character ?object) (not (charged ?object))))"
+    }
+}

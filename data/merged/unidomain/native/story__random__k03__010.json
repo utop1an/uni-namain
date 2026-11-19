@@ -1,0 +1,40 @@
+{
+    "predicates": {
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(wearing-clothes ?character - character)": "Source predicate (wearing-clothes ?character - character).",
+        "(has-device ?character - character ?device - device)": "Source predicate (has-device ?character - character ?device - device).",
+        "(device-on ?device - device)": "Source predicate (device-on ?device - device).",
+        "(device-connected ?device - device)": "Source predicate (device-connected ?device - device).",
+        "(electricity ?place - place)": "Source predicate (electricity ?place - place).",
+        "(working ?device - device)": "Source predicate (working ?device - device).",
+        "(school-canceled)": "Source predicate (school-canceled).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(hidden ?item - item ?place - place)": "Source predicate (hidden ?item - item ?place - place).",
+        "(open ?item - item)": "Source predicate (open ?item - item).",
+        "(stored ?item - item ?place - place)": "Source predicate (stored ?item - item ?place - place).",
+        "(found ?searcher - character ?target - (either item character))": "The searcher has found the target, which is an item or a character.",
+        "(knows ?character1 - character ?character2 - character)": "Source predicate (knows ?character1 - character ?character2 - character).",
+        "(together ?character1 - character ?character2 - character)": "Source predicate (together ?character1 - character ?character2 - character).",
+        "(missing ?character - character)": "Source predicate (missing ?character - character).",
+        "(relationship ?character1 - character ?character2 - character)": "Source predicate (relationship ?character1 - character ?character2 - character).",
+        "(searching ?searcher - character ?target - character)": "Source predicate (searching ?searcher - character ?target - character).",
+        "(found ?searcher - character ?target - character)": "The searcher has found the target, which is an item or a character."
+    },
+    "operators": {
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (not (awake ?character))\n :effect (awake ?character)\n)",
+        "put-on-clothes": "(:action put-on-clothes\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (wearing-clothes ?character)))\n :effect (wearing-clothes ?character)\n)",
+        "turn-on-device": "(:action turn-on-device\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (has-device ?character ?device) (not (device-on ?device)))\n :effect (device-on ?device)\n)",
+        "check-connectivity": "(:action check-connectivity\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (device-on ?device) (has-device ?character ?device))\n :effect (when (device-connected ?device) (working ?device))\n)",
+        "cancel-school": "(:action cancel-school\n :parameters ()\n :precondition (not (school-canceled))\n :effect (school-canceled)\n)",
+        "go-outside": "(:action go-outside\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (wearing-clothes ?character) (at ?character ?place))\n :effect (and (not (at ?character ?place)) (at ?character outside))\n)",
+        "talk": "(:action talk\n :parameters (?speaker - character ?listener - character)\n :precondition (and (awake ?speaker) (awake ?listener) (at ?speaker outside) (at ?listener outside))\n :effect (and)\n)",
+        "open :parameters (?searcher - character ?target - item) :precondition (and (found ?searcher ?target) (not (open ?target))) :effect (open ?target))": "(:action open :parameters (?searcher - character ?target - item) :precondition (and (found ?searcher ?target) (not (open ?target))) :effect (open ?target))",
+        "start-search": "(:action start-search\n :parameters (?searcher - character ?target - character)\n :precondition (and (not (= ?searcher ?target)) (not (searching ?searcher ?target)) (missing ?target))\n :effect (searching ?searcher ?target)\n)",
+        "stop-search": "(:action stop-search\n :parameters (?searcher - character ?target - character)\n :precondition (searching ?searcher ?target)\n :effect (not (searching ?searcher ?target))\n)",
+        "find": "(:action find\n :parameters (?seeker - character ?subject - character)\n :precondition (and (searching ?seeker ?subject) (missing ?subject))\n :effect (and (not (missing ?subject)) (found ?seeker ?subject))\n)",
+        "search :parameters (?searcher - character ?place - place) :precondition (at ?searcher ?place) :effect (forall (?target - (either item character)) (when (hidden ?target ?place) (found ?searcher ?target))))": "(:action search :parameters (?searcher - character ?place - place) :precondition (at ?searcher ?place) :effect (forall (?target - (either item character)) (when (hidden ?target ?place) (found ?searcher ?target))))",
+        "store :parameters (?searcher - character ?target - item ?place - place) :precondition (and (found ?searcher ?target) (open ?target) (at ?searcher ?place)) :effect (stored ?target ?place))": "(:action store :parameters (?searcher - character ?target - item ?place - place) :precondition (and (found ?searcher ?target) (open ?target) (at ?searcher ?place)) :effect (stored ?target ?place))",
+        "start-relationship": "(:action start-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (relationship ?character1 ?character2)) (knows ?character1 ?character2))\n :effect (relationship ?character1 ?character2)\n)",
+        "end-relationship": "(:action end-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (relationship ?character1 ?character2)\n :effect (not (relationship ?character1 ?character2))\n)"
+    }
+}

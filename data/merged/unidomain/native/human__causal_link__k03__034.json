@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "The character is a player.",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(at ?thing - item ?location - location)": "Item ?thing is at location ?location.",
+        "(has ?character - character ?target - (either item character))": "The character has the target, which may be an item or another character.",
+        "(asleep ?character - character)": "The character is asleep.",
+        "(connected ?to - location ?from - location)": "The destination location ?to is connected to the source location ?from.",
+        "(enchanted ?item - item)": "The item is enchanted.",
+        "(is ?item - item ?thing - thing)": "Relates an item to a thing using the original is relation.",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?thing - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?character2 - character)": "The character has the target, which may be an item or another character."
+    },
+    "operators": {
+        "interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))": "(:action interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))",
+        "save-character :parameters (?saving-character - character ?saved-character - character ?unsaved-character - character ?loc - location) :precondition (and (player ?saving-character) (at ?saving-character ?loc) (at ?saved-character ?loc) (captured ?saved-character) (captured ?unsaved-character) (not (at ?unsaved-character ?loc))) :effect (and (saved ?saved-character ?saving-character) (not (alive ?unsaved-character))))": "(:action save-character :parameters (?saving-character - character ?saved-character - character ?unsaved-character - character ?loc - location) :precondition (and (player ?saving-character) (at ?saving-character ?loc) (at ?saved-character ?loc) (captured ?saved-character) (captured ?unsaved-character) (not (at ?unsaved-character ?loc))) :effect (and (saved ?saved-character ?saving-character) (not (alive ?unsaved-character))))",
+        "wake-person": "(:action wake-person :parameters (?waker - character ?woken - character ?location - location) :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker))) :effect (not (asleep ?woken)))",
+        "place-victim :parameters (?holder - character ?victim - character ?source - location ?destination - location) :precondition (and (henchman ?holder) (has ?holder ?victim) (at ?holder ?source) (connected ?destination ?source)) :effect (and (not (has ?holder ?victim)) (at ?victim ?destination) (captured ?victim)))": "(:action place-victim :parameters (?holder - character ?victim - character ?source - location ?destination - location) :precondition (and (henchman ?holder) (has ?holder ?victim) (at ?holder ?source) (connected ?destination ?source)) :effect (and (not (has ?holder ?victim)) (at ?victim ?destination) (captured ?victim)))",
+        "move-location": "(:action move-location :parameters (?character - character ?destination - location ?source - location) :precondition (and (connected ?destination ?source) (not (asleep ?character)) (at ?character ?source) (player ?character) (knows ?character)) :effect (and (not (at ?character ?source)) (at ?character ?destination)))",
+        "take-thing": "(:action take-thing :parameters (?taker - character ?target - (either item character) ?location - location) :precondition (and (at ?taker ?location) (at ?target ?location) (not (asleep ?taker)) (not (enchanted ?target))) :effect (and (not (at ?target ?location)) (has ?taker ?target)))",
+        "disenchant-thing": "(:action disenchant-thing :parameters (?caster - character ?thing - item ?target - (either item character) ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?target) (enchanted ?thing)) :effect (not (enchanted ?thing)))"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(assembled ?robot - robot)": "Source predicate (assembled ?robot - robot).",
+        "(has-robot ?character - character ?robot - robot)": "Source predicate (has-robot ?character - character ?robot - robot).",
+        "(working-on-task ?robot - robot)": "Source predicate (working-on-task ?robot - robot).",
+        "(playing-game ?character - character)": "Source predicate (playing-game ?character - character).",
+        "(at ?character - character ?location - object)": "The character is at the specified location, which may be a place.",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(riding ?character - character ?vehicle - vehicle)": "Source predicate (riding ?character - character ?vehicle - vehicle).",
+        "(relaxed ?character - character)": "Source predicate (relaxed ?character - character).",
+        "(flying ?character - character)": "Source predicate (flying ?character - character).",
+        "(in-vehicle ?character - character ?vehicle - vehicle)": "Source predicate (in-vehicle ?character - character ?vehicle - vehicle).",
+        "(at ?character - character ?place - place)": "The character is at the specified location, which may be a place."
+    },
+    "operators": {
+        "start-task": "(:action start-task\n :parameters (?robot - robot)\n :precondition (and (assembled ?robot) (not (working-on-task ?robot)))\n :effect (working-on-task ?robot)\n)",
+        "stop-game": "(:action stop-game\n :parameters (?character - character)\n :precondition (playing-game ?character)\n :effect (not (playing-game ?character))\n)",
+        "assemble": "(:action assemble\n :parameters (?character - character ?robot - robot)\n :precondition (and (at ?character garage) (not (assembled ?robot)))\n :effect (and (assembled ?robot) (has-robot ?character ?robot))\n)",
+        "play-game": "(:action play-game\n :parameters (?character - character)\n :precondition (and (at ?character house) (not (playing-game ?character)))\n :effect (playing-game ?character)\n)",
+        "start-riding": "(:action start-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (has ?character ?vehicle) (not (riding ?character ?vehicle)))\n :effect (riding ?character ?vehicle)\n)",
+        "stop-riding": "(:action stop-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (riding ?character ?vehicle))\n :effect (not (riding ?character ?vehicle))\n)",
+        "start-flying": "(:action start-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (flying ?character)))\n :effect (flying ?character)\n)",
+        "stop-flying": "(:action stop-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (flying ?character))\n :effect (not (flying ?character))\n)",
+        "try-relax": "(:action try-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (relaxed ?character)))\n :effect (relaxed ?character)\n)",
+        "stop-relax": "(:action stop-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (relaxed ?character))\n :effect (not (relaxed ?character))\n)",
+        "travel :parameters (?character - character ?from_location - object ?to_location - object) :precondition (and (not (= ?from_location ?to_location)) (alive ?character) (at ?character ?from_location)) :effect (and (not (at ?character ?from_location)) (at ?character ?to_location)))": "(:action travel :parameters (?character - character ?from_location - object ?to_location - object) :precondition (and (not (= ?from_location ?to_location)) (alive ?character) (at ?character ?from_location)) :effect (and (not (at ?character ?from_location)) (at ?character ?to_location)))"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(interesting ?place - place)": "Source predicate (interesting ?place - place).",
+        "(singing ?character - character)": "Source predicate (singing ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(hiding ?character - character)": "Source predicate (hiding ?character - character).",
+        "(seeking ?character - character)": "Source predicate (seeking ?character - character).",
+        "(found ?seeker - character ?hider - character)": "Source predicate (found ?seeker - character ?hider - character)."
+    },
+    "operators": {
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (not (awake ?character))\n :effect (awake ?character)\n)",
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (singing ?character)\n)",
+        "stop-singing": "(:action stop-singing\n :parameters (?character - character)\n :precondition (singing ?character)\n :effect (not (singing ?character))\n)",
+        "make-friends": "(:action make-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (awake ?character1) (awake ?character2) (not (friends ?character1 ?character2)) (not (= ?character1 ?character2)))\n :effect (friends ?character1 ?character2)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (at ?character ?place) (interesting ?place))\n :effect (not (awake ?character))\n)",
+        "stop-seeking": "(:action stop-seeking\n :parameters (?character - character)\n :precondition (seeking ?character)\n :effect (not (seeking ?character))\n)",
+        "start-hiding": "(:action start-hiding\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (hiding ?character)\n)",
+        "start-seeking": "(:action start-seeking\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (seeking ?character)\n)",
+        "find": "(:action find\n :parameters (?seeker - character ?hider - character ?place - place)\n :precondition (and (seeking ?seeker) (hiding ?hider) (at ?seeker ?place) (at ?hider ?place))\n :effect (and (found ?seeker ?hider) (not (hiding ?hider)))\n)"
+    }
+}

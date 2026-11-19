@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(offered-snack ?giver - character ?receiver - character)": "Source predicate (offered-snack ?giver - character ?receiver - character).",
+        "(snack-is-lie ?giver - character ?receiver - character)": "Source predicate (snack-is-lie ?giver - character ?receiver - character).",
+        "(trusts ?character1 - character ?character2 - character)": "Source predicate (trusts ?character1 - character ?character2 - character).",
+        "(compassionate ?character - character)": "Source predicate (compassionate ?character - character).",
+        "(at ?character - character ?place - object)": "The character is at the specified place or object.",
+        "(happy ?character - character)": "The character is happy.",
+        "(sad ?character - character)": "The character is sad.",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(at ?character - character ?place - place)": "The character is at the specified place or object."
+    },
+    "operators": {
+        "offer-snack": "(:action offer-snack\n :parameters (?giver - character ?receiver - character)\n :precondition (and (at ?receiver ?giver) (compassionate ?giver))\n :effect (offered-snack ?giver ?receiver)\n)",
+        "go-to-place": "(:action go-to-place\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (at ?character1 ?character2)) (happy ?character1))\n :effect (and (at ?character1 ?character2) (not (happy ?character1)))\n)",
+        "run-away": "(:action run-away\n :parameters (?runner - character ?from - character)\n :precondition (and (at ?runner ?from) (sad ?runner))\n :effect (and (not (at ?runner ?from)) (not (trusts ?runner ?from)))\n)",
+        "learn-lesson": "(:action learn-lesson\n :parameters (?character - character)\n :precondition (and (sad ?character) (not (trusts ?character ?character)))\n :effect (and (not (sad ?character)) (happy ?character))\n)",
+        "reveal-lie": "(:action reveal-lie\n :parameters (?giver - character ?receiver - character)\n :precondition (and (offered-snack ?giver ?receiver) (not (compassionate ?giver)))\n :effect (and (snack-is-lie ?giver ?receiver) (not (happy ?receiver)) (sad ?receiver))\n)",
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)"
+    }
+}

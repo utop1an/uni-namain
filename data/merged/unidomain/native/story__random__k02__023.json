@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(sleeping ?character - character)": "Source predicate (sleeping ?character - character).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(has-energy ?character - character)": "Source predicate (has-energy ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(wolves-attack ?place - place)": "Source predicate (wolves-attack ?place - place).",
+        "(wolves-killed ?character - character)": "Source predicate (wolves-killed ?character - character)."
+    },
+    "operators": {
+        "start-playing": "(:action start-playing\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (playing ?character)) (has-energy ?character))\n :effect (playing ?character)\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character)\n :precondition (playing ?character)\n :effect (and (not (playing ?character)) (tired ?character))\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (and (tired ?character) (not (sleeping ?character)))\n :effect (and (not (awake ?character)) (sleeping ?character))\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (sleeping ?character)\n :effect (and (awake ?character) (not (sleeping ?character)) (not (tired ?character)) (has-energy ?character))\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "kill-wolves": "(:action kill-wolves\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place) (wolves-attack ?place))\n :effect (wolves-killed ?character)\n)",
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(clean ?mop - mop)": "Source predicate (clean ?mop - mop).",
+        "(pretty ?mop - mop)": "Source predicate (pretty ?mop - mop).",
+        "(disgusting ?mop - mop)": "Source predicate (disgusting ?mop - mop).",
+        "(selected ?mop - mop)": "Source predicate (selected ?mop - mop).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a mop.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(riding ?character - character ?vehicle - vehicle)": "Source predicate (riding ?character - character ?vehicle - vehicle).",
+        "(relaxed ?character - character)": "Source predicate (relaxed ?character - character).",
+        "(flying ?character - character)": "Source predicate (flying ?character - character).",
+        "(in-vehicle ?character - character ?vehicle - vehicle)": "Source predicate (in-vehicle ?character - character ?vehicle - vehicle)."
+    },
+    "operators": {
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (at ?character ?place)\n)",
+        "select-mop :parameters (?character - character ?item - mop ?place - place) :precondition (and (at ?character ?place) (has ?character ?item)) :effect (selected ?item))": "(:action select-mop :parameters (?character - character ?item - mop ?place - place) :precondition (and (at ?character ?place) (has ?character ?item)) :effect (selected ?item))",
+        "receive-item :parameters (?character - character ?dog - character ?item - item ?place - place) :precondition (and (at ?character ?place) (at ?dog ?place) (has ?dog ?item)) :effect (and (not (has ?dog ?item)) (has ?character ?item)))": "(:action receive-item :parameters (?character - character ?dog - character ?item - item ?place - place) :precondition (and (at ?character ?place) (at ?dog ?place) (has ?dog ?item)) :effect (and (not (has ?dog ?item)) (has ?character ?item)))",
+        "stop-riding": "(:action stop-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (riding ?character ?vehicle))\n :effect (not (riding ?character ?vehicle))\n)",
+        "start-flying": "(:action start-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (flying ?character)))\n :effect (flying ?character)\n)",
+        "stop-flying": "(:action stop-flying\n :parameters (?character - character)\n :precondition (and (alive ?character) (flying ?character))\n :effect (not (flying ?character))\n)",
+        "try-relax": "(:action try-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (relaxed ?character)))\n :effect (relaxed ?character)\n)",
+        "stop-relax": "(:action stop-relax\n :parameters (?character - character)\n :precondition (and (alive ?character) (relaxed ?character))\n :effect (not (relaxed ?character))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "start-riding": "(:action start-riding\n :parameters (?character - character ?vehicle - vehicle)\n :precondition (and (alive ?character) (has ?character ?vehicle) (not (riding ?character ?vehicle)))\n :effect (riding ?character ?vehicle)\n)"
+    }
+}

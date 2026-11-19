@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?thing - character ?location - location)": "Source predicate (at ?thing - character ?location - location).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(alive ?character - character)": "The character is alive.",
+        "(has-emotion ?character - character ?emotion - emotion)": "Source predicate (has-emotion ?character - character ?emotion - emotion).",
+        "(knows-change ?character - character)": "Source predicate (knows-change ?character - character).",
+        "(memorize ?character - character)": "Source predicate (memorize ?character - character)."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (player ?character) (connected ?to ?from) (at ?character ?from) (knows ?character))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "interrogate-character": "(:action interrogate-character\n :parameters (?interrogator - character ?interrogated - character ?location - location)\n :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?interrogated ?location) (apprehended ?interrogated))\n :effect (knows ?interrogator)\n)",
+        "place-victim": "(:action place-victim\n :parameters (?placer - character ?victim - character ?location - location ?placed - location)\n :precondition (and (henchman ?placer) (has ?placer ?victim) (at ?placer ?location) (connected ?placed ?location))\n :effect (and (not (has ?placer ?victim)) (at ?victim ?placed) (captured ?victim))\n)",
+        "save-character": "(:action save-character\n :parameters (?saver - character ?saved - character ?notsaved - character ?location - location)\n :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location)))\n :effect (and (saved ?saved ?saver) (not (alive ?notsaved)))\n)",
+        "experience-emotion": "(:action experience-emotion\n :parameters (?character - character ?emotion - emotion)\n :precondition (alive ?character)\n :effect (has-emotion ?character ?emotion)\n)",
+        "notice-change": "(:action notice-change\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-change ?character)\n)",
+        "memorize-appearance": "(:action memorize-appearance\n :parameters (?character - character)\n :precondition (and (alive ?character) (knows-change ?character))\n :effect (memorize ?character)\n)"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(alive ?c - character)": "Source predicate (alive ?c - character).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(has ?character - character ?thing - thing)": "The character has the thing.",
+        "(at ?c - character ?location - (either house room))": "Character ?c is at location ?location, which is either a house or a room.",
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?room - room)": "Character ?c is at location ?location, which is either a house or a room."
+    },
+    "operators": {
+        "walk :parameters (?c - character ?from ?to - (either house room)) :precondition (and (alive ?c) (at ?c ?from) (not (eaten ?c))) :effect (and (not (at ?c ?from)) (at ?c ?to) (when (and (rescuer ?c)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))": "(:action walk :parameters (?c - character ?from ?to - (either house room)) :precondition (and (alive ?c) (at ?c ?from) (not (eaten ?c))) :effect (and (not (at ?c ?from)) (at ?c ?to) (when (and (rescuer ?c)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))",
+        "eat :parameters (?m - wolf ?c - human ?location - (either house room)) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?location) (at ?c ?location) (monster ?m)) :effect (and (eaten ?c)))": "(:action eat :parameters (?m - wolf ?c - human ?location - (either house room)) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?location) (at ?c ?location) (monster ?m)) :effect (and (eaten ?c)))",
+        "escape :parameters (?c - human ?m - wolf ?location - (either house room)) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?location)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?location)))": "(:action escape :parameters (?c - human ?m - wolf ?location - (either house room)) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?location)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?location)))",
+        "kill :parameters (?character - character ?m - wolf ?thing - thing ?location - (either house room)) :precondition (and (alive ?character) (alive ?m) (has ?character ?thing) (at ?character ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?character - character ?m - wolf ?thing - thing ?location - (either house room)) :precondition (and (alive ?character) (alive ?m) (has ?character ?thing) (at ?character ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "give :parameters (?giver ?recipient - human ?thing - thing ?location - (either house room)) :precondition (and (not (eaten ?recipient)) (alive ?giver) (alive ?recipient) (has ?giver ?thing) (at ?giver ?location) (at ?recipient ?location)) :effect (and (has ?recipient ?thing) (not (has ?giver ?thing))))": "(:action give :parameters (?giver ?recipient - human ?thing - thing ?location - (either house room)) :precondition (and (not (eaten ?recipient)) (alive ?giver) (alive ?recipient) (has ?giver ?thing) (at ?giver ?location) (at ?recipient ?location)) :effect (and (has ?recipient ?thing) (not (has ?giver ?thing))))",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "enter :parameters (?c - character ?source - (either house room) ?destination - room) :precondition (and (not (locked ?destination)) (at ?c ?source)) :effect (and (not (at ?c ?source)) (at ?c ?destination)))": "(:action enter :parameters (?c - character ?source - (either house room) ?destination - room) :precondition (and (not (locked ?destination)) (at ?c ?source)) :effect (and (not (at ?c ?source)) (at ?c ?destination)))",
+        "search-for :parameters (?c - character ?thing - thing ?location - room) :precondition (and (at ?c ?location) (in ?thing ?location)) :effect (and (has ?c ?thing) (not (in ?thing ?location))))": "(:action search-for :parameters (?c - character ?thing - thing ?location - room) :precondition (and (at ?c ?location) (in ?thing ?location)) :effect (and (has ?c ?thing) (not (in ?thing ?location))))"
+    }
+}

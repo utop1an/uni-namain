@@ -1,0 +1,41 @@
+{
+    "predicates": {
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(shares ?character1 - character ?character2 - character ?object - object)": "Source predicate (shares ?character1 - character ?character2 - character ?object - object).",
+        "(friend ?character1 - character ?character2 - character)": "Source predicate (friend ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(practice ?character1 - character ?character2 - character)": "Source predicate (practice ?character1 - character ?character2 - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has-weapon ?character - character)": "Source predicate (has-weapon ?character - character).",
+        "(in-group ?character - character ?group - group)": "Source predicate (in-group ?character - character ?group - group).",
+        "(group-exists ?group - group)": "Source predicate (group-exists ?group - group).",
+        "(has-electronics ?character - character)": "Source predicate (has-electronics ?character - character).",
+        "(believes-in-fairies ?character - character)": "Source predicate (believes-in-fairies ?character - character).",
+        "(performing ?character - character)": "Source predicate (performing ?character - character).",
+        "(applause)": "Source predicate (applause).",
+        "(satisfied ?character - character)": "Source predicate (satisfied ?character - character).",
+        "(disappeared ?character - character)": "Source predicate (disappeared ?character - character).",
+        "(trick-performed)": "Source predicate (trick-performed)."
+    },
+    "operators": {
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (has ?character ?object))\n :effect (has ?character ?object)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (and (has ?sharer ?object) (not (shares ?sharer ?receiver ?object)))\n :effect (shares ?sharer ?receiver ?object)\n)",
+        "unshare": "(:action unshare\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (shares ?sharer ?receiver ?object)\n :effect (not (shares ?sharer ?receiver ?object))\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friend ?character1 ?character2)\n)",
+        "cheer-up": "(:action cheer-up\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (sad ?character2))\n :effect (and (not (sad ?character2)) (happy ?character2))\n)",
+        "help-practice": "(:action help-practice\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (not (ready ?character2)))\n :effect (practice ?character1 ?character2)\n)",
+        "become-ready": "(:action become-ready\n :parameters (?character - character)\n :precondition (exists (?helper - character) (practice ?helper ?character))\n :effect (ready ?character)\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "fight": "(:action fight\n :parameters (?fighter1 - character ?fighter2 - character)\n :precondition (and (not (= ?fighter1 ?fighter2)) (alive ?fighter1) (has-weapon ?fighter1) (alive ?fighter2) (has-weapon ?fighter2))\n :effect (and)\n)",
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)",
+        "acquire-electronics": "(:action acquire-electronics\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (has-electronics ?character)))\n :effect (has-electronics ?character)\n)",
+        "stop-believing": "(:action stop-believing\n :parameters (?character - character)\n :precondition (and (alive ?character) (believes-in-fairies ?character))\n :effect (not (believes-in-fairies ?character))\n)",
+        "perform-show": "(:action perform-show\n :parameters (?magician - character)\n :precondition (not (performing ?magician))\n :effect (and (performing ?magician) (applause))\n)",
+        "perform-final-trick": "(:action perform-final-trick\n :parameters (?magician - character)\n :precondition (and (performing ?magician) (not (trick-performed)))\n :effect (and (trick-performed) (disappeared ?magician))\n)",
+        "become-satisfied": "(:action become-satisfied\n :parameters (?character - character)\n :precondition (and (performing ?character) (trick-performed) (applause) (not (satisfied ?character)))\n :effect (satisfied ?character)\n)",
+        "stop-applause": "(:action stop-applause\n :parameters ()\n :precondition (applause)\n :effect (not (applause))\n)"
+    }
+}

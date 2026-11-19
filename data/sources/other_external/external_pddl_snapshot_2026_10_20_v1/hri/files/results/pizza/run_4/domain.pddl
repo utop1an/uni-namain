@@ -1,0 +1,27 @@
+(define (domain pizza)
+    (:requirements :disjunctive-preconditions :equality :existential-preconditions :strips :typing)
+    (:types CONTAINER FACILITY LIQUID_INGREDIENT SOLID_INGREDIENT SURFACE basilicum bottle_for_olive_oil bottle_for_tomato_sauce bowl_for_basilicum bowl_for_gorgonzola bowl_for_mozzarella bowl_for_mushrooms bowl_for_olives bowl_for_oregano bowl_for_peperoni bowl_for_pepper bowl_for_salami bowl_for_salt gorgonzola mozzarella mushrooms olive_oil olives oregano oven peperoni pepper plate salami salt table tomato_sauce)
+    (:predicates 
+    (isEmpty ?surface - SURFACE)  
+    (isLiquid ?liquidIngredient - LIQUID_INGREDIENT)  
+    (isSolid ?solidIngredient - SOLID_INGREDIENT)  
+    (isWarm ?facility - FACILITY)  
+    (onTable ?surface - SURFACE)  
+    (surfaceContainsLiquid ?surface - SURFACE ?liquidIngredient - LIQUID_INGREDIENT)  
+    (surfaceContainsSolid ?surface - SURFACE ?solidIngredient - SOLID_INGREDIENT))
+    (:action addLiquidTopping
+        :parameters (?liquidIngredient - LIQUID_INGREDIENT ?surface - SURFACE)
+        :precondition (and (isLiquid ?liquidIngredient) (onTable ?surface))
+        :effect (surfaceContainsLiquid ?surface ?liquidIngredient)
+    )
+     (:action addSolidTopping
+        :parameters (?solidIngredient - SOLID_INGREDIENT ?surface - SURFACE)
+        :precondition (and (isSolid ?solidIngredient) (onTable ?surface) (isEmpty ?surface))
+        :effect (and (surfaceContainsSolid ?surface ?solidIngredient) (not (isEmpty ?surface)))
+    )
+     (:action bakePizza
+        :parameters (?facility - FACILITY ?surface - SURFACE)
+        :precondition (and (isWarm ?facility) (onTable ?surface))
+        :effect (not (isEmpty ?surface))
+    )
+)

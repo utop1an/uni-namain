@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(shares ?character1 - character ?character2 - character ?object - object)": "Source predicate (shares ?character1 - character ?character2 - character ?object - object).",
+        "(knows ?character1 - character ?character2 - character)": "Source predicate (knows ?character1 - character ?character2 - character).",
+        "(together ?character1 - character ?character2 - character)": "Source predicate (together ?character1 - character ?character2 - character).",
+        "(missing ?character - character)": "Source predicate (missing ?character - character).",
+        "(relationship ?character1 - character ?character2 - character)": "Source predicate (relationship ?character1 - character ?character2 - character).",
+        "(searching ?searcher - character ?target - character)": "Source predicate (searching ?searcher - character ?target - character).",
+        "(found ?searcher - character ?target - character)": "Source predicate (found ?searcher - character ?target - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has-power ?character - character ?power - power)": "Source predicate (has-power ?character - character ?power - power).",
+        "(brothers ?character1 - character ?character2 - character)": "Source predicate (brothers ?character1 - character ?character2 - character).",
+        "(tyrant ?character - character)": "Source predicate (tyrant ?character - character).",
+        "(at-peace ?nation - nation)": "Source predicate (at-peace ?nation - nation).",
+        "(sharing-technology ?nation1 - nation ?nation2 - nation)": "Source predicate (sharing-technology ?nation1 - nation ?nation2 - nation).",
+        "(advanced-technology ?nation - nation)": "Source predicate (advanced-technology ?nation - nation).",
+        "(facing-destruction)": "Source predicate (facing-destruction)."
+    },
+    "operators": {
+        "share": "(:action share\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (and (has ?sharer ?object) (not (shares ?sharer ?receiver ?object)))\n :effect (shares ?sharer ?receiver ?object)\n)",
+        "unshare": "(:action unshare\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (shares ?sharer ?receiver ?object)\n :effect (not (shares ?sharer ?receiver ?object))\n)",
+        "start-search": "(:action start-search\n :parameters (?searcher - character ?target - character)\n :precondition (and (not (= ?searcher ?target)) (not (searching ?searcher ?target)) (missing ?target))\n :effect (searching ?searcher ?target)\n)",
+        "stop-search": "(:action stop-search\n :parameters (?searcher - character ?target - character)\n :precondition (searching ?searcher ?target)\n :effect (not (searching ?searcher ?target))\n)",
+        "find": "(:action find :parameters (?searcher - character ?target - character) :precondition (and (not (has ?searcher ?target)) (searching ?searcher ?target) (missing ?target)) :effect (and (has ?searcher ?target) (not (missing ?target)) (found ?searcher ?target)))",
+        "start-relationship": "(:action start-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (relationship ?character1 ?character2)) (knows ?character1 ?character2))\n :effect (relationship ?character1 ?character2)\n)",
+        "end-relationship": "(:action end-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (relationship ?character1 ?character2)\n :effect (not (relationship ?character1 ?character2))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "confront": "(:action confront\n :parameters (?confronter - character ?confronted - character ?place - place)\n :precondition (and (not (= ?confronter ?confronted)) (alive ?confronter) (at ?confronter ?place) (alive ?confronted) (at ?confronted ?place))\n :effect (and)\n)",
+        "defeat": "(:action defeat\n :parameters (?defeater - character ?defeated - character ?place - place)\n :precondition (and (not (= ?defeater ?defeated)) (alive ?defeater) (at ?defeater ?place) (alive ?defeated) (at ?defeated ?place))\n :effect (not (alive ?defeated))\n)",
+        "show-mercy": "(:action show-mercy\n :parameters (?merciful - character ?recipient - character ?place - place)\n :precondition (and (not (= ?merciful ?recipient)) (alive ?merciful) (at ?merciful ?place) (not (alive ?recipient)) (at ?recipient ?place))\n :effect (alive ?recipient)\n)",
+        "unite": "(:action unite\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (facing-destruction))\n :effect (and (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n)",
+        "develop-technology": "(:action develop-technology\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (sharing-technology ?nation1 ?nation2))\n :effect (and (advanced-technology ?nation1) (advanced-technology ?nation2))\n)",
+        "avoid-destruction": "(:action avoid-destruction\n :parameters ()\n :precondition (and (advanced-technology nation1) (advanced-technology nation2) (advanced-technology nation3))\n :effect (not (facing-destruction))\n)",
+        "maintain-peace": "(:action maintain-peace\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n :effect (and (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n)"
+    }
+}

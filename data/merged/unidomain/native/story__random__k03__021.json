@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(pranked ?pranker - character ?target - character)": "Source predicate (pranked ?pranker - character ?target - character).",
+        "(in ?pin - pin ?box - box)": "Source predicate (in ?pin - pin ?box - box).",
+        "(tidy ?box - box)": "Source predicate (tidy ?box - box).",
+        "(on-floor ?pin - pin)": "Source predicate (on-floor ?pin - pin).",
+        "(scared ?pin - pin)": "Source predicate (scared ?pin - pin).",
+        "(alive ?pin - pin)": "Source predicate (alive ?pin - pin).",
+        "(at ?character - character ?box - box)": "Source predicate (at ?character - character ?box - box).",
+        "(fairy ?character - character)": "Source predicate (fairy ?character - character).",
+        "(friends ?c1 - character ?c2 - character)": "Source predicate (friends ?c1 - character ?c2 - character).",
+        "(kind ?character - character)": "Source predicate (kind ?character - character).",
+        "(knows-wisdom ?character - character)": "Source predicate (knows-wisdom ?character - character).",
+        "(lost ?character - character)": "Source predicate (lost ?character - character).",
+        "(found ?character - character)": "Source predicate (found ?character - character)."
+    },
+    "operators": {
+        "prank": "(:action prank\n :parameters (?pranker - character ?target - character)\n :precondition (and)\n :effect (pranked ?pranker ?target)\n)",
+        "pick-up-pin": "(:action pick-up-pin\n :parameters (?character - character ?pin - pin ?box - box)\n :precondition (and (at ?character ?box) (on-floor ?pin) (tidy ?box))\n :effect (and (not (on-floor ?pin)) (in ?pin ?box) (not (scared ?pin)))\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character ?box - box)\n :precondition (and (at ?character ?box) (tidy ?box))\n :effect (forall (?pin - pin) (and (not (in ?pin ?box)) (on-floor ?pin) (scared ?pin)))\n)",
+        "bring-to-life": "(:action bring-to-life\n :parameters (?fairy - character ?pin - pin ?box - box)\n :precondition (and (fairy ?fairy) (in ?pin ?box))\n :effect (alive ?pin)\n)",
+        "become-kind": "(:action become-kind\n :parameters (?character - character)\n :precondition (not (kind ?character))\n :effect (kind ?character)\n)",
+        "learn-wisdom": "(:action learn-wisdom\n :parameters (?learner - character ?teacher - character)\n :precondition (and (not (knows-wisdom ?learner)) (knows-wisdom ?teacher))\n :effect (knows-wisdom ?learner)\n)",
+        "help": "(:action help\n :parameters (?helper - character ?helpee - character)\n :precondition (and (kind ?helper) (lost ?helpee))\n :effect (found ?helpee)\n)",
+        "become-friends": "(:action become-friends :parameters (?fairy - character ?pin - pin ?box - box ?c2 - character) :precondition (and (fairy ?fairy) (alive ?pin) (not (friends ?fairy ?c2)) (not (= ?fairy ?c2))) :effect (and (friends ?fairy ?c2)))"
+    }
+}

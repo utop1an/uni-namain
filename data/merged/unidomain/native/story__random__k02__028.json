@@ -1,0 +1,21 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has-emotion ?character - character ?emotion - emotion)": "Source predicate (has-emotion ?character - character ?emotion - emotion).",
+        "(knows-change ?character - character)": "Source predicate (knows-change ?character - character).",
+        "(memorize ?character - character)": "Source predicate (memorize ?character - character)."
+    },
+    "operators": {
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)",
+        "experience-emotion": "(:action experience-emotion\n :parameters (?character - character ?emotion - emotion)\n :precondition (alive ?character)\n :effect (has-emotion ?character ?emotion)\n)",
+        "notice-change": "(:action notice-change\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-change ?character)\n)",
+        "memorize-appearance": "(:action memorize-appearance\n :parameters (?character - character)\n :precondition (and (alive ?character) (knows-change ?character))\n :effect (memorize ?character)\n)"
+    }
+}

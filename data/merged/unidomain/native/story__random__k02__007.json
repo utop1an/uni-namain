@@ -1,0 +1,20 @@
+{
+    "predicates": {
+        "(explored ?character - character ?place - place)": "Source predicate (explored ?character - character ?place - place).",
+        "(interacted ?character1 - character ?character2 - character)": "Source predicate (interacted ?character1 - character ?character2 - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(buried ?item - item ?place - place)": "Source predicate (buried ?item - item ?place - place).",
+        "(destroyed ?item - item)": "Source predicate (destroyed ?item - item).",
+        "(explosives-set ?place - place)": "Source predicate (explosives-set ?place - place)."
+    },
+    "operators": {
+        "interact": "(:action interact\n :parameters (?character1 - character ?character2 - character ?place - place)\n :precondition (and (not (= ?character1 ?character2)) (at ?character1 ?place) (at ?character2 ?place))\n :effect (interacted ?character1 ?character2)\n)",
+        "explore": "(:action explore\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (explored ?character ?place)\n)",
+        "destroy-item": "(:action destroy-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (destroyed ?item))\n)",
+        "travel": "(:action travel :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "set-explosives": "(:action set-explosives\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (explosives-set ?place)\n)",
+        "detonate-explosives": "(:action detonate-explosives\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (explosives-set ?place))\n :effect (forall (?item - item) (when (buried ?item ?place) (destroyed ?item)))\n)"
+    }
+}

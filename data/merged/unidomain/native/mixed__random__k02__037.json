@@ -1,0 +1,37 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(at ?character - character ?room - room)": "Source predicate (at ?character - character ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing - thing)": "Source predicate (hidden ?thing - thing).",
+        "(has ?character - character ?thing - thing)": "Source predicate (has ?character - character ?thing - thing).",
+        "(believes-locked ?c - character ?room - room)": "Source predicate (believes-locked ?c - character ?room - room).",
+        "(believes-at ?c - character ?character - character ?room - room)": "Source predicate (believes-at ?c - character ?character - character ?room - room).",
+        "(believes-unlocked-by ?c - character ?room - room ?key - key)": "Source predicate (believes-unlocked-by ?c - character ?room - room ?key - key).",
+        "(believes-in ?c - character ?thing - thing ?room - room)": "Source predicate (believes-in ?c - character ?thing - thing ?room - room).",
+        "(believes-hidden ?c - character ?thing - thing)": "Source predicate (believes-hidden ?c - character ?thing - thing).",
+        "(believes-has ?c - character ?character - character ?thing - thing)": "Source predicate (believes-has ?c - character ?character - character ?thing - thing).",
+        "(wearing-hat ?character - character)": "Source predicate (wearing-hat ?character - character).",
+        "(is-dog ?character - character)": "Source predicate (is-dog ?character - character).",
+        "(is-fairy ?character - character)": "Source predicate (is-fairy ?character - character).",
+        "(has-magic-flower ?character - character)": "Source predicate (has-magic-flower ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "enter-success": "(:action enter-success\n :parameters (?character - character ?roomfrom - room ?roomto - room)\n :precondition (and (not (believes-locked ?character ?roomto)) (believes-at ?character ?character ?roomfrom) (not (locked ?roomto)) (at ?character ?roomfrom))\n :effect (and (not (at ?character ?roomfrom)) (at ?character ?roomto) (forall (?char2 - character) (when (at ?char2 ?roomto) (and (believes-at ?character ?char2 ?roomto) (believes-at ?char2 ?character ?roomto)))) (forall (?thing - thing) (when (and (in ?thing ?roomto) (not (hidden ?thing))) (believes-in ?character ?thing ?roomto))) (not (believes-at ?character ?character ?roomfrom)) (believes-at ?character ?character ?roomto))\n)",
+        "enter-fail": "(:action enter-fail\n :parameters (?character - character ?roomfrom - room ?roomto - room)\n :precondition (and (not (believes-locked ?character ?roomto)) (believes-at ?character ?character ?roomfrom) (not (and (not (locked ?roomto)) (at ?character ?roomfrom))))\n :effect (when (and (locked ?roomto) (at ?character ?roomfrom)) (believes-locked ?character ?roomto))\n)",
+        "speak-to-success_in": "(:action speak-to-success_in\n :parameters (?informant - character ?in_thing - thing ?in_room - room ?informed - character ?room - room)\n :precondition (and (at ?informant ?room) (at ?informed ?room) (believes-in ?informant ?in_thing ?in_room) (believes-at ?informant ?informant ?room) (believes-at ?informant ?informed ?room) (believes-at ?informed ?informant ?room) (believes-at ?informed ?informed ?room))\n :effect (when (and (at ?informant ?room) (at ?informed ?room)) (believes-in ?informed ?in_thing ?in_room))\n)",
+        "speak-to-success_unlocked-by": "(:action speak-to-success_unlocked-by\n :parameters (?informant - character ?unlocked-by_room - room ?unlocked-by_key - key ?informed - character ?room - room)\n :precondition (and (at ?informant ?room) (at ?informed ?room) (believes-unlocked-by ?informant ?unlocked-by_room ?unlocked-by_key) (believes-at ?informant ?informant ?room) (believes-at ?informant ?informed ?room) (believes-at ?informed ?informant ?room) (believes-at ?informed ?informed ?room))\n :effect (when (and (at ?informant ?room) (at ?informed ?room)) (believes-unlocked-by ?informed ?unlocked-by_room ?unlocked-by_key))\n)",
+        "search-for-success": "(:action search-for-success\n :parameters (?character - character ?thing - thing ?room - room)\n :precondition (and (believes-at ?character ?character ?room) (believes-in ?character ?thing ?room) (at ?character ?room) (in ?thing ?room))\n :effect (and (has ?character ?thing) (not (in ?thing ?room)) (believes-has ?character ?character ?thing) (not (believes-in ?character ?thing ?room)))\n)",
+        "search-for-fail": "(:action search-for-fail\n :parameters (?character - character ?thing - thing ?room - room)\n :precondition (and (believes-at ?character ?character ?room) (believes-in ?character ?thing ?room) (not (and (at ?character ?room) (in ?thing ?room))))\n :effect (when (and (not (in ?thing ?room)) (at ?character ?room)) (not (believes-in ?character ?thing ?room)))\n)",
+        "unlock-success": "(:action unlock-success\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (believes-locked ?character ?room) (believes-unlocked-by ?character ?room ?key) (believes-has ?character ?character ?key) (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)) (not (believes-locked ?character ?room)))\n)",
+        "unlock-fail": "(:action unlock-fail\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (believes-locked ?character ?room) (believes-unlocked-by ?character ?room ?key) (believes-has ?character ?character ?key) (not (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))))\n :effect (when (and (locked ?room) (has ?character ?key) (not (unlocked-by ?room ?key))) (not (believes-unlocked-by ?character ?room ?key)))\n)",
+        "remove-hat": "(:action remove-hat\n :parameters (?remover - character ?wearer - character)\n :precondition (and (not (= ?remover ?wearer)) (wearing-hat ?wearer))\n :effect (not (wearing-hat ?wearer))\n)",
+        "transform": "(:action transform\n :parameters (?character - character)\n :precondition (is-dog ?character)\n :effect (and (not (is-dog ?character)) (is-fairy ?character))\n)",
+        "give-magic-flower": "(:action give-magic-flower\n :parameters (?giver - character ?receiver - character)\n :precondition (and (not (= ?giver ?receiver)) (is-fairy ?giver))\n :effect (has-magic-flower ?receiver)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2))\n :effect (playing-together ?character1 ?character2)\n)"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "predicates": {
+        "(at ?character - character ?room - room)": "Source predicate (at ?character - character ?room - room).",
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character).",
+        "(performing ?character - character)": "Source predicate (performing ?character - character).",
+        "(applause)": "Source predicate (applause).",
+        "(satisfied ?character - character)": "Source predicate (satisfied ?character - character).",
+        "(disappeared ?character - character)": "Source predicate (disappeared ?character - character).",
+        "(trick-performed)": "Source predicate (trick-performed)."
+    },
+    "operators": {
+        "move": "(:action move\n :parameters (?character - character ?from - room ?to - room)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "take-item": "(:action take-item\n :parameters (?character - character ?item - item ?room - room)\n :precondition (and (at ?character ?room) (in ?item ?room))\n :effect (and (not (in ?item ?room)) (has ?character ?item))\n)",
+        "leave-item": "(:action leave-item\n :parameters (?character - character ?item - item ?room - room)\n :precondition (and (at ?character ?room) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (in ?item ?room))\n)",
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "perform-show": "(:action perform-show\n :parameters (?magician - character)\n :precondition (not (performing ?magician))\n :effect (and (performing ?magician) (applause))\n)",
+        "perform-final-trick": "(:action perform-final-trick\n :parameters (?magician - character)\n :precondition (and (performing ?magician) (not (trick-performed)))\n :effect (and (trick-performed) (disappeared ?magician))\n)",
+        "become-satisfied": "(:action become-satisfied\n :parameters (?character - character)\n :precondition (and (performing ?character) (trick-performed) (applause) (not (satisfied ?character)))\n :effect (satisfied ?character)\n)",
+        "stop-applause": "(:action stop-applause\n :parameters ()\n :precondition (applause)\n :effect (not (applause))\n)"
+    }
+}

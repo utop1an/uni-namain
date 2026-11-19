@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?character - character ?location - object)": "The character is at the specified object, which may be a location.",
+        "(has ?character - character ?entity - (either character object))": "The character has the specified entity, which may be a character or an object.",
+        "(alive ?character - character)": "The character is alive.",
+        "(shaking-tree ?character - character)": "Source predicate (shaking-tree ?character - character).",
+        "(wind-blows)": "Source predicate (wind-blows).",
+        "(has ?character - character ?object - object)": "The character has the specified entity, which may be a character or an object."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?actor - character ?destination - location ?origin - location)\n :precondition (and (player ?actor) (connected ?destination ?origin) (at ?actor ?origin) (knows ?actor))\n :effect (and (not (at ?actor ?origin)) (at ?actor ?destination))\n)",
+        "interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - object) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))": "(:action interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - object) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))",
+        "place-victim :parameters (?placer - character ?captive - character ?source - location ?destination - location) :precondition (and (henchman ?placer) (has ?placer ?captive) (at ?placer ?source) (connected ?destination ?source)) :effect (and (not (has ?placer ?captive)) (at ?captive ?destination) (captured ?captive)))": "(:action place-victim :parameters (?placer - character ?captive - character ?source - location ?destination - location) :precondition (and (henchman ?placer) (has ?placer ?captive) (at ?placer ?source) (connected ?destination ?source)) :effect (and (not (has ?placer ?captive)) (at ?captive ?destination) (captured ?captive)))",
+        "save-character :parameters (?saver - character ?saved - character ?notsaved - character ?object - object) :precondition (and (player ?saver) (at ?saver ?object) (at ?saved ?object) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?object))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?object - object) :precondition (and (player ?saver) (at ?saver ?object) (at ?saved ?object) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?object))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "stop-shaking-tree": "(:action stop-shaking-tree\n :parameters (?character - character)\n :precondition (shaking-tree ?character)\n :effect (not (shaking-tree ?character))\n)",
+        "start-wind": "(:action start-wind\n :parameters ()\n :precondition (and)\n :effect (wind-blows)\n)",
+        "stop-wind": "(:action stop-wind\n :parameters ()\n :precondition (wind-blows)\n :effect (not (wind-blows))\n)",
+        "wind-blows-object :parameters (?entity - (either character object)) :precondition (wind-blows) :effect (not (has tim ?entity)))": "(:action wind-blows-object :parameters (?entity - (either character object)) :precondition (wind-blows) :effect (not (has tim ?entity)))",
+        "shake-tree": "(:action shake-tree\n :parameters (?character - character ?tree - object)\n :precondition (and (alive ?character) (at ?character ?tree))\n :effect (shaking-tree ?character)\n)",
+        "play :parameters (?character - character ?entity - (either character object)) :precondition (and (alive ?character) (has ?character ?entity)) :effect (and))": "(:action play :parameters (?character - character ?entity - (either character object)) :precondition (and (alive ?character) (has ?character ?entity)) :effect (and))"
+    }
+}

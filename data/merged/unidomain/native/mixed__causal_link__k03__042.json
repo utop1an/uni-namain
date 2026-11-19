@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "Character ?character is at place ?place; the source types place and location are unified as place.",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?object - object)": "Character ?character has ?object, which may be an object of any type, including another character.",
+        "(player ?character - character)": "The character is a player.",
+        "(connected ?to - location ?from - location)": "Location ?from is connected to location ?to.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(at ?thing - character ?location - location)": "Character ?character is at place ?place; the source types place and location are unified as place.",
+        "(has ?character - character ?character2 - character)": "Character ?character has ?object, which may be an object of any type, including another character."
+    },
+    "operators": {
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "move-location :parameters (?character - character ?destination - place ?source - place) :precondition (and (player ?character) (connected ?destination ?source) (at ?character ?source) (knows ?character)) :effect (and (not (at ?character ?source)) (at ?character ?destination)))": "(:action move-location :parameters (?character - character ?destination - place ?source - place) :precondition (and (player ?character) (connected ?destination ?source) (at ?character ?source) (knows ?character)) :effect (and (not (at ?character ?source)) (at ?character ?destination)))",
+        "interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - place) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))": "(:action interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - place) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))",
+        "save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - place) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - place) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "place-victim :parameters (?placer - character ?held-character - character ?place - place ?destination - place) :precondition (and (henchman ?placer) (has ?placer ?held-character) (at ?placer ?place) (connected ?destination ?place)) :effect (and (not (has ?placer ?held-character)) (at ?held-character ?destination) (captured ?held-character)))": "(:action place-victim :parameters (?placer - character ?held-character - character ?place - place ?destination - place) :precondition (and (henchman ?placer) (has ?placer ?held-character) (at ?placer ?place) (connected ?destination ?place)) :effect (and (not (has ?placer ?held-character)) (at ?held-character ?destination) (captured ?held-character)))"
+    }
+}

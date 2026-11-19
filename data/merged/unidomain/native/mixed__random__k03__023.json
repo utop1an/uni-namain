@@ -1,0 +1,41 @@
+{
+    "predicates": {
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(wearing ?character - character ?item - item)": "Source predicate (wearing ?character - character ?item - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?target - (either item character))": "The character has the target, which may be an item or another character.",
+        "(clean ?entity - object)": "The entity is clean.",
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(worker ?character - character)": "Source predicate (worker ?character - character).",
+        "(makes-toys ?character - character)": "Source predicate (makes-toys ?character - character).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(friends-with ?character1 - character ?character2 - character)": "Source predicate (friends-with ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(at ?thing - character ?location - location)": "The character is at the specified place.",
+        "(has ?character - character ?character2 - character)": "The character has the target, which may be an item or another character.",
+        "(clean ?place - object)": "The entity is clean."
+    },
+    "operators": {
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "adjust-item :parameters (?character - character ?target - item) :precondition (and (alive ?character) (has ?character ?target) (not (fits ?target ?character))) :effect (fits ?target ?character))": "(:action adjust-item :parameters (?character - character ?target - item) :precondition (and (alive ?character) (has ?character ?target) (not (fits ?target ?character))) :effect (fits ?target ?character))",
+        "wear-item :parameters (?character - character ?target - item) :precondition (and (alive ?character) (has ?character ?target) (fits ?target ?character) (not (wearing ?character ?target))) :effect (wearing ?character ?target))": "(:action wear-item :parameters (?character - character ?target - item) :precondition (and (alive ?character) (has ?character ?target) (fits ?target ?character) (not (wearing ?character ?target))) :effect (wearing ?character ?target))",
+        "start-working": "(:action start-working\n :parameters (?character - character)\n :precondition (and)\n :effect (worker ?character)\n)",
+        "make-toys": "(:action make-toys\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (makes-toys ?character)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (worker ?character1) (worker ?character2) (not (= ?character1 ?character2)))\n :effect (friends-with ?character1 ?character2)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (happy ?character)\n)",
+        "become-less-nervous": "(:action become-less-nervous\n :parameters (?character - character)\n :precondition (and (worker ?character) (nervous ?character))\n :effect (not (nervous ?character))\n)",
+        "move-location :parameters (?character - character ?to-place - place ?from-place - place) :precondition (and (player ?character) (connected ?to-place ?from-place) (at ?character ?from-place) (knows ?character)) :effect (and (not (at ?character ?from-place)) (at ?character ?to-place)))": "(:action move-location :parameters (?character - character ?to-place - place ?from-place - place) :precondition (and (player ?character) (connected ?to-place ?from-place) (at ?character ?from-place) (knows ?character)) :effect (and (not (at ?character ?from-place)) (at ?character ?to-place)))",
+        "interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - place) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))": "(:action interrogate-character :parameters (?interrogator - character ?interrogated - character ?place - place) :precondition (and (player ?interrogator) (at ?interrogator ?place) (at ?interrogated ?place) (apprehended ?interrogated)) :effect (knows ?interrogator))",
+        "save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - place) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - place) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "place-victim :parameters (?placer - character ?target - character ?place - place ?destination - place) :precondition (and (henchman ?placer) (has ?placer ?target) (at ?placer ?place) (connected ?destination ?place)) :effect (and (not (has ?placer ?target)) (at ?target ?destination) (captured ?target)))": "(:action place-victim :parameters (?placer - character ?target - character ?place - place ?destination - place) :precondition (and (henchman ?placer) (has ?placer ?target) (at ?placer ?place) (connected ?destination ?place)) :effect (and (not (has ?placer ?target)) (at ?target ?destination) (captured ?target)))",
+        "clean-entity": "(:action clean-entity :parameters (?character - character ?entity - (either item character)) :precondition (and (alive ?character) (has ?character ?entity) (not (clean ?entity)) (worker ?character)) :effect (clean ?entity))"
+    }
+}

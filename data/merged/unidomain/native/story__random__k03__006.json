@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(worker ?character - character)": "Source predicate (worker ?character - character).",
+        "(clean ?place - object)": "Source predicate (clean ?place - object).",
+        "(makes-toys ?character - character)": "Source predicate (makes-toys ?character - character).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(friends-with ?character1 - character ?character2 - character)": "Character1 is a friend of character2.",
+        "(happy ?character - character)": "The character is happy.",
+        "(practices ?dog1 - dog ?dog2 - dog)": "Source predicate (practices ?dog1 - dog ?dog2 - dog).",
+        "(participates ?dog - dog)": "Source predicate (participates ?dog - dog).",
+        "(wins ?dog - dog)": "Source predicate (wins ?dog - dog).",
+        "(plays-with-toy-stack ?dog - dog)": "Source predicate (plays-with-toy-stack ?dog - dog).",
+        "(friend ?entity1 - (either dog character) ?entity2 - (either dog character))": "Entity1 is a friend of entity2, where each entity is a dog or a character.",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(foggy ?place - place)": "Source predicate (foggy ?place - place).",
+        "(found ?item - item)": "Source predicate (found ?item - item).",
+        "(friends ?character1 - character ?character2 - character)": "Character1 is a friend of character2."
+    },
+    "operators": {
+        "start-working": "(:action start-working\n :parameters (?character - character)\n :precondition (and)\n :effect (worker ?character)\n)",
+        "clean-factory": "(:action clean-factory\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (clean factory)\n)",
+        "make-toys": "(:action make-toys\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (makes-toys ?character)\n)",
+        "become-less-nervous": "(:action become-less-nervous\n :parameters (?character - character)\n :precondition (and (worker ?character) (nervous ?character))\n :effect (not (nervous ?character))\n)",
+        "participate-in-race": "(:action participate-in-race\n :parameters (?dog - dog)\n :precondition (not (participates ?dog))\n :effect (participates ?dog)\n)",
+        "win-race": "(:action win-race\n :parameters (?dog - dog ?helper - dog)\n :precondition (and (participates ?dog) (practices ?dog ?helper))\n :effect (wins ?dog)\n)",
+        "play-with-toy-stack": "(:action play-with-toy-stack\n :parameters (?dog - dog)\n :precondition (not (plays-with-toy-stack ?dog))\n :effect (plays-with-toy-stack ?dog)\n)",
+        "practice-running :parameters (?dog1 - dog ?dog2 - dog) :precondition (and (friend ?dog1 ?dog2) (not (practices ?dog1 ?dog2))) :effect (practices ?dog1 ?dog2))": "(:action practice-running :parameters (?dog1 - dog ?dog2 - dog) :precondition (and (friend ?dog1 ?dog2) (not (practices ?dog1 ?dog2))) :effect (practices ?dog1 ?dog2))",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "search": "(:action search\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (not (found ?item)))\n :effect (when (not (foggy ?place)) (and (found ?item) (has ?character ?item)))\n)",
+        "clear-fog": "(:action clear-fog\n :parameters (?place - place)\n :precondition (foggy ?place)\n :effect (not (foggy ?place))\n)",
+        "become-friends": "(:action become-friends :parameters (?character1 - character ?character2 - character) :precondition (and (worker ?character1) (worker ?character2) (not (= ?character1 ?character2))) :effect (and (friends-with ?character1 ?character2) (friend ?character1 ?character2)))",
+        "become-happy": "(:action become-happy :parameters (?character - character) :precondition (worker ?character) :effect (happy ?character))"
+    }
+}

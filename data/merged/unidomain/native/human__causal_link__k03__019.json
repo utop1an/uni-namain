@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(player ?character - character)": "The character is a player.",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?entity - (either character thing))": "The character has an entity that is either a character or a thing.",
+        "(connected ?to - location ?from - location)": "Location ?from is connected to location ?to.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(alive ?character - character)": "The character is alive.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?room - room)": "The character is at the specified location, which may be a room.",
+        "(has ?character - character ?thing - thing)": "The character has an entity that is either a character or a thing."
+    },
+    "operators": {
+        "unlock :parameters (?character - character ?entity - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?entity) (has ?character ?entity)) :effect (and (not (locked ?room))))": "(:action unlock :parameters (?character - character ?entity - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?entity) (has ?character ?entity)) :effect (and (not (locked ?room))))",
+        "search-for :parameters (?character - character ?entity - (either character thing) ?location - room) :precondition (and (at ?character ?location) (in ?entity ?location)) :effect (and (has ?character ?entity) (not (in ?entity ?location))))": "(:action search-for :parameters (?character - character ?entity - (either character thing) ?location - room) :precondition (and (at ?character ?location) (in ?entity ?location)) :effect (and (has ?character ?entity) (not (in ?entity ?location))))",
+        "enter": "(:action enter :parameters (?character - character ?locationfrom - location ?roomto - room) :precondition (and (player ?character) (connected ?roomto ?locationfrom) (at ?character ?locationfrom) (knows ?character) (not (locked ?roomto))) :effect (and (not (at ?character ?locationfrom)) (at ?character ?roomto)))",
+        "interrogate-character": "(:action interrogate-character :parameters (?player-character - character ?detained-character - character ?interrogation-location - location) :precondition (and (player ?player-character) (at ?player-character ?interrogation-location) (at ?detained-character ?interrogation-location) (apprehended ?detained-character)) :effect (knows ?player-character))",
+        "save-character": "(:action save-character :parameters (?rescuer - character ?captive - character ?other-captive - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?captive ?place) (captured ?captive) (captured ?other-captive) (not (at ?other-captive ?place))) :effect (and (saved ?captive ?rescuer) (not (alive ?other-captive))))",
+        "place-victim": "(:action place-victim :parameters (?acting-character - character ?target-entity - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target-entity) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target-entity)) (at ?target-entity ?destination-location) (captured ?target-entity)))"
+    }
+}

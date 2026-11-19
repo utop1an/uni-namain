@@ -1,0 +1,30 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(alive ?c - character)": "Character ?c is alive.",
+        "(has ?character - character ?object - object)": "The character possesses the specified object.",
+        "(at ?character - character ?place - place)": "The character is at the specified place, which may be a house.",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(alive ?character - character)": "Character ?c is alive."
+    },
+    "operators": {
+        "walk :parameters (?c - character ?p1 ?p2 - place) :precondition (and (alive ?c) (at ?c ?p1) (not (eaten ?c))) :effect (and (not (at ?c ?p1)) (at ?c ?p2) (when (and (rescuer ?c)) (and (rescuer-at ?p2) (not (rescuer-at ?p1))))))": "(:action walk :parameters (?c - character ?p1 ?p2 - place) :precondition (and (alive ?c) (at ?c ?p1) (not (eaten ?c))) :effect (and (not (at ?c ?p1)) (at ?c ?p2) (when (and (rescuer ?c)) (and (rescuer-at ?p2) (not (rescuer-at ?p1))))))",
+        "eat :parameters (?m - wolf ?c - human ?p - place) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?p) (at ?c ?p) (monster ?m)) :effect (and (eaten ?c)))": "(:action eat :parameters (?m - wolf ?c - human ?p - place) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?p) (at ?c ?p) (monster ?m)) :effect (and (eaten ?c)))",
+        "escape :parameters (?c - human ?m - wolf ?p - place) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?p)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?p)))": "(:action escape :parameters (?c - human ?m - wolf ?p - place) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?p)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?p)))",
+        "kill :parameters (?character - character ?m - wolf ?object - object ?place - place) :precondition (and (alive ?character) (alive ?m) (has ?character ?object) (at ?character ?place) (at ?m ?place) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?character - character ?m - wolf ?object - object ?place - place) :precondition (and (alive ?character) (alive ?m) (has ?character ?object) (at ?character ?place) (at ?m ?place) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "give :parameters (?giver ?receiver - character ?o - object ?p - place) :precondition (and (not (eaten ?receiver)) (alive ?giver) (alive ?receiver) (has ?giver ?o) (at ?giver ?p) (at ?receiver ?p)) :effect (and (has ?receiver ?o) (not (has ?giver ?o))))": "(:action give :parameters (?giver ?receiver - character ?o - object ?p - place) :precondition (and (not (eaten ?receiver)) (alive ?giver) (alive ?receiver) (has ?giver ?o) (at ?giver ?p) (at ?receiver ?p)) :effect (and (has ?receiver ?o) (not (has ?giver ?o))))",
+        "detect-stasis :parameters (?c - character ?object - object) :precondition (and (alive ?c) (has ?c ?object) (ancient-technology ?object)) :effect (in-stasis ?object))": "(:action detect-stasis :parameters (?c - character ?object - object) :precondition (and (alive ?c) (has ?c ?object) (ancient-technology ?object)) :effect (in-stasis ?object))",
+        "request-tow :parameters (?c - character ?place - place) :precondition (and (alive ?c) (at ?c ?place)) :effect (requested-tow ?c ?place))": "(:action request-tow :parameters (?c - character ?place - place) :precondition (and (alive ?c) (at ?c ?place)) :effect (requested-tow ?c ?place))",
+        "discover-technology :parameters (?c - character ?object - object ?place - place) :precondition (and (alive ?c) (at ?c ?place)) :effect (and (has ?c ?object) (ancient-technology ?object)))": "(:action discover-technology :parameters (?c - character ?object - object ?place - place) :precondition (and (alive ?c) (at ?c ?place)) :effect (and (has ?c ?object) (ancient-technology ?object)))",
+        "transport-object :parameters (?c - character ?object - object ?from - place ?to - place) :precondition (and (alive ?c) (at ?c ?from) (has ?c ?object) (requested-tow ?c ?to)) :effect (and (not (at ?c ?from)) (at ?c ?to) (not (has ?c ?object))))": "(:action transport-object :parameters (?c - character ?object - object ?from - place ?to - place) :precondition (and (alive ?c) (at ?c ?from) (has ?c ?object) (requested-tow ?c ?to)) :effect (and (not (at ?c ?from)) (at ?c ?to) (not (has ?c ?object))))"
+    }
+}

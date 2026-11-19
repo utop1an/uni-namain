@@ -1,0 +1,22 @@
+{
+    "predicates": {
+        "(in-drawer ?toy - toy)": "Source predicate (in-drawer ?toy - toy).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(friends ?character - character ?toy - toy)": "Source predicate (friends ?character - character ?toy - toy).",
+        "(wants-to-take ?character - character ?toy - toy)": "Source predicate (wants-to-take ?character - character ?toy - toy).",
+        "(brave ?character - character)": "Source predicate (brave ?character - character).",
+        "(liberated ?character - character)": "Source predicate (liberated ?character - character).",
+        "(defeated-illuminati)": "Source predicate (defeated-illuminati).",
+        "(alien-exists ?character - character)": "Source predicate (alien-exists ?character - character).",
+        "(alien-gone ?character - character)": "Source predicate (alien-gone ?character - character)."
+    },
+    "operators": {
+        "find-toy": "(:action find-toy\n :parameters (?character - character ?toy - toy)\n :precondition (in-drawer ?toy)\n :effect (and (not (in-drawer ?toy)) (friends ?character ?toy))\n)",
+        "want-to-take": "(:action want-to-take\n :parameters (?taker - character ?toy - toy ?owner - character)\n :precondition (and (not (= ?taker ?owner)) (friends ?owner ?toy))\n :effect (wants-to-take ?taker ?toy)\n)",
+        "stand-up": "(:action stand-up\n :parameters (?defender - character ?taker - character ?toy - toy)\n :precondition (and (not (= ?defender ?taker)) (wants-to-take ?taker ?toy) (friends ?defender ?toy))\n :effect (and (not (wants-to-take ?taker ?toy)) (brave ?defender))\n)",
+        "liberate": "(:action liberate\n :parameters (?alien - character ?human - character)\n :precondition (and (alien-exists ?alien) (not (liberated ?human)))\n :effect (liberated ?human)\n)",
+        "defeat-illuminati": "(:action defeat-illuminati\n :parameters (?alien - character)\n :precondition (and (alien-exists ?alien) (not (defeated-illuminati)))\n :effect (defeated-illuminati)\n)",
+        "disappear": "(:action disappear\n :parameters (?alien - character)\n :precondition (alien-exists ?alien)\n :effect (alien-gone ?alien)\n)",
+        "reappear": "(:action reappear\n :parameters (?alien - character)\n :precondition (alien-gone ?alien)\n :effect (alien-exists ?alien)\n)"
+    }
+}

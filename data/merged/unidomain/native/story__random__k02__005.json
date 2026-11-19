@@ -1,0 +1,21 @@
+{
+    "predicates": {
+        "(found ?character - character ?object - object)": "Source predicate (found ?character - character ?object - object).",
+        "(made-handprint ?character - character)": "Source predicate (made-handprint ?character - character).",
+        "(celebrated ?character - character)": "Source predicate (celebrated ?character - character).",
+        "(has ?character - character ?object - object)": "The character has the object.",
+        "(at-party ?character - character)": "Source predicate (at-party ?character - character).",
+        "(fast ?character - character)": "Source predicate (fast ?character - character).",
+        "(cake-transformed)": "Source predicate (cake-transformed)."
+    },
+    "operators": {
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (found ?character ?object))\n :effect (found ?character ?object)\n)",
+        "make-handprint": "(:action make-handprint\n :parameters (?character - character)\n :precondition (found ?character colors)\n :effect (made-handprint ?character)\n)",
+        "show-handprint": "(:action show-handprint\n :parameters (?shower - character ?viewer - character)\n :precondition (and (made-handprint ?shower) (not (= ?shower ?viewer)))\n :effect (celebrated ?viewer)\n)",
+        "celebrate": "(:action celebrate\n :parameters (?celebrator - character ?celebratee - character)\n :precondition (and (celebrated ?celebrator) (not (= ?celebrator ?celebratee)))\n :effect (celebrated ?celebratee)\n)",
+        "go-to-party": "(:action go-to-party\n :parameters (?character - character)\n :precondition (not (at-party ?character))\n :effect (at-party ?character)\n)",
+        "magic-trick": "(:action magic-trick\n :parameters (?magician - character)\n :precondition (and (at-party ?magician) (not (cake-transformed)))\n :effect (cake-transformed)\n)",
+        "eat-cake": "(:action eat-cake\n :parameters (?character - character)\n :precondition (and (at-party ?character) (cake-transformed))\n :effect (fast ?character)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (at-party ?character) (fast ?character))\n :effect (and)\n)"
+    }
+}

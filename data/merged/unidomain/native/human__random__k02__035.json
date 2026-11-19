@@ -1,0 +1,20 @@
+{
+    "predicates": {
+        "(player ?character - character)": "The character is a player.",
+        "(at ?thing - character ?location - location)": "Character ?thing is at location ?location.",
+        "(has ?character - character ?character2 - character)": "Character ?character has character ?character2.",
+        "(connected ?to - location ?from - location)": "Location ?from is connected to location ?to.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(alive ?character - character)": "The character is alive.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman."
+    },
+    "operators": {
+        "move-location": "(:action move-location :parameters (?character - character ?to - location ?from - location) :precondition (and (player ?character) (connected ?to ?from) (at ?character ?from) (knows ?character)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "interrogate-character": "(:action interrogate-character :parameters (?interrogator - character ?interrogated - character ?location - location) :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?interrogated ?location) (apprehended ?interrogated)) :effect (knows ?interrogator))",
+        "save-character": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?location - location) :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "place-victim": "(:action place-victim :parameters (?placer - character ?victim - character ?location - location ?placed - location) :precondition (and (henchman ?placer) (has ?placer ?victim) (at ?placer ?location) (connected ?placed ?location)) :effect (and (not (has ?placer ?victim)) (at ?victim ?placed) (captured ?victim)))"
+    }
+}

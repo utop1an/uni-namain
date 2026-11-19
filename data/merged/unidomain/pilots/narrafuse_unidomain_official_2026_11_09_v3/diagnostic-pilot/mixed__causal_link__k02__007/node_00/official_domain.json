@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?character - character ?location - location)": "The new predicate combines both original predicates by using the character as the first parameter and location as the second, representing the location of a character.",
+        "(hidden ?toy - toy ?place - place)": "Source predicate (hidden ?toy - toy ?place - place).",
+        "(found ?toy - toy)": "Source predicate (found ?toy - toy).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The new predicate combines both original predicates by using the character as the first parameter and location as the second, representing the location of a character."
+    },
+    "operators": {
+        "( :action move-character": "( :action move-character\n :parameters (?character - character ?target-location - location)\n :precondition (and (henchman ?character) (at ?character ?current-location) (connected ?target-location ?current-location))\n :effect (and (not (at ?character ?current-location)) (at ?character ?target-location) (captured ?character)))",
+        "( :action interrogate": "( :action interrogate\n :parameters (?interrogator - character ?interrogated - character ?location - location)\n :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?interrogated ?location) (apprehended ?interrogated))\n :effect (knows ?interrogator) )",
+        "( :action save_character_at_location": "( :action save_character_at_location \n :parameters (?saver - character ?saved - character ?notsaved - character ?location - location) \n :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location))) \n :effect (and (saved ?saved ?saver) (not (alive ?notsaved))) )",
+        "( :action hide_in_location": "( :action hide_in_location \n :parameters (?character - character ?toy - toy ?location - location) \n :precondition (at ?character ?location) \n :effect (hidden ?toy ?location) )",
+        "( :action search_location": "( :action search_location \n :parameters (?character - character ?location - location) \n :precondition (and (at ?character ?location) (not (searched ?character ?location))) \n :effect (searched ?character ?location) )",
+        "search_for_toy": "(:action search_for_toy\n :parameters (?character - character ?toy - toy ?location - location)\n :precondition (and (at ?character ?location) (hidden ?toy ?location) (searched ?character ?location))\n :effect (found ?toy))",
+        "( :action move": "( :action move \n :parameters (?character - character ?from - location ?to - location) \n :precondition (and (not (= ?from ?to)) (at ?character ?from)) \n :effect (and (not (at ?character ?from)) (at ?character ?to)) )"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(steal-intention ?character - character ?item - item)": "Source predicate (steal-intention ?character - character ?item - item).",
+        "(hurting ?character - character)": "Source predicate (hurting ?character - character).",
+        "(struggling ?character - character)": "Source predicate (struggling ?character - character).",
+        "(loved ?character1 - character ?character2 - character)": "Source predicate (loved ?character1 - character ?character2 - character).",
+        "(letting-go ?character1 - character ?character2 - character)": "Source predicate (letting-go ?character1 - character ?character2 - character).",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(better-times ?character - character)": "Source predicate (better-times ?character - character)."
+    },
+    "operators": {
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?apologized - character)\n :precondition (and (not (= ?apologizer ?apologized)) (not (friends ?apologizer ?apologized)))\n :effect (friends ?apologizer ?apologized)\n)",
+        "try-steal": "(:action try-steal\n :parameters (?stealer - character ?item - item ?owner - character)\n :precondition (and (not (= ?stealer ?owner)) (has ?owner ?item) (steal-intention ?stealer ?item))\n :effect (and (not (steal-intention ?stealer ?item)) (not (friends ?stealer ?owner)) (has ?stealer ?item) (not (has ?owner ?item)))\n)",
+        "clean-item": "(:action clean-item\n :parameters (?cleaner - character ?item - item)\n :precondition (and (not (clean ?item)) (has ?cleaner ?item))\n :effect (clean ?item)\n)",
+        "drop-in-puddle": "(:action drop-in-puddle\n :parameters (?dropper - character ?item - item)\n :precondition (and (has ?dropper ?item) (clean ?item))\n :effect (not (clean ?item))\n)",
+        "acknowledge-pain": "(:action acknowledge-pain\n :parameters (?character - character)\n :precondition (and (hurting ?character) (struggling ?character))\n :effect (not (struggling ?character))\n)",
+        "let-go": "(:action let-go\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (loved ?character1 ?character2) (not (ready ?character2)))\n :effect (letting-go ?character1 ?character2)\n)",
+        "believe-in-better-times": "(:action believe-in-better-times\n :parameters (?character - character)\n :precondition (hurting ?character)\n :effect (better-times ?character)\n)"
+    }
+}

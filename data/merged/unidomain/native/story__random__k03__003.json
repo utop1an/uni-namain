@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character).",
+        "(at ?character - character ?place - place)": "The character is located at the specified place, which may be a room.",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a toy.",
+        "(played-together ?character1 - character ?character2 - character)": "Source predicate (played-together ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Character1 is friends with character2.",
+        "(on-top ?toy - toy ?place - place)": "Source predicate (on-top ?toy - toy ?place - place).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(has ?character - character ?toy - toy)": "The character possesses the item, which may be a toy."
+    },
+    "operators": {
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "take-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (in ?item ?place)) :effect (and (not (in ?item ?place)) (has ?character ?item)))": "(:action take-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (in ?item ?place)) :effect (and (not (in ?item ?place)) (has ?character ?item)))",
+        "leave-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (has ?character ?item)) :effect (and (not (has ?character ?item)) (in ?item ?place)))": "(:action leave-item :parameters (?character - character ?item - item ?place - room) :precondition (and (at ?character ?place) (has ?character ?item)) :effect (and (not (has ?character ?item)) (in ?item ?place)))",
+        "overcome-fear": "(:action overcome-fear\n :parameters (?character - character)\n :precondition (scared ?character)\n :effect (not (scared ?character))\n)",
+        "become-friends": "(:action become-friends :parameters (?character1 - character ?character2 - character) :precondition (not (= ?character1 ?character2)) :effect (friends ?character1 ?character2))",
+        "move": "(:action move :parameters (?character - character ?from_place - place ?to_place - place) :precondition (and (not (= ?from_place ?to_place)) (at ?character ?from_place)) :effect (and (not (at ?character ?from_place)) (at ?character ?to_place)))",
+        "give-toy": "(:action give-toy\n :parameters (?giver - character ?toy - toy ?receiver - character)\n :precondition (and (not (= ?giver ?receiver)) (has ?giver ?toy))\n :effect (and (not (has ?giver ?toy)) (has ?receiver ?toy))\n)",
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character ?toy - toy)\n :precondition (and (not (= ?character1 ?character2)) (has ?character1 ?toy) (friends ?character1 ?character2))\n :effect (and (played-together ?character1 ?character2) (happy ?character1) (happy ?character2))\n)",
+        "retrieve-toy :parameters (?character - character ?item - item ?place - place) :precondition (and (at ?character ?place) (on-top ?item ?place)) :effect (and (not (on-top ?item ?place)) (has ?character ?item)))": "(:action retrieve-toy :parameters (?character - character ?item - item ?place - place) :precondition (and (at ?character ?place) (on-top ?item ?place)) :effect (and (not (on-top ?item ?place)) (has ?character ?item)))"
+    }
+}

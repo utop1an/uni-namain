@@ -1,0 +1,20 @@
+{
+    "predicates": {
+        "(wolves-attack ?place - place)": "Source predicate (wolves-attack ?place - place).",
+        "(wolves-killed ?character - character)": "Source predicate (wolves-killed ?character - character).",
+        "(alive ?character - character)": "The character is alive.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place)."
+    },
+    "operators": {
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)",
+        "kill-wolves": "(:action kill-wolves\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place) (wolves-attack ?place))\n :effect (wolves-killed ?character)\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "move": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from) (not (at ?character ?to))) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "vomit": "(:action vomit\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (drunk ?character) (at ?character ?place))\n :effect (vomit-stain ?place)\n)",
+        "drink": "(:action drink\n :parameters (?character - character ?drink - drink)\n :precondition (and (alive ?character) (has ?character ?drink))\n :effect (and (drunk ?character) (not (has ?character ?drink)))\n)"
+    }
+}

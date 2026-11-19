@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(in-box ?character - character ?box - box)": "Source predicate (in-box ?character - character ?box - box).",
+        "(at ?box - box ?place - place)": "Source predicate (at ?box - box ?place - place).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(composed ?character - character)": "Source predicate (composed ?character - character).",
+        "(noticed ?character - character ?box - box)": "Source predicate (noticed ?character - character ?box - box).",
+        "(opened ?box - box)": "Source predicate (opened ?box - box)."
+    },
+    "operators": {
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "become-nervous": "(:action become-nervous\n :parameters (?character - character)\n :precondition (and)\n :effect (nervous ?character)\n)",
+        "become-composed": "(:action become-composed\n :parameters (?character - character)\n :precondition (and)\n :effect (composed ?character)\n)",
+        "enter": "(:action enter\n :parameters (?character - character ?place - place)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "notice": "(:action notice\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place))\n :effect (noticed ?character ?box)\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place) (noticed ?character ?box) (not (opened ?box)))\n :effect (opened ?box)\n)"
+    }
+}

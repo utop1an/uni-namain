@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(human ?character - character)": "Source predicate (human ?character - character).",
+        "(crow ?character - character)": "Source predicate (crow ?character - character).",
+        "(in-pain ?character - character)": "Source predicate (in-pain ?character - character).",
+        "(sunlight-available)": "Source predicate (sunlight-available).",
+        "(transformed ?character - character)": "Source predicate (transformed ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(on-ship ?character - character ?ship - ship)": "Source predicate (on-ship ?character - character ?ship - ship).",
+        "(moby-dick-spotted ?ship - ship)": "Source predicate (moby-dick-spotted ?ship - ship).",
+        "(moby-dick-attacking ?ship - ship)": "Source predicate (moby-dick-attacking ?ship - ship).",
+        "(read-moby-dick ?character - character)": "Source predicate (read-moby-dick ?character - character).",
+        "(trained-in-whale-killing ?character - character)": "Source predicate (trained-in-whale-killing ?character - character).",
+        "(battle-stations ?ship - ship)": "Source predicate (battle-stations ?ship - ship)."
+    },
+    "operators": {
+        "experience-pain": "(:action experience-pain\n :parameters (?character - character)\n :precondition (human ?character)\n :effect (in-pain ?character)\n)",
+        "transform-into-crow": "(:action transform-into-crow\n :parameters (?character - character)\n :precondition (and (human ?character) (in-pain ?character) (sunlight-available))\n :effect (and (not (human ?character)) (crow ?character) (transformed ?character))\n)",
+        "transform-back-into-human": "(:action transform-back-into-human\n :parameters (?character - character)\n :precondition (crow ?character)\n :effect (and (not (crow ?character)) (human ?character))\n)",
+        "spot-moby-dick": "(:action spot-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship))\n :effect (moby-dick-spotted ?ship)\n)",
+        "moby-dick-attack": "(:action moby-dick-attack\n :parameters (?ship - ship)\n :precondition (moby-dick-spotted ?ship)\n :effect (moby-dick-attacking ?ship)\n)",
+        "order-battle-stations": "(:action order-battle-stations\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (moby-dick-spotted ?ship))\n :effect (battle-stations ?ship)\n)",
+        "try-kill-moby-dick": "(:action try-kill-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (trained-in-whale-killing ?character) (moby-dick-attacking ?ship) (battle-stations ?ship))\n :effect (not (moby-dick-attacking ?ship))\n)",
+        "read-moby-dick": "(:action read-moby-dick\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (read-moby-dick ?character)\n)",
+        "train-in-whale-killing": "(:action train-in-whale-killing\n :parameters (?character - character)\n :precondition (read-moby-dick ?character)\n :effect (trained-in-whale-killing ?character)\n)"
+    }
+}

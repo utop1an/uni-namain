@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(broken ?item - item)": "Source predicate (broken ?item - item).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(playing ?character - character ?item - item)": "Source predicate (playing ?character - character ?item - item).",
+        "(apologized ?apologizer - character ?apologizee - character)": "Source predicate (apologized ?apologizer - character ?apologizee - character).",
+        "(cleaned ?character - character)": "Source predicate (cleaned ?character - character).",
+        "(forgiven ?forgiver - character ?forgivee - character)": "Source predicate (forgiven ?forgiver - character ?forgivee - character).",
+        "(knows ?character1 - character ?character2 - character)": "Source predicate (knows ?character1 - character ?character2 - character).",
+        "(together ?character1 - character ?character2 - character)": "Source predicate (together ?character1 - character ?character2 - character).",
+        "(missing ?character - character)": "Source predicate (missing ?character - character).",
+        "(relationship ?character1 - character ?character2 - character)": "Source predicate (relationship ?character1 - character ?character2 - character).",
+        "(searching ?searcher - character ?target - character)": "Source predicate (searching ?searcher - character ?target - character).",
+        "(found ?searcher - character ?target - character)": "Source predicate (found ?searcher - character ?target - character)."
+    },
+    "operators": {
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (not (broken ?item)) (has ?character ?item))\n :effect (playing ?character ?item)\n)",
+        "break-item": "(:action break-item\n :parameters (?breaker - character ?item - item)\n :precondition (and (not (broken ?item)) (playing ?breaker ?item))\n :effect (broken ?item)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?apologizee - character)\n :precondition (not (= ?apologizer ?apologizee))\n :effect (apologized ?apologizer ?apologizee)\n)",
+        "clean": "(:action clean\n :parameters (?cleaner - character ?item - item)\n :precondition (broken ?item)\n :effect (cleaned ?cleaner)\n)",
+        "forgive": "(:action forgive\n :parameters (?forgiver - character ?forgivee - character)\n :precondition (and (not (= ?forgiver ?forgivee)) (apologized ?forgivee ?forgiver))\n :effect (forgiven ?forgiver ?forgivee)\n)",
+        "start-search": "(:action start-search\n :parameters (?searcher - character ?target - character)\n :precondition (and (not (= ?searcher ?target)) (not (searching ?searcher ?target)) (missing ?target))\n :effect (searching ?searcher ?target)\n)",
+        "stop-search": "(:action stop-search\n :parameters (?searcher - character ?target - character)\n :precondition (searching ?searcher ?target)\n :effect (not (searching ?searcher ?target))\n)",
+        "find": "(:action find\n :parameters (?searcher - character ?target - character)\n :precondition (and (searching ?searcher ?target) (missing ?target))\n :effect (and (not (missing ?target)) (found ?searcher ?target))\n)",
+        "start-relationship": "(:action start-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (relationship ?character1 ?character2)) (knows ?character1 ?character2))\n :effect (relationship ?character1 ?character2)\n)",
+        "end-relationship": "(:action end-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (relationship ?character1 ?character2)\n :effect (not (relationship ?character1 ?character2))\n)"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?thing - character ?location - location)": "Source predicate (at ?thing - character ?location - location).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(sleeping ?character - character)": "Source predicate (sleeping ?character - character).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(has-energy ?character - character)": "Source predicate (has-energy ?character - character)."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (player ?character) (connected ?to ?from) (at ?character ?from) (knows ?character))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "interrogate-character": "(:action interrogate-character\n :parameters (?interrogator - character ?interrogated - character ?location - location)\n :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?interrogated ?location) (apprehended ?interrogated))\n :effect (knows ?interrogator)\n)",
+        "place-victim": "(:action place-victim\n :parameters (?placer - character ?victim - character ?location - location ?placed - location)\n :precondition (and (henchman ?placer) (has ?placer ?victim) (at ?placer ?location) (connected ?placed ?location))\n :effect (and (not (has ?placer ?victim)) (at ?victim ?placed) (captured ?victim))\n)",
+        "save-character": "(:action save-character\n :parameters (?saver - character ?saved - character ?notsaved - character ?location - location)\n :precondition (and (player ?saver) (at ?saver ?location) (at ?saved ?location) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?location)))\n :effect (and (saved ?saved ?saver) (not (alive ?notsaved)))\n)",
+        "start-playing": "(:action start-playing\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (playing ?character)) (has-energy ?character))\n :effect (playing ?character)\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character)\n :precondition (playing ?character)\n :effect (and (not (playing ?character)) (tired ?character))\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (and (tired ?character) (not (sleeping ?character)))\n :effect (and (not (awake ?character)) (sleeping ?character))\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (sleeping ?character)\n :effect (and (awake ?character) (not (sleeping ?character)) (not (tired ?character)) (has-energy ?character))\n)"
+    }
+}

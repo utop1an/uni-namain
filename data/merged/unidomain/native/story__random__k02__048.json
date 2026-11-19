@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(wearing ?character - character ?item - item)": "Source predicate (wearing ?character - character ?item - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(famous ?character - character)": "Source predicate (famous ?character - character).",
+        "(wears-earmuffs ?character - character)": "Source predicate (wears-earmuffs ?character - character).",
+        "(filled-with-ice ?character - character)": "Source predicate (filled-with-ice ?character - character).",
+        "(candidate ?character - character)": "Source predicate (candidate ?character - character).",
+        "(president ?character - character)": "Source predicate (president ?character - character).",
+        "(endured-pain ?character - character)": "Source predicate (endured-pain ?character - character)."
+    },
+    "operators": {
+        "clean-item": "(:action clean-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (clean ?item)))\n :effect (clean ?item)\n)",
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "adjust-item": "(:action adjust-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (fits ?item ?character)))\n :effect (fits ?item ?character)\n)",
+        "wear-item": "(:action wear-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (fits ?item ?character) (not (wearing ?character ?item)))\n :effect (wearing ?character ?item)\n)",
+        "become-famous": "(:action become-famous\n :parameters (?character - character)\n :precondition (not (famous ?character))\n :effect (famous ?character)\n)",
+        "wear-earmuffs": "(:action wear-earmuffs\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (wears-earmuffs ?character)))\n :effect (wears-earmuffs ?character)\n)",
+        "fill-earmuffs-with-ice": "(:action fill-earmuffs-with-ice\n :parameters (?character - character)\n :precondition (and (famous ?character) (wears-earmuffs ?character) (not (filled-with-ice ?character)))\n :effect (filled-with-ice ?character)\n)",
+        "become-candidate": "(:action become-candidate\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (candidate ?character)))\n :effect (candidate ?character)\n)",
+        "become-president": "(:action become-president\n :parameters (?character - character)\n :precondition (and (candidate ?character) (not (president ?character)))\n :effect (president ?character)\n)",
+        "endure-pain": "(:action endure-pain\n :parameters (?character - character)\n :precondition (and (famous ?character) (filled-with-ice ?character) (not (endured-pain ?character)))\n :effect (endured-pain ?character)\n)"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(wolves-attack ?place - place)": "Source predicate (wolves-attack ?place - place).",
+        "(wolves-killed ?character - character)": "Source predicate (wolves-killed ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(raining)": "Source predicate (raining).",
+        "(sunny)": "Source predicate (sunny).",
+        "(muddy ?place - place)": "Source predicate (muddy ?place - place).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(brave ?character - character)": "Source predicate (brave ?character - character).",
+        "(safe ?character - character)": "Source predicate (safe ?character - character).",
+        "(inside ?character - character)": "Source predicate (inside ?character - character).",
+        "(hidden ?toy - toy ?place - place)": "Source predicate (hidden ?toy - toy ?place - place).",
+        "(found ?toy - toy)": "Source predicate (found ?toy - toy).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place)."
+    },
+    "operators": {
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)",
+        "kill-wolves": "(:action kill-wolves\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place) (wolves-attack ?place))\n :effect (wolves-killed ?character)\n)",
+        "stop-raining": "(:action stop-raining\n :parameters ()\n :precondition (raining)\n :effect (and (not (raining)) (sunny))\n)",
+        "start-raining": "(:action start-raining\n :parameters ()\n :precondition (sunny)\n :effect (and (not (sunny)) (raining))\n)",
+        "go-outside": "(:action go-outside\n :parameters (?character - character)\n :precondition (and (inside ?character) (sunny))\n :effect (and (not (inside ?character)) (at ?character outside))\n)",
+        "go-inside": "(:action go-inside\n :parameters (?character - character)\n :precondition (at ?character outside)\n :effect (and (not (at ?character outside)) (inside ?character) (safe ?character))\n)",
+        "play-in-mud": "(:action play-in-mud\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (muddy ?place))\n :effect (playing ?character)\n)",
+        "become-scared": "(:action become-scared\n :parameters (?character - character)\n :precondition (and (at ?character outside) (not (scared ?character)))\n :effect (scared ?character)\n)",
+        "become-brave": "(:action become-brave\n :parameters (?character - character)\n :precondition (and (at ?character outside) (scared ?character))\n :effect (and (not (scared ?character)) (brave ?character))\n)",
+        "hide": "(:action hide\n :parameters (?character - character ?toy - toy ?place - place)\n :precondition (at ?character ?place)\n :effect (hidden ?toy ?place)\n)",
+        "search": "(:action search\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (not (searched ?character ?place)))\n :effect (searched ?character ?place)\n)",
+        "find": "(:action find\n :parameters (?character - character ?toy - toy ?place - place)\n :precondition (and (at ?character ?place) (hidden ?toy ?place) (searched ?character ?place))\n :effect (found ?toy)\n)",
+        "move": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))"
+    }
+}

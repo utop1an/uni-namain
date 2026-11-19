@@ -1,0 +1,25 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(knows-survival-skills ?character - character)": "Source predicate (knows-survival-skills ?character - character).",
+        "(computers-working)": "Source predicate (computers-working).",
+        "(caused-apocalypse ?character - character)": "Source predicate (caused-apocalypse ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?object - object)": "The character possesses the object.",
+        "(shares ?character1 - character ?character2 - character ?object - object)": "Source predicate (shares ?character1 - character ?character2 - character ?object - object).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(played-together ?character1 - character ?character2 - character)": "Source predicate (played-together ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "learn-survival-skills": "(:action learn-survival-skills\n :parameters (?learner - character ?teacher - character)\n :precondition (and (alive ?learner) (alive ?teacher) (knows-survival-skills ?teacher) (not (knows-survival-skills ?learner)))\n :effect (knows-survival-skills ?learner)\n)",
+        "cause-apocalypse": "(:action cause-apocalypse\n :parameters (?character - character)\n :precondition (and (alive ?character) (computers-working))\n :effect (and (not (computers-working)) (caused-apocalypse ?character))\n)",
+        "kill": "(:action kill\n :parameters (?killer - character ?victim - character)\n :precondition (and (alive ?killer) (alive ?victim) (not (= ?killer ?victim)))\n :effect (not (alive ?victim))\n)",
+        "unshare": "(:action unshare\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (shares ?sharer ?receiver ?object)\n :effect (not (shares ?sharer ?receiver ?object))\n)",
+        "rest": "(:action rest\n :parameters (?character - character)\n :precondition (tired ?character)\n :effect (not (tired ?character))\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "play": "(:action play\n :parameters (?character1 - character ?character2 - character ?place - place)\n :precondition (and (not (= ?character1 ?character2)) (at ?character1 ?place) (at ?character2 ?place))\n :effect (and (played-together ?character1 ?character2) (happy ?character1) (happy ?character2) (tired ?character1) (tired ?character2))\n)",
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (has ?character ?object))\n :effect (has ?character ?object)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (and (has ?sharer ?object) (not (shares ?sharer ?receiver ?object)))\n :effect (shares ?sharer ?receiver ?object)\n)"
+    }
+}

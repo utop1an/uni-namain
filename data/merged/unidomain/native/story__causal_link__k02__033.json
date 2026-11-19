@@ -1,0 +1,20 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a dress.",
+        "(happy ?character - character)": "The character is happy.",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place)."
+    },
+    "operators": {
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))": "(:action put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)"
+    }
+}

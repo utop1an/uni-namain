@@ -1,0 +1,40 @@
+{
+    "predicates": {
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(pretty ?mop - mop)": "Source predicate (pretty ?mop - mop).",
+        "(disgusting ?mop - mop)": "Source predicate (disgusting ?mop - mop).",
+        "(selected ?mop - mop)": "Source predicate (selected ?mop - mop).",
+        "(wearing ?character - character ?item - item)": "The character is wearing the item, which may be a dress.",
+        "(has ?character - character ?item - (either dress mop item))": "The character possesses the specified object, which may be a dress, a mop, or an item.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(clean ?item - (either mop item))": "The specified mop or item is clean.",
+        "(has ?character - character ?object - object)": "The character possesses the specified object, which may be a mop, a dress, or another item.",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(alive ?character - character)": "The character is alive.",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the specified object, which may be a dress, a mop, or an item.",
+        "(clean ?item - item)": "The specified mop or item is clean."
+    },
+    "operators": {
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "slip :parameters (?character - character ?item - dress) :precondition (and (wearing ?character ?item) (not (damaged ?item))) :effect (damaged ?item))": "(:action slip :parameters (?character - character ?item - dress) :precondition (and (wearing ?character ?item) (not (damaged ?item))) :effect (damaged ?item))",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (at ?character ?place)\n)",
+        "get-new-item :parameters (?character - character ?old-item - dress ?object - object) :precondition (and (damaged ?old-item) (wearing ?character ?old-item) (not (has ?character ?object))) :effect (and (not (wearing ?character ?old-item)) (has ?character ?object)))": "(:action get-new-item :parameters (?character - character ?old-item - dress ?object - object) :precondition (and (damaged ?old-item) (wearing ?character ?old-item) (not (has ?character ?object))) :effect (and (not (wearing ?character ?old-item)) (has ?character ?object)))",
+        "select-mop :parameters (?character - character ?object - object ?place - place) :precondition (and (at ?character ?place) (has ?character ?object)) :effect (selected ?object))": "(:action select-mop :parameters (?character - character ?object - object ?place - place) :precondition (and (at ?character ?place) (has ?character ?object)) :effect (selected ?object))",
+        "receive-item :parameters (?character - character ?dog - character ?object - object ?place - place) :precondition (and (at ?character ?place) (at ?dog ?place) (has ?dog ?object)) :effect (and (not (has ?dog ?object)) (has ?character ?object)))": "(:action receive-item :parameters (?character - character ?dog - character ?object - object ?place - place) :precondition (and (at ?character ?place) (at ?dog ?place) (has ?dog ?object)) :effect (and (not (has ?dog ?object)) (has ?character ?object)))",
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "detect-stasis :parameters (?character - character ?item - (either dress mop item)) :precondition (and (alive ?character) (has ?character ?item) (ancient-technology ?item)) :effect (in-stasis ?item))": "(:action detect-stasis :parameters (?character - character ?item - (either dress mop item)) :precondition (and (alive ?character) (has ?character ?item) (ancient-technology ?item)) :effect (in-stasis ?item))",
+        "adjust-item :parameters (?character - character ?item - (either dress mop item)) :precondition (and (alive ?character) (has ?character ?item) (not (fits ?item ?character))) :effect (fits ?item ?character))": "(:action adjust-item :parameters (?character - character ?item - (either dress mop item)) :precondition (and (alive ?character) (has ?character ?item) (not (fits ?item ?character))) :effect (fits ?item ?character))",
+        "wear-item": "(:action wear-item :parameters (?character - character ?item - item) :precondition (and (alive ?character) (has ?character ?item) (fits ?item ?character) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "discover-technology :parameters (?character - character ?item - (either dress mop item) ?place - place) :precondition (and (alive ?character) (at ?character ?place)) :effect (and (has ?character ?item) (ancient-technology ?item)))": "(:action discover-technology :parameters (?character - character ?item - (either dress mop item) ?place - place) :precondition (and (alive ?character) (at ?character ?place)) :effect (and (has ?character ?item) (ancient-technology ?item)))",
+        "transport-object :parameters (?character - character ?item - (either dress mop item) ?from - place ?to - place) :precondition (and (alive ?character) (at ?character ?from) (has ?character ?item) (requested-tow ?character ?to)) :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?item))))": "(:action transport-object :parameters (?character - character ?item - (either dress mop item) ?from - place ?to - place) :precondition (and (alive ?character) (at ?character ?from) (has ?character ?item) (requested-tow ?character ?to)) :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?item))))",
+        "clean-item :parameters (?character - character ?object - (either mop item)) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))": "(:action clean-item :parameters (?character - character ?object - (either mop item)) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(alive ?robot - robot)": "Source predicate (alive ?robot - robot).",
+        "(at ?robot - robot ?location - place)": "Source predicate (at ?robot - robot ?location - place).",
+        "(has-weapon ?robot - robot ?weapon - weapon)": "Source predicate (has-weapon ?robot - robot ?weapon - weapon).",
+        "(thrown ?weapon - weapon ?target - robot)": "Source predicate (thrown ?weapon - weapon ?target - robot).",
+        "(damaged ?robot - robot)": "Source predicate (damaged ?robot - robot).",
+        "(destroyed ?robot - robot)": "Source predicate (destroyed ?robot - robot).",
+        "(revolution-started)": "Source predicate (revolution-started).",
+        "(at-party ?character - character)": "Source predicate (at-party ?character - character).",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(fast ?character - character)": "Source predicate (fast ?character - character).",
+        "(cake-transformed)": "Source predicate (cake-transformed).",
+        "(play-chess ?character1 - character ?character2 - character)": "Source predicate (play-chess ?character1 - character ?character2 - character).",
+        "(feel-better ?character - character)": "Source predicate (feel-better ?character - character).",
+        "(sit-together ?character1 - character ?character2 - character)": "Source predicate (sit-together ?character1 - character ?character2 - character).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character)."
+    },
+    "operators": {
+        "move": "(:action move\n :parameters (?robot - robot ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?robot) (at ?robot ?from))\n :effect (and (not (at ?robot ?from)) (at ?robot ?to))\n)",
+        "throw-weapon": "(:action throw-weapon\n :parameters (?thrower - robot ?weapon - weapon ?target - robot)\n :precondition (and (alive ?thrower) (has-weapon ?thrower ?weapon) (alive ?target))\n :effect (thrown ?weapon ?target)\n)",
+        "damage": "(:action damage\n :parameters (?damager - robot ?target - robot)\n :precondition (and (alive ?damager) (alive ?target) (exists (?weapon - weapon) (thrown ?weapon ?target)))\n :effect (and (not (alive ?target)) (damaged ?target))\n)",
+        "destroy": "(:action destroy\n :parameters (?destroyer - robot ?target - robot)\n :precondition (and (alive ?destroyer) (damaged ?target))\n :effect (and (not (damaged ?target)) (destroyed ?target))\n)",
+        "start-revolution": "(:action start-revolution\n :parameters (?robot - robot)\n :precondition (alive ?robot)\n :effect (revolution-started)\n)",
+        "go-to-party": "(:action go-to-party\n :parameters (?character - character)\n :precondition (not (at-party ?character))\n :effect (at-party ?character)\n)",
+        "magic-trick": "(:action magic-trick\n :parameters (?magician - character)\n :precondition (and (at-party ?magician) (not (cake-transformed)))\n :effect (cake-transformed)\n)",
+        "eat-cake": "(:action eat-cake\n :parameters (?character - character)\n :precondition (and (at-party ?character) (cake-transformed))\n :effect (fast ?character)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (at-party ?character) (fast ?character))\n :effect (and)\n)",
+        "play-chess": "(:action play-chess\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (sick ?character1)) (not (sick ?character2)) (not (= ?character1 ?character2)) (sit-together ?character1 ?character2))\n :effect (and (play-chess ?character1 ?character2) (happy ?character1) (happy ?character2))\n)",
+        "get-sick": "(:action get-sick\n :parameters (?character - character)\n :precondition (and)\n :effect (sick ?character)\n)",
+        "feel-better": "(:action feel-better\n :parameters (?character - character)\n :precondition (sick ?character)\n :effect (not (sick ?character))\n)",
+        "sit-together": "(:action sit-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (sit-together ?character1 ?character2)\n)"
+    }
+}

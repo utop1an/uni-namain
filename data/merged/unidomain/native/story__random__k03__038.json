@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has-emotion ?character - character ?emotion - emotion)": "Source predicate (has-emotion ?character - character ?emotion - emotion).",
+        "(knows-change ?character - character)": "Source predicate (knows-change ?character - character).",
+        "(memorize ?character - character)": "Source predicate (memorize ?character - character).",
+        "(at-party ?character - character)": "Source predicate (at-party ?character - character).",
+        "(fast ?character - character)": "Source predicate (fast ?character - character).",
+        "(cake-transformed)": "Source predicate (cake-transformed).",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(broken ?item - item)": "Source predicate (broken ?item - item).",
+        "(playing ?character - character ?item - item)": "Source predicate (playing ?character - character ?item - item).",
+        "(apologized ?apologizer - character ?apologizee - character)": "Source predicate (apologized ?apologizer - character ?apologizee - character).",
+        "(cleaned ?character - character)": "Source predicate (cleaned ?character - character).",
+        "(forgiven ?forgiver - character ?forgivee - character)": "Source predicate (forgiven ?forgiver - character ?forgivee - character).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "experience-emotion": "(:action experience-emotion\n :parameters (?character - character ?emotion - emotion)\n :precondition (alive ?character)\n :effect (has-emotion ?character ?emotion)\n)",
+        "notice-change": "(:action notice-change\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-change ?character)\n)",
+        "memorize-appearance": "(:action memorize-appearance\n :parameters (?character - character)\n :precondition (and (alive ?character) (knows-change ?character))\n :effect (memorize ?character)\n)",
+        "go-to-party": "(:action go-to-party\n :parameters (?character - character)\n :precondition (not (at-party ?character))\n :effect (at-party ?character)\n)",
+        "magic-trick": "(:action magic-trick\n :parameters (?magician - character)\n :precondition (and (at-party ?magician) (not (cake-transformed)))\n :effect (cake-transformed)\n)",
+        "eat-cake": "(:action eat-cake\n :parameters (?character - character)\n :precondition (and (at-party ?character) (cake-transformed))\n :effect (fast ?character)\n)",
+        "break-item": "(:action break-item\n :parameters (?breaker - character ?item - item)\n :precondition (and (not (broken ?item)) (playing ?breaker ?item))\n :effect (broken ?item)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?apologizee - character)\n :precondition (not (= ?apologizer ?apologizee))\n :effect (apologized ?apologizer ?apologizee)\n)",
+        "clean": "(:action clean\n :parameters (?cleaner - character ?item - item)\n :precondition (broken ?item)\n :effect (cleaned ?cleaner)\n)",
+        "forgive": "(:action forgive\n :parameters (?forgiver - character ?forgivee - character)\n :precondition (and (not (= ?forgiver ?forgivee)) (apologized ?forgivee ?forgiver))\n :effect (forgiven ?forgiver ?forgivee)\n)",
+        "play": "(:action play :parameters (?character - character ?object - item) :precondition (and (at-party ?character) (fast ?character) (not (broken ?object)) (has ?character ?object)) :effect (and (playing ?character ?object)))"
+    }
+}

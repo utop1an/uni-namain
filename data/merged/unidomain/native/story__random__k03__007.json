@@ -1,0 +1,40 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(wearing ?character - character ?item - item)": "Source predicate (wearing ?character - character ?item - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(friend ?dog1 - dog ?dog2 - dog)": "Source predicate (friend ?dog1 - dog ?dog2 - dog).",
+        "(practices ?dog1 - dog ?dog2 - dog)": "Source predicate (practices ?dog1 - dog ?dog2 - dog).",
+        "(participates ?dog - dog)": "Source predicate (participates ?dog - dog).",
+        "(wins ?dog - dog)": "Source predicate (wins ?dog - dog).",
+        "(plays-with-toy-stack ?dog - dog)": "Source predicate (plays-with-toy-stack ?dog - dog).",
+        "(playing-with-toys ?character - character)": "Source predicate (playing-with-toys ?character - character).",
+        "(found-blocks ?character - character)": "Source predicate (found-blocks ?character - character).",
+        "(stacking-blocks ?character - character)": "Source predicate (stacking-blocks ?character - character).",
+        "(stack-tall ?character - character)": "Source predicate (stack-tall ?character - character).",
+        "(stack-strong ?character - character)": "Source predicate (stack-strong ?character - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(helping ?helper - character ?helpee - character)": "Source predicate (helping ?helper - character ?helpee - character)."
+    },
+    "operators": {
+        "clean-item": "(:action clean-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (clean ?item)))\n :effect (clean ?item)\n)",
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "adjust-item": "(:action adjust-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (not (fits ?item ?character)))\n :effect (fits ?item ?character)\n)",
+        "wear-item": "(:action wear-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item) (fits ?item ?character) (not (wearing ?character ?item)))\n :effect (wearing ?character ?item)\n)",
+        "practice-running": "(:action practice-running\n :parameters (?helper - dog ?runner - dog)\n :precondition (and (friend ?helper ?runner) (not (practices ?helper ?runner)))\n :effect (practices ?helper ?runner)\n)",
+        "participate-in-race": "(:action participate-in-race\n :parameters (?dog - dog)\n :precondition (not (participates ?dog))\n :effect (participates ?dog)\n)",
+        "win-race": "(:action win-race\n :parameters (?dog - dog ?helper - dog)\n :precondition (and (participates ?dog) (practices ?dog ?helper))\n :effect (wins ?dog)\n)",
+        "play-with-toy-stack": "(:action play-with-toy-stack\n :parameters (?dog - dog)\n :precondition (not (plays-with-toy-stack ?dog))\n :effect (plays-with-toy-stack ?dog)\n)",
+        "play-with-toys": "(:action play-with-toys\n :parameters (?character - character)\n :precondition (and)\n :effect (playing-with-toys ?character)\n)",
+        "find-blocks": "(:action find-blocks\n :parameters (?character - character)\n :precondition (playing-with-toys ?character)\n :effect (found-blocks ?character)\n)",
+        "stack-blocks": "(:action stack-blocks\n :parameters (?character - character)\n :precondition (found-blocks ?character)\n :effect (stacking-blocks ?character)\n)",
+        "make-stack-tall": "(:action make-stack-tall\n :parameters (?character - character)\n :precondition (stacking-blocks ?character)\n :effect (stack-tall ?character)\n)",
+        "help": "(:action help\n :parameters (?helper - character ?helpee - character)\n :precondition (and (not (= ?helper ?helpee)) (stack-tall ?helpee))\n :effect (helping ?helper ?helpee)\n)",
+        "make-stack-strong": "(:action make-stack-strong\n :parameters (?character - character)\n :precondition (and (stack-tall ?character) (helping ?character ?character))\n :effect (stack-strong ?character)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (stack-strong ?character)\n :effect (happy ?character)\n)"
+    }
+}

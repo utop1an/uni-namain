@@ -1,0 +1,32 @@
+{
+    "predicates": {
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(has-hoard ?character - character)": "Source predicate (has-hoard ?character - character).",
+        "(robbed ?gang - gang)": "Source predicate (robbed ?gang - gang).",
+        "(soundproof-door ?place - place)": "Source predicate (soundproof-door ?place - place).",
+        "(attacked ?character - character)": "Source predicate (attacked ?character - character).",
+        "(awake ?character - character)": "The character is awake.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(wearing-clothes ?character - character)": "Source predicate (wearing-clothes ?character - character).",
+        "(has-device ?character - character ?device - device)": "Source predicate (has-device ?character - character ?device - device).",
+        "(device-on ?device - device)": "Source predicate (device-on ?device - device).",
+        "(device-connected ?device - device)": "Source predicate (device-connected ?device - device).",
+        "(electricity ?place - place)": "Source predicate (electricity ?place - place).",
+        "(working ?device - device)": "Source predicate (working ?device - device).",
+        "(school-canceled)": "Source predicate (school-canceled)."
+    },
+    "operators": {
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (awake ?character)) (asleep ?character))\n)",
+        "rob": "(:action rob\n :parameters (?gang - character)\n :precondition (awake ?gang)\n :effect (robbed ?gang)\n)",
+        "install-soundproof-door": "(:action install-soundproof-door\n :parameters (?gang - character ?place - place)\n :precondition (and (awake ?gang) (at ?gang ?place) (not (soundproof-door ?place)))\n :effect (soundproof-door ?place)\n)",
+        "attack": "(:action attack\n :parameters (?attacker - character ?victim - character)\n :precondition (and (awake ?attacker) (awake ?victim))\n :effect (attacked ?victim)\n)",
+        "clear-passage": "(:action clear-passage\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (attacked ?character)) (has-hoard ?character))\n)",
+        "cancel-school": "(:action cancel-school\n :parameters ()\n :precondition (not (school-canceled))\n :effect (school-canceled)\n)",
+        "wake-up": "(:action wake-up :parameters (?character - character) :precondition (and (asleep ?character) (not (awake ?character))) :effect (and (not (asleep ?character)) (awake ?character)))",
+        "put-on-clothes": "(:action put-on-clothes\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (wearing-clothes ?character)))\n :effect (wearing-clothes ?character)\n)",
+        "turn-on-device": "(:action turn-on-device\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (has-device ?character ?device) (not (device-on ?device)))\n :effect (device-on ?device)\n)",
+        "check-connectivity": "(:action check-connectivity\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (device-on ?device) (has-device ?character ?device))\n :effect (when (device-connected ?device) (working ?device))\n)",
+        "go-outside": "(:action go-outside\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (wearing-clothes ?character) (at ?character ?place))\n :effect (and (not (at ?character ?place)) (at ?character outside))\n)",
+        "talk": "(:action talk\n :parameters (?speaker - character ?listener - character)\n :precondition (and (awake ?speaker) (awake ?listener) (at ?speaker outside) (at ?listener outside))\n :effect (and)\n)"
+    }
+}

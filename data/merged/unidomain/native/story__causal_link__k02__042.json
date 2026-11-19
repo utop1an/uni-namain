@@ -1,0 +1,21 @@
+{
+    "predicates": {
+        "(on-shelf ?item - item)": "Source predicate (on-shelf ?item - item).",
+        "(organized ?place - place)": "Source predicate (organized ?place - place).",
+        "(reads ?character - character)": "Source predicate (reads ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(happy ?character - character)": "The character is happy.",
+        "(sad ?character - character)": "Source predicate (sad ?character - character)."
+    },
+    "operators": {
+        "find": "(:action find\n :parameters (?character - character ?item - item)\n :precondition (and (not (has ?character ?item)) (reads ?character))\n :effect (has ?character ?item)\n)",
+        "put-on-shelf": "(:action put-on-shelf\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (has ?character ?item) (at ?character ?place))\n :effect (and (not (has ?character ?item)) (on-shelf ?item) (organized ?place))\n)",
+        "read": "(:action read\n :parameters (?character - character)\n :precondition (reads ?character)\n :effect (happy ?character)\n)",
+        "smell-soap": "(:action smell-soap\n :parameters (?character - character ?soap - item)\n :precondition (and (on-shelf ?soap) (reads ?character))\n :effect (happy ?character)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?location - location)": "The character is at the specified location, which may be a room.",
+        "(has ?character - character ?target - (either thing character))": "The character has the target, which may be a thing or another character.",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(player ?character - character)": "The character is a player.",
+        "(has ?character - character ?target - (either item character))": "The character has the target, which may be an item or another character.",
+        "(connected ?to - location ?from - location)": "The destination location ?to is connected to the source location ?from.",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?thing - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?character2 - character)": "The character has the target, which may be a thing or another character."
+    },
+    "operators": {
+        "unlock :parameters (?character - character ?target - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?target) (has ?character ?target)) :effect (and (not (locked ?room))))": "(:action unlock :parameters (?character - character ?target - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?target) (has ?character ?target)) :effect (and (not (locked ?room))))",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))": "(:action interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))",
+        "save-character :parameters (?saving-character - character ?saved-character - character ?unsaved-character - character ?loc - location) :precondition (and (player ?saving-character) (at ?saving-character ?loc) (at ?saved-character ?loc) (captured ?saved-character) (captured ?unsaved-character) (not (at ?unsaved-character ?loc))) :effect (and (saved ?saved-character ?saving-character) (not (alive ?unsaved-character))))": "(:action save-character :parameters (?saving-character - character ?saved-character - character ?unsaved-character - character ?loc - location) :precondition (and (player ?saving-character) (at ?saving-character ?loc) (at ?saved-character ?loc) (captured ?saved-character) (captured ?unsaved-character) (not (at ?unsaved-character ?loc))) :effect (and (saved ?saved-character ?saving-character) (not (alive ?unsaved-character))))",
+        "enter": "(:action enter :parameters (?character - character ?from - location ?to - room) :precondition (and (not (locked ?to)) (connected ?to ?from) (not (asleep ?character)) (at ?character ?from) (player ?character) (knows ?character)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "take-thing": "(:action take-thing :parameters (?taker - character ?target - thing ?location - room) :precondition (and (at ?taker ?location) (in ?target ?location) (at ?target ?location) (not (asleep ?taker)) (not (enchanted ?target))) :effect (and (has ?taker ?target) (not (in ?target ?location)) (not (at ?target ?location))))",
+        "disenchant-thing :parameters (?caster - character ?thing - item ?held-target - (either thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?held-target) (enchanted ?thing)) :effect (not (enchanted ?thing)))": "(:action disenchant-thing :parameters (?caster - character ?thing - item ?held-target - (either thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?held-target) (enchanted ?thing)) :effect (not (enchanted ?thing)))",
+        "place-victim :parameters (?carrier - character ?target - character ?source - location ?destination - location) :precondition (and (henchman ?carrier) (has ?carrier ?target) (at ?carrier ?source) (connected ?destination ?source)) :effect (and (not (has ?carrier ?target)) (at ?target ?destination) (captured ?target)))": "(:action place-victim :parameters (?carrier - character ?target - character ?source - location ?destination - location) :precondition (and (henchman ?carrier) (has ?carrier ?target) (at ?carrier ?source) (connected ?destination ?source)) :effect (and (not (has ?carrier ?target)) (at ?target ?destination) (captured ?target)))"
+    }
+}

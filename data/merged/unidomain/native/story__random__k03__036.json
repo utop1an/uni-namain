@@ -1,0 +1,41 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(feeling ?character - character)": "Source predicate (feeling ?character - character).",
+        "(last-soul ?character - character)": "Source predicate (last-soul ?character - character).",
+        "(understand ?character - character)": "Source predicate (understand ?character - character).",
+        "(witness ?character - character)": "Source predicate (witness ?character - character).",
+        "(end ?character - character)": "Source predicate (end ?character - character).",
+        "(worker ?character - character)": "Source predicate (worker ?character - character).",
+        "(clean ?place - object)": "Source predicate (clean ?place - object).",
+        "(makes-toys ?character - character)": "Source predicate (makes-toys ?character - character).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(friends-with ?character1 - character ?character2 - character)": "Source predicate (friends-with ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(famous ?character - character)": "Source predicate (famous ?character - character).",
+        "(wears-earmuffs ?character - character)": "Source predicate (wears-earmuffs ?character - character).",
+        "(filled-with-ice ?character - character)": "Source predicate (filled-with-ice ?character - character).",
+        "(candidate ?character - character)": "Source predicate (candidate ?character - character).",
+        "(president ?character - character)": "Source predicate (president ?character - character).",
+        "(endured-pain ?character - character)": "Source predicate (endured-pain ?character - character)."
+    },
+    "operators": {
+        "start-feeling": "(:action start-feeling\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (feeling ?character)))\n :effect (feeling ?character)\n)",
+        "witness-end": "(:action witness-end\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (witness ?character)))\n :effect (witness ?character)\n)",
+        "understand-end": "(:action understand-end\n :parameters (?character - character)\n :precondition (and (alive ?character) (witness ?character) (not (understand ?character)))\n :effect (understand ?character)\n)",
+        "last-soul-fades": "(:action last-soul-fades\n :parameters (?character - character)\n :precondition (and (alive ?character) (last-soul ?character) (understand ?character))\n :effect (not (alive ?character))\n)",
+        "humanity-ends": "(:action humanity-ends\n :parameters (?character - character)\n :precondition (and (alive ?character) (understand ?character) (not (end ?character)))\n :effect (end ?character)\n)",
+        "start-working": "(:action start-working\n :parameters (?character - character)\n :precondition (and)\n :effect (worker ?character)\n)",
+        "clean-factory": "(:action clean-factory\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (clean factory)\n)",
+        "make-toys": "(:action make-toys\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (makes-toys ?character)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (worker ?character1) (worker ?character2) (not (= ?character1 ?character2)))\n :effect (friends-with ?character1 ?character2)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (happy ?character)\n)",
+        "become-less-nervous": "(:action become-less-nervous\n :parameters (?character - character)\n :precondition (and (worker ?character) (nervous ?character))\n :effect (not (nervous ?character))\n)",
+        "become-famous": "(:action become-famous\n :parameters (?character - character)\n :precondition (not (famous ?character))\n :effect (famous ?character)\n)",
+        "wear-earmuffs": "(:action wear-earmuffs\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (wears-earmuffs ?character)))\n :effect (wears-earmuffs ?character)\n)",
+        "fill-earmuffs-with-ice": "(:action fill-earmuffs-with-ice\n :parameters (?character - character)\n :precondition (and (famous ?character) (wears-earmuffs ?character) (not (filled-with-ice ?character)))\n :effect (filled-with-ice ?character)\n)",
+        "become-candidate": "(:action become-candidate\n :parameters (?character - character)\n :precondition (and (famous ?character) (not (candidate ?character)))\n :effect (candidate ?character)\n)",
+        "become-president": "(:action become-president\n :parameters (?character - character)\n :precondition (and (candidate ?character) (not (president ?character)))\n :effect (president ?character)\n)",
+        "endure-pain": "(:action endure-pain\n :parameters (?character - character)\n :precondition (and (famous ?character) (filled-with-ice ?character) (not (endured-pain ?character)))\n :effect (endured-pain ?character)\n)"
+    }
+}

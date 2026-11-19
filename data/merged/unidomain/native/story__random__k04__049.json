@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(bored ?character - character)": "Source predicate (bored ?character - character).",
+        "(dizzy ?character - character)": "Source predicate (dizzy ?character - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(rolling ?character - character)": "Source predicate (rolling ?character - character).",
+        "(lying-down ?character - character)": "Source predicate (lying-down ?character - character).",
+        "(buried ?item - item ?place - place)": "Source predicate (buried ?item - item ?place - place).",
+        "(destroyed ?item - item)": "Source predicate (destroyed ?item - item).",
+        "(explosives-set ?place - place)": "Source predicate (explosives-set ?place - place).",
+        "(alive ?character - character)": "The character is alive.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(wolves-attack ?place - place)": "Source predicate (wolves-attack ?place - place).",
+        "(wolves-killed ?character - character)": "Source predicate (wolves-killed ?character - character).",
+        "(has-weapon ?character - character)": "Source predicate (has-weapon ?character - character).",
+        "(in-group ?character - character ?group - group)": "Source predicate (in-group ?character - character ?group - group).",
+        "(group-exists ?group - group)": "Source predicate (group-exists ?group - group).",
+        "(has-electronics ?character - character)": "Source predicate (has-electronics ?character - character).",
+        "(believes-in-fairies ?character - character)": "Source predicate (believes-in-fairies ?character - character)."
+    },
+    "operators": {
+        "start-rolling": "(:action start-rolling\n :parameters (?character - character)\n :precondition (and (bored ?character) (not (rolling ?character)))\n :effect (and (not (bored ?character)) (rolling ?character))\n)",
+        "stop-rolling": "(:action stop-rolling\n :parameters (?character - character)\n :precondition (rolling ?character)\n :effect (and (not (rolling ?character)) (dizzy ?character))\n)",
+        "lie-down": "(:action lie-down\n :parameters (?character - character)\n :precondition (and (dizzy ?character) (not (lying-down ?character)))\n :effect (and (not (dizzy ?character)) (lying-down ?character))\n)",
+        "get-up": "(:action get-up\n :parameters (?character - character)\n :precondition (lying-down ?character)\n :effect (and (not (lying-down ?character)) (happy ?character))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "set-explosives": "(:action set-explosives\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (explosives-set ?place)\n)",
+        "detonate-explosives": "(:action detonate-explosives\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (explosives-set ?place))\n :effect (forall (?item - item) (when (buried ?item ?place) (destroyed ?item)))\n)",
+        "destroy-item": "(:action destroy-item\n :parameters (?character - character ?item - item)\n :precondition (and (alive ?character) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (destroyed ?item))\n)",
+        "die :parameters (?character - character) :precondition (alive ?character) :effect (not (alive ?character)))": "(:action die :parameters (?character - character) :precondition (alive ?character) :effect (not (alive ?character)))",
+        "stop-believing": "(:action stop-believing\n :parameters (?character - character)\n :precondition (and (alive ?character) (believes-in-fairies ?character))\n :effect (not (believes-in-fairies ?character))\n)",
+        "kill-wolves": "(:action kill-wolves\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place) (wolves-attack ?place))\n :effect (wolves-killed ?character)\n)",
+        "move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "fight": "(:action fight\n :parameters (?fighter1 - character ?fighter2 - character)\n :precondition (and (not (= ?fighter1 ?fighter2)) (alive ?fighter1) (has-weapon ?fighter1) (alive ?fighter2) (has-weapon ?fighter2))\n :effect (and)\n)",
+        "acquire-electronics": "(:action acquire-electronics\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (has-electronics ?character)))\n :effect (has-electronics ?character)\n)"
+    }
+}

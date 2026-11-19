@@ -1,0 +1,40 @@
+{
+    "predicates": {
+        "(made-handprint ?character - character)": "Source predicate (made-handprint ?character - character).",
+        "(celebrated ?character - character)": "Source predicate (celebrated ?character - character).",
+        "(on-shelf ?item - item)": "Source predicate (on-shelf ?item - item).",
+        "(organized ?place - place)": "Source predicate (organized ?place - place).",
+        "(reads ?character - character)": "Source predicate (reads ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item.",
+        "(found ?character - character ?object - object)": "The character has found the specified object.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(at ?character - character ?place - object)": "The character is at the location represented by the object.",
+        "(happy ?character - character)": "The character is happy.",
+        "(friends ?c1 - character ?c2 - character)": "Source predicate (friends ?c1 - character ?c2 - character).",
+        "(kind ?character - character)": "Source predicate (kind ?character - character).",
+        "(knows-wisdom ?character - character)": "Source predicate (knows-wisdom ?character - character).",
+        "(lost ?character - character)": "Source predicate (lost ?character - character).",
+        "(magic ?character - character)": "Source predicate (magic ?character - character).",
+        "(granted-wish ?wish - object)": "Source predicate (granted-wish ?wish - object).",
+        "(found ?character - character)": "The character has found the specified object.",
+        "(has ?character - character ?item - object)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "make-handprint": "(:action make-handprint\n :parameters (?character - character)\n :precondition (found ?character colors)\n :effect (made-handprint ?character)\n)",
+        "find :parameters (?character - character ?object - object) :precondition (and (not (found ?character ?object)) (not (has ?character ?object)) (reads ?character)) :effect (and (found ?character ?object) (has ?character ?object)))": "(:action find :parameters (?character - character ?object - object) :precondition (and (not (found ?character ?object)) (not (has ?character ?object)) (reads ?character)) :effect (and (found ?character ?object) (has ?character ?object)))",
+        "show-handprint :parameters (?demonstrator - character ?observer - character) :precondition (and (made-handprint ?demonstrator) (not (= ?demonstrator ?observer))) :effect (celebrated ?observer))": "(:action show-handprint :parameters (?demonstrator - character ?observer - character) :precondition (and (made-handprint ?demonstrator) (not (= ?demonstrator ?observer))) :effect (celebrated ?observer))",
+        "celebrate :parameters (?actor - character ?recipient - character) :precondition (and (celebrated ?actor) (not (= ?actor ?recipient))) :effect (celebrated ?recipient))": "(:action celebrate :parameters (?actor - character ?recipient - character) :precondition (and (celebrated ?actor) (not (= ?actor ?recipient))) :effect (celebrated ?recipient))",
+        "put-on-shelf :parameters (?character - character ?object - object ?location - object) :precondition (and (has ?character ?object) (at ?character ?location)) :effect (and (not (has ?character ?object)) (on-shelf ?object) (organized ?location)))": "(:action put-on-shelf :parameters (?character - character ?object - object ?location - object) :precondition (and (has ?character ?object) (at ?character ?location)) :effect (and (not (has ?character ?object)) (on-shelf ?object) (organized ?location)))",
+        "read": "(:action read\n :parameters (?character - character)\n :precondition (reads ?character)\n :effect (happy ?character)\n)",
+        "smell-soap": "(:action smell-soap\n :parameters (?character - character ?soap - item)\n :precondition (and (on-shelf ?soap) (reads ?character))\n :effect (happy ?character)\n)",
+        "become-kind": "(:action become-kind\n :parameters (?character - character)\n :precondition (not (kind ?character))\n :effect (kind ?character)\n)",
+        "learn-wisdom": "(:action learn-wisdom\n :parameters (?learner - character ?teacher - character)\n :precondition (and (not (knows-wisdom ?learner)) (knows-wisdom ?teacher))\n :effect (knows-wisdom ?learner)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?c1 - character ?c2 - character)\n :precondition (and (not (friends ?c1 ?c2)) (not (= ?c1 ?c2)))\n :effect (friends ?c1 ?c2)\n)",
+        "become-magic": "(:action become-magic\n :parameters (?character - character)\n :precondition (not (magic ?character))\n :effect (magic ?character)\n)",
+        "grant-wish": "(:action grant-wish\n :parameters (?granter - character ?wish - object)\n :precondition (magic ?granter)\n :effect (granted-wish ?wish)\n)",
+        "help :parameters (?helper - character ?helpee - character ?object - object) :precondition (and (kind ?helper) (lost ?helpee)) :effect (found ?helpee ?object))": "(:action help :parameters (?helper - character ?helpee - character ?object - object) :precondition (and (kind ?helper) (lost ?helpee)) :effect (found ?helpee ?object))",
+        "share-object :parameters (?sharer - character ?receiver - character ?object - object) :precondition (and (has ?sharer ?object) (not (has ?receiver ?object))) :effect (has ?receiver ?object))": "(:action share-object :parameters (?sharer - character ?receiver - character ?object - object) :precondition (and (has ?sharer ?object) (not (has ?receiver ?object))) :effect (has ?receiver ?object))",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - object)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "sit-down": "(:action sit-down\n :parameters (?character - character)\n :precondition (not (happy ?character))\n :effect (happy ?character)\n)"
+    }
+}

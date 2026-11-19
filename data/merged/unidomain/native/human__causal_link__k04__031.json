@@ -1,0 +1,42 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(alive ?character - character)": "Character ?c is alive.",
+        "(has ?character - character ?character2 - character)": "Character ?c has ?t, which may be a thing or another character.",
+        "(alive ?c - character)": "Character ?c is alive.",
+        "(has ?c - character ?t - (either thing character))": "Character ?c has ?t, which may be a thing or another character.",
+        "(at ?character - character ?location - location)": "The character is at the specified location, which may be a house.",
+        "(player ?character - character)": "The character is a player.",
+        "(connected ?to - location ?from - location)": "The destination location ?to is connected to the source location ?from.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(at ?thing - character ?location - location)": "Character ?thing is at location ?location, which may be a house.",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(has ?character - character ?target - (either item character))": "The character has the target, which may be an item or another character."
+    },
+    "operators": {
+        "walk :parameters (?character - character ?from ?to - location) :precondition (and (alive ?character) (at ?character ?from) (not (eaten ?character))) :effect (and (not (at ?character ?from)) (at ?character ?to) (when (and (rescuer ?character)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))": "(:action walk :parameters (?character - character ?from ?to - location) :precondition (and (alive ?character) (at ?character ?from) (not (eaten ?character))) :effect (and (not (at ?character ?from)) (at ?character ?to) (when (and (rescuer ?character)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))",
+        "eat :parameters (?m - wolf ?character - character ?location - location) :precondition (and (alive ?m) (alive ?character) (not (eaten ?character)) (at ?m ?location) (at ?character ?location) (monster ?m)) :effect (and (eaten ?character)))": "(:action eat :parameters (?m - wolf ?character - character ?location - location) :precondition (and (alive ?m) (alive ?character) (not (eaten ?character)) (at ?m ?location) (at ?character ?location) (monster ?m)) :effect (and (eaten ?character)))",
+        "escape :parameters (?character - human ?wolf - wolf ?location - location) :precondition (and (eaten ?character) (not (alive ?wolf)) (at ?wolf ?location)) :effect (and (not (eaten ?character)) (rescued ?character) (at ?character ?location)))": "(:action escape :parameters (?character - human ?wolf - wolf ?location - location) :precondition (and (eaten ?character) (not (alive ?wolf)) (at ?wolf ?location)) :effect (and (not (eaten ?character)) (rescued ?character) (at ?character ?location)))",
+        "kill :parameters (?character - character ?m - wolf ?t - (either thing character) ?location - location) :precondition (and (alive ?character) (alive ?m) (has ?character ?t) (at ?character ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?character - character ?m - wolf ?t - (either thing character) ?location - location) :precondition (and (alive ?character) (alive ?m) (has ?character ?t) (at ?character ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?character)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "give :parameters (?character1 ?character2 - human ?o - (either thing character) ?location - location) :precondition (and (not (eaten ?character2)) (alive ?character1) (alive ?character2) (has ?character1 ?o) (at ?character1 ?location) (at ?character2 ?location)) :effect (and (has ?character2 ?o) (not (has ?character1 ?o))))": "(:action give :parameters (?character1 ?character2 - human ?o - (either thing character) ?location - location) :precondition (and (not (eaten ?character2)) (alive ?character1) (alive ?character2) (has ?character1 ?o) (at ?character1 ?location) (at ?character2 ?location)) :effect (and (has ?character2 ?o) (not (has ?character1 ?o))))",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing :parameters (?c - character ?t - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?t ?location) (not (asleep ?c)) (not (enchanted ?t))) :effect (and (not (at ?t ?location)) (has ?c ?t)))": "(:action take-thing :parameters (?c - character ?t - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?t ?location) (not (asleep ?c)) (not (enchanted ?t))) :effect (and (not (at ?t ?location)) (has ?c ?t)))",
+        "disenchant-thing :parameters (?caster - character ?thing - item ?target - (either thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?target) (enchanted ?thing)) :effect (not (enchanted ?thing)))": "(:action disenchant-thing :parameters (?caster - character ?thing - item ?target - (either thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?target) (enchanted ?thing)) :effect (not (enchanted ?thing)))",
+        "move-location": "(:action move-location :parameters (?character - character ?to - location ?from - location) :precondition (and (player ?character) (connected ?to ?from) (at ?character ?from) (knows ?character) (not (asleep ?character))) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "interrogate-character": "(:action interrogate-character :parameters (?interrogator - character ?character - character ?location - location) :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?character ?location) (apprehended ?character)) :effect (knows ?interrogator))",
+        "save-character": "(:action save-character :parameters (?saver - character ?captive - character ?other-captive - character ?location - location) :precondition (and (player ?saver) (at ?saver ?location) (at ?captive ?location) (captured ?captive) (captured ?other-captive) (not (at ?other-captive ?location))) :effect (and (saved ?captive ?saver) (not (alive ?other-captive))))",
+        "place-victim": "(:action place-victim :parameters (?actor - character ?target - character ?from - location ?to - location) :precondition (and (henchman ?actor) (has ?actor ?target) (at ?actor ?from) (connected ?to ?from)) :effect (and (not (has ?actor ?target)) (at ?target ?to) (captured ?target)))"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "predicates": {
+        "(loves ?lover - character ?loved - character)": "Source predicate (loves ?lover - character ?loved - character).",
+        "(confessed ?confessor - character ?confessed-to - character)": "Source predicate (confessed ?confessor - character ?confessed-to - character).",
+        "(asked-question ?asker - character ?asked - character)": "Source predicate (asked-question ?asker - character ?asked - character).",
+        "(took-pill ?character - character)": "Source predicate (took-pill ?character - character).",
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(alive ?character - character)": "The character is alive.",
+        "(has-weapon ?character - character)": "Source predicate (has-weapon ?character - character).",
+        "(in-group ?character - character ?group - group)": "Source predicate (in-group ?character - character ?group - group).",
+        "(group-exists ?group - group)": "Source predicate (group-exists ?group - group).",
+        "(has-electronics ?character - character)": "Source predicate (has-electronics ?character - character).",
+        "(believes-in-fairies ?character - character)": "Source predicate (believes-in-fairies ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified location."
+    },
+    "operators": {
+        "take-pill": "(:action take-pill\n :parameters (?character - character)\n :precondition (not (took-pill ?character))\n :effect (took-pill ?character)\n)",
+        "ask-love-question": "(:action ask-love-question\n :parameters (?asker - character ?asked - character)\n :precondition (not (asked-question ?asker ?asked))\n :effect (asked-question ?asker ?asked)\n)",
+        "confess-love": "(:action confess-love\n :parameters (?confessor - character ?confessed-to - character)\n :precondition (and (not (confessed ?confessor ?confessed-to)) (asked-question ?confessed-to ?confessor) (took-pill ?confessor))\n :effect (and (confessed ?confessor ?confessed-to) (loves ?confessor ?confessed-to))\n)",
+        "interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))": "(:action interrogate-character :parameters (?actor - character ?target - character ?place - location) :precondition (and (player ?actor) (at ?actor ?place) (at ?target ?place) (apprehended ?target)) :effect (knows ?actor))",
+        "place-victim :parameters (?acting-character - character ?target-character - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target-character) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target-character)) (at ?target-character ?destination-location) (captured ?target-character)))": "(:action place-victim :parameters (?acting-character - character ?target-character - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?acting-character) (has ?acting-character ?target-character) (at ?acting-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?acting-character ?target-character)) (at ?target-character ?destination-location) (captured ?target-character)))",
+        "save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))": "(:action save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))",
+        "fight": "(:action fight\n :parameters (?fighter1 - character ?fighter2 - character)\n :precondition (and (not (= ?fighter1 ?fighter2)) (alive ?fighter1) (has-weapon ?fighter1) (alive ?fighter2) (has-weapon ?fighter2))\n :effect (and)\n)",
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)",
+        "acquire-electronics": "(:action acquire-electronics\n :parameters (?character - character)\n :precondition (and (alive ?character) (not (has-electronics ?character)))\n :effect (has-electronics ?character)\n)",
+        "stop-believing": "(:action stop-believing\n :parameters (?character - character)\n :precondition (and (alive ?character) (believes-in-fairies ?character))\n :effect (not (believes-in-fairies ?character))\n)",
+        "move-location": "(:action move-location :parameters (?actor - character ?to - location ?from - location) :precondition (and (player ?actor) (connected ?to ?from) (at ?actor ?from) (knows ?actor) (not (= ?from ?to)) (alive ?actor)) :effect (and (not (at ?actor ?from)) (at ?actor ?to)))"
+    }
+}

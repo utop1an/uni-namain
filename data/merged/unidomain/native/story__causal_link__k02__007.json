@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(interesting ?place - place)": "Source predicate (interesting ?place - place).",
+        "(singing ?character - character)": "Source predicate (singing ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(awake ?character - character)": "The character is awake.",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(has-hoard ?character - character)": "Source predicate (has-hoard ?character - character).",
+        "(robbed ?gang - gang)": "Source predicate (robbed ?gang - gang).",
+        "(soundproof-door ?place - place)": "Source predicate (soundproof-door ?place - place).",
+        "(attacked ?character - character)": "Source predicate (attacked ?character - character)."
+    },
+    "operators": {
+        "stop-singing": "(:action stop-singing\n :parameters (?character - character)\n :precondition (singing ?character)\n :effect (not (singing ?character))\n)",
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (singing ?character)\n)",
+        "make-friends": "(:action make-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (awake ?character1) (awake ?character2) (not (friends ?character1 ?character2)) (not (= ?character1 ?character2)))\n :effect (friends ?character1 ?character2)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sleep": "(:action sleep :parameters (?character - character ?place - place) :precondition (and (awake ?character) (at ?character ?place) (interesting ?place)) :effect (and (not (awake ?character)) (asleep ?character)))",
+        "wake-up": "(:action wake-up :parameters (?character - character) :precondition (and (not (awake ?character)) (asleep ?character)) :effect (and (awake ?character) (not (asleep ?character))))",
+        "rob": "(:action rob\n :parameters (?gang - character)\n :precondition (awake ?gang)\n :effect (robbed ?gang)\n)",
+        "install-soundproof-door": "(:action install-soundproof-door\n :parameters (?gang - character ?place - place)\n :precondition (and (awake ?gang) (at ?gang ?place) (not (soundproof-door ?place)))\n :effect (soundproof-door ?place)\n)",
+        "attack": "(:action attack\n :parameters (?attacker - character ?victim - character)\n :precondition (and (awake ?attacker) (awake ?victim))\n :effect (attacked ?victim)\n)",
+        "clear-passage": "(:action clear-passage\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (attacked ?character)) (has-hoard ?character))\n)"
+    }
+}

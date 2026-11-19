@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(at ?thing - character ?location - location)": "The item or character is at the specified location.",
+        "(at ?thing - (either item character) ?location - location)": "The item or character is at the specified location.",
+        "(player ?character - character)": "The character is a player.",
+        "(at ?character - character ?location - location)": "The character is at the specified location, which may be a room.",
+        "(has ?character - character ?target - (either item thing character))": "The character has the target, which may be an item, a thing, or another character.",
+        "(connected ?to - location ?from - location)": "The destination location ?to is connected to the source location ?from.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(alive ?character - character)": "The character is alive.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(has ?character - character ?character2 - character)": "The character has the target character.",
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(has ?character - character ?target - (either thing character))": "The character has the target, which may be an item, a thing, or another character."
+    },
+    "operators": {
+        "wake-person :parameters (?awakener - character ?sleeper - character ?place - location) :precondition (and (at ?awakener ?place) (at ?sleeper ?place) (asleep ?sleeper) (not (asleep ?awakener))) :effect (not (asleep ?sleeper)))": "(:action wake-person :parameters (?awakener - character ?sleeper - character ?place - location) :precondition (and (at ?awakener ?place) (at ?sleeper ?place) (asleep ?sleeper) (not (asleep ?awakener))) :effect (not (asleep ?sleeper)))",
+        "disenchant-thing :parameters (?caster - character ?entity - (either item character) ?target - (either item thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?entity ?location) (not (asleep ?caster)) (has ?caster ?target) (enchanted ?entity)) :effect (not (enchanted ?entity)))": "(:action disenchant-thing :parameters (?caster - character ?entity - (either item character) ?target - (either item thing character) ?location - location) :precondition (and (at ?caster ?location) (at ?entity ?location) (not (asleep ?caster)) (has ?caster ?target) (enchanted ?entity)) :effect (not (enchanted ?entity)))",
+        "enter_room": "(:action enter_room :parameters (?mover - character ?source - location ?destination - room) :precondition (and (connected ?destination ?source) (not (asleep ?mover)) (not (locked ?destination)) (at ?mover ?source) (player ?mover) (knows ?mover)) :effect (and (not (at ?mover ?source)) (at ?mover ?destination)))",
+        "interrogate-character": "(:action interrogate-character :parameters (?interrogator - character ?detainee - character ?location - location) :precondition (and (player ?interrogator) (at ?interrogator ?location) (at ?detainee ?location) (apprehended ?detainee)) :effect (knows ?interrogator))",
+        "save-character": "(:action save-character :parameters (?saver - character ?rescued - character ?unrescued - character ?place - location) :precondition (and (player ?saver) (at ?saver ?place) (at ?rescued ?place) (captured ?rescued) (captured ?unrescued) (not (at ?unrescued ?place))) :effect (and (saved ?rescued ?saver) (not (alive ?unrescued))))",
+        "unlock :parameters (?actor - character ?key - key ?location - room) :precondition (and (locked ?location) (unlocked-by ?location ?key) (has ?actor ?key)) :effect (and (not (locked ?location))))": "(:action unlock :parameters (?actor - character ?key - key ?location - room) :precondition (and (locked ?location) (unlocked-by ?location ?key) (has ?actor ?key)) :effect (and (not (locked ?location))))",
+        "take-thing-from-room": "(:action take-thing-from-room :parameters (?taker - character ?target - (either item thing character) ?room - room) :precondition (and (at ?taker ?room) (at ?target ?room) (in ?target ?room) (not (asleep ?taker)) (not (enchanted ?target))) :effect (and (not (at ?target ?room)) (not (in ?target ?room)) (has ?taker ?target)))",
+        "place-victim": "(:action place-victim :parameters (?holder - character ?victim - character ?source - location ?destination - location) :precondition (and (henchman ?holder) (has ?holder ?victim) (at ?holder ?source) (connected ?destination ?source)) :effect (and (not (has ?holder ?victim)) (at ?victim ?destination) (captured ?victim)))"
+    }
+}

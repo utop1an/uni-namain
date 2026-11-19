@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(wearing-clothes ?character - character)": "Source predicate (wearing-clothes ?character - character).",
+        "(has-device ?character - character ?device - device)": "Source predicate (has-device ?character - character ?device - device).",
+        "(device-on ?device - device)": "Source predicate (device-on ?device - device).",
+        "(device-connected ?device - device)": "Source predicate (device-connected ?device - device).",
+        "(electricity ?place - place)": "Source predicate (electricity ?place - place).",
+        "(working ?device - device)": "Source predicate (working ?device - device).",
+        "(school-canceled)": "Source predicate (school-canceled).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(found ?character - character ?item - item)": "Source predicate (found ?character - character ?item - item).",
+        "(hidden ?item - item ?place - place)": "Source predicate (hidden ?item - item ?place - place).",
+        "(open ?item - item)": "Source predicate (open ?item - item).",
+        "(stored ?item - item ?place - place)": "Source predicate (stored ?item - item ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place)."
+    },
+    "operators": {
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (not (awake ?character))\n :effect (awake ?character)\n)",
+        "put-on-clothes": "(:action put-on-clothes\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (wearing-clothes ?character)))\n :effect (wearing-clothes ?character)\n)",
+        "turn-on-device": "(:action turn-on-device\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (has-device ?character ?device) (not (device-on ?device)))\n :effect (device-on ?device)\n)",
+        "check-connectivity": "(:action check-connectivity\n :parameters (?character - character ?device - device)\n :precondition (and (awake ?character) (device-on ?device) (has-device ?character ?device))\n :effect (when (device-connected ?device) (working ?device))\n)",
+        "cancel-school": "(:action cancel-school\n :parameters ()\n :precondition (not (school-canceled))\n :effect (school-canceled)\n)",
+        "go-outside": "(:action go-outside\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (wearing-clothes ?character) (at ?character ?place))\n :effect (and (not (at ?character ?place)) (at ?character outside))\n)",
+        "talk": "(:action talk\n :parameters (?speaker - character ?listener - character)\n :precondition (and (awake ?speaker) (awake ?listener) (at ?speaker outside) (at ?listener outside))\n :effect (and)\n)",
+        "open": "(:action open\n :parameters (?character - character ?item - item)\n :precondition (and (found ?character ?item) (not (open ?item)))\n :effect (open ?item)\n)",
+        "drink": "(:action drink\n :parameters (?character - character ?drink - drink)\n :precondition (and (alive ?character) (has ?character ?drink))\n :effect (and (drunk ?character) (not (has ?character ?drink)))\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "search": "(:action search\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (forall (?item - item) (when (hidden ?item ?place) (found ?character ?item)))\n)",
+        "store": "(:action store\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (found ?character ?item) (open ?item) (at ?character ?place))\n :effect (stored ?item ?place)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "vomit": "(:action vomit\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (drunk ?character) (at ?character ?place))\n :effect (vomit-stain ?place)\n)"
+    }
+}

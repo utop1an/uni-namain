@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(needs-walk ?character - character)": "Source predicate (needs-walk ?character - character).",
+        "(in-herenow ?character - character)": "Source predicate (in-herenow ?character - character).",
+        "(ancient-oath ?dog - character)": "Source predicate (ancient-oath ?dog - character).",
+        "(guardian ?dog - character)": "Source predicate (guardian ?dog - character).",
+        "(master ?character - character)": "Source predicate (master ?character - character).",
+        "(time-of-passing)": "Source predicate (time-of-passing).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(dry ?place - place)": "Source predicate (dry ?place - place).",
+        "(wet ?place - place)": "Source predicate (wet ?place - place).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(pranked ?pranker - character ?target - character)": "Source predicate (pranked ?pranker - character ?target - character)."
+    },
+    "operators": {
+        "remind-ancient-oath": "(:action remind-ancient-oath\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (ancient-oath ?dog))\n :effect (needs-walk ?master)\n)",
+        "bring-to-herenow": "(:action bring-to-herenow\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (not (in-herenow ?master)))\n :effect (in-herenow ?master)\n)",
+        "walk": "(:action walk\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (needs-walk ?master))\n :effect (and (not (needs-walk ?master)) (in-herenow ?master))\n)",
+        "time-of-passing": "(:action time-of-passing\n :parameters ()\n :precondition (not (time-of-passing))\n :effect (time-of-passing)\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "play": "(:action play\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (dry ?place))\n :effect (happy ?character)\n)",
+        "dry-place": "(:action dry-place\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (wet ?place))\n :effect (and (not (wet ?place)) (dry ?place))\n)",
+        "make-friends": "(:action make-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (happy ?character1) (happy ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "prank": "(:action prank\n :parameters (?pranker - character ?target - character)\n :precondition (and)\n :effect (pranked ?pranker ?target)\n)"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(offered-snack ?giver - character ?receiver - character)": "Source predicate (offered-snack ?giver - character ?receiver - character).",
+        "(snack-is-lie ?giver - character ?receiver - character)": "Source predicate (snack-is-lie ?giver - character ?receiver - character).",
+        "(trusts ?character1 - character ?character2 - character)": "Source predicate (trusts ?character1 - character ?character2 - character).",
+        "(compassionate ?character - character)": "Source predicate (compassionate ?character - character).",
+        "(at ?entity - (either character item) ?place - object)": "The character or item ?entity is at ?place.",
+        "(happy ?character - character)": "The character is happy.",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(at ?item - item ?place - object)": "The character or item ?entity is at ?place."
+    },
+    "operators": {
+        "offer-snack :parameters (?provider - character ?recipient - character) :precondition (and (at ?recipient ?provider) (compassionate ?provider)) :effect (offered-snack ?provider ?recipient))": "(:action offer-snack :parameters (?provider - character ?recipient - character) :precondition (and (at ?recipient ?provider) (compassionate ?provider)) :effect (offered-snack ?provider ?recipient))",
+        "run-away :parameters (?entity - character ?source - character) :precondition (and (at ?entity ?source) (sad ?entity)) :effect (and (not (at ?entity ?source)) (not (trusts ?entity ?source))))": "(:action run-away :parameters (?entity - character ?source - character) :precondition (and (at ?entity ?source) (sad ?entity)) :effect (and (not (at ?entity ?source)) (not (trusts ?entity ?source))))",
+        "learn-lesson": "(:action learn-lesson\n :parameters (?character - character)\n :precondition (and (sad ?character) (not (trusts ?character ?character)))\n :effect (and (not (sad ?character)) (happy ?character))\n)",
+        "go-to-place :parameters (?character - character ?place - object) :precondition (and (not (at ?character ?place)) (happy ?character)) :effect (and (at ?character ?place) (not (happy ?character))))": "(:action go-to-place :parameters (?character - character ?place - object) :precondition (and (not (at ?character ?place)) (happy ?character)) :effect (and (at ?character ?place) (not (happy ?character))))",
+        "reveal-lie :parameters (?source - character ?recipient - character) :precondition (and (offered-snack ?source ?recipient) (not (compassionate ?source))) :effect (and (snack-is-lie ?source ?recipient) (not (happy ?recipient)) (sad ?recipient)))": "(:action reveal-lie :parameters (?source - character ?recipient - character) :precondition (and (offered-snack ?source ?recipient) (not (compassionate ?source))) :effect (and (snack-is-lie ?source ?recipient) (not (happy ?recipient)) (sad ?recipient)))",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "put": "(:action put\n :parameters (?character - character ?entity - item ?place - object)\n :precondition (and (happy ?character) (has ?character ?entity))\n :effect (at ?entity ?place)\n)"
+    }
+}

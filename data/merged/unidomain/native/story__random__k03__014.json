@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(in-love ?character1 - character ?character2 - character)": "Source predicate (in-love ?character1 - character ?character2 - character).",
+        "(betrayed ?character1 - character ?character2 - character)": "Source predicate (betrayed ?character1 - character ?character2 - character).",
+        "(peace ?place - place)": "Source predicate (peace ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(hidden ?toy - toy ?place - place)": "Source predicate (hidden ?toy - toy ?place - place).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place).",
+        "(found ?character - character ?item - item)": "The character has found the item, which may be a toy. An unspecified-finder character represents unary occurrences from domain_1.",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(digging ?character - character)": "Source predicate (digging ?character - character).",
+        "(opened ?character - character ?item - item)": "Source predicate (opened ?character - character ?item - item).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character)."
+    },
+    "operators": {
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (friends ?character1 ?character2)))\n :effect (friends ?character1 ?character2)\n)",
+        "fall-in-love": "(:action fall-in-love\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (in-love ?character1 ?character2)) (friends ?character1 ?character2))\n :effect (in-love ?character1 ?character2)\n)",
+        "betray": "(:action betray\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (in-love ?character1 ?character2))\n :effect (betrayed ?character1 ?character2)\n)",
+        "redeem": "(:action redeem\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (betrayed ?character1 ?character2))\n :effect (and (not (betrayed ?character1 ?character2)) (in-love ?character1 ?character2))\n)",
+        "bring-peace": "(:action bring-peace\n :parameters (?character - character ?place - place)\n :precondition (and (not (peace ?place)) (exists (?character2 - character) (in-love ?character ?character2)))\n :effect (peace ?place)\n)",
+        "dig": "(:action dig\n :parameters (?character - character)\n :precondition (and (has ?character spade) (not (digging ?character)))\n :effect (digging ?character)\n)",
+        "play": "(:action play\n :parameters (?character - character)\n :precondition (and (opened ?character small-box))\n :effect (playing ?character)\n)",
+        "open": "(:action open\n :parameters (?character - character ?item - item)\n :precondition (and (found ?character ?item) (not (opened ?character ?item)))\n :effect (opened ?character ?item)\n)",
+        "hide": "(:action hide\n :parameters (?character - character ?toy - toy ?place - place)\n :precondition (at ?character ?place)\n :effect (hidden ?toy ?place)\n)",
+        "search": "(:action search\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (not (searched ?character ?place)))\n :effect (searched ?character ?place)\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "find :parameters (?character - character ?item - toy ?place - place) :precondition (and (at ?character ?place) (hidden ?item ?place) (searched ?character ?place) (digging ?character) (not (found ?character ?item))) :effect (and (found ?character ?item) (has ?character ?item)))": "(:action find :parameters (?character - character ?item - toy ?place - place) :precondition (and (at ?character ?place) (hidden ?item ?place) (searched ?character ?place) (digging ?character) (not (found ?character ?item))) :effect (and (found ?character ?item) (has ?character ?item)))",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - place)\n :precondition (and (not (at ?character ?place)) (has ?character spade))\n :effect (at ?character ?place)\n)"
+    }
+}

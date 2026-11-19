@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has-hoard ?character - character)": "Source predicate (has-hoard ?character - character).",
+        "(robbed ?gang - gang)": "Source predicate (robbed ?gang - gang).",
+        "(soundproof-door ?place - place)": "Source predicate (soundproof-door ?place - place).",
+        "(attacked ?character - character)": "Source predicate (attacked ?character - character).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(anchored ?light - lightbox)": "Source predicate (anchored ?light - lightbox).",
+        "(charged ?light - lightbox)": "Source predicate (charged ?light - lightbox).",
+        "(created ?character - character ?light - lightbox)": "Source predicate (created ?character - character ?light - lightbox).",
+        "(used ?character - character ?light - lightbox)": "Source predicate (used ?character - character ?light - lightbox)."
+    },
+    "operators": {
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (awake ?character)) (asleep ?character))\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (asleep ?character)\n :effect (and (not (asleep ?character)) (awake ?character))\n)",
+        "install-soundproof-door": "(:action install-soundproof-door\n :parameters (?gang - character ?place - place)\n :precondition (and (awake ?gang) (at ?gang ?place) (not (soundproof-door ?place)))\n :effect (soundproof-door ?place)\n)",
+        "rob": "(:action rob\n :parameters (?gang - character)\n :precondition (awake ?gang)\n :effect (robbed ?gang)\n)",
+        "attack": "(:action attack\n :parameters (?attacker - character ?victim - character)\n :precondition (and (awake ?attacker) (awake ?victim))\n :effect (attacked ?victim)\n)",
+        "clear-passage": "(:action clear-passage\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (attacked ?character)) (has-hoard ?character))\n)",
+        "create-lightbox": "(:action create-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (alive ?character)\n :effect (and (created ?character ?lightbox) (has ?character ?lightbox))\n)",
+        "anchor-light": "(:action anchor-light\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (created ?character ?lightbox) (has ?character ?lightbox))\n :effect (anchored ?lightbox)\n)",
+        "charge-lightbox": "(:action charge-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (anchored ?lightbox) (created ?character ?lightbox))\n :effect (charged ?lightbox)\n)",
+        "use-lightbox": "(:action use-lightbox\n :parameters (?character - character ?lightbox - lightbox)\n :precondition (and (alive ?character) (charged ?lightbox) (created ?character ?lightbox) (has ?character ?lightbox))\n :effect (and (used ?character ?lightbox) (not (charged ?lightbox)))\n)"
+    }
+}

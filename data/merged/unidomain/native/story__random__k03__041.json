@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(loves ?lover - character ?loved - character)": "Source predicate (loves ?lover - character ?loved - character).",
+        "(confessed ?confessor - character ?confessed-to - character)": "Source predicate (confessed ?confessor - character ?confessed-to - character).",
+        "(asked-question ?asker - character ?asked - character)": "Source predicate (asked-question ?asker - character ?asked - character).",
+        "(took-pill ?character - character)": "Source predicate (took-pill ?character - character).",
+        "(has ?character - character ?item - object)": "Source predicate (has ?character - character ?item - object).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(magic ?character - character)": "Source predicate (magic ?character - character).",
+        "(granted-wish ?wish - object)": "Source predicate (granted-wish ?wish - object).",
+        "(at ?character - character ?place - object)": "The character is at the specified place or object.",
+        "(in-box ?character - character ?box - box)": "Source predicate (in-box ?character - character ?box - box).",
+        "(at ?box - box ?place - place)": "Source predicate (at ?box - box ?place - place).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(composed ?character - character)": "Source predicate (composed ?character - character).",
+        "(noticed ?character - character ?box - box)": "Source predicate (noticed ?character - character ?box - box).",
+        "(opened ?box - box)": "Source predicate (opened ?box - box).",
+        "(at ?character - character ?place - place)": "The character is at the specified place or object."
+    },
+    "operators": {
+        "take-pill": "(:action take-pill\n :parameters (?character - character)\n :precondition (not (took-pill ?character))\n :effect (took-pill ?character)\n)",
+        "ask-love-question": "(:action ask-love-question\n :parameters (?asker - character ?asked - character)\n :precondition (not (asked-question ?asker ?asked))\n :effect (asked-question ?asker ?asked)\n)",
+        "confess-love": "(:action confess-love\n :parameters (?confessor - character ?confessed-to - character)\n :precondition (and (not (confessed ?confessor ?confessed-to)) (asked-question ?confessed-to ?confessor) (took-pill ?confessor))\n :effect (and (confessed ?confessor ?confessed-to) (loves ?confessor ?confessed-to))\n)",
+        "sit-down": "(:action sit-down\n :parameters (?character - character)\n :precondition (not (happy ?character))\n :effect (happy ?character)\n)",
+        "share-snack": "(:action share-snack\n :parameters (?sharer - character ?receiver - character ?snack - object)\n :precondition (and (has ?sharer ?snack) (not (has ?receiver ?snack)))\n :effect (has ?receiver ?snack)\n)",
+        "become-magic": "(:action become-magic\n :parameters (?character - character)\n :precondition (not (magic ?character))\n :effect (magic ?character)\n)",
+        "grant-wish": "(:action grant-wish\n :parameters (?granter - character ?wish - object)\n :precondition (magic ?granter)\n :effect (granted-wish ?wish)\n)",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - object)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "become-nervous": "(:action become-nervous\n :parameters (?character - character)\n :precondition (and)\n :effect (nervous ?character)\n)",
+        "become-composed": "(:action become-composed\n :parameters (?character - character)\n :precondition (and)\n :effect (composed ?character)\n)",
+        "enter :parameters (?character - character ?object - object) :precondition (not (at ?character ?object)) :effect (at ?character ?object))": "(:action enter :parameters (?character - character ?object - object) :precondition (not (at ?character ?object)) :effect (at ?character ?object))",
+        "notice :parameters (?character - character ?box - box ?location - object) :precondition (and (at ?character ?location) (at ?box ?location)) :effect (noticed ?character ?box))": "(:action notice :parameters (?character - character ?box - box ?location - object) :precondition (and (at ?character ?location) (at ?box ?location)) :effect (noticed ?character ?box))",
+        "open-box :parameters (?character - character ?box - box ?location - object) :precondition (and (at ?character ?location) (at ?box ?location) (noticed ?character ?box) (not (opened ?box))) :effect (opened ?box))": "(:action open-box :parameters (?character - character ?box - box ?location - object) :precondition (and (at ?character ?location) (at ?box ?location) (noticed ?character ?box) (not (opened ?box))) :effect (opened ?box))"
+    }
+}

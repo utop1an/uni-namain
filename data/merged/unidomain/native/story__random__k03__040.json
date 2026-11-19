@@ -1,0 +1,34 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(clean ?item - item)": "Source predicate (clean ?item - item).",
+        "(locked ?door - item)": "Source predicate (locked ?door - item).",
+        "(wearing ?character - character ?item - item)": "Source predicate (wearing ?character - character ?item - item).",
+        "(fits ?item - item ?character - character)": "Source predicate (fits ?item - item ?character - character).",
+        "(at ?character - character ?place - object)": "The character is at the location represented by the object.",
+        "(has ?character - character ?item - object)": "The character has the specified object, which may be an item.",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(magic ?character - character)": "Source predicate (magic ?character - character).",
+        "(granted-wish ?wish - object)": "Source predicate (granted-wish ?wish - object).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(sleeping ?character - character)": "Source predicate (sleeping ?character - character).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(has-energy ?character - character)": "Source predicate (has-energy ?character - character)."
+    },
+    "operators": {
+        "lock-door": "(:action lock-door\n :parameters (?character - character ?door - item)\n :precondition (and (alive ?character) (not (locked ?door)))\n :effect (locked ?door)\n)",
+        "clean-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))": "(:action clean-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (clean ?object))) :effect (clean ?object))",
+        "adjust-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (fits ?object ?character))) :effect (fits ?object ?character))": "(:action adjust-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (not (fits ?object ?character))) :effect (fits ?object ?character))",
+        "wear-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (fits ?object ?character) (not (wearing ?character ?object))) :effect (wearing ?character ?object))": "(:action wear-item :parameters (?character - character ?object - item) :precondition (and (alive ?character) (has ?character ?object) (fits ?object ?character) (not (wearing ?character ?object))) :effect (wearing ?character ?object))",
+        "sit-down": "(:action sit-down\n :parameters (?character - character)\n :precondition (not (happy ?character))\n :effect (happy ?character)\n)",
+        "become-magic": "(:action become-magic\n :parameters (?character - character)\n :precondition (not (magic ?character))\n :effect (magic ?character)\n)",
+        "grant-wish": "(:action grant-wish\n :parameters (?granter - character ?wish - object)\n :precondition (magic ?granter)\n :effect (granted-wish ?wish)\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character)\n :precondition (playing ?character)\n :effect (and (not (playing ?character)) (tired ?character))\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (and (tired ?character) (not (sleeping ?character)))\n :effect (and (not (awake ?character)) (sleeping ?character))\n)",
+        "go-to": "(:action go-to\n :parameters (?character - character ?place - object)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "share-snack": "(:action share-snack\n :parameters (?sharer - character ?receiver - character ?snack - object)\n :precondition (and (has ?sharer ?snack) (not (has ?receiver ?snack)))\n :effect (has ?receiver ?snack)\n)",
+        "start-playing": "(:action start-playing\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (playing ?character)) (has-energy ?character))\n :effect (playing ?character)\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (sleeping ?character)\n :effect (and (awake ?character) (not (sleeping ?character)) (not (tired ?character)) (has-energy ?character))\n)"
+    }
+}

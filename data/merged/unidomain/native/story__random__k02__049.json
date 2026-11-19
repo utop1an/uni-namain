@@ -1,0 +1,25 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has-emotion ?character - character ?emotion - emotion)": "Source predicate (has-emotion ?character - character ?emotion - emotion).",
+        "(knows-change ?character - character)": "Source predicate (knows-change ?character - character).",
+        "(memorize ?character - character)": "Source predicate (memorize ?character - character).",
+        "(wearing ?character - character ?clothing - object)": "Source predicate (wearing ?character - character ?clothing - object).",
+        "(united ?subreddit1 - subreddit ?subreddit2 - subreddit)": "Source predicate (united ?subreddit1 - subreddit ?subreddit2 - subreddit).",
+        "(truce ?subreddit1 - subreddit ?subreddit2 - subreddit)": "Source predicate (truce ?subreddit1 - subreddit ?subreddit2 - subreddit).",
+        "(exists ?subreddit - subreddit)": "Source predicate (exists ?subreddit - subreddit).",
+        "(wall-built)": "Source predicate (wall-built).",
+        "(filled-with-water)": "Source predicate (filled-with-water)."
+    },
+    "operators": {
+        "experience-emotion": "(:action experience-emotion\n :parameters (?character - character ?emotion - emotion)\n :precondition (alive ?character)\n :effect (has-emotion ?character ?emotion)\n)",
+        "notice-change": "(:action notice-change\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-change ?character)\n)",
+        "memorize-appearance": "(:action memorize-appearance\n :parameters (?character - character)\n :precondition (and (alive ?character) (knows-change ?character))\n :effect (memorize ?character)\n)",
+        "wear": "(:action wear\n :parameters (?character - character ?clothing - object)\n :precondition (and)\n :effect (wearing ?character ?clothing)\n)",
+        "unite": "(:action unite\n :parameters (?subreddit1 - subreddit ?subreddit2 - subreddit)\n :precondition (not (united ?subreddit1 ?subreddit2))\n :effect (united ?subreddit1 ?subreddit2)\n)",
+        "establish-truce": "(:action establish-truce\n :parameters (?subreddit1 - subreddit ?subreddit2 - subreddit)\n :precondition (not (truce ?subreddit1 ?subreddit2))\n :effect (truce ?subreddit1 ?subreddit2)\n)",
+        "create-subreddit": "(:action create-subreddit\n :parameters (?subreddit - subreddit)\n :precondition (and)\n :effect (exists ?subreddit)\n)",
+        "build-wall": "(:action build-wall\n :parameters ()\n :precondition (and)\n :effect (wall-built)\n)",
+        "fill-wall-with-water": "(:action fill-wall-with-water\n :parameters ()\n :precondition (wall-built)\n :effect (filled-with-water)\n)"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(on-ship ?character - character ?ship - ship)": "Source predicate (on-ship ?character - character ?ship - ship).",
+        "(moby-dick-spotted ?ship - ship)": "Source predicate (moby-dick-spotted ?ship - ship).",
+        "(moby-dick-attacking ?ship - ship)": "Source predicate (moby-dick-attacking ?ship - ship).",
+        "(read-moby-dick ?character - character)": "Source predicate (read-moby-dick ?character - character).",
+        "(trained-in-whale-killing ?character - character)": "Source predicate (trained-in-whale-killing ?character - character).",
+        "(battle-stations ?ship - ship)": "Source predicate (battle-stations ?ship - ship).",
+        "(lost ?character - character ?cap - cap)": "Source predicate (lost ?character - character ?cap - cap).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - (either cap item))": "The character possesses the specified cap or item.",
+        "(found ?character - character ?object - (either cap item))": "The character has found the specified cap or item.",
+        "(played-with ?character - character ?item - item)": "Source predicate (played-with ?character - character ?item - item).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the specified cap or item.",
+        "(found ?character - character ?item - item)": "The character has found the specified cap or item."
+    },
+    "operators": {
+        "spot-moby-dick": "(:action spot-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship))\n :effect (moby-dick-spotted ?ship)\n)",
+        "moby-dick-attack": "(:action moby-dick-attack\n :parameters (?ship - ship)\n :precondition (moby-dick-spotted ?ship)\n :effect (moby-dick-attacking ?ship)\n)",
+        "order-battle-stations": "(:action order-battle-stations\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (moby-dick-spotted ?ship))\n :effect (battle-stations ?ship)\n)",
+        "try-kill-moby-dick": "(:action try-kill-moby-dick\n :parameters (?character - character ?ship - ship)\n :precondition (and (alive ?character) (on-ship ?character ?ship) (trained-in-whale-killing ?character) (moby-dick-attacking ?ship) (battle-stations ?ship))\n :effect (not (moby-dick-attacking ?ship))\n)",
+        "read-moby-dick": "(:action read-moby-dick\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (read-moby-dick ?character)\n)",
+        "train-in-whale-killing": "(:action train-in-whale-killing\n :parameters (?character - character)\n :precondition (read-moby-dick ?character)\n :effect (trained-in-whale-killing ?character)\n)",
+        "search": "(:action search\n :parameters (?character - character ?cap - cap ?place - place)\n :precondition (and (at ?character ?place) (lost ?character ?cap))\n :effect (searched ?character ?place)\n)",
+        "lose :parameters (?character - character ?item - cap) :precondition (has ?character ?item) :effect (and (lost ?character ?item) (not (has ?character ?item))))": "(:action lose :parameters (?character - character ?item - cap) :precondition (has ?character ?item) :effect (and (lost ?character ?item) (not (has ?character ?item))))",
+        "replace :parameters (?character - character ?old-object - (either cap item) ?new-item - (either cap item)) :precondition (and (found ?character ?old-object) (not (has ?character ?old-object)) (has ?character ?new-item)) :effect (and (not (found ?character ?old-object)) (has ?character ?old-object) (not (has ?character ?new-item))))": "(:action replace :parameters (?character - character ?old-object - (either cap item) ?new-item - (either cap item)) :precondition (and (found ?character ?old-object) (not (has ?character ?old-object)) (has ?character ?new-item)) :effect (and (not (found ?character ?old-object)) (has ?character ?old-object) (not (has ?character ?new-item))))",
+        "fly-high": "(:action fly-high\n :parameters (?character - character)\n :precondition (and (played-with ?character rocket))\n :effect (happy ?character)\n)",
+        "show :parameters (?shower - character ?object - (either cap item) ?receiver - character ?place - place) :precondition (and (not (= ?shower ?receiver)) (at ?shower ?place) (has ?shower ?object) (at ?receiver ?place)) :effect (happy ?receiver))": "(:action show :parameters (?shower - character ?object - (either cap item) ?receiver - character ?place - place) :precondition (and (not (= ?shower ?receiver)) (at ?shower ?place) (has ?shower ?object) (at ?receiver ?place)) :effect (happy ?receiver))",
+        "play :parameters (?character1 - character ?character2 - character ?object - (either cap item) ?place - place) :precondition (and (not (= ?character1 ?character2)) (at ?character1 ?place) (has ?character1 ?object) (at ?character2 ?place)) :effect (played-with ?character1 ?object))": "(:action play :parameters (?character1 - character ?character2 - character ?object - (either cap item) ?place - place) :precondition (and (not (= ?character1 ?character2)) (at ?character1 ?place) (has ?character1 ?object) (at ?character2 ?place)) :effect (played-with ?character1 ?object))",
+        "find": "(:action find :parameters (?character - character ?object - cap ?place - place) :precondition (and (lost ?character ?object) (forall (?searched_place - place) (searched ?character ?searched_place)) (at ?character ?place) (not (found ?character ?object))) :effect (and (found ?character ?object) (not (lost ?character ?object)) (has ?character ?object) (happy ?character)))"
+    }
+}

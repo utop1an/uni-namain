@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has-hoard ?character - character)": "Source predicate (has-hoard ?character - character).",
+        "(robbed ?gang - gang)": "Source predicate (robbed ?gang - gang).",
+        "(soundproof-door ?place - place)": "Source predicate (soundproof-door ?place - place).",
+        "(attacked ?character - character)": "Source predicate (attacked ?character - character).",
+        "(shares ?character1 - character ?character2 - character ?object - object)": "Source predicate (shares ?character1 - character ?character2 - character ?object - object).",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(on-shelf ?book - book ?bookshelf - bookshelf)": "Source predicate (on-shelf ?book - book ?bookshelf - bookshelf).",
+        "(fell-down ?book - book)": "Source predicate (fell-down ?book - book).",
+        "(sneezed ?character - character)": "Source predicate (sneezed ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(in-room ?character - character)": "Source predicate (in-room ?character - character).",
+        "(in-kitchen ?character - character)": "Source predicate (in-kitchen ?character - character).",
+        "(likes ?character - character ?item - item)": "Source predicate (likes ?character - character ?item - item).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (awake ?character)) (asleep ?character))\n)",
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (asleep ?character)\n :effect (and (not (asleep ?character)) (awake ?character))\n)",
+        "install-soundproof-door": "(:action install-soundproof-door\n :parameters (?gang - character ?place - place)\n :precondition (and (awake ?gang) (at ?gang ?place) (not (soundproof-door ?place)))\n :effect (soundproof-door ?place)\n)",
+        "rob": "(:action rob\n :parameters (?gang - character)\n :precondition (awake ?gang)\n :effect (robbed ?gang)\n)",
+        "attack": "(:action attack\n :parameters (?attacker - character ?victim - character)\n :precondition (and (awake ?attacker) (awake ?victim))\n :effect (attacked ?victim)\n)",
+        "clear-passage": "(:action clear-passage\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (attacked ?character)) (has-hoard ?character))\n)",
+        "unshare": "(:action unshare\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (shares ?sharer ?receiver ?object)\n :effect (not (shares ?sharer ?receiver ?object))\n)",
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (has ?character ?object))\n :effect (has ?character ?object)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (and (has ?sharer ?object) (not (shares ?sharer ?receiver ?object)))\n :effect (shares ?sharer ?receiver ?object)\n)",
+        "sneeze": "(:action sneeze\n :parameters (?character - character)\n :precondition (and)\n :effect (sneezed ?character)\n)",
+        "book-fall": "(:action book-fall\n :parameters (?book - book ?bookshelf - bookshelf)\n :precondition (on-shelf ?book ?bookshelf)\n :effect (and (fell-down ?book) (not (on-shelf ?book ?bookshelf)))\n)",
+        "get-scared": "(:action get-scared\n :parameters (?character - character)\n :precondition (sneezed ?character)\n :effect (scared ?character)\n)",
+        "move-to-kitchen": "(:action move-to-kitchen\n :parameters (?character - character)\n :precondition (in-room ?character)\n :effect (and (not (in-room ?character)) (in-kitchen ?character))\n)",
+        "move-to-room": "(:action move-to-room\n :parameters (?character - character)\n :precondition (in-kitchen ?character)\n :effect (and (not (in-kitchen ?character)) (in-room ?character))\n)",
+        "read": "(:action read\n :parameters (?character - character ?object - book)\n :precondition (and (has ?character ?object) (not (fell-down ?object)))\n :effect (and)\n)"
+    }
+}

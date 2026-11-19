@@ -1,0 +1,37 @@
+{
+    "predicates": {
+        "(needs-walk ?character - character)": "Source predicate (needs-walk ?character - character).",
+        "(in-herenow ?character - character)": "Source predicate (in-herenow ?character - character).",
+        "(ancient-oath ?dog - character)": "Source predicate (ancient-oath ?dog - character).",
+        "(guardian ?dog - character)": "Source predicate (guardian ?dog - character).",
+        "(master ?character - character)": "Source predicate (master ?character - character).",
+        "(time-of-passing)": "Source predicate (time-of-passing).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(amazed ?character - character)": "Source predicate (amazed ?character - character).",
+        "(supports ?character - character ?project - project)": "Source predicate (supports ?character - character ?project - project).",
+        "(persistent ?character - character)": "Source predicate (persistent ?character - character).",
+        "(completed ?project - project)": "Source predicate (completed ?project - project).",
+        "(at-peace ?nation - nation)": "Source predicate (at-peace ?nation - nation).",
+        "(sharing-technology ?nation1 - nation ?nation2 - nation)": "Source predicate (sharing-technology ?nation1 - nation ?nation2 - nation).",
+        "(advanced-technology ?nation - nation)": "Source predicate (advanced-technology ?nation - nation).",
+        "(facing-destruction)": "Source predicate (facing-destruction)."
+    },
+    "operators": {
+        "remind-ancient-oath": "(:action remind-ancient-oath\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (ancient-oath ?dog))\n :effect (needs-walk ?master)\n)",
+        "bring-to-herenow": "(:action bring-to-herenow\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (not (in-herenow ?master)))\n :effect (in-herenow ?master)\n)",
+        "walk": "(:action walk\n :parameters (?dog - character ?master - character)\n :precondition (and (guardian ?dog) (master ?master) (needs-walk ?master))\n :effect (and (not (needs-walk ?master)) (in-herenow ?master))\n)",
+        "time-of-passing": "(:action time-of-passing\n :parameters ()\n :precondition (not (time-of-passing))\n :effect (time-of-passing)\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "become-amazed": "(:action become-amazed\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (amazed ?character)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (happy ?character)\n)",
+        "support-project": "(:action support-project\n :parameters (?character - character ?project - project)\n :precondition (alive ?character)\n :effect (supports ?character ?project)\n)",
+        "become-persistent": "(:action become-persistent\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (persistent ?character)\n)",
+        "complete-project": "(:action complete-project\n :parameters (?character - character ?project - project)\n :precondition (and (alive ?character) (supports ?character ?project) (persistent ?character))\n :effect (completed ?project)\n)",
+        "unite": "(:action unite\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (facing-destruction))\n :effect (and (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n)",
+        "develop-technology": "(:action develop-technology\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (sharing-technology ?nation1 ?nation2))\n :effect (and (advanced-technology ?nation1) (advanced-technology ?nation2))\n)",
+        "avoid-destruction": "(:action avoid-destruction\n :parameters ()\n :precondition (and (advanced-technology nation1) (advanced-technology nation2) (advanced-technology nation3))\n :effect (not (facing-destruction))\n)",
+        "maintain-peace": "(:action maintain-peace\n :parameters (?nation1 - nation ?nation2 - nation)\n :precondition (and (not (= ?nation1 ?nation2)) (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n :effect (and (at-peace ?nation1) (at-peace ?nation2) (sharing-technology ?nation1 ?nation2))\n)"
+    }
+}

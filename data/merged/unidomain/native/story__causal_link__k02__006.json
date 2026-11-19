@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(on-shelf ?item - item)": "Source predicate (on-shelf ?item - item).",
+        "(organized ?place - place)": "Source predicate (organized ?place - place).",
+        "(reads ?character - character)": "Source predicate (reads ?character - character).",
+        "(at ?entity - (either character item) ?place - object)": "The character or item is located at the specified place.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(happy ?character - character)": "The character is happy.",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(at ?item - item ?place - object)": "The character or item is located at the specified place."
+    },
+    "operators": {
+        "find": "(:action find\n :parameters (?character - character ?item - item)\n :precondition (and (not (has ?character ?item)) (reads ?character))\n :effect (has ?character ?item)\n)",
+        "put-on-shelf :parameters (?entity - character ?item - item ?location - place) :precondition (and (has ?entity ?item) (at ?entity ?location)) :effect (and (not (has ?entity ?item)) (on-shelf ?item) (organized ?location)))": "(:action put-on-shelf :parameters (?entity - character ?item - item ?location - place) :precondition (and (has ?entity ?item) (at ?entity ?location)) :effect (and (not (has ?entity ?item)) (on-shelf ?item) (organized ?location)))",
+        "read": "(:action read\n :parameters (?character - character)\n :precondition (reads ?character)\n :effect (happy ?character)\n)",
+        "smell-soap": "(:action smell-soap\n :parameters (?character - character ?soap - item)\n :precondition (and (on-shelf ?soap) (reads ?character))\n :effect (happy ?character)\n)",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "put :parameters (?character - character ?entity - item ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))": "(:action put :parameters (?character - character ?entity - item ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))"
+    }
+}

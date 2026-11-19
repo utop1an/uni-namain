@@ -1,0 +1,34 @@
+{
+    "predicates": {
+        "(feels-awful ?character - character)": "Source predicate (feels-awful ?character - character).",
+        "(thinks-about-breakup ?character - character)": "Source predicate (thinks-about-breakup ?character - character).",
+        "(heartbroken ?character - character)": "Source predicate (heartbroken ?character - character).",
+        "(forgiven ?character - character)": "Source predicate (forgiven ?character - character).",
+        "(learned ?character - character)": "Source predicate (learned ?character - character).",
+        "(moved-on ?character - character)": "Source predicate (moved-on ?character - character).",
+        "(at-park ?character - character)": "Source predicate (at-park ?character - character).",
+        "(on-swing ?character - character)": "Source predicate (on-swing ?character - character).",
+        "(swinging ?character - character)": "Source predicate (swinging ?character - character).",
+        "(sharing ?character1 - character ?character2 - character)": "Source predicate (sharing ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "The character is happy.",
+        "(at ?item - item ?place - object)": "Source predicate (at ?item - item ?place - object).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object)."
+    },
+    "operators": {
+        "forgive": "(:action forgive\n :parameters (?character - character)\n :precondition (and (feels-awful ?character) (not (forgiven ?character)))\n :effect (forgiven ?character)\n)",
+        "learn": "(:action learn\n :parameters (?character - character)\n :precondition (and (heartbroken ?character) (not (learned ?character)))\n :effect (learned ?character)\n)",
+        "move-on": "(:action move-on\n :parameters (?character - character)\n :precondition (and (thinks-about-breakup ?character) (forgiven ?character) (learned ?character) (not (moved-on ?character)))\n :effect (moved-on ?character)\n)",
+        "go-to-park": "(:action go-to-park\n :parameters (?character - character)\n :precondition (not (at-park ?character))\n :effect (at-park ?character)\n)",
+        "get-on-swing": "(:action get-on-swing\n :parameters (?character - character)\n :precondition (and (at-park ?character) (not (on-swing ?character)))\n :effect (on-swing ?character)\n)",
+        "start-swinging": "(:action start-swinging\n :parameters (?character - character)\n :precondition (and (on-swing ?character) (not (swinging ?character)))\n :effect (swinging ?character)\n)",
+        "share-swing": "(:action share-swing\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (swinging ?character1) (swinging ?character2))\n :effect (sharing ?character1 ?character2)\n)",
+        "get-off-swing": "(:action get-off-swing\n :parameters (?character - character)\n :precondition (and (on-swing ?character) (swinging ?character))\n :effect (and (not (on-swing ?character)) (not (swinging ?character)) (happy ?character))\n)",
+        "thank": "(:action thank\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (sharing ?character1 ?character2))\n :effect (happy ?character1)\n)",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "put": "(:action put\n :parameters (?character - character ?item - item ?place - object)\n :precondition (and (happy ?character) (has ?character ?item))\n :effect (at ?item ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)"
+    }
+}

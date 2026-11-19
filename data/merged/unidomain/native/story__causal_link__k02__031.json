@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "vomit": "(:action vomit\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (drunk ?character) (at ?character ?place))\n :effect (vomit-stain ?place)\n)",
+        "drink :parameters (?character - character ?object - object) :precondition (and (alive ?character) (has ?character ?object)) :effect (and (drunk ?character) (not (has ?character ?object))))": "(:action drink :parameters (?character - character ?object - object) :precondition (and (alive ?character) (has ?character ?object)) :effect (and (drunk ?character) (not (has ?character ?object))))"
+    }
+}

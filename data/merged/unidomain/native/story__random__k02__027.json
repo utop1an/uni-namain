@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(occupied ?item - item)": "Source predicate (occupied ?item - item).",
+        "(plugged-in ?item - item)": "Source predicate (plugged-in ?item - item).",
+        "(connected ?item1 - item ?item2 - item)": "Source predicate (connected ?item1 - item ?item2 - item).",
+        "(well-lit ?room - room)": "Source predicate (well-lit ?room - room).",
+        "(morning)": "Source predicate (morning)."
+    },
+    "operators": {
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)",
+        "move-item": "(:action move-item\n :parameters (?item - item ?from - room ?to - room)\n :precondition (and (not (= ?from ?to)) (in ?item ?from))\n :effect (and (not (in ?item ?from)) (in ?item ?to))\n)",
+        "plug-in": "(:action plug-in\n :parameters (?item - item)\n :precondition (not (plugged-in ?item))\n :effect (plugged-in ?item)\n)",
+        "connect": "(:action connect\n :parameters (?item1 - item ?item2 - item)\n :precondition (and (not (connected ?item1 ?item2)) (not (= ?item1 ?item2)))\n :effect (connected ?item1 ?item2)\n)",
+        "morning-comes": "(:action morning-comes\n :parameters (?room - room)\n :precondition (and (not (well-lit ?room)) (morning))\n :effect (well-lit ?room)\n)",
+        "night-falls": "(:action night-falls\n :parameters (?room - room)\n :precondition (and (well-lit ?room) (not (morning)))\n :effect (not (well-lit ?room))\n)",
+        "occupy": "(:action occupy\n :parameters (?item - item)\n :precondition (not (occupied ?item))\n :effect (occupied ?item)\n)",
+        "unoccupy": "(:action unoccupy\n :parameters (?item - item)\n :precondition (occupied ?item)\n :effect (not (occupied ?item))\n)"
+    }
+}

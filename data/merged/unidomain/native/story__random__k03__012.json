@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(on-planet ?character - character ?planet - planet)": "Source predicate (on-planet ?character - character ?planet - planet).",
+        "(in-formation ?character - character)": "Source predicate (in-formation ?character - character).",
+        "(in-airlock ?character - character)": "Source predicate (in-airlock ?character - character).",
+        "(wingsuit-active ?character - character)": "Source predicate (wingsuit-active ?character - character).",
+        "(suit-pressurized ?character - character)": "Source predicate (suit-pressurized ?character - character).",
+        "(reached-altitude ?character - character)": "Source predicate (reached-altitude ?character - character).",
+        "(reached-speed ?character - character)": "Source predicate (reached-speed ?character - character).",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(found ?character - character ?object - object)": "Source predicate (found ?character - character ?object - object).",
+        "(made-handprint ?character - character)": "Source predicate (made-handprint ?character - character).",
+        "(celebrated ?character - character)": "Source predicate (celebrated ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(sitting ?character - character ?seat - seat)": "Source predicate (sitting ?character - character ?seat - seat).",
+        "(broken ?seat - seat)": "Source predicate (broken ?seat - seat).",
+        "(big ?seat - seat)": "Source predicate (big ?seat - seat).",
+        "(small ?seat - seat)": "Source predicate (small ?seat - seat).",
+        "(important ?character - character)": "Source predicate (important ?character - character)."
+    },
+    "operators": {
+        "enter-airlock": "(:action enter-airlock\n :parameters (?character - character)\n :precondition (not (in-airlock ?character))\n :effect (in-airlock ?character)\n)",
+        "pressurize-suit": "(:action pressurize-suit\n :parameters (?character - character)\n :precondition (and (in-airlock ?character) (not (suit-pressurized ?character)))\n :effect (suit-pressurized ?character)\n)",
+        "jump": "(:action jump\n :parameters (?character - character ?planet - planet)\n :precondition (and (suit-pressurized ?character) (not (on-planet ?character ?planet)))\n :effect (and (reached-altitude ?character) (reached-speed ?character))\n)",
+        "activate-wingsuit": "(:action activate-wingsuit\n :parameters (?character - character)\n :precondition (and (reached-altitude ?character) (reached-speed ?character) (not (wingsuit-active ?character)))\n :effect (wingsuit-active ?character)\n)",
+        "land": "(:action land\n :parameters (?character - character ?planet - planet)\n :precondition (and (wingsuit-active ?character) (not (on-planet ?character ?planet)))\n :effect (on-planet ?character ?planet)\n)",
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (found ?character ?object))\n :effect (found ?character ?object)\n)",
+        "make-handprint": "(:action make-handprint\n :parameters (?character - character)\n :precondition (found ?character colors)\n :effect (made-handprint ?character)\n)",
+        "show-handprint": "(:action show-handprint\n :parameters (?shower - character ?viewer - character)\n :precondition (and (made-handprint ?shower) (not (= ?shower ?viewer)))\n :effect (celebrated ?viewer)\n)",
+        "celebrate": "(:action celebrate\n :parameters (?celebrator - character ?celebratee - character)\n :precondition (and (celebrated ?celebrator) (not (= ?celebrator ?celebratee)))\n :effect (celebrated ?celebratee)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sit": "(:action sit\n :parameters (?character - character ?seat - seat)\n :precondition (and (not (sitting ?character ?seat)) (not (broken ?seat)))\n :effect (sitting ?character ?seat)\n)",
+        "leave": "(:action leave\n :parameters (?character - character ?seat - seat)\n :precondition (sitting ?character ?seat)\n :effect (not (sitting ?character ?seat))\n)",
+        "break-seat": "(:action break-seat\n :parameters (?seat - seat)\n :precondition (not (broken ?seat))\n :effect (broken ?seat)\n)",
+        "become-important": "(:action become-important\n :parameters (?character - character)\n :precondition (not (important ?character))\n :effect (important ?character)\n)",
+        "become-unimportant": "(:action become-unimportant\n :parameters (?character - character)\n :precondition (important ?character)\n :effect (not (important ?character))\n)"
+    }
+}

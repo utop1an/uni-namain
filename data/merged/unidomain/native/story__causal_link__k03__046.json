@@ -1,0 +1,34 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?entity - (either character item) ?place - object)": "The character or item is located at the specified place.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(on-shelf ?item - item)": "Source predicate (on-shelf ?item - item).",
+        "(organized ?place - place)": "Source predicate (organized ?place - place).",
+        "(reads ?character - character)": "Source predicate (reads ?character - character).",
+        "(happy ?character - character)": "The character is happy.",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(at ?item - item ?place - object)": "The character or item is located at the specified place.",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "request-tow :parameters (?entity - character ?location - place) :precondition (and (alive ?entity) (at ?entity ?location)) :effect (requested-tow ?entity ?location))": "(:action request-tow :parameters (?entity - character ?location - place) :precondition (and (alive ?entity) (at ?entity ?location)) :effect (requested-tow ?entity ?location))",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology :parameters (?entity - character ?object - object ?location - object) :precondition (and (alive ?entity) (at ?entity ?location)) :effect (and (has ?entity ?object) (ancient-technology ?object)))": "(:action discover-technology :parameters (?entity - character ?object - object ?location - object) :precondition (and (alive ?entity) (at ?entity ?location)) :effect (and (has ?entity ?object) (ancient-technology ?object)))",
+        "transport-object :parameters (?entity - character ?cargo - object ?source - object ?destination - place) :precondition (and (alive ?entity) (at ?entity ?source) (has ?entity ?cargo) (requested-tow ?entity ?destination)) :effect (and (not (at ?entity ?source)) (at ?entity ?destination) (not (has ?entity ?cargo))))": "(:action transport-object :parameters (?entity - character ?cargo - object ?source - object ?destination - place) :precondition (and (alive ?entity) (at ?entity ?source) (has ?entity ?cargo) (requested-tow ?entity ?destination)) :effect (and (not (at ?entity ?source)) (at ?entity ?destination) (not (has ?entity ?cargo))))",
+        "read": "(:action read\n :parameters (?character - character)\n :precondition (reads ?character)\n :effect (happy ?character)\n)",
+        "smell-soap": "(:action smell-soap\n :parameters (?character - character ?soap - item)\n :precondition (and (on-shelf ?soap) (reads ?character))\n :effect (happy ?character)\n)",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "find :parameters (?character - character ?object - object) :precondition (and (not (has ?character ?object)) (reads ?character)) :effect (has ?character ?object))": "(:action find :parameters (?character - character ?object - object) :precondition (and (not (has ?character ?object)) (reads ?character)) :effect (has ?character ?object))",
+        "put-on-shelf :parameters (?entity - character ?object - object ?location - place) :precondition (and (has ?entity ?object) (at ?entity ?location)) :effect (and (not (has ?entity ?object)) (on-shelf ?object) (organized ?location)))": "(:action put-on-shelf :parameters (?entity - character ?object - object ?location - place) :precondition (and (has ?entity ?object) (at ?entity ?location)) :effect (and (not (has ?entity ?object)) (on-shelf ?object) (organized ?location)))",
+        "put :parameters (?character - character ?object - object ?place - object) :precondition (and (happy ?character) (has ?character ?object)) :effect (at ?object ?place))": "(:action put :parameters (?character - character ?object - object ?place - object) :precondition (and (happy ?character) (has ?character ?object)) :effect (at ?object ?place))"
+    }
+}

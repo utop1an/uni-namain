@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(hurting ?character - character)": "Source predicate (hurting ?character - character).",
+        "(struggling ?character - character)": "Source predicate (struggling ?character - character).",
+        "(loved ?character1 - character ?character2 - character)": "Source predicate (loved ?character1 - character ?character2 - character).",
+        "(letting-go ?character1 - character ?character2 - character)": "Source predicate (letting-go ?character1 - character ?character2 - character).",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(better-times ?character - character)": "Source predicate (better-times ?character - character).",
+        "(in-box ?character - character ?box - box)": "Source predicate (in-box ?character - character ?box - box).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(at ?box - box ?place - place)": "Source predicate (at ?box - box ?place - place).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(composed ?character - character)": "Source predicate (composed ?character - character).",
+        "(noticed ?character - character ?box - box)": "Source predicate (noticed ?character - character ?box - box).",
+        "(opened ?box - box)": "Source predicate (opened ?box - box)."
+    },
+    "operators": {
+        "acknowledge-pain": "(:action acknowledge-pain\n :parameters (?character - character)\n :precondition (and (hurting ?character) (struggling ?character))\n :effect (not (struggling ?character))\n)",
+        "let-go": "(:action let-go\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (loved ?character1 ?character2) (not (ready ?character2)))\n :effect (letting-go ?character1 ?character2)\n)",
+        "believe-in-better-times": "(:action believe-in-better-times\n :parameters (?character - character)\n :precondition (hurting ?character)\n :effect (better-times ?character)\n)",
+        "enter": "(:action enter\n :parameters (?character - character ?place - place)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "notice": "(:action notice\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place))\n :effect (noticed ?character ?box)\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place) (noticed ?character ?box) (not (opened ?box)))\n :effect (opened ?box)\n)",
+        "become-nervous": "(:action become-nervous\n :parameters (?character - character)\n :precondition (and)\n :effect (nervous ?character)\n)",
+        "become-composed": "(:action become-composed\n :parameters (?character - character)\n :precondition (and)\n :effect (composed ?character)\n)"
+    }
+}

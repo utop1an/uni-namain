@@ -1,0 +1,37 @@
+{
+    "predicates": {
+        "(in-box ?character - character ?box - box)": "Source predicate (in-box ?character - character ?box - box).",
+        "(at ?box - box ?place - place)": "Source predicate (at ?box - box ?place - place).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(composed ?character - character)": "Source predicate (composed ?character - character).",
+        "(noticed ?character - character ?box - box)": "Source predicate (noticed ?character - character ?box - box).",
+        "(opened ?box - box)": "Source predicate (opened ?box - box).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?cap - cap)": "Source predicate (has ?character - character ?cap - cap).",
+        "(lost ?character - character ?cap - cap)": "Source predicate (lost ?character - character ?cap - cap).",
+        "(searched ?character - character ?place - place)": "Source predicate (searched ?character - character ?place - place).",
+        "(found ?character - character ?cap - cap)": "Source predicate (found ?character - character ?cap - cap).",
+        "(sitting ?character - character ?seat - seat)": "Source predicate (sitting ?character - character ?seat - seat).",
+        "(broken ?seat - seat)": "Source predicate (broken ?seat - seat).",
+        "(big ?seat - seat)": "Source predicate (big ?seat - seat).",
+        "(small ?seat - seat)": "Source predicate (small ?seat - seat).",
+        "(important ?character - character)": "Source predicate (important ?character - character)."
+    },
+    "operators": {
+        "become-nervous": "(:action become-nervous\n :parameters (?character - character)\n :precondition (and)\n :effect (nervous ?character)\n)",
+        "become-composed": "(:action become-composed\n :parameters (?character - character)\n :precondition (and)\n :effect (composed ?character)\n)",
+        "enter": "(:action enter\n :parameters (?character - character ?place - place)\n :precondition (not (at ?character ?place))\n :effect (at ?character ?place)\n)",
+        "notice": "(:action notice\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place))\n :effect (noticed ?character ?box)\n)",
+        "open-box": "(:action open-box\n :parameters (?character - character ?box - box ?place - place)\n :precondition (and (at ?character ?place) (at ?box ?place) (noticed ?character ?box) (not (opened ?box)))\n :effect (opened ?box)\n)",
+        "find": "(:action find\n :parameters (?character - character ?cap - cap)\n :precondition (and (lost ?character ?cap) (forall (?place - place) (searched ?character ?place)))\n :effect (and (found ?character ?cap) (not (lost ?character ?cap)) (has ?character ?cap))\n)",
+        "lose": "(:action lose\n :parameters (?character - character ?cap - cap)\n :precondition (has ?character ?cap)\n :effect (and (lost ?character ?cap) (not (has ?character ?cap)))\n)",
+        "replace": "(:action replace\n :parameters (?character - character ?old-cap - cap ?new-cap - cap)\n :precondition (and (found ?character ?old-cap) (not (has ?character ?old-cap)) (has ?character ?new-cap))\n :effect (and (not (found ?character ?old-cap)) (has ?character ?old-cap) (not (has ?character ?new-cap)))\n)",
+        "become-important": "(:action become-important\n :parameters (?character - character)\n :precondition (not (important ?character))\n :effect (important ?character)\n)",
+        "become-unimportant": "(:action become-unimportant\n :parameters (?character - character)\n :precondition (important ?character)\n :effect (not (important ?character))\n)",
+        "search": "(:action search\n :parameters (?character - character ?cap - cap ?place - place)\n :precondition (and (at ?character ?place) (lost ?character ?cap))\n :effect (searched ?character ?place)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "sit": "(:action sit\n :parameters (?character - character ?seat - seat)\n :precondition (and (not (sitting ?character ?seat)) (not (broken ?seat)))\n :effect (sitting ?character ?seat)\n)",
+        "leave": "(:action leave\n :parameters (?character - character ?seat - seat)\n :precondition (sitting ?character ?seat)\n :effect (not (sitting ?character ?seat))\n)",
+        "break-seat": "(:action break-seat\n :parameters (?seat - seat)\n :precondition (not (broken ?seat))\n :effect (broken ?seat)\n)"
+    }
+}

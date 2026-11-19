@@ -1,0 +1,43 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(connected ?location - location ?oldlocation - location)": "Source predicate (connected ?location - location ?oldlocation - location).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(practice ?character1 - character ?character2 - character)": "Source predicate (practice ?character1 - character ?character2 - character).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(friend ?character1 - character ?character2 - character)": "Character1 is a friend of character2.",
+        "(ready ?character - character)": "The character is ready.",
+        "(hurting ?character - character)": "Source predicate (hurting ?character - character).",
+        "(struggling ?character - character)": "Source predicate (struggling ?character - character).",
+        "(letting-go ?character1 - character ?character2 - character)": "Source predicate (letting-go ?character1 - character ?character2 - character).",
+        "(better-times ?character - character)": "Source predicate (better-times ?character - character).",
+        "(in-love ?character1 - character ?character2 - character)": "Character1 loves character2.",
+        "(betrayed ?character1 - character ?character2 - character)": "Source predicate (betrayed ?character1 - character ?character2 - character).",
+        "(peace ?place - place)": "Source predicate (peace ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified location.",
+        "(friends ?character1 - character ?character2 - character)": "Character1 is a friend of character2."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing": "(:action take-thing\n :parameters (?taker - character ?thing - item ?location - location)\n :precondition (and (at ?taker ?location) (at ?thing ?location) (not (asleep ?taker)) (not (enchanted ?thing)))\n :effect (and (not (at ?thing ?location)) (has ?taker ?thing))\n)",
+        "disenchant-thing": "(:action disenchant-thing\n :parameters (?caster - character ?thing - item ?book - book ?location - location)\n :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?book) (enchanted ?thing))\n :effect (not (enchanted ?thing))\n)",
+        "cheer-up": "(:action cheer-up\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (sad ?character2))\n :effect (and (not (sad ?character2)) (happy ?character2))\n)",
+        "become-ready": "(:action become-ready\n :parameters (?character - character)\n :precondition (exists (?helper - character) (practice ?helper ?character))\n :effect (ready ?character)\n)",
+        "help-practice": "(:action help-practice\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friend ?character1 ?character2) (not (ready ?character2)))\n :effect (practice ?character1 ?character2)\n)",
+        "acknowledge-pain": "(:action acknowledge-pain\n :parameters (?character - character)\n :precondition (and (hurting ?character) (struggling ?character))\n :effect (not (struggling ?character))\n)",
+        "believe-in-better-times": "(:action believe-in-better-times\n :parameters (?character - character)\n :precondition (hurting ?character)\n :effect (better-times ?character)\n)",
+        "betray": "(:action betray\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (in-love ?character1 ?character2))\n :effect (betrayed ?character1 ?character2)\n)",
+        "redeem": "(:action redeem\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (betrayed ?character1 ?character2))\n :effect (and (not (betrayed ?character1 ?character2)) (in-love ?character1 ?character2))\n)",
+        "bring-peace": "(:action bring-peace\n :parameters (?character - character ?place - place)\n :precondition (and (not (peace ?place)) (exists (?character2 - character) (in-love ?character ?character2)))\n :effect (peace ?place)\n)",
+        "become-friends": "(:action become-friends :parameters (?character1 - character ?character2 - character) :precondition (and (not (= ?character1 ?character2)) (not (friends ?character1 ?character2))) :effect (and (friend ?character1 ?character2) (friends ?character1 ?character2)))",
+        "fall-in-love": "(:action fall-in-love\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (in-love ?character1 ?character2)) (friends ?character1 ?character2))\n :effect (in-love ?character1 ?character2)\n)",
+        "let-go": "(:action let-go\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (loved ?character1 ?character2) (not (ready ?character2)))\n :effect (letting-go ?character1 ?character2)\n)"
+    }
+}

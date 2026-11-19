@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?location - location)": "The character is at the specified location, which may be a room.",
+        "(has ?character - character ?target - (either thing character))": "The character has the target, which may be a thing or another character.",
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?thing - character ?location - location)": "The character is at the specified location, which may be a room.",
+        "(has ?character - character ?character2 - character)": "The character has the target, which may be a thing or another character."
+    },
+    "operators": {
+        "unlock :parameters (?character - character ?target - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?target) (has ?character ?target)) :effect (and (not (locked ?room))))": "(:action unlock :parameters (?character - character ?target - key ?room - room) :precondition (and (locked ?room) (unlocked-by ?room ?target) (has ?character ?target)) :effect (and (not (locked ?room))))",
+        "search-for :parameters (?character - character ?target - thing ?location - room) :precondition (and (at ?character ?location) (in ?target ?location)) :effect (and (has ?character ?target) (not (in ?target ?location))))": "(:action search-for :parameters (?character - character ?target - thing ?location - room) :precondition (and (at ?character ?location) (in ?target ?location)) :effect (and (has ?character ?target) (not (in ?target ?location))))",
+        "enter_room": "(:action enter_room :parameters (?character - character ?from - location ?to - room) :precondition (and (not (locked ?to)) (player ?character) (connected ?to ?from) (at ?character ?from) (knows ?character)) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))": "(:action interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))",
+        "save-character :parameters (?rescuer - character ?captive - character ?other-captive - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?captive ?place) (captured ?captive) (captured ?other-captive) (not (at ?other-captive ?place))) :effect (and (saved ?captive ?rescuer) (not (alive ?other-captive))))": "(:action save-character :parameters (?rescuer - character ?captive - character ?other-captive - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?captive ?place) (captured ?captive) (captured ?other-captive) (not (at ?other-captive ?place))) :effect (and (saved ?captive ?rescuer) (not (alive ?other-captive))))",
+        "place-victim :parameters (?placing-character - character ?target - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?placing-character) (has ?placing-character ?target) (at ?placing-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?placing-character ?target)) (at ?target ?destination-location) (captured ?target)))": "(:action place-victim :parameters (?placing-character - character ?target - character ?source-location - location ?destination-location - location) :precondition (and (henchman ?placing-character) (has ?placing-character ?target) (at ?placing-character ?source-location) (connected ?destination-location ?source-location)) :effect (and (not (has ?placing-character ?target)) (at ?target ?destination-location) (captured ?target)))"
+    }
+}

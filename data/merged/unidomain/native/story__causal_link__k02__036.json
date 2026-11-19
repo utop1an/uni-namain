@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified place, which may be a room.",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character).",
+        "(at ?character - character ?room - room)": "The character is at the specified place, which may be a room.",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)",
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "move :parameters (?character - character ?from-place - place ?to-place - place) :precondition (and (not (= ?from-place ?to-place)) (at ?character ?from-place)) :effect (and (not (at ?character ?from-place)) (at ?character ?to-place)))": "(:action move :parameters (?character - character ?from-place - place ?to-place - place) :precondition (and (not (= ?from-place ?to-place)) (at ?character ?from-place)) :effect (and (not (at ?character ?from-place)) (at ?character ?to-place)))",
+        "take-item :parameters (?character - character ?object - object ?place - room) :precondition (and (at ?character ?place) (in ?object ?place)) :effect (and (not (in ?object ?place)) (has ?character ?object)))": "(:action take-item :parameters (?character - character ?object - object ?place - room) :precondition (and (at ?character ?place) (in ?object ?place)) :effect (and (not (in ?object ?place)) (has ?character ?object)))",
+        "leave-item :parameters (?character - character ?object - object ?place - place) :precondition (and (at ?character ?place) (has ?character ?object)) :effect (and (not (has ?character ?object)) (in ?object ?place)))": "(:action leave-item :parameters (?character - character ?object - object ?place - place) :precondition (and (at ?character ?place) (has ?character ?object)) :effect (and (not (has ?character ?object)) (in ?object ?place)))"
+    }
+}

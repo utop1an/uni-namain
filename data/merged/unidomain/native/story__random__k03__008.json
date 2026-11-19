@@ -1,0 +1,38 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?clothing - object)": "Source predicate (wearing ?character - character ?clothing - object).",
+        "(united ?subreddit1 - subreddit ?subreddit2 - subreddit)": "Source predicate (united ?subreddit1 - subreddit ?subreddit2 - subreddit).",
+        "(truce ?subreddit1 - subreddit ?subreddit2 - subreddit)": "Source predicate (truce ?subreddit1 - subreddit ?subreddit2 - subreddit).",
+        "(exists ?subreddit - subreddit)": "Source predicate (exists ?subreddit - subreddit).",
+        "(wall-built)": "Source predicate (wall-built).",
+        "(filled-with-water)": "Source predicate (filled-with-water).",
+        "(friend ?dog1 - dog ?dog2 - dog)": "Source predicate (friend ?dog1 - dog ?dog2 - dog).",
+        "(practices ?dog1 - dog ?dog2 - dog)": "Source predicate (practices ?dog1 - dog ?dog2 - dog).",
+        "(participates ?dog - dog)": "Source predicate (participates ?dog - dog).",
+        "(wins ?dog - dog)": "Source predicate (wins ?dog - dog).",
+        "(plays-with-toy-stack ?dog - dog)": "Source predicate (plays-with-toy-stack ?dog - dog).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(spirits-present ?character - character)": "Source predicate (spirits-present ?character - character).",
+        "(spirits-gone ?character - character)": "Source predicate (spirits-gone ?character - character).",
+        "(weak ?character - character)": "Source predicate (weak ?character - character).",
+        "(love-driven-away ?character - character)": "Source predicate (love-driven-away ?character - character).",
+        "(in-asylum ?character - character)": "Source predicate (in-asylum ?character - character)."
+    },
+    "operators": {
+        "wear": "(:action wear\n :parameters (?character - character ?clothing - object)\n :precondition (and)\n :effect (wearing ?character ?clothing)\n)",
+        "unite": "(:action unite\n :parameters (?subreddit1 - subreddit ?subreddit2 - subreddit)\n :precondition (not (united ?subreddit1 ?subreddit2))\n :effect (united ?subreddit1 ?subreddit2)\n)",
+        "establish-truce": "(:action establish-truce\n :parameters (?subreddit1 - subreddit ?subreddit2 - subreddit)\n :precondition (not (truce ?subreddit1 ?subreddit2))\n :effect (truce ?subreddit1 ?subreddit2)\n)",
+        "create-subreddit": "(:action create-subreddit\n :parameters (?subreddit - subreddit)\n :precondition (and)\n :effect (exists ?subreddit)\n)",
+        "build-wall": "(:action build-wall\n :parameters ()\n :precondition (and)\n :effect (wall-built)\n)",
+        "fill-wall-with-water": "(:action fill-wall-with-water\n :parameters ()\n :precondition (wall-built)\n :effect (filled-with-water)\n)",
+        "practice-running": "(:action practice-running\n :parameters (?helper - dog ?runner - dog)\n :precondition (and (friend ?helper ?runner) (not (practices ?helper ?runner)))\n :effect (practices ?helper ?runner)\n)",
+        "participate-in-race": "(:action participate-in-race\n :parameters (?dog - dog)\n :precondition (not (participates ?dog))\n :effect (participates ?dog)\n)",
+        "win-race": "(:action win-race\n :parameters (?dog - dog ?helper - dog)\n :precondition (and (participates ?dog) (practices ?dog ?helper))\n :effect (wins ?dog)\n)",
+        "play-with-toy-stack": "(:action play-with-toy-stack\n :parameters (?dog - dog)\n :precondition (not (plays-with-toy-stack ?dog))\n :effect (plays-with-toy-stack ?dog)\n)",
+        "become-weak": "(:action become-weak\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (weak ?character)\n)",
+        "drive-away-love": "(:action drive-away-love\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (love-driven-away ?character)\n)",
+        "end-up-in-asylum": "(:action end-up-in-asylum\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (in-asylum ?character)\n)",
+        "ask-spirits-to-leave": "(:action ask-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (and (spirits-gone ?character) (not (spirits-present ?character)))\n)",
+        "regret-asking-spirits-to-leave": "(:action regret-asking-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-gone ?character))\n :effect (spirits-present ?character)\n)"
+    }
+}

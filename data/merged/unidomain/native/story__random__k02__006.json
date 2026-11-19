@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(found ?character - character ?object - object)": "Source predicate (found ?character - character ?object - object).",
+        "(made-handprint ?character - character)": "Source predicate (made-handprint ?character - character).",
+        "(celebrated ?character - character)": "Source predicate (celebrated ?character - character).",
+        "(has ?character - character ?object - object)": "The character possesses the object, which may be an item.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place).",
+        "(has ?character - character ?item - item)": "The character possesses the object, which may be an item."
+    },
+    "operators": {
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (found ?character ?object))\n :effect (found ?character ?object)\n)",
+        "make-handprint": "(:action make-handprint\n :parameters (?character - character)\n :precondition (found ?character colors)\n :effect (made-handprint ?character)\n)",
+        "show-handprint": "(:action show-handprint\n :parameters (?shower - character ?viewer - character)\n :precondition (and (made-handprint ?shower) (not (= ?shower ?viewer)))\n :effect (celebrated ?viewer)\n)",
+        "celebrate": "(:action celebrate\n :parameters (?celebrator - character ?celebratee - character)\n :precondition (and (celebrated ?celebrator) (not (= ?celebrator ?celebratee)))\n :effect (celebrated ?celebratee)\n)",
+        "move": "(:action move\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (not (at ?character ?place)))\n :effect (at ?character ?place)\n)",
+        "vomit": "(:action vomit\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (drunk ?character) (at ?character ?place))\n :effect (vomit-stain ?place)\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "drink :parameters (?character - character ?object - object) :precondition (and (alive ?character) (has ?character ?object)) :effect (and (drunk ?character) (not (has ?character ?object))))": "(:action drink :parameters (?character - character ?object - object) :precondition (and (alive ?character) (has ?character ?object)) :effect (and (drunk ?character) (not (has ?character ?object))))"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "predicates": {
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(on-shelf ?book - book ?bookshelf - bookshelf)": "Source predicate (on-shelf ?book - book ?bookshelf - bookshelf).",
+        "(fell-down ?book - book)": "Source predicate (fell-down ?book - book).",
+        "(sneezed ?character - character)": "Source predicate (sneezed ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(in-room ?character - character)": "Source predicate (in-room ?character - character).",
+        "(in-kitchen ?character - character)": "Source predicate (in-kitchen ?character - character).",
+        "(likes ?character - character ?item - item)": "Source predicate (likes ?character - character ?item - item).",
+        "(on-planet ?character - character ?planet - planet)": "Source predicate (on-planet ?character - character ?planet - planet).",
+        "(in-formation ?character - character)": "Source predicate (in-formation ?character - character).",
+        "(in-airlock ?character - character)": "Source predicate (in-airlock ?character - character).",
+        "(wingsuit-active ?character - character)": "Source predicate (wingsuit-active ?character - character).",
+        "(suit-pressurized ?character - character)": "Source predicate (suit-pressurized ?character - character).",
+        "(reached-altitude ?character - character)": "Source predicate (reached-altitude ?character - character).",
+        "(reached-speed ?character - character)": "Source predicate (reached-speed ?character - character)."
+    },
+    "operators": {
+        "read": "(:action read\n :parameters (?character - character ?book - book)\n :precondition (and (has ?character ?book) (not (fell-down ?book)))\n :effect (and)\n)",
+        "sneeze": "(:action sneeze\n :parameters (?character - character)\n :precondition (and)\n :effect (sneezed ?character)\n)",
+        "book-fall": "(:action book-fall\n :parameters (?book - book ?bookshelf - bookshelf)\n :precondition (on-shelf ?book ?bookshelf)\n :effect (and (fell-down ?book) (not (on-shelf ?book ?bookshelf)))\n)",
+        "get-scared": "(:action get-scared\n :parameters (?character - character)\n :precondition (sneezed ?character)\n :effect (scared ?character)\n)",
+        "move-to-kitchen": "(:action move-to-kitchen\n :parameters (?character - character)\n :precondition (in-room ?character)\n :effect (and (not (in-room ?character)) (in-kitchen ?character))\n)",
+        "move-to-room": "(:action move-to-room\n :parameters (?character - character)\n :precondition (in-kitchen ?character)\n :effect (and (not (in-kitchen ?character)) (in-room ?character))\n)",
+        "enter-airlock": "(:action enter-airlock\n :parameters (?character - character)\n :precondition (not (in-airlock ?character))\n :effect (in-airlock ?character)\n)",
+        "pressurize-suit": "(:action pressurize-suit\n :parameters (?character - character)\n :precondition (and (in-airlock ?character) (not (suit-pressurized ?character)))\n :effect (suit-pressurized ?character)\n)",
+        "jump": "(:action jump\n :parameters (?character - character ?planet - planet)\n :precondition (and (suit-pressurized ?character) (not (on-planet ?character ?planet)))\n :effect (and (reached-altitude ?character) (reached-speed ?character))\n)",
+        "activate-wingsuit": "(:action activate-wingsuit\n :parameters (?character - character)\n :precondition (and (reached-altitude ?character) (reached-speed ?character) (not (wingsuit-active ?character)))\n :effect (wingsuit-active ?character)\n)",
+        "land": "(:action land\n :parameters (?character - character ?planet - planet)\n :precondition (and (wingsuit-active ?character) (not (on-planet ?character ?planet)))\n :effect (on-planet ?character ?planet)\n)"
+    }
+}

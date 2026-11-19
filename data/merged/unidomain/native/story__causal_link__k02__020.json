@@ -1,0 +1,25 @@
+{
+    "predicates": {
+        "(hiding ?character - character)": "Source predicate (hiding ?character - character).",
+        "(seeking ?character - character)": "Source predicate (seeking ?character - character).",
+        "(found ?seeker - character ?hider - character)": "Source predicate (found ?seeker - character ?hider - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place)."
+    },
+    "operators": {
+        "stop-seeking": "(:action stop-seeking\n :parameters (?character - character)\n :precondition (seeking ?character)\n :effect (not (seeking ?character))\n)",
+        "start-hiding": "(:action start-hiding\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (hiding ?character)\n)",
+        "start-seeking": "(:action start-seeking\n :parameters (?character - character ?place - place)\n :precondition (at ?character ?place)\n :effect (seeking ?character)\n)",
+        "find": "(:action find\n :parameters (?seeker - character ?hider - character ?place - place)\n :precondition (and (seeking ?seeker) (hiding ?hider) (at ?seeker ?place) (at ?hider ?place))\n :effect (and (found ?seeker ?hider) (not (hiding ?hider)))\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)"
+    }
+}

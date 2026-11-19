@@ -1,0 +1,27 @@
+{
+    "predicates": {
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(tired ?character - character)": "Source predicate (tired ?character - character).",
+        "(sleeping ?character - character)": "Source predicate (sleeping ?character - character).",
+        "(has-energy ?character - character)": "Source predicate (has-energy ?character - character).",
+        "(awake ?character - character)": "The character is awake.",
+        "(wearing-pajamas ?animal - animal)": "Source predicate (wearing-pajamas ?animal - animal).",
+        "(on-floor ?character - character)": "Source predicate (on-floor ?character - character).",
+        "(dressed ?character - character)": "Source predicate (dressed ?character - character).",
+        "(holding ?character - character ?object - object)": "Source predicate (holding ?character - character ?object - object).",
+        "(walking ?character - character ?direction - direction)": "Source predicate (walking ?character - character ?direction - direction).",
+        "(petting ?character - character ?animal - animal)": "Source predicate (petting ?character - character ?animal - animal).",
+        "(bites ?animal - animal)": "Source predicate (bites ?animal - animal).",
+        "(owns ?character - character ?animal - animal)": "Source predicate (owns ?character - character ?animal - animal).",
+        "(life-is-a-joke ?character - character)": "Source predicate (life-is-a-joke ?character - character)."
+    },
+    "operators": {
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character)\n :precondition (playing ?character)\n :effect (and (not (playing ?character)) (tired ?character))\n)",
+        "start-playing": "(:action start-playing\n :parameters (?character - character)\n :precondition (and (awake ?character) (not (playing ?character)) (has-energy ?character))\n :effect (playing ?character)\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (and (tired ?character) (not (sleeping ?character)))\n :effect (and (not (awake ?character)) (sleeping ?character))\n)",
+        "wake-up": "(:action wake-up :parameters (?character - character) :precondition (and (sleeping ?character) (not (awake ?character))) :effect (and (awake ?character) (not (sleeping ?character)) (not (tired ?character)) (has-energy ?character)))",
+        "dress": "(:action dress\n :parameters (?character - character)\n :precondition (and (awake ?character) (on-floor ?character) (not (dressed ?character)))\n :effect (dressed ?character)\n)",
+        "pet": "(:action pet\n :parameters (?character - character ?animal - animal)\n :precondition (and (awake ?character) (dressed ?character) (not (bites ?animal)))\n :effect (petting ?character ?animal)\n)",
+        "realize-life-is-a-joke": "(:action realize-life-is-a-joke\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (life-is-a-joke ?character)\n)"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(has ?character - character ?item - item)": "Character ?c possesses thing ?t, including objects typed as item.",
+        "(alive ?c - character)": "The character c is alive.",
+        "(has ?c - character ?t - (either thing character))": "Character ?c possesses thing ?t, including items, or has character ?t.",
+        "(at ?character - character ?location - location)": "The character is at the specified location, which may be a house.",
+        "(player ?character - character)": "The character is a player.",
+        "(connected ?to - location ?from - location)": "Location ?from is connected to location ?to.",
+        "(apprehended ?character - character)": "The character has been apprehended.",
+        "(saved ?saved - character ?saver - character)": "Character ?saved was saved by character ?saver.",
+        "(knows ?character - character)": "The character satisfies the knows condition, preserving the meaning of both source predicates.",
+        "(captured ?character - character)": "The character is captured.",
+        "(henchman ?henchman - character)": "The character is a henchman.",
+        "(alive ?character - character)": "The character c is alive.",
+        "(has ?character - character ?character2 - character)": "Character ?c possesses thing ?t, including items, or has character ?t.",
+        "(at ?thing - character ?location - location)": "The character is at the specified location, which may be a house."
+    },
+    "operators": {
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "walk :parameters (?character - character ?source ?destination - house) :precondition (and (alive ?character) (at ?character ?source) (not (eaten ?character))) :effect (and (not (at ?character ?source)) (at ?character ?destination) (when (and (rescuer ?character)) (and (rescuer-at ?destination) (not (rescuer-at ?source))))))": "(:action walk :parameters (?character - character ?source ?destination - house) :precondition (and (alive ?character) (at ?character ?source) (not (eaten ?character))) :effect (and (not (at ?character ?source)) (at ?character ?destination) (when (and (rescuer ?character)) (and (rescuer-at ?destination) (not (rescuer-at ?source))))))",
+        "eat :parameters (?m - wolf ?c - human ?l - location) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?l) (at ?c ?l) (monster ?m)) :effect (and (eaten ?c)))": "(:action eat :parameters (?m - wolf ?c - human ?l - location) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?l) (at ?c ?l) (monster ?m)) :effect (and (eaten ?c)))",
+        "escape :parameters (?c - human ?m - wolf ?l - location) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?l)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?l)))": "(:action escape :parameters (?c - human ?m - wolf ?l - location) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?l)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?l)))",
+        "take-thing :parameters (?c - character ?target - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?target ?location) (not (asleep ?c)) (not (enchanted ?target))) :effect (and (not (at ?target ?location)) (has ?c ?target)))": "(:action take-thing :parameters (?c - character ?target - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?target ?location) (not (asleep ?c)) (not (enchanted ?target))) :effect (and (not (at ?target ?location)) (has ?c ?target)))",
+        "disenchant-thing :parameters (?c - character ?thing - item ?possessed - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?thing ?location) (not (asleep ?c)) (has ?c ?possessed) (enchanted ?thing)) :effect (not (enchanted ?thing)))": "(:action disenchant-thing :parameters (?c - character ?thing - item ?possessed - (either thing character) ?location - location) :precondition (and (at ?c ?location) (at ?thing ?location) (not (asleep ?c)) (has ?c ?possessed) (enchanted ?thing)) :effect (not (enchanted ?thing)))",
+        "kill :parameters (?c - worker ?m - wolf ?t - (either thing character) ?l - location) :precondition (and (alive ?c) (alive ?m) (has ?c ?t) (at ?c ?l) (at ?m ?l) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?c - worker ?m - wolf ?t - (either thing character) ?l - location) :precondition (and (alive ?c) (alive ?m) (has ?c ?t) (at ?c ?l) (at ?m ?l) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "give :parameters (?c1 ?c2 - human ?x - (either thing character) ?l - location) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?x) (at ?c1 ?l) (at ?c2 ?l)) :effect (and (has ?c2 ?x) (not (has ?c1 ?x))))": "(:action give :parameters (?c1 ?c2 - human ?x - (either thing character) ?l - location) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?x) (at ?c1 ?l) (at ?c2 ?l)) :effect (and (has ?c2 ?x) (not (has ?c1 ?x))))",
+        "interrogate-character :parameters (?questioner - character ?suspect - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?suspect ?place) (apprehended ?suspect)) :effect (knows ?questioner))": "(:action interrogate-character :parameters (?questioner - character ?suspect - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?suspect ?place) (apprehended ?suspect)) :effect (knows ?questioner))",
+        "save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))": "(:action save-character :parameters (?rescuer - character ?rescued - character ?other - character ?place - location) :precondition (and (player ?rescuer) (at ?rescuer ?place) (at ?rescued ?place) (captured ?rescued) (captured ?other) (not (at ?other ?place))) :effect (and (saved ?rescued ?rescuer) (not (alive ?other))))",
+        "place-victim :parameters (?henchman - character ?victim - character ?location - location ?placed - location) :precondition (and (henchman ?henchman) (has ?henchman ?victim) (at ?henchman ?location) (connected ?placed ?location)) :effect (and (not (has ?henchman ?victim)) (at ?victim ?placed) (captured ?victim)))": "(:action place-victim :parameters (?henchman - character ?victim - character ?location - location ?placed - location) :precondition (and (henchman ?henchman) (has ?henchman ?victim) (at ?henchman ?location) (connected ?placed ?location)) :effect (and (not (has ?henchman ?victim)) (at ?victim ?placed) (captured ?victim)))",
+        "move-location": "(:action move-location :parameters (?character - character ?destination - location ?origin - location) :precondition (and (connected ?destination ?origin) (not (asleep ?character)) (at ?character ?origin) (player ?character) (knows ?character)) :effect (and (not (at ?character ?origin)) (at ?character ?destination)))"
+    }
+}

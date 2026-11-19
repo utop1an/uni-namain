@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(alive ?c - character)": "Source predicate (alive ?c - character).",
+        "(has ?c - character ?t - thing)": "Source predicate (has ?c - character ?t - thing).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(at ?c - character ?h - house)": "Source predicate (at ?c - character ?h - house).",
+        "(in-drawer ?toy - toy)": "Source predicate (in-drawer ?toy - toy).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(friends ?character - character ?toy - toy)": "Source predicate (friends ?character - character ?toy - toy).",
+        "(wants-to-take ?character - character ?toy - toy)": "Source predicate (wants-to-take ?character - character ?toy - toy).",
+        "(brave ?character - character)": "Source predicate (brave ?character - character)."
+    },
+    "operators": {
+        "walk": "(:action walk\n :parameters (?c - character ?h1 ?h2 - house)\n :precondition (and (alive ?c) (at ?c ?h1) (not (eaten ?c)))\n :effect (and (not (at ?c ?h1)) (at ?c ?h2) (when (and (rescuer ?c)) (and (rescuer-at ?h2) (not (rescuer-at ?h1)))))\n)",
+        "eat": "(:action eat\n :parameters (?m - wolf ?c - human ?h - house)\n :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?h) (at ?c ?h) (monster ?m))\n :effect (and (eaten ?c))\n)",
+        "kill": "(:action kill\n :parameters (?c - worker ?m - wolf ?a - axe ?h - house)\n :precondition (and (alive ?c) (alive ?m) (has ?c ?a) (at ?c ?h) (at ?m ?h) (monster ?m) (monster-alive) (rescuer ?c))\n :effect (and (not (alive ?m)) (not (monster-alive)))\n)",
+        "escape": "(:action escape\n :parameters (?c - human ?m - wolf ?h - house)\n :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?h))\n :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?h))\n)",
+        "give": "(:action give\n :parameters (?c1 ?c2 - human ?t - thing ?h - house)\n :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?h) (at ?c2 ?h))\n :effect (and (has ?c2 ?t) (not (has ?c1 ?t)))\n)",
+        "find-toy": "(:action find-toy\n :parameters (?character - character ?toy - toy)\n :precondition (in-drawer ?toy)\n :effect (and (not (in-drawer ?toy)) (friends ?character ?toy))\n)",
+        "want-to-take": "(:action want-to-take\n :parameters (?taker - character ?toy - toy ?owner - character)\n :precondition (and (not (= ?taker ?owner)) (friends ?owner ?toy))\n :effect (wants-to-take ?taker ?toy)\n)",
+        "stand-up": "(:action stand-up\n :parameters (?defender - character ?taker - character ?toy - toy)\n :precondition (and (not (= ?defender ?taker)) (wants-to-take ?taker ?toy) (friends ?defender ?toy))\n :effect (and (not (wants-to-take ?taker ?toy)) (brave ?defender))\n)"
+    }
+}

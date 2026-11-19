@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(dry ?place - place)": "Source predicate (dry ?place - place).",
+        "(wet ?place - place)": "Source predicate (wet ?place - place).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Character1 is friends with character2.",
+        "(fierce ?character - character)": "Source predicate (fierce ?character - character).",
+        "(scared ?character1 - character ?character2 - character)": "Source predicate (scared ?character1 - character ?character2 - character).",
+        "(playing ?character1 - character ?character2 - character)": "Source predicate (playing ?character1 - character ?character2 - character).",
+        "(sneezed ?character - character)": "Source predicate (sneezed ?character - character)."
+    },
+    "operators": {
+        "move": "(:action move\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "dry-place": "(:action dry-place\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (wet ?place))\n :effect (and (not (wet ?place)) (dry ?place))\n)",
+        "sneeze": "(:action sneeze\n :parameters (?character - character)\n :precondition (and)\n :effect (sneezed ?character)\n)",
+        "become-scared": "(:action become-scared\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (fierce ?character2))\n :effect (scared ?character1 ?character2)\n)",
+        "stop-being-scared": "(:action stop-being-scared\n :parameters (?character1 - character ?character2 - character)\n :precondition (scared ?character1 ?character2)\n :effect (not (scared ?character1 ?character2))\n)",
+        "make-friends": "(:action make-friends :parameters (?character1 - character ?character2 - character) :precondition (and (not (= ?character1 ?character2)) (happy ?character1) (happy ?character2) (not (friends ?character1 ?character2))) :effect (friends ?character1 ?character2))",
+        "play": "(:action play :parameters (?character1 - character ?character2 - character ?place - place) :precondition (and (at ?character1 ?place) (dry ?place) (not (= ?character1 ?character2)) (friends ?character1 ?character2)) :effect (and (happy ?character1) (playing ?character1 ?character2)))"
+    }
+}

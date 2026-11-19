@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a dress.",
+        "(at ?character - character ?room - room)": "Source predicate (at ?character - character ?room - room).",
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(in ?item - item ?room - room)": "Source predicate (in ?item - item ?room - room).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character)."
+    },
+    "operators": {
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))": "(:action put-on-dress :parameters (?character - character ?item - dress) :precondition (and (has ?character ?item) (not (wearing ?character ?item))) :effect (wearing ?character ?item))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-item - item) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-item))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-item)))",
+        "move": "(:action move\n :parameters (?character - character ?from - room ?to - room)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "take-item": "(:action take-item\n :parameters (?character - character ?item - item ?room - room)\n :precondition (and (at ?character ?room) (in ?item ?room))\n :effect (and (not (in ?item ?room)) (has ?character ?item))\n)",
+        "leave-item": "(:action leave-item\n :parameters (?character - character ?item - item ?room - room)\n :precondition (and (at ?character ?room) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (in ?item ?room))\n)"
+    }
+}

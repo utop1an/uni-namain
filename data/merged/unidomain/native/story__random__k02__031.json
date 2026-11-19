@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(spirits-present ?character - character)": "Source predicate (spirits-present ?character - character).",
+        "(spirits-gone ?character - character)": "Source predicate (spirits-gone ?character - character).",
+        "(weak ?character - character)": "Source predicate (weak ?character - character).",
+        "(love-driven-away ?character - character)": "Source predicate (love-driven-away ?character - character).",
+        "(in-asylum ?character - character)": "Source predicate (in-asylum ?character - character).",
+        "(president ?character - character)": "Source predicate (president ?character - character).",
+        "(speaker ?character - character)": "Source predicate (speaker ?character - character).",
+        "(vice-president ?character - character)": "Source predicate (vice-president ?character - character).",
+        "(belongs-to ?character - character ?organization - organization)": "Source predicate (belongs-to ?character - character ?organization - organization).",
+        "(economy-collapsed)": "Source predicate (economy-collapsed).",
+        "(real-estate-monopoly)": "Source predicate (real-estate-monopoly).",
+        "(planned-parenthood-defunded)": "Source predicate (planned-parenthood-defunded).",
+        "(planned-parenthood-shutdown)": "Source predicate (planned-parenthood-shutdown).",
+        "(planned-parenthood-criminalized)": "Source predicate (planned-parenthood-criminalized).",
+        "(prison-population-increased)": "Source predicate (prison-population-increased).",
+        "(political-prisoner ?character - character)": "Source predicate (political-prisoner ?character - character)."
+    },
+    "operators": {
+        "become-weak": "(:action become-weak\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (weak ?character)\n)",
+        "drive-away-love": "(:action drive-away-love\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (love-driven-away ?character)\n)",
+        "end-up-in-asylum": "(:action end-up-in-asylum\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (in-asylum ?character)\n)",
+        "ask-spirits-to-leave": "(:action ask-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (and (spirits-gone ?character) (not (spirits-present ?character)))\n)",
+        "regret-asking-spirits-to-leave": "(:action regret-asking-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-gone ?character))\n :effect (spirits-present ?character)\n)",
+        "announce-state-of-the-union": "(:action announce-state-of-the-union\n :parameters (?president - character)\n :precondition (president ?president)\n :effect (and)\n)",
+        "introduce-president": "(:action introduce-president\n :parameters (?speaker - character ?president - character)\n :precondition (and (speaker ?speaker) (president ?president))\n :effect (and)\n)",
+        "attend-state-of-the-union": "(:action attend-state-of-the-union\n :parameters (?vice-president - character)\n :precondition (vice-president ?vice-president)\n :effect (and)\n)"
+    }
+}

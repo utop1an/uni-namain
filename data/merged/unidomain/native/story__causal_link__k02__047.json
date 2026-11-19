@@ -1,0 +1,26 @@
+{
+    "predicates": {
+        "(at ?item - item ?place - object)": "Source predicate (at ?item - item ?place - object).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(happy ?character - character)": "The character is happy.",
+        "(worker ?character - character)": "Source predicate (worker ?character - character).",
+        "(clean ?place - object)": "Source predicate (clean ?place - object).",
+        "(makes-toys ?character - character)": "Source predicate (makes-toys ?character - character).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(friends-with ?character1 - character ?character2 - character)": "Source predicate (friends-with ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "put": "(:action put\n :parameters (?character - character ?item - item ?place - object)\n :precondition (and (happy ?character) (has ?character ?item))\n :effect (at ?item ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "start-working": "(:action start-working\n :parameters (?character - character)\n :precondition (and)\n :effect (worker ?character)\n)",
+        "clean-factory": "(:action clean-factory\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (clean factory)\n)",
+        "make-toys": "(:action make-toys\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (makes-toys ?character)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (worker ?character1) (worker ?character2) (not (= ?character1 ?character2)))\n :effect (friends-with ?character1 ?character2)\n)",
+        "become-less-nervous": "(:action become-less-nervous\n :parameters (?character - character)\n :precondition (and (worker ?character) (nervous ?character))\n :effect (not (nervous ?character))\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (happy ?character)\n)"
+    }
+}

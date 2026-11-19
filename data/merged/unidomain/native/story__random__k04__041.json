@@ -1,0 +1,35 @@
+{
+    "predicates": {
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(happy ?character - character)": "The character is happy.",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(at ?character - character ?place - place)": "The item or character is at the specified location.",
+        "(at ?entity - (either item character) ?place - object)": "The item or character is at the specified location.",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(knows-survival-skills ?character - character)": "Source predicate (knows-survival-skills ?character - character).",
+        "(computers-working)": "Source predicate (computers-working).",
+        "(caused-apocalypse ?character - character)": "Source predicate (caused-apocalypse ?character - character).",
+        "(alive ?character - character)": "The character is alive.",
+        "(drunk ?character - character)": "Source predicate (drunk ?character - character).",
+        "(night-show ?place - place)": "Source predicate (night-show ?place - place).",
+        "(vomit-stain ?place - place)": "Source predicate (vomit-stain ?place - place)."
+    },
+    "operators": {
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)",
+        "put :parameters (?character - character ?entity - (either item character) ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))": "(:action put :parameters (?character - character ?entity - (either item character) ?place - object) :precondition (and (happy ?character) (has ?character ?entity)) :effect (at ?entity ?place))",
+        "learn-survival-skills": "(:action learn-survival-skills\n :parameters (?learner - character ?teacher - character)\n :precondition (and (alive ?learner) (alive ?teacher) (knows-survival-skills ?teacher) (not (knows-survival-skills ?learner)))\n :effect (knows-survival-skills ?learner)\n)",
+        "cause-apocalypse": "(:action cause-apocalypse\n :parameters (?character - character)\n :precondition (and (alive ?character) (computers-working))\n :effect (and (not (computers-working)) (caused-apocalypse ?character))\n)",
+        "kill": "(:action kill\n :parameters (?killer - character ?victim - character)\n :precondition (and (alive ?killer) (alive ?victim) (not (= ?killer ?victim)))\n :effect (not (alive ?victim))\n)",
+        "sober-up": "(:action sober-up\n :parameters (?character - character)\n :precondition (drunk ?character)\n :effect (not (drunk ?character))\n)",
+        "move :parameters (?entity - character ?place - object) :precondition (and (alive ?entity) (not (at ?entity ?place))) :effect (at ?entity ?place))": "(:action move :parameters (?entity - character ?place - object) :precondition (and (alive ?entity) (not (at ?entity ?place))) :effect (at ?entity ?place))",
+        "vomit :parameters (?entity - character ?location - place) :precondition (and (alive ?entity) (drunk ?entity) (at ?entity ?location)) :effect (vomit-stain ?location))": "(:action vomit :parameters (?entity - character ?location - place) :precondition (and (alive ?entity) (drunk ?entity) (at ?entity ?location)) :effect (vomit-stain ?location))",
+        "drink": "(:action drink\n :parameters (?character - character ?drink - drink)\n :precondition (and (alive ?character) (has ?character ?drink))\n :effect (and (drunk ?character) (not (has ?character ?drink)))\n)"
+    }
+}

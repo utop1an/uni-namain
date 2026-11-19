@@ -1,0 +1,25 @@
+{
+    "predicates": {
+        "(wearing ?character - character ?dress - dress)": "Source predicate (wearing ?character - character ?dress - dress).",
+        "(damaged ?dress - dress)": "Source predicate (damaged ?dress - dress).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(has ?character - character ?object - object)": "The character has the object, which may be a dress.",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place)."
+    },
+    "operators": {
+        "slip": "(:action slip\n :parameters (?character - character ?dress - dress)\n :precondition (and (wearing ?character ?dress) (not (damaged ?dress)))\n :effect (damaged ?dress)\n)",
+        "comfort": "(:action comfort\n :parameters (?parent - character ?child - character)\n :precondition (and (not (happy ?child)) (not (= ?parent ?child)))\n :effect (happy ?child)\n)",
+        "put-on-dress :parameters (?character - character ?object - dress) :precondition (and (has ?character ?object) (not (wearing ?character ?object))) :effect (wearing ?character ?object))": "(:action put-on-dress :parameters (?character - character ?object - dress) :precondition (and (has ?character ?object) (not (wearing ?character ?object))) :effect (wearing ?character ?object))",
+        "get-new-dress :parameters (?character - character ?old-dress - dress ?new-object - object) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-object))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-object)))": "(:action get-new-dress :parameters (?character - character ?old-dress - dress ?new-object - object) :precondition (and (damaged ?old-dress) (wearing ?character ?old-dress) (not (has ?character ?new-object))) :effect (and (not (wearing ?character ?old-dress)) (has ?character ?new-object)))",
+        "request-tow": "(:action request-tow\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (requested-tow ?character ?place)\n)",
+        "discover-technology": "(:action discover-technology\n :parameters (?character - character ?object - object ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (and (has ?character ?object) (ancient-technology ?object))\n)",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "transport-object": "(:action transport-object\n :parameters (?character - character ?object - object ?from - place ?to - place)\n :precondition (and (alive ?character) (at ?character ?from) (has ?character ?object) (requested-tow ?character ?to))\n :effect (and (not (at ?character ?from)) (at ?character ?to) (not (has ?character ?object)))\n)"
+    }
+}

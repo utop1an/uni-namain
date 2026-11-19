@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(has-power ?character - character ?power - power)": "Source predicate (has-power ?character - character ?power - power).",
+        "(brothers ?character1 - character ?character2 - character)": "Source predicate (brothers ?character1 - character ?character2 - character).",
+        "(tyrant ?character - character)": "Source predicate (tyrant ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(alive ?character - character)": "The character is alive.",
+        "(has ?character - character ?object - object)": "Source predicate (has ?character - character ?object - object).",
+        "(shares ?character1 - character ?character2 - character ?object - object)": "Source predicate (shares ?character1 - character ?character2 - character ?object - object).",
+        "(in-love ?character1 - character ?character2 - character)": "Source predicate (in-love ?character1 - character ?character2 - character).",
+        "(accepts-past ?character1 - character ?character2 - character)": "Source predicate (accepts-past ?character1 - character ?character2 - character).",
+        "(knows-self ?character - character)": "Source predicate (knows-self ?character - character).",
+        "(sings ?character - character)": "Source predicate (sings ?character - character)."
+    },
+    "operators": {
+        "confront": "(:action confront\n :parameters (?confronter - character ?confronted - character ?place - place)\n :precondition (and (not (= ?confronter ?confronted)) (alive ?confronter) (at ?confronter ?place) (alive ?confronted) (at ?confronted ?place))\n :effect (and)\n)",
+        "defeat": "(:action defeat\n :parameters (?defeater - character ?defeated - character ?place - place)\n :precondition (and (not (= ?defeater ?defeated)) (alive ?defeater) (at ?defeater ?place) (alive ?defeated) (at ?defeated ?place))\n :effect (not (alive ?defeated))\n)",
+        "show-mercy": "(:action show-mercy\n :parameters (?merciful - character ?recipient - character ?place - place)\n :precondition (and (not (= ?merciful ?recipient)) (alive ?merciful) (at ?merciful ?place) (not (alive ?recipient)) (at ?recipient ?place))\n :effect (alive ?recipient)\n)",
+        "find": "(:action find\n :parameters (?character - character ?object - object)\n :precondition (not (has ?character ?object))\n :effect (has ?character ?object)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (and (has ?sharer ?object) (not (shares ?sharer ?receiver ?object)))\n :effect (shares ?sharer ?receiver ?object)\n)",
+        "unshare": "(:action unshare\n :parameters (?sharer - character ?object - object ?receiver - character)\n :precondition (shares ?sharer ?receiver ?object)\n :effect (not (shares ?sharer ?receiver ?object))\n)",
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (sings ?character)\n)",
+        "fall-in-love": "(:action fall-in-love\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2))\n :effect (in-love ?character1 ?character2)\n)",
+        "accept-past": "(:action accept-past\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (alive ?character1) (alive ?character2))\n :effect (accepts-past ?character1 ?character2)\n)",
+        "know-self": "(:action know-self\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (knows-self ?character)\n)",
+        "move": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from)) :effect (and (not (at ?character ?from)) (at ?character ?to)))"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "predicates": {
+        "(foggy ?place - place)": "Source predicate (foggy ?place - place).",
+        "(found ?item - item)": "Source predicate (found ?item - item).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(can-fly ?animal - animal)": "Source predicate (can-fly ?animal - animal).",
+        "(can-run ?character - character)": "Source predicate (can-run ?character - character).",
+        "(playing ?character - character ?animal - animal)": "Source predicate (playing ?character - character ?animal - animal).",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(at ?object - object ?place - location)": "The object, including a character, is at the specified location.",
+        "(happy ?character - character)": "The character is happy.",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(at ?entity - (either item character) ?place - object)": "The item or character is at the specified location.",
+        "(ready ?character - character)": "Source predicate (ready ?character - character).",
+        "(has-lover ?character - character)": "Source predicate (has-lover ?character - character).",
+        "(has-child ?character - character ?child - character)": "Source predicate (has-child ?character - character ?child - character).",
+        "(is-grandmother ?character - character)": "Source predicate (is-grandmother ?character - character).",
+        "(is-ill ?character - character)": "Source predicate (is-ill ?character - character).",
+        "(at ?character - character ?place - place)": "The object, including a character, is at the specified location."
+    },
+    "operators": {
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "clear-fog": "(:action clear-fog\n :parameters (?place - place)\n :precondition (foggy ?place)\n :effect (not (foggy ?place))\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character ?animal - animal)\n :precondition (playing ?character ?animal)\n :effect (not (playing ?character ?animal))\n)",
+        "can-run": "(:action can-run\n :parameters (?character - character)\n :precondition (and)\n :effect (can-run ?character)\n)",
+        "can-fly": "(:action can-fly\n :parameters (?animal - animal)\n :precondition (and)\n :effect (can-fly ?animal)\n)",
+        "play": "(:action play\n :parameters (?character - character ?animal - animal ?place - location)\n :precondition (and (at ?character ?place) (at ?animal ?place))\n :effect (playing ?character ?animal)\n)",
+        "search :parameters (?object - object ?item - item ?location - location) :precondition (and (at ?object ?location) (not (found ?item))) :effect (when (not (foggy ?location)) (and (found ?item) (has ?object ?item))))": "(:action search :parameters (?object - object ?item - item ?location - location) :precondition (and (at ?object ?location) (not (found ?item))) :effect (when (not (foggy ?location)) (and (found ?item) (has ?object ?item))))",
+        "become-happy :parameters (?character - character) :precondition (and) :effect (happy ?character))": "(:action become-happy :parameters (?character - character) :precondition (and) :effect (happy ?character))",
+        "get-ready": "(:action get-ready\n :parameters (?character - character)\n :precondition (not (ready ?character))\n :effect (ready ?character)\n)",
+        "become-ill": "(:action become-ill\n :parameters (?character - character)\n :precondition (not (is-ill ?character))\n :effect (is-ill ?character)\n)",
+        "recover": "(:action recover\n :parameters (?character - character)\n :precondition (is-ill ?character)\n :effect (not (is-ill ?character))\n)",
+        "become-grandmother": "(:action become-grandmother\n :parameters (?character - character)\n :precondition (and (not (is-grandmother ?character)) (exists (?child - character) (has-child ?character ?child)))\n :effect (is-grandmother ?character)\n)",
+        "travel": "(:action travel :parameters (?object - character ?from - location ?to - location) :precondition (and (not (= ?from ?to)) (at ?object ?from) (ready ?object)) :effect (and (not (at ?object ?from)) (at ?object ?to)))",
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "put :parameters (?character - character ?object - item ?place - location) :precondition (and (happy ?character) (has ?character ?object)) :effect (at ?object ?place))": "(:action put :parameters (?character - character ?object - item ?place - location) :precondition (and (happy ?character) (has ?character ?object)) :effect (at ?object ?place))"
+    }
+}

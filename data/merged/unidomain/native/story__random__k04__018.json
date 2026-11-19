@@ -1,0 +1,42 @@
+{
+    "predicates": {
+        "(foggy ?place - place)": "Source predicate (foggy ?place - place).",
+        "(found ?item - item)": "Source predicate (found ?item - item).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "The character is happy.",
+        "(can-fly ?animal - animal)": "Source predicate (can-fly ?animal - animal).",
+        "(can-run ?character - character)": "Source predicate (can-run ?character - character).",
+        "(playing ?character - character ?animal - animal)": "Source predicate (playing ?character - character ?animal - animal).",
+        "(has ?character - character ?item - item)": "The character possesses the item, which may be a mop.",
+        "(at ?object - object ?place - location)": "The object, including a character, is at the specified location.",
+        "(clean ?mop - mop)": "Source predicate (clean ?mop - mop).",
+        "(pretty ?mop - mop)": "Source predicate (pretty ?mop - mop).",
+        "(disgusting ?mop - mop)": "Source predicate (disgusting ?mop - mop).",
+        "(selected ?mop - mop)": "Source predicate (selected ?mop - mop).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(fan ?character - character ?idol - character)": "Source predicate (fan ?character - character ?idol - character).",
+        "(read ?character - character ?story - object)": "Source predicate (read ?character - character ?story - object).",
+        "(vote ?character - character ?story - object)": "Source predicate (vote ?character - character ?story - object).",
+        "(win ?story - object)": "Source predicate (win ?story - object).",
+        "(has ?character - character ?mop - mop)": "The character possesses the item, which may be a mop.",
+        "(at ?character - character ?place - place)": "The object, including a character, is at the specified location."
+    },
+    "operators": {
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "clear-fog": "(:action clear-fog\n :parameters (?place - place)\n :precondition (foggy ?place)\n :effect (not (foggy ?place))\n)",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character ?animal - animal)\n :precondition (playing ?character ?animal)\n :effect (not (playing ?character ?animal))\n)",
+        "can-run": "(:action can-run\n :parameters (?character - character)\n :precondition (and)\n :effect (can-run ?character)\n)",
+        "can-fly": "(:action can-fly\n :parameters (?animal - animal)\n :precondition (and)\n :effect (can-fly ?animal)\n)",
+        "become-happy": "(:action become-happy :parameters (?character - character) :precondition (and) :effect (happy ?character))",
+        "play": "(:action play\n :parameters (?character - character ?animal - animal ?place - location)\n :precondition (and (at ?character ?place) (at ?animal ?place))\n :effect (playing ?character ?animal)\n)",
+        "move :parameters (?object - object ?from - location ?to - location) :precondition (and (not (= ?from ?to)) (at ?object ?from)) :effect (and (not (at ?object ?from)) (at ?object ?to)))": "(:action move :parameters (?object - object ?from - location ?to - location) :precondition (and (not (= ?from ?to)) (at ?object ?from)) :effect (and (not (at ?object ?from)) (at ?object ?to)))",
+        "search :parameters (?object - object ?item - item ?location - location) :precondition (and (at ?object ?location) (not (found ?item))) :effect (when (not (foggy ?location)) (and (found ?item) (has ?object ?item))))": "(:action search :parameters (?object - object ?item - item ?location - location) :precondition (and (at ?object ?location) (not (found ?item))) :effect (when (not (foggy ?location)) (and (found ?item) (has ?object ?item))))",
+        "read-story": "(:action read-story\n :parameters (?reader - character ?story - object)\n :precondition (alive ?reader)\n :effect (read ?reader ?story)\n)",
+        "vote-for-story": "(:action vote-for-story\n :parameters (?voter - character ?story - object)\n :precondition (and (alive ?voter) (read ?voter ?story))\n :effect (vote ?voter ?story)\n)",
+        "story-wins": "(:action story-wins\n :parameters (?story - object)\n :precondition (exists (?voter - character) (vote ?voter ?story))\n :effect (win ?story)\n)",
+        "become-fan": "(:action become-fan\n :parameters (?fan - character ?idol - character)\n :precondition (and (alive ?fan) (alive ?idol) (not (= ?fan ?idol)))\n :effect (fan ?fan ?idol)\n)",
+        "go-to :parameters (?object - object ?location - location) :precondition (at ?object ?location) :effect (at ?object ?location))": "(:action go-to :parameters (?object - object ?location - location) :precondition (at ?object ?location) :effect (at ?object ?location))",
+        "select-mop :parameters (?character - character ?item - mop ?location - location) :precondition (and (at ?character ?location) (has ?character ?item)) :effect (selected ?item))": "(:action select-mop :parameters (?character - character ?item - mop ?location - location) :precondition (and (at ?character ?location) (has ?character ?item)) :effect (selected ?item))",
+        "receive-item :parameters (?character - character ?dog - character ?item - item ?location - location) :precondition (and (at ?character ?location) (at ?dog ?location) (has ?dog ?item)) :effect (and (not (has ?dog ?item)) (has ?character ?item)))": "(:action receive-item :parameters (?character - character ?dog - character ?item - item ?location - location) :precondition (and (at ?character ?location) (at ?dog ?location) (has ?dog ?item)) :effect (and (not (has ?dog ?item)) (has ?character ?item)))"
+    }
+}

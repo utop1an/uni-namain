@@ -1,0 +1,32 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(alive ?c - character)": "Source predicate (alive ?c - character).",
+        "(has ?c - character ?t - thing)": "Source predicate (has ?c - character ?t - thing).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(at ?character - character ?location - object)": "The character is at the specified location, which may be a house or another object.",
+        "(hurt ?character - character)": "Source predicate (hurt ?character - character).",
+        "(touching ?character - character ?object - object)": "Source predicate (touching ?character - character ?object - object).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(hugging ?character1 - character ?character2 - character)": "Source predicate (hugging ?character1 - character ?character2 - character)."
+    },
+    "operators": {
+        "walk :parameters (?character - character ?from ?to - house) :precondition (and (alive ?character) (at ?character ?from) (not (eaten ?character))) :effect (and (not (at ?character ?from)) (at ?character ?to) (when (and (rescuer ?character)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))": "(:action walk :parameters (?character - character ?from ?to - house) :precondition (and (alive ?character) (at ?character ?from) (not (eaten ?character))) :effect (and (not (at ?character ?from)) (at ?character ?to) (when (and (rescuer ?character)) (and (rescuer-at ?to) (not (rescuer-at ?from))))))",
+        "eat :parameters (?m - wolf ?c - human ?location - object) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?location) (at ?c ?location) (monster ?m)) :effect (and (eaten ?c)))": "(:action eat :parameters (?m - wolf ?c - human ?location - object) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?location) (at ?c ?location) (monster ?m)) :effect (and (eaten ?c)))",
+        "kill :parameters (?c - worker ?m - wolf ?a - axe ?location - object) :precondition (and (alive ?c) (alive ?m) (has ?c ?a) (at ?c ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?c - worker ?m - wolf ?a - axe ?location - object) :precondition (and (alive ?c) (alive ?m) (has ?c ?a) (at ?c ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "escape :parameters (?c - human ?m - wolf ?location - object) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?location)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?location)))": "(:action escape :parameters (?c - human ?m - wolf ?location - object) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?location)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?location)))",
+        "give :parameters (?c1 ?c2 - human ?t - thing ?location - object) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?location) (at ?c2 ?location)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))": "(:action give :parameters (?c1 ?c2 - human ?t - thing ?location - object) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?location) (at ?c2 ?location)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))",
+        "stop-touching": "(:action stop-touching\n :parameters (?character - character ?object - object)\n :precondition (touching ?character ?object)\n :effect (not (touching ?character ?object))\n)",
+        "get-hurt": "(:action get-hurt\n :parameters (?character - character)\n :precondition (not (hurt ?character))\n :effect (hurt ?character)\n)",
+        "get-scared": "(:action get-scared\n :parameters (?character - character)\n :precondition (not (scared ?character))\n :effect (scared ?character)\n)",
+        "stop-scared": "(:action stop-scared\n :parameters (?character - character)\n :precondition (scared ?character)\n :effect (not (scared ?character))\n)",
+        "hug": "(:action hug\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (hugging ?character1 ?character2)) (not (hugging ?character2 ?character1)))\n :effect (hugging ?character1 ?character2)\n)",
+        "stop-hug": "(:action stop-hug\n :parameters (?character1 - character ?character2 - character)\n :precondition (hugging ?character1 ?character2)\n :effect (not (hugging ?character1 ?character2))\n)",
+        "move": "(:action move\n :parameters (?character - character ?location - object)\n :precondition (and (not (at ?character ?location)) (not (scared ?character)))\n :effect (at ?character ?location)\n)",
+        "touch": "(:action touch\n :parameters (?character - character ?object - object ?location - object)\n :precondition (and (not (touching ?character ?object)) (at ?character ?location))\n :effect (touching ?character ?object)\n)"
+    }
+}

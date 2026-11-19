@@ -1,0 +1,33 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(alive ?c - character)": "Character ?c is alive.",
+        "(has ?c - character ?t - thing)": "Character ?c possesses thing ?t, including objects typed as item.",
+        "(at ?character - character ?place - place)": "The character is at the specified place, which may be a house.",
+        "(riding ?character - character ?vehicle - vehicle)": "Source predicate (riding ?character - character ?vehicle - vehicle).",
+        "(relaxed ?character - character)": "Source predicate (relaxed ?character - character).",
+        "(flying ?character - character)": "Source predicate (flying ?character - character).",
+        "(in-vehicle ?character - character ?vehicle - vehicle)": "Source predicate (in-vehicle ?character - character ?vehicle - vehicle).",
+        "(alive ?character - character)": "Character ?c is alive.",
+        "(has ?character - character ?item - item)": "Character ?c possesses thing ?t, including objects typed as item."
+    },
+    "operators": {
+        "walk :parameters (?c - character ?p1 ?p2 - place) :precondition (and (alive ?c) (at ?c ?p1) (not (eaten ?c))) :effect (and (not (at ?c ?p1)) (at ?c ?p2) (when (and (rescuer ?c)) (and (rescuer-at ?p2) (not (rescuer-at ?p1))))))": "(:action walk :parameters (?c - character ?p1 ?p2 - place) :precondition (and (alive ?c) (at ?c ?p1) (not (eaten ?c))) :effect (and (not (at ?c ?p1)) (at ?c ?p2) (when (and (rescuer ?c)) (and (rescuer-at ?p2) (not (rescuer-at ?p1))))))",
+        "eat :parameters (?m - wolf ?c - human ?p - place) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?p) (at ?c ?p) (monster ?m)) :effect (and (eaten ?c)))": "(:action eat :parameters (?m - wolf ?c - human ?p - place) :precondition (and (alive ?m) (alive ?c) (not (eaten ?c)) (at ?m ?p) (at ?c ?p) (monster ?m)) :effect (and (eaten ?c)))",
+        "escape :parameters (?c - human ?m - wolf ?p - place) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?p)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?p)))": "(:action escape :parameters (?c - human ?m - wolf ?p - place) :precondition (and (eaten ?c) (not (alive ?m)) (at ?m ?p)) :effect (and (not (eaten ?c)) (rescued ?c) (at ?c ?p)))",
+        "kill :parameters (?c - worker ?m - wolf ?a - axe ?p - place) :precondition (and (alive ?c) (alive ?m) (has ?c ?a) (at ?c ?p) (at ?m ?p) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?c - worker ?m - wolf ?a - axe ?p - place) :precondition (and (alive ?c) (alive ?m) (has ?c ?a) (at ?c ?p) (at ?m ?p) (monster ?m) (monster-alive) (rescuer ?c)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "give :parameters (?c1 ?c2 - human ?t - thing ?p - place) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?p) (at ?c2 ?p)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))": "(:action give :parameters (?c1 ?c2 - human ?t - thing ?p - place) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?p) (at ?c2 ?p)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))",
+        "stop-riding :parameters (?c - character ?vehicle - vehicle) :precondition (and (alive ?c) (riding ?c ?vehicle)) :effect (not (riding ?c ?vehicle)))": "(:action stop-riding :parameters (?c - character ?vehicle - vehicle) :precondition (and (alive ?c) (riding ?c ?vehicle)) :effect (not (riding ?c ?vehicle)))",
+        "start-flying :parameters (?c - character) :precondition (and (alive ?c) (not (flying ?c))) :effect (flying ?c))": "(:action start-flying :parameters (?c - character) :precondition (and (alive ?c) (not (flying ?c))) :effect (flying ?c))",
+        "stop-flying :parameters (?c - character) :precondition (and (alive ?c) (flying ?c)) :effect (not (flying ?c)))": "(:action stop-flying :parameters (?c - character) :precondition (and (alive ?c) (flying ?c)) :effect (not (flying ?c)))",
+        "try-relax :parameters (?c - character) :precondition (and (alive ?c) (not (relaxed ?c))) :effect (relaxed ?c))": "(:action try-relax :parameters (?c - character) :precondition (and (alive ?c) (not (relaxed ?c))) :effect (relaxed ?c))",
+        "stop-relax :parameters (?c - character) :precondition (and (alive ?c) (relaxed ?c)) :effect (not (relaxed ?c)))": "(:action stop-relax :parameters (?c - character) :precondition (and (alive ?c) (relaxed ?c)) :effect (not (relaxed ?c)))",
+        "start-riding :parameters (?c - character ?t - vehicle) :precondition (and (alive ?c) (has ?c ?t) (not (riding ?c ?t))) :effect (riding ?c ?t))": "(:action start-riding :parameters (?c - character ?t - vehicle) :precondition (and (alive ?c) (has ?c ?t) (not (riding ?c ?t))) :effect (riding ?c ?t))",
+        "travel :parameters (?c - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?c) (at ?c ?from)) :effect (and (not (at ?c ?from)) (at ?c ?to)))": "(:action travel :parameters (?c - character ?from - place ?to - place) :precondition (and (not (= ?from ?to)) (alive ?c) (at ?c ?from)) :effect (and (not (at ?c ?from)) (at ?c ?to)))"
+    }
+}

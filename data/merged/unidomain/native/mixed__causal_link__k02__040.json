@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(has ?character - character ?character2 - character)": "Source predicate (has ?character - character ?character2 - character).",
+        "(connected ?to - location ?from - location)": "Source predicate (connected ?to - location ?from - location).",
+        "(apprehended ?character - character)": "Source predicate (apprehended ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(saved ?saved - character ?saver - character)": "Source predicate (saved ?saved - character ?saver - character).",
+        "(knows ?character - character)": "Source predicate (knows ?character - character).",
+        "(captured ?character - character)": "Source predicate (captured ?character - character).",
+        "(henchman ?henchman - character)": "Source predicate (henchman ?henchman - character).",
+        "(at ?object - object ?place - location)": "The object, which may be a character, is at the specified location.",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(can-fly ?animal - animal)": "Source predicate (can-fly ?animal - animal).",
+        "(can-run ?character - character)": "Source predicate (can-run ?character - character).",
+        "(playing ?character - character ?animal - animal)": "Source predicate (playing ?character - character ?animal - animal)."
+    },
+    "operators": {
+        "interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))": "(:action interrogate-character :parameters (?questioner - character ?subject - character ?place - location) :precondition (and (player ?questioner) (at ?questioner ?place) (at ?subject ?place) (apprehended ?subject)) :effect (knows ?questioner))",
+        "place-victim :parameters (?actor - character ?target - character ?place - location ?destination - location) :precondition (and (henchman ?actor) (has ?actor ?target) (at ?actor ?place) (connected ?destination ?place)) :effect (and (not (has ?actor ?target)) (at ?target ?destination) (captured ?target)))": "(:action place-victim :parameters (?actor - character ?target - character ?place - location ?destination - location) :precondition (and (henchman ?actor) (has ?actor ?target) (at ?actor ?place) (connected ?destination ?place)) :effect (and (not (has ?actor ?target)) (at ?target ?destination) (captured ?target)))",
+        "save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - location) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))": "(:action save-character :parameters (?saver - character ?saved - character ?notsaved - character ?place - location) :precondition (and (player ?saver) (at ?saver ?place) (at ?saved ?place) (captured ?saved) (captured ?notsaved) (not (at ?notsaved ?place))) :effect (and (saved ?saved ?saver) (not (alive ?notsaved))))",
+        "stop-playing": "(:action stop-playing\n :parameters (?character - character ?animal - animal)\n :precondition (playing ?character ?animal)\n :effect (not (playing ?character ?animal))\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (and)\n :effect (happy ?character)\n)",
+        "can-run": "(:action can-run\n :parameters (?character - character)\n :precondition (and)\n :effect (can-run ?character)\n)",
+        "can-fly": "(:action can-fly\n :parameters (?animal - animal)\n :precondition (and)\n :effect (can-fly ?animal)\n)",
+        "play": "(:action play\n :parameters (?character - character ?animal - animal ?place - location)\n :precondition (and (at ?character ?place) (at ?animal ?place))\n :effect (playing ?character ?animal)\n)",
+        "move-location": "(:action move-location :parameters (?object - character ?destination - location ?source - location) :precondition (and (player ?object) (connected ?destination ?source) (at ?object ?source) (knows ?object) (not (= ?source ?destination))) :effect (and (not (at ?object ?source)) (at ?object ?destination)))"
+    }
+}

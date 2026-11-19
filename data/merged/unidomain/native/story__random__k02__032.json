@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(spirits-present ?character - character)": "Source predicate (spirits-present ?character - character).",
+        "(spirits-gone ?character - character)": "Source predicate (spirits-gone ?character - character).",
+        "(weak ?character - character)": "Source predicate (weak ?character - character).",
+        "(love-driven-away ?character - character)": "Source predicate (love-driven-away ?character - character).",
+        "(in-asylum ?character - character)": "Source predicate (in-asylum ?character - character).",
+        "(loves ?lover - character ?loved - character)": "Source predicate (loves ?lover - character ?loved - character).",
+        "(confessed ?confessor - character ?confessed-to - character)": "Source predicate (confessed ?confessor - character ?confessed-to - character).",
+        "(asked-question ?asker - character ?asked - character)": "Source predicate (asked-question ?asker - character ?asked - character).",
+        "(took-pill ?character - character)": "Source predicate (took-pill ?character - character)."
+    },
+    "operators": {
+        "become-weak": "(:action become-weak\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (weak ?character)\n)",
+        "drive-away-love": "(:action drive-away-love\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (love-driven-away ?character)\n)",
+        "end-up-in-asylum": "(:action end-up-in-asylum\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (in-asylum ?character)\n)",
+        "ask-spirits-to-leave": "(:action ask-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-present ?character))\n :effect (and (spirits-gone ?character) (not (spirits-present ?character)))\n)",
+        "regret-asking-spirits-to-leave": "(:action regret-asking-spirits-to-leave\n :parameters (?character - character)\n :precondition (and (alive ?character) (spirits-gone ?character))\n :effect (spirits-present ?character)\n)",
+        "take-pill": "(:action take-pill\n :parameters (?character - character)\n :precondition (not (took-pill ?character))\n :effect (took-pill ?character)\n)",
+        "ask-love-question": "(:action ask-love-question\n :parameters (?asker - character ?asked - character)\n :precondition (not (asked-question ?asker ?asked))\n :effect (asked-question ?asker ?asked)\n)",
+        "confess-love": "(:action confess-love\n :parameters (?confessor - character ?confessed-to - character)\n :precondition (and (not (confessed ?confessor ?confessed-to)) (asked-question ?confessed-to ?confessor) (took-pill ?confessor))\n :effect (and (confessed ?confessor ?confessed-to) (loves ?confessor ?confessed-to))\n)"
+    }
+}

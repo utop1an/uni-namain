@@ -1,0 +1,22 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(at ?character - character ?room - room)": "Source predicate (at ?character - character ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(has ?character - character ?thing - thing)": "Source predicate (has ?character - character ?thing - thing).",
+        "(loves ?lover - character ?loved - character)": "Source predicate (loves ?lover - character ?loved - character).",
+        "(confessed ?confessor - character ?confessed-to - character)": "Source predicate (confessed ?confessor - character ?confessed-to - character).",
+        "(asked-question ?asker - character ?asked - character)": "Source predicate (asked-question ?asker - character ?asked - character).",
+        "(took-pill ?character - character)": "Source predicate (took-pill ?character - character)."
+    },
+    "operators": {
+        "enter": "(:action enter\n :parameters (?character - character ?roomfrom - room ?roomto - room)\n :precondition (and (not (locked ?roomto)) (at ?character ?roomfrom))\n :effect (and (not (at ?character ?roomfrom)) (at ?character ?roomto))\n)",
+        "search-for": "(:action search-for\n :parameters (?character - character ?thing - thing ?room - room)\n :precondition (and (at ?character ?room) (in ?thing ?room))\n :effect (and (has ?character ?thing) (not (in ?thing ?room)))\n)",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "take-pill": "(:action take-pill\n :parameters (?character - character)\n :precondition (not (took-pill ?character))\n :effect (took-pill ?character)\n)",
+        "ask-love-question": "(:action ask-love-question\n :parameters (?asker - character ?asked - character)\n :precondition (not (asked-question ?asker ?asked))\n :effect (asked-question ?asker ?asked)\n)",
+        "confess-love": "(:action confess-love\n :parameters (?confessor - character ?confessed-to - character)\n :precondition (and (not (confessed ?confessor ?confessed-to)) (asked-question ?confessed-to ?confessor) (took-pill ?confessor))\n :effect (and (confessed ?confessor ?confessed-to) (loves ?confessor ?confessed-to))\n)"
+    }
+}

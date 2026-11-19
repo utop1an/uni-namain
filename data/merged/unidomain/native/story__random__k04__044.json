@@ -1,0 +1,34 @@
+{
+    "predicates": {
+        "(playing-together ?character1 - character ?character2 - character)": "Source predicate (playing-together ?character1 - character ?character2 - character).",
+        "(shares ?character - character)": "Source predicate (shares ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(sad ?character - character)": "Source predicate (sad ?character - character).",
+        "(has ?character - character ?item - item)": "The character has the item.",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(knows-survival-skills ?character - character)": "Source predicate (knows-survival-skills ?character - character).",
+        "(computers-working)": "Source predicate (computers-working).",
+        "(caused-apocalypse ?character - character)": "Source predicate (caused-apocalypse ?character - character).",
+        "(alive ?character - character)": "The character is alive.",
+        "(has-power ?character - character ?power - power)": "Source predicate (has-power ?character - character ?power - power).",
+        "(brothers ?character1 - character ?character2 - character)": "Source predicate (brothers ?character1 - character ?character2 - character).",
+        "(tyrant ?character - character)": "Source predicate (tyrant ?character - character)."
+    },
+    "operators": {
+        "play-together": "(:action play-together\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (friends ?character1 ?character2) (shares ?character1))\n :effect (playing-together ?character1 ?character2)\n)",
+        "apologize": "(:action apologize\n :parameters (?apologizer - character ?receiver - character)\n :precondition (and (not (= ?apologizer ?receiver)) (friends ?apologizer ?receiver))\n :effect (shares ?apologizer)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (not (= ?character1 ?character2))\n :effect (friends ?character1 ?character2)\n)",
+        "share": "(:action share\n :parameters (?sharer - character ?item - item ?receiver - character)\n :precondition (and (not (= ?sharer ?receiver)) (has ?sharer ?item) (friends ?sharer ?receiver))\n :effect (and (shares ?sharer) (has ?receiver ?item))\n)",
+        "receive-gift": "(:action receive-gift\n :parameters (?receiver - character ?giver - character ?item - item)\n :precondition (and (not (= ?receiver ?giver)) (happy ?giver) (not (has ?receiver ?item)) (has ?giver ?item))\n :effect (and (has ?receiver ?item) (happy ?receiver))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (not (sad ?character)))\n :effect (happy ?character)\n)",
+        "take-toy": "(:action take-toy\n :parameters (?taker - character ?victim - character ?item - item)\n :precondition (and (not (= ?taker ?victim)) (has ?victim ?item) (not (has ?taker ?item)))\n :effect (and (not (has ?victim ?item)) (has ?taker ?item) (sad ?victim))\n)",
+        "lose-toy": "(:action lose-toy\n :parameters (?character - character ?item - item)\n :precondition (and (has ?character ?item) (happy ?character))\n :effect (and (not (has ?character ?item)) (sad ?character))\n)",
+        "learn-survival-skills": "(:action learn-survival-skills\n :parameters (?learner - character ?teacher - character)\n :precondition (and (alive ?learner) (alive ?teacher) (knows-survival-skills ?teacher) (not (knows-survival-skills ?learner)))\n :effect (knows-survival-skills ?learner)\n)",
+        "cause-apocalypse": "(:action cause-apocalypse\n :parameters (?character - character)\n :precondition (and (alive ?character) (computers-working))\n :effect (and (not (computers-working)) (caused-apocalypse ?character))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "confront": "(:action confront\n :parameters (?confronter - character ?confronted - character ?place - place)\n :precondition (and (not (= ?confronter ?confronted)) (alive ?confronter) (at ?confronter ?place) (alive ?confronted) (at ?confronted ?place))\n :effect (and)\n)",
+        "kill_at_place :parameters (?killer - character ?victim - character ?place - place) :precondition (and (alive ?killer) (alive ?victim) (not (= ?killer ?victim)) (at ?killer ?place) (at ?victim ?place)) :effect (not (alive ?victim)))": "(:action kill_at_place :parameters (?killer - character ?victim - character ?place - place) :precondition (and (alive ?killer) (alive ?victim) (not (= ?killer ?victim)) (at ?killer ?place) (at ?victim ?place)) :effect (not (alive ?victim)))",
+        "show-mercy": "(:action show-mercy\n :parameters (?merciful - character ?recipient - character ?place - place)\n :precondition (and (not (= ?merciful ?recipient)) (alive ?merciful) (at ?merciful ?place) (not (alive ?recipient)) (at ?recipient ?place))\n :effect (alive ?recipient)\n)"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "predicates": {
+        "(in ?pin - pin ?box - box)": "Source predicate (in ?pin - pin ?box - box).",
+        "(tidy ?box - box)": "Source predicate (tidy ?box - box).",
+        "(on-floor ?pin - pin)": "Source predicate (on-floor ?pin - pin).",
+        "(scared ?pin - pin)": "Source predicate (scared ?pin - pin).",
+        "(fairy ?character - character)": "Source predicate (fairy ?character - character).",
+        "(alive ?entity - (either pin character))": "The pin or character is alive.",
+        "(at ?character - character ?location - (either box place))": "The character is at the specified box or place.",
+        "(imprisoned ?character - character)": "Source predicate (imprisoned ?character - character).",
+        "(served-sentence ?character - character)": "Source predicate (served-sentence ?character - character).",
+        "(has-serum ?character - character)": "Source predicate (has-serum ?character - character).",
+        "(religious ?character - character)": "Source predicate (religious ?character - character).",
+        "(alive ?character - character)": "The pin or character is alive.",
+        "(at ?character - character ?place - place)": "The character is at the specified box or place."
+    },
+    "operators": {
+        "bring-to-life :parameters (?fairy - character ?entity - pin ?box - box) :precondition (and (fairy ?fairy) (in ?entity ?box)) :effect (alive ?entity))": "(:action bring-to-life :parameters (?fairy - character ?entity - pin ?box - box) :precondition (and (fairy ?fairy) (in ?entity ?box)) :effect (alive ?entity))",
+        "become-friends :parameters (?fairy - character ?entity - (either pin character) ?box - box) :precondition (and (fairy ?fairy) (alive ?entity)) :effect (and))": "(:action become-friends :parameters (?fairy - character ?entity - (either pin character) ?box - box) :precondition (and (fairy ?fairy) (alive ?entity)) :effect (and))",
+        "pick-up-pin :parameters (?character - character ?pin - pin ?location - box) :precondition (and (at ?character ?location) (on-floor ?pin) (tidy ?location)) :effect (and (not (on-floor ?pin)) (in ?pin ?location) (not (scared ?pin))))": "(:action pick-up-pin :parameters (?character - character ?pin - pin ?location - box) :precondition (and (at ?character ?location) (on-floor ?pin) (tidy ?location)) :effect (and (not (on-floor ?pin)) (in ?pin ?location) (not (scared ?pin))))",
+        "open-box :parameters (?character - character ?location - box) :precondition (and (at ?character ?location) (tidy ?location)) :effect (forall (?pin - pin) (and (not (in ?pin ?location)) (on-floor ?pin) (scared ?pin))))": "(:action open-box :parameters (?character - character ?location - box) :precondition (and (at ?character ?location) (tidy ?location)) :effect (forall (?pin - pin) (and (not (in ?pin ?location)) (on-floor ?pin) (scared ?pin))))",
+        "take-serum": "(:action take-serum\n :parameters (?entity - character)\n :precondition (and (alive ?entity) (not (has-serum ?entity)))\n :effect (has-serum ?entity)\n)",
+        "serve-sentence :parameters (?entity - character) :precondition (and (alive ?entity) (imprisoned ?entity) (not (served-sentence ?entity))) :effect (served-sentence ?entity))": "(:action serve-sentence :parameters (?entity - character) :precondition (and (alive ?entity) (imprisoned ?entity) (not (served-sentence ?entity))) :effect (served-sentence ?entity))",
+        "release :parameters (?entity - character) :precondition (and (alive ?entity) (imprisoned ?entity) (served-sentence ?entity)) :effect (not (imprisoned ?entity)))": "(:action release :parameters (?entity - character) :precondition (and (alive ?entity) (imprisoned ?entity) (served-sentence ?entity)) :effect (not (imprisoned ?entity)))",
+        "convert :parameters (?entity - character) :precondition (and (alive ?entity) (not (religious ?entity))) :effect (religious ?entity))": "(:action convert :parameters (?entity - character) :precondition (and (alive ?entity) (not (religious ?entity))) :effect (religious ?entity))",
+        "abandon-religion :parameters (?entity - character) :precondition (and (alive ?entity) (religious ?entity)) :effect (not (religious ?entity)))": "(:action abandon-religion :parameters (?entity - character) :precondition (and (alive ?entity) (religious ?entity)) :effect (not (religious ?entity)))"
+    }
+}

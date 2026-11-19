@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(read ?reader - reader ?poem - poem)": "Source predicate (read ?reader - reader ?poem - poem).",
+        "(dead ?poem - poem)": "Source predicate (dead ?poem - poem).",
+        "(echo ?reader - reader ?poem - poem)": "Source predicate (echo ?reader - reader ?poem - poem).",
+        "(alive ?entity - (either poem character))": "The poem or character is alive.",
+        "(hungry ?character - character)": "Source predicate (hungry ?character - character).",
+        "(friend ?character1 - character ?character2 - character)": "Source predicate (friend ?character1 - character ?character2 - character).",
+        "(food-available)": "Source predicate (food-available).",
+        "(human ?character - character)": "Source predicate (human ?character - character).",
+        "(crow ?character - character)": "Source predicate (crow ?character - character).",
+        "(in-pain ?character - character)": "Source predicate (in-pain ?character - character).",
+        "(sunlight-available)": "Source predicate (sunlight-available).",
+        "(transformed ?character - character)": "Source predicate (transformed ?character - character).",
+        "(alive ?character - character)": "The poem or character is alive."
+    },
+    "operators": {
+        "echo-poem": "(:action echo-poem\n :parameters (?reader - reader ?poem - poem)\n :precondition (and (read ?reader ?poem) (not (echo ?reader ?poem)))\n :effect (echo ?reader ?poem)\n)",
+        "read-poem :parameters (?reader - reader ?entity - poem) :precondition (and (not (read ?reader ?entity)) (alive ?entity)) :effect (and (read ?reader ?entity) (echo ?reader ?entity)))": "(:action read-poem :parameters (?reader - reader ?entity - poem) :precondition (and (not (read ?reader ?entity)) (alive ?entity)) :effect (and (read ?reader ?entity) (echo ?reader ?entity)))",
+        "poem-dies :parameters (?entity - poem) :precondition (alive ?entity) :effect (and (not (alive ?entity)) (dead ?entity)))": "(:action poem-dies :parameters (?entity - poem) :precondition (alive ?entity) :effect (and (not (alive ?entity)) (dead ?entity)))",
+        "experience-pain": "(:action experience-pain\n :parameters (?character - character)\n :precondition (human ?character)\n :effect (in-pain ?character)\n)",
+        "transform-into-crow": "(:action transform-into-crow\n :parameters (?character - character)\n :precondition (and (human ?character) (in-pain ?character) (sunlight-available))\n :effect (and (not (human ?character)) (crow ?character) (transformed ?character))\n)",
+        "transform-back-into-human": "(:action transform-back-into-human\n :parameters (?character - character)\n :precondition (crow ?character)\n :effect (and (not (crow ?character)) (human ?character))\n)",
+        "ask-to-be-friends :parameters (?initiator - character ?recipient - character) :precondition (and (alive ?initiator) (alive ?recipient) (not (friend ?initiator ?recipient))) :effect (friend ?initiator ?recipient))": "(:action ask-to-be-friends :parameters (?initiator - character ?recipient - character) :precondition (and (alive ?initiator) (alive ?recipient) (not (friend ?initiator ?recipient))) :effect (friend ?initiator ?recipient))",
+        "search-for-food :parameters (?entity - (either poem character)) :precondition (alive ?entity) :effect (food-available))": "(:action search-for-food :parameters (?entity - (either poem character)) :precondition (alive ?entity) :effect (food-available))",
+        "feed :parameters (?feeding-entity - (either poem character) ?eating-character - character) :precondition (and (alive ?feeding-entity) (alive ?eating-character) (hungry ?eating-character) (food-available)) :effect (not (hungry ?eating-character)))": "(:action feed :parameters (?feeding-entity - (either poem character) ?eating-character - character) :precondition (and (alive ?feeding-entity) (alive ?eating-character) (hungry ?eating-character) (food-available)) :effect (not (hungry ?eating-character)))",
+        "eat :parameters (?eater - character ?eaten_entity - (either poem character)) :precondition (and (alive ?eater) (hungry ?eater) (alive ?eaten_entity)) :effect (not (alive ?eaten_entity)))": "(:action eat :parameters (?eater - character ?eaten_entity - (either poem character)) :precondition (and (alive ?eater) (hungry ?eater) (alive ?eaten_entity)) :effect (not (alive ?eaten_entity)))"
+    }
+}

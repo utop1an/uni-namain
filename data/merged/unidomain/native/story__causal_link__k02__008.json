@@ -1,0 +1,31 @@
+{
+    "predicates": {
+        "(wearing-pajamas ?animal - animal)": "Source predicate (wearing-pajamas ?animal - animal).",
+        "(on-floor ?character - character)": "Source predicate (on-floor ?character - character).",
+        "(dressed ?character - character)": "Source predicate (dressed ?character - character).",
+        "(holding ?character - character ?object - object)": "Source predicate (holding ?character - character ?object - object).",
+        "(walking ?character - character ?direction - direction)": "Source predicate (walking ?character - character ?direction - direction).",
+        "(petting ?character - character ?animal - animal)": "Source predicate (petting ?character - character ?animal - animal).",
+        "(bites ?animal - animal)": "Source predicate (bites ?animal - animal).",
+        "(owns ?character - character ?animal - animal)": "Source predicate (owns ?character - character ?animal - animal).",
+        "(life-is-a-joke ?character - character)": "Source predicate (life-is-a-joke ?character - character).",
+        "(awake ?character - character)": "The character is awake.",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has-hoard ?character - character)": "Source predicate (has-hoard ?character - character).",
+        "(robbed ?gang - gang)": "Source predicate (robbed ?gang - gang).",
+        "(soundproof-door ?place - place)": "Source predicate (soundproof-door ?place - place).",
+        "(attacked ?character - character)": "Source predicate (attacked ?character - character)."
+    },
+    "operators": {
+        "dress": "(:action dress\n :parameters (?character - character)\n :precondition (and (awake ?character) (on-floor ?character) (not (dressed ?character)))\n :effect (dressed ?character)\n)",
+        "pet": "(:action pet\n :parameters (?character - character ?animal - animal)\n :precondition (and (awake ?character) (dressed ?character) (not (bites ?animal)))\n :effect (petting ?character ?animal)\n)",
+        "realize-life-is-a-joke": "(:action realize-life-is-a-joke\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (life-is-a-joke ?character)\n)",
+        "sleep": "(:action sleep\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (awake ?character)) (asleep ?character))\n)",
+        "wake-up": "(:action wake-up :parameters (?character - character) :precondition (and (not (awake ?character)) (asleep ?character)) :effect (and (awake ?character) (not (asleep ?character))))",
+        "install-soundproof-door": "(:action install-soundproof-door\n :parameters (?gang - character ?place - place)\n :precondition (and (awake ?gang) (at ?gang ?place) (not (soundproof-door ?place)))\n :effect (soundproof-door ?place)\n)",
+        "rob": "(:action rob\n :parameters (?gang - character)\n :precondition (awake ?gang)\n :effect (robbed ?gang)\n)",
+        "attack": "(:action attack\n :parameters (?attacker - character ?victim - character)\n :precondition (and (awake ?attacker) (awake ?victim))\n :effect (attacked ?victim)\n)",
+        "clear-passage": "(:action clear-passage\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (and (not (attacked ?character)) (has-hoard ?character))\n)"
+    }
+}

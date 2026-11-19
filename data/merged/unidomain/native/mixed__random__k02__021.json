@@ -1,0 +1,30 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?character - character ?location - location)": "Source predicate (at ?character - character ?location - location).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(connected ?location - location ?oldlocation - location)": "Source predicate (connected ?location - location ?oldlocation - location).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(worker ?character - character)": "Source predicate (worker ?character - character).",
+        "(clean ?place - object)": "Source predicate (clean ?place - object).",
+        "(makes-toys ?character - character)": "Source predicate (makes-toys ?character - character).",
+        "(nervous ?character - character)": "Source predicate (nervous ?character - character).",
+        "(friends-with ?character1 - character ?character2 - character)": "Source predicate (friends-with ?character1 - character ?character2 - character).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character)."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing": "(:action take-thing\n :parameters (?taker - character ?thing - item ?location - location)\n :precondition (and (at ?taker ?location) (at ?thing ?location) (not (asleep ?taker)) (not (enchanted ?thing)))\n :effect (and (not (at ?thing ?location)) (has ?taker ?thing))\n)",
+        "disenchant-thing": "(:action disenchant-thing\n :parameters (?caster - character ?thing - item ?book - book ?location - location)\n :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?book) (enchanted ?thing))\n :effect (not (enchanted ?thing))\n)",
+        "start-working": "(:action start-working\n :parameters (?character - character)\n :precondition (and)\n :effect (worker ?character)\n)",
+        "clean-factory": "(:action clean-factory\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (clean factory)\n)",
+        "make-toys": "(:action make-toys\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (makes-toys ?character)\n)",
+        "become-friends": "(:action become-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (worker ?character1) (worker ?character2) (not (= ?character1 ?character2)))\n :effect (friends-with ?character1 ?character2)\n)",
+        "become-happy": "(:action become-happy\n :parameters (?character - character)\n :precondition (worker ?character)\n :effect (happy ?character)\n)",
+        "become-less-nervous": "(:action become-less-nervous\n :parameters (?character - character)\n :precondition (and (worker ?character) (nervous ?character))\n :effect (not (nervous ?character))\n)"
+    }
+}

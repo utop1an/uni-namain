@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(player ?character - character)": "Source predicate (player ?character - character).",
+        "(at ?thing - item ?location - location)": "Source predicate (at ?thing - item ?location - location).",
+        "(asleep ?character - character)": "Source predicate (asleep ?character - character).",
+        "(connected ?location - location ?oldlocation - location)": "Source predicate (connected ?location - location ?oldlocation - location).",
+        "(enchanted ?item - item)": "Source predicate (enchanted ?item - item).",
+        "(is ?item - item ?thing - thing)": "Source predicate (is ?item - item ?thing - thing).",
+        "(at ?character - character ?location - location)": "The character is at the specified location.",
+        "(has ?character - character ?object - object)": "The character possesses the object.",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(in-stasis ?character - character)": "Source predicate (in-stasis ?character - character).",
+        "(ancient-technology ?object - object)": "Source predicate (ancient-technology ?object - object).",
+        "(propellant-device ?object - object)": "Source predicate (propellant-device ?object - object).",
+        "(shielded ?object - object)": "Source predicate (shielded ?object - object).",
+        "(requested-tow ?character - character ?place - place)": "Source predicate (requested-tow ?character - character ?place - place).",
+        "(at ?character - character ?place - place)": "The character is at the specified location."
+    },
+    "operators": {
+        "move-location": "(:action move-location\n :parameters (?character - character ?to - location ?from - location)\n :precondition (and (connected ?to ?from) (not (asleep ?character)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "wake-person": "(:action wake-person\n :parameters (?waker - character ?woken - character ?location - location)\n :precondition (and (at ?waker ?location) (at ?woken ?location) (asleep ?woken) (not (asleep ?waker)))\n :effect (not (asleep ?woken))\n)",
+        "take-thing :parameters (?taker - character ?object - object ?location - location) :precondition (and (at ?taker ?location) (at ?object ?location) (not (asleep ?taker)) (not (enchanted ?object))) :effect (and (not (at ?object ?location)) (has ?taker ?object)))": "(:action take-thing :parameters (?taker - character ?object - object ?location - location) :precondition (and (at ?taker ?location) (at ?object ?location) (not (asleep ?taker)) (not (enchanted ?object))) :effect (and (not (at ?object ?location)) (has ?taker ?object)))",
+        "disenchant-thing :parameters (?caster - character ?thing - item ?object - object ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?object) (enchanted ?thing)) :effect (not (enchanted ?thing)))": "(:action disenchant-thing :parameters (?caster - character ?thing - item ?object - object ?location - location) :precondition (and (at ?caster ?location) (at ?thing ?location) (not (asleep ?caster)) (has ?caster ?object) (enchanted ?thing)) :effect (not (enchanted ?thing)))",
+        "request-tow :parameters (?character - character ?location - location) :precondition (and (alive ?character) (at ?character ?location)) :effect (requested-tow ?character ?location))": "(:action request-tow :parameters (?character - character ?location - location) :precondition (and (alive ?character) (at ?character ?location)) :effect (requested-tow ?character ?location))",
+        "detect-stasis": "(:action detect-stasis\n :parameters (?character - character ?object - object)\n :precondition (and (alive ?character) (has ?character ?object) (ancient-technology ?object))\n :effect (in-stasis ?object)\n)",
+        "discover-technology :parameters (?character - character ?object - object ?location - location) :precondition (and (alive ?character) (at ?character ?location)) :effect (and (has ?character ?object) (ancient-technology ?object)))": "(:action discover-technology :parameters (?character - character ?object - object ?location - location) :precondition (and (alive ?character) (at ?character ?location)) :effect (and (has ?character ?object) (ancient-technology ?object)))",
+        "transport-object :parameters (?character - character ?object - object ?from-location - location ?to-location - location) :precondition (and (alive ?character) (at ?character ?from-location) (has ?character ?object) (requested-tow ?character ?to-location)) :effect (and (not (at ?character ?from-location)) (at ?character ?to-location) (not (has ?character ?object))))": "(:action transport-object :parameters (?character - character ?object - object ?from-location - location ?to-location - location) :precondition (and (alive ?character) (at ?character ?from-location) (has ?character ?object) (requested-tow ?character ?to-location)) :effect (and (not (at ?character ?from-location)) (at ?character ?to-location) (not (has ?character ?object))))"
+    }
+}

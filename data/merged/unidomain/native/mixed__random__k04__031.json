@@ -1,0 +1,42 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(in ?thing - thing ?room - room)": "Source predicate (in ?thing - thing ?room - room).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(awake ?character - character)": "Source predicate (awake ?character - character).",
+        "(friends ?character1 - character ?character2 - character)": "Source predicate (friends ?character1 - character ?character2 - character).",
+        "(interesting ?place - place)": "Source predicate (interesting ?place - place).",
+        "(singing ?character - character)": "Source predicate (singing ?character - character).",
+        "(has ?character - character ?thing - thing)": "The character possesses the specified thing.",
+        "(at ?character - character ?place - place)": "The character is located at the specified place, which may be a room.",
+        "(at-carnival ?character - character)": "Source predicate (at-carnival ?character - character).",
+        "(wants-to-play ?character - character)": "Source predicate (wants-to-play ?character - character).",
+        "(played ?character - character)": "Source predicate (played ?character - character).",
+        "(weight-too-low ?character - character)": "Source predicate (weight-too-low ?character - character).",
+        "(upset ?character - character)": "Source predicate (upset ?character - character).",
+        "(comforted ?character - character)": "Source predicate (comforted ?character - character).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(wolves-attack ?place - place)": "Source predicate (wolves-attack ?place - place).",
+        "(wolves-killed ?character - character)": "Source predicate (wolves-killed ?character - character).",
+        "(has ?character - character ?item - item)": "The character possesses the specified thing."
+    },
+    "operators": {
+        "wake-up": "(:action wake-up\n :parameters (?character - character)\n :precondition (not (awake ?character))\n :effect (awake ?character)\n)",
+        "sing": "(:action sing\n :parameters (?character - character)\n :precondition (awake ?character)\n :effect (singing ?character)\n)",
+        "stop-singing": "(:action stop-singing\n :parameters (?character - character)\n :precondition (singing ?character)\n :effect (not (singing ?character))\n)",
+        "make-friends": "(:action make-friends\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (awake ?character1) (awake ?character2) (not (friends ?character1 ?character2)) (not (= ?character1 ?character2)))\n :effect (friends ?character1 ?character2)\n)",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "enter :parameters (?character - character ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?character ?placefrom)) :effect (and (not (at ?character ?placefrom)) (at ?character ?roomto)))": "(:action enter :parameters (?character - character ?placefrom - place ?roomto - room) :precondition (and (not (locked ?roomto)) (at ?character ?placefrom)) :effect (and (not (at ?character ?placefrom)) (at ?character ?roomto)))",
+        "sleep": "(:action sleep\n :parameters (?character - character ?place - place)\n :precondition (and (awake ?character) (at ?character ?place) (interesting ?place))\n :effect (not (awake ?character))\n)",
+        "search-for :parameters (?character - character ?thing - thing ?place - room) :precondition (and (at ?character ?place) (in ?thing ?place)) :effect (and (has ?character ?thing) (not (in ?thing ?place))))": "(:action search-for :parameters (?character - character ?thing - thing ?place - room) :precondition (and (at ?character ?place) (in ?thing ?place)) :effect (and (has ?character ?thing) (not (in ?thing ?place))))",
+        "become-upset": "(:action become-upset\n :parameters (?character - character)\n :precondition (weight-too-low ?character)\n :effect (upset ?character)\n)",
+        "comfort": "(:action comfort\n :parameters (?comforter - character ?comforted - character)\n :precondition (and (not (= ?comforter ?comforted)) (upset ?comforted))\n :effect (comforted ?comforted)\n)",
+        "die": "(:action die\n :parameters (?character - character)\n :precondition (alive ?character)\n :effect (not (alive ?character))\n)",
+        "go-to-carnival": "(:action go-to-carnival\n :parameters (?character - character)\n :precondition (and)\n :effect (at-carnival ?character)\n)",
+        "want-to-play": "(:action want-to-play\n :parameters (?character - character)\n :precondition (at-carnival ?character)\n :effect (wants-to-play ?character)\n)",
+        "play-game": "(:action play-game\n :parameters (?character - character)\n :precondition (and (at-carnival ?character) (wants-to-play ?character))\n :effect (and (played ?character) (weight-too-low ?character))\n)",
+        "move": "(:action move :parameters (?character - character ?from - place ?to - place) :precondition (and (awake ?character) (alive ?character) (at ?character ?from) (not (= ?from ?to)) (not (at ?character ?to))) :effect (and (not (at ?character ?from)) (at ?character ?to)))",
+        "kill-wolves": "(:action kill-wolves\n :parameters (?character - character ?place - place)\n :precondition (and (alive ?character) (at ?character ?place) (wolves-attack ?place))\n :effect (wolves-killed ?character)\n)"
+    }
+}

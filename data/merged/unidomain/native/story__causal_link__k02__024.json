@@ -1,0 +1,23 @@
+{
+    "predicates": {
+        "(at ?item - item ?place - object)": "Source predicate (at ?item - item ?place - object).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(party ?place - object)": "Source predicate (party ?place - object).",
+        "(cake ?place - object)": "Source predicate (cake ?place - object).",
+        "(happy ?character - character)": "The character is happy.",
+        "(bored ?character - character)": "Source predicate (bored ?character - character).",
+        "(dizzy ?character - character)": "Source predicate (dizzy ?character - character).",
+        "(rolling ?character - character)": "Source predicate (rolling ?character - character).",
+        "(lying-down ?character - character)": "Source predicate (lying-down ?character - character)."
+    },
+    "operators": {
+        "make-cake": "(:action make-cake\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (cake ?place)\n)",
+        "put": "(:action put\n :parameters (?character - character ?item - item ?place - object)\n :precondition (and (happy ?character) (has ?character ?item))\n :effect (at ?item ?place)\n)",
+        "start-party": "(:action start-party\n :parameters (?character - character ?place - object)\n :precondition (happy ?character)\n :effect (party ?place)\n)",
+        "enjoy-party": "(:action enjoy-party\n :parameters (?character - character ?place - object)\n :precondition (and (happy ?character) (party ?place))\n :effect (happy ?character)\n)",
+        "start-rolling": "(:action start-rolling\n :parameters (?character - character)\n :precondition (and (bored ?character) (not (rolling ?character)))\n :effect (and (not (bored ?character)) (rolling ?character))\n)",
+        "stop-rolling": "(:action stop-rolling\n :parameters (?character - character)\n :precondition (rolling ?character)\n :effect (and (not (rolling ?character)) (dizzy ?character))\n)",
+        "lie-down": "(:action lie-down\n :parameters (?character - character)\n :precondition (and (dizzy ?character) (not (lying-down ?character)))\n :effect (and (not (dizzy ?character)) (lying-down ?character))\n)",
+        "get-up": "(:action get-up\n :parameters (?character - character)\n :precondition (lying-down ?character)\n :effect (and (not (lying-down ?character)) (happy ?character))\n)"
+    }
+}

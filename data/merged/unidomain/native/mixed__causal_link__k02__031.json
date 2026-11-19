@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(locked ?room - room)": "Source predicate (locked ?room - room).",
+        "(unlocked-by ?room - room ?key - key)": "Source predicate (unlocked-by ?room - room ?key - key).",
+        "(hidden ?thing)": "Source predicate (hidden ?thing).",
+        "(at ?character - character ?room - room)": "The character is located in the room.",
+        "(in ?thing - thing ?room - room)": "The thing is located in the room.",
+        "(has ?character - character ?thing - thing)": "The character possesses the specified thing.",
+        "(has-key ?character - character)": "Source predicate (has-key ?character - character).",
+        "(sick ?character - character)": "Source predicate (sick ?character - character).",
+        "(called-911 ?caller - character ?sick-person - character)": "Source predicate (called-911 ?caller - character ?sick-person - character).",
+        "(in ?item - item ?room - room)": "The thing is located in the room.",
+        "(has ?character - character ?item - item)": "The character possesses the specified thing."
+    },
+    "operators": {
+        "enter": "(:action enter\n :parameters (?character - character ?roomfrom - room ?roomto - room)\n :precondition (and (not (locked ?roomto)) (at ?character ?roomfrom))\n :effect (and (not (at ?character ?roomfrom)) (at ?character ?roomto))\n)",
+        "unlock": "(:action unlock\n :parameters (?character - character ?key - key ?room - room)\n :precondition (and (locked ?room) (unlocked-by ?room ?key) (has ?character ?key))\n :effect (and (not (locked ?room)))\n)",
+        "search-for": "(:action search-for\n :parameters (?character - character ?thing - thing ?room - room)\n :precondition (and (at ?character ?room) (in ?thing ?room))\n :effect (and (has ?character ?thing) (not (in ?thing ?room)))\n)",
+        "call-911": "(:action call-911\n :parameters (?caller - character ?sick-person - character)\n :precondition (and (sick ?sick-person) (not (called-911 ?caller ?sick-person)))\n :effect (called-911 ?caller ?sick-person)\n)",
+        "move": "(:action move\n :parameters (?character - character ?from - room ?to - room)\n :precondition (and (not (= ?from ?to)) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "take-item :parameters (?character - character ?object - thing ?room - room) :precondition (and (at ?character ?room) (in ?object ?room)) :effect (and (not (in ?object ?room)) (has ?character ?object)))": "(:action take-item :parameters (?character - character ?object - thing ?room - room) :precondition (and (at ?character ?room) (in ?object ?room)) :effect (and (not (in ?object ?room)) (has ?character ?object)))",
+        "leave-item :parameters (?character - character ?object - thing ?room - room) :precondition (and (at ?character ?room) (has ?character ?object)) :effect (and (not (has ?character ?object)) (in ?object ?room)))": "(:action leave-item :parameters (?character - character ?object - thing ?room - room) :precondition (and (at ?character ?room) (has ?character ?object)) :effect (and (not (has ?character ?object)) (in ?object ?room)))"
+    }
+}

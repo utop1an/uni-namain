@@ -1,0 +1,24 @@
+{
+    "predicates": {
+        "(knows ?character1 - character ?character2 - character)": "Source predicate (knows ?character1 - character ?character2 - character).",
+        "(together ?character1 - character ?character2 - character)": "Source predicate (together ?character1 - character ?character2 - character).",
+        "(missing ?character - character)": "Source predicate (missing ?character - character).",
+        "(relationship ?character1 - character ?character2 - character)": "Source predicate (relationship ?character1 - character ?character2 - character).",
+        "(searching ?searcher - character ?target - character)": "Source predicate (searching ?searcher - character ?target - character).",
+        "(found ?searcher - character ?target - character)": "Source predicate (found ?searcher - character ?target - character).",
+        "(at ?character - character ?place - place)": "Source predicate (at ?character - character ?place - place).",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(alive ?character - character)": "Source predicate (alive ?character - character).",
+        "(delivered ?item - item)": "Source predicate (delivered ?item - item)."
+    },
+    "operators": {
+        "start-search": "(:action start-search\n :parameters (?searcher - character ?target - character)\n :precondition (and (not (= ?searcher ?target)) (not (searching ?searcher ?target)) (missing ?target))\n :effect (searching ?searcher ?target)\n)",
+        "stop-search": "(:action stop-search\n :parameters (?searcher - character ?target - character)\n :precondition (searching ?searcher ?target)\n :effect (not (searching ?searcher ?target))\n)",
+        "find": "(:action find\n :parameters (?searcher - character ?target - character)\n :precondition (and (searching ?searcher ?target) (missing ?target))\n :effect (and (not (missing ?target)) (found ?searcher ?target))\n)",
+        "start-relationship": "(:action start-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (and (not (= ?character1 ?character2)) (not (relationship ?character1 ?character2)) (knows ?character1 ?character2))\n :effect (relationship ?character1 ?character2)\n)",
+        "end-relationship": "(:action end-relationship\n :parameters (?character1 - character ?character2 - character)\n :precondition (relationship ?character1 ?character2)\n :effect (not (relationship ?character1 ?character2))\n)",
+        "travel": "(:action travel\n :parameters (?character - character ?from - place ?to - place)\n :precondition (and (not (= ?from ?to)) (alive ?character) (at ?character ?from))\n :effect (and (not (at ?character ?from)) (at ?character ?to))\n)",
+        "deliver": "(:action deliver\n :parameters (?character - character ?item - item ?destination - place)\n :precondition (and (alive ?character) (at ?character ?destination) (has ?character ?item))\n :effect (and (not (has ?character ?item)) (delivered ?item))\n)",
+        "pick-up": "(:action pick-up\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (alive ?character) (at ?character ?place))\n :effect (has ?character ?item)\n)"
+    }
+}

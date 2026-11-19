@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(raining)": "Source predicate (raining).",
+        "(sunny)": "Source predicate (sunny).",
+        "(muddy ?place - place)": "Source predicate (muddy ?place - place).",
+        "(playing ?character - character)": "Source predicate (playing ?character - character).",
+        "(scared ?character - character)": "Source predicate (scared ?character - character).",
+        "(brave ?character - character)": "Source predicate (brave ?character - character).",
+        "(safe ?character - character)": "Source predicate (safe ?character - character).",
+        "(inside ?character - character)": "Source predicate (inside ?character - character).",
+        "(at ?character - character ?place - place)": "The character is at the specified place.",
+        "(has ?character - character ?item - item)": "Source predicate (has ?character - character ?item - item).",
+        "(happy ?character - character)": "Source predicate (happy ?character - character).",
+        "(gave-gift ?giver - character ?receiver - character ?item - item)": "Source predicate (gave-gift ?giver - character ?receiver - character ?item - item)."
+    },
+    "operators": {
+        "stop-raining": "(:action stop-raining\n :parameters ()\n :precondition (raining)\n :effect (and (not (raining)) (sunny))\n)",
+        "start-raining": "(:action start-raining\n :parameters ()\n :precondition (sunny)\n :effect (and (not (sunny)) (raining))\n)",
+        "go-outside": "(:action go-outside\n :parameters (?character - character)\n :precondition (and (inside ?character) (sunny))\n :effect (and (not (inside ?character)) (at ?character outside))\n)",
+        "go-inside": "(:action go-inside\n :parameters (?character - character)\n :precondition (at ?character outside)\n :effect (and (not (at ?character outside)) (inside ?character) (safe ?character))\n)",
+        "play-in-mud": "(:action play-in-mud\n :parameters (?character - character ?place - place)\n :precondition (and (at ?character ?place) (muddy ?place))\n :effect (playing ?character)\n)",
+        "become-scared": "(:action become-scared\n :parameters (?character - character)\n :precondition (and (at ?character outside) (not (scared ?character)))\n :effect (scared ?character)\n)",
+        "become-brave": "(:action become-brave\n :parameters (?character - character)\n :precondition (and (at ?character outside) (scared ?character))\n :effect (and (not (scared ?character)) (brave ?character))\n)",
+        "make-happy": "(:action make-happy\n :parameters (?character - character ?target - character)\n :precondition (and (not (= ?character ?target)) (not (happy ?target)))\n :effect (happy ?target)\n)",
+        "find": "(:action find\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (not (has ?character ?item)))\n :effect (has ?character ?item)\n)",
+        "give": "(:action give\n :parameters (?giver - character ?item - item ?receiver - character ?place - place)\n :precondition (and (not (= ?giver ?receiver)) (at ?giver ?place) (has ?giver ?item) (at ?receiver ?place))\n :effect (and (not (has ?giver ?item)) (has ?receiver ?item) (gave-gift ?giver ?receiver ?item))\n)",
+        "play": "(:action play\n :parameters (?character - character ?item - item ?place - place)\n :precondition (and (at ?character ?place) (has ?character ?item))\n :effect (happy ?character)\n)"
+    }
+}

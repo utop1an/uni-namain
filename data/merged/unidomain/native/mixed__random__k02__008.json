@@ -1,0 +1,29 @@
+{
+    "predicates": {
+        "(monster ?c - beast)": "Source predicate (monster ?c - beast).",
+        "(monster-alive)": "Source predicate (monster-alive).",
+        "(rescuer ?h - character)": "Source predicate (rescuer ?h - character).",
+        "(rescuer-at ?h - house)": "Source predicate (rescuer-at ?h - house).",
+        "(alive ?c - character)": "Source predicate (alive ?c - character).",
+        "(has ?c - character ?t - thing)": "Source predicate (has ?c - character ?t - thing).",
+        "(eaten ?c - character)": "Source predicate (eaten ?c - character).",
+        "(rescued ?c - human)": "Source predicate (rescued ?c - human).",
+        "(at ?entity - (either character society) ?location - (either house planet))": "The character or society is located at the specified house or planet.",
+        "(has-technology ?society - society ?technology - technology)": "Source predicate (has-technology ?society - society ?technology - technology).",
+        "(in-habitable-zone ?planet - planet)": "Source predicate (in-habitable-zone ?planet - planet).",
+        "(in-high-wind-zone ?planet - planet)": "Source predicate (in-high-wind-zone ?planet - planet).",
+        "(in-low-wind-zone ?planet - planet)": "Source predicate (in-low-wind-zone ?planet - planet).",
+        "(explored ?society - society ?planet - planet)": "Source predicate (explored ?society - society ?planet - planet).",
+        "(at ?society - society ?planet - planet)": "The character or society is located at the specified house or planet."
+    },
+    "operators": {
+        "walk :parameters (?entity - character ?source ?destination - house) :precondition (and (alive ?entity) (at ?entity ?source) (not (eaten ?entity))) :effect (and (not (at ?entity ?source)) (at ?entity ?destination) (when (and (rescuer ?entity)) (and (rescuer-at ?destination) (not (rescuer-at ?source))))))": "(:action walk :parameters (?entity - character ?source ?destination - house) :precondition (and (alive ?entity) (at ?entity ?source) (not (eaten ?entity))) :effect (and (not (at ?entity ?source)) (at ?entity ?destination) (when (and (rescuer ?entity)) (and (rescuer-at ?destination) (not (rescuer-at ?source))))))",
+        "eat :parameters (?wolf - wolf ?human - human ?location - (either house planet)) :precondition (and (alive ?wolf) (alive ?human) (not (eaten ?human)) (at ?wolf ?location) (at ?human ?location) (monster ?wolf)) :effect (and (eaten ?human)))": "(:action eat :parameters (?wolf - wolf ?human - human ?location - (either house planet)) :precondition (and (alive ?wolf) (alive ?human) (not (eaten ?human)) (at ?wolf ?location) (at ?human ?location) (monster ?wolf)) :effect (and (eaten ?human)))",
+        "kill :parameters (?entity - worker ?m - wolf ?a - axe ?location - (either house planet)) :precondition (and (alive ?entity) (alive ?m) (has ?entity ?a) (at ?entity ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?entity)) :effect (and (not (alive ?m)) (not (monster-alive))))": "(:action kill :parameters (?entity - worker ?m - wolf ?a - axe ?location - (either house planet)) :precondition (and (alive ?entity) (alive ?m) (has ?entity ?a) (at ?entity ?location) (at ?m ?location) (monster ?m) (monster-alive) (rescuer ?entity)) :effect (and (not (alive ?m)) (not (monster-alive))))",
+        "escape :parameters (?human - human ?wolf - wolf ?location - (either house planet)) :precondition (and (eaten ?human) (not (alive ?wolf)) (at ?wolf ?location)) :effect (and (not (eaten ?human)) (rescued ?human) (at ?human ?location)))": "(:action escape :parameters (?human - human ?wolf - wolf ?location - (either house planet)) :precondition (and (eaten ?human) (not (alive ?wolf)) (at ?wolf ?location)) :effect (and (not (eaten ?human)) (rescued ?human) (at ?human ?location)))",
+        "give :parameters (?c1 ?c2 - human ?t - thing ?location - (either house planet)) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?location) (at ?c2 ?location)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))": "(:action give :parameters (?c1 ?c2 - human ?t - thing ?location - (either house planet)) :precondition (and (not (eaten ?c2)) (alive ?c1) (alive ?c2) (has ?c1 ?t) (at ?c1 ?location) (at ?c2 ?location)) :effect (and (has ?c2 ?t) (not (has ?c1 ?t))))",
+        "develop-technology": "(:action develop-technology\n :parameters (?society - society ?technology - technology)\n :precondition (and)\n :effect (has-technology ?society ?technology)\n)",
+        "explore :parameters (?entity - society ?location - planet ?technology - technology) :precondition (and (at ?entity ?location) (has-technology ?entity ?technology) (or (in-habitable-zone ?location) (in-high-wind-zone ?location) (in-low-wind-zone ?location))) :effect (explored ?entity ?location))": "(:action explore :parameters (?entity - society ?location - planet ?technology - technology) :precondition (and (at ?entity ?location) (has-technology ?entity ?technology) (or (in-habitable-zone ?location) (in-high-wind-zone ?location) (in-low-wind-zone ?location))) :effect (explored ?entity ?location))",
+        "move :parameters (?entity - society ?source - planet ?destination - planet ?technology - technology) :precondition (and (at ?entity ?source) (has-technology ?entity ?technology) (or (in-habitable-zone ?destination) (in-high-wind-zone ?destination) (in-low-wind-zone ?destination))) :effect (and (not (at ?entity ?source)) (at ?entity ?destination)))": "(:action move :parameters (?entity - society ?source - planet ?destination - planet ?technology - technology) :precondition (and (at ?entity ?source) (has-technology ?entity ?technology) (or (in-habitable-zone ?destination) (in-high-wind-zone ?destination) (in-low-wind-zone ?destination))) :effect (and (not (at ?entity ?source)) (at ?entity ?destination)))"
+    }
+}
