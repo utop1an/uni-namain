@@ -1,5 +1,0 @@
-(define (plan tamara-vacation-solution)
-  (:problem tamara-vacation)
-  (:steps (drink tamara mojito)
-          (move tamara amphitheatre)
-          (vomit tamara amphitheatre)))

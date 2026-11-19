@@ -1,1 +1,0 @@
-(define (problem missing_initial_fact) (:domain unified_narrative_domain) (:objects hero - person) (:init ) (:goal (warning_delivered hero)))

@@ -2,7 +2,7 @@
 
 ## Read first
 
-Read `docs/dev-notes/README.md` and its latest dated handoff, then `docs/research/narrative-domain-fusion-plan.md`. Current submission milestones live in `paper/submission_workplan.json`; dated results are evidence snapshots, not automatically current measurements.
+Read `README.md` and `paper/README.md`. Follow their links to the current case review. Submission milestones live in `paper/submission_workplan.json`. Dated results describe their recorded conditions.
 
 ## Research and data contracts
 
@@ -10,7 +10,7 @@ Read `docs/dev-notes/README.md` and its latest dated handoff, then `docs/researc
 - Require an explicit initial state. Goal-only requests return `needs_initial_state`; never infer or pool initial facts from source problems. Initial-only outcomes and original-goal solutions are different evaluation units.
 - Keep compilation preservation, interface semantic correctness, and narrative quality separate. Parsing, tests, model-output validation and plan success do not supply independent semantic labels.
 - Preserve original worlds and all failure/resource-limit rows in comparisons. Freeze inputs, budgets and mappings before search; use fresh versioned output directories and retain historical artifacts.
-- Source-local preservation depends on explicit object/type membership, binding-safe substitutions and consistent world embeddings. Independent source regressions do not prove that conflicting source worlds can be combined.
+- The legacy source-scoped preservation result depends on exact object/type membership, binding-safe substitutions and consistent world embeddings. Shared-type compilation instead uses explicit semantic type mappings and native typed parameters, without object-origin guards. Its expanded quantifier universes require separate preservation checks; do not carry over the legacy theorem or benchmark results. Independent source regressions do not prove that conflicting source worlds can be combined.
 - Cache continuation after an interrupted experiment is a separately labeled condition; never report it as completion within the original fresh-run budget.
 
 ## Local workflow
@@ -21,4 +21,4 @@ Evidence inventory verification: `.venv/Scripts/python.exe -m scripts.evidence.b
 
 ## Documentation
 
-Keep stable rules here, dated outcomes in `docs/dev-notes/`, and scientific claims/limits in `paper/claim_evidence.json`. Update documentation when requested; do not turn historical test counts into permanent correctness claims.
+Keep stable rules here, dated outcomes with their versioned research artifacts, and scientific claims and limits in `paper/claim_evidence.json`. Keep `README.md` as the project guide. Historical test counts describe the original run.

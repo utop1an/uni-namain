@@ -1,1 +1,0 @@
-(define (problem other) (:domain foreign_b) (:init) (:goal (other)))

@@ -1,1 +1,0 @@
-(define (problem cross_source) (:domain unified_narrative_domain) (:objects hero - person) (:init (messenger_present hero)) (:goal (warning_delivered hero)))

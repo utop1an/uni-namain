@@ -1,5 +1,0 @@
-(define (plan tim-zigzag-story-solution)
-  (:problem tim-zigzag-story)
-  (:steps (play tim zigzag park)
-          (can-run tim)
-          (become-happy tim)))

@@ -1,4 +1,7 @@
 .venv/
+.env
+.env.*
+!.env.example
 .cache/
 __pycache__/
 *.py[cod]
@@ -13,10 +16,7 @@ __pycache__/
 /data/external/
 /output/
 /archive/
-/paper/*revision_*/
-/paper/*integration_*/
-/paper/results_snapshot_*/
-/paper/result_sources_*.json
+/paper/
 *.aux
 *.bbl
 *.blg

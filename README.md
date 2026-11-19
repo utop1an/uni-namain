@@ -1,61 +1,84 @@
-# Narrative planning domain fusion
+# NarraFuse
 
-Select and merge narrative planning domains into a **parameterized domain before
-planning**, retaining source mappings and provenance. Requests supply an explicit
-initial state and may supply a goal.
+NarraFuse compiles narrative planning domains into a reusable, parameterized
+domain before search. The compiler records source mappings and provenance.
+Planning takes an explicit initial state and an optional goal.
 
-The current baseline supports source-preserving union, explicit alignment
-assumptions, domain dependency selection, bounded planning and plan validation.
-Automatic semantic alignment, independent semantic evaluation and narrative
-ranking remain unfinished. The ICAPS 2027 manuscript is a working draft.
+The [domain catalog](data/README.md) links source domains and merged models by
+experiment group. For the Arthur, Batman and Little Red example, look up
+`human__random__k03__022` in `data/groups.csv`.
 
-## Start here
+## Run with shared semantic types
 
-- [Project map](docs/project-map.md): code to read and which tools are historical.
-- [Scripts by purpose](scripts/README.md): audit, validation, experiments and annotation.
-- [Commands](docs/commands.md): alignment, annotation, checks and experiment runners.
-- [Research contract](docs/research/narrative-domain-fusion-plan.md): objective and evaluation boundaries.
-- [Latest research handoff](docs/dev-notes/2026-10-15-icaps-submission-progress.md): dated evidence and open gaps.
-- [Submission milestones](paper/submission_workplan.json) and [claim evidence](paper/claim_evidence.json).
+New composed worlds use `build-shared` and `plan-shared`. Objects have shared
+semantic types: for example, `batman - hunter`, with `hunter` a subtype of
+`character`. An action taking `?who - character` accepts Batman regardless of
+its source. Original preconditions still apply. Source provenance is retained
+in the mapping, without per-object source permissions.
 
-## Run the baseline
+The type specification declares a hierarchy, complete source-type
+mappings, source hashes and their evidence. Matching names alone do not establish
+equivalence: the rescue sources use `thing` with different meanings. Incompatible
+multiple types are rejected rather than collapsed to `object`. Problem files
+declare canonical object types and explicit facts; source problem facts are never
+pooled. Native Glaive export also supports explicitly declared multiple
+inheritance; physical planner adapters may support a narrower type fragment.
 
-From the repository root, install the symbolic planning dependencies:
+Using the frozen rescue inputs as an example:
 
 ```powershell
-.venv/Scripts/python.exe -m pip install -r requirements-planning.txt
-.venv/Scripts/python.exe run_narrative_pipeline.py --query path/to/query.json --output data/my_pipeline_run
+$case = 'paper/results/shared_types_2026_11_19_v3/inputs'
+.venv/Scripts/python.exe -m rcnc build-shared --sources "$case/sources.json" --types "$case/types.json" --alignments "$case/alignments_with_shared_at.json" --output output/my_shared_domain
+.venv/Scripts/python.exe -m rcnc plan-shared --compiled output/my_shared_domain --world "$case/world.json" --output output/my_shared_plan
 ```
 
-The project expects a Python virtual environment at `.venv`. The CLI defaults to
-sources in `data/narra-domains`; use `--input` for another source directory.
-The query format and a synthetic example are in the
-[request reference](docs/commands.md#explicit-requests-against-the-pre-search-union).
-Always choose a new output directory.
+Compilation saves the full parameterized domain and mappings before seeing the
+new planning world. `plan-shared` checks physical execution; intentional validity
+is a separate check. Global source activation flags remain available for source
+ablations, and all sources are active by default. These flags do not distinguish
+objects by origin. Quantifiers range over the shared type, which can change
+behavior relative to the original source's smaller universe. The source-local
+preservation theorem therefore does not apply unconditionally.
 
-| Request | Behavior |
-| --- | --- |
-| Explicit initial state + goal | Search and independently validate a plan |
-| Explicit initial state only | Generate bounded reachable outcomes; no narrative ranking |
-| Missing or null initial state | Return `needs_initial_state` before planning |
+See the [shared-type implementation review](paper/results/shared_types_2026_11_19_v3/review.md)
+for controls separating type alignment from predicate alignment. Historical
+benchmarks retain their recorded source-scoped compilation; their counts are not
+results for the new shared-type mode.
 
-An explicit empty initial state is distinct from a missing state. Source problem
-facts are never pooled into the request world. Shared entity identities and
-alignment assumptions must be supplied explicitly.
+## Run the historical baseline
+
+From the repository root on Windows with Python 3.12 installed:
+
+```powershell
+py -3.12 -m venv .venv
+.venv/Scripts/python.exe -m pip install -e .
+.venv/Scripts/python.exe -m rcnc build-union --output output/my_first_union
+```
+
+Choose a fresh output directory for each run. The default input is
+`data/narra-domains/` in the research layout described below. Use `python -m rcnc --help` to list construction and
+planning commands. A planning request takes an explicit initial state. Supply a
+goal to search for a solution, or omit the goal to explore reachable outcomes.
+
+The [UniDomain adapter](unidomain/README.md) has its own entry point,
+`python -m unidomain`. Optional model and solver dependencies are listed in
+[pyproject.toml](pyproject.toml).
 
 ## Check changes
 
+In the local research checkout, the full suite and historical experiment
+runners use the original problem, benchmark and result paths. Select the
+research layout before running them and return to the catalog layout afterward.
+Switch only between runs. The original tree is parked in
+`archive/research-data-v1/data/` while the catalog is active.
+
 ```powershell
+./scripts/data/Set-DataLayout.ps1 Research
 New-Item -ItemType Directory -Force .tmp | Out-Null
-$env:TEMP = Join-Path (Get-Location) '.tmp'
+$env:TEMP = (Resolve-Path .tmp).Path
 $env:TMP = $env:TEMP
 .venv/Scripts/python.exe -m unittest discover -s tests -v
+./scripts/data/Set-DataLayout.ps1 Domains
 ```
 
-Tests and plan validation check engineering behavior. They do not establish
-interface semantic correctness or narrative quality. To verify a dated evidence
-inventory, use `scripts/evidence/build_paper_results.py` with its versioned index and a fresh output
-path; see the [reproduction reference](docs/commands.md#rechecking-development-evidence).
-
-Earlier RCNC commands, historical acceptance audits and the UniDomain reference
-setup are in [historical and reference tools](docs/legacy-tools.md).
+See the [script index](scripts/README.md) for experiment and audit entry points.

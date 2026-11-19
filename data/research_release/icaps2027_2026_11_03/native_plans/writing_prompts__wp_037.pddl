@@ -1,5 +1,0 @@
-(define (plan wally-wilma-wenda-solution)
-  (:problem wally-wilma-wenda)
-  (:steps (start-relationship wally wenda)
-          (start-search wally wilma)
-          (find wally wilma)))

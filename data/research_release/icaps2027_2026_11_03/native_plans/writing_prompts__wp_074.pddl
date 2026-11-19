@@ -1,8 +1,0 @@
-(define (plan bill-narrator-conflict-solution)
-  (:problem bill-narrator-conflict)
-  (:steps (apologize narrator dad)
-          (apologize narrator mom)
-          (despise narrator bill)
-          (manipulate bill narrator)
-          (isolate bill narrator)
-          (influence bill narrator)))
