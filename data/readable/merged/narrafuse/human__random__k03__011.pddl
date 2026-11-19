@@ -1,0 +1,824 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:constants human_662247ec644ef452_o_jailhouse - object human_662247ec644ef452_o_snakebite - object)
+  (:predicates
+    (human_1fe4b2f08d46fd1e_active)
+    (human_1fe4b2f08d46fd1e_type_creature ?x - object)
+    (human_1fe4b2f08d46fd1e_type_item ?x - object)
+    (human_1fe4b2f08d46fd1e_type_monster ?x - object)
+    (human_1fe4b2f08d46fd1e_type_object ?x - object)
+    (human_1fe4b2f08d46fd1e_type_person ?x - object)
+    (human_1fe4b2f08d46fd1e_type_place ?x - object)
+    (human_1fe4b2f08d46fd1e_type_valuable ?x - object)
+    (shared_p_consensus_a025dea28a6b1c5e ?v0 - object)
+    (shared_p_consensus_d35fbbbc26bb7825 ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_rich ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_happy ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_hungry ?v0 - object)
+    (shared_p_consensus_4552650b032404b3 ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_has ?v0 - object ?v1 - object)
+    (shared_p_consensus_2480b9295c28aaa9 ?v0 - object ?v1 - object)
+    (shared_p_consensus_a562a58a712372c2 ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasproposed ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasaccepted ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_marriedto ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_active)
+    (human_3cd8b87ba572801b_type_aristocrat ?x - object)
+    (human_3cd8b87ba572801b_type_canmarry ?x - object)
+    (human_3cd8b87ba572801b_type_character ?x - object)
+    (human_3cd8b87ba572801b_type_dragon ?x - object)
+    (human_3cd8b87ba572801b_type_emperor ?x - object)
+    (human_3cd8b87ba572801b_type_female ?x - object)
+    (human_3cd8b87ba572801b_type_genie ?x - object)
+    (human_3cd8b87ba572801b_type_ismagic ?x - object)
+    (human_3cd8b87ba572801b_type_king ?x - object)
+    (human_3cd8b87ba572801b_type_knight ?x - object)
+    (human_3cd8b87ba572801b_type_location ?x - object)
+    (human_3cd8b87ba572801b_type_lord ?x - object)
+    (human_3cd8b87ba572801b_type_male ?x - object)
+    (human_3cd8b87ba572801b_type_monarch ?x - object)
+    (human_3cd8b87ba572801b_type_monster ?x - object)
+    (human_3cd8b87ba572801b_type_object ?x - object)
+    (human_3cd8b87ba572801b_type_person ?x - object)
+    (human_3cd8b87ba572801b_type_princess ?x - object)
+    (human_3cd8b87ba572801b_type_spirit ?x - object)
+    (human_3cd8b87ba572801b_type_thing ?x - object)
+    (human_3cd8b87ba572801b_type_zombie ?x - object)
+    (human_3cd8b87ba572801b_p_bachelor ?v0 - object)
+    (human_3cd8b87ba572801b_p_bachelor-loves ?v0 - object)
+    (human_3cd8b87ba572801b_p_loves-bachelor ?v0 - object)
+    (human_3cd8b87ba572801b_p_magic-char ?v0 - object)
+    (human_3cd8b87ba572801b_p_controls-magic ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_p_magic-char-alive)
+    (human_3cd8b87ba572801b_p_scary ?v0 - object)
+    (human_3cd8b87ba572801b_p_beautiful ?v0 - object)
+    (human_3cd8b87ba572801b_p_magic ?v0 - object)
+    (human_3cd8b87ba572801b_p_controls ?v0 - object ?v1 - object ?v2 - object)
+    (human_3cd8b87ba572801b_p_married-to ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_p_loyal-to ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_p_in ?v0 - object ?v1 - object)
+    (shared_p_consensus_fd5d96232a94c007 ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_p_confined ?v0 - object)
+    (human_3cd8b87ba572801b_p_intends-not-alive ?v0 - object ?v1 - object)
+    (human_3cd8b87ba572801b_p_intends-has ?v0 - object ?v1 - object ?v2 - object)
+    (human_3cd8b87ba572801b_p_intends-loves ?v0 - object ?v1 - object ?v2 - object)
+    (human_662247ec644ef452_active)
+    (human_662247ec644ef452_type_animal ?x - object)
+    (human_662247ec644ef452_type_item ?x - object)
+    (human_662247ec644ef452_type_living ?x - object)
+    (human_662247ec644ef452_type_object ?x - object)
+    (human_662247ec644ef452_type_person ?x - object)
+    (human_662247ec644ef452_type_place ?x - object)
+    (human_662247ec644ef452_type_sickness ?x - object)
+    (human_662247ec644ef452_type_valuable ?x - object)
+    (human_662247ec644ef452_p_alive ?v0 - object)
+    (human_662247ec644ef452_p_free ?v0 - object)
+    (human_662247ec644ef452_p_sheriff ?v0 - object)
+    (human_662247ec644ef452_p_at ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_sick ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_cures ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_loves ?v0 - object ?v1 - object)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_travel
+    :parameters (?creature - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?from)
+        (human_1fe4b2f08d46fd1e_type_place ?to)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?creature)
+          (shared_p_consensus_4552650b032404b3 ?creature ?from)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_4552650b032404b3 ?creature ?to)
+        (not (shared_p_consensus_4552650b032404b3 ?creature ?from))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_propose
+    :parameters (?proposer - object ?proposee - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_person ?proposee)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?proposer)
+          (shared_p_consensus_4552650b032404b3 ?proposer ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?proposee)
+          (shared_p_consensus_4552650b032404b3 ?proposee ?place)
+          (shared_p_consensus_a562a58a712372c2 ?proposer ?proposee)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?proposee)
+    :agents (?proposer)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_accept
+    :parameters (?accepter - object ?proposer - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?accepter)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?accepter)
+          (shared_p_consensus_4552650b032404b3 ?accepter ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?proposer)
+          (shared_p_consensus_4552650b032404b3 ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?accepter)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasaccepted ?accepter ?proposer)
+    :agents (?accepter)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?groom)
+        (human_1fe4b2f08d46fd1e_type_person ?bride)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?groom)
+          (shared_p_consensus_4552650b032404b3 ?groom ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?groom ?bride)
+          (shared_p_consensus_d35fbbbc26bb7825 ?groom)
+          (shared_p_consensus_a025dea28a6b1c5e ?bride)
+          (shared_p_consensus_4552650b032404b3 ?bride ?place)
+          (human_1fe4b2f08d46fd1e_p_hasaccepted ?bride ?groom)
+          (shared_p_consensus_d35fbbbc26bb7825 ?bride)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_marriedto ?groom ?bride)
+        (human_1fe4b2f08d46fd1e_p_marriedto ?bride ?groom)
+        (not (shared_p_consensus_d35fbbbc26bb7825 ?groom))
+        (not (shared_p_consensus_d35fbbbc26bb7825 ?bride))
+        (forall
+          (?v - object)
+          (when
+            (and
+              (human_1fe4b2f08d46fd1e_type_valuable ?v)
+              (human_1fe4b2f08d46fd1e_p_has ?groom ?v)
+            )
+            (human_1fe4b2f08d46fd1e_p_rich ?bride)
+          )
+        )
+        (when
+          (shared_p_consensus_a562a58a712372c2 ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_happy ?groom)
+        )
+        (when
+          (shared_p_consensus_a562a58a712372c2 ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_happy ?bride)
+        )
+      )
+    :agents (?groom ?bride)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_steal
+    :parameters (?thief - object ?victim - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?thief)
+        (human_1fe4b2f08d46fd1e_type_creature ?victim)
+        (human_1fe4b2f08d46fd1e_type_item ?item)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (not (= ?thief ?victim))
+          (shared_p_consensus_a025dea28a6b1c5e ?thief)
+          (shared_p_consensus_4552650b032404b3 ?thief ?place)
+          (shared_p_consensus_4552650b032404b3 ?item ?place)
+          (shared_p_consensus_2480b9295c28aaa9 ?item ?victim)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_has ?thief ?item)
+        (when
+          (shared_p_consensus_4552650b032404b3 ?victim ?place)
+          (intends ?victim (human_1fe4b2f08d46fd1e_p_has ?victim ?item))
+        )
+        (when
+          (forall
+            (?v - object)
+            (or
+              (not (human_1fe4b2f08d46fd1e_type_valuable ?v))
+              (not (human_1fe4b2f08d46fd1e_p_has ?victim ?v))
+            )
+          )
+          (not (human_1fe4b2f08d46fd1e_p_rich ?victim))
+        )
+      )
+    :agents (?thief)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_get-hungry
+    :parameters (?creature - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?creature))
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_hungry ?creature)
+        (intends ?creature (not (human_1fe4b2f08d46fd1e_p_hungry ?creature)))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_eat
+    :parameters (?monster - object ?creature - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_monster ?monster)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?monster)
+          (shared_p_consensus_4552650b032404b3 ?monster ?place)
+          (human_1fe4b2f08d46fd1e_p_hungry ?monster)
+          (shared_p_consensus_a025dea28a6b1c5e ?creature)
+          (shared_p_consensus_4552650b032404b3 ?creature ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?monster))
+        (not (shared_p_consensus_a025dea28a6b1c5e ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_rich ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_happy ?creature))
+      )
+    :agents (?monster)
+  )
+
+  (:action human_3cd8b87ba572801b_a_travel
+    :parameters (?traveller - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_character ?traveller)
+        (human_3cd8b87ba572801b_type_location ?from)
+        (human_3cd8b87ba572801b_type_location ?to)
+        (and
+          (shared_p_consensus_4552650b032404b3 ?traveller ?from)
+          (shared_p_consensus_a025dea28a6b1c5e ?traveller)
+          (not (= ?from ?to))
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_4552650b032404b3 ?traveller ?to)
+        (not (shared_p_consensus_4552650b032404b3 ?traveller ?from))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_slay
+    :parameters (?slayer - object ?m - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_knight ?slayer)
+        (human_3cd8b87ba572801b_type_monster ?m)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (shared_p_consensus_4552650b032404b3 ?slayer ?place)
+          (shared_p_consensus_4552650b032404b3 ?m ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?slayer)
+          (shared_p_consensus_a025dea28a6b1c5e ?m)
+          (not (= ?slayer ?m))
+          (human_3cd8b87ba572801b_p_intends-not-alive ?slayer ?m)
+        )
+      )
+    :effect
+      (not (shared_p_consensus_a025dea28a6b1c5e ?m))
+  )
+
+  (:action human_3cd8b87ba572801b_a_slay-magic-char
+    :parameters (?slayer - object ?m - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_knight ?slayer)
+        (human_3cd8b87ba572801b_type_monster ?m)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (shared_p_consensus_4552650b032404b3 ?slayer ?place)
+          (shared_p_consensus_4552650b032404b3 ?m ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?slayer)
+          (not (= ?slayer ?m))
+          (human_3cd8b87ba572801b_p_intends-not-alive ?slayer ?m)
+          (human_3cd8b87ba572801b_p_magic-char ?m)
+          (shared_p_consensus_a025dea28a6b1c5e ?m)
+          (human_3cd8b87ba572801b_p_magic-char-alive)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_a025dea28a6b1c5e ?m))
+        (human_3cd8b87ba572801b_p_magic-char ?m)
+        (not (human_3cd8b87ba572801b_p_magic-char-alive))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_pillage
+    :parameters (?pillager - object ?body - object ?t - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_character ?pillager)
+        (human_3cd8b87ba572801b_type_character ?body)
+        (human_3cd8b87ba572801b_type_thing ?t)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (shared_p_consensus_4552650b032404b3 ?pillager ?place)
+          (shared_p_consensus_4552650b032404b3 ?body ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?pillager)
+          (not (shared_p_consensus_a025dea28a6b1c5e ?body))
+          (shared_p_consensus_fd5d96232a94c007 ?body ?t)
+          (not (shared_p_consensus_fd5d96232a94c007 ?pillager ?t))
+          (not (= ?pillager ?body))
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_fd5d96232a94c007 ?pillager ?t)
+        (not (shared_p_consensus_fd5d96232a94c007 ?body ?t))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_give
+    :parameters (?giver - object ?givee - object ?t - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_character ?giver)
+        (human_3cd8b87ba572801b_type_character ?givee)
+        (human_3cd8b87ba572801b_type_thing ?t)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (not (= ?giver ?givee))
+          (shared_p_consensus_4552650b032404b3 ?giver ?place)
+          (shared_p_consensus_4552650b032404b3 ?givee ?place)
+          (shared_p_consensus_a025dea28a6b1c5e ?givee)
+          (shared_p_consensus_a025dea28a6b1c5e ?giver)
+          (shared_p_consensus_fd5d96232a94c007 ?giver ?t)
+          (not (shared_p_consensus_fd5d96232a94c007 ?givee ?t))
+          (human_3cd8b87ba572801b_p_intends-has ?giver ?givee ?t)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_fd5d96232a94c007 ?givee ?t)
+        (not (shared_p_consensus_fd5d96232a94c007 ?giver ?t))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_summon
+    :parameters (?char - object ?g - object ?lamp - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_person ?char)
+        (human_3cd8b87ba572801b_type_ismagic ?g)
+        (human_3cd8b87ba572801b_type_thing ?lamp)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (human_3cd8b87ba572801b_p_confined ?g)
+          (human_3cd8b87ba572801b_p_magic ?lamp)
+          (shared_p_consensus_4552650b032404b3 ?char ?place)
+          (shared_p_consensus_fd5d96232a94c007 ?char ?lamp)
+          (human_3cd8b87ba572801b_p_in ?g ?lamp)
+          (shared_p_consensus_a025dea28a6b1c5e ?char)
+          (not (= ?char ?g))
+          (human_3cd8b87ba572801b_p_magic-char ?g)
+          (human_3cd8b87ba572801b_p_magic-char-alive)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_4552650b032404b3 ?g ?place)
+        (human_3cd8b87ba572801b_p_controls ?char ?g ?lamp)
+        (human_3cd8b87ba572801b_p_controls-magic ?char ?lamp)
+        (not (human_3cd8b87ba572801b_p_in ?g ?lamp))
+        (not (human_3cd8b87ba572801b_p_confined ?g))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_love-spell
+    :parameters (?g - object ?target - object ?lover - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_genie ?g)
+        (human_3cd8b87ba572801b_type_person ?target)
+        (human_3cd8b87ba572801b_type_canmarry ?lover)
+        (and
+          (not (human_3cd8b87ba572801b_p_confined ?g))
+          (not (shared_p_consensus_a562a58a712372c2 ?target ?lover))
+          (human_3cd8b87ba572801b_p_magic-char ?g)
+          (human_3cd8b87ba572801b_p_magic-char-alive)
+          (shared_p_consensus_a025dea28a6b1c5e ?target)
+          (shared_p_consensus_a025dea28a6b1c5e ?lover)
+          (not (= ?g ?target))
+          (not (= ?g ?lover))
+          (not (= ?target ?lover))
+          (human_3cd8b87ba572801b_p_intends-loves ?g ?target ?lover)
+          (human_3cd8b87ba572801b_p_bachelor ?lover)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_a562a58a712372c2 ?target ?lover)
+        (human_3cd8b87ba572801b_p_loves-bachelor ?target)
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_canmarry ?groom)
+        (human_3cd8b87ba572801b_type_person ?bride)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?groom)
+          (shared_p_consensus_a025dea28a6b1c5e ?bride)
+          (shared_p_consensus_4552650b032404b3 ?groom ?place)
+          (shared_p_consensus_4552650b032404b3 ?bride ?place)
+          (shared_p_consensus_a562a58a712372c2 ?groom ?bride)
+          (shared_p_consensus_a562a58a712372c2 ?bride ?groom)
+          (shared_p_consensus_d35fbbbc26bb7825 ?groom)
+          (human_3cd8b87ba572801b_p_bachelor ?groom)
+          (shared_p_consensus_d35fbbbc26bb7825 ?bride)
+          (not (= ?groom ?bride))
+        )
+      )
+    :effect
+      (and
+        (human_3cd8b87ba572801b_p_married-to ?groom ?bride)
+        (human_3cd8b87ba572801b_p_married-to ?bride ?groom)
+        (not (shared_p_consensus_d35fbbbc26bb7825 ?groom))
+        (not (shared_p_consensus_d35fbbbc26bb7825 ?bride))
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_fall-in-love
+    :parameters (?m - object ?f - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_canmarry ?m)
+        (human_3cd8b87ba572801b_type_female ?f)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (human_3cd8b87ba572801b_p_bachelor ?m)
+          (shared_p_consensus_4552650b032404b3 ?m ?place)
+          (shared_p_consensus_4552650b032404b3 ?f ?place)
+          (shared_p_consensus_d35fbbbc26bb7825 ?m)
+          (shared_p_consensus_a025dea28a6b1c5e ?m)
+          (shared_p_consensus_a025dea28a6b1c5e ?f)
+          (not (shared_p_consensus_a562a58a712372c2 ?m ?f))
+          (human_3cd8b87ba572801b_p_beautiful ?f)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_a562a58a712372c2 ?m ?f)
+        (human_3cd8b87ba572801b_p_bachelor-loves ?f)
+      )
+  )
+
+  (:action human_3cd8b87ba572801b_a_order
+    :parameters (?ki - object ?kn - object ?place - object ?t - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_king ?ki)
+        (human_3cd8b87ba572801b_type_knight ?kn)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (human_3cd8b87ba572801b_type_thing ?t)
+        (and
+          (human_3cd8b87ba572801b_p_loyal-to ?kn ?ki)
+          (shared_p_consensus_a025dea28a6b1c5e ?kn)
+          (shared_p_consensus_a025dea28a6b1c5e ?ki)
+          (shared_p_consensus_4552650b032404b3 ?ki ?place)
+          (shared_p_consensus_4552650b032404b3 ?kn ?place)
+        )
+      )
+    :effect
+      (human_3cd8b87ba572801b_p_intends-has ?kn ?ki ?t)
+  )
+
+  (:action human_3cd8b87ba572801b_a_appear-threatening
+    :parameters (?m - object ?char - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_monster ?m)
+        (human_3cd8b87ba572801b_type_person ?char)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (shared_p_consensus_a025dea28a6b1c5e ?m)
+          (shared_p_consensus_a025dea28a6b1c5e ?char)
+          (shared_p_consensus_4552650b032404b3 ?m ?place)
+          (shared_p_consensus_4552650b032404b3 ?char ?place)
+          (human_3cd8b87ba572801b_p_scary ?m)
+          (not (= ?m ?char))
+        )
+      )
+    :effect
+      (human_3cd8b87ba572801b_p_intends-not-alive ?char ?m)
+  )
+
+  (:action human_3cd8b87ba572801b_a_command
+    :parameters (?char - object ?g - object ?love - object ?lamp - object ?place - object)
+    :precondition
+      (and
+        (human_3cd8b87ba572801b_active)
+        (human_3cd8b87ba572801b_type_person ?char)
+        (human_3cd8b87ba572801b_type_genie ?g)
+        (human_3cd8b87ba572801b_type_person ?love)
+        (human_3cd8b87ba572801b_type_thing ?lamp)
+        (human_3cd8b87ba572801b_type_location ?place)
+        (and
+          (human_3cd8b87ba572801b_p_magic ?lamp)
+          (shared_p_consensus_fd5d96232a94c007 ?char ?lamp)
+          (human_3cd8b87ba572801b_p_controls ?char ?g ?lamp)
+          (shared_p_consensus_a025dea28a6b1c5e ?char)
+          (human_3cd8b87ba572801b_p_magic-char ?g)
+          (human_3cd8b87ba572801b_p_magic-char-alive)
+          (shared_p_consensus_a025dea28a6b1c5e ?love)
+          (shared_p_consensus_4552650b032404b3 ?char ?place)
+          (shared_p_consensus_4552650b032404b3 ?g ?place)
+          (shared_p_consensus_a562a58a712372c2 ?char ?love)
+          (not (shared_p_consensus_a562a58a712372c2 ?love ?char))
+          (not (= ?char ?g))
+          (not (= ?char ?love))
+        )
+      )
+    :effect
+      (human_3cd8b87ba572801b_p_intends-loves ?g ?love ?char)
+  )
+
+  (:action human_662247ec644ef452_a_snakebite
+    :parameters (?victim - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_p_alive ?victim)
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)
+        (intends ?victim (not (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)))
+        (forall
+          (?p - object)
+          (when
+            (and
+              (human_662247ec644ef452_type_person ?p)
+              (human_662247ec644ef452_p_loves ?p ?victim)
+            )
+            (intends ?p (not (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)))
+          )
+        )
+      )
+  )
+
+  (:action human_662247ec644ef452_a_die
+    :parameters (?person - object ?sickness - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_sickness ?sickness)
+        (and
+          (human_662247ec644ef452_p_alive ?person)
+          (human_662247ec644ef452_p_sick ?person ?sickness)
+        )
+      )
+    :effect
+      (not (human_662247ec644ef452_p_alive ?person))
+  )
+
+  (:action human_662247ec644ef452_a_travel
+    :parameters (?person - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_place ?from)
+        (human_662247ec644ef452_type_place ?to)
+        (and
+          (human_662247ec644ef452_p_alive ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (human_662247ec644ef452_p_at ?person ?from)
+        )
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_at ?person ?to)
+        (not (human_662247ec644ef452_p_at ?person ?from))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_forcetravel
+    :parameters (?person - object ?victim - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?from)
+        (human_662247ec644ef452_type_place ?to)
+        (and
+          (human_662247ec644ef452_p_alive ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (human_662247ec644ef452_p_at ?person ?from)
+          (human_662247ec644ef452_p_alive ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (human_662247ec644ef452_p_at ?victim ?from)
+        )
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_at ?person ?to)
+        (not (human_662247ec644ef452_p_at ?person ?from))
+        (human_662247ec644ef452_p_at ?victim ?to)
+        (not (human_662247ec644ef452_p_at ?victim ?from))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_give
+    :parameters (?giver - object ?receiver - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?giver)
+        (human_662247ec644ef452_type_person ?receiver)
+        (human_662247ec644ef452_type_item ?item)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (human_662247ec644ef452_p_alive ?giver)
+          (human_662247ec644ef452_p_free ?giver)
+          (human_662247ec644ef452_p_at ?giver ?place)
+          (shared_p_consensus_fd5d96232a94c007 ?giver ?item)
+          (human_662247ec644ef452_p_alive ?receiver)
+          (human_662247ec644ef452_p_free ?receiver)
+          (human_662247ec644ef452_p_at ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_fd5d96232a94c007 ?receiver ?item)
+        (not (shared_p_consensus_fd5d96232a94c007 ?giver ?item))
+        (when
+          (shared_p_consensus_2480b9295c28aaa9 ?item ?giver)
+          (shared_p_consensus_2480b9295c28aaa9 ?item ?receiver)
+        )
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action human_662247ec644ef452_a_tieup
+    :parameters (?person - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (human_662247ec644ef452_p_alive ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (human_662247ec644ef452_p_at ?person ?place)
+          (human_662247ec644ef452_p_alive ?victim)
+          (human_662247ec644ef452_p_at ?victim ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_662247ec644ef452_p_free ?victim))
+        (intends ?victim (human_662247ec644ef452_p_free ?victim))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_untie
+    :parameters (?person - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (human_662247ec644ef452_p_alive ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (human_662247ec644ef452_p_at ?person ?place)
+          (human_662247ec644ef452_p_alive ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (human_662247ec644ef452_p_at ?victim ?place)
+        )
+      )
+    :effect
+      (human_662247ec644ef452_p_free ?victim)
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_take
+    :parameters (?taker - object ?item - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?taker)
+        (human_662247ec644ef452_type_item ?item)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (not (= ?taker ?victim))
+          (human_662247ec644ef452_p_alive ?taker)
+          (human_662247ec644ef452_p_free ?taker)
+          (human_662247ec644ef452_p_at ?taker ?place)
+          (human_662247ec644ef452_p_alive ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (human_662247ec644ef452_p_at ?victim ?place)
+          (shared_p_consensus_fd5d96232a94c007 ?victim ?item)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_fd5d96232a94c007 ?taker ?item)
+        (not (shared_p_consensus_fd5d96232a94c007 ?victim ?item))
+        (when
+          (shared_p_consensus_2480b9295c28aaa9 ?item ?victim)
+          (and
+            (intends ?victim (shared_p_consensus_fd5d96232a94c007 ?victim ?item))
+            (forall
+              (?s - object)
+              (when
+                (and
+                  (human_662247ec644ef452_type_person ?s)
+                  (human_662247ec644ef452_p_sheriff ?s)
+                )
+                (intends ?s (and (human_662247ec644ef452_p_at ?taker human_662247ec644ef452_o_jailhouse) (not (human_662247ec644ef452_p_free ?taker)) (shared_p_consensus_fd5d96232a94c007 ?victim ?item) (human_662247ec644ef452_p_free ?victim)))
+              )
+            )
+          )
+        )
+      )
+    :agents (?taker)
+  )
+
+  (:action human_662247ec644ef452_a_heal
+    :parameters (?healer - object ?patient - object ?sickness - object ?medicine - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?healer)
+        (human_662247ec644ef452_type_person ?patient)
+        (human_662247ec644ef452_type_sickness ?sickness)
+        (human_662247ec644ef452_type_item ?medicine)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (human_662247ec644ef452_p_cures ?medicine ?sickness)
+          (human_662247ec644ef452_p_alive ?healer)
+          (human_662247ec644ef452_p_free ?healer)
+          (human_662247ec644ef452_p_at ?healer ?place)
+          (shared_p_consensus_fd5d96232a94c007 ?healer ?medicine)
+          (human_662247ec644ef452_p_alive ?patient)
+          (human_662247ec644ef452_p_at ?patient ?place)
+          (human_662247ec644ef452_p_sick ?patient ?sickness)
+        )
+      )
+    :effect
+      (and
+        (not (human_662247ec644ef452_p_sick ?patient ?sickness))
+        (not (shared_p_consensus_fd5d96232a94c007 ?healer ?medicine))
+      )
+    :agents (?healer ?patient)
+  )
+)

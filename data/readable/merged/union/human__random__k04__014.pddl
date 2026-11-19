@@ -1,0 +1,658 @@
+(define (domain revised_merged)
+  (:requirements :adl :equality :intentionality :negative-preconditions :strips :typing :universal-preconditions)
+  (:types)
+  (:predicates
+    (human_1fe4b2f08d46fd1e_active)
+    (human_1fe4b2f08d46fd1e_type_creature ?x - object)
+    (human_1fe4b2f08d46fd1e_type_item ?x - object)
+    (human_1fe4b2f08d46fd1e_type_monster ?x - object)
+    (human_1fe4b2f08d46fd1e_type_object ?x - object)
+    (human_1fe4b2f08d46fd1e_type_person ?x - object)
+    (human_1fe4b2f08d46fd1e_type_place ?x - object)
+    (human_1fe4b2f08d46fd1e_type_valuable ?x - object)
+    (human_1fe4b2f08d46fd1e_p_alive ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_single ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_rich ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_happy ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_hungry ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_at ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_has ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_belongsto ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_loves ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasproposed ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasaccepted ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_marriedto ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_active)
+    (human_230a940d5d5977a6_type_actor ?x - object)
+    (human_230a940d5d5977a6_type_allpolice ?x - object)
+    (human_230a940d5d5977a6_type_car ?x - object)
+    (human_230a940d5d5977a6_type_citizen ?x - object)
+    (human_230a940d5d5977a6_type_crime ?x - object)
+    (human_230a940d5d5977a6_type_detective ?x - object)
+    (human_230a940d5d5977a6_type_inspector ?x - object)
+    (human_230a940d5d5977a6_type_item ?x - object)
+    (human_230a940d5d5977a6_type_motorbike ?x - object)
+    (human_230a940d5d5977a6_type_object ?x - object)
+    (human_230a940d5d5977a6_type_place ?x - object)
+    (human_230a940d5d5977a6_type_police ?x - object)
+    (human_230a940d5d5977a6_type_trafficcop ?x - object)
+    (human_230a940d5d5977a6_type_vehicle ?x - object)
+    (human_230a940d5d5977a6_p_arrester ?v0 - object)
+    (human_230a940d5d5977a6_p_arrester-at ?v0 - object)
+    (human_230a940d5d5977a6_p_at ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_has ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_alive ?v0 - object)
+    (human_230a940d5d5977a6_p_under-arrest ?v0 - object)
+    (human_230a940d5d5977a6_p_angry ?v0 - object)
+    (human_230a940d5d5977a6_p_knows-clue ?v0 - object ?v1 - object ?v2 - object)
+    (human_230a940d5d5977a6_p_suspect ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_murder-clue ?v0 - object)
+    (human_230a940d5d5977a6_p_clue ?v0 - object ?v1 - object ?v2 - object)
+    (human_230a940d5d5977a6_p_is-basketball-place ?v0 - object)
+    (human_230a940d5d5977a6_p_is-theft ?v0 - object)
+    (human_230a940d5d5977a6_p_is-arrest-place ?v0 - object)
+    (human_230a940d5d5977a6_p_is-murder ?v0 - object)
+    (human_230a940d5d5977a6_p_has-car ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_working ?v0 - object)
+    (human_4d95b598471c21ee_active)
+    (human_4d95b598471c21ee_type_book ?x - object)
+    (human_4d95b598471c21ee_type_character ?x - object)
+    (human_4d95b598471c21ee_type_item ?x - object)
+    (human_4d95b598471c21ee_type_location ?x - object)
+    (human_4d95b598471c21ee_type_object ?x - object)
+    (human_4d95b598471c21ee_type_ring ?x - object)
+    (human_4d95b598471c21ee_type_sword ?x - object)
+    (human_4d95b598471c21ee_type_thing ?x - object)
+    (human_4d95b598471c21ee_p_player ?v0 - object)
+    (human_4d95b598471c21ee_p_at ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_has ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_asleep ?v0 - object)
+    (human_4d95b598471c21ee_p_connected ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_enchanted ?v0 - object)
+    (human_4d95b598471c21ee_p_is ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_active)
+    (human_87bbd0acdf4611c5_type_character ?x - object)
+    (human_87bbd0acdf4611c5_type_location ?x - object)
+    (human_87bbd0acdf4611c5_type_object ?x - object)
+    (human_87bbd0acdf4611c5_type_thing ?x - object)
+    (human_87bbd0acdf4611c5_p_player ?v0 - object)
+    (human_87bbd0acdf4611c5_p_at ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_has ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_connected ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_apprehended ?v0 - object)
+    (human_87bbd0acdf4611c5_p_alive ?v0 - object)
+    (human_87bbd0acdf4611c5_p_saved ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_knows ?v0 - object)
+    (human_87bbd0acdf4611c5_p_captured ?v0 - object)
+    (human_87bbd0acdf4611c5_p_henchman ?v0 - object)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_travel
+    :parameters (?creature - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?from)
+        (human_1fe4b2f08d46fd1e_type_place ?to)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?from)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_at ?creature ?to)
+        (not (human_1fe4b2f08d46fd1e_p_at ?creature ?from))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_propose
+    :parameters (?proposer - object ?proposee - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_person ?proposee)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposee)
+          (human_1fe4b2f08d46fd1e_p_at ?proposee ?place)
+          (human_1fe4b2f08d46fd1e_p_loves ?proposer ?proposee)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?proposee)
+    :agents (?proposer)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_accept
+    :parameters (?accepter - object ?proposer - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?accepter)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?accepter)
+          (human_1fe4b2f08d46fd1e_p_at ?accepter ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?accepter)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasaccepted ?accepter ?proposer)
+    :agents (?accepter)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?groom)
+        (human_1fe4b2f08d46fd1e_type_person ?bride)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?groom)
+          (human_1fe4b2f08d46fd1e_p_at ?groom ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_single ?groom)
+          (human_1fe4b2f08d46fd1e_p_alive ?bride)
+          (human_1fe4b2f08d46fd1e_p_at ?bride ?place)
+          (human_1fe4b2f08d46fd1e_p_hasaccepted ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_single ?bride)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_marriedto ?groom ?bride)
+        (human_1fe4b2f08d46fd1e_p_marriedto ?bride ?groom)
+        (not (human_1fe4b2f08d46fd1e_p_single ?groom))
+        (not (human_1fe4b2f08d46fd1e_p_single ?bride))
+        (forall
+          (?v - object)
+          (when
+            (and
+              (human_1fe4b2f08d46fd1e_type_valuable ?v)
+              (human_1fe4b2f08d46fd1e_p_has ?groom ?v)
+            )
+            (human_1fe4b2f08d46fd1e_p_rich ?bride)
+          )
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_happy ?groom)
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_happy ?bride)
+        )
+      )
+    :agents (?groom ?bride)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_steal
+    :parameters (?thief - object ?victim - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?thief)
+        (human_1fe4b2f08d46fd1e_type_creature ?victim)
+        (human_1fe4b2f08d46fd1e_type_item ?item)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (not (= ?thief ?victim))
+          (human_1fe4b2f08d46fd1e_p_alive ?thief)
+          (human_1fe4b2f08d46fd1e_p_at ?thief ?place)
+          (human_1fe4b2f08d46fd1e_p_at ?item ?place)
+          (human_1fe4b2f08d46fd1e_p_belongsto ?item ?victim)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_has ?thief ?item)
+        (when
+          (human_1fe4b2f08d46fd1e_p_at ?victim ?place)
+          (intends ?victim (human_1fe4b2f08d46fd1e_p_has ?victim ?item))
+        )
+        (when
+          (forall
+            (?v - object)
+            (or
+              (not (human_1fe4b2f08d46fd1e_type_valuable ?v))
+              (not (human_1fe4b2f08d46fd1e_p_has ?victim ?v))
+            )
+          )
+          (not (human_1fe4b2f08d46fd1e_p_rich ?victim))
+        )
+      )
+    :agents (?thief)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_get-hungry
+    :parameters (?creature - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?creature))
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_hungry ?creature)
+        (intends ?creature (not (human_1fe4b2f08d46fd1e_p_hungry ?creature)))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_eat
+    :parameters (?monster - object ?creature - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_monster ?monster)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?monster)
+          (human_1fe4b2f08d46fd1e_p_at ?monster ?place)
+          (human_1fe4b2f08d46fd1e_p_hungry ?monster)
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?monster))
+        (not (human_1fe4b2f08d46fd1e_p_alive ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_rich ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_happy ?creature))
+      )
+    :agents (?monster)
+  )
+
+  (:action human_230a940d5d5977a6_a_travel
+    :parameters (?a - object ?c - object ?p1 - object ?p2 - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_actor ?a)
+        (human_230a940d5d5977a6_type_car ?c)
+        (human_230a940d5d5977a6_type_place ?p1)
+        (human_230a940d5d5977a6_type_place ?p2)
+        (and
+          (human_230a940d5d5977a6_p_working ?c)
+          (human_230a940d5d5977a6_p_at ?a ?p1)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_has-car ?a ?c)
+        )
+      )
+    :effect
+      (and
+        (human_230a940d5d5977a6_p_at ?a ?p2)
+        (not (human_230a940d5d5977a6_p_at ?a ?p1))
+        (when
+          (human_230a940d5d5977a6_p_arrester ?a)
+          (and
+            (human_230a940d5d5977a6_p_arrester-at ?p2)
+            (not (human_230a940d5d5977a6_p_arrester-at ?p1))
+          )
+        )
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_arrest
+    :parameters (?p - object ?a - object ?p1 - object ?p2 - object ?c - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?p)
+        (human_230a940d5d5977a6_type_actor ?a)
+        (human_230a940d5d5977a6_type_place ?p1)
+        (human_230a940d5d5977a6_type_place ?p2)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (and
+          (human_230a940d5d5977a6_p_at ?p ?p1)
+          (human_230a940d5d5977a6_p_at ?a ?p1)
+          (not (= ?p1 ?p2))
+          (human_230a940d5d5977a6_p_is-arrest-place ?p2)
+          (human_230a940d5d5977a6_p_alive ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_suspect ?a ?c)
+          (human_230a940d5d5977a6_p_arrester ?p)
+        )
+      )
+    :effect
+      (and
+        (human_230a940d5d5977a6_p_at ?a ?p2)
+        (not (human_230a940d5d5977a6_p_at ?a ?p1))
+        (human_230a940d5d5977a6_p_at ?p ?p2)
+        (not (human_230a940d5d5977a6_p_at ?p ?p1))
+        (human_230a940d5d5977a6_p_under-arrest ?a)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_steal
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_at ?b ?p)
+          (human_230a940d5d5977a6_p_has ?b ?i)
+          (not (= ?a ?b))
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_is-theft ?c)
+        )
+      )
+    :effect
+      (and
+        (human_230a940d5d5977a6_p_has ?a ?i)
+        (not (human_230a940d5d5977a6_p_has ?b ?i))
+        (human_230a940d5d5977a6_p_angry ?b)
+        (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_play-basketball
+    :parameters (?a - object ?b - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_is-basketball-place ?p)
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_at ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (not (= ?a ?b))
+        )
+      )
+    :effect
+      (and
+        (not (human_230a940d5d5977a6_p_angry ?a))
+        (not (human_230a940d5d5977a6_p_angry ?b))
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_kill
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_at ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (not (= ?a ?b))
+          (human_230a940d5d5977a6_p_has ?a ?i)
+          (human_230a940d5d5977a6_p_is-murder ?c)
+          (not (human_230a940d5d5977a6_p_under-arrest ?a))
+        )
+      )
+    :effect
+      (and
+        (not (human_230a940d5d5977a6_p_alive ?b))
+        (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_findclues
+    :parameters (?a - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+  )
+
+  (:action human_230a940d5d5977a6_a_shareclues
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_police ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_at ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+          (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_knows-clue ?b ?c ?i)
+  )
+
+  (:action human_230a940d5d5977a6_a_suspect-of-crime
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_at ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_at ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+          (human_230a940d5d5977a6_p_has ?b ?i)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_suspect ?b ?c)
+  )
+
+  (:action human_4d95b598471c21ee_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?character)
+        (human_4d95b598471c21ee_type_location ?to)
+        (human_4d95b598471c21ee_type_location ?from)
+        (and
+          (human_4d95b598471c21ee_p_connected ?to ?from)
+          (not (human_4d95b598471c21ee_p_asleep ?character))
+          (human_4d95b598471c21ee_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?character ?from))
+        (human_4d95b598471c21ee_p_at ?character ?to)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?waker)
+        (human_4d95b598471c21ee_type_character ?woken)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?waker ?location)
+          (human_4d95b598471c21ee_p_at ?woken ?location)
+          (human_4d95b598471c21ee_p_asleep ?woken)
+          (not (human_4d95b598471c21ee_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_asleep ?woken))
+  )
+
+  (:action human_4d95b598471c21ee_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?taker)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?taker ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?taker))
+          (not (human_4d95b598471c21ee_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?thing ?location))
+        (human_4d95b598471c21ee_p_has ?taker ?thing)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?caster)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_book ?book)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?caster ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?caster))
+          (human_4d95b598471c21ee_p_has ?caster ?book)
+          (human_4d95b598471c21ee_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_enchanted ?thing))
+  )
+
+  (:action human_87bbd0acdf4611c5_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?character)
+        (human_87bbd0acdf4611c5_type_location ?to)
+        (human_87bbd0acdf4611c5_type_location ?from)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?character)
+          (human_87bbd0acdf4611c5_p_connected ?to ?from)
+          (human_87bbd0acdf4611c5_p_at ?character ?from)
+          (human_87bbd0acdf4611c5_p_knows ?character)
+        )
+      )
+    :effect
+      (and
+        (not (human_87bbd0acdf4611c5_p_at ?character ?from))
+        (human_87bbd0acdf4611c5_p_at ?character ?to)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?interrogator)
+        (human_87bbd0acdf4611c5_type_character ?interrogated)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?interrogator)
+          (human_87bbd0acdf4611c5_p_at ?interrogator ?location)
+          (human_87bbd0acdf4611c5_p_at ?interrogated ?location)
+          (human_87bbd0acdf4611c5_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_87bbd0acdf4611c5_p_knows ?interrogator)
+  )
+
+  (:action human_87bbd0acdf4611c5_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?placer)
+        (human_87bbd0acdf4611c5_type_character ?victim)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (human_87bbd0acdf4611c5_type_location ?placed)
+        (and
+          (human_87bbd0acdf4611c5_p_henchman ?placer)
+          (human_87bbd0acdf4611c5_p_has ?placer ?victim)
+          (human_87bbd0acdf4611c5_p_at ?placer ?location)
+          (human_87bbd0acdf4611c5_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_87bbd0acdf4611c5_p_has ?placer ?victim))
+        (human_87bbd0acdf4611c5_p_at ?victim ?placed)
+        (human_87bbd0acdf4611c5_p_captured ?victim)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?saver)
+        (human_87bbd0acdf4611c5_type_character ?saved)
+        (human_87bbd0acdf4611c5_type_character ?notsaved)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?saver)
+          (human_87bbd0acdf4611c5_p_at ?saver ?location)
+          (human_87bbd0acdf4611c5_p_at ?saved ?location)
+          (human_87bbd0acdf4611c5_p_captured ?saved)
+          (human_87bbd0acdf4611c5_p_captured ?notsaved)
+          (not (human_87bbd0acdf4611c5_p_at ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_87bbd0acdf4611c5_p_saved ?saved ?saver)
+        (not (human_87bbd0acdf4611c5_p_alive ?notsaved))
+      )
+  )
+)

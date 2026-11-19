@@ -1,0 +1,309 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_087_active)
+    (tiny_stories__story_087_type_character ?x - object)
+    (tiny_stories__story_087_type_object ?x - object)
+    (tiny_stories__story_087_p_happy ?v0 - object)
+    (tiny_stories__story_087_p_party-prepared ?v0 - object)
+    (tiny_stories__story_087_p_has-balloons)
+    (tiny_stories__story_087_p_has-cake)
+    (tiny_stories__story_087_p_has-present ?v0 - object)
+    (tiny_stories__story_087_p_played-games)
+    (tiny_stories__story_087_p_thanked-parents ?v0 - object)
+    (writing_prompts__wp_007_active)
+    (writing_prompts__wp_007_type_item ?x - object)
+    (writing_prompts__wp_007_type_object ?x - object)
+    (writing_prompts__wp_007_type_room ?x - object)
+    (writing_prompts__wp_007_p_in ?v0 - object ?v1 - object)
+    (writing_prompts__wp_007_p_occupied ?v0 - object)
+    (writing_prompts__wp_007_p_plugged-in ?v0 - object)
+    (writing_prompts__wp_007_p_connected ?v0 - object ?v1 - object)
+    (writing_prompts__wp_007_p_well-lit ?v0 - object)
+    (writing_prompts__wp_007_p_morning)
+    (writing_prompts__wp_022_active)
+    (writing_prompts__wp_022_type_character ?x - object)
+    (writing_prompts__wp_022_type_object ?x - object)
+    (writing_prompts__wp_022_p_pranked ?v0 - object ?v1 - object)
+    (writing_prompts__wp_064_active)
+    (writing_prompts__wp_064_type_character ?x - object)
+    (writing_prompts__wp_064_type_item ?x - object)
+    (writing_prompts__wp_064_type_object ?x - object)
+    (writing_prompts__wp_064_type_place ?x - object)
+    (writing_prompts__wp_064_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_064_p_has ?v0 - object ?v1 - object)
+    (writing_prompts__wp_064_p_alive ?v0 - object)
+    (writing_prompts__wp_064_p_delivered ?v0 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (tiny_stories__story_087_active) (tiny_stories__story_087_type_character ?character) (and (not (tiny_stories__story_087_p_happy ?character)) (tiny_stories__story_087_p_party-prepared ?character) (tiny_stories__story_087_p_has-balloons) (tiny_stories__story_087_p_has-cake) (tiny_stories__story_087_p_played-games) (tiny_stories__story_087_p_has-present ?character) (tiny_stories__story_087_p_thanked-parents ?character))) :implies (tiny_stories__story_087_p_happy ?character))
+
+  (:action tiny_stories__story_087_a_prepare-party
+    :parameters (?preparer - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?preparer)
+        (tiny_stories__story_087_type_character ?receiver)
+        (not (tiny_stories__story_087_p_party-prepared ?receiver))
+      )
+    :effect
+      (tiny_stories__story_087_p_party-prepared ?receiver)
+    :agents (?preparer ?receiver)
+  )
+
+  (:action tiny_stories__story_087_a_decorate-with-balloons
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_has-balloons))
+          (tiny_stories__story_087_p_party-prepared ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-balloons)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_prepare-cake
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_has-cake))
+          (tiny_stories__story_087_p_party-prepared ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-cake)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_play-games
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (tiny_stories__story_087_p_party-prepared ?character)
+      )
+    :effect
+      (tiny_stories__story_087_p_played-games)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_give-present
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?giver)
+        (tiny_stories__story_087_type_character ?receiver)
+        (and
+          (not (tiny_stories__story_087_p_has-present ?receiver))
+          (tiny_stories__story_087_p_party-prepared ?receiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-present ?receiver)
+    :agents (?giver ?receiver)
+  )
+
+  (:action tiny_stories__story_087_a_thank-parents
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_thanked-parents ?character))
+          (tiny_stories__story_087_p_has-present ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_thanked-parents ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_007_a_move-item
+    :parameters (?item - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (writing_prompts__wp_007_type_room ?from)
+        (writing_prompts__wp_007_type_room ?to)
+        (and
+          (not (= ?from ?to))
+          (writing_prompts__wp_007_p_in ?item ?from)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_007_p_in ?item ?from))
+        (writing_prompts__wp_007_p_in ?item ?to)
+      )
+  )
+
+  (:action writing_prompts__wp_007_a_plug-in
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (not (writing_prompts__wp_007_p_plugged-in ?item))
+      )
+    :effect
+      (writing_prompts__wp_007_p_plugged-in ?item)
+  )
+
+  (:action writing_prompts__wp_007_a_connect
+    :parameters (?item1 - object ?item2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item1)
+        (writing_prompts__wp_007_type_item ?item2)
+        (and
+          (not (writing_prompts__wp_007_p_connected ?item1 ?item2))
+          (not (= ?item1 ?item2))
+        )
+      )
+    :effect
+      (writing_prompts__wp_007_p_connected ?item1 ?item2)
+  )
+
+  (:action writing_prompts__wp_007_a_morning-comes
+    :parameters (?room - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_room ?room)
+        (and
+          (not (writing_prompts__wp_007_p_well-lit ?room))
+          (writing_prompts__wp_007_p_morning)
+        )
+      )
+    :effect
+      (writing_prompts__wp_007_p_well-lit ?room)
+  )
+
+  (:action writing_prompts__wp_007_a_night-falls
+    :parameters (?room - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_room ?room)
+        (and
+          (writing_prompts__wp_007_p_well-lit ?room)
+          (not (writing_prompts__wp_007_p_morning))
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_007_p_well-lit ?room))
+  )
+
+  (:action writing_prompts__wp_007_a_occupy
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (not (writing_prompts__wp_007_p_occupied ?item))
+      )
+    :effect
+      (writing_prompts__wp_007_p_occupied ?item)
+  )
+
+  (:action writing_prompts__wp_007_a_unoccupy
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (writing_prompts__wp_007_p_occupied ?item)
+      )
+    :effect
+      (not (writing_prompts__wp_007_p_occupied ?item))
+  )
+
+  (:action writing_prompts__wp_022_a_prank
+    :parameters (?pranker - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_022_active)
+        (writing_prompts__wp_022_type_character ?pranker)
+        (writing_prompts__wp_022_type_character ?target)
+      )
+    :effect
+      (writing_prompts__wp_022_p_pranked ?pranker ?target)
+    :agents (?pranker)
+  )
+
+  (:action writing_prompts__wp_064_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_064_active)
+        (writing_prompts__wp_064_type_character ?character)
+        (writing_prompts__wp_064_type_place ?from)
+        (writing_prompts__wp_064_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (writing_prompts__wp_064_p_alive ?character)
+          (writing_prompts__wp_064_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_064_p_at ?character ?from))
+        (writing_prompts__wp_064_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_064_a_deliver
+    :parameters (?character - object ?item - object ?destination - object)
+    :precondition
+      (and
+        (writing_prompts__wp_064_active)
+        (writing_prompts__wp_064_type_character ?character)
+        (writing_prompts__wp_064_type_item ?item)
+        (writing_prompts__wp_064_type_place ?destination)
+        (and
+          (writing_prompts__wp_064_p_alive ?character)
+          (writing_prompts__wp_064_p_at ?character ?destination)
+          (writing_prompts__wp_064_p_has ?character ?item)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_064_p_has ?character ?item))
+        (writing_prompts__wp_064_p_delivered ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_064_a_pick-up
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_064_active)
+        (writing_prompts__wp_064_type_character ?character)
+        (writing_prompts__wp_064_type_item ?item)
+        (writing_prompts__wp_064_type_place ?place)
+        (and
+          (writing_prompts__wp_064_p_alive ?character)
+          (writing_prompts__wp_064_p_at ?character ?place)
+        )
+      )
+    :effect
+      (writing_prompts__wp_064_p_has ?character ?item)
+    :agents (?character)
+  )
+)

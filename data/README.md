@@ -21,8 +21,10 @@ to this directory unless labeled as original paths.
 | `merged/other_experiments.tar.gz` | Additional identifiable input domains, multi-source compiler outputs, mappings and official fusion nodes from the research checkout. Read the archive's `index.csv` to locate the bytes. Repeated files share one digest. |
 
 For the Arthur, Batman and Little Red case, open
-[the NarraFuse domain](merged/narrafuse/human__random__k03__022.pddl) and
-[the Union domain](merged/union/human__random__k03__022.pddl).
+[the multiline NarraFuse domain](readable/merged/narrafuse/human__random__k03__022.pddl) and
+[the multiline Union domain](readable/merged/union/human__random__k03__022.pddl).
+For other merged PDDL files, prefix the catalog path with `readable/` to open
+the multiline copy. The catalog links to the original experiment exports.
 The official method's status for this group appears in `groups.csv`.
 
 [sources.csv](sources.csv) gives collection identities and provenance.

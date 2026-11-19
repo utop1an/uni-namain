@@ -1,0 +1,213 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_035_active)
+    (tiny_stories__story_035_type_character ?x - object)
+    (tiny_stories__story_035_type_object ?x - object)
+    (tiny_stories__story_053_active)
+    (tiny_stories__story_053_type_character ?x - object)
+    (tiny_stories__story_053_type_item ?x - object)
+    (tiny_stories__story_053_type_object ?x - object)
+    (tiny_stories__story_053_type_place ?x - object)
+    (birthday ?p0)
+    (box-closed)
+    (box-open)
+    (cake-spoiled)
+    (cake-good)
+    (listened-to-mom ?p0)
+    (waited-for-birthday ?p0)
+    (has ?p0 ?p1)
+    (at ?p0 ?p1)
+    (digging ?p0)
+    (found ?p0 ?p1)
+    (opened ?p0 ?p1)
+    (playing ?p0)
+  )
+  (:constants tiny_stories__story_035_o_tim - object tiny_stories__story_053_o_spade - object tiny_stories__story_053_o_small-box - object)
+
+  (:action wait-for-birthday
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (not (birthday ?character))
+          (not (waited-for-birthday ?character))
+        )
+      )
+    :effect
+      (waited-for-birthday ?character)
+  )
+
+  (:action listen-to-mom
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (not (listened-to-mom ?character))
+          (waited-for-birthday ?character)
+        )
+      )
+    :effect
+      (listened-to-mom ?character)
+  )
+
+  (:action open-box
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (box-closed)
+          (birthday ?character)
+        )
+      )
+    :effect
+      (and
+        (not (box-closed))
+        (box-open)
+      )
+  )
+
+  (:action spoil-cake
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (box-open)
+          (not (listened-to-mom tiny_stories__story_035_o_tim))
+          (cake-good)
+        )
+      )
+    :effect
+      (and
+        (not (cake-good))
+        (cake-spoiled)
+      )
+  )
+
+  (:action keep-cake-good
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (box-open)
+          (listened-to-mom tiny_stories__story_035_o_tim)
+          (cake-good)
+        )
+      )
+    :effect
+      (cake-good)
+  )
+
+  (:action go-to
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_053_active)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_place ?place)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_place ?place)
+        )
+        (and
+          (not (at ?character ?place))
+          (has ?character tiny_stories__story_053_o_spade)
+        )
+      )
+    :effect
+      (at ?character ?place)
+  )
+
+  (:action dig
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_053_active)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_character ?character)
+        )
+        (and
+          (has ?character tiny_stories__story_053_o_spade)
+          (not (digging ?character))
+        )
+      )
+    :effect
+      (digging ?character)
+  )
+
+  (:action find
+    :parameters (?character ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_053_active)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_item ?item)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_item ?item)
+        )
+        (and
+          (digging ?character)
+          (not (found ?character ?item))
+        )
+      )
+    :effect
+      (and
+        (found ?character ?item)
+        (has ?character ?item)
+      )
+  )
+
+  (:action open
+    :parameters (?character ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_053_active)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_item ?item)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_item ?item)
+        )
+        (and
+          (found ?character ?item)
+          (not (opened ?character ?item))
+        )
+      )
+    :effect
+      (opened ?character ?item)
+  )
+
+  (:action play
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_053_active)
+          (tiny_stories__story_053_type_character ?character)
+          (tiny_stories__story_053_type_character ?character)
+        )
+        (opened ?character tiny_stories__story_053_o_small-box)
+      )
+    :effect
+      (playing ?character)
+  )
+)

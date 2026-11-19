@@ -1,0 +1,321 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_049_active)
+    (tiny_stories__story_049_type_character ?x - object)
+    (tiny_stories__story_049_type_object ?x - object)
+    (tiny_stories__story_084_active)
+    (tiny_stories__story_084_type_character ?x - object)
+    (tiny_stories__story_084_type_item ?x - object)
+    (tiny_stories__story_084_type_object ?x - object)
+    (tiny_stories__story_084_type_place ?x - object)
+    (tiny_stories__story_084_type_toy ?x - object)
+    (writing_prompts__wp_006_active)
+    (writing_prompts__wp_006_type_character ?x - object)
+    (writing_prompts__wp_006_type_object ?x - object)
+    (writing_prompts__wp_006_type_place ?x - object)
+    (alive ?p0)
+    (in-love ?p0 ?p1)
+    (accepts-past ?p0 ?p1)
+    (knows-self ?p0)
+    (sings ?p0)
+    (at ?p0 ?p1)
+    (wearing-hat ?p0)
+    (is-dog ?p0)
+    (is-fairy ?p0)
+    (has-magic-flower ?p0)
+    (friends ?p0 ?p1)
+    (playing-together ?p0 ?p1)
+    (has ?p0 ?p1)
+    (found ?p0 ?p1)
+    (played-with ?p0 ?p1)
+    (happy ?p0)
+  )
+  (:constants tiny_stories__story_084_o_rocket - object)
+
+  (:action sing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (sings ?character)
+  )
+
+  (:action fall-in-love
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+        )
+      )
+    :effect
+      (in-love ?character1 ?character2)
+  )
+
+  (:action accept-past
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+        )
+      )
+    :effect
+      (accepts-past ?character1 ?character2)
+  )
+
+  (:action know-self
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (knows-self ?character)
+  )
+
+  (:action move
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_place ?from)
+          (writing_prompts__wp_006_type_place ?to)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_place ?from)
+          (writing_prompts__wp_006_type_place ?to)
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action transform
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?character)
+          (tiny_stories__story_049_type_character ?character)
+        )
+        (is-dog ?character)
+      )
+    :effect
+      (and
+        (not (is-dog ?character))
+        (is-fairy ?character)
+      )
+  )
+
+  (:action give-magic-flower
+    :parameters (?giver ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?giver)
+          (tiny_stories__story_049_type_character ?receiver)
+          (tiny_stories__story_049_type_character ?giver)
+          (tiny_stories__story_049_type_character ?receiver)
+        )
+        (and
+          (not (= ?giver ?receiver))
+          (is-fairy ?giver)
+        )
+      )
+    :effect
+      (has-magic-flower ?receiver)
+  )
+
+  (:action become-friends
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?character1)
+          (tiny_stories__story_049_type_character ?character2)
+          (tiny_stories__story_049_type_character ?character1)
+          (tiny_stories__story_049_type_character ?character2)
+        )
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (friends ?character1 ?character2)
+  )
+
+  (:action play-together
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?character1)
+          (tiny_stories__story_049_type_character ?character2)
+          (tiny_stories__story_049_type_character ?character1)
+          (tiny_stories__story_049_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (playing-together ?character1 ?character2)
+  )
+
+  (:action fly-high
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_084_active)
+          (tiny_stories__story_084_type_character ?character)
+          (tiny_stories__story_084_type_character ?character)
+        )
+        (played-with ?character tiny_stories__story_084_o_rocket)
+      )
+    :effect
+      (happy ?character)
+  )
+
+  (:action remove-hat
+    :parameters (?remover ?wearer)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?remover)
+          (tiny_stories__story_049_type_character ?wearer)
+          (tiny_stories__story_049_type_character ?remover)
+          (tiny_stories__story_049_type_character ?wearer)
+        )
+        (and
+          (not (= ?remover ?wearer))
+          (wearing-hat ?wearer)
+        )
+      )
+    :effect
+      (not (wearing-hat ?wearer))
+  )
+
+  (:action find
+    :parameters (?character ?item ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_084_active)
+          (tiny_stories__story_084_type_character ?character)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_place ?place)
+          (tiny_stories__story_084_type_character ?character)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_place ?place)
+        )
+        (and
+          (at ?character ?place)
+          (not (found ?character ?item))
+        )
+      )
+    :effect
+      (and
+        (found ?character ?item)
+        (has ?character ?item)
+        (happy ?character)
+      )
+  )
+
+  (:action show
+    :parameters (?shower ?item ?receiver ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_084_active)
+          (tiny_stories__story_084_type_character ?shower)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_character ?receiver)
+          (tiny_stories__story_084_type_place ?place)
+          (tiny_stories__story_084_type_character ?shower)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_character ?receiver)
+          (tiny_stories__story_084_type_place ?place)
+        )
+        (and
+          (not (= ?shower ?receiver))
+          (at ?shower ?place)
+          (has ?shower ?item)
+          (at ?receiver ?place)
+        )
+      )
+    :effect
+      (happy ?receiver)
+  )
+
+  (:action play
+    :parameters (?character1 ?character2 ?item ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_084_active)
+          (tiny_stories__story_084_type_character ?character1)
+          (tiny_stories__story_084_type_character ?character2)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_place ?place)
+          (tiny_stories__story_084_type_character ?character1)
+          (tiny_stories__story_084_type_character ?character2)
+          (tiny_stories__story_084_type_item ?item)
+          (tiny_stories__story_084_type_place ?place)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (at ?character1 ?place)
+          (has ?character1 ?item)
+          (at ?character2 ?place)
+        )
+      )
+    :effect
+      (played-with ?character1 ?item)
+  )
+)

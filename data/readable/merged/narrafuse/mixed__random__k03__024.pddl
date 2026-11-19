@@ -1,0 +1,257 @@
+(define (domain revised_merged)
+  (:requirements :adl :disjunctive-preconditions :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_076_o_peter - object writing_prompts__wp_076_o_hook - object writing_prompts__wp_076_o_lost-boys - object writing_prompts__wp_076_o_pirates - object)
+  (:predicates
+    (human_62959785b3ec220a_active)
+    (human_62959785b3ec220a_type_character ?x - object)
+    (human_62959785b3ec220a_type_location ?x - object)
+    (human_62959785b3ec220a_type_object ?x - object)
+    (human_62959785b3ec220a_type_thing ?x - object)
+    (human_62959785b3ec220a_p_player ?v0 - object)
+    (shared_p_consensus_06f292736bc340e2 ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_has ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_connected ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_apprehended ?v0 - object)
+    (shared_p_consensus_9242f73b37ab6758 ?v0 - object)
+    (human_62959785b3ec220a_p_saved ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_knows ?v0 - object)
+    (human_62959785b3ec220a_p_captured ?v0 - object)
+    (human_62959785b3ec220a_p_henchman ?v0 - object)
+    (writing_prompts__wp_076_active)
+    (writing_prompts__wp_076_type_character ?x - object)
+    (writing_prompts__wp_076_type_group ?x - object)
+    (writing_prompts__wp_076_type_object ?x - object)
+    (writing_prompts__wp_076_type_place ?x - object)
+    (writing_prompts__wp_076_p_has-weapon ?v0 - object)
+    (writing_prompts__wp_076_p_in-group ?v0 - object ?v1 - object)
+    (writing_prompts__wp_076_p_group-exists ?v0 - object)
+    (writing_prompts__wp_076_p_has-electronics ?v0 - object)
+    (writing_prompts__wp_076_p_believes-in-fairies ?v0 - object)
+    (writing_prompts__wp_084_active)
+    (writing_prompts__wp_084_type_character ?x - object)
+    (writing_prompts__wp_084_type_object ?x - object)
+    (writing_prompts__wp_084_p_loves ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_confessed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_asked-question ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_took-pill ?v0 - object)
+  )
+
+  (:action human_62959785b3ec220a_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?interrogator)
+        (human_62959785b3ec220a_type_character ?interrogated)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?interrogator)
+          (shared_p_consensus_06f292736bc340e2 ?interrogator ?location)
+          (shared_p_consensus_06f292736bc340e2 ?interrogated ?location)
+          (human_62959785b3ec220a_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_62959785b3ec220a_p_knows ?interrogator)
+    :agents (?interrogator)
+  )
+
+  (:action human_62959785b3ec220a_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?placer)
+        (human_62959785b3ec220a_type_character ?victim)
+        (human_62959785b3ec220a_type_location ?location)
+        (human_62959785b3ec220a_type_location ?placed)
+        (and
+          (human_62959785b3ec220a_p_henchman ?placer)
+          (human_62959785b3ec220a_p_has ?placer ?victim)
+          (shared_p_consensus_06f292736bc340e2 ?placer ?location)
+          (human_62959785b3ec220a_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_has ?placer ?victim))
+        (shared_p_consensus_06f292736bc340e2 ?victim ?placed)
+        (human_62959785b3ec220a_p_captured ?victim)
+      )
+    :agents (?placer)
+  )
+
+  (:action human_62959785b3ec220a_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?saver)
+        (human_62959785b3ec220a_type_character ?saved)
+        (human_62959785b3ec220a_type_character ?notsaved)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?saver)
+          (shared_p_consensus_06f292736bc340e2 ?saver ?location)
+          (shared_p_consensus_06f292736bc340e2 ?saved ?location)
+          (human_62959785b3ec220a_p_captured ?saved)
+          (human_62959785b3ec220a_p_captured ?notsaved)
+          (not (shared_p_consensus_06f292736bc340e2 ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_62959785b3ec220a_p_saved ?saved ?saver)
+        (not (shared_p_consensus_9242f73b37ab6758 ?notsaved))
+      )
+    :agents (?saver)
+  )
+
+  (:action writing_prompts__wp_076_a_fight
+    :parameters (?fighter1 - object ?fighter2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_076_active)
+        (writing_prompts__wp_076_type_character ?fighter1)
+        (writing_prompts__wp_076_type_character ?fighter2)
+        (and
+          (not (= ?fighter1 ?fighter2))
+          (shared_p_consensus_9242f73b37ab6758 ?fighter1)
+          (writing_prompts__wp_076_p_has-weapon ?fighter1)
+          (shared_p_consensus_9242f73b37ab6758 ?fighter2)
+          (writing_prompts__wp_076_p_has-weapon ?fighter2)
+        )
+      )
+    :agents (?fighter1 ?fighter2)
+  )
+
+  (:action writing_prompts__wp_076_a_die
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_076_active)
+        (writing_prompts__wp_076_type_character ?character)
+        (shared_p_consensus_9242f73b37ab6758 ?character)
+      )
+    :effect
+      (not (shared_p_consensus_9242f73b37ab6758 ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_076_a_acquire-electronics
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_076_active)
+        (writing_prompts__wp_076_type_character ?character)
+        (and
+          (shared_p_consensus_9242f73b37ab6758 ?character)
+          (not (writing_prompts__wp_076_p_has-electronics ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_076_p_has-electronics ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_076_a_stop-believing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_076_active)
+        (writing_prompts__wp_076_type_character ?character)
+        (and
+          (shared_p_consensus_9242f73b37ab6758 ?character)
+          (writing_prompts__wp_076_p_believes-in-fairies ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_076_p_believes-in-fairies ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_084_a_take-pill
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?character)
+        (not (writing_prompts__wp_084_p_took-pill ?character))
+      )
+    :effect
+      (writing_prompts__wp_084_p_took-pill ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_084_a_ask-love-question
+    :parameters (?asker - object ?asked - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?asker)
+        (writing_prompts__wp_084_type_character ?asked)
+        (not (writing_prompts__wp_084_p_asked-question ?asker ?asked))
+      )
+    :effect
+      (writing_prompts__wp_084_p_asked-question ?asker ?asked)
+    :agents (?asker)
+  )
+
+  (:action writing_prompts__wp_084_a_confess-love
+    :parameters (?confessor - object ?confessed-to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?confessor)
+        (writing_prompts__wp_084_type_character ?confessed-to)
+        (and
+          (not (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to))
+          (writing_prompts__wp_084_p_asked-question ?confessed-to ?confessor)
+          (writing_prompts__wp_084_p_took-pill ?confessor)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to)
+        (writing_prompts__wp_084_p_loves ?confessor ?confessed-to)
+      )
+    :agents (?confessor)
+  )
+
+  (:action fused_a_consensus_7d68493529c40b46
+    :parameters (?m0 - object ?m1 - object ?m2 - object)
+    :precondition
+      (or
+        (and
+          (human_62959785b3ec220a_active)
+          (human_62959785b3ec220a_type_character ?m0)
+          (human_62959785b3ec220a_type_location ?m1)
+          (human_62959785b3ec220a_type_location ?m2)
+          (and
+            (human_62959785b3ec220a_p_player ?m0)
+            (human_62959785b3ec220a_p_connected ?m1 ?m2)
+            (shared_p_consensus_06f292736bc340e2 ?m0 ?m2)
+            (human_62959785b3ec220a_p_knows ?m0)
+          )
+        )
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?m0)
+          (writing_prompts__wp_076_type_place ?m2)
+          (writing_prompts__wp_076_type_place ?m1)
+          (and
+            (not (= ?m2 ?m1))
+            (shared_p_consensus_9242f73b37ab6758 ?m0)
+            (shared_p_consensus_06f292736bc340e2 ?m0 ?m2)
+          )
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_06f292736bc340e2 ?m0 ?m2))
+        (shared_p_consensus_06f292736bc340e2 ?m0 ?m1)
+      )
+    :agents (?m0)
+  )
+)

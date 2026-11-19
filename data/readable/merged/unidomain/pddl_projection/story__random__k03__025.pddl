@@ -1,0 +1,216 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_045_active)
+    (tiny_stories__story_045_type_character ?x - object)
+    (tiny_stories__story_045_type_object ?x - object)
+    (tiny_stories__story_077_active)
+    (tiny_stories__story_077_type_character ?x - object)
+    (tiny_stories__story_077_type_object ?x - object)
+    (tiny_stories__story_077_type_place ?x - object)
+    (writing_prompts__wp_016_active)
+    (writing_prompts__wp_016_type_character ?x - object)
+    (writing_prompts__wp_016_type_item ?x - object)
+    (writing_prompts__wp_016_type_object ?x - object)
+    (writing_prompts__wp_016_type_place ?x - object)
+    (alive ?p0)
+    (knows-survival-skills ?p0)
+    (computers-working)
+    (caused-apocalypse ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (shares ?p0 ?p1 ?p2)
+    (happy ?p0)
+    (tired ?p0)
+    (played-together ?p0 ?p1)
+  )
+  (:constants tiny_stories__story_045_o_mirror - object)
+
+  (:action learn-survival-skills
+    :parameters (?learner ?teacher)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_016_active)
+          (writing_prompts__wp_016_type_character ?learner)
+          (writing_prompts__wp_016_type_character ?teacher)
+          (writing_prompts__wp_016_type_character ?learner)
+          (writing_prompts__wp_016_type_character ?teacher)
+        )
+        (and
+          (alive ?learner)
+          (alive ?teacher)
+          (knows-survival-skills ?teacher)
+          (not (knows-survival-skills ?learner))
+        )
+      )
+    :effect
+      (knows-survival-skills ?learner)
+  )
+
+  (:action cause-apocalypse
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_016_active)
+          (writing_prompts__wp_016_type_character ?character)
+          (writing_prompts__wp_016_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (computers-working)
+        )
+      )
+    :effect
+      (and
+        (not (computers-working))
+        (caused-apocalypse ?character)
+      )
+  )
+
+  (:action kill
+    :parameters (?killer ?victim)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_016_active)
+          (writing_prompts__wp_016_type_character ?killer)
+          (writing_prompts__wp_016_type_character ?victim)
+          (writing_prompts__wp_016_type_character ?killer)
+          (writing_prompts__wp_016_type_character ?victim)
+        )
+        (and
+          (alive ?killer)
+          (alive ?victim)
+          (not (= ?killer ?victim))
+        )
+      )
+    :effect
+      (not (alive ?victim))
+  )
+
+  (:action unshare
+    :parameters (?sharer ?object ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?receiver)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_character ?receiver)
+        )
+        (shares ?sharer ?receiver ?object)
+      )
+    :effect
+      (not (shares ?sharer ?receiver ?object))
+  )
+
+  (:action rest
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_077_active)
+          (tiny_stories__story_077_type_character ?character)
+          (tiny_stories__story_077_type_character ?character)
+        )
+        (tired ?character)
+      )
+    :effect
+      (not (tired ?character))
+  )
+
+  (:action move
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_077_active)
+          (tiny_stories__story_077_type_character ?character)
+          (tiny_stories__story_077_type_place ?from)
+          (tiny_stories__story_077_type_place ?to)
+          (tiny_stories__story_077_type_character ?character)
+          (tiny_stories__story_077_type_place ?from)
+          (tiny_stories__story_077_type_place ?to)
+        )
+        (and
+          (not (= ?from ?to))
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action play
+    :parameters (?character1 ?character2 ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_077_active)
+          (tiny_stories__story_077_type_character ?character1)
+          (tiny_stories__story_077_type_character ?character2)
+          (tiny_stories__story_077_type_place ?place)
+          (tiny_stories__story_077_type_character ?character1)
+          (tiny_stories__story_077_type_character ?character2)
+          (tiny_stories__story_077_type_place ?place)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (at ?character1 ?place)
+          (at ?character2 ?place)
+        )
+      )
+    :effect
+      (and
+        (played-together ?character1 ?character2)
+        (happy ?character1)
+        (happy ?character2)
+        (tired ?character1)
+        (tired ?character2)
+      )
+  )
+
+  (:action find
+    :parameters (?character ?object)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?character)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?character)
+        )
+        (not (has ?character ?object))
+      )
+    :effect
+      (has ?character ?object)
+  )
+
+  (:action share
+    :parameters (?sharer ?object ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?receiver)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_character ?receiver)
+        )
+        (and
+          (has ?sharer ?object)
+          (not (shares ?sharer ?receiver ?object))
+        )
+      )
+    :effect
+      (shares ?sharer ?receiver ?object)
+  )
+)

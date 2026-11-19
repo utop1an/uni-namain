@@ -1,0 +1,174 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_008_active)
+    (tiny_stories__story_008_type_character ?x - object)
+    (tiny_stories__story_008_type_item ?x - object)
+    (tiny_stories__story_008_type_object ?x - object)
+    (tiny_stories__story_008_type_toy ?x - object)
+    (tiny_stories__story_086_active)
+    (tiny_stories__story_086_type_character ?x - object)
+    (tiny_stories__story_086_type_object ?x - object)
+    (has ?p0 ?p1)
+    (friends ?p0 ?p1)
+    (played-together ?p0 ?p1)
+    (happy ?p0)
+    (helping ?p0 ?p1)
+    (scared ?p0)
+    (spider-on-wall)
+    (cake-made)
+  )
+  (:constants tiny_stories__story_008_o_ball - object)
+
+  (:action give-toy
+    :parameters (?giver ?toy ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_008_active)
+          (tiny_stories__story_008_type_character ?giver)
+          (tiny_stories__story_008_type_toy ?toy)
+          (tiny_stories__story_008_type_character ?receiver)
+          (tiny_stories__story_008_type_character ?giver)
+          (tiny_stories__story_008_type_toy ?toy)
+          (tiny_stories__story_008_type_character ?receiver)
+        )
+        (and
+          (not (= ?giver ?receiver))
+          (has ?giver ?toy)
+        )
+      )
+    :effect
+      (and
+        (not (has ?giver ?toy))
+        (has ?receiver ?toy)
+      )
+  )
+
+  (:action become-friends
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_008_active)
+          (tiny_stories__story_008_type_character ?character1)
+          (tiny_stories__story_008_type_character ?character2)
+          (tiny_stories__story_008_type_character ?character1)
+          (tiny_stories__story_008_type_character ?character2)
+        )
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (friends ?character1 ?character2)
+  )
+
+  (:action play-together
+    :parameters (?character1 ?character2 ?toy)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_008_active)
+          (tiny_stories__story_008_type_character ?character1)
+          (tiny_stories__story_008_type_character ?character2)
+          (tiny_stories__story_008_type_toy ?toy)
+          (tiny_stories__story_008_type_character ?character1)
+          (tiny_stories__story_008_type_character ?character2)
+          (tiny_stories__story_008_type_toy ?toy)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (has ?character1 ?toy)
+          (friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (and
+        (played-together ?character1 ?character2)
+        (happy ?character1)
+        (happy ?character2)
+      )
+  )
+
+  (:action see-spider
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_086_active)
+          (tiny_stories__story_086_type_character ?character)
+          (tiny_stories__story_086_type_character ?character)
+        )
+        (and
+          (not (scared ?character))
+          (not (spider-on-wall))
+        )
+      )
+    :effect
+      (and
+        (scared ?character)
+        (spider-on-wall)
+      )
+  )
+
+  (:action remove-spider
+    :parameters (?character ?helpee)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_086_active)
+          (tiny_stories__story_086_type_character ?character)
+          (tiny_stories__story_086_type_character ?helpee)
+          (tiny_stories__story_086_type_character ?character)
+          (tiny_stories__story_086_type_character ?helpee)
+        )
+        (and
+          (spider-on-wall)
+          (helping ?character ?helpee)
+        )
+      )
+    :effect
+      (not (spider-on-wall))
+  )
+
+  (:action help
+    :parameters (?helper ?helpee)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_086_active)
+          (tiny_stories__story_086_type_character ?helper)
+          (tiny_stories__story_086_type_character ?helpee)
+          (tiny_stories__story_086_type_character ?helper)
+          (tiny_stories__story_086_type_character ?helpee)
+        )
+        (and
+          (not (= ?helper ?helpee))
+          (scared ?helpee)
+        )
+      )
+    :effect
+      (and
+        (not (scared ?helpee))
+        (happy ?helpee)
+        (helping ?helper ?helpee)
+      )
+  )
+
+  (:action make-cake
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_086_active)
+          (tiny_stories__story_086_type_character ?character)
+          (tiny_stories__story_086_type_character ?character)
+        )
+        (and
+          (not (cake-made))
+          (happy ?character)
+        )
+      )
+    :effect
+      (cake-made)
+  )
+)

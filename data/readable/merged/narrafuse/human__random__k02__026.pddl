@@ -1,0 +1,534 @@
+(define (domain revised_merged)
+  (:requirements :adl :equality :intentionality :negative-preconditions :strips :typing :universal-preconditions)
+  (:types)
+  (:constants human_36d2ec3e17905e8a_o_railwaydeveloper - object human_36d2ec3e17905e8a_o_thecity - object human_36d2ec3e17905e8a_o_thefarmer - object)
+  (:predicates
+    (human_36d2ec3e17905e8a_active)
+    (human_36d2ec3e17905e8a_type_animal ?x - object)
+    (human_36d2ec3e17905e8a_type_city ?x - object)
+    (human_36d2ec3e17905e8a_type_dairyfarmer ?x - object)
+    (human_36d2ec3e17905e8a_type_item ?x - object)
+    (human_36d2ec3e17905e8a_type_object ?x - object)
+    (human_36d2ec3e17905e8a_type_person ?x - object)
+    (human_36d2ec3e17905e8a_type_place ?x - object)
+    (human_36d2ec3e17905e8a_type_ranch ?x - object)
+    (human_36d2ec3e17905e8a_type_rancher ?x - object)
+    (human_36d2ec3e17905e8a_type_saloon ?x - object)
+    (human_36d2ec3e17905e8a_type_sheriff ?x - object)
+    (human_36d2ec3e17905e8a_type_sickness ?x - object)
+    (human_36d2ec3e17905e8a_type_son ?x - object)
+    (human_36d2ec3e17905e8a_type_texasranger ?x - object)
+    (human_36d2ec3e17905e8a_type_valuable ?x - object)
+    (human_36d2ec3e17905e8a_p_thefarmchar ?v0 - object)
+    (human_36d2ec3e17905e8a_p_themover ?v0 - object)
+    (human_36d2ec3e17905e8a_p_thecriminal ?v0 - object)
+    (human_36d2ec3e17905e8a_p_theinvalid ?v0 - object)
+    (human_36d2ec3e17905e8a_p_invalid-unwell)
+    (human_36d2ec3e17905e8a_p_invalid-recovered)
+    (human_36d2ec3e17905e8a_p_done-crime ?v0 - object)
+    (human_36d2ec3e17905e8a_p_crime-done)
+    (human_36d2ec3e17905e8a_p_arrested ?v0 - object)
+    (human_36d2ec3e17905e8a_p_criminal-arrested)
+    (human_36d2ec3e17905e8a_p_thearrester ?v0 - object)
+    (human_36d2ec3e17905e8a_p_family ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_survived-winter)
+    (human_36d2ec3e17905e8a_p_has-axe ?v0 - object)
+    (human_36d2ec3e17905e8a_p_spring)
+    (human_36d2ec3e17905e8a_p_autumn)
+    (human_36d2ec3e17905e8a_p_winter)
+    (human_36d2ec3e17905e8a_p_prepared-for-winter)
+    (human_36d2ec3e17905e8a_p_has-medicine ?v0 - object)
+    (human_36d2ec3e17905e8a_p_healthy ?v0 - object)
+    (human_36d2ec3e17905e8a_p_family-ok)
+    (human_36d2ec3e17905e8a_p_winter-proofed-house)
+    (human_36d2ec3e17905e8a_p_has-firewood ?v0 - object)
+    (human_36d2ec3e17905e8a_p_decided-move-city)
+    (human_36d2ec3e17905e8a_p_has-cash ?v0 - object)
+    (human_36d2ec3e17905e8a_p_wants ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_owns ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_has-ticket ?v0 - object)
+    (human_36d2ec3e17905e8a_p_moved-to-city)
+    (shared_p_consensus_30b4f61066459006 ?v0 - object)
+    (shared_p_consensus_37a2ffce98432a2c ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_belongsto ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_has ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_sick ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_cures ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_loves ?v0 - object ?v1 - object)
+    (human_36d2ec3e17905e8a_p_recovered ?v0 - object)
+    (human_87bbd0acdf4611c5_active)
+    (human_87bbd0acdf4611c5_type_character ?x - object)
+    (human_87bbd0acdf4611c5_type_location ?x - object)
+    (human_87bbd0acdf4611c5_type_object ?x - object)
+    (human_87bbd0acdf4611c5_type_thing ?x - object)
+    (human_87bbd0acdf4611c5_p_player ?v0 - object)
+    (human_87bbd0acdf4611c5_p_has ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_connected ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_apprehended ?v0 - object)
+    (human_87bbd0acdf4611c5_p_saved ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_knows ?v0 - object)
+    (human_87bbd0acdf4611c5_p_captured ?v0 - object)
+    (human_87bbd0acdf4611c5_p_henchman ?v0 - object)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_arrest
+    :parameters (?s - object ?p - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_sheriff ?s)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (shared_p_consensus_37a2ffce98432a2c ?s ?l)
+          (shared_p_consensus_37a2ffce98432a2c ?p ?l)
+          (human_36d2ec3e17905e8a_p_done-crime ?p)
+          (not (human_36d2ec3e17905e8a_p_arrested ?p))
+          (human_36d2ec3e17905e8a_p_thecriminal ?p)
+          (not (human_36d2ec3e17905e8a_p_criminal-arrested))
+          (human_36d2ec3e17905e8a_p_thearrester ?s)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_arrested ?p)
+        (human_36d2ec3e17905e8a_p_criminal-arrested)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_repair-house
+    :parameters (?p - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (shared_p_consensus_30b4f61066459006 ?p)
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_winter-proofed-house)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_prepare-for-winter
+    :parameters (?p - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (and
+          (human_36d2ec3e17905e8a_p_autumn)
+          (shared_p_consensus_30b4f61066459006 ?p)
+          (human_36d2ec3e17905e8a_p_winter-proofed-house)
+          (human_36d2ec3e17905e8a_p_has-firewood ?p)
+        )
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_prepared-for-winter)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_turn-into-winter
+    :parameters ()
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (and
+          (human_36d2ec3e17905e8a_p_autumn)
+          (human_36d2ec3e17905e8a_p_prepared-for-winter)
+        )
+      )
+    :effect
+      (and
+        (not (human_36d2ec3e17905e8a_p_autumn))
+        (human_36d2ec3e17905e8a_p_winter)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_live-through-winter
+    :parameters (?p - object ?f - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_person ?f)
+        (and
+          (human_36d2ec3e17905e8a_p_winter)
+          (human_36d2ec3e17905e8a_p_family ?p ?f)
+          (human_36d2ec3e17905e8a_p_healthy ?f)
+        )
+      )
+    :effect
+      (and
+        (not (human_36d2ec3e17905e8a_p_winter))
+        (human_36d2ec3e17905e8a_p_spring)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_survived
+    :parameters (?p - object ?f - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_rancher ?p)
+        (human_36d2ec3e17905e8a_type_person ?f)
+        (and
+          (human_36d2ec3e17905e8a_p_spring)
+          (human_36d2ec3e17905e8a_p_thefarmchar ?p)
+          (shared_p_consensus_30b4f61066459006 ?p)
+          (human_36d2ec3e17905e8a_p_family ?p ?f)
+          (shared_p_consensus_30b4f61066459006 ?f)
+        )
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_survived-winter)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_travel-to-city
+    :parameters (?p - object ?f - object ?t - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_place ?f)
+        (human_36d2ec3e17905e8a_type_place ?t)
+        (and
+          (= ?t human_36d2ec3e17905e8a_o_thecity)
+          (not (= ?t ?f))
+          (human_36d2ec3e17905e8a_p_has-ticket ?p)
+          (shared_p_consensus_30b4f61066459006 ?p)
+          (shared_p_consensus_37a2ffce98432a2c ?p ?f)
+          (human_36d2ec3e17905e8a_p_themover ?p)
+          (human_36d2ec3e17905e8a_p_decided-move-city)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_moved-to-city)
+        (shared_p_consensus_37a2ffce98432a2c ?p ?t)
+        (not (shared_p_consensus_37a2ffce98432a2c ?p ?t))
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_sell-land
+    :parameters (?p1 - object ?p2 - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_rancher ?p1)
+        (human_36d2ec3e17905e8a_type_person ?p2)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (human_36d2ec3e17905e8a_p_owns ?p1 ?l)
+          (human_36d2ec3e17905e8a_p_wants ?p2 ?l)
+          (human_36d2ec3e17905e8a_p_has-cash ?p2)
+          (human_36d2ec3e17905e8a_p_decided-move-city)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_has-cash ?p1)
+        (not (human_36d2ec3e17905e8a_p_has-cash ?p2))
+        (human_36d2ec3e17905e8a_p_owns ?p2 ?l)
+        (not (human_36d2ec3e17905e8a_p_owns ?p1 ?l))
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_decide-to-move-to-city
+    :parameters (?p - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_rancher ?p)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (shared_p_consensus_37a2ffce98432a2c ?p ?l)
+          (human_36d2ec3e17905e8a_p_themover ?p)
+        )
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_decided-move-city)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_buy-ticket
+    :parameters (?p - object ?r - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_person ?r)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (human_36d2ec3e17905e8a_p_has-cash ?p)
+          (= ?r human_36d2ec3e17905e8a_o_railwaydeveloper)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_has-ticket ?p)
+        (not (human_36d2ec3e17905e8a_p_has-cash ?p))
+        (human_36d2ec3e17905e8a_p_has-cash ?r)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_steal-cash
+    :parameters (?p1 - object ?p2 - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p1)
+        (human_36d2ec3e17905e8a_type_person ?p2)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (shared_p_consensus_37a2ffce98432a2c ?p1 ?l)
+          (shared_p_consensus_37a2ffce98432a2c ?p2 ?l)
+          (human_36d2ec3e17905e8a_p_has-cash ?p2)
+          (human_36d2ec3e17905e8a_p_thecriminal ?p1)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_has-cash ?p1)
+        (not (human_36d2ec3e17905e8a_p_has-cash ?p2))
+        (human_36d2ec3e17905e8a_p_done-crime ?p1)
+        (human_36d2ec3e17905e8a_p_crime-done)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_steal-medicine
+    :parameters (?p - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (shared_p_consensus_37a2ffce98432a2c ?p ?l)
+          (human_36d2ec3e17905e8a_p_theinvalid ?p)
+          (human_36d2ec3e17905e8a_p_invalid-unwell)
+          (not (human_36d2ec3e17905e8a_p_has-cash ?p))
+        )
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_has-medicine ?p)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_steal-firewood
+    :parameters (?p1 - object ?p2 - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p1)
+        (human_36d2ec3e17905e8a_type_person ?p2)
+        (human_36d2ec3e17905e8a_p_has-firewood ?p2)
+      )
+    :effect
+      (not (human_36d2ec3e17905e8a_p_has-firewood ?p2))
+  )
+
+  (:action human_36d2ec3e17905e8a_a_chop-wood
+    :parameters (?p - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (not (human_36d2ec3e17905e8a_p_has-firewood ?p))
+      )
+    :effect
+      (human_36d2ec3e17905e8a_p_has-firewood ?p)
+  )
+
+  (:action human_36d2ec3e17905e8a_a_get-snake-bite
+    :parameters (?v - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?v)
+        (and
+          (human_36d2ec3e17905e8a_p_healthy ?v)
+          (human_36d2ec3e17905e8a_p_theinvalid ?v)
+        )
+      )
+    :effect
+      (and
+        (not (human_36d2ec3e17905e8a_p_healthy ?v))
+        (human_36d2ec3e17905e8a_p_invalid-unwell)
+        (not (human_36d2ec3e17905e8a_p_invalid-recovered))
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_get-medicine
+    :parameters (?p - object ?h - object ?l - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (human_36d2ec3e17905e8a_type_person ?h)
+        (human_36d2ec3e17905e8a_type_place ?l)
+        (and
+          (human_36d2ec3e17905e8a_p_has-cash ?p)
+          (not (human_36d2ec3e17905e8a_p_has-medicine ?p))
+          (human_36d2ec3e17905e8a_p_has-medicine ?h)
+          (shared_p_consensus_37a2ffce98432a2c ?p ?l)
+          (shared_p_consensus_37a2ffce98432a2c ?h ?l)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_has-medicine ?p)
+        (not (human_36d2ec3e17905e8a_p_has-cash ?p))
+        (human_36d2ec3e17905e8a_p_has-cash ?h)
+        (not (human_36d2ec3e17905e8a_p_has-medicine ?h))
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_heal
+    :parameters (?h - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_rancher ?h)
+        (and
+          (human_36d2ec3e17905e8a_p_has-medicine ?h)
+          (not (human_36d2ec3e17905e8a_p_healthy ?h))
+          (human_36d2ec3e17905e8a_p_theinvalid ?h)
+          (human_36d2ec3e17905e8a_p_invalid-unwell)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_healthy ?h)
+        (not (human_36d2ec3e17905e8a_p_has-medicine ?h))
+        (human_36d2ec3e17905e8a_p_recovered ?h)
+        (not (human_36d2ec3e17905e8a_p_invalid-unwell))
+        (human_36d2ec3e17905e8a_p_invalid-recovered)
+      )
+  )
+
+  (:action human_36d2ec3e17905e8a_a_recover
+    :parameters (?p - object)
+    :precondition
+      (and
+        (human_36d2ec3e17905e8a_active)
+        (human_36d2ec3e17905e8a_type_person ?p)
+        (and
+          (not (= ?p human_36d2ec3e17905e8a_o_thefarmer))
+          (human_36d2ec3e17905e8a_p_has-medicine ?p)
+          (not (human_36d2ec3e17905e8a_p_healthy ?p))
+          (human_36d2ec3e17905e8a_p_theinvalid ?p)
+          (human_36d2ec3e17905e8a_p_invalid-unwell)
+        )
+      )
+    :effect
+      (and
+        (human_36d2ec3e17905e8a_p_healthy ?p)
+        (not (human_36d2ec3e17905e8a_p_has-medicine ?p))
+        (human_36d2ec3e17905e8a_p_recovered ?p)
+        (not (human_36d2ec3e17905e8a_p_invalid-unwell))
+        (human_36d2ec3e17905e8a_p_invalid-recovered)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?interrogator)
+        (human_87bbd0acdf4611c5_type_character ?interrogated)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?interrogator)
+          (shared_p_consensus_37a2ffce98432a2c ?interrogator ?location)
+          (shared_p_consensus_37a2ffce98432a2c ?interrogated ?location)
+          (human_87bbd0acdf4611c5_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_87bbd0acdf4611c5_p_knows ?interrogator)
+  )
+
+  (:action human_87bbd0acdf4611c5_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?placer)
+        (human_87bbd0acdf4611c5_type_character ?victim)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (human_87bbd0acdf4611c5_type_location ?placed)
+        (and
+          (human_87bbd0acdf4611c5_p_henchman ?placer)
+          (human_87bbd0acdf4611c5_p_has ?placer ?victim)
+          (shared_p_consensus_37a2ffce98432a2c ?placer ?location)
+          (human_87bbd0acdf4611c5_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_87bbd0acdf4611c5_p_has ?placer ?victim))
+        (shared_p_consensus_37a2ffce98432a2c ?victim ?placed)
+        (human_87bbd0acdf4611c5_p_captured ?victim)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?saver)
+        (human_87bbd0acdf4611c5_type_character ?saved)
+        (human_87bbd0acdf4611c5_type_character ?notsaved)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?saver)
+          (shared_p_consensus_37a2ffce98432a2c ?saver ?location)
+          (shared_p_consensus_37a2ffce98432a2c ?saved ?location)
+          (human_87bbd0acdf4611c5_p_captured ?saved)
+          (human_87bbd0acdf4611c5_p_captured ?notsaved)
+          (not (shared_p_consensus_37a2ffce98432a2c ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_87bbd0acdf4611c5_p_saved ?saved ?saver)
+        (not (shared_p_consensus_30b4f61066459006 ?notsaved))
+      )
+  )
+
+  (:action fused_a_consensus_c59ea4470fb7e0b4
+    :parameters (?m0 - object ?m1 - object ?m2 - object)
+    :precondition
+      (or
+        (and
+          (human_36d2ec3e17905e8a_active)
+          (human_36d2ec3e17905e8a_type_person ?m0)
+          (human_36d2ec3e17905e8a_type_place ?m1)
+          (human_36d2ec3e17905e8a_type_place ?m2)
+          (and
+            (not (= ?m2 human_36d2ec3e17905e8a_o_thecity))
+            (not (= ?m2 ?m1))
+            (shared_p_consensus_30b4f61066459006 ?m0)
+            (human_36d2ec3e17905e8a_p_healthy ?m0)
+            (not (human_36d2ec3e17905e8a_p_arrested ?m0))
+            (shared_p_consensus_37a2ffce98432a2c ?m0 ?m1)
+          )
+        )
+        (and
+          (human_87bbd0acdf4611c5_active)
+          (human_87bbd0acdf4611c5_type_character ?m0)
+          (human_87bbd0acdf4611c5_type_location ?m2)
+          (human_87bbd0acdf4611c5_type_location ?m1)
+          (and
+            (human_87bbd0acdf4611c5_p_player ?m0)
+            (human_87bbd0acdf4611c5_p_connected ?m2 ?m1)
+            (shared_p_consensus_37a2ffce98432a2c ?m0 ?m1)
+            (human_87bbd0acdf4611c5_p_knows ?m0)
+          )
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_37a2ffce98432a2c ?m0 ?m2)
+        (not (shared_p_consensus_37a2ffce98432a2c ?m0 ?m1))
+      )
+  )
+)

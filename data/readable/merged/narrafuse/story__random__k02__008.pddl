@@ -1,0 +1,166 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_048_o_blood - object writing_prompts__wp_048_o_sweat - object writing_prompts__wp_048_o_tears - object writing_prompts__wp_048_o_death - object)
+  (:predicates
+    (tiny_stories__story_025_active)
+    (tiny_stories__story_025_type_character ?x - object)
+    (tiny_stories__story_025_type_object ?x - object)
+    (tiny_stories__story_025_type_place ?x - object)
+    (tiny_stories__story_025_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_025_p_stuck ?v0 - object ?v1 - object)
+    (tiny_stories__story_025_p_helped ?v0 - object ?v1 - object)
+    (tiny_stories__story_025_p_friends ?v0 - object ?v1 - object)
+    (writing_prompts__wp_048_active)
+    (writing_prompts__wp_048_type_character ?x - object)
+    (writing_prompts__wp_048_type_object ?x - object)
+    (writing_prompts__wp_048_type_trial ?x - object)
+    (writing_prompts__wp_048_p_dead ?v0 - object)
+    (writing_prompts__wp_048_p_alive ?v0 - object)
+    (writing_prompts__wp_048_p_completed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_048_p_offered ?v0 - object ?v1 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (writing_prompts__wp_048_active) (writing_prompts__wp_048_type_character ?character) (not (writing_prompts__wp_048_p_alive ?character))) :implies (writing_prompts__wp_048_p_dead ?character))
+  (:axiom :vars (?character - object) :context (and (writing_prompts__wp_048_active) (writing_prompts__wp_048_type_character ?character) (not (writing_prompts__wp_048_p_dead ?character))) :implies (writing_prompts__wp_048_p_alive ?character))
+
+  (:action tiny_stories__story_025_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_025_active)
+        (tiny_stories__story_025_type_character ?character)
+        (tiny_stories__story_025_type_place ?from)
+        (tiny_stories__story_025_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_025_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_025_p_at ?character ?from))
+        (tiny_stories__story_025_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_025_a_get-stuck
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_025_active)
+        (tiny_stories__story_025_type_character ?character)
+        (tiny_stories__story_025_type_place ?place)
+        (and
+          (tiny_stories__story_025_p_at ?character ?place)
+          (not (tiny_stories__story_025_p_stuck ?character ?place))
+        )
+      )
+    :effect
+      (tiny_stories__story_025_p_stuck ?character ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_025_a_help
+    :parameters (?helper - object ?helpee - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_025_active)
+        (tiny_stories__story_025_type_character ?helper)
+        (tiny_stories__story_025_type_character ?helpee)
+        (tiny_stories__story_025_type_place ?place)
+        (and
+          (not (= ?helper ?helpee))
+          (tiny_stories__story_025_p_at ?helper ?place)
+          (tiny_stories__story_025_p_stuck ?helpee ?place)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_025_p_stuck ?helpee ?place))
+        (tiny_stories__story_025_p_helped ?helper ?helpee)
+      )
+    :agents (?helper)
+  )
+
+  (:action tiny_stories__story_025_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_025_active)
+        (tiny_stories__story_025_type_character ?character1)
+        (tiny_stories__story_025_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (not (tiny_stories__story_025_p_friends ?character1 ?character2))
+          (tiny_stories__story_025_p_helped ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_025_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_048_a_offer-trial
+    :parameters (?character - object ?trial - object)
+    :precondition
+      (and
+        (writing_prompts__wp_048_active)
+        (writing_prompts__wp_048_type_character ?character)
+        (writing_prompts__wp_048_type_trial ?trial)
+        (and
+          (writing_prompts__wp_048_p_dead ?character)
+          (not (writing_prompts__wp_048_p_offered ?character ?trial))
+        )
+      )
+    :effect
+      (writing_prompts__wp_048_p_offered ?character ?trial)
+    :agents (writing_prompts__wp_048_o_death)
+  )
+
+  (:action writing_prompts__wp_048_a_choose-trial
+    :parameters (?character - object ?trial - object)
+    :precondition
+      (and
+        (writing_prompts__wp_048_active)
+        (writing_prompts__wp_048_type_character ?character)
+        (writing_prompts__wp_048_type_trial ?trial)
+        (and
+          (writing_prompts__wp_048_p_dead ?character)
+          (writing_prompts__wp_048_p_offered ?character ?trial)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_048_p_completed ?character ?trial)
+        (not (writing_prompts__wp_048_p_offered ?character ?trial))
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_048_a_rebirth
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_048_active)
+        (writing_prompts__wp_048_type_character ?character)
+        (and
+          (writing_prompts__wp_048_p_dead ?character)
+          (or
+            (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_blood)
+            (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_sweat)
+            (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_tears)
+          )
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_048_p_alive ?character)
+        (not (writing_prompts__wp_048_p_dead ?character))
+        (not (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_blood))
+        (not (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_sweat))
+        (not (writing_prompts__wp_048_p_completed ?character writing_prompts__wp_048_o_tears))
+      )
+    :agents (writing_prompts__wp_048_o_death)
+  )
+)

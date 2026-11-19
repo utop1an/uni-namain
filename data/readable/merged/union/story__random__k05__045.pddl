@@ -1,0 +1,429 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_067_o_factory - object)
+  (:predicates
+    (tiny_stories__story_067_active)
+    (tiny_stories__story_067_type_character ?x - object)
+    (tiny_stories__story_067_type_object ?x - object)
+    (tiny_stories__story_067_p_worker ?v0 - object)
+    (tiny_stories__story_067_p_clean ?v0 - object)
+    (tiny_stories__story_067_p_makes-toys ?v0 - object)
+    (tiny_stories__story_067_p_nervous ?v0 - object)
+    (tiny_stories__story_067_p_friends-with ?v0 - object ?v1 - object)
+    (tiny_stories__story_067_p_happy ?v0 - object)
+    (writing_prompts__wp_017_active)
+    (writing_prompts__wp_017_type_animal ?x - object)
+    (writing_prompts__wp_017_type_character ?x - object)
+    (writing_prompts__wp_017_type_direction ?x - object)
+    (writing_prompts__wp_017_type_object ?x - object)
+    (writing_prompts__wp_017_p_awake ?v0 - object)
+    (writing_prompts__wp_017_p_wearing-pajamas ?v0 - object)
+    (writing_prompts__wp_017_p_on-floor ?v0 - object)
+    (writing_prompts__wp_017_p_dressed ?v0 - object)
+    (writing_prompts__wp_017_p_holding ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_walking ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_petting ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_bites ?v0 - object)
+    (writing_prompts__wp_017_p_owns ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_life-is-a-joke ?v0 - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (writing_prompts__wp_029_p_asleep ?v0 - object)
+    (writing_prompts__wp_029_p_awake ?v0 - object)
+    (writing_prompts__wp_029_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_029_p_has-hoard ?v0 - object)
+    (writing_prompts__wp_029_p_robbed ?v0 - object)
+    (writing_prompts__wp_029_p_soundproof-door ?v0 - object)
+    (writing_prompts__wp_029_p_attacked ?v0 - object)
+    (writing_prompts__wp_044_active)
+    (writing_prompts__wp_044_type_character ?x - object)
+    (writing_prompts__wp_044_type_object ?x - object)
+    (writing_prompts__wp_044_type_place ?x - object)
+    (writing_prompts__wp_044_p_alive ?v0 - object)
+    (writing_prompts__wp_044_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_044_p_imprisoned ?v0 - object)
+    (writing_prompts__wp_044_p_served-sentence ?v0 - object)
+    (writing_prompts__wp_044_p_has-serum ?v0 - object)
+    (writing_prompts__wp_044_p_religious ?v0 - object)
+    (writing_prompts__wp_075_active)
+    (writing_prompts__wp_075_type_character ?x - object)
+    (writing_prompts__wp_075_type_object ?x - object)
+    (writing_prompts__wp_075_type_organization ?x - object)
+    (writing_prompts__wp_075_p_president ?v0 - object)
+    (writing_prompts__wp_075_p_speaker ?v0 - object)
+    (writing_prompts__wp_075_p_vice-president ?v0 - object)
+    (writing_prompts__wp_075_p_belongs-to ?v0 - object ?v1 - object)
+    (writing_prompts__wp_075_p_economy-collapsed)
+    (writing_prompts__wp_075_p_real-estate-monopoly)
+    (writing_prompts__wp_075_p_planned-parenthood-defunded)
+    (writing_prompts__wp_075_p_planned-parenthood-shutdown)
+    (writing_prompts__wp_075_p_planned-parenthood-criminalized)
+    (writing_prompts__wp_075_p_prison-population-increased)
+    (writing_prompts__wp_075_p_political-prisoner ?v0 - object)
+  )
+
+  (:action tiny_stories__story_067_a_start-working
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_067_p_worker ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_067_a_clean-factory
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character)
+        (tiny_stories__story_067_p_worker ?character)
+      )
+    :effect
+      (tiny_stories__story_067_p_clean tiny_stories__story_067_o_factory)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_067_a_make-toys
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character)
+        (tiny_stories__story_067_p_worker ?character)
+      )
+    :effect
+      (tiny_stories__story_067_p_makes-toys ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_067_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character1)
+        (tiny_stories__story_067_type_character ?character2)
+        (and
+          (tiny_stories__story_067_p_worker ?character1)
+          (tiny_stories__story_067_p_worker ?character2)
+          (not (= ?character1 ?character2))
+        )
+      )
+    :effect
+      (tiny_stories__story_067_p_friends-with ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_067_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character)
+        (tiny_stories__story_067_p_worker ?character)
+      )
+    :effect
+      (tiny_stories__story_067_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_067_a_become-less-nervous
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_067_active)
+        (tiny_stories__story_067_type_character ?character)
+        (and
+          (tiny_stories__story_067_p_worker ?character)
+          (tiny_stories__story_067_p_nervous ?character)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_067_p_nervous ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (not (writing_prompts__wp_017_p_awake ?character))
+      )
+    :effect
+      (writing_prompts__wp_017_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_dress
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (and
+          (writing_prompts__wp_017_p_awake ?character)
+          (writing_prompts__wp_017_p_on-floor ?character)
+          (not (writing_prompts__wp_017_p_dressed ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_017_p_dressed ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_pet
+    :parameters (?character - object ?animal - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (writing_prompts__wp_017_type_animal ?animal)
+        (and
+          (writing_prompts__wp_017_p_awake ?character)
+          (writing_prompts__wp_017_p_dressed ?character)
+          (not (writing_prompts__wp_017_p_bites ?animal))
+        )
+      )
+    :effect
+      (writing_prompts__wp_017_p_petting ?character ?animal)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_realize-life-is-a-joke
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (writing_prompts__wp_017_p_awake ?character)
+      )
+    :effect
+      (writing_prompts__wp_017_p_life-is-a-joke ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_sleep
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_awake ?character))
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_asleep ?character))
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_install-soundproof-door
+    :parameters (?gang - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_type_place ?place)
+        (and
+          (writing_prompts__wp_029_p_awake ?gang)
+          (writing_prompts__wp_029_p_at ?gang ?place)
+          (not (writing_prompts__wp_029_p_soundproof-door ?place))
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_soundproof-door ?place)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_rob
+    :parameters (?gang - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_p_awake ?gang)
+      )
+    :effect
+      (writing_prompts__wp_029_p_robbed ?gang)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_attack
+    :parameters (?attacker - object ?victim - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?attacker)
+        (writing_prompts__wp_029_type_character ?victim)
+        (and
+          (writing_prompts__wp_029_p_awake ?attacker)
+          (writing_prompts__wp_029_p_awake ?victim)
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_attacked ?victim)
+    :agents (?attacker)
+  )
+
+  (:action writing_prompts__wp_029_a_clear-passage
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_attacked ?character))
+        (writing_prompts__wp_029_p_has-hoard ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_take-serum
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (not (writing_prompts__wp_044_p_has-serum ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_has-serum ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_serve-sentence
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_imprisoned ?character)
+          (not (writing_prompts__wp_044_p_served-sentence ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_served-sentence ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_release
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_imprisoned ?character)
+          (writing_prompts__wp_044_p_served-sentence ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_044_p_imprisoned ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_convert
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (not (writing_prompts__wp_044_p_religious ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_religious ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_abandon-religion
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_religious ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_044_p_religious ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_075_a_announce-state-of-the-union
+    :parameters (?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?president)
+        (writing_prompts__wp_075_p_president ?president)
+      )
+    :agents (?president)
+  )
+
+  (:action writing_prompts__wp_075_a_introduce-president
+    :parameters (?speaker - object ?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?speaker)
+        (writing_prompts__wp_075_type_character ?president)
+        (and
+          (writing_prompts__wp_075_p_speaker ?speaker)
+          (writing_prompts__wp_075_p_president ?president)
+        )
+      )
+    :agents (?speaker)
+  )
+
+  (:action writing_prompts__wp_075_a_attend-state-of-the-union
+    :parameters (?vice-president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?vice-president)
+        (writing_prompts__wp_075_p_vice-president ?vice-president)
+      )
+    :agents (?vice-president)
+  )
+)

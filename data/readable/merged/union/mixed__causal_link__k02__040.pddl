@@ -1,0 +1,215 @@
+(define (domain revised_merged)
+  (:requirements :adl :disjunctive-preconditions :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:predicates
+    (human_62959785b3ec220a_active)
+    (human_62959785b3ec220a_type_character ?x - object)
+    (human_62959785b3ec220a_type_location ?x - object)
+    (human_62959785b3ec220a_type_object ?x - object)
+    (human_62959785b3ec220a_type_thing ?x - object)
+    (human_62959785b3ec220a_p_player ?v0 - object)
+    (human_62959785b3ec220a_p_at ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_has ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_connected ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_apprehended ?v0 - object)
+    (human_62959785b3ec220a_p_alive ?v0 - object)
+    (human_62959785b3ec220a_p_saved ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_knows ?v0 - object)
+    (human_62959785b3ec220a_p_captured ?v0 - object)
+    (human_62959785b3ec220a_p_henchman ?v0 - object)
+    (tiny_stories__story_023_active)
+    (tiny_stories__story_023_type_animal ?x - object)
+    (tiny_stories__story_023_type_character ?x - object)
+    (tiny_stories__story_023_type_location ?x - object)
+    (tiny_stories__story_023_type_object ?x - object)
+    (tiny_stories__story_023_type_place ?x - object)
+    (tiny_stories__story_023_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_023_p_happy ?v0 - object)
+    (tiny_stories__story_023_p_can-fly ?v0 - object)
+    (tiny_stories__story_023_p_can-run ?v0 - object)
+    (tiny_stories__story_023_p_playing ?v0 - object ?v1 - object)
+  )
+
+  (:action human_62959785b3ec220a_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?character)
+        (human_62959785b3ec220a_type_location ?to)
+        (human_62959785b3ec220a_type_location ?from)
+        (and
+          (human_62959785b3ec220a_p_player ?character)
+          (human_62959785b3ec220a_p_connected ?to ?from)
+          (human_62959785b3ec220a_p_at ?character ?from)
+          (human_62959785b3ec220a_p_knows ?character)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_at ?character ?from))
+        (human_62959785b3ec220a_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_62959785b3ec220a_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?interrogator)
+        (human_62959785b3ec220a_type_character ?interrogated)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?interrogator)
+          (human_62959785b3ec220a_p_at ?interrogator ?location)
+          (human_62959785b3ec220a_p_at ?interrogated ?location)
+          (human_62959785b3ec220a_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_62959785b3ec220a_p_knows ?interrogator)
+    :agents (?interrogator)
+  )
+
+  (:action human_62959785b3ec220a_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?placer)
+        (human_62959785b3ec220a_type_character ?victim)
+        (human_62959785b3ec220a_type_location ?location)
+        (human_62959785b3ec220a_type_location ?placed)
+        (and
+          (human_62959785b3ec220a_p_henchman ?placer)
+          (human_62959785b3ec220a_p_has ?placer ?victim)
+          (human_62959785b3ec220a_p_at ?placer ?location)
+          (human_62959785b3ec220a_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_has ?placer ?victim))
+        (human_62959785b3ec220a_p_at ?victim ?placed)
+        (human_62959785b3ec220a_p_captured ?victim)
+      )
+    :agents (?placer)
+  )
+
+  (:action human_62959785b3ec220a_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?saver)
+        (human_62959785b3ec220a_type_character ?saved)
+        (human_62959785b3ec220a_type_character ?notsaved)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?saver)
+          (human_62959785b3ec220a_p_at ?saver ?location)
+          (human_62959785b3ec220a_p_at ?saved ?location)
+          (human_62959785b3ec220a_p_captured ?saved)
+          (human_62959785b3ec220a_p_captured ?notsaved)
+          (not (human_62959785b3ec220a_p_at ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_62959785b3ec220a_p_saved ?saved ?saver)
+        (not (human_62959785b3ec220a_p_alive ?notsaved))
+      )
+    :agents (?saver)
+  )
+
+  (:action tiny_stories__story_023_a_play
+    :parameters (?character - object ?animal - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_type_location ?place)
+        (and
+          (tiny_stories__story_023_p_at ?character ?place)
+          (tiny_stories__story_023_p_at ?animal ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_023_p_playing ?character ?animal)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_stop-playing
+    :parameters (?character - object ?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_p_playing ?character ?animal)
+      )
+    :effect
+      (not (tiny_stories__story_023_p_playing ?character ?animal))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_move
+    :parameters (?object - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_object ?object)
+        (tiny_stories__story_023_type_location ?from)
+        (tiny_stories__story_023_type_location ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_023_p_at ?object ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_023_p_at ?object ?from))
+        (tiny_stories__story_023_p_at ?object ?to)
+      )
+    :agents (?object)
+  )
+
+  (:action tiny_stories__story_023_a_can-run
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-run ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_can-fly
+    :parameters (?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_animal ?animal)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-fly ?animal)
+    :agents (?animal)
+  )
+)

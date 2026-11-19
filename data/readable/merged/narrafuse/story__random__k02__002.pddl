@@ -1,0 +1,171 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_069_o_inner-zone - object writing_prompts__wp_069_o_outer-zone - object writing_prompts__wp_069_o_edge-zone - object)
+  (:predicates
+    (tiny_stories__story_003_active)
+    (tiny_stories__story_003_type_character ?x - object)
+    (tiny_stories__story_003_type_object ?x - object)
+    (tiny_stories__story_003_p_broken-pedal ?v0 - object)
+    (tiny_stories__story_003_p_fixed-pedal ?v0 - object)
+    (tiny_stories__story_003_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_003_p_at-shop ?v0 - object)
+    (tiny_stories__story_003_p_happy ?v0 - object)
+    (tiny_stories__story_003_p_flying ?v0 - object)
+    (writing_prompts__wp_069_active)
+    (writing_prompts__wp_069_type_object ?x - object)
+    (writing_prompts__wp_069_type_zone ?x - object)
+    (writing_prompts__wp_069_p_habitable ?v0 - object)
+    (writing_prompts__wp_069_p_supports-life ?v0 - object)
+    (writing_prompts__wp_069_p_hot ?v0 - object)
+    (writing_prompts__wp_069_p_cold ?v0 - object)
+    (writing_prompts__wp_069_p_gaseous-state ?v0 - object)
+    (writing_prompts__wp_069_p_liquid-state ?v0 - object)
+    (writing_prompts__wp_069_p_solar-wind ?v0 - object)
+  )
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (not (writing_prompts__wp_069_p_supports-life ?zone)) (writing_prompts__wp_069_p_hot ?zone))) :implies (writing_prompts__wp_069_p_supports-life ?zone))
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (writing_prompts__wp_069_p_supports-life ?zone) (writing_prompts__wp_069_p_cold ?zone))) :implies (not (writing_prompts__wp_069_p_supports-life ?zone)))
+
+  (:action tiny_stories__story_003_a_go-to-shop
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_003_active)
+        (tiny_stories__story_003_type_character ?character)
+        (not (tiny_stories__story_003_p_at-shop ?character))
+      )
+    :effect
+      (tiny_stories__story_003_p_at-shop ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_003_a_fix-pedal
+    :parameters (?character - object ?bike - object)
+    :precondition
+      (and
+        (tiny_stories__story_003_active)
+        (tiny_stories__story_003_type_character ?character)
+        (tiny_stories__story_003_type_object ?bike)
+        (and
+          (tiny_stories__story_003_p_at-shop ?character)
+          (tiny_stories__story_003_p_has ?character ?bike)
+          (tiny_stories__story_003_p_broken-pedal ?bike)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_003_p_broken-pedal ?bike))
+        (tiny_stories__story_003_p_fixed-pedal ?bike)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_003_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_003_active)
+        (tiny_stories__story_003_type_character ?character)
+        (not (tiny_stories__story_003_p_happy ?character))
+      )
+    :effect
+      (tiny_stories__story_003_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_003_a_start-flying
+    :parameters (?bike - object)
+    :precondition
+      (and
+        (tiny_stories__story_003_active)
+        (tiny_stories__story_003_type_object ?bike)
+        (and
+          (tiny_stories__story_003_p_fixed-pedal ?bike)
+          (not (tiny_stories__story_003_p_flying ?bike))
+        )
+      )
+    :effect
+      (tiny_stories__story_003_p_flying ?bike)
+  )
+
+  (:action writing_prompts__wp_069_a_heat-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_hot ?zone))
+          (writing_prompts__wp_069_p_habitable ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_hot ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_cool-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_cold ?zone))
+          (not (writing_prompts__wp_069_p_habitable ?zone))
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_cold ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_gaseous-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+          (writing_prompts__wp_069_p_liquid-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_gaseous-state ?zone)
+        (not (writing_prompts__wp_069_p_liquid-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_liquid-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_liquid-state ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_liquid-state ?zone)
+        (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_solar-wind-effect
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_solar-wind ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_solar-wind ?zone)
+  )
+)

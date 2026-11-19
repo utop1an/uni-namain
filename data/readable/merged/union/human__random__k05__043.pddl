@@ -1,0 +1,737 @@
+(define (domain revised_merged)
+  (:requirements :adl :disjunctive-preconditions :domain-axioms :equality :intentionality :negative-preconditions :strips :typing :universal-preconditions)
+  (:types)
+  (:constants human_8fa5775aae174731_o_ark - object human_df5671d8ba8d67d9_o_three - object human_df5671d8ba8d67d9_o_zero - object)
+  (:predicates
+    (human_4d95b598471c21ee_active)
+    (human_4d95b598471c21ee_type_book ?x - object)
+    (human_4d95b598471c21ee_type_character ?x - object)
+    (human_4d95b598471c21ee_type_item ?x - object)
+    (human_4d95b598471c21ee_type_location ?x - object)
+    (human_4d95b598471c21ee_type_object ?x - object)
+    (human_4d95b598471c21ee_type_ring ?x - object)
+    (human_4d95b598471c21ee_type_sword ?x - object)
+    (human_4d95b598471c21ee_type_thing ?x - object)
+    (human_4d95b598471c21ee_p_player ?v0 - object)
+    (human_4d95b598471c21ee_p_at ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_has ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_asleep ?v0 - object)
+    (human_4d95b598471c21ee_p_connected ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_enchanted ?v0 - object)
+    (human_4d95b598471c21ee_p_is ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_active)
+    (human_62959785b3ec220a_type_character ?x - object)
+    (human_62959785b3ec220a_type_location ?x - object)
+    (human_62959785b3ec220a_type_object ?x - object)
+    (human_62959785b3ec220a_type_thing ?x - object)
+    (human_62959785b3ec220a_p_player ?v0 - object)
+    (human_62959785b3ec220a_p_at ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_has ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_connected ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_apprehended ?v0 - object)
+    (human_62959785b3ec220a_p_alive ?v0 - object)
+    (human_62959785b3ec220a_p_saved ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_knows ?v0 - object)
+    (human_62959785b3ec220a_p_captured ?v0 - object)
+    (human_62959785b3ec220a_p_henchman ?v0 - object)
+    (human_67ab241b327ccef0_active)
+    (human_67ab241b327ccef0_type_character ?x - object)
+    (human_67ab241b327ccef0_type_key ?x - object)
+    (human_67ab241b327ccef0_type_letter ?x - object)
+    (human_67ab241b327ccef0_type_object ?x - object)
+    (human_67ab241b327ccef0_type_room ?x - object)
+    (human_67ab241b327ccef0_type_star ?x - object)
+    (human_67ab241b327ccef0_type_thing ?x - object)
+    (human_67ab241b327ccef0_p_locked ?v0 - object)
+    (human_67ab241b327ccef0_p_at ?v0 - object ?v1 - object)
+    (human_67ab241b327ccef0_p_unlocked-by ?v0 - object ?v1 - object)
+    (human_67ab241b327ccef0_p_in ?v0 - object ?v1 - object)
+    (human_67ab241b327ccef0_p_hidden ?v0 - object)
+    (human_67ab241b327ccef0_p_has ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_active)
+    (human_8fa5775aae174731_type_character ?x - object)
+    (human_8fa5775aae174731_type_item ?x - object)
+    (human_8fa5775aae174731_type_object ?x - object)
+    (human_8fa5775aae174731_type_place ?x - object)
+    (human_8fa5775aae174731_type_weapon ?x - object)
+    (human_8fa5775aae174731_p_open ?v0 - object)
+    (human_8fa5775aae174731_p_alive ?v0 - object)
+    (human_8fa5775aae174731_p_armed ?v0 - object)
+    (human_8fa5775aae174731_p_burried ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_p_knows-location ?v0 - object ?v1 - object ?v2 - object)
+    (human_8fa5775aae174731_p_at ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_p_has ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_active)
+    (human_df5671d8ba8d67d9_type_character ?x - object)
+    (human_df5671d8ba8d67d9_type_doctor ?x - object)
+    (human_df5671d8ba8d67d9_type_drugloc ?x - object)
+    (human_df5671d8ba8d67d9_type_emergencyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_exteriorloc ?x - object)
+    (human_df5671d8ba8d67d9_type_family ?x - object)
+    (human_df5671d8ba8d67d9_type_familyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_generalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_intern ?x - object)
+    (human_df5671d8ba8d67d9_type_level ?x - object)
+    (human_df5671d8ba8d67d9_type_location ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalcharacter ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_nurse ?x - object)
+    (human_df5671d8ba8d67d9_type_object ?x - object)
+    (human_df5671d8ba8d67d9_type_patient ?x - object)
+    (human_df5671d8ba8d67d9_type_staffloc ?x - object)
+    (human_df5671d8ba8d67d9_type_symptom ?x - object)
+    (human_df5671d8ba8d67d9_type_treatment ?x - object)
+    (human_df5671d8ba8d67d9_p_the-doctor ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-treating ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+    (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+    (human_df5671d8ba8d67d9_p_has-symptom ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_conscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_unconscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_alive ?v0 - object)
+    (human_df5671d8ba8d67d9_p_patient-room ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_occupied ?v0 - object)
+    (human_df5671d8ba8d67d9_p_at ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-for ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_male ?v0 - object)
+    (human_df5671d8ba8d67d9_p_female ?v0 - object)
+    (human_df5671d8ba8d67d9_p_hospitalised ?v0 - object)
+    (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_receiving-treatment ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_level-of-work ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_connected ?v0 - object ?v1 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (not (human_8fa5775aae174731_p_armed ?character)) (exists (?w - object) (and (human_8fa5775aae174731_type_weapon ?w) (human_8fa5775aae174731_p_has ?character ?w))))) :implies (human_8fa5775aae174731_p_armed ?character))
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (human_8fa5775aae174731_p_armed ?character) (forall (?w - object) (or (not (human_8fa5775aae174731_type_weapon ?w)) (not (human_8fa5775aae174731_p_has ?character ?w)))))) :implies (not (human_8fa5775aae174731_p_armed ?character)))
+
+  (:action human_4d95b598471c21ee_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?character)
+        (human_4d95b598471c21ee_type_location ?to)
+        (human_4d95b598471c21ee_type_location ?from)
+        (and
+          (human_4d95b598471c21ee_p_connected ?to ?from)
+          (not (human_4d95b598471c21ee_p_asleep ?character))
+          (human_4d95b598471c21ee_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?character ?from))
+        (human_4d95b598471c21ee_p_at ?character ?to)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?waker)
+        (human_4d95b598471c21ee_type_character ?woken)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?waker ?location)
+          (human_4d95b598471c21ee_p_at ?woken ?location)
+          (human_4d95b598471c21ee_p_asleep ?woken)
+          (not (human_4d95b598471c21ee_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_asleep ?woken))
+  )
+
+  (:action human_4d95b598471c21ee_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?taker)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?taker ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?taker))
+          (not (human_4d95b598471c21ee_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?thing ?location))
+        (human_4d95b598471c21ee_p_has ?taker ?thing)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?caster)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_book ?book)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?caster ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?caster))
+          (human_4d95b598471c21ee_p_has ?caster ?book)
+          (human_4d95b598471c21ee_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_enchanted ?thing))
+  )
+
+  (:action human_62959785b3ec220a_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?character)
+        (human_62959785b3ec220a_type_location ?to)
+        (human_62959785b3ec220a_type_location ?from)
+        (and
+          (human_62959785b3ec220a_p_player ?character)
+          (human_62959785b3ec220a_p_connected ?to ?from)
+          (human_62959785b3ec220a_p_at ?character ?from)
+          (human_62959785b3ec220a_p_knows ?character)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_at ?character ?from))
+        (human_62959785b3ec220a_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_62959785b3ec220a_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?interrogator)
+        (human_62959785b3ec220a_type_character ?interrogated)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?interrogator)
+          (human_62959785b3ec220a_p_at ?interrogator ?location)
+          (human_62959785b3ec220a_p_at ?interrogated ?location)
+          (human_62959785b3ec220a_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_62959785b3ec220a_p_knows ?interrogator)
+    :agents (?interrogator)
+  )
+
+  (:action human_62959785b3ec220a_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?placer)
+        (human_62959785b3ec220a_type_character ?victim)
+        (human_62959785b3ec220a_type_location ?location)
+        (human_62959785b3ec220a_type_location ?placed)
+        (and
+          (human_62959785b3ec220a_p_henchman ?placer)
+          (human_62959785b3ec220a_p_has ?placer ?victim)
+          (human_62959785b3ec220a_p_at ?placer ?location)
+          (human_62959785b3ec220a_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_has ?placer ?victim))
+        (human_62959785b3ec220a_p_at ?victim ?placed)
+        (human_62959785b3ec220a_p_captured ?victim)
+      )
+    :agents (?placer)
+  )
+
+  (:action human_62959785b3ec220a_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?saver)
+        (human_62959785b3ec220a_type_character ?saved)
+        (human_62959785b3ec220a_type_character ?notsaved)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?saver)
+          (human_62959785b3ec220a_p_at ?saver ?location)
+          (human_62959785b3ec220a_p_at ?saved ?location)
+          (human_62959785b3ec220a_p_captured ?saved)
+          (human_62959785b3ec220a_p_captured ?notsaved)
+          (not (human_62959785b3ec220a_p_at ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_62959785b3ec220a_p_saved ?saved ?saver)
+        (not (human_62959785b3ec220a_p_alive ?notsaved))
+      )
+    :agents (?saver)
+  )
+
+  (:action human_67ab241b327ccef0_a_enter
+    :parameters (?character - object ?roomfrom - object ?roomto - object)
+    :precondition
+      (and
+        (human_67ab241b327ccef0_active)
+        (human_67ab241b327ccef0_type_character ?character)
+        (human_67ab241b327ccef0_type_room ?roomfrom)
+        (human_67ab241b327ccef0_type_room ?roomto)
+        (and
+          (not (human_67ab241b327ccef0_p_locked ?roomto))
+          (human_67ab241b327ccef0_p_at ?character ?roomfrom)
+        )
+      )
+    :effect
+      (and
+        (not (human_67ab241b327ccef0_p_at ?character ?roomfrom))
+        (human_67ab241b327ccef0_p_at ?character ?roomto)
+      )
+  )
+
+  (:action human_67ab241b327ccef0_a_search-for
+    :parameters (?character - object ?thing - object ?room - object)
+    :precondition
+      (and
+        (human_67ab241b327ccef0_active)
+        (human_67ab241b327ccef0_type_character ?character)
+        (human_67ab241b327ccef0_type_thing ?thing)
+        (human_67ab241b327ccef0_type_room ?room)
+        (and
+          (human_67ab241b327ccef0_p_at ?character ?room)
+          (human_67ab241b327ccef0_p_in ?thing ?room)
+        )
+      )
+    :effect
+      (and
+        (human_67ab241b327ccef0_p_has ?character ?thing)
+        (not (human_67ab241b327ccef0_p_in ?thing ?room))
+      )
+  )
+
+  (:action human_67ab241b327ccef0_a_unlock
+    :parameters (?character - object ?key - object ?room - object)
+    :precondition
+      (and
+        (human_67ab241b327ccef0_active)
+        (human_67ab241b327ccef0_type_character ?character)
+        (human_67ab241b327ccef0_type_key ?key)
+        (human_67ab241b327ccef0_type_room ?room)
+        (and
+          (human_67ab241b327ccef0_p_locked ?room)
+          (human_67ab241b327ccef0_p_unlocked-by ?room ?key)
+          (human_67ab241b327ccef0_p_has ?character ?key)
+        )
+      )
+    :effect
+      (not (human_67ab241b327ccef0_p_locked ?room))
+  )
+
+  (:action human_8fa5775aae174731_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_place ?from)
+        (human_8fa5775aae174731_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_at ?character ?from))
+        (human_8fa5775aae174731_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_excavate
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_at ?character ?place)
+          (human_8fa5775aae174731_p_burried ?item ?place)
+          (human_8fa5775aae174731_p_knows-location ?character ?item ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_burried ?item ?place))
+        (human_8fa5775aae174731_p_has ?character ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_give
+    :parameters (?giver - object ?item - object ?receiver - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?giver)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?receiver)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?giver ?receiver))
+          (human_8fa5775aae174731_p_alive ?giver)
+          (human_8fa5775aae174731_p_at ?giver ?place)
+          (human_8fa5775aae174731_p_has ?giver ?item)
+          (human_8fa5775aae174731_p_alive ?receiver)
+          (human_8fa5775aae174731_p_at ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?giver ?item))
+        (human_8fa5775aae174731_p_has ?receiver ?item)
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action human_8fa5775aae174731_a_kill
+    :parameters (?killer - object ?weapon - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?killer)
+        (human_8fa5775aae174731_type_weapon ?weapon)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (human_8fa5775aae174731_p_alive ?killer)
+          (human_8fa5775aae174731_p_at ?killer ?place)
+          (human_8fa5775aae174731_p_has ?killer ?weapon)
+          (human_8fa5775aae174731_p_alive ?victim)
+          (human_8fa5775aae174731_p_at ?victim ?place)
+        )
+      )
+    :effect
+      (not (human_8fa5775aae174731_p_alive ?victim))
+    :agents (?killer)
+  )
+
+  (:action human_8fa5775aae174731_a_take
+    :parameters (?taker - object ?item - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?taker)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?taker ?victim))
+          (human_8fa5775aae174731_p_alive ?taker)
+          (human_8fa5775aae174731_p_at ?taker ?place)
+          (or
+            (not (human_8fa5775aae174731_p_alive ?victim))
+            (and
+              (human_8fa5775aae174731_p_armed ?taker)
+              (not (human_8fa5775aae174731_p_armed ?victim))
+            )
+          )
+          (human_8fa5775aae174731_p_at ?victim ?place)
+          (human_8fa5775aae174731_p_has ?victim ?item)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?victim ?item))
+        (human_8fa5775aae174731_p_has ?taker ?item)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_8fa5775aae174731_a_open-ark
+    :parameters (?character - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (and
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_has ?character human_8fa5775aae174731_o_ark)
+        )
+      )
+    :effect
+      (and
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+        (not (human_8fa5775aae174731_p_alive ?character))
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_close-ark
+    :parameters ()
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+      )
+    :effect
+      (not (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_admit
+    :parameters (?d - object ?p - object ?l - object ?w1 - object ?w2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w1)
+        (human_df5671d8ba8d67d9_type_level ?w2)
+        (and
+          (human_df5671d8ba8d67d9_p_alive ?d)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (not (human_df5671d8ba8d67d9_p_occupied ?l))
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?p))
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1)
+          (human_df5671d8ba8d67d9_p_connected ?w1 ?w2)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+        (human_df5671d8ba8d67d9_p_hospitalised ?p)
+        (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        (human_df5671d8ba8d67d9_p_occupied ?l)
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d ?w2)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_walk
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_character ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (and
+          (human_df5671d8ba8d67d9_p_at ?c ?l1)
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?c))
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_at ?c ?l2)
+        (not (human_df5671d8ba8d67d9_p_at ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_move
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (human_df5671d8ba8d67d9_p_at ?c ?l1)
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_at ?c ?l2)
+        (not (human_df5671d8ba8d67d9_p_at ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (not (= ?w human_df5671d8ba8d67d9_o_three))
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+        )
+      )
+    :effect
+      (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+  )
+
+  (:action human_df5671d8ba8d67d9_a_get-work-help
+    :parameters (?d - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_level ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?l)
+          (not (= ?l human_df5671d8ba8d67d9_o_zero))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?l))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d human_df5671d8ba8d67d9_o_zero)
+        (not (human_df5671d8ba8d67d9_p_the-doctor-overworked))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_mistake-assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (= ?w human_df5671d8ba8d67d9_o_three)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?p ?t)
+        (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+        (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_treat
+    :parameters (?d - object ?p - object ?t - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t))
+        (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_recover
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_has-symptom ?p ?s))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_die
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_alive ?p))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_lose-consciousness
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_conscious ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_unconscious ?p)
+        (not (human_df5671d8ba8d67d9_p_conscious ?p))
+      )
+  )
+)

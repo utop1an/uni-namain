@@ -1,0 +1,144 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_070_active)
+    (tiny_stories__story_070_type_character ?x - object)
+    (tiny_stories__story_070_type_item ?x - object)
+    (tiny_stories__story_070_type_object ?x - object)
+    (tiny_stories__story_070_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_070_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_070_p_clean ?v0 - object)
+    (tiny_stories__story_070_p_steal-intention ?v0 - object ?v1 - object)
+    (writing_prompts__wp_020_active)
+    (writing_prompts__wp_020_type_character ?x - object)
+    (writing_prompts__wp_020_type_object ?x - object)
+    (writing_prompts__wp_020_p_hurting ?v0 - object)
+    (writing_prompts__wp_020_p_struggling ?v0 - object)
+    (writing_prompts__wp_020_p_loved ?v0 - object ?v1 - object)
+    (writing_prompts__wp_020_p_letting-go ?v0 - object ?v1 - object)
+    (writing_prompts__wp_020_p_ready ?v0 - object)
+    (writing_prompts__wp_020_p_better-times ?v0 - object)
+  )
+
+  (:action tiny_stories__story_070_a_apologize
+    :parameters (?apologizer - object ?apologized - object)
+    :precondition
+      (and
+        (tiny_stories__story_070_active)
+        (tiny_stories__story_070_type_character ?apologizer)
+        (tiny_stories__story_070_type_character ?apologized)
+        (and
+          (not (= ?apologizer ?apologized))
+          (not (tiny_stories__story_070_p_friends ?apologizer ?apologized))
+        )
+      )
+    :effect
+      (tiny_stories__story_070_p_friends ?apologizer ?apologized)
+    :agents (?apologizer)
+  )
+
+  (:action tiny_stories__story_070_a_try-steal
+    :parameters (?stealer - object ?item - object ?owner - object)
+    :precondition
+      (and
+        (tiny_stories__story_070_active)
+        (tiny_stories__story_070_type_character ?stealer)
+        (tiny_stories__story_070_type_item ?item)
+        (tiny_stories__story_070_type_character ?owner)
+        (and
+          (not (= ?stealer ?owner))
+          (tiny_stories__story_070_p_has ?owner ?item)
+          (tiny_stories__story_070_p_steal-intention ?stealer ?item)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_070_p_steal-intention ?stealer ?item))
+        (not (tiny_stories__story_070_p_friends ?stealer ?owner))
+        (tiny_stories__story_070_p_has ?stealer ?item)
+        (not (tiny_stories__story_070_p_has ?owner ?item))
+      )
+    :agents (?stealer)
+  )
+
+  (:action tiny_stories__story_070_a_clean-item
+    :parameters (?cleaner - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_070_active)
+        (tiny_stories__story_070_type_character ?cleaner)
+        (tiny_stories__story_070_type_item ?item)
+        (and
+          (not (tiny_stories__story_070_p_clean ?item))
+          (tiny_stories__story_070_p_has ?cleaner ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_070_p_clean ?item)
+    :agents (?cleaner)
+  )
+
+  (:action tiny_stories__story_070_a_drop-in-puddle
+    :parameters (?dropper - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_070_active)
+        (tiny_stories__story_070_type_character ?dropper)
+        (tiny_stories__story_070_type_item ?item)
+        (and
+          (tiny_stories__story_070_p_has ?dropper ?item)
+          (tiny_stories__story_070_p_clean ?item)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_070_p_clean ?item))
+    :agents (?dropper)
+  )
+
+  (:action writing_prompts__wp_020_a_acknowledge-pain
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character)
+        (and
+          (writing_prompts__wp_020_p_hurting ?character)
+          (writing_prompts__wp_020_p_struggling ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_020_p_struggling ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_020_a_let-go
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character1)
+        (writing_prompts__wp_020_type_character ?character2)
+        (and
+          (writing_prompts__wp_020_p_loved ?character1 ?character2)
+          (not (writing_prompts__wp_020_p_ready ?character2))
+        )
+      )
+    :effect
+      (writing_prompts__wp_020_p_letting-go ?character1 ?character2)
+    :agents (?character1)
+  )
+
+  (:action writing_prompts__wp_020_a_believe-in-better-times
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character)
+        (writing_prompts__wp_020_p_hurting ?character)
+      )
+    :effect
+      (writing_prompts__wp_020_p_better-times ?character)
+    :agents (?character)
+  )
+)

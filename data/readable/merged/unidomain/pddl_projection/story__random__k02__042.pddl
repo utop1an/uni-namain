@@ -1,0 +1,196 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (writing_prompts__wp_037_active)
+    (writing_prompts__wp_037_type_character ?x - object)
+    (writing_prompts__wp_037_type_object ?x - object)
+    (writing_prompts__wp_064_active)
+    (writing_prompts__wp_064_type_character ?x - object)
+    (writing_prompts__wp_064_type_item ?x - object)
+    (writing_prompts__wp_064_type_object ?x - object)
+    (writing_prompts__wp_064_type_place ?x - object)
+    (knows ?p0 ?p1)
+    (together ?p0 ?p1)
+    (missing ?p0)
+    (relationship ?p0 ?p1)
+    (searching ?p0 ?p1)
+    (found ?p0 ?p1)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (alive ?p0)
+    (delivered ?p0)
+  )
+
+  (:action start-search
+    :parameters (?searcher ?target)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_037_active)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+        )
+        (and
+          (not (= ?searcher ?target))
+          (not (searching ?searcher ?target))
+          (missing ?target)
+        )
+      )
+    :effect
+      (searching ?searcher ?target)
+  )
+
+  (:action stop-search
+    :parameters (?searcher ?target)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_037_active)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+        )
+        (searching ?searcher ?target)
+      )
+    :effect
+      (not (searching ?searcher ?target))
+  )
+
+  (:action find
+    :parameters (?searcher ?target)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_037_active)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+          (writing_prompts__wp_037_type_character ?searcher)
+          (writing_prompts__wp_037_type_character ?target)
+        )
+        (and
+          (searching ?searcher ?target)
+          (missing ?target)
+        )
+      )
+    :effect
+      (and
+        (not (missing ?target))
+        (found ?searcher ?target)
+      )
+  )
+
+  (:action start-relationship
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_037_active)
+          (writing_prompts__wp_037_type_character ?character1)
+          (writing_prompts__wp_037_type_character ?character2)
+          (writing_prompts__wp_037_type_character ?character1)
+          (writing_prompts__wp_037_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (not (relationship ?character1 ?character2))
+          (knows ?character1 ?character2)
+        )
+      )
+    :effect
+      (relationship ?character1 ?character2)
+  )
+
+  (:action end-relationship
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_037_active)
+          (writing_prompts__wp_037_type_character ?character1)
+          (writing_prompts__wp_037_type_character ?character2)
+          (writing_prompts__wp_037_type_character ?character1)
+          (writing_prompts__wp_037_type_character ?character2)
+        )
+        (relationship ?character1 ?character2)
+      )
+    :effect
+      (not (relationship ?character1 ?character2))
+  )
+
+  (:action travel
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_064_active)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_place ?from)
+          (writing_prompts__wp_064_type_place ?to)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_place ?from)
+          (writing_prompts__wp_064_type_place ?to)
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action deliver
+    :parameters (?character ?item ?destination)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_064_active)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_item ?item)
+          (writing_prompts__wp_064_type_place ?destination)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_item ?item)
+          (writing_prompts__wp_064_type_place ?destination)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?destination)
+          (has ?character ?item)
+        )
+      )
+    :effect
+      (and
+        (not (has ?character ?item))
+        (delivered ?item)
+      )
+  )
+
+  (:action pick-up
+    :parameters (?character ?item ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_064_active)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_item ?item)
+          (writing_prompts__wp_064_type_place ?place)
+          (writing_prompts__wp_064_type_character ?character)
+          (writing_prompts__wp_064_type_item ?item)
+          (writing_prompts__wp_064_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (has ?character ?item)
+  )
+)

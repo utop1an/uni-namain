@@ -1,0 +1,208 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_014_active)
+    (tiny_stories__story_014_type_character ?x - object)
+    (tiny_stories__story_014_type_object ?x - object)
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (at-park ?p0)
+    (on-swing ?p0)
+    (swinging ?p0)
+    (sharing ?p0 ?p1)
+    (happy ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (party ?p0)
+    (cake ?p0)
+  )
+  (:constants tiny_stories__story_060_o_vase - object)
+
+  (:action go-to-park
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (not (at-park ?character))
+      )
+    :effect
+      (at-park ?character)
+  )
+
+  (:action get-on-swing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (at-park ?character)
+          (not (on-swing ?character))
+        )
+      )
+    :effect
+      (on-swing ?character)
+  )
+
+  (:action start-swinging
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (on-swing ?character)
+          (not (swinging ?character))
+        )
+      )
+    :effect
+      (swinging ?character)
+  )
+
+  (:action share-swing
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (swinging ?character1)
+          (swinging ?character2)
+        )
+      )
+    :effect
+      (sharing ?character1 ?character2)
+  )
+
+  (:action get-off-swing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (on-swing ?character)
+          (swinging ?character)
+        )
+      )
+    :effect
+      (and
+        (not (on-swing ?character))
+        (not (swinging ?character))
+        (happy ?character)
+      )
+  )
+
+  (:action thank
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (sharing ?character1 ?character2)
+        )
+      )
+    :effect
+      (happy ?character1)
+  )
+
+  (:action make-cake
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_060_active)
+          (tiny_stories__story_060_type_character ?character)
+          (tiny_stories__story_060_type_object ?place)
+          (tiny_stories__story_060_type_character ?character)
+        )
+        (happy ?character)
+      )
+    :effect
+      (cake ?place)
+  )
+
+  (:action put
+    :parameters (?character ?item ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_060_active)
+          (tiny_stories__story_060_type_character ?character)
+          (tiny_stories__story_060_type_item ?item)
+          (tiny_stories__story_060_type_object ?place)
+          (tiny_stories__story_060_type_character ?character)
+          (tiny_stories__story_060_type_item ?item)
+        )
+        (and
+          (happy ?character)
+          (has ?character ?item)
+        )
+      )
+    :effect
+      (at ?item ?place)
+  )
+
+  (:action start-party
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_060_active)
+          (tiny_stories__story_060_type_character ?character)
+          (tiny_stories__story_060_type_object ?place)
+          (tiny_stories__story_060_type_character ?character)
+        )
+        (happy ?character)
+      )
+    :effect
+      (party ?place)
+  )
+
+  (:action enjoy-party
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_060_active)
+          (tiny_stories__story_060_type_character ?character)
+          (tiny_stories__story_060_type_object ?place)
+          (tiny_stories__story_060_type_character ?character)
+        )
+        (and
+          (happy ?character)
+          (party ?place)
+        )
+      )
+    :effect
+      (happy ?character)
+  )
+)

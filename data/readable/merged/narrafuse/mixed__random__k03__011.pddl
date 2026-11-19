@@ -1,0 +1,422 @@
+(define (domain revised_merged)
+  (:requirements :adl :equality :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:predicates
+    (human_230a940d5d5977a6_active)
+    (human_230a940d5d5977a6_type_actor ?x - object)
+    (human_230a940d5d5977a6_type_allpolice ?x - object)
+    (human_230a940d5d5977a6_type_car ?x - object)
+    (human_230a940d5d5977a6_type_citizen ?x - object)
+    (human_230a940d5d5977a6_type_crime ?x - object)
+    (human_230a940d5d5977a6_type_detective ?x - object)
+    (human_230a940d5d5977a6_type_inspector ?x - object)
+    (human_230a940d5d5977a6_type_item ?x - object)
+    (human_230a940d5d5977a6_type_motorbike ?x - object)
+    (human_230a940d5d5977a6_type_object ?x - object)
+    (human_230a940d5d5977a6_type_place ?x - object)
+    (human_230a940d5d5977a6_type_police ?x - object)
+    (human_230a940d5d5977a6_type_trafficcop ?x - object)
+    (human_230a940d5d5977a6_type_vehicle ?x - object)
+    (human_230a940d5d5977a6_p_arrester ?v0 - object)
+    (human_230a940d5d5977a6_p_arrester-at ?v0 - object)
+    (shared_p_consensus_c596b8d93e87e916 ?v0 - object ?v1 - object)
+    (shared_p_consensus_c0dc5b4720bdfb8a ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_alive ?v0 - object)
+    (human_230a940d5d5977a6_p_under-arrest ?v0 - object)
+    (human_230a940d5d5977a6_p_angry ?v0 - object)
+    (human_230a940d5d5977a6_p_knows-clue ?v0 - object ?v1 - object ?v2 - object)
+    (human_230a940d5d5977a6_p_suspect ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_murder-clue ?v0 - object)
+    (human_230a940d5d5977a6_p_clue ?v0 - object ?v1 - object ?v2 - object)
+    (human_230a940d5d5977a6_p_is-basketball-place ?v0 - object)
+    (human_230a940d5d5977a6_p_is-theft ?v0 - object)
+    (human_230a940d5d5977a6_p_is-arrest-place ?v0 - object)
+    (human_230a940d5d5977a6_p_is-murder ?v0 - object)
+    (human_230a940d5d5977a6_p_has-car ?v0 - object ?v1 - object)
+    (human_230a940d5d5977a6_p_working ?v0 - object)
+    (tiny_stories__story_094_active)
+    (tiny_stories__story_094_type_character ?x - object)
+    (tiny_stories__story_094_type_item ?x - object)
+    (tiny_stories__story_094_type_object ?x - object)
+    (tiny_stories__story_094_type_place ?x - object)
+    (tiny_stories__story_094_type_toy ?x - object)
+    (tiny_stories__story_094_p_happy ?v0 - object)
+    (tiny_stories__story_094_p_sad ?v0 - object)
+    (tiny_stories__story_094_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_active)
+    (writing_prompts__wp_045_type_box ?x - object)
+    (writing_prompts__wp_045_type_character ?x - object)
+    (writing_prompts__wp_045_type_object ?x - object)
+    (writing_prompts__wp_045_type_place ?x - object)
+    (writing_prompts__wp_045_p_in-box ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_p_nervous ?v0 - object)
+    (writing_prompts__wp_045_p_composed ?v0 - object)
+    (writing_prompts__wp_045_p_noticed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_p_opened ?v0 - object)
+  )
+
+  (:action human_230a940d5d5977a6_a_travel
+    :parameters (?a - object ?c - object ?p1 - object ?p2 - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_actor ?a)
+        (human_230a940d5d5977a6_type_car ?c)
+        (human_230a940d5d5977a6_type_place ?p1)
+        (human_230a940d5d5977a6_type_place ?p2)
+        (and
+          (human_230a940d5d5977a6_p_working ?c)
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p1)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_has-car ?a ?c)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_c596b8d93e87e916 ?a ?p2)
+        (not (shared_p_consensus_c596b8d93e87e916 ?a ?p1))
+        (when
+          (human_230a940d5d5977a6_p_arrester ?a)
+          (and
+            (human_230a940d5d5977a6_p_arrester-at ?p2)
+            (not (human_230a940d5d5977a6_p_arrester-at ?p1))
+          )
+        )
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_arrest
+    :parameters (?p - object ?a - object ?p1 - object ?p2 - object ?c - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?p)
+        (human_230a940d5d5977a6_type_actor ?a)
+        (human_230a940d5d5977a6_type_place ?p1)
+        (human_230a940d5d5977a6_type_place ?p2)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?p ?p1)
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p1)
+          (not (= ?p1 ?p2))
+          (human_230a940d5d5977a6_p_is-arrest-place ?p2)
+          (human_230a940d5d5977a6_p_alive ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_suspect ?a ?c)
+          (human_230a940d5d5977a6_p_arrester ?p)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_c596b8d93e87e916 ?a ?p2)
+        (not (shared_p_consensus_c596b8d93e87e916 ?a ?p1))
+        (shared_p_consensus_c596b8d93e87e916 ?p ?p2)
+        (not (shared_p_consensus_c596b8d93e87e916 ?p ?p1))
+        (human_230a940d5d5977a6_p_under-arrest ?a)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_steal
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (shared_p_consensus_c596b8d93e87e916 ?b ?p)
+          (shared_p_consensus_c0dc5b4720bdfb8a ?b ?i)
+          (not (= ?a ?b))
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_is-theft ?c)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_c0dc5b4720bdfb8a ?a ?i)
+        (not (shared_p_consensus_c0dc5b4720bdfb8a ?b ?i))
+        (human_230a940d5d5977a6_p_angry ?b)
+        (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_play-basketball
+    :parameters (?a - object ?b - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (human_230a940d5d5977a6_p_is-basketball-place ?p)
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (shared_p_consensus_c596b8d93e87e916 ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (not (= ?a ?b))
+        )
+      )
+    :effect
+      (and
+        (not (human_230a940d5d5977a6_p_angry ?a))
+        (not (human_230a940d5d5977a6_p_angry ?b))
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_kill
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_citizen ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (shared_p_consensus_c596b8d93e87e916 ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (not (= ?a ?b))
+          (shared_p_consensus_c0dc5b4720bdfb8a ?a ?i)
+          (human_230a940d5d5977a6_p_is-murder ?c)
+          (not (human_230a940d5d5977a6_p_under-arrest ?a))
+        )
+      )
+    :effect
+      (and
+        (not (human_230a940d5d5977a6_p_alive ?b))
+        (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+      )
+  )
+
+  (:action human_230a940d5d5977a6_a_findclues
+    :parameters (?a - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+  )
+
+  (:action human_230a940d5d5977a6_a_shareclues
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_police ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (shared_p_consensus_c596b8d93e87e916 ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (human_230a940d5d5977a6_p_clue ?c ?i ?p)
+          (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_knows-clue ?b ?c ?i)
+  )
+
+  (:action human_230a940d5d5977a6_a_suspect-of-crime
+    :parameters (?a - object ?b - object ?c - object ?i - object ?p - object)
+    :precondition
+      (and
+        (human_230a940d5d5977a6_active)
+        (human_230a940d5d5977a6_type_police ?a)
+        (human_230a940d5d5977a6_type_citizen ?b)
+        (human_230a940d5d5977a6_type_crime ?c)
+        (human_230a940d5d5977a6_type_item ?i)
+        (human_230a940d5d5977a6_type_place ?p)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?a ?p)
+          (human_230a940d5d5977a6_p_alive ?a)
+          (shared_p_consensus_c596b8d93e87e916 ?b ?p)
+          (human_230a940d5d5977a6_p_alive ?b)
+          (human_230a940d5d5977a6_p_knows-clue ?a ?c ?i)
+          (shared_p_consensus_c0dc5b4720bdfb8a ?b ?i)
+        )
+      )
+    :effect
+      (human_230a940d5d5977a6_p_suspect ?b ?c)
+  )
+
+  (:action tiny_stories__story_094_a_receive-gift
+    :parameters (?receiver - object ?giver - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?receiver)
+        (tiny_stories__story_094_type_character ?giver)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?receiver ?giver))
+          (tiny_stories__story_094_p_happy ?giver)
+          (not (shared_p_consensus_c0dc5b4720bdfb8a ?receiver ?item))
+          (shared_p_consensus_c0dc5b4720bdfb8a ?giver ?item)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_c0dc5b4720bdfb8a ?receiver ?item)
+        (tiny_stories__story_094_p_happy ?receiver)
+      )
+    :agents (?receiver ?giver)
+  )
+
+  (:action tiny_stories__story_094_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_c0dc5b4720bdfb8a ?character ?item)
+          (not (tiny_stories__story_094_p_sad ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_094_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_take-toy
+    :parameters (?taker - object ?victim - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?taker)
+        (tiny_stories__story_094_type_character ?victim)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?taker ?victim))
+          (shared_p_consensus_c0dc5b4720bdfb8a ?victim ?item)
+          (not (shared_p_consensus_c0dc5b4720bdfb8a ?taker ?item))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_c0dc5b4720bdfb8a ?victim ?item))
+        (shared_p_consensus_c0dc5b4720bdfb8a ?taker ?item)
+        (tiny_stories__story_094_p_sad ?victim)
+      )
+    :agents (?taker)
+  )
+
+  (:action tiny_stories__story_094_a_lose-toy
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_c0dc5b4720bdfb8a ?character ?item)
+          (tiny_stories__story_094_p_happy ?character)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_c0dc5b4720bdfb8a ?character ?item))
+        (tiny_stories__story_094_p_sad ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_enter
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_place ?place)
+        (not (shared_p_consensus_c596b8d93e87e916 ?character ?place))
+      )
+    :effect
+      (shared_p_consensus_c596b8d93e87e916 ?character ?place)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_notice
+    :parameters (?character - object ?box - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_box ?box)
+        (writing_prompts__wp_045_type_place ?place)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?character ?place)
+          (shared_p_consensus_c596b8d93e87e916 ?box ?place)
+        )
+      )
+    :effect
+      (writing_prompts__wp_045_p_noticed ?character ?box)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_open-box
+    :parameters (?character - object ?box - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_box ?box)
+        (writing_prompts__wp_045_type_place ?place)
+        (and
+          (shared_p_consensus_c596b8d93e87e916 ?character ?place)
+          (shared_p_consensus_c596b8d93e87e916 ?box ?place)
+          (writing_prompts__wp_045_p_noticed ?character ?box)
+          (not (writing_prompts__wp_045_p_opened ?box))
+        )
+      )
+    :effect
+      (writing_prompts__wp_045_p_opened ?box)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_become-nervous
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+      )
+    :effect
+      (writing_prompts__wp_045_p_nervous ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_become-composed
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+      )
+    :effect
+      (writing_prompts__wp_045_p_composed ?character)
+    :agents (?character)
+  )
+)

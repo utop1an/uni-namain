@@ -1,0 +1,181 @@
+(define (domain revised_merged)
+  (:requirements :adl :disjunctive-preconditions :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:predicates
+    (human_62959785b3ec220a_active)
+    (human_62959785b3ec220a_type_character ?x - object)
+    (human_62959785b3ec220a_type_location ?x - object)
+    (human_62959785b3ec220a_type_object ?x - object)
+    (human_62959785b3ec220a_type_thing ?x - object)
+    (human_62959785b3ec220a_p_player ?v0 - object)
+    (shared_p_consensus_65b4eb6db6bee9d2 ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_has ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_connected ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_apprehended ?v0 - object)
+    (human_62959785b3ec220a_p_alive ?v0 - object)
+    (human_62959785b3ec220a_p_saved ?v0 - object ?v1 - object)
+    (human_62959785b3ec220a_p_knows ?v0 - object)
+    (human_62959785b3ec220a_p_captured ?v0 - object)
+    (human_62959785b3ec220a_p_henchman ?v0 - object)
+    (tiny_stories__story_093_active)
+    (tiny_stories__story_093_type_character ?x - object)
+    (tiny_stories__story_093_type_item ?x - object)
+    (tiny_stories__story_093_type_mop ?x - object)
+    (tiny_stories__story_093_type_object ?x - object)
+    (tiny_stories__story_093_type_place ?x - object)
+    (tiny_stories__story_093_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_093_p_clean ?v0 - object)
+    (tiny_stories__story_093_p_pretty ?v0 - object)
+    (tiny_stories__story_093_p_disgusting ?v0 - object)
+    (tiny_stories__story_093_p_selected ?v0 - object)
+  )
+
+  (:action human_62959785b3ec220a_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?character)
+        (human_62959785b3ec220a_type_location ?to)
+        (human_62959785b3ec220a_type_location ?from)
+        (and
+          (human_62959785b3ec220a_p_player ?character)
+          (human_62959785b3ec220a_p_connected ?to ?from)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?character ?from)
+          (human_62959785b3ec220a_p_knows ?character)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_65b4eb6db6bee9d2 ?character ?from))
+        (shared_p_consensus_65b4eb6db6bee9d2 ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_62959785b3ec220a_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?interrogator)
+        (human_62959785b3ec220a_type_character ?interrogated)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?interrogator)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?interrogator ?location)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?interrogated ?location)
+          (human_62959785b3ec220a_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_62959785b3ec220a_p_knows ?interrogator)
+    :agents (?interrogator)
+  )
+
+  (:action human_62959785b3ec220a_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?placer)
+        (human_62959785b3ec220a_type_character ?victim)
+        (human_62959785b3ec220a_type_location ?location)
+        (human_62959785b3ec220a_type_location ?placed)
+        (and
+          (human_62959785b3ec220a_p_henchman ?placer)
+          (human_62959785b3ec220a_p_has ?placer ?victim)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?placer ?location)
+          (human_62959785b3ec220a_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_62959785b3ec220a_p_has ?placer ?victim))
+        (shared_p_consensus_65b4eb6db6bee9d2 ?victim ?placed)
+        (human_62959785b3ec220a_p_captured ?victim)
+      )
+    :agents (?placer)
+  )
+
+  (:action human_62959785b3ec220a_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_62959785b3ec220a_active)
+        (human_62959785b3ec220a_type_character ?saver)
+        (human_62959785b3ec220a_type_character ?saved)
+        (human_62959785b3ec220a_type_character ?notsaved)
+        (human_62959785b3ec220a_type_location ?location)
+        (and
+          (human_62959785b3ec220a_p_player ?saver)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?saver ?location)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?saved ?location)
+          (human_62959785b3ec220a_p_captured ?saved)
+          (human_62959785b3ec220a_p_captured ?notsaved)
+          (not (shared_p_consensus_65b4eb6db6bee9d2 ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_62959785b3ec220a_p_saved ?saved ?saver)
+        (not (human_62959785b3ec220a_p_alive ?notsaved))
+      )
+    :agents (?saver)
+  )
+
+  (:action tiny_stories__story_093_a_go-to
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_093_active)
+        (tiny_stories__story_093_type_character ?character)
+        (tiny_stories__story_093_type_place ?place)
+        (shared_p_consensus_65b4eb6db6bee9d2 ?character ?place)
+      )
+    :effect
+      (shared_p_consensus_65b4eb6db6bee9d2 ?character ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_093_a_select-mop
+    :parameters (?character - object ?mop - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_093_active)
+        (tiny_stories__story_093_type_character ?character)
+        (tiny_stories__story_093_type_mop ?mop)
+        (tiny_stories__story_093_type_place ?place)
+        (and
+          (shared_p_consensus_65b4eb6db6bee9d2 ?character ?place)
+          (tiny_stories__story_093_p_has ?character ?mop)
+        )
+      )
+    :effect
+      (tiny_stories__story_093_p_selected ?mop)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_093_a_receive-mop
+    :parameters (?character - object ?dog - object ?mop - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_093_active)
+        (tiny_stories__story_093_type_character ?character)
+        (tiny_stories__story_093_type_character ?dog)
+        (tiny_stories__story_093_type_mop ?mop)
+        (tiny_stories__story_093_type_place ?place)
+        (and
+          (shared_p_consensus_65b4eb6db6bee9d2 ?character ?place)
+          (shared_p_consensus_65b4eb6db6bee9d2 ?dog ?place)
+          (tiny_stories__story_093_p_has ?dog ?mop)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_093_p_has ?dog ?mop))
+        (tiny_stories__story_093_p_has ?character ?mop)
+      )
+    :agents (?character)
+  )
+)

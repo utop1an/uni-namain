@@ -1,0 +1,242 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_054_o_crucifix - object writing_prompts__wp_085_o_outside - object)
+  (:predicates
+    (writing_prompts__wp_054_active)
+    (writing_prompts__wp_054_type_character ?x - object)
+    (writing_prompts__wp_054_type_item ?x - object)
+    (writing_prompts__wp_054_type_object ?x - object)
+    (writing_prompts__wp_054_type_place ?x - object)
+    (writing_prompts__wp_054_type_weapon ?x - object)
+    (writing_prompts__wp_054_p_alive ?v0 - object)
+    (writing_prompts__wp_054_p_armed ?v0 - object)
+    (writing_prompts__wp_054_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_054_p_has ?v0 - object ?v1 - object)
+    (writing_prompts__wp_054_p_hidden ?v0 - object ?v1 - object)
+    (writing_prompts__wp_054_p_informant ?v0 - object)
+    (writing_prompts__wp_054_p_target ?v0 - object)
+    (writing_prompts__wp_085_active)
+    (writing_prompts__wp_085_type_character ?x - object)
+    (writing_prompts__wp_085_type_device ?x - object)
+    (writing_prompts__wp_085_type_item ?x - object)
+    (writing_prompts__wp_085_type_object ?x - object)
+    (writing_prompts__wp_085_type_place ?x - object)
+    (writing_prompts__wp_085_p_awake ?v0 - object)
+    (writing_prompts__wp_085_p_wearing-clothes ?v0 - object)
+    (writing_prompts__wp_085_p_has-device ?v0 - object ?v1 - object)
+    (writing_prompts__wp_085_p_device-on ?v0 - object)
+    (writing_prompts__wp_085_p_device-connected ?v0 - object)
+    (writing_prompts__wp_085_p_electricity ?v0 - object)
+    (writing_prompts__wp_085_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_085_p_working ?v0 - object)
+    (writing_prompts__wp_085_p_school-canceled)
+  )
+  (:axiom :vars (?character - object) :context (and (writing_prompts__wp_054_active) (writing_prompts__wp_054_type_character ?character) (and (not (writing_prompts__wp_054_p_armed ?character)) (exists (?w - object) (and (writing_prompts__wp_054_type_weapon ?w) (writing_prompts__wp_054_p_has ?character ?w))))) :implies (writing_prompts__wp_054_p_armed ?character))
+  (:axiom :vars (?character - object) :context (and (writing_prompts__wp_054_active) (writing_prompts__wp_054_type_character ?character) (and (writing_prompts__wp_054_p_armed ?character) (forall (?w - object) (or (not (writing_prompts__wp_054_type_weapon ?w)) (not (writing_prompts__wp_054_p_has ?character ?w)))))) :implies (not (writing_prompts__wp_054_p_armed ?character)))
+
+  (:action writing_prompts__wp_054_a_retrieve
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_054_active)
+        (writing_prompts__wp_054_type_character ?character)
+        (writing_prompts__wp_054_type_item ?item)
+        (writing_prompts__wp_054_type_place ?place)
+        (and
+          (writing_prompts__wp_054_p_alive ?character)
+          (writing_prompts__wp_054_p_at ?character ?place)
+          (writing_prompts__wp_054_p_hidden ?item ?place)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_054_p_hidden ?item ?place))
+        (writing_prompts__wp_054_p_has ?character ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_054_a_hide
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_054_active)
+        (writing_prompts__wp_054_type_character ?character)
+        (writing_prompts__wp_054_type_item ?item)
+        (writing_prompts__wp_054_type_place ?place)
+        (and
+          (writing_prompts__wp_054_p_alive ?character)
+          (writing_prompts__wp_054_p_at ?character ?place)
+          (writing_prompts__wp_054_p_has ?character ?item)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_054_p_has ?character ?item))
+        (writing_prompts__wp_054_p_hidden ?item ?place)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_054_a_kill
+    :parameters (?killer - object ?weapon - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_054_active)
+        (writing_prompts__wp_054_type_character ?killer)
+        (writing_prompts__wp_054_type_weapon ?weapon)
+        (writing_prompts__wp_054_type_character ?victim)
+        (writing_prompts__wp_054_type_place ?place)
+        (and
+          (writing_prompts__wp_054_p_alive ?killer)
+          (writing_prompts__wp_054_p_at ?killer ?place)
+          (writing_prompts__wp_054_p_has ?killer ?weapon)
+          (writing_prompts__wp_054_p_alive ?victim)
+          (writing_prompts__wp_054_p_at ?victim ?place)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_054_p_alive ?victim))
+    :agents (?killer)
+  )
+
+  (:action writing_prompts__wp_054_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_054_active)
+        (writing_prompts__wp_054_type_character ?character)
+        (writing_prompts__wp_054_type_place ?from)
+        (writing_prompts__wp_054_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (writing_prompts__wp_054_p_alive ?character)
+          (writing_prompts__wp_054_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_054_p_at ?character ?from))
+        (writing_prompts__wp_054_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (not (writing_prompts__wp_085_p_awake ?character))
+      )
+    :effect
+      (writing_prompts__wp_085_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_put-on-clothes
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (not (writing_prompts__wp_085_p_wearing-clothes ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_085_p_wearing-clothes ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_turn-on-device
+    :parameters (?character - object ?device - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_device ?device)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_has-device ?character ?device)
+          (not (writing_prompts__wp_085_p_device-on ?device))
+        )
+      )
+    :effect
+      (writing_prompts__wp_085_p_device-on ?device)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_check-connectivity
+    :parameters (?character - object ?device - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_device ?device)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_device-on ?device)
+          (writing_prompts__wp_085_p_has-device ?character ?device)
+        )
+      )
+    :effect
+      (when
+        (writing_prompts__wp_085_p_device-connected ?device)
+        (writing_prompts__wp_085_p_working ?device)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_go-outside
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_place ?place)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_wearing-clothes ?character)
+          (writing_prompts__wp_085_p_at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_085_p_at ?character ?place))
+        (writing_prompts__wp_085_p_at ?character writing_prompts__wp_085_o_outside)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_talk
+    :parameters (?speaker - object ?listener - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?speaker)
+        (writing_prompts__wp_085_type_character ?listener)
+        (and
+          (writing_prompts__wp_085_p_awake ?speaker)
+          (writing_prompts__wp_085_p_awake ?listener)
+          (writing_prompts__wp_085_p_at ?speaker writing_prompts__wp_085_o_outside)
+          (writing_prompts__wp_085_p_at ?listener writing_prompts__wp_085_o_outside)
+        )
+      )
+    :agents (?speaker ?listener)
+  )
+
+  (:action writing_prompts__wp_085_a_cancel-school
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (not (writing_prompts__wp_085_p_school-canceled))
+      )
+    :effect
+      (writing_prompts__wp_085_p_school-canceled)
+  )
+)

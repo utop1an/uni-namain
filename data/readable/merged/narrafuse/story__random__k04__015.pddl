@@ -1,0 +1,304 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_019_o_colors - object)
+  (:predicates
+    (tiny_stories__story_019_active)
+    (tiny_stories__story_019_type_character ?x - object)
+    (tiny_stories__story_019_type_object ?x - object)
+    (tiny_stories__story_019_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_019_p_found ?v0 - object ?v1 - object)
+    (tiny_stories__story_019_p_made-handprint ?v0 - object)
+    (tiny_stories__story_019_p_celebrated ?v0 - object)
+    (tiny_stories__story_028_active)
+    (tiny_stories__story_028_type_character ?x - object)
+    (tiny_stories__story_028_type_item ?x - object)
+    (tiny_stories__story_028_type_object ?x - object)
+    (tiny_stories__story_028_type_place ?x - object)
+    (shared_p_consensus_088df4593b24765e ?v0 - object ?v1 - object)
+    (shared_p_consensus_6469f2b4b3d1538e ?v0 - object ?v1 - object)
+    (tiny_stories__story_028_p_on-shelf ?v0 - object)
+    (tiny_stories__story_028_p_organized ?v0 - object)
+    (tiny_stories__story_028_p_reads ?v0 - object)
+    (shared_p_consensus_c6a5c4453792b699 ?v0 - object)
+    (tiny_stories__story_041_active)
+    (tiny_stories__story_041_type_character ?x - object)
+    (tiny_stories__story_041_type_object ?x - object)
+    (tiny_stories__story_041_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_041_p_kind ?v0 - object)
+    (tiny_stories__story_041_p_knows-wisdom ?v0 - object)
+    (tiny_stories__story_041_p_lost ?v0 - object)
+    (tiny_stories__story_041_p_found ?v0 - object)
+    (tiny_stories__story_074_active)
+    (tiny_stories__story_074_type_character ?x - object)
+    (tiny_stories__story_074_type_object ?x - object)
+    (tiny_stories__story_074_p_magic ?v0 - object)
+    (tiny_stories__story_074_p_granted-wish ?v0 - object)
+  )
+
+  (:action tiny_stories__story_019_a_find
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?character)
+        (tiny_stories__story_019_type_object ?object)
+        (not (tiny_stories__story_019_p_found ?character ?object))
+      )
+    :effect
+      (tiny_stories__story_019_p_found ?character ?object)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_019_a_make-handprint
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?character)
+        (tiny_stories__story_019_p_found ?character tiny_stories__story_019_o_colors)
+      )
+    :effect
+      (tiny_stories__story_019_p_made-handprint ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_019_a_show-handprint
+    :parameters (?shower - object ?viewer - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?shower)
+        (tiny_stories__story_019_type_character ?viewer)
+        (and
+          (tiny_stories__story_019_p_made-handprint ?shower)
+          (not (= ?shower ?viewer))
+        )
+      )
+    :effect
+      (tiny_stories__story_019_p_celebrated ?viewer)
+    :agents (?shower ?viewer)
+  )
+
+  (:action tiny_stories__story_019_a_celebrate
+    :parameters (?celebrator - object ?celebratee - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?celebrator)
+        (tiny_stories__story_019_type_character ?celebratee)
+        (and
+          (tiny_stories__story_019_p_celebrated ?celebrator)
+          (not (= ?celebrator ?celebratee))
+        )
+      )
+    :effect
+      (tiny_stories__story_019_p_celebrated ?celebratee)
+    :agents (?celebrator ?celebratee)
+  )
+
+  (:action tiny_stories__story_028_a_find
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_028_active)
+        (tiny_stories__story_028_type_character ?character)
+        (tiny_stories__story_028_type_item ?item)
+        (and
+          (not (shared_p_consensus_6469f2b4b3d1538e ?character ?item))
+          (tiny_stories__story_028_p_reads ?character)
+        )
+      )
+    :effect
+      (shared_p_consensus_6469f2b4b3d1538e ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_028_a_put-on-shelf
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_028_active)
+        (tiny_stories__story_028_type_character ?character)
+        (tiny_stories__story_028_type_item ?item)
+        (tiny_stories__story_028_type_place ?place)
+        (and
+          (shared_p_consensus_6469f2b4b3d1538e ?character ?item)
+          (shared_p_consensus_088df4593b24765e ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_6469f2b4b3d1538e ?character ?item))
+        (tiny_stories__story_028_p_on-shelf ?item)
+        (tiny_stories__story_028_p_organized ?place)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_028_a_read
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_028_active)
+        (tiny_stories__story_028_type_character ?character)
+        (tiny_stories__story_028_p_reads ?character)
+      )
+    :effect
+      (shared_p_consensus_c6a5c4453792b699 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_028_a_smell-soap
+    :parameters (?character - object ?soap - object)
+    :precondition
+      (and
+        (tiny_stories__story_028_active)
+        (tiny_stories__story_028_type_character ?character)
+        (tiny_stories__story_028_type_item ?soap)
+        (and
+          (tiny_stories__story_028_p_on-shelf ?soap)
+          (tiny_stories__story_028_p_reads ?character)
+        )
+      )
+    :effect
+      (shared_p_consensus_c6a5c4453792b699 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_041_a_become-kind
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_041_active)
+        (tiny_stories__story_041_type_character ?character)
+        (not (tiny_stories__story_041_p_kind ?character))
+      )
+    :effect
+      (tiny_stories__story_041_p_kind ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_041_a_learn-wisdom
+    :parameters (?learner - object ?teacher - object)
+    :precondition
+      (and
+        (tiny_stories__story_041_active)
+        (tiny_stories__story_041_type_character ?learner)
+        (tiny_stories__story_041_type_character ?teacher)
+        (and
+          (not (tiny_stories__story_041_p_knows-wisdom ?learner))
+          (tiny_stories__story_041_p_knows-wisdom ?teacher)
+        )
+      )
+    :effect
+      (tiny_stories__story_041_p_knows-wisdom ?learner)
+    :agents (?learner ?teacher)
+  )
+
+  (:action tiny_stories__story_041_a_help
+    :parameters (?helper - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_041_active)
+        (tiny_stories__story_041_type_character ?helper)
+        (tiny_stories__story_041_type_character ?helpee)
+        (and
+          (tiny_stories__story_041_p_kind ?helper)
+          (tiny_stories__story_041_p_lost ?helpee)
+        )
+      )
+    :effect
+      (tiny_stories__story_041_p_found ?helpee)
+    :agents (?helper)
+  )
+
+  (:action tiny_stories__story_041_a_become-friends
+    :parameters (?c1 - object ?c2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_041_active)
+        (tiny_stories__story_041_type_character ?c1)
+        (tiny_stories__story_041_type_character ?c2)
+        (and
+          (not (tiny_stories__story_041_p_friends ?c1 ?c2))
+          (not (= ?c1 ?c2))
+        )
+      )
+    :effect
+      (tiny_stories__story_041_p_friends ?c1 ?c2)
+    :agents (?c1 ?c2)
+  )
+
+  (:action tiny_stories__story_074_a_go-to
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_074_active)
+        (tiny_stories__story_074_type_character ?character)
+        (tiny_stories__story_074_type_object ?place)
+        (not (shared_p_consensus_088df4593b24765e ?character ?place))
+      )
+    :effect
+      (shared_p_consensus_088df4593b24765e ?character ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_074_a_sit-down
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_074_active)
+        (tiny_stories__story_074_type_character ?character)
+        (not (shared_p_consensus_c6a5c4453792b699 ?character))
+      )
+    :effect
+      (shared_p_consensus_c6a5c4453792b699 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_074_a_share-snack
+    :parameters (?sharer - object ?receiver - object ?snack - object)
+    :precondition
+      (and
+        (tiny_stories__story_074_active)
+        (tiny_stories__story_074_type_character ?sharer)
+        (tiny_stories__story_074_type_character ?receiver)
+        (tiny_stories__story_074_type_object ?snack)
+        (and
+          (shared_p_consensus_6469f2b4b3d1538e ?sharer ?snack)
+          (not (shared_p_consensus_6469f2b4b3d1538e ?receiver ?snack))
+        )
+      )
+    :effect
+      (shared_p_consensus_6469f2b4b3d1538e ?receiver ?snack)
+    :agents (?sharer)
+  )
+
+  (:action tiny_stories__story_074_a_become-magic
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_074_active)
+        (tiny_stories__story_074_type_character ?character)
+        (not (tiny_stories__story_074_p_magic ?character))
+      )
+    :effect
+      (tiny_stories__story_074_p_magic ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_074_a_grant-wish
+    :parameters (?granter - object ?wish - object)
+    :precondition
+      (and
+        (tiny_stories__story_074_active)
+        (tiny_stories__story_074_type_character ?granter)
+        (tiny_stories__story_074_type_object ?wish)
+        (tiny_stories__story_074_p_magic ?granter)
+      )
+    :effect
+      (tiny_stories__story_074_p_granted-wish ?wish)
+    :agents (?granter)
+  )
+)

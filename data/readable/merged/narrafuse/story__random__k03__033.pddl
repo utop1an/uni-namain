@@ -1,0 +1,250 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_060_o_vase - object)
+  (:predicates
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (tiny_stories__story_060_p_happy ?v0 - object)
+    (tiny_stories__story_060_p_at ?v0 - object ?v1 - object)
+    (shared_p_consensus_c2a9a7686a2f18ed ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_party ?v0 - object)
+    (tiny_stories__story_060_p_cake ?v0 - object)
+    (tiny_stories__story_076_active)
+    (tiny_stories__story_076_type_character ?x - object)
+    (tiny_stories__story_076_type_item ?x - object)
+    (tiny_stories__story_076_type_object ?x - object)
+    (tiny_stories__story_076_type_toy ?x - object)
+    (tiny_stories__story_076_p_playing-together ?v0 - object ?v1 - object)
+    (tiny_stories__story_076_p_shares ?v0 - object)
+    (tiny_stories__story_076_p_friends ?v0 - object ?v1 - object)
+    (writing_prompts__wp_044_active)
+    (writing_prompts__wp_044_type_character ?x - object)
+    (writing_prompts__wp_044_type_object ?x - object)
+    (writing_prompts__wp_044_type_place ?x - object)
+    (writing_prompts__wp_044_p_alive ?v0 - object)
+    (writing_prompts__wp_044_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_044_p_imprisoned ?v0 - object)
+    (writing_prompts__wp_044_p_served-sentence ?v0 - object)
+    (writing_prompts__wp_044_p_has-serum ?v0 - object)
+    (writing_prompts__wp_044_p_religious ?v0 - object)
+  )
+
+  (:action tiny_stories__story_060_a_make-cake
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_cake ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_put
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_item ?item)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (shared_p_consensus_c2a9a7686a2f18ed ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_at ?item ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_start-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_party ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_enjoy-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_party ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_076_a_share
+    :parameters (?sharer - object ?item - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?sharer)
+        (tiny_stories__story_076_type_item ?item)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?sharer ?receiver))
+          (shared_p_consensus_c2a9a7686a2f18ed ?sharer ?item)
+          (tiny_stories__story_076_p_friends ?sharer ?receiver)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_076_p_shares ?sharer)
+        (shared_p_consensus_c2a9a7686a2f18ed ?receiver ?item)
+      )
+    :agents (?sharer)
+  )
+
+  (:action tiny_stories__story_076_a_play-together
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?character1)
+        (tiny_stories__story_076_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_076_p_friends ?character1 ?character2)
+          (tiny_stories__story_076_p_shares ?character1)
+        )
+      )
+    :effect
+      (tiny_stories__story_076_p_playing-together ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_076_a_apologize
+    :parameters (?apologizer - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?apologizer)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?apologizer ?receiver))
+          (tiny_stories__story_076_p_friends ?apologizer ?receiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_076_p_shares ?apologizer)
+    :agents (?apologizer)
+  )
+
+  (:action tiny_stories__story_076_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?character1)
+        (tiny_stories__story_076_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_076_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_044_a_take-serum
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (not (writing_prompts__wp_044_p_has-serum ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_has-serum ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_serve-sentence
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_imprisoned ?character)
+          (not (writing_prompts__wp_044_p_served-sentence ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_served-sentence ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_release
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_imprisoned ?character)
+          (writing_prompts__wp_044_p_served-sentence ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_044_p_imprisoned ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_convert
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (not (writing_prompts__wp_044_p_religious ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_044_p_religious ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_044_a_abandon-religion
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_044_active)
+        (writing_prompts__wp_044_type_character ?character)
+        (and
+          (writing_prompts__wp_044_p_alive ?character)
+          (writing_prompts__wp_044_p_religious ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_044_p_religious ?character))
+    :agents (?character)
+  )
+)

@@ -1,0 +1,179 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_075_active)
+    (tiny_stories__story_075_type_character ?x - object)
+    (tiny_stories__story_075_type_dress ?x - object)
+    (tiny_stories__story_075_type_item ?x - object)
+    (tiny_stories__story_075_type_object ?x - object)
+    (tiny_stories__story_075_p_wearing ?v0 - object ?v1 - object)
+    (shared_p_consensus_59a3b7bc9ea3a4c5 ?v0 - object ?v1 - object)
+    (tiny_stories__story_075_p_damaged ?v0 - object)
+    (shared_p_consensus_38ba44180a397713 ?v0 - object)
+    (tiny_stories__story_094_active)
+    (tiny_stories__story_094_type_character ?x - object)
+    (tiny_stories__story_094_type_item ?x - object)
+    (tiny_stories__story_094_type_object ?x - object)
+    (tiny_stories__story_094_type_place ?x - object)
+    (tiny_stories__story_094_type_toy ?x - object)
+    (tiny_stories__story_094_p_sad ?v0 - object)
+    (tiny_stories__story_094_p_at ?v0 - object ?v1 - object)
+  )
+
+  (:action tiny_stories__story_075_a_put-on-dress
+    :parameters (?character - object ?dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?dress)
+        (and
+          (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?dress)
+          (not (tiny_stories__story_075_p_wearing ?character ?dress))
+        )
+      )
+    :effect
+      (tiny_stories__story_075_p_wearing ?character ?dress)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_075_a_slip
+    :parameters (?character - object ?dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?dress)
+        (and
+          (tiny_stories__story_075_p_wearing ?character ?dress)
+          (not (tiny_stories__story_075_p_damaged ?dress))
+        )
+      )
+    :effect
+      (tiny_stories__story_075_p_damaged ?dress)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_075_a_comfort
+    :parameters (?parent - object ?child - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?parent)
+        (tiny_stories__story_075_type_character ?child)
+        (and
+          (not (shared_p_consensus_38ba44180a397713 ?child))
+          (not (= ?parent ?child))
+        )
+      )
+    :effect
+      (shared_p_consensus_38ba44180a397713 ?child)
+    :agents (?parent)
+  )
+
+  (:action tiny_stories__story_075_a_get-new-dress
+    :parameters (?character - object ?old-dress - object ?new-dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?old-dress)
+        (tiny_stories__story_075_type_dress ?new-dress)
+        (and
+          (tiny_stories__story_075_p_damaged ?old-dress)
+          (tiny_stories__story_075_p_wearing ?character ?old-dress)
+          (not (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?new-dress))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_075_p_wearing ?character ?old-dress))
+        (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?new-dress)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_receive-gift
+    :parameters (?receiver - object ?giver - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?receiver)
+        (tiny_stories__story_094_type_character ?giver)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?receiver ?giver))
+          (shared_p_consensus_38ba44180a397713 ?giver)
+          (not (shared_p_consensus_59a3b7bc9ea3a4c5 ?receiver ?item))
+          (shared_p_consensus_59a3b7bc9ea3a4c5 ?giver ?item)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_59a3b7bc9ea3a4c5 ?receiver ?item)
+        (shared_p_consensus_38ba44180a397713 ?receiver)
+      )
+    :agents (?receiver ?giver)
+  )
+
+  (:action tiny_stories__story_094_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?item)
+          (not (tiny_stories__story_094_p_sad ?character))
+        )
+      )
+    :effect
+      (shared_p_consensus_38ba44180a397713 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_take-toy
+    :parameters (?taker - object ?victim - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?taker)
+        (tiny_stories__story_094_type_character ?victim)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?taker ?victim))
+          (shared_p_consensus_59a3b7bc9ea3a4c5 ?victim ?item)
+          (not (shared_p_consensus_59a3b7bc9ea3a4c5 ?taker ?item))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_59a3b7bc9ea3a4c5 ?victim ?item))
+        (shared_p_consensus_59a3b7bc9ea3a4c5 ?taker ?item)
+        (tiny_stories__story_094_p_sad ?victim)
+      )
+    :agents (?taker)
+  )
+
+  (:action tiny_stories__story_094_a_lose-toy
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?item)
+          (shared_p_consensus_38ba44180a397713 ?character)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_59a3b7bc9ea3a4c5 ?character ?item))
+        (tiny_stories__story_094_p_sad ?character)
+      )
+    :agents (?character)
+  )
+)

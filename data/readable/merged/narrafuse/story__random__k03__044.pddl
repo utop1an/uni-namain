@@ -1,0 +1,275 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_047_o_nation1 - object writing_prompts__wp_047_o_nation2 - object writing_prompts__wp_047_o_nation3 - object)
+  (:predicates
+    (tiny_stories__story_078_active)
+    (tiny_stories__story_078_type_character ?x - object)
+    (tiny_stories__story_078_type_object ?x - object)
+    (tiny_stories__story_078_type_place ?x - object)
+    (tiny_stories__story_078_type_project ?x - object)
+    (tiny_stories__story_078_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_078_p_alive ?v0 - object)
+    (tiny_stories__story_078_p_happy ?v0 - object)
+    (tiny_stories__story_078_p_amazed ?v0 - object)
+    (tiny_stories__story_078_p_supports ?v0 - object ?v1 - object)
+    (tiny_stories__story_078_p_persistent ?v0 - object)
+    (tiny_stories__story_078_p_completed ?v0 - object)
+    (writing_prompts__wp_047_active)
+    (writing_prompts__wp_047_type_nation ?x - object)
+    (writing_prompts__wp_047_type_object ?x - object)
+    (writing_prompts__wp_047_p_at-peace ?v0 - object)
+    (writing_prompts__wp_047_p_sharing-technology ?v0 - object ?v1 - object)
+    (writing_prompts__wp_047_p_advanced-technology ?v0 - object)
+    (writing_prompts__wp_047_p_facing-destruction)
+    (writing_prompts__wp_049_active)
+    (writing_prompts__wp_049_type_character ?x - object)
+    (writing_prompts__wp_049_type_object ?x - object)
+    (writing_prompts__wp_049_p_needs-walk ?v0 - object)
+    (writing_prompts__wp_049_p_in-herenow ?v0 - object)
+    (writing_prompts__wp_049_p_ancient-oath ?v0 - object)
+    (writing_prompts__wp_049_p_guardian ?v0 - object)
+    (writing_prompts__wp_049_p_master ?v0 - object)
+    (writing_prompts__wp_049_p_time-of-passing)
+  )
+
+  (:action tiny_stories__story_078_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_place ?from)
+        (tiny_stories__story_078_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_078_p_alive ?character)
+          (tiny_stories__story_078_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_078_p_at ?character ?from))
+        (tiny_stories__story_078_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-amazed
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_amazed ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_support-project
+    :parameters (?character - object ?project - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_project ?project)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_supports ?character ?project)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-persistent
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_persistent ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_complete-project
+    :parameters (?character - object ?project - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_project ?project)
+        (and
+          (tiny_stories__story_078_p_alive ?character)
+          (tiny_stories__story_078_p_supports ?character ?project)
+          (tiny_stories__story_078_p_persistent ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_078_p_completed ?project)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_047_a_unite
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_facing-destruction)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_develop-technology
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_advanced-technology ?nation1)
+        (writing_prompts__wp_047_p_advanced-technology ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_avoid-destruction
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (and
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation1)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation2)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation3)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_047_p_facing-destruction))
+  )
+
+  (:action writing_prompts__wp_047_a_maintain-peace
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_at-peace ?nation1)
+          (writing_prompts__wp_047_p_at-peace ?nation2)
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_049_a_remind-ancient-oath
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_ancient-oath ?dog)
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_needs-walk ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_bring-to-herenow
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (not (writing_prompts__wp_049_p_in-herenow ?master))
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_in-herenow ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_walk
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_needs-walk ?master)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_049_p_needs-walk ?master))
+        (writing_prompts__wp_049_p_in-herenow ?master)
+      )
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_time-of-passing
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (not (writing_prompts__wp_049_p_time-of-passing))
+      )
+    :effect
+      (writing_prompts__wp_049_p_time-of-passing)
+  )
+)

@@ -1,0 +1,347 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_023_active)
+    (tiny_stories__story_023_type_animal ?x - object)
+    (tiny_stories__story_023_type_character ?x - object)
+    (tiny_stories__story_023_type_location ?x - object)
+    (tiny_stories__story_023_type_object ?x - object)
+    (tiny_stories__story_023_type_place ?x - object)
+    (tiny_stories__story_023_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_023_p_happy ?v0 - object)
+    (tiny_stories__story_023_p_can-fly ?v0 - object)
+    (tiny_stories__story_023_p_can-run ?v0 - object)
+    (tiny_stories__story_023_p_playing ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_active)
+    (tiny_stories__story_085_type_character ?x - object)
+    (tiny_stories__story_085_type_item ?x - object)
+    (tiny_stories__story_085_type_object ?x - object)
+    (tiny_stories__story_085_p_broken ?v0 - object)
+    (tiny_stories__story_085_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_p_playing ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_p_apologized ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_p_cleaned ?v0 - object)
+    (tiny_stories__story_085_p_forgiven ?v0 - object ?v1 - object)
+    (tiny_stories__story_092_active)
+    (tiny_stories__story_092_type_character ?x - object)
+    (tiny_stories__story_092_type_object ?x - object)
+    (tiny_stories__story_092_p_worried ?v0 - object)
+    (tiny_stories__story_092_p_accepted-to-university ?v0 - object)
+    (tiny_stories__story_092_p_happy ?v0 - object)
+    (tiny_stories__story_092_p_applauding ?v0 - object)
+    (tiny_stories__story_092_p_hardworking ?v0 - object)
+    (tiny_stories__story_092_p_dreams-come-true ?v0 - object)
+    (writing_prompts__wp_049_active)
+    (writing_prompts__wp_049_type_character ?x - object)
+    (writing_prompts__wp_049_type_object ?x - object)
+    (writing_prompts__wp_049_p_needs-walk ?v0 - object)
+    (writing_prompts__wp_049_p_in-herenow ?v0 - object)
+    (writing_prompts__wp_049_p_ancient-oath ?v0 - object)
+    (writing_prompts__wp_049_p_guardian ?v0 - object)
+    (writing_prompts__wp_049_p_master ?v0 - object)
+    (writing_prompts__wp_049_p_time-of-passing)
+  )
+
+  (:action tiny_stories__story_023_a_play
+    :parameters (?character - object ?animal - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_type_location ?place)
+        (and
+          (tiny_stories__story_023_p_at ?character ?place)
+          (tiny_stories__story_023_p_at ?animal ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_023_p_playing ?character ?animal)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_stop-playing
+    :parameters (?character - object ?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_p_playing ?character ?animal)
+      )
+    :effect
+      (not (tiny_stories__story_023_p_playing ?character ?animal))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_move
+    :parameters (?object - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_object ?object)
+        (tiny_stories__story_023_type_location ?from)
+        (tiny_stories__story_023_type_location ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_023_p_at ?object ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_023_p_at ?object ?from))
+        (tiny_stories__story_023_p_at ?object ?to)
+      )
+    :agents (?object)
+  )
+
+  (:action tiny_stories__story_023_a_can-run
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-run ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_can-fly
+    :parameters (?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_animal ?animal)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-fly ?animal)
+    :agents (?animal)
+  )
+
+  (:action tiny_stories__story_085_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?character)
+        (tiny_stories__story_085_type_item ?item)
+        (and
+          (not (tiny_stories__story_085_p_broken ?item))
+          (tiny_stories__story_085_p_has ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_playing ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_085_a_break-item
+    :parameters (?breaker - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?breaker)
+        (tiny_stories__story_085_type_item ?item)
+        (and
+          (not (tiny_stories__story_085_p_broken ?item))
+          (tiny_stories__story_085_p_playing ?breaker ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_broken ?item)
+    :agents (?breaker)
+  )
+
+  (:action tiny_stories__story_085_a_apologize
+    :parameters (?apologizer - object ?apologizee - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?apologizer)
+        (tiny_stories__story_085_type_character ?apologizee)
+        (not (= ?apologizer ?apologizee))
+      )
+    :effect
+      (tiny_stories__story_085_p_apologized ?apologizer ?apologizee)
+    :agents (?apologizer)
+  )
+
+  (:action tiny_stories__story_085_a_clean
+    :parameters (?cleaner - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?cleaner)
+        (tiny_stories__story_085_type_item ?item)
+        (tiny_stories__story_085_p_broken ?item)
+      )
+    :effect
+      (tiny_stories__story_085_p_cleaned ?cleaner)
+    :agents (?cleaner)
+  )
+
+  (:action tiny_stories__story_085_a_forgive
+    :parameters (?forgiver - object ?forgivee - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?forgiver)
+        (tiny_stories__story_085_type_character ?forgivee)
+        (and
+          (not (= ?forgiver ?forgivee))
+          (tiny_stories__story_085_p_apologized ?forgivee ?forgiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_forgiven ?forgiver ?forgivee)
+    :agents (?forgiver)
+  )
+
+  (:action tiny_stories__story_092_a_get-accepted
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_worried ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_092_p_accepted-to-university ?character)
+        (not (tiny_stories__story_092_p_worried ?character))
+        (tiny_stories__story_092_p_happy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_start-applauding
+    :parameters (?character - object ?other - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_type_character ?other)
+        (and
+          (not (tiny_stories__story_092_p_applauding ?character))
+          (tiny_stories__story_092_p_happy ?other)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_applauding ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_stop-applauding
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_p_applauding ?character)
+      )
+    :effect
+      (not (tiny_stories__story_092_p_applauding ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_make-dreams-come-true
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_accepted-to-university ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_dreams-come-true ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_049_a_remind-ancient-oath
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_ancient-oath ?dog)
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_needs-walk ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_bring-to-herenow
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (not (writing_prompts__wp_049_p_in-herenow ?master))
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_in-herenow ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_walk
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_needs-walk ?master)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_049_p_needs-walk ?master))
+        (writing_prompts__wp_049_p_in-herenow ?master)
+      )
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_time-of-passing
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (not (writing_prompts__wp_049_p_time-of-passing))
+      )
+    :effect
+      (writing_prompts__wp_049_p_time-of-passing)
+  )
+)

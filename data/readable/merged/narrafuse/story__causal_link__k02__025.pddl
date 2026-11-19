@@ -1,0 +1,181 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_011_type_character ?x - object)
+    (writing_prompts__wp_011_type_object ?x - object)
+    (writing_prompts__wp_011_type_place ?x - object)
+    (writing_prompts__wp_011_p_at ?v0 - object ?v1 - object)
+    (shared_p_consensus_118c9575d1047a54 ?v0 - object)
+    (shared_p_consensus_060352ece3280f41 ?v0 - object ?v1 - object)
+    (writing_prompts__wp_011_p_in-stasis ?v0 - object)
+    (writing_prompts__wp_011_p_ancient-technology ?v0 - object)
+    (writing_prompts__wp_011_p_propellant-device ?v0 - object)
+    (writing_prompts__wp_011_p_shielded ?v0 - object)
+    (writing_prompts__wp_011_p_requested-tow ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_active)
+    (writing_prompts__wp_060_type_character ?x - object)
+    (writing_prompts__wp_060_type_item ?x - object)
+    (writing_prompts__wp_060_type_object ?x - object)
+    (writing_prompts__wp_060_type_place ?x - object)
+    (writing_prompts__wp_060_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_p_clean ?v0 - object)
+    (writing_prompts__wp_060_p_locked ?v0 - object)
+    (writing_prompts__wp_060_p_wearing ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_p_fits ?v0 - object ?v1 - object)
+  )
+
+  (:action writing_prompts__wp_011_a_discover-technology
+    :parameters (?character - object ?object - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_011_active)
+        (writing_prompts__wp_011_type_character ?character)
+        (writing_prompts__wp_011_type_object ?object)
+        (writing_prompts__wp_011_type_place ?place)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (writing_prompts__wp_011_p_at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_060352ece3280f41 ?character ?object)
+        (writing_prompts__wp_011_p_ancient-technology ?object)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_011_a_detect-stasis
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (writing_prompts__wp_011_active)
+        (writing_prompts__wp_011_type_character ?character)
+        (writing_prompts__wp_011_type_object ?object)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (shared_p_consensus_060352ece3280f41 ?character ?object)
+          (writing_prompts__wp_011_p_ancient-technology ?object)
+        )
+      )
+    :effect
+      (writing_prompts__wp_011_p_in-stasis ?object)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_011_a_request-tow
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_011_active)
+        (writing_prompts__wp_011_type_character ?character)
+        (writing_prompts__wp_011_type_place ?place)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (writing_prompts__wp_011_p_at ?character ?place)
+        )
+      )
+    :effect
+      (writing_prompts__wp_011_p_requested-tow ?character ?place)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_011_a_transport-object
+    :parameters (?character - object ?object - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_011_active)
+        (writing_prompts__wp_011_type_character ?character)
+        (writing_prompts__wp_011_type_object ?object)
+        (writing_prompts__wp_011_type_place ?from)
+        (writing_prompts__wp_011_type_place ?to)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (writing_prompts__wp_011_p_at ?character ?from)
+          (shared_p_consensus_060352ece3280f41 ?character ?object)
+          (writing_prompts__wp_011_p_requested-tow ?character ?to)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_011_p_at ?character ?from))
+        (writing_prompts__wp_011_p_at ?character ?to)
+        (not (shared_p_consensus_060352ece3280f41 ?character ?object))
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_clean-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (shared_p_consensus_060352ece3280f41 ?character ?item)
+          (not (writing_prompts__wp_060_p_clean ?item))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_clean ?item)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_lock-door
+    :parameters (?character - object ?door - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?door)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (not (writing_prompts__wp_060_p_locked ?door))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_locked ?door)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_adjust-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (shared_p_consensus_060352ece3280f41 ?character ?item)
+          (not (writing_prompts__wp_060_p_fits ?item ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_fits ?item ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_wear-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (shared_p_consensus_118c9575d1047a54 ?character)
+          (shared_p_consensus_060352ece3280f41 ?character ?item)
+          (writing_prompts__wp_060_p_fits ?item ?character)
+          (not (writing_prompts__wp_060_p_wearing ?character ?item))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_wearing ?character ?item)
+    :agents (?character)
+  )
+)

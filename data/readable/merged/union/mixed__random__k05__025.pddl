@@ -1,0 +1,467 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_001_o_outside - object)
+  (:predicates
+    (human_72bec7307b121ea5_active)
+    (human_72bec7307b121ea5_type_book ?x - object)
+    (human_72bec7307b121ea5_type_character ?x - object)
+    (human_72bec7307b121ea5_type_item ?x - object)
+    (human_72bec7307b121ea5_type_location ?x - object)
+    (human_72bec7307b121ea5_type_object ?x - object)
+    (human_72bec7307b121ea5_type_ring ?x - object)
+    (human_72bec7307b121ea5_type_sword ?x - object)
+    (human_72bec7307b121ea5_type_thing ?x - object)
+    (human_72bec7307b121ea5_p_player ?v0 - object)
+    (human_72bec7307b121ea5_p_at ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_has ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_asleep ?v0 - object)
+    (human_72bec7307b121ea5_p_connected ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_enchanted ?v0 - object)
+    (human_72bec7307b121ea5_p_is ?v0 - object ?v1 - object)
+    (tiny_stories__story_001_active)
+    (tiny_stories__story_001_type_character ?x - object)
+    (tiny_stories__story_001_type_object ?x - object)
+    (tiny_stories__story_001_type_place ?x - object)
+    (tiny_stories__story_001_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_001_p_raining)
+    (tiny_stories__story_001_p_sunny)
+    (tiny_stories__story_001_p_muddy ?v0 - object)
+    (tiny_stories__story_001_p_playing ?v0 - object)
+    (tiny_stories__story_001_p_scared ?v0 - object)
+    (tiny_stories__story_001_p_brave ?v0 - object)
+    (tiny_stories__story_001_p_safe ?v0 - object)
+    (tiny_stories__story_001_p_inside ?v0 - object)
+    (tiny_stories__story_029_active)
+    (tiny_stories__story_029_type_character ?x - object)
+    (tiny_stories__story_029_type_item ?x - object)
+    (tiny_stories__story_029_type_object ?x - object)
+    (tiny_stories__story_029_type_place ?x - object)
+    (tiny_stories__story_029_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_p_alive ?v0 - object)
+    (tiny_stories__story_029_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_p_near ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_p_in-nest ?v0 - object)
+    (writing_prompts__wp_017_active)
+    (writing_prompts__wp_017_type_animal ?x - object)
+    (writing_prompts__wp_017_type_character ?x - object)
+    (writing_prompts__wp_017_type_direction ?x - object)
+    (writing_prompts__wp_017_type_object ?x - object)
+    (writing_prompts__wp_017_p_awake ?v0 - object)
+    (writing_prompts__wp_017_p_wearing-pajamas ?v0 - object)
+    (writing_prompts__wp_017_p_on-floor ?v0 - object)
+    (writing_prompts__wp_017_p_dressed ?v0 - object)
+    (writing_prompts__wp_017_p_holding ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_walking ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_petting ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_bites ?v0 - object)
+    (writing_prompts__wp_017_p_owns ?v0 - object ?v1 - object)
+    (writing_prompts__wp_017_p_life-is-a-joke ?v0 - object)
+    (writing_prompts__wp_020_active)
+    (writing_prompts__wp_020_type_character ?x - object)
+    (writing_prompts__wp_020_type_object ?x - object)
+    (writing_prompts__wp_020_p_hurting ?v0 - object)
+    (writing_prompts__wp_020_p_struggling ?v0 - object)
+    (writing_prompts__wp_020_p_loved ?v0 - object ?v1 - object)
+    (writing_prompts__wp_020_p_letting-go ?v0 - object ?v1 - object)
+    (writing_prompts__wp_020_p_ready ?v0 - object)
+    (writing_prompts__wp_020_p_better-times ?v0 - object)
+  )
+
+  (:action human_72bec7307b121ea5_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?character)
+        (human_72bec7307b121ea5_type_location ?to)
+        (human_72bec7307b121ea5_type_location ?from)
+        (and
+          (human_72bec7307b121ea5_p_connected ?to ?from)
+          (not (human_72bec7307b121ea5_p_asleep ?character))
+          (human_72bec7307b121ea5_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_72bec7307b121ea5_p_at ?character ?from))
+        (human_72bec7307b121ea5_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_72bec7307b121ea5_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?waker)
+        (human_72bec7307b121ea5_type_character ?woken)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?waker ?location)
+          (human_72bec7307b121ea5_p_at ?woken ?location)
+          (human_72bec7307b121ea5_p_asleep ?woken)
+          (not (human_72bec7307b121ea5_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_asleep ?woken))
+    :agents (?waker)
+  )
+
+  (:action human_72bec7307b121ea5_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?taker)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?taker ?location)
+          (human_72bec7307b121ea5_p_at ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?taker))
+          (not (human_72bec7307b121ea5_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (human_72bec7307b121ea5_p_at ?thing ?location))
+        (human_72bec7307b121ea5_p_has ?taker ?thing)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_72bec7307b121ea5_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?caster)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_book ?book)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?caster ?location)
+          (human_72bec7307b121ea5_p_at ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?caster))
+          (human_72bec7307b121ea5_p_has ?caster ?book)
+          (human_72bec7307b121ea5_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_enchanted ?thing))
+    :agents (?caster)
+  )
+
+  (:action tiny_stories__story_001_a_go-outside
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_inside ?character)
+          (tiny_stories__story_001_p_sunny)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_inside ?character))
+        (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_go-inside
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside))
+        (tiny_stories__story_001_p_inside ?character)
+        (tiny_stories__story_001_p_safe ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_play-in-mud
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (tiny_stories__story_001_type_place ?place)
+        (and
+          (tiny_stories__story_001_p_at ?character ?place)
+          (tiny_stories__story_001_p_muddy ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_001_p_playing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_become-scared
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+          (not (tiny_stories__story_001_p_scared ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_001_p_scared ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_become-brave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+          (tiny_stories__story_001_p_scared ?character)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_scared ?character))
+        (tiny_stories__story_001_p_brave ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_stop-raining
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_p_raining)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_raining))
+        (tiny_stories__story_001_p_sunny)
+      )
+  )
+
+  (:action tiny_stories__story_001_a_start-raining
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_p_sunny)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_sunny))
+        (tiny_stories__story_001_p_raining)
+      )
+  )
+
+  (:action tiny_stories__story_029_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_place ?from)
+        (tiny_stories__story_029_type_place ?to)
+        (and
+          (tiny_stories__story_029_p_alive ?character)
+          (tiny_stories__story_029_p_at ?character ?from)
+          (not (tiny_stories__story_029_p_at ?character ?to))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_029_p_at ?character ?from))
+        (tiny_stories__story_029_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_item ?item)
+        (and
+          (tiny_stories__story_029_p_alive ?character)
+          (tiny_stories__story_029_p_has ?character ?item)
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_pick-up
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_item ?item)
+        (and
+          (tiny_stories__story_029_p_alive ?character)
+          (tiny_stories__story_029_p_near ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_029_p_has ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_help-bird
+    :parameters (?character - object ?bird - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_character ?bird)
+        (and
+          (tiny_stories__story_029_p_alive ?character)
+          (tiny_stories__story_029_p_alive ?bird)
+          (not (tiny_stories__story_029_p_in-nest ?bird))
+        )
+      )
+    :effect
+      (tiny_stories__story_029_p_in-nest ?bird)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_bird-falls
+    :parameters (?bird - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?bird)
+        (and
+          (tiny_stories__story_029_p_alive ?bird)
+          (tiny_stories__story_029_p_in-nest ?bird)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_029_p_in-nest ?bird))
+  )
+
+  (:action writing_prompts__wp_017_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (not (writing_prompts__wp_017_p_awake ?character))
+      )
+    :effect
+      (writing_prompts__wp_017_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_dress
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (and
+          (writing_prompts__wp_017_p_awake ?character)
+          (writing_prompts__wp_017_p_on-floor ?character)
+          (not (writing_prompts__wp_017_p_dressed ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_017_p_dressed ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_pet
+    :parameters (?character - object ?animal - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (writing_prompts__wp_017_type_animal ?animal)
+        (and
+          (writing_prompts__wp_017_p_awake ?character)
+          (writing_prompts__wp_017_p_dressed ?character)
+          (not (writing_prompts__wp_017_p_bites ?animal))
+        )
+      )
+    :effect
+      (writing_prompts__wp_017_p_petting ?character ?animal)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_017_a_realize-life-is-a-joke
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_017_active)
+        (writing_prompts__wp_017_type_character ?character)
+        (writing_prompts__wp_017_p_awake ?character)
+      )
+    :effect
+      (writing_prompts__wp_017_p_life-is-a-joke ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_020_a_acknowledge-pain
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character)
+        (and
+          (writing_prompts__wp_020_p_hurting ?character)
+          (writing_prompts__wp_020_p_struggling ?character)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_020_p_struggling ?character))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_020_a_let-go
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character1)
+        (writing_prompts__wp_020_type_character ?character2)
+        (and
+          (writing_prompts__wp_020_p_loved ?character1 ?character2)
+          (not (writing_prompts__wp_020_p_ready ?character2))
+        )
+      )
+    :effect
+      (writing_prompts__wp_020_p_letting-go ?character1 ?character2)
+    :agents (?character1)
+  )
+
+  (:action writing_prompts__wp_020_a_believe-in-better-times
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_020_active)
+        (writing_prompts__wp_020_type_character ?character)
+        (writing_prompts__wp_020_p_hurting ?character)
+      )
+    :effect
+      (writing_prompts__wp_020_p_better-times ?character)
+    :agents (?character)
+  )
+)

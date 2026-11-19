@@ -1,0 +1,193 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_069_o_inner-zone - object writing_prompts__wp_069_o_outer-zone - object writing_prompts__wp_069_o_edge-zone - object)
+  (:predicates
+    (writing_prompts__wp_037_active)
+    (writing_prompts__wp_037_type_character ?x - object)
+    (writing_prompts__wp_037_type_object ?x - object)
+    (writing_prompts__wp_037_p_knows ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_together ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_missing ?v0 - object)
+    (writing_prompts__wp_037_p_relationship ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_searching ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_found ?v0 - object ?v1 - object)
+    (writing_prompts__wp_069_active)
+    (writing_prompts__wp_069_type_object ?x - object)
+    (writing_prompts__wp_069_type_zone ?x - object)
+    (writing_prompts__wp_069_p_habitable ?v0 - object)
+    (writing_prompts__wp_069_p_supports-life ?v0 - object)
+    (writing_prompts__wp_069_p_hot ?v0 - object)
+    (writing_prompts__wp_069_p_cold ?v0 - object)
+    (writing_prompts__wp_069_p_gaseous-state ?v0 - object)
+    (writing_prompts__wp_069_p_liquid-state ?v0 - object)
+    (writing_prompts__wp_069_p_solar-wind ?v0 - object)
+  )
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (not (writing_prompts__wp_069_p_supports-life ?zone)) (writing_prompts__wp_069_p_hot ?zone))) :implies (writing_prompts__wp_069_p_supports-life ?zone))
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (writing_prompts__wp_069_p_supports-life ?zone) (writing_prompts__wp_069_p_cold ?zone))) :implies (not (writing_prompts__wp_069_p_supports-life ?zone)))
+
+  (:action writing_prompts__wp_037_a_start-search
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (and
+          (not (= ?searcher ?target))
+          (not (writing_prompts__wp_037_p_searching ?searcher ?target))
+          (writing_prompts__wp_037_p_missing ?target)
+        )
+      )
+    :effect
+      (writing_prompts__wp_037_p_searching ?searcher ?target)
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_stop-search
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (writing_prompts__wp_037_p_searching ?searcher ?target)
+      )
+    :effect
+      (not (writing_prompts__wp_037_p_searching ?searcher ?target))
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_find
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (and
+          (writing_prompts__wp_037_p_searching ?searcher ?target)
+          (writing_prompts__wp_037_p_missing ?target)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_037_p_missing ?target))
+        (writing_prompts__wp_037_p_found ?searcher ?target)
+      )
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_start-relationship
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?character1)
+        (writing_prompts__wp_037_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (not (writing_prompts__wp_037_p_relationship ?character1 ?character2))
+          (writing_prompts__wp_037_p_knows ?character1 ?character2)
+        )
+      )
+    :effect
+      (writing_prompts__wp_037_p_relationship ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_037_a_end-relationship
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?character1)
+        (writing_prompts__wp_037_type_character ?character2)
+        (writing_prompts__wp_037_p_relationship ?character1 ?character2)
+      )
+    :effect
+      (not (writing_prompts__wp_037_p_relationship ?character1 ?character2))
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_069_a_heat-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_hot ?zone))
+          (writing_prompts__wp_069_p_habitable ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_hot ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_cool-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_cold ?zone))
+          (not (writing_prompts__wp_069_p_habitable ?zone))
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_cold ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_gaseous-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+          (writing_prompts__wp_069_p_liquid-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_gaseous-state ?zone)
+        (not (writing_prompts__wp_069_p_liquid-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_liquid-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_liquid-state ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_liquid-state ?zone)
+        (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_solar-wind-effect
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_solar-wind ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_solar-wind ?zone)
+  )
+)

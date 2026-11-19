@@ -1,0 +1,203 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (writing_prompts__wp_017_active)
+    (writing_prompts__wp_017_type_animal ?x - object)
+    (writing_prompts__wp_017_type_character ?x - object)
+    (writing_prompts__wp_017_type_direction ?x - object)
+    (writing_prompts__wp_017_type_object ?x - object)
+    (writing_prompts__wp_076_active)
+    (writing_prompts__wp_076_type_character ?x - object)
+    (writing_prompts__wp_076_type_group ?x - object)
+    (writing_prompts__wp_076_type_object ?x - object)
+    (writing_prompts__wp_076_type_place ?x - object)
+    (awake ?p0)
+    (wearing-pajamas ?p0)
+    (on-floor ?p0)
+    (dressed ?p0)
+    (holding ?p0 ?p1)
+    (walking ?p0 ?p1)
+    (petting ?p0 ?p1)
+    (bites ?p0)
+    (owns ?p0 ?p1)
+    (life-is-a-joke ?p0)
+    (at ?p0 ?p1)
+    (alive ?p0)
+    (has-weapon ?p0)
+    (in-group ?p0 ?p1)
+    (group-exists ?p0)
+    (has-electronics ?p0)
+    (believes-in-fairies ?p0)
+  )
+  (:constants writing_prompts__wp_076_o_peter - object writing_prompts__wp_076_o_hook - object writing_prompts__wp_076_o_lost-boys - object writing_prompts__wp_076_o_pirates - object)
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_character ?character)
+        )
+        (not (awake ?character))
+      )
+    :effect
+      (awake ?character)
+  )
+
+  (:action dress
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (on-floor ?character)
+          (not (dressed ?character))
+        )
+      )
+    :effect
+      (dressed ?character)
+  )
+
+  (:action pet
+    :parameters (?character ?animal)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_animal ?animal)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_animal ?animal)
+        )
+        (and
+          (awake ?character)
+          (dressed ?character)
+          (not (bites ?animal))
+        )
+      )
+    :effect
+      (petting ?character ?animal)
+  )
+
+  (:action realize-life-is-a-joke
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (life-is-a-joke ?character)
+  )
+
+  (:action travel
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?character)
+          (writing_prompts__wp_076_type_place ?from)
+          (writing_prompts__wp_076_type_place ?to)
+          (writing_prompts__wp_076_type_character ?character)
+          (writing_prompts__wp_076_type_place ?from)
+          (writing_prompts__wp_076_type_place ?to)
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action fight
+    :parameters (?fighter1 ?fighter2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?fighter1)
+          (writing_prompts__wp_076_type_character ?fighter2)
+          (writing_prompts__wp_076_type_character ?fighter1)
+          (writing_prompts__wp_076_type_character ?fighter2)
+        )
+        (and
+          (not (= ?fighter1 ?fighter2))
+          (alive ?fighter1)
+          (has-weapon ?fighter1)
+          (alive ?fighter2)
+          (has-weapon ?fighter2)
+        )
+      )
+    :effect
+      (and)
+  )
+
+  (:action die
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?character)
+          (writing_prompts__wp_076_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (not (alive ?character))
+  )
+
+  (:action acquire-electronics
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?character)
+          (writing_prompts__wp_076_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (not (has-electronics ?character))
+        )
+      )
+    :effect
+      (has-electronics ?character)
+  )
+
+  (:action stop-believing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_076_active)
+          (writing_prompts__wp_076_type_character ?character)
+          (writing_prompts__wp_076_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (believes-in-fairies ?character)
+        )
+      )
+    :effect
+      (not (believes-in-fairies ?character))
+  )
+)

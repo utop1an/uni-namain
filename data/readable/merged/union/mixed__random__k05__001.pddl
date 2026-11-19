@@ -1,0 +1,593 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_001_o_outside - object tiny_stories__story_008_o_ball - object)
+  (:predicates
+    (human_1fe4b2f08d46fd1e_active)
+    (human_1fe4b2f08d46fd1e_type_creature ?x - object)
+    (human_1fe4b2f08d46fd1e_type_item ?x - object)
+    (human_1fe4b2f08d46fd1e_type_monster ?x - object)
+    (human_1fe4b2f08d46fd1e_type_object ?x - object)
+    (human_1fe4b2f08d46fd1e_type_person ?x - object)
+    (human_1fe4b2f08d46fd1e_type_place ?x - object)
+    (human_1fe4b2f08d46fd1e_type_valuable ?x - object)
+    (human_1fe4b2f08d46fd1e_p_alive ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_single ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_rich ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_happy ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_hungry ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_at ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_has ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_belongsto ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_loves ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasproposed ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasaccepted ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_marriedto ?v0 - object ?v1 - object)
+    (tiny_stories__story_001_active)
+    (tiny_stories__story_001_type_character ?x - object)
+    (tiny_stories__story_001_type_object ?x - object)
+    (tiny_stories__story_001_type_place ?x - object)
+    (tiny_stories__story_001_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_001_p_raining)
+    (tiny_stories__story_001_p_sunny)
+    (tiny_stories__story_001_p_muddy ?v0 - object)
+    (tiny_stories__story_001_p_playing ?v0 - object)
+    (tiny_stories__story_001_p_scared ?v0 - object)
+    (tiny_stories__story_001_p_brave ?v0 - object)
+    (tiny_stories__story_001_p_safe ?v0 - object)
+    (tiny_stories__story_001_p_inside ?v0 - object)
+    (tiny_stories__story_008_active)
+    (tiny_stories__story_008_type_character ?x - object)
+    (tiny_stories__story_008_type_item ?x - object)
+    (tiny_stories__story_008_type_object ?x - object)
+    (tiny_stories__story_008_type_toy ?x - object)
+    (tiny_stories__story_008_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_008_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_008_p_played-together ?v0 - object ?v1 - object)
+    (tiny_stories__story_008_p_happy ?v0 - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (writing_prompts__wp_029_p_asleep ?v0 - object)
+    (writing_prompts__wp_029_p_awake ?v0 - object)
+    (writing_prompts__wp_029_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_029_p_has-hoard ?v0 - object)
+    (writing_prompts__wp_029_p_robbed ?v0 - object)
+    (writing_prompts__wp_029_p_soundproof-door ?v0 - object)
+    (writing_prompts__wp_029_p_attacked ?v0 - object)
+    (writing_prompts__wp_096_active)
+    (writing_prompts__wp_096_type_character ?x - object)
+    (writing_prompts__wp_096_type_object ?x - object)
+    (writing_prompts__wp_096_p_performing ?v0 - object)
+    (writing_prompts__wp_096_p_applause)
+    (writing_prompts__wp_096_p_satisfied ?v0 - object)
+    (writing_prompts__wp_096_p_disappeared ?v0 - object)
+    (writing_prompts__wp_096_p_trick-performed)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_travel
+    :parameters (?creature - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?from)
+        (human_1fe4b2f08d46fd1e_type_place ?to)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?from)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_at ?creature ?to)
+        (not (human_1fe4b2f08d46fd1e_p_at ?creature ?from))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_propose
+    :parameters (?proposer - object ?proposee - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_person ?proposee)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposee)
+          (human_1fe4b2f08d46fd1e_p_at ?proposee ?place)
+          (human_1fe4b2f08d46fd1e_p_loves ?proposer ?proposee)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?proposee)
+    :agents (?proposer)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_accept
+    :parameters (?accepter - object ?proposer - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?accepter)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?accepter)
+          (human_1fe4b2f08d46fd1e_p_at ?accepter ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?accepter)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasaccepted ?accepter ?proposer)
+    :agents (?accepter)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?groom)
+        (human_1fe4b2f08d46fd1e_type_person ?bride)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?groom)
+          (human_1fe4b2f08d46fd1e_p_at ?groom ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_single ?groom)
+          (human_1fe4b2f08d46fd1e_p_alive ?bride)
+          (human_1fe4b2f08d46fd1e_p_at ?bride ?place)
+          (human_1fe4b2f08d46fd1e_p_hasaccepted ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_single ?bride)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_marriedto ?groom ?bride)
+        (human_1fe4b2f08d46fd1e_p_marriedto ?bride ?groom)
+        (not (human_1fe4b2f08d46fd1e_p_single ?groom))
+        (not (human_1fe4b2f08d46fd1e_p_single ?bride))
+        (forall
+          (?v - object)
+          (when
+            (and
+              (human_1fe4b2f08d46fd1e_type_valuable ?v)
+              (human_1fe4b2f08d46fd1e_p_has ?groom ?v)
+            )
+            (human_1fe4b2f08d46fd1e_p_rich ?bride)
+          )
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_happy ?groom)
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_happy ?bride)
+        )
+      )
+    :agents (?groom ?bride)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_steal
+    :parameters (?thief - object ?victim - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?thief)
+        (human_1fe4b2f08d46fd1e_type_creature ?victim)
+        (human_1fe4b2f08d46fd1e_type_item ?item)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (not (= ?thief ?victim))
+          (human_1fe4b2f08d46fd1e_p_alive ?thief)
+          (human_1fe4b2f08d46fd1e_p_at ?thief ?place)
+          (human_1fe4b2f08d46fd1e_p_at ?item ?place)
+          (human_1fe4b2f08d46fd1e_p_belongsto ?item ?victim)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_has ?thief ?item)
+        (when
+          (human_1fe4b2f08d46fd1e_p_at ?victim ?place)
+          (intends ?victim (human_1fe4b2f08d46fd1e_p_has ?victim ?item))
+        )
+        (when
+          (forall
+            (?v - object)
+            (or
+              (not (human_1fe4b2f08d46fd1e_type_valuable ?v))
+              (not (human_1fe4b2f08d46fd1e_p_has ?victim ?v))
+            )
+          )
+          (not (human_1fe4b2f08d46fd1e_p_rich ?victim))
+        )
+      )
+    :agents (?thief)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_get-hungry
+    :parameters (?creature - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?creature))
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_hungry ?creature)
+        (intends ?creature (not (human_1fe4b2f08d46fd1e_p_hungry ?creature)))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_eat
+    :parameters (?monster - object ?creature - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_monster ?monster)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?monster)
+          (human_1fe4b2f08d46fd1e_p_at ?monster ?place)
+          (human_1fe4b2f08d46fd1e_p_hungry ?monster)
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?monster))
+        (not (human_1fe4b2f08d46fd1e_p_alive ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_rich ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_happy ?creature))
+      )
+    :agents (?monster)
+  )
+
+  (:action tiny_stories__story_001_a_go-outside
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_inside ?character)
+          (tiny_stories__story_001_p_sunny)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_inside ?character))
+        (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_go-inside
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside))
+        (tiny_stories__story_001_p_inside ?character)
+        (tiny_stories__story_001_p_safe ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_play-in-mud
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (tiny_stories__story_001_type_place ?place)
+        (and
+          (tiny_stories__story_001_p_at ?character ?place)
+          (tiny_stories__story_001_p_muddy ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_001_p_playing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_become-scared
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+          (not (tiny_stories__story_001_p_scared ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_001_p_scared ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_become-brave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_type_character ?character)
+        (and
+          (tiny_stories__story_001_p_at ?character tiny_stories__story_001_o_outside)
+          (tiny_stories__story_001_p_scared ?character)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_scared ?character))
+        (tiny_stories__story_001_p_brave ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_001_a_stop-raining
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_p_raining)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_raining))
+        (tiny_stories__story_001_p_sunny)
+      )
+  )
+
+  (:action tiny_stories__story_001_a_start-raining
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_001_active)
+        (tiny_stories__story_001_p_sunny)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_001_p_sunny))
+        (tiny_stories__story_001_p_raining)
+      )
+  )
+
+  (:action tiny_stories__story_008_a_give-toy
+    :parameters (?giver - object ?toy - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_008_active)
+        (tiny_stories__story_008_type_character ?giver)
+        (tiny_stories__story_008_type_toy ?toy)
+        (tiny_stories__story_008_type_character ?receiver)
+        (and
+          (not (= ?giver ?receiver))
+          (tiny_stories__story_008_p_has ?giver ?toy)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_008_p_has ?giver ?toy))
+        (tiny_stories__story_008_p_has ?receiver ?toy)
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action tiny_stories__story_008_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_008_active)
+        (tiny_stories__story_008_type_character ?character1)
+        (tiny_stories__story_008_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_008_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_008_a_play-together
+    :parameters (?character1 - object ?character2 - object ?toy - object)
+    :precondition
+      (and
+        (tiny_stories__story_008_active)
+        (tiny_stories__story_008_type_character ?character1)
+        (tiny_stories__story_008_type_character ?character2)
+        (tiny_stories__story_008_type_toy ?toy)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_008_p_has ?character1 ?toy)
+          (tiny_stories__story_008_p_friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_008_p_played-together ?character1 ?character2)
+        (tiny_stories__story_008_p_happy ?character1)
+        (tiny_stories__story_008_p_happy ?character2)
+      )
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_029_a_sleep
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_awake ?character))
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_asleep ?character))
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_install-soundproof-door
+    :parameters (?gang - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_type_place ?place)
+        (and
+          (writing_prompts__wp_029_p_awake ?gang)
+          (writing_prompts__wp_029_p_at ?gang ?place)
+          (not (writing_prompts__wp_029_p_soundproof-door ?place))
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_soundproof-door ?place)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_rob
+    :parameters (?gang - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_p_awake ?gang)
+      )
+    :effect
+      (writing_prompts__wp_029_p_robbed ?gang)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_attack
+    :parameters (?attacker - object ?victim - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?attacker)
+        (writing_prompts__wp_029_type_character ?victim)
+        (and
+          (writing_prompts__wp_029_p_awake ?attacker)
+          (writing_prompts__wp_029_p_awake ?victim)
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_attacked ?victim)
+    :agents (?attacker)
+  )
+
+  (:action writing_prompts__wp_029_a_clear-passage
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_attacked ?character))
+        (writing_prompts__wp_029_p_has-hoard ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_096_a_perform-show
+    :parameters (?magician - object)
+    :precondition
+      (and
+        (writing_prompts__wp_096_active)
+        (writing_prompts__wp_096_type_character ?magician)
+        (not (writing_prompts__wp_096_p_performing ?magician))
+      )
+    :effect
+      (and
+        (writing_prompts__wp_096_p_performing ?magician)
+        (writing_prompts__wp_096_p_applause)
+      )
+    :agents (?magician)
+  )
+
+  (:action writing_prompts__wp_096_a_perform-final-trick
+    :parameters (?magician - object)
+    :precondition
+      (and
+        (writing_prompts__wp_096_active)
+        (writing_prompts__wp_096_type_character ?magician)
+        (and
+          (writing_prompts__wp_096_p_performing ?magician)
+          (not (writing_prompts__wp_096_p_trick-performed))
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_096_p_trick-performed)
+        (writing_prompts__wp_096_p_disappeared ?magician)
+      )
+    :agents (?magician)
+  )
+
+  (:action writing_prompts__wp_096_a_become-satisfied
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_096_active)
+        (writing_prompts__wp_096_type_character ?character)
+        (and
+          (writing_prompts__wp_096_p_performing ?character)
+          (writing_prompts__wp_096_p_trick-performed)
+          (writing_prompts__wp_096_p_applause)
+          (not (writing_prompts__wp_096_p_satisfied ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_096_p_satisfied ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_096_a_stop-applause
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_096_active)
+        (writing_prompts__wp_096_p_applause)
+      )
+    :effect
+      (not (writing_prompts__wp_096_p_applause))
+  )
+)

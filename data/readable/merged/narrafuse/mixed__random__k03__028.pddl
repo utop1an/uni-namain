@@ -1,0 +1,476 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants human_662247ec644ef452_o_jailhouse - object human_662247ec644ef452_o_snakebite - object)
+  (:predicates
+    (human_662247ec644ef452_active)
+    (human_662247ec644ef452_type_animal ?x - object)
+    (human_662247ec644ef452_type_item ?x - object)
+    (human_662247ec644ef452_type_living ?x - object)
+    (human_662247ec644ef452_type_object ?x - object)
+    (human_662247ec644ef452_type_person ?x - object)
+    (human_662247ec644ef452_type_place ?x - object)
+    (human_662247ec644ef452_type_sickness ?x - object)
+    (human_662247ec644ef452_type_valuable ?x - object)
+    (shared_p_consensus_7c44e5c841a699af ?v0 - object)
+    (human_662247ec644ef452_p_free ?v0 - object)
+    (human_662247ec644ef452_p_sheriff ?v0 - object)
+    (shared_p_consensus_9ce747b60c8ecfed ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_belongsto ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_has ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_sick ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_cures ?v0 - object ?v1 - object)
+    (human_662247ec644ef452_p_loves ?v0 - object ?v1 - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (writing_prompts__wp_029_p_asleep ?v0 - object)
+    (writing_prompts__wp_029_p_awake ?v0 - object)
+    (writing_prompts__wp_029_p_has-hoard ?v0 - object)
+    (writing_prompts__wp_029_p_robbed ?v0 - object)
+    (writing_prompts__wp_029_p_soundproof-door ?v0 - object)
+    (writing_prompts__wp_029_p_attacked ?v0 - object)
+    (writing_prompts__wp_031_active)
+    (writing_prompts__wp_031_type_character ?x - object)
+    (writing_prompts__wp_031_type_object ?x - object)
+    (writing_prompts__wp_031_type_ship ?x - object)
+    (writing_prompts__wp_031_p_on-ship ?v0 - object ?v1 - object)
+    (writing_prompts__wp_031_p_moby-dick-spotted ?v0 - object)
+    (writing_prompts__wp_031_p_moby-dick-attacking ?v0 - object)
+    (writing_prompts__wp_031_p_read-moby-dick ?v0 - object)
+    (writing_prompts__wp_031_p_trained-in-whale-killing ?v0 - object)
+    (writing_prompts__wp_031_p_battle-stations ?v0 - object)
+  )
+
+  (:action human_662247ec644ef452_a_snakebite
+    :parameters (?victim - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?victim)
+        (shared_p_consensus_7c44e5c841a699af ?victim)
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)
+        (intends ?victim (not (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)))
+        (forall
+          (?p - object)
+          (when
+            (and
+              (human_662247ec644ef452_type_person ?p)
+              (human_662247ec644ef452_p_loves ?p ?victim)
+            )
+            (intends ?p (not (human_662247ec644ef452_p_sick ?victim human_662247ec644ef452_o_snakebite)))
+          )
+        )
+      )
+  )
+
+  (:action human_662247ec644ef452_a_die
+    :parameters (?person - object ?sickness - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_sickness ?sickness)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?person)
+          (human_662247ec644ef452_p_sick ?person ?sickness)
+        )
+      )
+    :effect
+      (not (shared_p_consensus_7c44e5c841a699af ?person))
+  )
+
+  (:action human_662247ec644ef452_a_travel
+    :parameters (?person - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_place ?from)
+        (human_662247ec644ef452_type_place ?to)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (shared_p_consensus_9ce747b60c8ecfed ?person ?from)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_9ce747b60c8ecfed ?person ?to)
+        (not (shared_p_consensus_9ce747b60c8ecfed ?person ?from))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_forcetravel
+    :parameters (?person - object ?victim - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?from)
+        (human_662247ec644ef452_type_place ?to)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (shared_p_consensus_9ce747b60c8ecfed ?person ?from)
+          (shared_p_consensus_7c44e5c841a699af ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (shared_p_consensus_9ce747b60c8ecfed ?victim ?from)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_9ce747b60c8ecfed ?person ?to)
+        (not (shared_p_consensus_9ce747b60c8ecfed ?person ?from))
+        (shared_p_consensus_9ce747b60c8ecfed ?victim ?to)
+        (not (shared_p_consensus_9ce747b60c8ecfed ?victim ?from))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_give
+    :parameters (?giver - object ?receiver - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?giver)
+        (human_662247ec644ef452_type_person ?receiver)
+        (human_662247ec644ef452_type_item ?item)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?giver)
+          (human_662247ec644ef452_p_free ?giver)
+          (shared_p_consensus_9ce747b60c8ecfed ?giver ?place)
+          (human_662247ec644ef452_p_has ?giver ?item)
+          (shared_p_consensus_7c44e5c841a699af ?receiver)
+          (human_662247ec644ef452_p_free ?receiver)
+          (shared_p_consensus_9ce747b60c8ecfed ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_has ?receiver ?item)
+        (not (human_662247ec644ef452_p_has ?giver ?item))
+        (when
+          (human_662247ec644ef452_p_belongsto ?item ?giver)
+          (human_662247ec644ef452_p_belongsto ?item ?receiver)
+        )
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action human_662247ec644ef452_a_tieup
+    :parameters (?person - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (shared_p_consensus_9ce747b60c8ecfed ?person ?place)
+          (shared_p_consensus_7c44e5c841a699af ?victim)
+          (shared_p_consensus_9ce747b60c8ecfed ?victim ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_662247ec644ef452_p_free ?victim))
+        (intends ?victim (human_662247ec644ef452_p_free ?victim))
+      )
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_untie
+    :parameters (?person - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?person)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?person)
+          (human_662247ec644ef452_p_free ?person)
+          (shared_p_consensus_9ce747b60c8ecfed ?person ?place)
+          (shared_p_consensus_7c44e5c841a699af ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (shared_p_consensus_9ce747b60c8ecfed ?victim ?place)
+        )
+      )
+    :effect
+      (human_662247ec644ef452_p_free ?victim)
+    :agents (?person)
+  )
+
+  (:action human_662247ec644ef452_a_take
+    :parameters (?taker - object ?item - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?taker)
+        (human_662247ec644ef452_type_item ?item)
+        (human_662247ec644ef452_type_person ?victim)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (not (= ?taker ?victim))
+          (shared_p_consensus_7c44e5c841a699af ?taker)
+          (human_662247ec644ef452_p_free ?taker)
+          (shared_p_consensus_9ce747b60c8ecfed ?taker ?place)
+          (shared_p_consensus_7c44e5c841a699af ?victim)
+          (not (human_662247ec644ef452_p_free ?victim))
+          (shared_p_consensus_9ce747b60c8ecfed ?victim ?place)
+          (human_662247ec644ef452_p_has ?victim ?item)
+        )
+      )
+    :effect
+      (and
+        (human_662247ec644ef452_p_has ?taker ?item)
+        (not (human_662247ec644ef452_p_has ?victim ?item))
+        (when
+          (human_662247ec644ef452_p_belongsto ?item ?victim)
+          (and
+            (intends ?victim (human_662247ec644ef452_p_has ?victim ?item))
+            (forall
+              (?s - object)
+              (when
+                (and
+                  (human_662247ec644ef452_type_person ?s)
+                  (human_662247ec644ef452_p_sheriff ?s)
+                )
+                (intends ?s (and (shared_p_consensus_9ce747b60c8ecfed ?taker human_662247ec644ef452_o_jailhouse) (not (human_662247ec644ef452_p_free ?taker)) (human_662247ec644ef452_p_has ?victim ?item) (human_662247ec644ef452_p_free ?victim)))
+              )
+            )
+          )
+        )
+      )
+    :agents (?taker)
+  )
+
+  (:action human_662247ec644ef452_a_heal
+    :parameters (?healer - object ?patient - object ?sickness - object ?medicine - object ?place - object)
+    :precondition
+      (and
+        (human_662247ec644ef452_active)
+        (human_662247ec644ef452_type_person ?healer)
+        (human_662247ec644ef452_type_person ?patient)
+        (human_662247ec644ef452_type_sickness ?sickness)
+        (human_662247ec644ef452_type_item ?medicine)
+        (human_662247ec644ef452_type_place ?place)
+        (and
+          (human_662247ec644ef452_p_cures ?medicine ?sickness)
+          (shared_p_consensus_7c44e5c841a699af ?healer)
+          (human_662247ec644ef452_p_free ?healer)
+          (shared_p_consensus_9ce747b60c8ecfed ?healer ?place)
+          (human_662247ec644ef452_p_has ?healer ?medicine)
+          (shared_p_consensus_7c44e5c841a699af ?patient)
+          (shared_p_consensus_9ce747b60c8ecfed ?patient ?place)
+          (human_662247ec644ef452_p_sick ?patient ?sickness)
+        )
+      )
+    :effect
+      (and
+        (not (human_662247ec644ef452_p_sick ?patient ?sickness))
+        (not (human_662247ec644ef452_p_has ?healer ?medicine))
+      )
+    :agents (?healer ?patient)
+  )
+
+  (:action writing_prompts__wp_029_a_sleep
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_awake ?character))
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_asleep ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_asleep ?character))
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_029_a_install-soundproof-door
+    :parameters (?gang - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_type_place ?place)
+        (and
+          (writing_prompts__wp_029_p_awake ?gang)
+          (shared_p_consensus_9ce747b60c8ecfed ?gang ?place)
+          (not (writing_prompts__wp_029_p_soundproof-door ?place))
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_soundproof-door ?place)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_rob
+    :parameters (?gang - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?gang)
+        (writing_prompts__wp_029_p_awake ?gang)
+      )
+    :effect
+      (writing_prompts__wp_029_p_robbed ?gang)
+    :agents (?gang)
+  )
+
+  (:action writing_prompts__wp_029_a_attack
+    :parameters (?attacker - object ?victim - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?attacker)
+        (writing_prompts__wp_029_type_character ?victim)
+        (and
+          (writing_prompts__wp_029_p_awake ?attacker)
+          (writing_prompts__wp_029_p_awake ?victim)
+        )
+      )
+    :effect
+      (writing_prompts__wp_029_p_attacked ?victim)
+    :agents (?attacker)
+  )
+
+  (:action writing_prompts__wp_029_a_clear-passage
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_029_active)
+        (writing_prompts__wp_029_type_character ?character)
+        (writing_prompts__wp_029_p_awake ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_029_p_attacked ?character))
+        (writing_prompts__wp_029_p_has-hoard ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_031_a_spot-moby-dick
+    :parameters (?character - object ?ship - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_character ?character)
+        (writing_prompts__wp_031_type_ship ?ship)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?character)
+          (writing_prompts__wp_031_p_on-ship ?character ?ship)
+        )
+      )
+    :effect
+      (writing_prompts__wp_031_p_moby-dick-spotted ?ship)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_031_a_moby-dick-attack
+    :parameters (?ship - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_ship ?ship)
+        (writing_prompts__wp_031_p_moby-dick-spotted ?ship)
+      )
+    :effect
+      (writing_prompts__wp_031_p_moby-dick-attacking ?ship)
+  )
+
+  (:action writing_prompts__wp_031_a_order-battle-stations
+    :parameters (?character - object ?ship - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_character ?character)
+        (writing_prompts__wp_031_type_ship ?ship)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?character)
+          (writing_prompts__wp_031_p_on-ship ?character ?ship)
+          (writing_prompts__wp_031_p_moby-dick-spotted ?ship)
+        )
+      )
+    :effect
+      (writing_prompts__wp_031_p_battle-stations ?ship)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_031_a_try-kill-moby-dick
+    :parameters (?character - object ?ship - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_character ?character)
+        (writing_prompts__wp_031_type_ship ?ship)
+        (and
+          (shared_p_consensus_7c44e5c841a699af ?character)
+          (writing_prompts__wp_031_p_on-ship ?character ?ship)
+          (writing_prompts__wp_031_p_trained-in-whale-killing ?character)
+          (writing_prompts__wp_031_p_moby-dick-attacking ?ship)
+          (writing_prompts__wp_031_p_battle-stations ?ship)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_031_p_moby-dick-attacking ?ship))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_031_a_read-moby-dick
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_character ?character)
+        (shared_p_consensus_7c44e5c841a699af ?character)
+      )
+    :effect
+      (writing_prompts__wp_031_p_read-moby-dick ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_031_a_train-in-whale-killing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_031_active)
+        (writing_prompts__wp_031_type_character ?character)
+        (writing_prompts__wp_031_p_read-moby-dick ?character)
+      )
+    :effect
+      (writing_prompts__wp_031_p_trained-in-whale-killing ?character)
+    :agents (?character)
+  )
+)

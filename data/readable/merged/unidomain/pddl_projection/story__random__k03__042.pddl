@@ -1,0 +1,308 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_077_active)
+    (tiny_stories__story_077_type_character ?x - object)
+    (tiny_stories__story_077_type_object ?x - object)
+    (tiny_stories__story_077_type_place ?x - object)
+    (tiny_stories__story_078_active)
+    (tiny_stories__story_078_type_character ?x - object)
+    (tiny_stories__story_078_type_object ?x - object)
+    (tiny_stories__story_078_type_place ?x - object)
+    (tiny_stories__story_078_type_project ?x - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (asleep ?p0)
+    (awake ?p0)
+    (has-hoard ?p0)
+    (robbed ?p0)
+    (soundproof-door ?p0)
+    (attacked ?p0)
+    (at ?p0 ?p1)
+    (tired ?p0)
+    (played-together ?p0 ?p1)
+    (happy ?p0)
+    (alive ?p0)
+    (amazed ?p0)
+    (supports ?p0 ?p1)
+    (persistent ?p0)
+    (completed ?p0)
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (asleep ?character)
+      )
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (asleep ?character)
+      )
+    :effect
+      (and
+        (not (asleep ?character))
+        (awake ?character)
+      )
+  )
+
+  (:action rob
+    :parameters (?gang)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_character ?gang)
+        )
+        (awake ?gang)
+      )
+    :effect
+      (robbed ?gang)
+  )
+
+  (:action install-soundproof-door
+    :parameters (?gang ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+        )
+        (and
+          (awake ?gang)
+          (at ?gang ?place)
+          (not (soundproof-door ?place))
+        )
+      )
+    :effect
+      (soundproof-door ?place)
+  )
+
+  (:action attack
+    :parameters (?attacker ?victim)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+        )
+        (and
+          (awake ?attacker)
+          (awake ?victim)
+        )
+      )
+    :effect
+      (attacked ?victim)
+  )
+
+  (:action clear-passage
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (attacked ?character))
+        (has-hoard ?character)
+      )
+  )
+
+  (:action rest
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_077_active)
+          (tiny_stories__story_077_type_character ?character)
+          (tiny_stories__story_077_type_character ?character)
+        )
+        (tired ?character)
+      )
+    :effect
+      (not (tired ?character))
+  )
+
+  (:action become-amazed
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_078_active)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (amazed ?character)
+  )
+
+  (:action support-project
+    :parameters (?character ?project)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_078_active)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_project ?project)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_project ?project)
+        )
+        (alive ?character)
+      )
+    :effect
+      (supports ?character ?project)
+  )
+
+  (:action become-persistent
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_078_active)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (persistent ?character)
+  )
+
+  (:action complete-project
+    :parameters (?character ?project)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_078_active)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_project ?project)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_project ?project)
+        )
+        (and
+          (alive ?character)
+          (supports ?character ?project)
+          (persistent ?character)
+        )
+      )
+    :effect
+      (completed ?project)
+  )
+
+  (:action become-happy
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_078_active)
+          (tiny_stories__story_078_type_character ?character)
+          (tiny_stories__story_078_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (happy ?character)
+  )
+
+  (:action play
+    :parameters (?character1 ?character2 ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_077_active)
+          (tiny_stories__story_077_type_character ?character1)
+          (tiny_stories__story_077_type_character ?character2)
+          (tiny_stories__story_077_type_place ?place)
+          (tiny_stories__story_077_type_character ?character1)
+          (tiny_stories__story_077_type_character ?character2)
+          (tiny_stories__story_077_type_place ?place)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (at ?character1 ?place)
+          (at ?character2 ?place)
+        )
+      )
+    :effect
+      (and
+        (played-together ?character1 ?character2)
+        (happy ?character1)
+        (happy ?character2)
+        (tired ?character1)
+        (tired ?character2)
+      )
+  )
+
+  (:action move
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (or
+          (and
+            (tiny_stories__story_077_active)
+            (tiny_stories__story_077_type_character ?character)
+            (tiny_stories__story_077_type_place ?from)
+            (tiny_stories__story_077_type_place ?to)
+            (tiny_stories__story_077_type_character ?character)
+            (tiny_stories__story_077_type_place ?from)
+            (tiny_stories__story_077_type_place ?to)
+          )
+          (and
+            (tiny_stories__story_078_active)
+            (tiny_stories__story_078_type_character ?character)
+            (tiny_stories__story_078_type_place ?from)
+            (tiny_stories__story_078_type_place ?to)
+            (tiny_stories__story_078_type_character ?character)
+            (tiny_stories__story_078_type_place ?from)
+            (tiny_stories__story_078_type_place ?to)
+          )
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+)

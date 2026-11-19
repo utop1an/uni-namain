@@ -1,0 +1,170 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_089_active)
+    (tiny_stories__story_089_type_character ?x - object)
+    (tiny_stories__story_089_type_object ?x - object)
+    (writing_prompts__wp_017_active)
+    (writing_prompts__wp_017_type_animal ?x - object)
+    (writing_prompts__wp_017_type_character ?x - object)
+    (writing_prompts__wp_017_type_direction ?x - object)
+    (writing_prompts__wp_017_type_object ?x - object)
+    (playing ?p0)
+    (tired ?p0)
+    (sleeping ?p0)
+    (has-energy ?p0)
+    (awake ?p0)
+    (wearing-pajamas ?p0)
+    (on-floor ?p0)
+    (dressed ?p0)
+    (holding ?p0 ?p1)
+    (walking ?p0 ?p1)
+    (petting ?p0 ?p1)
+    (bites ?p0)
+    (owns ?p0 ?p1)
+    (life-is-a-joke ?p0)
+  )
+
+  (:action stop-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (playing ?character)
+      )
+    :effect
+      (and
+        (not (playing ?character))
+        (tired ?character)
+      )
+  )
+
+  (:action start-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (not (playing ?character))
+          (has-energy ?character)
+        )
+      )
+    :effect
+      (playing ?character)
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (tired ?character)
+          (not (sleeping ?character))
+        )
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (sleeping ?character)
+      )
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (or
+          (and
+            (tiny_stories__story_089_active)
+            (tiny_stories__story_089_type_character ?character)
+            (tiny_stories__story_089_type_character ?character)
+          )
+          (and
+            (writing_prompts__wp_017_active)
+            (writing_prompts__wp_017_type_character ?character)
+            (writing_prompts__wp_017_type_character ?character)
+          )
+        )
+        (and
+          (sleeping ?character)
+          (not (awake ?character))
+        )
+      )
+    :effect
+      (and
+        (awake ?character)
+        (not (sleeping ?character))
+        (not (tired ?character))
+        (has-energy ?character)
+      )
+  )
+
+  (:action dress
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (on-floor ?character)
+          (not (dressed ?character))
+        )
+      )
+    :effect
+      (dressed ?character)
+  )
+
+  (:action pet
+    :parameters (?character ?animal)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_animal ?animal)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_animal ?animal)
+        )
+        (and
+          (awake ?character)
+          (dressed ?character)
+          (not (bites ?animal))
+        )
+      )
+    :effect
+      (petting ?character ?animal)
+  )
+
+  (:action realize-life-is-a-joke
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_017_active)
+          (writing_prompts__wp_017_type_character ?character)
+          (writing_prompts__wp_017_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (life-is-a-joke ?character)
+  )
+)

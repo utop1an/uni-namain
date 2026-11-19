@@ -1,0 +1,218 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_015_active)
+    (tiny_stories__story_015_type_character ?x - object)
+    (tiny_stories__story_015_type_dog ?x - object)
+    (tiny_stories__story_015_type_object ?x - object)
+    (tiny_stories__story_015_p_friend ?v0 - object ?v1 - object)
+    (tiny_stories__story_015_p_practices ?v0 - object ?v1 - object)
+    (tiny_stories__story_015_p_participates ?v0 - object)
+    (tiny_stories__story_015_p_wins ?v0 - object)
+    (tiny_stories__story_015_p_plays-with-toy-stack ?v0 - object)
+    (tiny_stories__story_020_active)
+    (tiny_stories__story_020_type_character ?x - object)
+    (tiny_stories__story_020_type_object ?x - object)
+    (tiny_stories__story_020_type_place ?x - object)
+    (tiny_stories__story_020_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_020_p_explored ?v0 - object ?v1 - object)
+    (tiny_stories__story_020_p_interacted ?v0 - object ?v1 - object)
+    (writing_prompts__wp_093_active)
+    (writing_prompts__wp_093_type_character ?x - object)
+    (writing_prompts__wp_093_type_object ?x - object)
+    (writing_prompts__wp_093_type_subreddit ?x - object)
+    (writing_prompts__wp_093_p_wearing ?v0 - object ?v1 - object)
+    (writing_prompts__wp_093_p_united ?v0 - object ?v1 - object)
+    (writing_prompts__wp_093_p_truce ?v0 - object ?v1 - object)
+    (writing_prompts__wp_093_p_exists ?v0 - object)
+    (writing_prompts__wp_093_p_wall-built)
+    (writing_prompts__wp_093_p_filled-with-water)
+  )
+
+  (:action tiny_stories__story_015_a_practice-running
+    :parameters (?helper - object ?runner - object)
+    :precondition
+      (and
+        (tiny_stories__story_015_active)
+        (tiny_stories__story_015_type_dog ?helper)
+        (tiny_stories__story_015_type_dog ?runner)
+        (and
+          (tiny_stories__story_015_p_friend ?helper ?runner)
+          (not (tiny_stories__story_015_p_practices ?helper ?runner))
+        )
+      )
+    :effect
+      (tiny_stories__story_015_p_practices ?helper ?runner)
+    :agents (?helper ?runner)
+  )
+
+  (:action tiny_stories__story_015_a_participate-in-race
+    :parameters (?dog - object)
+    :precondition
+      (and
+        (tiny_stories__story_015_active)
+        (tiny_stories__story_015_type_dog ?dog)
+        (not (tiny_stories__story_015_p_participates ?dog))
+      )
+    :effect
+      (tiny_stories__story_015_p_participates ?dog)
+    :agents (?dog)
+  )
+
+  (:action tiny_stories__story_015_a_win-race
+    :parameters (?dog - object ?helper - object)
+    :precondition
+      (and
+        (tiny_stories__story_015_active)
+        (tiny_stories__story_015_type_dog ?dog)
+        (tiny_stories__story_015_type_dog ?helper)
+        (and
+          (tiny_stories__story_015_p_participates ?dog)
+          (tiny_stories__story_015_p_practices ?dog ?helper)
+        )
+      )
+    :effect
+      (tiny_stories__story_015_p_wins ?dog)
+    :agents (?dog)
+  )
+
+  (:action tiny_stories__story_015_a_play-with-toy-stack
+    :parameters (?dog - object)
+    :precondition
+      (and
+        (tiny_stories__story_015_active)
+        (tiny_stories__story_015_type_dog ?dog)
+        (not (tiny_stories__story_015_p_plays-with-toy-stack ?dog))
+      )
+    :effect
+      (tiny_stories__story_015_p_plays-with-toy-stack ?dog)
+    :agents (?dog)
+  )
+
+  (:action tiny_stories__story_020_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_020_active)
+        (tiny_stories__story_020_type_character ?character)
+        (tiny_stories__story_020_type_place ?from)
+        (tiny_stories__story_020_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_020_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_020_p_at ?character ?from))
+        (tiny_stories__story_020_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_020_a_interact
+    :parameters (?character1 - object ?character2 - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_020_active)
+        (tiny_stories__story_020_type_character ?character1)
+        (tiny_stories__story_020_type_character ?character2)
+        (tiny_stories__story_020_type_place ?place)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_020_p_at ?character1 ?place)
+          (tiny_stories__story_020_p_at ?character2 ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_020_p_interacted ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_020_a_explore
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_020_active)
+        (tiny_stories__story_020_type_character ?character)
+        (tiny_stories__story_020_type_place ?place)
+        (tiny_stories__story_020_p_at ?character ?place)
+      )
+    :effect
+      (tiny_stories__story_020_p_explored ?character ?place)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_093_a_wear
+    :parameters (?character - object ?clothing - object)
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (writing_prompts__wp_093_type_character ?character)
+        (writing_prompts__wp_093_type_object ?clothing)
+      )
+    :effect
+      (writing_prompts__wp_093_p_wearing ?character ?clothing)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_093_a_unite
+    :parameters (?subreddit1 - object ?subreddit2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (writing_prompts__wp_093_type_subreddit ?subreddit1)
+        (writing_prompts__wp_093_type_subreddit ?subreddit2)
+        (not (writing_prompts__wp_093_p_united ?subreddit1 ?subreddit2))
+      )
+    :effect
+      (writing_prompts__wp_093_p_united ?subreddit1 ?subreddit2)
+    :agents (?subreddit1 ?subreddit2)
+  )
+
+  (:action writing_prompts__wp_093_a_establish-truce
+    :parameters (?subreddit1 - object ?subreddit2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (writing_prompts__wp_093_type_subreddit ?subreddit1)
+        (writing_prompts__wp_093_type_subreddit ?subreddit2)
+        (not (writing_prompts__wp_093_p_truce ?subreddit1 ?subreddit2))
+      )
+    :effect
+      (writing_prompts__wp_093_p_truce ?subreddit1 ?subreddit2)
+    :agents (?subreddit1 ?subreddit2)
+  )
+
+  (:action writing_prompts__wp_093_a_create-subreddit
+    :parameters (?subreddit - object)
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (writing_prompts__wp_093_type_subreddit ?subreddit)
+      )
+    :effect
+      (writing_prompts__wp_093_p_exists ?subreddit)
+    :agents (?subreddit)
+  )
+
+  (:action writing_prompts__wp_093_a_build-wall
+    :parameters ()
+    :precondition
+      (writing_prompts__wp_093_active)
+    :effect
+      (writing_prompts__wp_093_p_wall-built)
+  )
+
+  (:action writing_prompts__wp_093_a_fill-wall-with-water
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (writing_prompts__wp_093_p_wall-built)
+      )
+    :effect
+      (writing_prompts__wp_093_p_filled-with-water)
+  )
+)

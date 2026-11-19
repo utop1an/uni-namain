@@ -1,0 +1,232 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (writing_prompts__wp_038_active)
+    (writing_prompts__wp_038_type_character ?x - object)
+    (writing_prompts__wp_038_type_object ?x - object)
+    (writing_prompts__wp_038_type_place ?x - object)
+    (writing_prompts__wp_096_active)
+    (writing_prompts__wp_096_type_character ?x - object)
+    (writing_prompts__wp_096_type_object ?x - object)
+    (at ?p0 ?p1)
+    (alive ?p0)
+    (abducted ?p0)
+    (has-translator ?p0)
+    (knows-mistake ?p0 ?p1)
+    (playing-game ?p0 ?p1)
+    (friends ?p0 ?p1)
+    (performing ?p0)
+    (applause)
+    (satisfied ?p0)
+    (disappeared ?p0)
+    (trick-performed)
+  )
+
+  (:action abduct
+    :parameters (?abductor ?abductee ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?abductor)
+          (writing_prompts__wp_038_type_character ?abductee)
+          (writing_prompts__wp_038_type_place ?place)
+          (writing_prompts__wp_038_type_character ?abductor)
+          (writing_prompts__wp_038_type_character ?abductee)
+          (writing_prompts__wp_038_type_place ?place)
+        )
+        (and
+          (not (= ?abductor ?abductee))
+          (alive ?abductor)
+          (at ?abductor ?place)
+          (alive ?abductee)
+          (at ?abductee ?place)
+        )
+      )
+    :effect
+      (and
+        (abducted ?abductee)
+        (not (at ?abductee ?place))
+      )
+  )
+
+  (:action give-translator
+    :parameters (?giver ?receiver)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?giver)
+          (writing_prompts__wp_038_type_character ?receiver)
+          (writing_prompts__wp_038_type_character ?giver)
+          (writing_prompts__wp_038_type_character ?receiver)
+        )
+        (and
+          (not (= ?giver ?receiver))
+          (alive ?giver)
+          (alive ?receiver)
+          (abducted ?receiver)
+        )
+      )
+    :effect
+      (has-translator ?receiver)
+  )
+
+  (:action reveal-mistake
+    :parameters (?mistaken ?informed)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?mistaken)
+          (writing_prompts__wp_038_type_character ?informed)
+          (writing_prompts__wp_038_type_character ?mistaken)
+          (writing_prompts__wp_038_type_character ?informed)
+        )
+        (and
+          (not (= ?mistaken ?informed))
+          (alive ?mistaken)
+          (alive ?informed)
+          (has-translator ?informed)
+        )
+      )
+    :effect
+      (knows-mistake ?informed ?mistaken)
+  )
+
+  (:action become-friends
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+          (has-translator ?character1)
+        )
+      )
+    :effect
+      (friends ?character1 ?character2)
+  )
+
+  (:action play-game
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+          (friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (playing-game ?character1 ?character2)
+  )
+
+  (:action stop-game
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_038_active)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+          (writing_prompts__wp_038_type_character ?character1)
+          (writing_prompts__wp_038_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+          (playing-game ?character1 ?character2)
+        )
+      )
+    :effect
+      (not (playing-game ?character1 ?character2))
+  )
+
+  (:action perform-show
+    :parameters (?magician)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_096_active)
+          (writing_prompts__wp_096_type_character ?magician)
+          (writing_prompts__wp_096_type_character ?magician)
+        )
+        (not (performing ?magician))
+      )
+    :effect
+      (and
+        (performing ?magician)
+        (applause)
+      )
+  )
+
+  (:action perform-final-trick
+    :parameters (?magician)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_096_active)
+          (writing_prompts__wp_096_type_character ?magician)
+          (writing_prompts__wp_096_type_character ?magician)
+        )
+        (and
+          (performing ?magician)
+          (not (trick-performed))
+        )
+      )
+    :effect
+      (and
+        (trick-performed)
+        (disappeared ?magician)
+      )
+  )
+
+  (:action become-satisfied
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_096_active)
+          (writing_prompts__wp_096_type_character ?character)
+          (writing_prompts__wp_096_type_character ?character)
+        )
+        (and
+          (performing ?character)
+          (trick-performed)
+          (applause)
+          (not (satisfied ?character))
+        )
+      )
+    :effect
+      (satisfied ?character)
+  )
+
+  (:action stop-applause
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_096_active)
+        (applause)
+      )
+    :effect
+      (not (applause))
+  )
+)

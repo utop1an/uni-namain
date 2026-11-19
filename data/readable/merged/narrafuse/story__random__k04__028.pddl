@@ -1,0 +1,395 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_031_o_old-house - object)
+  (:predicates
+    (tiny_stories__story_031_active)
+    (tiny_stories__story_031_type_character ?x - object)
+    (tiny_stories__story_031_type_object ?x - object)
+    (tiny_stories__story_031_type_place ?x - object)
+    (shared_p_consensus_460c1d572da5103e ?v0 - object ?v1 - object)
+    (tiny_stories__story_031_p_has-skin ?v0 - object)
+    (tiny_stories__story_031_p_kneel ?v0 - object)
+    (tiny_stories__story_031_p_rewarded ?v0 - object)
+    (tiny_stories__story_031_p_tried ?v0 - object)
+    (tiny_stories__story_031_p_voice-happy ?v0 - object)
+    (tiny_stories__story_075_active)
+    (tiny_stories__story_075_type_character ?x - object)
+    (tiny_stories__story_075_type_dress ?x - object)
+    (tiny_stories__story_075_type_item ?x - object)
+    (tiny_stories__story_075_type_object ?x - object)
+    (tiny_stories__story_075_p_wearing ?v0 - object ?v1 - object)
+    (tiny_stories__story_075_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_075_p_damaged ?v0 - object)
+    (shared_p_consensus_c2f63db94ef5f610 ?v0 - object)
+    (tiny_stories__story_078_active)
+    (tiny_stories__story_078_type_character ?x - object)
+    (tiny_stories__story_078_type_object ?x - object)
+    (tiny_stories__story_078_type_place ?x - object)
+    (tiny_stories__story_078_type_project ?x - object)
+    (tiny_stories__story_078_p_alive ?v0 - object)
+    (tiny_stories__story_078_p_amazed ?v0 - object)
+    (tiny_stories__story_078_p_supports ?v0 - object ?v1 - object)
+    (tiny_stories__story_078_p_persistent ?v0 - object)
+    (tiny_stories__story_078_p_completed ?v0 - object)
+    (writing_prompts__wp_090_active)
+    (writing_prompts__wp_090_type_character ?x - object)
+    (writing_prompts__wp_090_type_object ?x - object)
+    (writing_prompts__wp_090_p_famous ?v0 - object)
+    (writing_prompts__wp_090_p_wears-earmuffs ?v0 - object)
+    (writing_prompts__wp_090_p_filled-with-ice ?v0 - object)
+    (writing_prompts__wp_090_p_candidate ?v0 - object)
+    (writing_prompts__wp_090_p_president ?v0 - object)
+    (writing_prompts__wp_090_p_endured-pain ?v0 - object)
+  )
+
+  (:action tiny_stories__story_031_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (tiny_stories__story_031_type_place ?from)
+        (tiny_stories__story_031_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (shared_p_consensus_460c1d572da5103e ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_460c1d572da5103e ?character ?from))
+        (shared_p_consensus_460c1d572da5103e ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_031_a_kneel
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (shared_p_consensus_460c1d572da5103e ?character tiny_stories__story_031_o_old-house)
+      )
+    :effect
+      (tiny_stories__story_031_p_kneel ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_031_a_try
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (tiny_stories__story_031_p_kneel ?character)
+      )
+    :effect
+      (tiny_stories__story_031_p_tried ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_031_a_evaluate
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (tiny_stories__story_031_p_tried ?character)
+      )
+    :effect
+      (tiny_stories__story_031_p_voice-happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_031_a_reward
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (tiny_stories__story_031_p_voice-happy ?character)
+      )
+    :effect
+      (tiny_stories__story_031_p_rewarded ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_031_a_take-skin
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_031_active)
+        (tiny_stories__story_031_type_character ?character)
+        (and
+          (not (tiny_stories__story_031_p_voice-happy ?character))
+          (tiny_stories__story_031_p_has-skin ?character)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_031_p_has-skin ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_075_a_put-on-dress
+    :parameters (?character - object ?dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?dress)
+        (and
+          (tiny_stories__story_075_p_has ?character ?dress)
+          (not (tiny_stories__story_075_p_wearing ?character ?dress))
+        )
+      )
+    :effect
+      (tiny_stories__story_075_p_wearing ?character ?dress)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_075_a_slip
+    :parameters (?character - object ?dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?dress)
+        (and
+          (tiny_stories__story_075_p_wearing ?character ?dress)
+          (not (tiny_stories__story_075_p_damaged ?dress))
+        )
+      )
+    :effect
+      (tiny_stories__story_075_p_damaged ?dress)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_075_a_comfort
+    :parameters (?parent - object ?child - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?parent)
+        (tiny_stories__story_075_type_character ?child)
+        (and
+          (not (shared_p_consensus_c2f63db94ef5f610 ?child))
+          (not (= ?parent ?child))
+        )
+      )
+    :effect
+      (shared_p_consensus_c2f63db94ef5f610 ?child)
+    :agents (?parent)
+  )
+
+  (:action tiny_stories__story_075_a_get-new-dress
+    :parameters (?character - object ?old-dress - object ?new-dress - object)
+    :precondition
+      (and
+        (tiny_stories__story_075_active)
+        (tiny_stories__story_075_type_character ?character)
+        (tiny_stories__story_075_type_dress ?old-dress)
+        (tiny_stories__story_075_type_dress ?new-dress)
+        (and
+          (tiny_stories__story_075_p_damaged ?old-dress)
+          (tiny_stories__story_075_p_wearing ?character ?old-dress)
+          (not (tiny_stories__story_075_p_has ?character ?new-dress))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_075_p_wearing ?character ?old-dress))
+        (tiny_stories__story_075_p_has ?character ?new-dress)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_place ?from)
+        (tiny_stories__story_078_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_078_p_alive ?character)
+          (shared_p_consensus_460c1d572da5103e ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_460c1d572da5103e ?character ?from))
+        (shared_p_consensus_460c1d572da5103e ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-amazed
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_amazed ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (shared_p_consensus_c2f63db94ef5f610 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_support-project
+    :parameters (?character - object ?project - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_project ?project)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_supports ?character ?project)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_become-persistent
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_078_p_persistent ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_078_a_complete-project
+    :parameters (?character - object ?project - object)
+    :precondition
+      (and
+        (tiny_stories__story_078_active)
+        (tiny_stories__story_078_type_character ?character)
+        (tiny_stories__story_078_type_project ?project)
+        (and
+          (tiny_stories__story_078_p_alive ?character)
+          (tiny_stories__story_078_p_supports ?character ?project)
+          (tiny_stories__story_078_p_persistent ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_078_p_completed ?project)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_become-famous
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (not (writing_prompts__wp_090_p_famous ?character))
+      )
+    :effect
+      (writing_prompts__wp_090_p_famous ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_wear-earmuffs
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (and
+          (writing_prompts__wp_090_p_famous ?character)
+          (not (writing_prompts__wp_090_p_wears-earmuffs ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_090_p_wears-earmuffs ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_fill-earmuffs-with-ice
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (and
+          (writing_prompts__wp_090_p_famous ?character)
+          (writing_prompts__wp_090_p_wears-earmuffs ?character)
+          (not (writing_prompts__wp_090_p_filled-with-ice ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_090_p_filled-with-ice ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_become-candidate
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (and
+          (writing_prompts__wp_090_p_famous ?character)
+          (not (writing_prompts__wp_090_p_candidate ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_090_p_candidate ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_become-president
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (and
+          (writing_prompts__wp_090_p_candidate ?character)
+          (not (writing_prompts__wp_090_p_president ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_090_p_president ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_090_a_endure-pain
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_090_active)
+        (writing_prompts__wp_090_type_character ?character)
+        (and
+          (writing_prompts__wp_090_p_famous ?character)
+          (writing_prompts__wp_090_p_filled-with-ice ?character)
+          (not (writing_prompts__wp_090_p_endured-pain ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_090_p_endured-pain ?character)
+    :agents (?character)
+  )
+)

@@ -1,0 +1,166 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_060_o_vase - object)
+  (:predicates
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (tiny_stories__story_060_p_happy ?v0 - object)
+    (tiny_stories__story_060_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_party ?v0 - object)
+    (tiny_stories__story_060_p_cake ?v0 - object)
+    (tiny_stories__story_066_active)
+    (tiny_stories__story_066_type_character ?x - object)
+    (tiny_stories__story_066_type_item ?x - object)
+    (tiny_stories__story_066_type_object ?x - object)
+    (tiny_stories__story_066_type_place ?x - object)
+    (tiny_stories__story_066_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_066_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_066_p_happy ?v0 - object)
+    (tiny_stories__story_066_p_gave-gift ?v0 - object ?v1 - object ?v2 - object)
+  )
+
+  (:action tiny_stories__story_060_a_make-cake
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_cake ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_put
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_item ?item)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_has ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_at ?item ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_start-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_party ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_enjoy-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_party ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_066_a_find
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_066_active)
+        (tiny_stories__story_066_type_character ?character)
+        (tiny_stories__story_066_type_item ?item)
+        (tiny_stories__story_066_type_place ?place)
+        (and
+          (tiny_stories__story_066_p_at ?character ?place)
+          (not (tiny_stories__story_066_p_has ?character ?item))
+        )
+      )
+    :effect
+      (tiny_stories__story_066_p_has ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_066_a_give
+    :parameters (?giver - object ?item - object ?receiver - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_066_active)
+        (tiny_stories__story_066_type_character ?giver)
+        (tiny_stories__story_066_type_item ?item)
+        (tiny_stories__story_066_type_character ?receiver)
+        (tiny_stories__story_066_type_place ?place)
+        (and
+          (not (= ?giver ?receiver))
+          (tiny_stories__story_066_p_at ?giver ?place)
+          (tiny_stories__story_066_p_has ?giver ?item)
+          (tiny_stories__story_066_p_at ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_066_p_has ?giver ?item))
+        (tiny_stories__story_066_p_has ?receiver ?item)
+        (tiny_stories__story_066_p_gave-gift ?giver ?receiver ?item)
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action tiny_stories__story_066_a_play
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_066_active)
+        (tiny_stories__story_066_type_character ?character)
+        (tiny_stories__story_066_type_item ?item)
+        (tiny_stories__story_066_type_place ?place)
+        (and
+          (tiny_stories__story_066_p_at ?character ?place)
+          (tiny_stories__story_066_p_has ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_066_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_066_a_make-happy
+    :parameters (?character - object ?target - object)
+    :precondition
+      (and
+        (tiny_stories__story_066_active)
+        (tiny_stories__story_066_type_character ?character)
+        (tiny_stories__story_066_type_character ?target)
+        (and
+          (not (= ?character ?target))
+          (not (tiny_stories__story_066_p_happy ?target))
+        )
+      )
+    :effect
+      (tiny_stories__story_066_p_happy ?target)
+    :agents (?character)
+  )
+)

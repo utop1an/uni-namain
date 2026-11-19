@@ -1,0 +1,513 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_003_active)
+    (tiny_stories__story_003_type_character ?x - object)
+    (tiny_stories__story_003_type_object ?x - object)
+    (tiny_stories__story_014_active)
+    (tiny_stories__story_014_type_character ?x - object)
+    (tiny_stories__story_014_type_object ?x - object)
+    (tiny_stories__story_100_active)
+    (tiny_stories__story_100_type_character ?x - object)
+    (tiny_stories__story_100_type_object ?x - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (writing_prompts__wp_093_active)
+    (writing_prompts__wp_093_type_character ?x - object)
+    (writing_prompts__wp_093_type_object ?x - object)
+    (writing_prompts__wp_093_type_subreddit ?x - object)
+    (bored ?p0)
+    (dizzy ?p0)
+    (rolling ?p0)
+    (lying-down ?p0)
+    (asleep ?p0)
+    (awake ?p0)
+    (at ?p0 ?p1)
+    (has-hoard ?p0)
+    (robbed ?p0)
+    (soundproof-door ?p0)
+    (attacked ?p0)
+    (happy ?p0)
+    (wearing ?p0 ?p1)
+    (united ?p0 ?p1)
+    (truce ?p0 ?p1)
+    (exists
+      ?p0
+    )
+    (wall-built)
+    (filled-with-water)
+    (broken-pedal ?p0)
+    (fixed-pedal ?p0)
+    (has ?p0 ?p1)
+    (at-shop ?p0)
+    (flying ?p0)
+    (at-park ?p0)
+    (on-swing ?p0)
+    (swinging ?p0)
+    (sharing ?p0 ?p1)
+  )
+
+  (:action start-rolling
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_100_active)
+          (tiny_stories__story_100_type_character ?character)
+          (tiny_stories__story_100_type_character ?character)
+        )
+        (and
+          (bored ?character)
+          (not (rolling ?character))
+        )
+      )
+    :effect
+      (and
+        (not (bored ?character))
+        (rolling ?character)
+      )
+  )
+
+  (:action stop-rolling
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_100_active)
+          (tiny_stories__story_100_type_character ?character)
+          (tiny_stories__story_100_type_character ?character)
+        )
+        (rolling ?character)
+      )
+    :effect
+      (and
+        (not (rolling ?character))
+        (dizzy ?character)
+      )
+  )
+
+  (:action lie-down
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_100_active)
+          (tiny_stories__story_100_type_character ?character)
+          (tiny_stories__story_100_type_character ?character)
+        )
+        (and
+          (dizzy ?character)
+          (not (lying-down ?character))
+        )
+      )
+    :effect
+      (and
+        (not (dizzy ?character))
+        (lying-down ?character)
+      )
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (asleep ?character)
+      )
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (asleep ?character)
+      )
+    :effect
+      (and
+        (not (asleep ?character))
+        (awake ?character)
+      )
+  )
+
+  (:action install-soundproof-door
+    :parameters (?gang ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+        )
+        (and
+          (awake ?gang)
+          (at ?gang ?place)
+          (not (soundproof-door ?place))
+        )
+      )
+    :effect
+      (soundproof-door ?place)
+  )
+
+  (:action rob
+    :parameters (?gang)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_character ?gang)
+        )
+        (awake ?gang)
+      )
+    :effect
+      (robbed ?gang)
+  )
+
+  (:action attack
+    :parameters (?attacker ?victim)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+        )
+        (and
+          (awake ?attacker)
+          (awake ?victim)
+        )
+      )
+    :effect
+      (attacked ?victim)
+  )
+
+  (:action clear-passage
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (attacked ?character))
+        (has-hoard ?character)
+      )
+  )
+
+  (:action get-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_100_active)
+          (tiny_stories__story_100_type_character ?character)
+          (tiny_stories__story_100_type_character ?character)
+        )
+        (lying-down ?character)
+      )
+    :effect
+      (and
+        (not (lying-down ?character))
+        (happy ?character)
+      )
+  )
+
+  (:action wear
+    :parameters (?character ?clothing)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_093_active)
+          (writing_prompts__wp_093_type_character ?character)
+          (writing_prompts__wp_093_type_object ?clothing)
+          (writing_prompts__wp_093_type_character ?character)
+        )
+        (and)
+      )
+    :effect
+      (wearing ?character ?clothing)
+  )
+
+  (:action unite
+    :parameters (?subreddit1 ?subreddit2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_093_active)
+          (writing_prompts__wp_093_type_subreddit ?subreddit1)
+          (writing_prompts__wp_093_type_subreddit ?subreddit2)
+          (writing_prompts__wp_093_type_subreddit ?subreddit1)
+          (writing_prompts__wp_093_type_subreddit ?subreddit2)
+        )
+        (not (united ?subreddit1 ?subreddit2))
+      )
+    :effect
+      (united ?subreddit1 ?subreddit2)
+  )
+
+  (:action establish-truce
+    :parameters (?subreddit1 ?subreddit2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_093_active)
+          (writing_prompts__wp_093_type_subreddit ?subreddit1)
+          (writing_prompts__wp_093_type_subreddit ?subreddit2)
+          (writing_prompts__wp_093_type_subreddit ?subreddit1)
+          (writing_prompts__wp_093_type_subreddit ?subreddit2)
+        )
+        (not (truce ?subreddit1 ?subreddit2))
+      )
+    :effect
+      (truce ?subreddit1 ?subreddit2)
+  )
+
+  (:action create-subreddit
+    :parameters (?subreddit)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_093_active)
+          (writing_prompts__wp_093_type_subreddit ?subreddit)
+          (writing_prompts__wp_093_type_subreddit ?subreddit)
+        )
+        (and)
+      )
+    :effect
+      (exists
+        ?subreddit
+      )
+  )
+
+  (:action build-wall
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (and)
+      )
+    :effect
+      (wall-built)
+  )
+
+  (:action fill-wall-with-water
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_093_active)
+        (wall-built)
+      )
+    :effect
+      (filled-with-water)
+  )
+
+  (:action go-to-shop
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_003_active)
+          (tiny_stories__story_003_type_character ?character)
+          (tiny_stories__story_003_type_character ?character)
+        )
+        (not (at-shop ?character))
+      )
+    :effect
+      (at-shop ?character)
+  )
+
+  (:action fix-pedal
+    :parameters (?character ?bike)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_003_active)
+          (tiny_stories__story_003_type_character ?character)
+          (tiny_stories__story_003_type_object ?bike)
+          (tiny_stories__story_003_type_character ?character)
+        )
+        (and
+          (at-shop ?character)
+          (has ?character ?bike)
+          (broken-pedal ?bike)
+        )
+      )
+    :effect
+      (and
+        (not (broken-pedal ?bike))
+        (fixed-pedal ?bike)
+      )
+  )
+
+  (:action start-flying
+    :parameters (?bike)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_003_active)
+          (tiny_stories__story_003_type_object ?bike)
+        )
+        (and
+          (fixed-pedal ?bike)
+          (not (flying ?bike))
+        )
+      )
+    :effect
+      (flying ?bike)
+  )
+
+  (:action go-to-park
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (not (at-park ?character))
+      )
+    :effect
+      (at-park ?character)
+  )
+
+  (:action get-on-swing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (at-park ?character)
+          (not (on-swing ?character))
+        )
+      )
+    :effect
+      (on-swing ?character)
+  )
+
+  (:action start-swinging
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (on-swing ?character)
+          (not (swinging ?character))
+        )
+      )
+    :effect
+      (swinging ?character)
+  )
+
+  (:action share-swing
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (swinging ?character1)
+          (swinging ?character2)
+        )
+      )
+    :effect
+      (sharing ?character1 ?character2)
+  )
+
+  (:action become-happy
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_003_active)
+          (tiny_stories__story_003_type_character ?character)
+          (tiny_stories__story_003_type_character ?character)
+        )
+        (not (happy ?character))
+      )
+    :effect
+      (happy ?character)
+  )
+
+  (:action get-off-swing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character)
+          (tiny_stories__story_014_type_character ?character)
+        )
+        (and
+          (on-swing ?character)
+          (swinging ?character)
+        )
+      )
+    :effect
+      (and
+        (not (on-swing ?character))
+        (not (swinging ?character))
+        (happy ?character)
+      )
+  )
+
+  (:action thank
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_014_active)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+          (tiny_stories__story_014_type_character ?character1)
+          (tiny_stories__story_014_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (sharing ?character1 ?character2)
+        )
+      )
+    :effect
+      (happy ?character1)
+  )
+)

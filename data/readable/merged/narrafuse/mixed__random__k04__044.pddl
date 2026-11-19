@@ -1,0 +1,570 @@
+(define (domain revised_merged)
+  (:requirements :adl :equality :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:constants human_df5671d8ba8d67d9_o_three - object human_df5671d8ba8d67d9_o_zero - object tiny_stories__story_035_o_tim - object)
+  (:predicates
+    (human_df5671d8ba8d67d9_active)
+    (human_df5671d8ba8d67d9_type_character ?x - object)
+    (human_df5671d8ba8d67d9_type_doctor ?x - object)
+    (human_df5671d8ba8d67d9_type_drugloc ?x - object)
+    (human_df5671d8ba8d67d9_type_emergencyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_exteriorloc ?x - object)
+    (human_df5671d8ba8d67d9_type_family ?x - object)
+    (human_df5671d8ba8d67d9_type_familyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_generalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_intern ?x - object)
+    (human_df5671d8ba8d67d9_type_level ?x - object)
+    (human_df5671d8ba8d67d9_type_location ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalcharacter ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_nurse ?x - object)
+    (human_df5671d8ba8d67d9_type_object ?x - object)
+    (human_df5671d8ba8d67d9_type_patient ?x - object)
+    (human_df5671d8ba8d67d9_type_staffloc ?x - object)
+    (human_df5671d8ba8d67d9_type_symptom ?x - object)
+    (human_df5671d8ba8d67d9_type_treatment ?x - object)
+    (human_df5671d8ba8d67d9_p_the-doctor ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-treating ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+    (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+    (human_df5671d8ba8d67d9_p_has-symptom ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_conscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_unconscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_alive ?v0 - object)
+    (human_df5671d8ba8d67d9_p_patient-room ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_occupied ?v0 - object)
+    (shared_p_consensus_f53053aac76d8bf4 ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-for ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_male ?v0 - object)
+    (human_df5671d8ba8d67d9_p_female ?v0 - object)
+    (human_df5671d8ba8d67d9_p_hospitalised ?v0 - object)
+    (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_receiving-treatment ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_level-of-work ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_connected ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_active)
+    (tiny_stories__story_029_type_character ?x - object)
+    (tiny_stories__story_029_type_item ?x - object)
+    (tiny_stories__story_029_type_object ?x - object)
+    (tiny_stories__story_029_type_place ?x - object)
+    (shared_p_consensus_8c5f7a33afb3313c ?v0 - object)
+    (tiny_stories__story_029_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_p_near ?v0 - object ?v1 - object)
+    (tiny_stories__story_029_p_in-nest ?v0 - object)
+    (tiny_stories__story_035_active)
+    (tiny_stories__story_035_type_character ?x - object)
+    (tiny_stories__story_035_type_object ?x - object)
+    (tiny_stories__story_035_p_birthday ?v0 - object)
+    (tiny_stories__story_035_p_box-closed)
+    (tiny_stories__story_035_p_box-open)
+    (tiny_stories__story_035_p_cake-spoiled)
+    (tiny_stories__story_035_p_cake-good)
+    (tiny_stories__story_035_p_listened-to-mom ?v0 - object)
+    (tiny_stories__story_035_p_waited-for-birthday ?v0 - object)
+    (writing_prompts__wp_006_active)
+    (writing_prompts__wp_006_type_character ?x - object)
+    (writing_prompts__wp_006_type_object ?x - object)
+    (writing_prompts__wp_006_type_place ?x - object)
+    (writing_prompts__wp_006_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_006_p_in-love ?v0 - object ?v1 - object)
+    (writing_prompts__wp_006_p_accepts-past ?v0 - object ?v1 - object)
+    (writing_prompts__wp_006_p_knows-self ?v0 - object)
+    (writing_prompts__wp_006_p_sings ?v0 - object)
+  )
+
+  (:action human_df5671d8ba8d67d9_a_admit
+    :parameters (?d - object ?p - object ?l - object ?w1 - object ?w2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w1)
+        (human_df5671d8ba8d67d9_type_level ?w2)
+        (and
+          (human_df5671d8ba8d67d9_p_alive ?d)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (shared_p_consensus_f53053aac76d8bf4 ?d ?l)
+          (not (human_df5671d8ba8d67d9_p_occupied ?l))
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?p))
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1)
+          (human_df5671d8ba8d67d9_p_connected ?w1 ?w2)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+        (human_df5671d8ba8d67d9_p_hospitalised ?p)
+        (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        (human_df5671d8ba8d67d9_p_occupied ?l)
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d ?w2)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_walk
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_character ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (and
+          (shared_p_consensus_f53053aac76d8bf4 ?c ?l1)
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?c))
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_f53053aac76d8bf4 ?c ?l2)
+        (not (shared_p_consensus_f53053aac76d8bf4 ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_move
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (shared_p_consensus_f53053aac76d8bf4 ?c ?l1)
+      )
+    :effect
+      (and
+        (shared_p_consensus_f53053aac76d8bf4 ?c ?l2)
+        (not (shared_p_consensus_f53053aac76d8bf4 ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (not (= ?w human_df5671d8ba8d67d9_o_three))
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (shared_p_consensus_f53053aac76d8bf4 ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+        )
+      )
+    :effect
+      (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+  )
+
+  (:action human_df5671d8ba8d67d9_a_get-work-help
+    :parameters (?d - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_level ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?l)
+          (not (= ?l human_df5671d8ba8d67d9_o_zero))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?l))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d human_df5671d8ba8d67d9_o_zero)
+        (not (human_df5671d8ba8d67d9_p_the-doctor-overworked))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_mistake-assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (= ?w human_df5671d8ba8d67d9_o_three)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (shared_p_consensus_f53053aac76d8bf4 ?d ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?p ?t)
+        (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+        (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_treat
+    :parameters (?d - object ?p - object ?t - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (shared_p_consensus_f53053aac76d8bf4 ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t))
+        (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_recover
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_has-symptom ?p ?s))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_die
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_alive ?p))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_lose-consciousness
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_conscious ?p)
+          (shared_p_consensus_f53053aac76d8bf4 ?p ?l)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_unconscious ?p)
+        (not (human_df5671d8ba8d67d9_p_conscious ?p))
+      )
+  )
+
+  (:action tiny_stories__story_029_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_place ?from)
+        (tiny_stories__story_029_type_place ?to)
+        (and
+          (shared_p_consensus_8c5f7a33afb3313c ?character)
+          (shared_p_consensus_f53053aac76d8bf4 ?character ?from)
+          (not (shared_p_consensus_f53053aac76d8bf4 ?character ?to))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_f53053aac76d8bf4 ?character ?from))
+        (shared_p_consensus_f53053aac76d8bf4 ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_item ?item)
+        (and
+          (shared_p_consensus_8c5f7a33afb3313c ?character)
+          (tiny_stories__story_029_p_has ?character ?item)
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_pick-up
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_item ?item)
+        (and
+          (shared_p_consensus_8c5f7a33afb3313c ?character)
+          (tiny_stories__story_029_p_near ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_029_p_has ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_help-bird
+    :parameters (?character - object ?bird - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?character)
+        (tiny_stories__story_029_type_character ?bird)
+        (and
+          (shared_p_consensus_8c5f7a33afb3313c ?character)
+          (shared_p_consensus_8c5f7a33afb3313c ?bird)
+          (not (tiny_stories__story_029_p_in-nest ?bird))
+        )
+      )
+    :effect
+      (tiny_stories__story_029_p_in-nest ?bird)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_029_a_bird-falls
+    :parameters (?bird - object)
+    :precondition
+      (and
+        (tiny_stories__story_029_active)
+        (tiny_stories__story_029_type_character ?bird)
+        (and
+          (shared_p_consensus_8c5f7a33afb3313c ?bird)
+          (tiny_stories__story_029_p_in-nest ?bird)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_029_p_in-nest ?bird))
+  )
+
+  (:action tiny_stories__story_035_a_wait-for-birthday
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (tiny_stories__story_035_type_character ?character)
+        (and
+          (not (tiny_stories__story_035_p_birthday ?character))
+          (not (tiny_stories__story_035_p_waited-for-birthday ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_035_p_waited-for-birthday ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_035_a_listen-to-mom
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (tiny_stories__story_035_type_character ?character)
+        (and
+          (not (tiny_stories__story_035_p_listened-to-mom ?character))
+          (tiny_stories__story_035_p_waited-for-birthday ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_035_p_listened-to-mom ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_035_a_open-box
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (tiny_stories__story_035_type_character ?character)
+        (and
+          (tiny_stories__story_035_p_box-closed)
+          (tiny_stories__story_035_p_birthday ?character)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_035_p_box-closed))
+        (tiny_stories__story_035_p_box-open)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_035_a_spoil-cake
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (tiny_stories__story_035_p_box-open)
+          (not (tiny_stories__story_035_p_listened-to-mom tiny_stories__story_035_o_tim))
+          (tiny_stories__story_035_p_cake-good)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_035_p_cake-good))
+        (tiny_stories__story_035_p_cake-spoiled)
+      )
+  )
+
+  (:action tiny_stories__story_035_a_keep-cake-good
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (tiny_stories__story_035_p_box-open)
+          (tiny_stories__story_035_p_listened-to-mom tiny_stories__story_035_o_tim)
+          (tiny_stories__story_035_p_cake-good)
+        )
+      )
+    :effect
+      (tiny_stories__story_035_p_cake-good)
+  )
+
+  (:action writing_prompts__wp_006_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_006_active)
+        (writing_prompts__wp_006_type_character ?character)
+        (writing_prompts__wp_006_type_place ?from)
+        (writing_prompts__wp_006_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (shared_p_consensus_8c5f7a33afb3313c ?character)
+          (writing_prompts__wp_006_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_006_p_at ?character ?from))
+        (writing_prompts__wp_006_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_006_a_sing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_006_active)
+        (writing_prompts__wp_006_type_character ?character)
+        (shared_p_consensus_8c5f7a33afb3313c ?character)
+      )
+    :effect
+      (writing_prompts__wp_006_p_sings ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_006_a_fall-in-love
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_006_active)
+        (writing_prompts__wp_006_type_character ?character1)
+        (writing_prompts__wp_006_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (shared_p_consensus_8c5f7a33afb3313c ?character1)
+          (shared_p_consensus_8c5f7a33afb3313c ?character2)
+        )
+      )
+    :effect
+      (writing_prompts__wp_006_p_in-love ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_006_a_accept-past
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_006_active)
+        (writing_prompts__wp_006_type_character ?character1)
+        (writing_prompts__wp_006_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (shared_p_consensus_8c5f7a33afb3313c ?character1)
+          (shared_p_consensus_8c5f7a33afb3313c ?character2)
+        )
+      )
+    :effect
+      (writing_prompts__wp_006_p_accepts-past ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_006_a_know-self
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_006_active)
+        (writing_prompts__wp_006_type_character ?character)
+        (shared_p_consensus_8c5f7a33afb3313c ?character)
+      )
+    :effect
+      (writing_prompts__wp_006_p_knows-self ?character)
+    :agents (?character)
+  )
+)

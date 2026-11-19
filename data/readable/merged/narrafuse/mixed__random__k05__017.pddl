@@ -1,0 +1,399 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing :universal-preconditions)
+  (:types)
+  (:predicates
+    (human_4d95b598471c21ee_active)
+    (human_4d95b598471c21ee_type_book ?x - object)
+    (human_4d95b598471c21ee_type_character ?x - object)
+    (human_4d95b598471c21ee_type_item ?x - object)
+    (human_4d95b598471c21ee_type_location ?x - object)
+    (human_4d95b598471c21ee_type_object ?x - object)
+    (human_4d95b598471c21ee_type_ring ?x - object)
+    (human_4d95b598471c21ee_type_sword ?x - object)
+    (human_4d95b598471c21ee_type_thing ?x - object)
+    (human_4d95b598471c21ee_p_player ?v0 - object)
+    (human_4d95b598471c21ee_p_at ?v0 - object ?v1 - object)
+    (shared_p_consensus_dfa00229b8d4f1d3 ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_asleep ?v0 - object)
+    (human_4d95b598471c21ee_p_connected ?v0 - object ?v1 - object)
+    (human_4d95b598471c21ee_p_enchanted ?v0 - object)
+    (human_4d95b598471c21ee_p_is ?v0 - object ?v1 - object)
+    (tiny_stories__story_073_active)
+    (tiny_stories__story_073_type_character ?x - object)
+    (tiny_stories__story_073_type_object ?x - object)
+    (tiny_stories__story_073_p_play-chess ?v0 - object ?v1 - object)
+    (tiny_stories__story_073_p_feel-better ?v0 - object)
+    (tiny_stories__story_073_p_sit-together ?v0 - object ?v1 - object)
+    (tiny_stories__story_073_p_sick ?v0 - object)
+    (shared_p_consensus_8c4ea786c8617498 ?v0 - object)
+    (tiny_stories__story_086_active)
+    (tiny_stories__story_086_type_character ?x - object)
+    (tiny_stories__story_086_type_object ?x - object)
+    (tiny_stories__story_086_p_helping ?v0 - object ?v1 - object)
+    (tiny_stories__story_086_p_scared ?v0 - object)
+    (tiny_stories__story_086_p_spider-on-wall)
+    (tiny_stories__story_086_p_happy ?v0 - object)
+    (tiny_stories__story_086_p_cake-made)
+    (tiny_stories__story_094_active)
+    (tiny_stories__story_094_type_character ?x - object)
+    (tiny_stories__story_094_type_item ?x - object)
+    (tiny_stories__story_094_type_object ?x - object)
+    (tiny_stories__story_094_type_place ?x - object)
+    (tiny_stories__story_094_type_toy ?x - object)
+    (tiny_stories__story_094_p_sad ?v0 - object)
+    (tiny_stories__story_094_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_075_active)
+    (writing_prompts__wp_075_type_character ?x - object)
+    (writing_prompts__wp_075_type_object ?x - object)
+    (writing_prompts__wp_075_type_organization ?x - object)
+    (writing_prompts__wp_075_p_president ?v0 - object)
+    (writing_prompts__wp_075_p_speaker ?v0 - object)
+    (writing_prompts__wp_075_p_vice-president ?v0 - object)
+    (writing_prompts__wp_075_p_belongs-to ?v0 - object ?v1 - object)
+    (writing_prompts__wp_075_p_economy-collapsed)
+    (writing_prompts__wp_075_p_real-estate-monopoly)
+    (writing_prompts__wp_075_p_planned-parenthood-defunded)
+    (writing_prompts__wp_075_p_planned-parenthood-shutdown)
+    (writing_prompts__wp_075_p_planned-parenthood-criminalized)
+    (writing_prompts__wp_075_p_prison-population-increased)
+    (writing_prompts__wp_075_p_political-prisoner ?v0 - object)
+  )
+
+  (:action human_4d95b598471c21ee_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?character)
+        (human_4d95b598471c21ee_type_location ?to)
+        (human_4d95b598471c21ee_type_location ?from)
+        (and
+          (human_4d95b598471c21ee_p_connected ?to ?from)
+          (not (human_4d95b598471c21ee_p_asleep ?character))
+          (human_4d95b598471c21ee_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?character ?from))
+        (human_4d95b598471c21ee_p_at ?character ?to)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?waker)
+        (human_4d95b598471c21ee_type_character ?woken)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?waker ?location)
+          (human_4d95b598471c21ee_p_at ?woken ?location)
+          (human_4d95b598471c21ee_p_asleep ?woken)
+          (not (human_4d95b598471c21ee_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_asleep ?woken))
+  )
+
+  (:action human_4d95b598471c21ee_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?taker)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?taker ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?taker))
+          (not (human_4d95b598471c21ee_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (human_4d95b598471c21ee_p_at ?thing ?location))
+        (shared_p_consensus_dfa00229b8d4f1d3 ?taker ?thing)
+      )
+  )
+
+  (:action human_4d95b598471c21ee_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_4d95b598471c21ee_active)
+        (human_4d95b598471c21ee_type_character ?caster)
+        (human_4d95b598471c21ee_type_item ?thing)
+        (human_4d95b598471c21ee_type_book ?book)
+        (human_4d95b598471c21ee_type_location ?location)
+        (and
+          (human_4d95b598471c21ee_p_at ?caster ?location)
+          (human_4d95b598471c21ee_p_at ?thing ?location)
+          (not (human_4d95b598471c21ee_p_asleep ?caster))
+          (shared_p_consensus_dfa00229b8d4f1d3 ?caster ?book)
+          (human_4d95b598471c21ee_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_4d95b598471c21ee_p_enchanted ?thing))
+  )
+
+  (:action tiny_stories__story_073_a_play-chess
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_073_active)
+        (tiny_stories__story_073_type_character ?character1)
+        (tiny_stories__story_073_type_character ?character2)
+        (and
+          (not (tiny_stories__story_073_p_sick ?character1))
+          (not (tiny_stories__story_073_p_sick ?character2))
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_073_p_sit-together ?character1 ?character2)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_073_p_play-chess ?character1 ?character2)
+        (shared_p_consensus_8c4ea786c8617498 ?character1)
+        (shared_p_consensus_8c4ea786c8617498 ?character2)
+      )
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_073_a_get-sick
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_073_active)
+        (tiny_stories__story_073_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_073_p_sick ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_073_a_feel-better
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_073_active)
+        (tiny_stories__story_073_type_character ?character)
+        (tiny_stories__story_073_p_sick ?character)
+      )
+    :effect
+      (not (tiny_stories__story_073_p_sick ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_073_a_sit-together
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_073_active)
+        (tiny_stories__story_073_type_character ?character1)
+        (tiny_stories__story_073_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_073_p_sit-together ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_086_a_help
+    :parameters (?helper - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?helper)
+        (tiny_stories__story_086_type_character ?helpee)
+        (and
+          (not (= ?helper ?helpee))
+          (tiny_stories__story_086_p_scared ?helpee)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_086_p_scared ?helpee))
+        (tiny_stories__story_086_p_happy ?helpee)
+        (tiny_stories__story_086_p_helping ?helper ?helpee)
+      )
+    :agents (?helper)
+  )
+
+  (:action tiny_stories__story_086_a_make-cake
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (and
+          (not (tiny_stories__story_086_p_cake-made))
+          (tiny_stories__story_086_p_happy ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_086_p_cake-made)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_086_a_see-spider
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (and
+          (not (tiny_stories__story_086_p_scared ?character))
+          (not (tiny_stories__story_086_p_spider-on-wall))
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_086_p_scared ?character)
+        (tiny_stories__story_086_p_spider-on-wall)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_086_a_remove-spider
+    :parameters (?character - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (tiny_stories__story_086_type_character ?helpee)
+        (and
+          (tiny_stories__story_086_p_spider-on-wall)
+          (tiny_stories__story_086_p_helping ?character ?helpee)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_086_p_spider-on-wall))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_receive-gift
+    :parameters (?receiver - object ?giver - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?receiver)
+        (tiny_stories__story_094_type_character ?giver)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?receiver ?giver))
+          (shared_p_consensus_8c4ea786c8617498 ?giver)
+          (not (shared_p_consensus_dfa00229b8d4f1d3 ?receiver ?item))
+          (shared_p_consensus_dfa00229b8d4f1d3 ?giver ?item)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_dfa00229b8d4f1d3 ?receiver ?item)
+        (shared_p_consensus_8c4ea786c8617498 ?receiver)
+      )
+    :agents (?receiver ?giver)
+  )
+
+  (:action tiny_stories__story_094_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_dfa00229b8d4f1d3 ?character ?item)
+          (not (tiny_stories__story_094_p_sad ?character))
+        )
+      )
+    :effect
+      (shared_p_consensus_8c4ea786c8617498 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_take-toy
+    :parameters (?taker - object ?victim - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?taker)
+        (tiny_stories__story_094_type_character ?victim)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?taker ?victim))
+          (shared_p_consensus_dfa00229b8d4f1d3 ?victim ?item)
+          (not (shared_p_consensus_dfa00229b8d4f1d3 ?taker ?item))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_dfa00229b8d4f1d3 ?victim ?item))
+        (shared_p_consensus_dfa00229b8d4f1d3 ?taker ?item)
+        (tiny_stories__story_094_p_sad ?victim)
+      )
+    :agents (?taker)
+  )
+
+  (:action tiny_stories__story_094_a_lose-toy
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (shared_p_consensus_dfa00229b8d4f1d3 ?character ?item)
+          (shared_p_consensus_8c4ea786c8617498 ?character)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_dfa00229b8d4f1d3 ?character ?item))
+        (tiny_stories__story_094_p_sad ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_075_a_announce-state-of-the-union
+    :parameters (?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?president)
+        (writing_prompts__wp_075_p_president ?president)
+      )
+    :agents (?president)
+  )
+
+  (:action writing_prompts__wp_075_a_introduce-president
+    :parameters (?speaker - object ?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?speaker)
+        (writing_prompts__wp_075_type_character ?president)
+        (and
+          (writing_prompts__wp_075_p_speaker ?speaker)
+          (writing_prompts__wp_075_p_president ?president)
+        )
+      )
+    :agents (?speaker)
+  )
+
+  (:action writing_prompts__wp_075_a_attend-state-of-the-union
+    :parameters (?vice-president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?vice-president)
+        (writing_prompts__wp_075_p_vice-president ?vice-president)
+      )
+    :agents (?vice-president)
+  )
+)

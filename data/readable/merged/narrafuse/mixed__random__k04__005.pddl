@@ -1,0 +1,621 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (human_1e91389e12439414_active)
+    (human_1e91389e12439414_type_alchemy_spell ?x - object)
+    (human_1e91389e12439414_type_character ?x - object)
+    (human_1e91389e12439414_type_food ?x - object)
+    (human_1e91389e12439414_type_guard ?x - object)
+    (human_1e91389e12439414_type_humanoid ?x - object)
+    (human_1e91389e12439414_type_item ?x - object)
+    (human_1e91389e12439414_type_kill_spell ?x - object)
+    (human_1e91389e12439414_type_light ?x - object)
+    (human_1e91389e12439414_type_light_spell ?x - object)
+    (human_1e91389e12439414_type_location ?x - object)
+    (human_1e91389e12439414_type_love_spell ?x - object)
+    (human_1e91389e12439414_type_merchant ?x - object)
+    (human_1e91389e12439414_type_money ?x - object)
+    (human_1e91389e12439414_type_object ?x - object)
+    (human_1e91389e12439414_type_poison ?x - object)
+    (human_1e91389e12439414_type_predator ?x - object)
+    (human_1e91389e12439414_type_protagonist ?x - object)
+    (human_1e91389e12439414_type_spell ?x - object)
+    (human_1e91389e12439414_type_teleport_spell ?x - object)
+    (human_1e91389e12439414_type_weapon ?x - object)
+    (shared_p_consensus_aa3d38877386fad6 ?v0 - object)
+    (human_1e91389e12439414_p_armed ?v0 - object)
+    (human_1e91389e12439414_p_dark ?v0 - object)
+    (human_1e91389e12439414_p_poisoned ?v0 - object)
+    (human_1e91389e12439414_p_path ?v0 - object ?v1 - object)
+    (shared_p_consensus_952272f0f089578e ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_knows-location ?v0 - object ?v1 - object)
+    (shared_p_consensus_cae640cac945365e ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_buying ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_selling ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_summons ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_leads_to ?v0 - object ?v1 - object)
+    (human_1e91389e12439414_p_hungry ?v0 - object)
+    (human_1e91389e12439414_p_citizen ?v0 - object)
+    (human_1e91389e12439414_p_guard ?v0 - object)
+    (human_1e91389e12439414_p_criminal ?v0 - object)
+    (human_1e91389e12439414_p_owned ?v0 - object)
+    (human_1e91389e12439414_p_owns ?v0 - object ?v1 - object)
+    (tiny_stories__story_049_active)
+    (tiny_stories__story_049_type_character ?x - object)
+    (tiny_stories__story_049_type_object ?x - object)
+    (tiny_stories__story_049_p_wearing-hat ?v0 - object)
+    (tiny_stories__story_049_p_is-dog ?v0 - object)
+    (tiny_stories__story_049_p_is-fairy ?v0 - object)
+    (tiny_stories__story_049_p_has-magic-flower ?v0 - object)
+    (shared_p_consensus_f6471df2be69486c ?v0 - object ?v1 - object)
+    (shared_p_consensus_32bea564598479e0 ?v0 - object ?v1 - object)
+    (tiny_stories__story_076_active)
+    (tiny_stories__story_076_type_character ?x - object)
+    (tiny_stories__story_076_type_item ?x - object)
+    (tiny_stories__story_076_type_object ?x - object)
+    (tiny_stories__story_076_type_toy ?x - object)
+    (tiny_stories__story_076_p_shares ?v0 - object)
+    (writing_prompts__wp_043_active)
+    (writing_prompts__wp_043_type_character ?x - object)
+    (writing_prompts__wp_043_type_object ?x - object)
+    (writing_prompts__wp_043_type_place ?x - object)
+    (writing_prompts__wp_043_p_discovered ?v0 - object)
+    (writing_prompts__wp_043_p_knows-about ?v0 - object ?v1 - object)
+    (writing_prompts__wp_043_p_is-ceo ?v0 - object)
+    (writing_prompts__wp_043_p_is-alien ?v0 - object)
+  )
+  (:axiom :vars (?character - object ?item - object ?location - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_humanoid ?character) (human_1e91389e12439414_type_item ?item) (human_1e91389e12439414_type_location ?location) (and (not (shared_p_consensus_aa3d38877386fad6 ?character)) (shared_p_consensus_952272f0f089578e ?character ?location) (shared_p_consensus_cae640cac945365e ?character ?item))) :implies (and (not (shared_p_consensus_cae640cac945365e ?character ?item)) (shared_p_consensus_952272f0f089578e ?item ?location)))
+  (:axiom :vars (?character - object ?item - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_humanoid ?character) (human_1e91389e12439414_type_item ?item) (and (not (shared_p_consensus_aa3d38877386fad6 ?character)) (human_1e91389e12439414_p_owns ?character ?item))) :implies (not (human_1e91389e12439414_p_owns ?character ?item)))
+  (:axiom :vars (?item - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_item ?item) (and (not (human_1e91389e12439414_p_owned ?item)) (exists (?c - object) (and (human_1e91389e12439414_type_humanoid ?c) (human_1e91389e12439414_p_owns ?c ?item))))) :implies (human_1e91389e12439414_p_owned ?item))
+  (:axiom :vars (?item - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_item ?item) (and (human_1e91389e12439414_p_owned ?item) (forall (?c - object) (or (not (human_1e91389e12439414_type_humanoid ?c)) (not (human_1e91389e12439414_p_owns ?c ?item)))))) :implies (not (human_1e91389e12439414_p_owned ?item)))
+  (:axiom :vars (?character - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_character ?character) (and (not (human_1e91389e12439414_p_armed ?character)) (exists (?w - object) (and (human_1e91389e12439414_type_weapon ?w) (shared_p_consensus_cae640cac945365e ?character ?w))))) :implies (human_1e91389e12439414_p_armed ?character))
+  (:axiom :vars (?character - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_character ?character) (and (human_1e91389e12439414_p_armed ?character) (forall (?w - object) (or (not (human_1e91389e12439414_type_weapon ?w)) (not (shared_p_consensus_cae640cac945365e ?character ?w)))))) :implies (not (human_1e91389e12439414_p_armed ?character)))
+  (:axiom :vars (?character - object ?item - object ?owner - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_humanoid ?character) (human_1e91389e12439414_type_item ?item) (human_1e91389e12439414_type_humanoid ?owner) (and (not (= ?character ?owner)) (shared_p_consensus_aa3d38877386fad6 ?character) (shared_p_consensus_cae640cac945365e ?character ?item) (shared_p_consensus_aa3d38877386fad6 ?owner) (human_1e91389e12439414_p_owns ?owner ?item))) :implies (and (intends ?owner (not (shared_p_consensus_aa3d38877386fad6 ?character))) (when (human_1e91389e12439414_p_citizen ?owner) (human_1e91389e12439414_p_criminal ?character))))
+  (:axiom :vars (?character - object ?guard - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_humanoid ?character) (human_1e91389e12439414_type_guard ?guard) (and (shared_p_consensus_aa3d38877386fad6 ?character) (human_1e91389e12439414_p_criminal ?character) (shared_p_consensus_aa3d38877386fad6 ?guard))) :implies (intends ?guard (not (shared_p_consensus_aa3d38877386fad6 ?character))))
+  (:axiom :vars (?predator - object ?character - object ?location - object) :context (and (human_1e91389e12439414_active) (human_1e91389e12439414_type_predator ?predator) (human_1e91389e12439414_type_humanoid ?character) (human_1e91389e12439414_type_location ?location) (and (shared_p_consensus_aa3d38877386fad6 ?predator) (shared_p_consensus_952272f0f089578e ?predator ?location) (shared_p_consensus_aa3d38877386fad6 ?character) (shared_p_consensus_952272f0f089578e ?character ?location))) :implies (intends ?predator (not (shared_p_consensus_aa3d38877386fad6 ?character))))
+
+  (:action human_1e91389e12439414_a_walk
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_character ?character)
+        (human_1e91389e12439414_type_location ?from)
+        (human_1e91389e12439414_type_location ?to)
+        (and
+          (not (= ?from ?to))
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?from)
+          (human_1e91389e12439414_p_path ?from ?to)
+          (human_1e91389e12439414_p_knows-location ?character ?to)
+          (or
+            (not (human_1e91389e12439414_p_dark ?to))
+            (exists
+              (?l - object)
+              (and
+                (human_1e91389e12439414_type_light ?l)
+                (shared_p_consensus_cae640cac945365e ?character ?l)
+              )
+            )
+          )
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_952272f0f089578e ?character ?from))
+        (shared_p_consensus_952272f0f089578e ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_attack
+    :parameters (?character - object ?target - object ?location - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_character ?character)
+        (human_1e91389e12439414_type_character ?target)
+        (human_1e91389e12439414_type_location ?location)
+        (and
+          (not (= ?character ?target))
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?location)
+          (shared_p_consensus_aa3d38877386fad6 ?target)
+          (shared_p_consensus_952272f0f089578e ?target ?location)
+          (or
+            (not (human_1e91389e12439414_p_guard ?character))
+            (human_1e91389e12439414_p_criminal ?target)
+          )
+        )
+      )
+    :effect
+      (and
+        (when
+          (and
+            (human_1e91389e12439414_p_armed ?character)
+            (human_1e91389e12439414_p_armed ?target)
+          )
+          (not (shared_p_consensus_aa3d38877386fad6 ?target))
+        )
+        (when
+          (and
+            (human_1e91389e12439414_p_armed ?character)
+            (not (human_1e91389e12439414_p_armed ?target))
+          )
+          (not (shared_p_consensus_aa3d38877386fad6 ?target))
+        )
+        (when
+          (and
+            (not (human_1e91389e12439414_p_armed ?character))
+            (human_1e91389e12439414_p_armed ?target)
+          )
+          (not (shared_p_consensus_aa3d38877386fad6 ?character))
+        )
+        (when
+          (and
+            (not (human_1e91389e12439414_p_armed ?character))
+            (not (human_1e91389e12439414_p_armed ?target))
+          )
+          (not (shared_p_consensus_aa3d38877386fad6 ?target))
+        )
+        (when
+          (human_1e91389e12439414_p_citizen ?target)
+          (human_1e91389e12439414_p_criminal ?character)
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_poison
+    :parameters (?character - object ?poison - object ?food - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_poison ?poison)
+        (human_1e91389e12439414_type_food ?food)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?poison)
+          (shared_p_consensus_cae640cac945365e ?character ?food)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?poison))
+        (human_1e91389e12439414_p_poisoned ?food)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_eat
+    :parameters (?character - object ?food - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_humanoid ?character)
+        (human_1e91389e12439414_type_food ?food)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?food)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?food))
+        (not (human_1e91389e12439414_p_hungry ?character))
+        (when
+          (human_1e91389e12439414_p_poisoned ?food)
+          (not (shared_p_consensus_aa3d38877386fad6 ?character))
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_pickup
+    :parameters (?character - object ?item - object ?location - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_humanoid ?character)
+        (human_1e91389e12439414_type_item ?item)
+        (human_1e91389e12439414_type_location ?location)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?location)
+          (shared_p_consensus_952272f0f089578e ?item ?location)
+          (or
+            (not (human_1e91389e12439414_p_guard ?character))
+            (not (human_1e91389e12439414_p_owned ?item))
+          )
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_952272f0f089578e ?item ?location))
+        (shared_p_consensus_cae640cac945365e ?character ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_trade
+    :parameters (?character - object ?character_item - object ?seller - object ?seller_item - object ?location - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_item ?character_item)
+        (human_1e91389e12439414_type_merchant ?seller)
+        (human_1e91389e12439414_type_item ?seller_item)
+        (human_1e91389e12439414_type_location ?location)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?location)
+          (shared_p_consensus_cae640cac945365e ?character ?character_item)
+          (shared_p_consensus_aa3d38877386fad6 ?seller)
+          (shared_p_consensus_952272f0f089578e ?seller ?location)
+          (shared_p_consensus_952272f0f089578e ?seller_item ?location)
+          (human_1e91389e12439414_p_owns ?seller ?seller_item)
+          (human_1e91389e12439414_p_buying ?seller ?character_item)
+          (human_1e91389e12439414_p_selling ?seller ?seller_item)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?character_item))
+        (shared_p_consensus_cae640cac945365e ?seller ?character_item)
+        (not (shared_p_consensus_952272f0f089578e ?seller_item ?location))
+        (shared_p_consensus_cae640cac945365e ?character ?seller_item)
+        (not (human_1e91389e12439414_p_owns ?seller ?seller_item))
+        (human_1e91389e12439414_p_owns ?character ?seller_item)
+        (not (human_1e91389e12439414_p_buying ?seller ?character_item))
+        (not (human_1e91389e12439414_p_selling ?seller ?seller_item))
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_give
+    :parameters (?character - object ?item - object ?receiver - object ?location - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_item ?item)
+        (human_1e91389e12439414_type_humanoid ?receiver)
+        (human_1e91389e12439414_type_location ?location)
+        (and
+          (not (= ?character ?receiver))
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?location)
+          (shared_p_consensus_cae640cac945365e ?character ?item)
+          (shared_p_consensus_aa3d38877386fad6 ?receiver)
+          (shared_p_consensus_952272f0f089578e ?receiver ?location)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?item))
+        (shared_p_consensus_cae640cac945365e ?receiver ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_cast_light_spell
+    :parameters (?character - object ?spell - object ?light - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_light_spell ?spell)
+        (human_1e91389e12439414_type_light ?light)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?spell)
+          (human_1e91389e12439414_p_summons ?spell ?light)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?spell))
+        (shared_p_consensus_cae640cac945365e ?character ?light)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_cast_alchemy_spell
+    :parameters (?character - object ?spell - object ?item - object ?money - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_alchemy_spell ?spell)
+        (human_1e91389e12439414_type_item ?item)
+        (human_1e91389e12439414_type_money ?money)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?spell)
+          (shared_p_consensus_cae640cac945365e ?character ?item)
+          (human_1e91389e12439414_p_summons ?spell ?money)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?spell))
+        (not (shared_p_consensus_cae640cac945365e ?character ?item))
+        (shared_p_consensus_cae640cac945365e ?character ?money)
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_cast_kill_spell
+    :parameters (?character - object ?spell - object ?target - object ?location - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_humanoid ?character)
+        (human_1e91389e12439414_type_kill_spell ?spell)
+        (human_1e91389e12439414_type_character ?target)
+        (human_1e91389e12439414_type_location ?location)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?spell)
+          (shared_p_consensus_952272f0f089578e ?character ?location)
+          (shared_p_consensus_aa3d38877386fad6 ?target)
+          (shared_p_consensus_952272f0f089578e ?target ?location)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?spell))
+        (not (shared_p_consensus_aa3d38877386fad6 ?target))
+      )
+    :agents (?character)
+  )
+
+  (:action human_1e91389e12439414_a_cast_teleport_spell
+    :parameters (?character - object ?spell - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1e91389e12439414_active)
+        (human_1e91389e12439414_type_protagonist ?character)
+        (human_1e91389e12439414_type_teleport_spell ?spell)
+        (human_1e91389e12439414_type_location ?from)
+        (human_1e91389e12439414_type_location ?to)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_cae640cac945365e ?character ?spell)
+          (shared_p_consensus_952272f0f089578e ?character ?from)
+          (human_1e91389e12439414_p_leads_to ?spell ?to)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_cae640cac945365e ?character ?spell))
+        (not (shared_p_consensus_952272f0f089578e ?character ?from))
+        (shared_p_consensus_952272f0f089578e ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_049_a_remove-hat
+    :parameters (?remover - object ?wearer - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?remover)
+        (tiny_stories__story_049_type_character ?wearer)
+        (and
+          (not (= ?remover ?wearer))
+          (tiny_stories__story_049_p_wearing-hat ?wearer)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_049_p_wearing-hat ?wearer))
+    :agents (?remover)
+  )
+
+  (:action tiny_stories__story_049_a_transform
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character)
+        (tiny_stories__story_049_p_is-dog ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_049_p_is-dog ?character))
+        (tiny_stories__story_049_p_is-fairy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_049_a_give-magic-flower
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?giver)
+        (tiny_stories__story_049_type_character ?receiver)
+        (and
+          (not (= ?giver ?receiver))
+          (tiny_stories__story_049_p_is-fairy ?giver)
+        )
+      )
+    :effect
+      (tiny_stories__story_049_p_has-magic-flower ?receiver)
+    :agents (?giver)
+  )
+
+  (:action tiny_stories__story_076_a_share
+    :parameters (?sharer - object ?item - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?sharer)
+        (tiny_stories__story_076_type_item ?item)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?sharer ?receiver))
+          (shared_p_consensus_cae640cac945365e ?sharer ?item)
+          (shared_p_consensus_f6471df2be69486c ?sharer ?receiver)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_076_p_shares ?sharer)
+        (shared_p_consensus_cae640cac945365e ?receiver ?item)
+      )
+    :agents (?sharer)
+  )
+
+  (:action tiny_stories__story_076_a_apologize
+    :parameters (?apologizer - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?apologizer)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?apologizer ?receiver))
+          (shared_p_consensus_f6471df2be69486c ?apologizer ?receiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_076_p_shares ?apologizer)
+    :agents (?apologizer)
+  )
+
+  (:action writing_prompts__wp_043_a_discover
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_043_active)
+        (writing_prompts__wp_043_type_character ?character)
+        (writing_prompts__wp_043_type_place ?place)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?character)
+          (shared_p_consensus_952272f0f089578e ?character ?place)
+          (not (writing_prompts__wp_043_p_discovered ?place))
+        )
+      )
+    :effect
+      (writing_prompts__wp_043_p_discovered ?place)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_043_a_learn
+    :parameters (?learner - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_043_active)
+        (writing_prompts__wp_043_type_character ?learner)
+        (writing_prompts__wp_043_type_place ?place)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?learner)
+          (writing_prompts__wp_043_p_discovered ?place)
+        )
+      )
+    :effect
+      (writing_prompts__wp_043_p_knows-about ?learner ?place)
+    :agents (?learner)
+  )
+
+  (:action writing_prompts__wp_043_a_hold-press-conference
+    :parameters (?speaker - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_043_active)
+        (writing_prompts__wp_043_type_character ?speaker)
+        (writing_prompts__wp_043_type_place ?place)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?speaker)
+          (writing_prompts__wp_043_p_is-ceo ?speaker)
+          (writing_prompts__wp_043_p_knows-about ?speaker ?place)
+        )
+      )
+    :effect
+      (forall
+        (?listener - object)
+        (when
+          (writing_prompts__wp_043_type_character ?listener)
+          (writing_prompts__wp_043_p_knows-about ?listener ?place)
+        )
+      )
+    :agents (?speaker)
+  )
+
+  (:action writing_prompts__wp_043_a_reveal
+    :parameters (?alien - object)
+    :precondition
+      (and
+        (writing_prompts__wp_043_active)
+        (writing_prompts__wp_043_type_character ?alien)
+        (and
+          (shared_p_consensus_aa3d38877386fad6 ?alien)
+          (writing_prompts__wp_043_p_is-alien ?alien)
+        )
+      )
+    :effect
+      (forall
+        (?listener - object)
+        (when
+          (writing_prompts__wp_043_type_character ?listener)
+          (writing_prompts__wp_043_p_knows-about ?listener ?alien)
+        )
+      )
+    :agents (?alien)
+  )
+
+  (:action fused_a_consensus_5dee9d9518c99e29
+    :parameters (?m0 - object ?m1 - object)
+    :precondition
+      (or
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?m0)
+          (tiny_stories__story_049_type_character ?m1)
+          (not (= ?m0 ?m1))
+        )
+        (and
+          (tiny_stories__story_076_active)
+          (tiny_stories__story_076_type_character ?m0)
+          (tiny_stories__story_076_type_character ?m1)
+          (not (= ?m0 ?m1))
+        )
+      )
+    :effect
+      (shared_p_consensus_f6471df2be69486c ?m0 ?m1)
+    :agents (?m0 ?m1)
+  )
+
+  (:action fused_a_consensus_2a10095163c65b27
+    :parameters (?m0 - object ?m1 - object)
+    :precondition
+      (or
+        (and
+          (tiny_stories__story_049_active)
+          (tiny_stories__story_049_type_character ?m0)
+          (tiny_stories__story_049_type_character ?m1)
+          (and
+            (not (= ?m0 ?m1))
+            (shared_p_consensus_f6471df2be69486c ?m0 ?m1)
+          )
+        )
+        (and
+          (tiny_stories__story_076_active)
+          (tiny_stories__story_076_type_character ?m0)
+          (tiny_stories__story_076_type_character ?m1)
+          (and
+            (not (= ?m0 ?m1))
+            (shared_p_consensus_f6471df2be69486c ?m0 ?m1)
+            (tiny_stories__story_076_p_shares ?m0)
+          )
+        )
+      )
+    :effect
+      (shared_p_consensus_32bea564598479e0 ?m0 ?m1)
+    :agents (?m0 ?m1)
+  )
+)

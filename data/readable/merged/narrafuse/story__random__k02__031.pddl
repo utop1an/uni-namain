@@ -1,0 +1,150 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (writing_prompts__wp_009_active)
+    (writing_prompts__wp_009_type_character ?x - object)
+    (writing_prompts__wp_009_type_object ?x - object)
+    (writing_prompts__wp_009_p_alive ?v0 - object)
+    (writing_prompts__wp_009_p_spirits-present ?v0 - object)
+    (writing_prompts__wp_009_p_spirits-gone ?v0 - object)
+    (writing_prompts__wp_009_p_weak ?v0 - object)
+    (writing_prompts__wp_009_p_love-driven-away ?v0 - object)
+    (writing_prompts__wp_009_p_in-asylum ?v0 - object)
+    (writing_prompts__wp_075_active)
+    (writing_prompts__wp_075_type_character ?x - object)
+    (writing_prompts__wp_075_type_object ?x - object)
+    (writing_prompts__wp_075_type_organization ?x - object)
+    (writing_prompts__wp_075_p_president ?v0 - object)
+    (writing_prompts__wp_075_p_speaker ?v0 - object)
+    (writing_prompts__wp_075_p_vice-president ?v0 - object)
+    (writing_prompts__wp_075_p_belongs-to ?v0 - object ?v1 - object)
+    (writing_prompts__wp_075_p_economy-collapsed)
+    (writing_prompts__wp_075_p_real-estate-monopoly)
+    (writing_prompts__wp_075_p_planned-parenthood-defunded)
+    (writing_prompts__wp_075_p_planned-parenthood-shutdown)
+    (writing_prompts__wp_075_p_planned-parenthood-criminalized)
+    (writing_prompts__wp_075_p_prison-population-increased)
+    (writing_prompts__wp_075_p_political-prisoner ?v0 - object)
+  )
+
+  (:action writing_prompts__wp_009_a_become-weak
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_weak ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_drive-away-love
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_love-driven-away ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_end-up-in-asylum
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_in-asylum ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_ask-spirits-to-leave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_009_p_spirits-gone ?character)
+        (not (writing_prompts__wp_009_p_spirits-present ?character))
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_regret-asking-spirits-to-leave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-gone ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_spirits-present ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_075_a_announce-state-of-the-union
+    :parameters (?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?president)
+        (writing_prompts__wp_075_p_president ?president)
+      )
+    :agents (?president)
+  )
+
+  (:action writing_prompts__wp_075_a_introduce-president
+    :parameters (?speaker - object ?president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?speaker)
+        (writing_prompts__wp_075_type_character ?president)
+        (and
+          (writing_prompts__wp_075_p_speaker ?speaker)
+          (writing_prompts__wp_075_p_president ?president)
+        )
+      )
+    :agents (?speaker)
+  )
+
+  (:action writing_prompts__wp_075_a_attend-state-of-the-union
+    :parameters (?vice-president - object)
+    :precondition
+      (and
+        (writing_prompts__wp_075_active)
+        (writing_prompts__wp_075_type_character ?vice-president)
+        (writing_prompts__wp_075_p_vice-president ?vice-president)
+      )
+    :agents (?vice-president)
+  )
+)

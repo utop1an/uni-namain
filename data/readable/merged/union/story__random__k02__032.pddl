@@ -1,0 +1,153 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (writing_prompts__wp_009_active)
+    (writing_prompts__wp_009_type_character ?x - object)
+    (writing_prompts__wp_009_type_object ?x - object)
+    (writing_prompts__wp_009_p_alive ?v0 - object)
+    (writing_prompts__wp_009_p_spirits-present ?v0 - object)
+    (writing_prompts__wp_009_p_spirits-gone ?v0 - object)
+    (writing_prompts__wp_009_p_weak ?v0 - object)
+    (writing_prompts__wp_009_p_love-driven-away ?v0 - object)
+    (writing_prompts__wp_009_p_in-asylum ?v0 - object)
+    (writing_prompts__wp_084_active)
+    (writing_prompts__wp_084_type_character ?x - object)
+    (writing_prompts__wp_084_type_object ?x - object)
+    (writing_prompts__wp_084_p_loves ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_confessed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_asked-question ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_took-pill ?v0 - object)
+  )
+
+  (:action writing_prompts__wp_009_a_become-weak
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_weak ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_drive-away-love
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_love-driven-away ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_end-up-in-asylum
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_in-asylum ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_ask-spirits-to-leave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-present ?character)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_009_p_spirits-gone ?character)
+        (not (writing_prompts__wp_009_p_spirits-present ?character))
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_009_a_regret-asking-spirits-to-leave
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_009_active)
+        (writing_prompts__wp_009_type_character ?character)
+        (and
+          (writing_prompts__wp_009_p_alive ?character)
+          (writing_prompts__wp_009_p_spirits-gone ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_009_p_spirits-present ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_084_a_take-pill
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?character)
+        (not (writing_prompts__wp_084_p_took-pill ?character))
+      )
+    :effect
+      (writing_prompts__wp_084_p_took-pill ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_084_a_ask-love-question
+    :parameters (?asker - object ?asked - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?asker)
+        (writing_prompts__wp_084_type_character ?asked)
+        (not (writing_prompts__wp_084_p_asked-question ?asker ?asked))
+      )
+    :effect
+      (writing_prompts__wp_084_p_asked-question ?asker ?asked)
+    :agents (?asker)
+  )
+
+  (:action writing_prompts__wp_084_a_confess-love
+    :parameters (?confessor - object ?confessed-to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?confessor)
+        (writing_prompts__wp_084_type_character ?confessed-to)
+        (and
+          (not (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to))
+          (writing_prompts__wp_084_p_asked-question ?confessed-to ?confessor)
+          (writing_prompts__wp_084_p_took-pill ?confessor)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to)
+        (writing_prompts__wp_084_p_loves ?confessor ?confessed-to)
+      )
+    :agents (?confessor)
+  )
+)

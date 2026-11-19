@@ -1,0 +1,550 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:predicates
+    (human_281c51d26d5d4ff3_active)
+    (human_281c51d26d5d4ff3_type_allworker ?x - object)
+    (human_281c51d26d5d4ff3_type_axe ?x - object)
+    (human_281c51d26d5d4ff3_type_beast ?x - object)
+    (human_281c51d26d5d4ff3_type_blacksmith ?x - object)
+    (human_281c51d26d5d4ff3_type_cake ?x - object)
+    (human_281c51d26d5d4ff3_type_character ?x - object)
+    (human_281c51d26d5d4ff3_type_fox ?x - object)
+    (human_281c51d26d5d4ff3_type_girl ?x - object)
+    (human_281c51d26d5d4ff3_type_grandmother ?x - object)
+    (human_281c51d26d5d4ff3_type_house ?x - object)
+    (human_281c51d26d5d4ff3_type_human ?x - object)
+    (human_281c51d26d5d4ff3_type_hunter ?x - object)
+    (human_281c51d26d5d4ff3_type_object ?x - object)
+    (human_281c51d26d5d4ff3_type_thing ?x - object)
+    (human_281c51d26d5d4ff3_type_wolf ?x - object)
+    (human_281c51d26d5d4ff3_type_worker ?x - object)
+    (human_281c51d26d5d4ff3_p_monster ?v0 - object)
+    (human_281c51d26d5d4ff3_p_monster-alive)
+    (human_281c51d26d5d4ff3_p_rescuer ?v0 - object)
+    (human_281c51d26d5d4ff3_p_rescuer-at ?v0 - object)
+    (human_281c51d26d5d4ff3_p_alive ?v0 - object)
+    (shared_p_consensus_9bccfc73a49ee875 ?v0 - object ?v1 - object)
+    (human_281c51d26d5d4ff3_p_eaten ?v0 - object)
+    (human_281c51d26d5d4ff3_p_rescued ?v0 - object)
+    (shared_p_consensus_24a89b50550672ed ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_active)
+    (human_72bec7307b121ea5_type_book ?x - object)
+    (human_72bec7307b121ea5_type_character ?x - object)
+    (human_72bec7307b121ea5_type_item ?x - object)
+    (human_72bec7307b121ea5_type_location ?x - object)
+    (human_72bec7307b121ea5_type_object ?x - object)
+    (human_72bec7307b121ea5_type_ring ?x - object)
+    (human_72bec7307b121ea5_type_sword ?x - object)
+    (human_72bec7307b121ea5_type_thing ?x - object)
+    (human_72bec7307b121ea5_p_player ?v0 - object)
+    (human_72bec7307b121ea5_p_asleep ?v0 - object)
+    (human_72bec7307b121ea5_p_connected ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_enchanted ?v0 - object)
+    (human_72bec7307b121ea5_p_is ?v0 - object ?v1 - object)
+    (tiny_stories__story_049_active)
+    (tiny_stories__story_049_type_character ?x - object)
+    (tiny_stories__story_049_type_object ?x - object)
+    (tiny_stories__story_049_p_wearing-hat ?v0 - object)
+    (tiny_stories__story_049_p_is-dog ?v0 - object)
+    (tiny_stories__story_049_p_is-fairy ?v0 - object)
+    (tiny_stories__story_049_p_has-magic-flower ?v0 - object)
+    (tiny_stories__story_049_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_049_p_playing-together ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_active)
+    (writing_prompts__wp_037_type_character ?x - object)
+    (writing_prompts__wp_037_type_object ?x - object)
+    (writing_prompts__wp_037_p_knows ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_together ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_missing ?v0 - object)
+    (writing_prompts__wp_037_p_relationship ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_searching ?v0 - object ?v1 - object)
+    (writing_prompts__wp_037_p_found ?v0 - object ?v1 - object)
+    (writing_prompts__wp_074_active)
+    (writing_prompts__wp_074_type_character ?x - object)
+    (writing_prompts__wp_074_type_object ?x - object)
+    (writing_prompts__wp_074_p_influenced ?v0 - object)
+    (writing_prompts__wp_074_p_isolated ?v0 - object)
+    (writing_prompts__wp_074_p_hates ?v0 - object ?v1 - object)
+    (writing_prompts__wp_074_p_manipulates ?v0 - object ?v1 - object)
+    (writing_prompts__wp_074_p_despises ?v0 - object ?v1 - object)
+    (writing_prompts__wp_074_p_apologized ?v0 - object ?v1 - object)
+  )
+
+  (:action human_281c51d26d5d4ff3_a_walk
+    :parameters (?c - object ?h1 - object ?h2 - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_character ?c)
+        (human_281c51d26d5d4ff3_type_house ?h1)
+        (human_281c51d26d5d4ff3_type_house ?h2)
+        (and
+          (human_281c51d26d5d4ff3_p_alive ?c)
+          (shared_p_consensus_24a89b50550672ed ?c ?h1)
+          (not (human_281c51d26d5d4ff3_p_eaten ?c))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_24a89b50550672ed ?c ?h1))
+        (shared_p_consensus_24a89b50550672ed ?c ?h2)
+        (when
+          (human_281c51d26d5d4ff3_p_rescuer ?c)
+          (and
+            (human_281c51d26d5d4ff3_p_rescuer-at ?h2)
+            (not (human_281c51d26d5d4ff3_p_rescuer-at ?h1))
+          )
+        )
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_eat
+    :parameters (?m - object ?c - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_human ?c)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (human_281c51d26d5d4ff3_p_alive ?m)
+          (human_281c51d26d5d4ff3_p_alive ?c)
+          (not (human_281c51d26d5d4ff3_p_eaten ?c))
+          (shared_p_consensus_24a89b50550672ed ?m ?h)
+          (shared_p_consensus_24a89b50550672ed ?c ?h)
+          (human_281c51d26d5d4ff3_p_monster ?m)
+        )
+      )
+    :effect
+      (human_281c51d26d5d4ff3_p_eaten ?c)
+  )
+
+  (:action human_281c51d26d5d4ff3_a_kill
+    :parameters (?c - object ?m - object ?a - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_worker ?c)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_axe ?a)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (human_281c51d26d5d4ff3_p_alive ?c)
+          (human_281c51d26d5d4ff3_p_alive ?m)
+          (shared_p_consensus_9bccfc73a49ee875 ?c ?a)
+          (shared_p_consensus_24a89b50550672ed ?c ?h)
+          (shared_p_consensus_24a89b50550672ed ?m ?h)
+          (human_281c51d26d5d4ff3_p_monster ?m)
+          (human_281c51d26d5d4ff3_p_monster-alive)
+          (human_281c51d26d5d4ff3_p_rescuer ?c)
+        )
+      )
+    :effect
+      (and
+        (not (human_281c51d26d5d4ff3_p_alive ?m))
+        (not (human_281c51d26d5d4ff3_p_monster-alive))
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_escape
+    :parameters (?c - object ?m - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_human ?c)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (human_281c51d26d5d4ff3_p_eaten ?c)
+          (not (human_281c51d26d5d4ff3_p_alive ?m))
+          (shared_p_consensus_24a89b50550672ed ?m ?h)
+        )
+      )
+    :effect
+      (and
+        (not (human_281c51d26d5d4ff3_p_eaten ?c))
+        (human_281c51d26d5d4ff3_p_rescued ?c)
+        (shared_p_consensus_24a89b50550672ed ?c ?h)
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_give
+    :parameters (?c1 - object ?c2 - object ?t - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_human ?c1)
+        (human_281c51d26d5d4ff3_type_human ?c2)
+        (human_281c51d26d5d4ff3_type_thing ?t)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (not (human_281c51d26d5d4ff3_p_eaten ?c2))
+          (human_281c51d26d5d4ff3_p_alive ?c1)
+          (human_281c51d26d5d4ff3_p_alive ?c2)
+          (shared_p_consensus_9bccfc73a49ee875 ?c1 ?t)
+          (shared_p_consensus_24a89b50550672ed ?c1 ?h)
+          (shared_p_consensus_24a89b50550672ed ?c2 ?h)
+        )
+      )
+    :effect
+      (and
+        (shared_p_consensus_9bccfc73a49ee875 ?c2 ?t)
+        (not (shared_p_consensus_9bccfc73a49ee875 ?c1 ?t))
+      )
+  )
+
+  (:action human_72bec7307b121ea5_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?character)
+        (human_72bec7307b121ea5_type_location ?to)
+        (human_72bec7307b121ea5_type_location ?from)
+        (and
+          (human_72bec7307b121ea5_p_connected ?to ?from)
+          (not (human_72bec7307b121ea5_p_asleep ?character))
+          (shared_p_consensus_24a89b50550672ed ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_24a89b50550672ed ?character ?from))
+        (shared_p_consensus_24a89b50550672ed ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_72bec7307b121ea5_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?waker)
+        (human_72bec7307b121ea5_type_character ?woken)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (shared_p_consensus_24a89b50550672ed ?waker ?location)
+          (shared_p_consensus_24a89b50550672ed ?woken ?location)
+          (human_72bec7307b121ea5_p_asleep ?woken)
+          (not (human_72bec7307b121ea5_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_asleep ?woken))
+    :agents (?waker)
+  )
+
+  (:action human_72bec7307b121ea5_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?taker)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (shared_p_consensus_24a89b50550672ed ?taker ?location)
+          (shared_p_consensus_24a89b50550672ed ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?taker))
+          (not (human_72bec7307b121ea5_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_24a89b50550672ed ?thing ?location))
+        (shared_p_consensus_9bccfc73a49ee875 ?taker ?thing)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_72bec7307b121ea5_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?caster)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_book ?book)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (shared_p_consensus_24a89b50550672ed ?caster ?location)
+          (shared_p_consensus_24a89b50550672ed ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?caster))
+          (shared_p_consensus_9bccfc73a49ee875 ?caster ?book)
+          (human_72bec7307b121ea5_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_enchanted ?thing))
+    :agents (?caster)
+  )
+
+  (:action tiny_stories__story_049_a_remove-hat
+    :parameters (?remover - object ?wearer - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?remover)
+        (tiny_stories__story_049_type_character ?wearer)
+        (and
+          (not (= ?remover ?wearer))
+          (tiny_stories__story_049_p_wearing-hat ?wearer)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_049_p_wearing-hat ?wearer))
+    :agents (?remover)
+  )
+
+  (:action tiny_stories__story_049_a_transform
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character)
+        (tiny_stories__story_049_p_is-dog ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_049_p_is-dog ?character))
+        (tiny_stories__story_049_p_is-fairy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_049_a_give-magic-flower
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?giver)
+        (tiny_stories__story_049_type_character ?receiver)
+        (and
+          (not (= ?giver ?receiver))
+          (tiny_stories__story_049_p_is-fairy ?giver)
+        )
+      )
+    :effect
+      (tiny_stories__story_049_p_has-magic-flower ?receiver)
+    :agents (?giver)
+  )
+
+  (:action tiny_stories__story_049_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character1)
+        (tiny_stories__story_049_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_049_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_049_a_play-together
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character1)
+        (tiny_stories__story_049_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_049_p_friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_049_p_playing-together ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_037_a_start-search
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (and
+          (not (= ?searcher ?target))
+          (not (writing_prompts__wp_037_p_searching ?searcher ?target))
+          (writing_prompts__wp_037_p_missing ?target)
+        )
+      )
+    :effect
+      (writing_prompts__wp_037_p_searching ?searcher ?target)
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_stop-search
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (writing_prompts__wp_037_p_searching ?searcher ?target)
+      )
+    :effect
+      (not (writing_prompts__wp_037_p_searching ?searcher ?target))
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_find
+    :parameters (?searcher - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?searcher)
+        (writing_prompts__wp_037_type_character ?target)
+        (and
+          (writing_prompts__wp_037_p_searching ?searcher ?target)
+          (writing_prompts__wp_037_p_missing ?target)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_037_p_missing ?target))
+        (writing_prompts__wp_037_p_found ?searcher ?target)
+      )
+    :agents (?searcher)
+  )
+
+  (:action writing_prompts__wp_037_a_start-relationship
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?character1)
+        (writing_prompts__wp_037_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (not (writing_prompts__wp_037_p_relationship ?character1 ?character2))
+          (writing_prompts__wp_037_p_knows ?character1 ?character2)
+        )
+      )
+    :effect
+      (writing_prompts__wp_037_p_relationship ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_037_a_end-relationship
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_037_active)
+        (writing_prompts__wp_037_type_character ?character1)
+        (writing_prompts__wp_037_type_character ?character2)
+        (writing_prompts__wp_037_p_relationship ?character1 ?character2)
+      )
+    :effect
+      (not (writing_prompts__wp_037_p_relationship ?character1 ?character2))
+    :agents (?character1 ?character2)
+  )
+
+  (:action writing_prompts__wp_074_a_influence
+    :parameters (?influencer - object ?influenced - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?influencer)
+        (writing_prompts__wp_074_type_character ?influenced)
+        (and
+          (not (= ?influencer ?influenced))
+          (not (writing_prompts__wp_074_p_influenced ?influenced))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_influenced ?influenced)
+    :agents (?influencer)
+  )
+
+  (:action writing_prompts__wp_074_a_isolate
+    :parameters (?isolator - object ?isolated - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?isolator)
+        (writing_prompts__wp_074_type_character ?isolated)
+        (and
+          (not (= ?isolator ?isolated))
+          (not (writing_prompts__wp_074_p_isolated ?isolated))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_isolated ?isolated)
+    :agents (?isolator)
+  )
+
+  (:action writing_prompts__wp_074_a_manipulate
+    :parameters (?manipulator - object ?manipulated - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?manipulator)
+        (writing_prompts__wp_074_type_character ?manipulated)
+        (and
+          (not (= ?manipulator ?manipulated))
+          (not (writing_prompts__wp_074_p_manipulates ?manipulator ?manipulated))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_manipulates ?manipulator ?manipulated)
+    :agents (?manipulator)
+  )
+
+  (:action writing_prompts__wp_074_a_hate
+    :parameters (?hater - object ?hated - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?hater)
+        (writing_prompts__wp_074_type_character ?hated)
+        (and
+          (not (= ?hater ?hated))
+          (not (writing_prompts__wp_074_p_hates ?hater ?hated))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_hates ?hater ?hated)
+    :agents (?hater)
+  )
+
+  (:action writing_prompts__wp_074_a_despise
+    :parameters (?despiser - object ?despised - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?despiser)
+        (writing_prompts__wp_074_type_character ?despised)
+        (and
+          (not (= ?despiser ?despised))
+          (not (writing_prompts__wp_074_p_despises ?despiser ?despised))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_despises ?despiser ?despised)
+    :agents (?despiser)
+  )
+
+  (:action writing_prompts__wp_074_a_apologize
+    :parameters (?apologizer - object ?apologized - object)
+    :precondition
+      (and
+        (writing_prompts__wp_074_active)
+        (writing_prompts__wp_074_type_character ?apologizer)
+        (writing_prompts__wp_074_type_character ?apologized)
+        (and
+          (not (= ?apologizer ?apologized))
+          (not (writing_prompts__wp_074_p_apologized ?apologizer ?apologized))
+        )
+      )
+    :effect
+      (writing_prompts__wp_074_p_apologized ?apologizer ?apologized)
+    :agents (?apologizer)
+  )
+)

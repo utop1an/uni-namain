@@ -1,0 +1,177 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_048_active)
+    (tiny_stories__story_048_type_character ?x - object)
+    (tiny_stories__story_048_type_object ?x - object)
+    (tiny_stories__story_048_type_place ?x - object)
+    (tiny_stories__story_048_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_048_p_dry ?v0 - object)
+    (tiny_stories__story_048_p_wet ?v0 - object)
+    (tiny_stories__story_048_p_happy ?v0 - object)
+    (tiny_stories__story_048_p_sad ?v0 - object)
+    (tiny_stories__story_048_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_083_active)
+    (tiny_stories__story_083_type_character ?x - object)
+    (tiny_stories__story_083_type_object ?x - object)
+    (tiny_stories__story_083_p_fierce ?v0 - object)
+    (tiny_stories__story_083_p_scared ?v0 - object ?v1 - object)
+    (tiny_stories__story_083_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_083_p_playing ?v0 - object ?v1 - object)
+    (tiny_stories__story_083_p_sneezed ?v0 - object)
+  )
+
+  (:action tiny_stories__story_048_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_048_active)
+        (tiny_stories__story_048_type_character ?character)
+        (tiny_stories__story_048_type_place ?from)
+        (tiny_stories__story_048_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_048_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_048_p_at ?character ?from))
+        (tiny_stories__story_048_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_048_a_play
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_048_active)
+        (tiny_stories__story_048_type_character ?character)
+        (tiny_stories__story_048_type_place ?place)
+        (and
+          (tiny_stories__story_048_p_at ?character ?place)
+          (tiny_stories__story_048_p_dry ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_048_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_048_a_dry-place
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_048_active)
+        (tiny_stories__story_048_type_character ?character)
+        (tiny_stories__story_048_type_place ?place)
+        (and
+          (tiny_stories__story_048_p_at ?character ?place)
+          (tiny_stories__story_048_p_wet ?place)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_048_p_wet ?place))
+        (tiny_stories__story_048_p_dry ?place)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_048_a_make-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_048_active)
+        (tiny_stories__story_048_type_character ?character1)
+        (tiny_stories__story_048_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_048_p_happy ?character1)
+          (tiny_stories__story_048_p_happy ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_048_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_083_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_083_active)
+        (tiny_stories__story_083_type_character ?character1)
+        (tiny_stories__story_083_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (not (tiny_stories__story_083_p_friends ?character1 ?character2))
+        )
+      )
+    :effect
+      (tiny_stories__story_083_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_083_a_play
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_083_active)
+        (tiny_stories__story_083_type_character ?character1)
+        (tiny_stories__story_083_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_083_p_friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_083_p_playing ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_083_a_sneeze
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_083_active)
+        (tiny_stories__story_083_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_083_p_sneezed ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_083_a_become-scared
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_083_active)
+        (tiny_stories__story_083_type_character ?character1)
+        (tiny_stories__story_083_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_083_p_fierce ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_083_p_scared ?character1 ?character2)
+    :agents (?character1)
+  )
+
+  (:action tiny_stories__story_083_a_stop-being-scared
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_083_active)
+        (tiny_stories__story_083_type_character ?character1)
+        (tiny_stories__story_083_type_character ?character2)
+        (tiny_stories__story_083_p_scared ?character1 ?character2)
+      )
+    :effect
+      (not (tiny_stories__story_083_p_scared ?character1 ?character2))
+    :agents (?character1)
+  )
+)

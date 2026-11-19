@@ -1,0 +1,165 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_092_active)
+    (tiny_stories__story_092_type_character ?x - object)
+    (tiny_stories__story_092_type_object ?x - object)
+    (tiny_stories__story_092_p_worried ?v0 - object)
+    (tiny_stories__story_092_p_accepted-to-university ?v0 - object)
+    (tiny_stories__story_092_p_happy ?v0 - object)
+    (tiny_stories__story_092_p_applauding ?v0 - object)
+    (tiny_stories__story_092_p_hardworking ?v0 - object)
+    (tiny_stories__story_092_p_dreams-come-true ?v0 - object)
+    (writing_prompts__wp_060_active)
+    (writing_prompts__wp_060_type_character ?x - object)
+    (writing_prompts__wp_060_type_item ?x - object)
+    (writing_prompts__wp_060_type_object ?x - object)
+    (writing_prompts__wp_060_type_place ?x - object)
+    (writing_prompts__wp_060_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_p_alive ?v0 - object)
+    (writing_prompts__wp_060_p_has ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_p_clean ?v0 - object)
+    (writing_prompts__wp_060_p_locked ?v0 - object)
+    (writing_prompts__wp_060_p_wearing ?v0 - object ?v1 - object)
+    (writing_prompts__wp_060_p_fits ?v0 - object ?v1 - object)
+  )
+
+  (:action tiny_stories__story_092_a_get-accepted
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_worried ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_092_p_accepted-to-university ?character)
+        (not (tiny_stories__story_092_p_worried ?character))
+        (tiny_stories__story_092_p_happy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_start-applauding
+    :parameters (?character - object ?other - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_type_character ?other)
+        (and
+          (not (tiny_stories__story_092_p_applauding ?character))
+          (tiny_stories__story_092_p_happy ?other)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_applauding ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_stop-applauding
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_p_applauding ?character)
+      )
+    :effect
+      (not (tiny_stories__story_092_p_applauding ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_make-dreams-come-true
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_accepted-to-university ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_dreams-come-true ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_clean-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (writing_prompts__wp_060_p_alive ?character)
+          (writing_prompts__wp_060_p_has ?character ?item)
+          (not (writing_prompts__wp_060_p_clean ?item))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_clean ?item)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_lock-door
+    :parameters (?character - object ?door - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?door)
+        (and
+          (writing_prompts__wp_060_p_alive ?character)
+          (not (writing_prompts__wp_060_p_locked ?door))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_locked ?door)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_adjust-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (writing_prompts__wp_060_p_alive ?character)
+          (writing_prompts__wp_060_p_has ?character ?item)
+          (not (writing_prompts__wp_060_p_fits ?item ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_fits ?item ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_060_a_wear-item
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_060_active)
+        (writing_prompts__wp_060_type_character ?character)
+        (writing_prompts__wp_060_type_item ?item)
+        (and
+          (writing_prompts__wp_060_p_alive ?character)
+          (writing_prompts__wp_060_p_has ?character ?item)
+          (writing_prompts__wp_060_p_fits ?item ?character)
+          (not (writing_prompts__wp_060_p_wearing ?character ?item))
+        )
+      )
+    :effect
+      (writing_prompts__wp_060_p_wearing ?character ?item)
+    :agents (?character)
+  )
+)

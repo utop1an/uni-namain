@@ -1,0 +1,280 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing :universal-preconditions)
+  (:types)
+  (:constants human_8fa5775aae174731_o_ark - object)
+  (:predicates
+    (human_87bbd0acdf4611c5_active)
+    (human_87bbd0acdf4611c5_type_character ?x - object)
+    (human_87bbd0acdf4611c5_type_location ?x - object)
+    (human_87bbd0acdf4611c5_type_object ?x - object)
+    (human_87bbd0acdf4611c5_type_thing ?x - object)
+    (human_87bbd0acdf4611c5_p_player ?v0 - object)
+    (shared_p_consensus_90c519e56ea594ba ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_has ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_connected ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_apprehended ?v0 - object)
+    (shared_p_consensus_dd2c0566f92bc4a5 ?v0 - object)
+    (human_87bbd0acdf4611c5_p_saved ?v0 - object ?v1 - object)
+    (human_87bbd0acdf4611c5_p_knows ?v0 - object)
+    (human_87bbd0acdf4611c5_p_captured ?v0 - object)
+    (human_87bbd0acdf4611c5_p_henchman ?v0 - object)
+    (human_8fa5775aae174731_active)
+    (human_8fa5775aae174731_type_character ?x - object)
+    (human_8fa5775aae174731_type_item ?x - object)
+    (human_8fa5775aae174731_type_object ?x - object)
+    (human_8fa5775aae174731_type_place ?x - object)
+    (human_8fa5775aae174731_type_weapon ?x - object)
+    (human_8fa5775aae174731_p_open ?v0 - object)
+    (human_8fa5775aae174731_p_armed ?v0 - object)
+    (human_8fa5775aae174731_p_burried ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_p_knows-location ?v0 - object ?v1 - object ?v2 - object)
+    (human_8fa5775aae174731_p_has ?v0 - object ?v1 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (not (human_8fa5775aae174731_p_armed ?character)) (exists (?w - object) (and (human_8fa5775aae174731_type_weapon ?w) (human_8fa5775aae174731_p_has ?character ?w))))) :implies (human_8fa5775aae174731_p_armed ?character))
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (human_8fa5775aae174731_p_armed ?character) (forall (?w - object) (or (not (human_8fa5775aae174731_type_weapon ?w)) (not (human_8fa5775aae174731_p_has ?character ?w)))))) :implies (not (human_8fa5775aae174731_p_armed ?character)))
+
+  (:action human_87bbd0acdf4611c5_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?character)
+        (human_87bbd0acdf4611c5_type_location ?to)
+        (human_87bbd0acdf4611c5_type_location ?from)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?character)
+          (human_87bbd0acdf4611c5_p_connected ?to ?from)
+          (shared_p_consensus_90c519e56ea594ba ?character ?from)
+          (human_87bbd0acdf4611c5_p_knows ?character)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_90c519e56ea594ba ?character ?from))
+        (shared_p_consensus_90c519e56ea594ba ?character ?to)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_interrogate-character
+    :parameters (?interrogator - object ?interrogated - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?interrogator)
+        (human_87bbd0acdf4611c5_type_character ?interrogated)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?interrogator)
+          (shared_p_consensus_90c519e56ea594ba ?interrogator ?location)
+          (shared_p_consensus_90c519e56ea594ba ?interrogated ?location)
+          (human_87bbd0acdf4611c5_p_apprehended ?interrogated)
+        )
+      )
+    :effect
+      (human_87bbd0acdf4611c5_p_knows ?interrogator)
+  )
+
+  (:action human_87bbd0acdf4611c5_a_place-victim
+    :parameters (?placer - object ?victim - object ?location - object ?placed - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?placer)
+        (human_87bbd0acdf4611c5_type_character ?victim)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (human_87bbd0acdf4611c5_type_location ?placed)
+        (and
+          (human_87bbd0acdf4611c5_p_henchman ?placer)
+          (human_87bbd0acdf4611c5_p_has ?placer ?victim)
+          (shared_p_consensus_90c519e56ea594ba ?placer ?location)
+          (human_87bbd0acdf4611c5_p_connected ?placed ?location)
+        )
+      )
+    :effect
+      (and
+        (not (human_87bbd0acdf4611c5_p_has ?placer ?victim))
+        (shared_p_consensus_90c519e56ea594ba ?victim ?placed)
+        (human_87bbd0acdf4611c5_p_captured ?victim)
+      )
+  )
+
+  (:action human_87bbd0acdf4611c5_a_save-character
+    :parameters (?saver - object ?saved - object ?notsaved - object ?location - object)
+    :precondition
+      (and
+        (human_87bbd0acdf4611c5_active)
+        (human_87bbd0acdf4611c5_type_character ?saver)
+        (human_87bbd0acdf4611c5_type_character ?saved)
+        (human_87bbd0acdf4611c5_type_character ?notsaved)
+        (human_87bbd0acdf4611c5_type_location ?location)
+        (and
+          (human_87bbd0acdf4611c5_p_player ?saver)
+          (shared_p_consensus_90c519e56ea594ba ?saver ?location)
+          (shared_p_consensus_90c519e56ea594ba ?saved ?location)
+          (human_87bbd0acdf4611c5_p_captured ?saved)
+          (human_87bbd0acdf4611c5_p_captured ?notsaved)
+          (not (shared_p_consensus_90c519e56ea594ba ?notsaved ?location))
+        )
+      )
+    :effect
+      (and
+        (human_87bbd0acdf4611c5_p_saved ?saved ?saver)
+        (not (shared_p_consensus_dd2c0566f92bc4a5 ?notsaved))
+      )
+  )
+
+  (:action human_8fa5775aae174731_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_place ?from)
+        (human_8fa5775aae174731_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (shared_p_consensus_dd2c0566f92bc4a5 ?character)
+          (shared_p_consensus_90c519e56ea594ba ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_90c519e56ea594ba ?character ?from))
+        (shared_p_consensus_90c519e56ea594ba ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_excavate
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (shared_p_consensus_dd2c0566f92bc4a5 ?character)
+          (shared_p_consensus_90c519e56ea594ba ?character ?place)
+          (human_8fa5775aae174731_p_burried ?item ?place)
+          (human_8fa5775aae174731_p_knows-location ?character ?item ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_burried ?item ?place))
+        (human_8fa5775aae174731_p_has ?character ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_give
+    :parameters (?giver - object ?item - object ?receiver - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?giver)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?receiver)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?giver ?receiver))
+          (shared_p_consensus_dd2c0566f92bc4a5 ?giver)
+          (shared_p_consensus_90c519e56ea594ba ?giver ?place)
+          (human_8fa5775aae174731_p_has ?giver ?item)
+          (shared_p_consensus_dd2c0566f92bc4a5 ?receiver)
+          (shared_p_consensus_90c519e56ea594ba ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?giver ?item))
+        (human_8fa5775aae174731_p_has ?receiver ?item)
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action human_8fa5775aae174731_a_kill
+    :parameters (?killer - object ?weapon - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?killer)
+        (human_8fa5775aae174731_type_weapon ?weapon)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (shared_p_consensus_dd2c0566f92bc4a5 ?killer)
+          (shared_p_consensus_90c519e56ea594ba ?killer ?place)
+          (human_8fa5775aae174731_p_has ?killer ?weapon)
+          (shared_p_consensus_dd2c0566f92bc4a5 ?victim)
+          (shared_p_consensus_90c519e56ea594ba ?victim ?place)
+        )
+      )
+    :effect
+      (not (shared_p_consensus_dd2c0566f92bc4a5 ?victim))
+    :agents (?killer)
+  )
+
+  (:action human_8fa5775aae174731_a_take
+    :parameters (?taker - object ?item - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?taker)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?taker ?victim))
+          (shared_p_consensus_dd2c0566f92bc4a5 ?taker)
+          (shared_p_consensus_90c519e56ea594ba ?taker ?place)
+          (or
+            (not (shared_p_consensus_dd2c0566f92bc4a5 ?victim))
+            (and
+              (human_8fa5775aae174731_p_armed ?taker)
+              (not (human_8fa5775aae174731_p_armed ?victim))
+            )
+          )
+          (shared_p_consensus_90c519e56ea594ba ?victim ?place)
+          (human_8fa5775aae174731_p_has ?victim ?item)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?victim ?item))
+        (human_8fa5775aae174731_p_has ?taker ?item)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_8fa5775aae174731_a_open-ark
+    :parameters (?character - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (and
+          (shared_p_consensus_dd2c0566f92bc4a5 ?character)
+          (human_8fa5775aae174731_p_has ?character human_8fa5775aae174731_o_ark)
+        )
+      )
+    :effect
+      (and
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+        (not (shared_p_consensus_dd2c0566f92bc4a5 ?character))
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_close-ark
+    :parameters ()
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+      )
+    :effect
+      (not (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark))
+  )
+)

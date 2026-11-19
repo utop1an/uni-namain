@@ -1,0 +1,317 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (human_72bec7307b121ea5_active)
+    (human_72bec7307b121ea5_type_book ?x - object)
+    (human_72bec7307b121ea5_type_character ?x - object)
+    (human_72bec7307b121ea5_type_item ?x - object)
+    (human_72bec7307b121ea5_type_location ?x - object)
+    (human_72bec7307b121ea5_type_object ?x - object)
+    (human_72bec7307b121ea5_type_ring ?x - object)
+    (human_72bec7307b121ea5_type_sword ?x - object)
+    (human_72bec7307b121ea5_type_thing ?x - object)
+    (tiny_stories__story_042_active)
+    (tiny_stories__story_042_type_character ?x - object)
+    (tiny_stories__story_042_type_object ?x - object)
+    (writing_prompts__wp_036_active)
+    (writing_prompts__wp_036_type_character ?x - object)
+    (writing_prompts__wp_036_type_item ?x - object)
+    (writing_prompts__wp_036_type_lightbox ?x - object)
+    (writing_prompts__wp_036_type_object ?x - object)
+    (alive ?p0)
+    (anchored ?p0)
+    (charged ?p0)
+    (created ?p0 ?p1)
+    (used ?p0 ?p1)
+    (has ?p0 ?p1)
+    (player ?p0)
+    (at ?p0 ?p1)
+    (asleep ?p0)
+    (connected ?p0 ?p1)
+    (enchanted ?p0)
+    (is ?p0 ?p1)
+    (at-carnival ?p0)
+    (wants-to-play ?p0)
+    (played ?p0)
+    (weight-too-low ?p0)
+    (upset ?p0)
+    (comforted ?p0)
+  )
+
+  (:action charge-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (anchored ?lightbox)
+          (created ?character ?lightbox)
+        )
+      )
+    :effect
+      (charged ?lightbox)
+  )
+
+  (:action create-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (alive ?character)
+      )
+    :effect
+      (and
+        (created ?character ?lightbox)
+        (has ?character ?lightbox)
+      )
+  )
+
+  (:action anchor-light
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (created ?character ?lightbox)
+          (has ?character ?lightbox)
+        )
+      )
+    :effect
+      (anchored ?lightbox)
+  )
+
+  (:action use-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (charged ?lightbox)
+          (created ?character ?lightbox)
+          (has ?character ?lightbox)
+        )
+      )
+    :effect
+      (and
+        (used ?character ?lightbox)
+        (not (charged ?lightbox))
+      )
+  )
+
+  (:action move-location
+    :parameters (?character ?to ?from)
+    :precondition
+      (and
+        (and
+          (human_72bec7307b121ea5_active)
+          (human_72bec7307b121ea5_type_character ?character)
+          (human_72bec7307b121ea5_type_location ?to)
+          (human_72bec7307b121ea5_type_location ?from)
+          (human_72bec7307b121ea5_type_character ?character)
+          (human_72bec7307b121ea5_type_location ?to)
+          (human_72bec7307b121ea5_type_location ?from)
+        )
+        (and
+          (connected ?to ?from)
+          (not (asleep ?character))
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action wake-person
+    :parameters (?waker ?woken ?location)
+    :precondition
+      (and
+        (and
+          (human_72bec7307b121ea5_active)
+          (human_72bec7307b121ea5_type_character ?waker)
+          (human_72bec7307b121ea5_type_character ?woken)
+          (human_72bec7307b121ea5_type_location ?location)
+          (human_72bec7307b121ea5_type_character ?waker)
+          (human_72bec7307b121ea5_type_character ?woken)
+          (human_72bec7307b121ea5_type_location ?location)
+        )
+        (and
+          (at ?waker ?location)
+          (at ?woken ?location)
+          (asleep ?woken)
+          (not (asleep ?waker))
+        )
+      )
+    :effect
+      (not (asleep ?woken))
+  )
+
+  (:action go-to-carnival
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_042_active)
+          (tiny_stories__story_042_type_character ?character)
+          (tiny_stories__story_042_type_character ?character)
+        )
+        (and)
+      )
+    :effect
+      (at-carnival ?character)
+  )
+
+  (:action want-to-play
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_042_active)
+          (tiny_stories__story_042_type_character ?character)
+          (tiny_stories__story_042_type_character ?character)
+        )
+        (at-carnival ?character)
+      )
+    :effect
+      (wants-to-play ?character)
+  )
+
+  (:action play-game
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_042_active)
+          (tiny_stories__story_042_type_character ?character)
+          (tiny_stories__story_042_type_character ?character)
+        )
+        (and
+          (at-carnival ?character)
+          (wants-to-play ?character)
+        )
+      )
+    :effect
+      (and
+        (played ?character)
+        (weight-too-low ?character)
+      )
+  )
+
+  (:action become-upset
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_042_active)
+          (tiny_stories__story_042_type_character ?character)
+          (tiny_stories__story_042_type_character ?character)
+        )
+        (weight-too-low ?character)
+      )
+    :effect
+      (upset ?character)
+  )
+
+  (:action comfort
+    :parameters (?comforter ?comforted)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_042_active)
+          (tiny_stories__story_042_type_character ?comforter)
+          (tiny_stories__story_042_type_character ?comforted)
+          (tiny_stories__story_042_type_character ?comforter)
+          (tiny_stories__story_042_type_character ?comforted)
+        )
+        (and
+          (not (= ?comforter ?comforted))
+          (upset ?comforted)
+        )
+      )
+    :effect
+      (comforted ?comforted)
+  )
+
+  (:action take-thing
+    :parameters (?taker ?thing ?location)
+    :precondition
+      (and
+        (and
+          (human_72bec7307b121ea5_active)
+          (human_72bec7307b121ea5_type_character ?taker)
+          (human_72bec7307b121ea5_type_item ?thing)
+          (human_72bec7307b121ea5_type_location ?location)
+          (human_72bec7307b121ea5_type_character ?taker)
+          (human_72bec7307b121ea5_type_item ?thing)
+          (human_72bec7307b121ea5_type_location ?location)
+        )
+        (and
+          (at ?taker ?location)
+          (at ?thing ?location)
+          (not (asleep ?taker))
+          (not (enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (at ?thing ?location))
+        (has ?taker ?thing)
+      )
+  )
+
+  (:action disenchant-thing
+    :parameters (?caster ?thing ?book ?location)
+    :precondition
+      (and
+        (and
+          (human_72bec7307b121ea5_active)
+          (human_72bec7307b121ea5_type_character ?caster)
+          (human_72bec7307b121ea5_type_item ?thing)
+          (human_72bec7307b121ea5_type_book ?book)
+          (human_72bec7307b121ea5_type_location ?location)
+          (human_72bec7307b121ea5_type_character ?caster)
+          (human_72bec7307b121ea5_type_item ?thing)
+          (human_72bec7307b121ea5_type_book ?book)
+          (human_72bec7307b121ea5_type_location ?location)
+        )
+        (and
+          (at ?caster ?location)
+          (at ?thing ?location)
+          (not (asleep ?caster))
+          (has ?caster ?book)
+          (enchanted ?thing)
+        )
+      )
+    :effect
+      (not (enchanted ?thing))
+  )
+)

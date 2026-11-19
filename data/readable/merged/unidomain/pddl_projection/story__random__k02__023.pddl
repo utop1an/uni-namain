@@ -1,0 +1,164 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_089_active)
+    (tiny_stories__story_089_type_character ?x - object)
+    (tiny_stories__story_089_type_object ?x - object)
+    (writing_prompts__wp_032_active)
+    (writing_prompts__wp_032_type_character ?x - object)
+    (writing_prompts__wp_032_type_item ?x - object)
+    (writing_prompts__wp_032_type_object ?x - object)
+    (writing_prompts__wp_032_type_place ?x - object)
+    (writing_prompts__wp_032_type_weapon ?x - object)
+    (playing ?p0)
+    (tired ?p0)
+    (sleeping ?p0)
+    (awake ?p0)
+    (has-energy ?p0)
+    (alive ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (wolves-attack ?p0)
+    (wolves-killed ?p0)
+  )
+
+  (:action start-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (not (playing ?character))
+          (has-energy ?character)
+        )
+      )
+    :effect
+      (playing ?character)
+  )
+
+  (:action stop-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (playing ?character)
+      )
+    :effect
+      (and
+        (not (playing ?character))
+        (tired ?character)
+      )
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (tired ?character)
+          (not (sleeping ?character))
+        )
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (sleeping ?character)
+      )
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (sleeping ?character)
+      )
+    :effect
+      (and
+        (awake ?character)
+        (not (sleeping ?character))
+        (not (tired ?character))
+        (has-energy ?character)
+      )
+  )
+
+  (:action move
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_032_active)
+          (writing_prompts__wp_032_type_character ?character)
+          (writing_prompts__wp_032_type_place ?from)
+          (writing_prompts__wp_032_type_place ?to)
+          (writing_prompts__wp_032_type_character ?character)
+          (writing_prompts__wp_032_type_place ?from)
+          (writing_prompts__wp_032_type_place ?to)
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action kill-wolves
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_032_active)
+          (writing_prompts__wp_032_type_character ?character)
+          (writing_prompts__wp_032_type_place ?place)
+          (writing_prompts__wp_032_type_character ?character)
+          (writing_prompts__wp_032_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+          (wolves-attack ?place)
+        )
+      )
+    :effect
+      (wolves-killed ?character)
+  )
+
+  (:action die
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_032_active)
+          (writing_prompts__wp_032_type_character ?character)
+          (writing_prompts__wp_032_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (not (alive ?character))
+  )
+)

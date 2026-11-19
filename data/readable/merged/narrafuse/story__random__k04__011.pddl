@@ -1,0 +1,358 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_060_o_vase - object)
+  (:predicates
+    (tiny_stories__story_011_active)
+    (tiny_stories__story_011_type_character ?x - object)
+    (tiny_stories__story_011_type_object ?x - object)
+    (tiny_stories__story_011_type_place ?x - object)
+    (shared_p_consensus_d287cd7be41bb84a ?v0 - object ?v1 - object)
+    (tiny_stories__story_011_p_awake ?v0 - object)
+    (tiny_stories__story_011_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_011_p_interesting ?v0 - object)
+    (tiny_stories__story_011_p_singing ?v0 - object)
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (shared_p_consensus_fedec9cf3ea8250a ?v0 - object)
+    (tiny_stories__story_060_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_party ?v0 - object)
+    (tiny_stories__story_060_p_cake ?v0 - object)
+    (tiny_stories__story_063_active)
+    (tiny_stories__story_063_type_character ?x - object)
+    (tiny_stories__story_063_type_object ?x - object)
+    (tiny_stories__story_063_p_in-tree ?v0 - object)
+    (tiny_stories__story_063_p_wants-to-eat ?v0 - object ?v1 - object)
+    (tiny_stories__story_063_p_hard ?v0 - object)
+    (tiny_stories__story_063_p_broken ?v0 - object)
+    (tiny_stories__story_063_p_eaten ?v0 - object)
+    (tiny_stories__story_063_p_helping ?v0 - object ?v1 - object)
+    (tiny_stories__story_100_active)
+    (tiny_stories__story_100_type_character ?x - object)
+    (tiny_stories__story_100_type_object ?x - object)
+    (tiny_stories__story_100_p_bored ?v0 - object)
+    (tiny_stories__story_100_p_dizzy ?v0 - object)
+    (tiny_stories__story_100_p_rolling ?v0 - object)
+    (tiny_stories__story_100_p_lying-down ?v0 - object)
+  )
+
+  (:action tiny_stories__story_011_a_move
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_type_place ?place)
+        (and
+          (tiny_stories__story_011_p_awake ?character)
+          (not (shared_p_consensus_d287cd7be41bb84a ?character ?place))
+        )
+      )
+    :effect
+      (shared_p_consensus_d287cd7be41bb84a ?character ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_sleep
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_type_place ?place)
+        (and
+          (tiny_stories__story_011_p_awake ?character)
+          (shared_p_consensus_d287cd7be41bb84a ?character ?place)
+          (tiny_stories__story_011_p_interesting ?place)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_011_p_awake ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (not (tiny_stories__story_011_p_awake ?character))
+      )
+    :effect
+      (tiny_stories__story_011_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_sing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_p_awake ?character)
+      )
+    :effect
+      (tiny_stories__story_011_p_singing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_stop-singing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_p_singing ?character)
+      )
+    :effect
+      (not (tiny_stories__story_011_p_singing ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_make-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character1)
+        (tiny_stories__story_011_type_character ?character2)
+        (and
+          (tiny_stories__story_011_p_awake ?character1)
+          (tiny_stories__story_011_p_awake ?character2)
+          (not (tiny_stories__story_011_p_friends ?character1 ?character2))
+          (not (= ?character1 ?character2))
+        )
+      )
+    :effect
+      (tiny_stories__story_011_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_060_a_make-cake
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (shared_p_consensus_fedec9cf3ea8250a ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_cake ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_put
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_item ?item)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (shared_p_consensus_fedec9cf3ea8250a ?character)
+          (tiny_stories__story_060_p_has ?character ?item)
+        )
+      )
+    :effect
+      (shared_p_consensus_d287cd7be41bb84a ?item ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_start-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (shared_p_consensus_fedec9cf3ea8250a ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_party ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_enjoy-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (shared_p_consensus_fedec9cf3ea8250a ?character)
+          (tiny_stories__story_060_p_party ?place)
+        )
+      )
+    :effect
+      (shared_p_consensus_fedec9cf3ea8250a ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_063_a_climb-tree
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?character)
+        (not (tiny_stories__story_063_p_in-tree ?character))
+      )
+    :effect
+      (tiny_stories__story_063_p_in-tree ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_063_a_want-to-eat
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?character)
+        (tiny_stories__story_063_type_object ?object)
+      )
+    :effect
+      (tiny_stories__story_063_p_wants-to-eat ?character ?object)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_063_a_try-to-eat
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?character)
+        (tiny_stories__story_063_type_object ?object)
+        (and
+          (tiny_stories__story_063_p_wants-to-eat ?character ?object)
+          (tiny_stories__story_063_p_hard ?object)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_063_p_eaten ?object))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_063_a_help
+    :parameters (?helper - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?helper)
+        (tiny_stories__story_063_type_character ?helpee)
+      )
+    :effect
+      (tiny_stories__story_063_p_helping ?helper ?helpee)
+    :agents (?helper)
+  )
+
+  (:action tiny_stories__story_063_a_break-object
+    :parameters (?character - object ?object - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?character)
+        (tiny_stories__story_063_type_object ?object)
+        (tiny_stories__story_063_type_character ?helpee)
+        (and
+          (tiny_stories__story_063_p_hard ?object)
+          (tiny_stories__story_063_p_helping ?character ?helpee)
+        )
+      )
+    :effect
+      (tiny_stories__story_063_p_broken ?object)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_063_a_eat-together
+    :parameters (?character1 - object ?character2 - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_063_active)
+        (tiny_stories__story_063_type_character ?character1)
+        (tiny_stories__story_063_type_character ?character2)
+        (tiny_stories__story_063_type_object ?object)
+        (and
+          (tiny_stories__story_063_p_broken ?object)
+          (tiny_stories__story_063_p_helping ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_063_p_eaten ?object)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_100_a_start-rolling
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_100_active)
+        (tiny_stories__story_100_type_character ?character)
+        (and
+          (tiny_stories__story_100_p_bored ?character)
+          (not (tiny_stories__story_100_p_rolling ?character))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_100_p_bored ?character))
+        (tiny_stories__story_100_p_rolling ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_100_a_stop-rolling
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_100_active)
+        (tiny_stories__story_100_type_character ?character)
+        (tiny_stories__story_100_p_rolling ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_100_p_rolling ?character))
+        (tiny_stories__story_100_p_dizzy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_100_a_lie-down
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_100_active)
+        (tiny_stories__story_100_type_character ?character)
+        (and
+          (tiny_stories__story_100_p_dizzy ?character)
+          (not (tiny_stories__story_100_p_lying-down ?character))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_100_p_dizzy ?character))
+        (tiny_stories__story_100_p_lying-down ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_100_a_get-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_100_active)
+        (tiny_stories__story_100_type_character ?character)
+        (tiny_stories__story_100_p_lying-down ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_100_p_lying-down ?character))
+        (shared_p_consensus_fedec9cf3ea8250a ?character)
+      )
+    :agents (?character)
+  )
+)

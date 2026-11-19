@@ -1,0 +1,268 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_045_active)
+    (tiny_stories__story_045_type_character ?x - object)
+    (tiny_stories__story_045_type_object ?x - object)
+    (writing_prompts__wp_006_active)
+    (writing_prompts__wp_006_type_character ?x - object)
+    (writing_prompts__wp_006_type_object ?x - object)
+    (writing_prompts__wp_006_type_place ?x - object)
+    (writing_prompts__wp_040_active)
+    (writing_prompts__wp_040_type_character ?x - object)
+    (writing_prompts__wp_040_type_object ?x - object)
+    (writing_prompts__wp_040_type_place ?x - object)
+    (writing_prompts__wp_040_type_power ?x - object)
+    (has-power ?p0 ?p1)
+    (brothers ?p0 ?p1)
+    (tyrant ?p0)
+    (at ?p0 ?p1)
+    (alive ?p0)
+    (has ?p0 ?p1)
+    (shares ?p0 ?p1 ?p2)
+    (in-love ?p0 ?p1)
+    (accepts-past ?p0 ?p1)
+    (knows-self ?p0)
+    (sings ?p0)
+  )
+  (:constants tiny_stories__story_045_o_mirror - object)
+
+  (:action confront
+    :parameters (?confronter ?confronted ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_040_active)
+          (writing_prompts__wp_040_type_character ?confronter)
+          (writing_prompts__wp_040_type_character ?confronted)
+          (writing_prompts__wp_040_type_place ?place)
+          (writing_prompts__wp_040_type_character ?confronter)
+          (writing_prompts__wp_040_type_character ?confronted)
+          (writing_prompts__wp_040_type_place ?place)
+        )
+        (and
+          (not (= ?confronter ?confronted))
+          (alive ?confronter)
+          (at ?confronter ?place)
+          (alive ?confronted)
+          (at ?confronted ?place)
+        )
+      )
+    :effect
+      (and)
+  )
+
+  (:action defeat
+    :parameters (?defeater ?defeated ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_040_active)
+          (writing_prompts__wp_040_type_character ?defeater)
+          (writing_prompts__wp_040_type_character ?defeated)
+          (writing_prompts__wp_040_type_place ?place)
+          (writing_prompts__wp_040_type_character ?defeater)
+          (writing_prompts__wp_040_type_character ?defeated)
+          (writing_prompts__wp_040_type_place ?place)
+        )
+        (and
+          (not (= ?defeater ?defeated))
+          (alive ?defeater)
+          (at ?defeater ?place)
+          (alive ?defeated)
+          (at ?defeated ?place)
+        )
+      )
+    :effect
+      (not (alive ?defeated))
+  )
+
+  (:action show-mercy
+    :parameters (?merciful ?recipient ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_040_active)
+          (writing_prompts__wp_040_type_character ?merciful)
+          (writing_prompts__wp_040_type_character ?recipient)
+          (writing_prompts__wp_040_type_place ?place)
+          (writing_prompts__wp_040_type_character ?merciful)
+          (writing_prompts__wp_040_type_character ?recipient)
+          (writing_prompts__wp_040_type_place ?place)
+        )
+        (and
+          (not (= ?merciful ?recipient))
+          (alive ?merciful)
+          (at ?merciful ?place)
+          (not (alive ?recipient))
+          (at ?recipient ?place)
+        )
+      )
+    :effect
+      (alive ?recipient)
+  )
+
+  (:action find
+    :parameters (?character ?object)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?character)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?character)
+        )
+        (not (has ?character ?object))
+      )
+    :effect
+      (has ?character ?object)
+  )
+
+  (:action share
+    :parameters (?sharer ?object ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?receiver)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_character ?receiver)
+        )
+        (and
+          (has ?sharer ?object)
+          (not (shares ?sharer ?receiver ?object))
+        )
+      )
+    :effect
+      (shares ?sharer ?receiver ?object)
+  )
+
+  (:action unshare
+    :parameters (?sharer ?object ?receiver)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_045_active)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_object ?object)
+          (tiny_stories__story_045_type_character ?receiver)
+          (tiny_stories__story_045_type_character ?sharer)
+          (tiny_stories__story_045_type_character ?receiver)
+        )
+        (shares ?sharer ?receiver ?object)
+      )
+    :effect
+      (not (shares ?sharer ?receiver ?object))
+  )
+
+  (:action sing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (sings ?character)
+  )
+
+  (:action fall-in-love
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+        )
+      )
+    :effect
+      (in-love ?character1 ?character2)
+  )
+
+  (:action accept-past
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+          (writing_prompts__wp_006_type_character ?character1)
+          (writing_prompts__wp_006_type_character ?character2)
+        )
+        (and
+          (not (= ?character1 ?character2))
+          (alive ?character1)
+          (alive ?character2)
+        )
+      )
+    :effect
+      (accepts-past ?character1 ?character2)
+  )
+
+  (:action know-self
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_006_active)
+          (writing_prompts__wp_006_type_character ?character)
+          (writing_prompts__wp_006_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (knows-self ?character)
+  )
+
+  (:action move
+    :parameters (?character ?from ?to)
+    :precondition
+      (and
+        (or
+          (and
+            (writing_prompts__wp_040_active)
+            (writing_prompts__wp_040_type_character ?character)
+            (writing_prompts__wp_040_type_place ?from)
+            (writing_prompts__wp_040_type_place ?to)
+            (writing_prompts__wp_040_type_character ?character)
+            (writing_prompts__wp_040_type_place ?from)
+            (writing_prompts__wp_040_type_place ?to)
+          )
+          (and
+            (writing_prompts__wp_006_active)
+            (writing_prompts__wp_006_type_character ?character)
+            (writing_prompts__wp_006_type_place ?from)
+            (writing_prompts__wp_006_type_place ?to)
+            (writing_prompts__wp_006_type_character ?character)
+            (writing_prompts__wp_006_type_place ?from)
+            (writing_prompts__wp_006_type_place ?to)
+          )
+        )
+        (and
+          (not (= ?from ?to))
+          (alive ?character)
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+)

@@ -1,0 +1,151 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_094_active)
+    (tiny_stories__story_094_type_character ?x - object)
+    (tiny_stories__story_094_type_item ?x - object)
+    (tiny_stories__story_094_type_object ?x - object)
+    (tiny_stories__story_094_type_place ?x - object)
+    (tiny_stories__story_094_type_toy ?x - object)
+    (tiny_stories__story_094_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_094_p_happy ?v0 - object)
+    (tiny_stories__story_094_p_sad ?v0 - object)
+    (tiny_stories__story_094_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_081_active)
+    (writing_prompts__wp_081_type_character ?x - object)
+    (writing_prompts__wp_081_type_emotion ?x - object)
+    (writing_prompts__wp_081_type_item ?x - object)
+    (writing_prompts__wp_081_type_object ?x - object)
+    (writing_prompts__wp_081_p_alive ?v0 - object)
+    (writing_prompts__wp_081_p_has-emotion ?v0 - object ?v1 - object)
+    (writing_prompts__wp_081_p_knows-change ?v0 - object)
+    (writing_prompts__wp_081_p_memorize ?v0 - object)
+  )
+
+  (:action tiny_stories__story_094_a_receive-gift
+    :parameters (?receiver - object ?giver - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?receiver)
+        (tiny_stories__story_094_type_character ?giver)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?receiver ?giver))
+          (tiny_stories__story_094_p_happy ?giver)
+          (not (tiny_stories__story_094_p_has ?receiver ?item))
+          (tiny_stories__story_094_p_has ?giver ?item)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_094_p_has ?receiver ?item)
+        (tiny_stories__story_094_p_happy ?receiver)
+      )
+    :agents (?receiver ?giver)
+  )
+
+  (:action tiny_stories__story_094_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (tiny_stories__story_094_p_has ?character ?item)
+          (not (tiny_stories__story_094_p_sad ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_094_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_094_a_take-toy
+    :parameters (?taker - object ?victim - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?taker)
+        (tiny_stories__story_094_type_character ?victim)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (not (= ?taker ?victim))
+          (tiny_stories__story_094_p_has ?victim ?item)
+          (not (tiny_stories__story_094_p_has ?taker ?item))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_094_p_has ?victim ?item))
+        (tiny_stories__story_094_p_has ?taker ?item)
+        (tiny_stories__story_094_p_sad ?victim)
+      )
+    :agents (?taker)
+  )
+
+  (:action tiny_stories__story_094_a_lose-toy
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_094_active)
+        (tiny_stories__story_094_type_character ?character)
+        (tiny_stories__story_094_type_item ?item)
+        (and
+          (tiny_stories__story_094_p_has ?character ?item)
+          (tiny_stories__story_094_p_happy ?character)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_094_p_has ?character ?item))
+        (tiny_stories__story_094_p_sad ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_081_a_experience-emotion
+    :parameters (?character - object ?emotion - object)
+    :precondition
+      (and
+        (writing_prompts__wp_081_active)
+        (writing_prompts__wp_081_type_character ?character)
+        (writing_prompts__wp_081_type_emotion ?emotion)
+        (writing_prompts__wp_081_p_alive ?character)
+      )
+    :effect
+      (writing_prompts__wp_081_p_has-emotion ?character ?emotion)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_081_a_notice-change
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_081_active)
+        (writing_prompts__wp_081_type_character ?character)
+        (writing_prompts__wp_081_p_alive ?character)
+      )
+    :effect
+      (writing_prompts__wp_081_p_knows-change ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_081_a_memorize-appearance
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_081_active)
+        (writing_prompts__wp_081_type_character ?character)
+        (and
+          (writing_prompts__wp_081_p_alive ?character)
+          (writing_prompts__wp_081_p_knows-change ?character)
+        )
+      )
+    :effect
+      (writing_prompts__wp_081_p_memorize ?character)
+    :agents (?character)
+  )
+)

@@ -1,0 +1,236 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_089_active)
+    (tiny_stories__story_089_type_character ?x - object)
+    (tiny_stories__story_089_type_object ?x - object)
+    (writing_prompts__wp_085_active)
+    (writing_prompts__wp_085_type_character ?x - object)
+    (writing_prompts__wp_085_type_device ?x - object)
+    (writing_prompts__wp_085_type_item ?x - object)
+    (writing_prompts__wp_085_type_object ?x - object)
+    (writing_prompts__wp_085_type_place ?x - object)
+    (playing ?p0)
+    (tired ?p0)
+    (sleeping ?p0)
+    (has-energy ?p0)
+    (awake ?p0)
+    (wearing-clothes ?p0)
+    (has-device ?p0 ?p1)
+    (device-on ?p0)
+    (device-connected ?p0)
+    (electricity ?p0)
+    (at ?p0 ?p1)
+    (working ?p0)
+    (school-canceled)
+  )
+  (:constants writing_prompts__wp_085_o_outside - object)
+
+  (:action stop-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (playing ?character)
+      )
+    :effect
+      (and
+        (not (playing ?character))
+        (tired ?character)
+      )
+  )
+
+  (:action start-playing
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (not (playing ?character))
+          (has-energy ?character)
+        )
+      )
+    :effect
+      (playing ?character)
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_089_active)
+          (tiny_stories__story_089_type_character ?character)
+          (tiny_stories__story_089_type_character ?character)
+        )
+        (and
+          (tired ?character)
+          (not (sleeping ?character))
+        )
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (sleeping ?character)
+      )
+  )
+
+  (:action cancel-school
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (not (school-canceled))
+      )
+    :effect
+      (school-canceled)
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (or
+          (and
+            (tiny_stories__story_089_active)
+            (tiny_stories__story_089_type_character ?character)
+            (tiny_stories__story_089_type_character ?character)
+          )
+          (and
+            (writing_prompts__wp_085_active)
+            (writing_prompts__wp_085_type_character ?character)
+            (writing_prompts__wp_085_type_character ?character)
+          )
+        )
+        (and
+          (sleeping ?character)
+          (not (awake ?character))
+        )
+      )
+    :effect
+      (and
+        (awake ?character)
+        (not (sleeping ?character))
+        (not (tired ?character))
+        (has-energy ?character)
+      )
+  )
+
+  (:action put-on-clothes
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_085_active)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_character ?character)
+        )
+        (and
+          (awake ?character)
+          (not (wearing-clothes ?character))
+        )
+      )
+    :effect
+      (wearing-clothes ?character)
+  )
+
+  (:action turn-on-device
+    :parameters (?character ?device)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_085_active)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_device ?device)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_device ?device)
+        )
+        (and
+          (awake ?character)
+          (has-device ?character ?device)
+          (not (device-on ?device))
+        )
+      )
+    :effect
+      (device-on ?device)
+  )
+
+  (:action check-connectivity
+    :parameters (?character ?device)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_085_active)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_device ?device)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_device ?device)
+        )
+        (and
+          (awake ?character)
+          (device-on ?device)
+          (has-device ?character ?device)
+        )
+      )
+    :effect
+      (when
+        (device-connected ?device)
+        (working ?device)
+      )
+  )
+
+  (:action go-outside
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_085_active)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_place ?place)
+          (writing_prompts__wp_085_type_character ?character)
+          (writing_prompts__wp_085_type_place ?place)
+        )
+        (and
+          (awake ?character)
+          (wearing-clothes ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?place))
+        (at ?character writing_prompts__wp_085_o_outside)
+      )
+  )
+
+  (:action talk
+    :parameters (?speaker ?listener)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_085_active)
+          (writing_prompts__wp_085_type_character ?speaker)
+          (writing_prompts__wp_085_type_character ?listener)
+          (writing_prompts__wp_085_type_character ?speaker)
+          (writing_prompts__wp_085_type_character ?listener)
+        )
+        (and
+          (awake ?speaker)
+          (awake ?listener)
+          (at ?speaker writing_prompts__wp_085_o_outside)
+          (at ?listener writing_prompts__wp_085_o_outside)
+        )
+      )
+    :effect
+      (and)
+  )
+)

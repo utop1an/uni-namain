@@ -1,0 +1,468 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing :universal-preconditions)
+  (:types)
+  (:constants tiny_stories__story_046_o_ball - object tiny_stories__story_046_o_perfume - object)
+  (:predicates
+    (human_7c98a61edf861243_active)
+    (human_7c98a61edf861243_type_character ?x - object)
+    (human_7c98a61edf861243_type_key ?x - object)
+    (human_7c98a61edf861243_type_letter ?x - object)
+    (human_7c98a61edf861243_type_object ?x - object)
+    (human_7c98a61edf861243_type_room ?x - object)
+    (human_7c98a61edf861243_type_star ?x - object)
+    (human_7c98a61edf861243_type_thing ?x - object)
+    (human_7c98a61edf861243_p_locked ?v0 - object)
+    (human_7c98a61edf861243_p_at ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_unlocked-by ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_in ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_hidden ?v0 - object)
+    (human_7c98a61edf861243_p_has ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-locked ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-at ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-unlocked-by ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-in ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-hidden ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-has ?v0 - object ?v1 - object ?v2 - object)
+    (tiny_stories__story_046_active)
+    (tiny_stories__story_046_type_character ?x - object)
+    (tiny_stories__story_046_type_object ?x - object)
+    (tiny_stories__story_046_p_impatient ?v0 - object)
+    (tiny_stories__story_046_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_046_p_on-table ?v0 - object)
+    (tiny_stories__story_046_p_smells-nice ?v0 - object)
+    (tiny_stories__story_046_p_playing-with-ball ?v0 - object)
+    (writing_prompts__wp_030_active)
+    (writing_prompts__wp_030_type_object ?x - object)
+    (writing_prompts__wp_030_type_planet ?x - object)
+    (writing_prompts__wp_030_type_society ?x - object)
+    (writing_prompts__wp_030_type_technology ?x - object)
+    (writing_prompts__wp_030_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_030_p_has-technology ?v0 - object ?v1 - object)
+    (writing_prompts__wp_030_p_in-habitable-zone ?v0 - object)
+    (writing_prompts__wp_030_p_in-high-wind-zone ?v0 - object)
+    (writing_prompts__wp_030_p_in-low-wind-zone ?v0 - object)
+    (writing_prompts__wp_030_p_explored ?v0 - object ?v1 - object)
+    (writing_prompts__wp_063_active)
+    (writing_prompts__wp_063_type_character ?x - object)
+    (writing_prompts__wp_063_type_object ?x - object)
+    (writing_prompts__wp_063_type_place ?x - object)
+    (writing_prompts__wp_063_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_063_p_alive ?v0 - object)
+    (writing_prompts__wp_063_p_locked ?v0 - object)
+    (writing_prompts__wp_063_p_has ?v0 - object ?v1 - object)
+    (writing_prompts__wp_063_p_called-police ?v0 - object)
+    (writing_prompts__wp_063_p_death-averted ?v0 - object)
+    (writing_prompts__wp_063_p_follows ?v0 - object ?v1 - object)
+  )
+
+  (:action human_7c98a61edf861243_a_enter-success
+    :parameters (?character - object ?roomfrom - object ?roomto - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_room ?roomfrom)
+        (human_7c98a61edf861243_type_room ?roomto)
+        (and
+          (not (human_7c98a61edf861243_p_believes-locked ?character ?roomto))
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom)
+          (not (human_7c98a61edf861243_p_locked ?roomto))
+          (human_7c98a61edf861243_p_at ?character ?roomfrom)
+        )
+      )
+    :effect
+      (and
+        (not (human_7c98a61edf861243_p_at ?character ?roomfrom))
+        (human_7c98a61edf861243_p_at ?character ?roomto)
+        (forall
+          (?char2 - object)
+          (when
+            (and
+              (human_7c98a61edf861243_type_character ?char2)
+              (human_7c98a61edf861243_p_at ?char2 ?roomto)
+            )
+            (and
+              (human_7c98a61edf861243_p_believes-at ?character ?char2 ?roomto)
+              (human_7c98a61edf861243_p_believes-at ?char2 ?character ?roomto)
+            )
+          )
+        )
+        (forall
+          (?thing - object)
+          (when
+            (and
+              (human_7c98a61edf861243_type_thing ?thing)
+              (and
+                (human_7c98a61edf861243_p_in ?thing ?roomto)
+                (not (human_7c98a61edf861243_p_hidden ?thing))
+              )
+            )
+            (human_7c98a61edf861243_p_believes-in ?character ?thing ?roomto)
+          )
+        )
+        (not (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom))
+        (human_7c98a61edf861243_p_believes-at ?character ?character ?roomto)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_enter-fail
+    :parameters (?character - object ?roomfrom - object ?roomto - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_room ?roomfrom)
+        (human_7c98a61edf861243_type_room ?roomto)
+        (and
+          (not (human_7c98a61edf861243_p_believes-locked ?character ?roomto))
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom)
+          (not (and (not (human_7c98a61edf861243_p_locked ?roomto)) (human_7c98a61edf861243_p_at ?character ?roomfrom)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_locked ?roomto)
+          (human_7c98a61edf861243_p_at ?character ?roomfrom)
+        )
+        (human_7c98a61edf861243_p_believes-locked ?character ?roomto)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_speak-to-success_in
+    :parameters (?informant - object ?in_thing - object ?in_room - object ?informed - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?informant)
+        (human_7c98a61edf861243_type_thing ?in_thing)
+        (human_7c98a61edf861243_type_room ?in_room)
+        (human_7c98a61edf861243_type_character ?informed)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+          (human_7c98a61edf861243_p_believes-in ?informant ?in_thing ?in_room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informed ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informed ?room)
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+        )
+        (human_7c98a61edf861243_p_believes-in ?informed ?in_thing ?in_room)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_speak-to-success_unlocked-by
+    :parameters (?informant - object ?unlocked-by_room - object ?unlocked-by_key - object ?informed - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?informant)
+        (human_7c98a61edf861243_type_room ?unlocked-by_room)
+        (human_7c98a61edf861243_type_key ?unlocked-by_key)
+        (human_7c98a61edf861243_type_character ?informed)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?informant ?unlocked-by_room ?unlocked-by_key)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informed ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informed ?room)
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+        )
+        (human_7c98a61edf861243_p_believes-unlocked-by ?informed ?unlocked-by_room ?unlocked-by_key)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_search-for-success
+    :parameters (?character - object ?thing - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_thing ?thing)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?room)
+          (human_7c98a61edf861243_p_believes-in ?character ?thing ?room)
+          (human_7c98a61edf861243_p_at ?character ?room)
+          (human_7c98a61edf861243_p_in ?thing ?room)
+        )
+      )
+    :effect
+      (and
+        (human_7c98a61edf861243_p_has ?character ?thing)
+        (not (human_7c98a61edf861243_p_in ?thing ?room))
+        (human_7c98a61edf861243_p_believes-has ?character ?character ?thing)
+        (not (human_7c98a61edf861243_p_believes-in ?character ?thing ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_search-for-fail
+    :parameters (?character - object ?thing - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_thing ?thing)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?room)
+          (human_7c98a61edf861243_p_believes-in ?character ?thing ?room)
+          (not (and (human_7c98a61edf861243_p_at ?character ?room) (human_7c98a61edf861243_p_in ?thing ?room)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (not (human_7c98a61edf861243_p_in ?thing ?room))
+          (human_7c98a61edf861243_p_at ?character ?room)
+        )
+        (not (human_7c98a61edf861243_p_believes-in ?character ?thing ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_unlock-success
+    :parameters (?character - object ?key - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_key ?key)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-locked ?character ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key)
+          (human_7c98a61edf861243_p_believes-has ?character ?character ?key)
+          (human_7c98a61edf861243_p_locked ?room)
+          (human_7c98a61edf861243_p_unlocked-by ?room ?key)
+          (human_7c98a61edf861243_p_has ?character ?key)
+        )
+      )
+    :effect
+      (and
+        (not (human_7c98a61edf861243_p_locked ?room))
+        (not (human_7c98a61edf861243_p_believes-locked ?character ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_unlock-fail
+    :parameters (?character - object ?key - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_key ?key)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-locked ?character ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key)
+          (human_7c98a61edf861243_p_believes-has ?character ?character ?key)
+          (not (and (human_7c98a61edf861243_p_locked ?room) (human_7c98a61edf861243_p_unlocked-by ?room ?key) (human_7c98a61edf861243_p_has ?character ?key)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_locked ?room)
+          (human_7c98a61edf861243_p_has ?character ?key)
+          (not (human_7c98a61edf861243_p_unlocked-by ?room ?key))
+        )
+        (not (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key))
+      )
+  )
+
+  (:action tiny_stories__story_046_a_try-get
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_046_active)
+        (tiny_stories__story_046_type_character ?character)
+        (tiny_stories__story_046_type_object ?object)
+        (and
+          (tiny_stories__story_046_p_impatient ?character)
+          (tiny_stories__story_046_p_on-table ?object)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_046_p_on-table ?object))
+        (tiny_stories__story_046_p_has ?character ?object)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_046_a_smell-nice
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_046_active)
+        (tiny_stories__story_046_type_character ?character)
+        (tiny_stories__story_046_p_has ?character tiny_stories__story_046_o_perfume)
+      )
+    :effect
+      (tiny_stories__story_046_p_smells-nice ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_046_a_play-with-ball
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_046_active)
+        (tiny_stories__story_046_type_character ?character)
+        (tiny_stories__story_046_p_has ?character tiny_stories__story_046_o_ball)
+      )
+    :effect
+      (tiny_stories__story_046_p_playing-with-ball ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_030_a_develop-technology
+    :parameters (?society - object ?technology - object)
+    :precondition
+      (and
+        (writing_prompts__wp_030_active)
+        (writing_prompts__wp_030_type_society ?society)
+        (writing_prompts__wp_030_type_technology ?technology)
+      )
+    :effect
+      (writing_prompts__wp_030_p_has-technology ?society ?technology)
+    :agents (?society)
+  )
+
+  (:action writing_prompts__wp_030_a_explore
+    :parameters (?society - object ?planet - object ?technology - object)
+    :precondition
+      (and
+        (writing_prompts__wp_030_active)
+        (writing_prompts__wp_030_type_society ?society)
+        (writing_prompts__wp_030_type_planet ?planet)
+        (writing_prompts__wp_030_type_technology ?technology)
+        (and
+          (writing_prompts__wp_030_p_at ?society ?planet)
+          (writing_prompts__wp_030_p_has-technology ?society ?technology)
+          (or
+            (writing_prompts__wp_030_p_in-habitable-zone ?planet)
+            (writing_prompts__wp_030_p_in-high-wind-zone ?planet)
+            (writing_prompts__wp_030_p_in-low-wind-zone ?planet)
+          )
+        )
+      )
+    :effect
+      (writing_prompts__wp_030_p_explored ?society ?planet)
+    :agents (?society)
+  )
+
+  (:action writing_prompts__wp_030_a_move
+    :parameters (?society - object ?from - object ?to - object ?technology - object)
+    :precondition
+      (and
+        (writing_prompts__wp_030_active)
+        (writing_prompts__wp_030_type_society ?society)
+        (writing_prompts__wp_030_type_planet ?from)
+        (writing_prompts__wp_030_type_planet ?to)
+        (writing_prompts__wp_030_type_technology ?technology)
+        (and
+          (writing_prompts__wp_030_p_at ?society ?from)
+          (writing_prompts__wp_030_p_has-technology ?society ?technology)
+          (or
+            (writing_prompts__wp_030_p_in-habitable-zone ?to)
+            (writing_prompts__wp_030_p_in-high-wind-zone ?to)
+            (writing_prompts__wp_030_p_in-low-wind-zone ?to)
+          )
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_030_p_at ?society ?from))
+        (writing_prompts__wp_030_p_at ?society ?to)
+      )
+    :agents (?society)
+  )
+
+  (:action writing_prompts__wp_063_a_lock-door
+    :parameters (?character - object ?door - object)
+    :precondition
+      (and
+        (writing_prompts__wp_063_active)
+        (writing_prompts__wp_063_type_character ?character)
+        (writing_prompts__wp_063_type_object ?door)
+        (and
+          (writing_prompts__wp_063_p_alive ?character)
+          (not (writing_prompts__wp_063_p_locked ?door))
+        )
+      )
+    :effect
+      (writing_prompts__wp_063_p_locked ?door)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_063_a_call-police
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_063_active)
+        (writing_prompts__wp_063_type_character ?character)
+        (writing_prompts__wp_063_p_alive ?character)
+      )
+    :effect
+      (writing_prompts__wp_063_p_called-police ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_063_a_follow-officer
+    :parameters (?character - object ?officer - object)
+    :precondition
+      (and
+        (writing_prompts__wp_063_active)
+        (writing_prompts__wp_063_type_character ?character)
+        (writing_prompts__wp_063_type_character ?officer)
+        (and
+          (writing_prompts__wp_063_p_alive ?character)
+          (writing_prompts__wp_063_p_alive ?officer)
+        )
+      )
+    :effect
+      (writing_prompts__wp_063_p_follows ?character ?officer)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_063_a_avert-death
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_063_active)
+        (writing_prompts__wp_063_type_character ?character)
+        (and
+          (writing_prompts__wp_063_p_alive ?character)
+          (writing_prompts__wp_063_p_called-police ?character)
+          (exists
+            (?officer - object)
+            (and
+              (writing_prompts__wp_063_type_character ?officer)
+              (writing_prompts__wp_063_p_follows ?character ?officer)
+            )
+          )
+        )
+      )
+    :effect
+      (writing_prompts__wp_063_p_death-averted ?character)
+    :agents (?character)
+  )
+)

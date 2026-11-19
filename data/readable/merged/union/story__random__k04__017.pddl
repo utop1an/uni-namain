@@ -1,0 +1,366 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_060_o_vase - object)
+  (:predicates
+    (tiny_stories__story_022_active)
+    (tiny_stories__story_022_type_character ?x - object)
+    (tiny_stories__story_022_type_item ?x - object)
+    (tiny_stories__story_022_type_object ?x - object)
+    (tiny_stories__story_022_type_place ?x - object)
+    (tiny_stories__story_022_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_022_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_022_p_foggy ?v0 - object)
+    (tiny_stories__story_022_p_found ?v0 - object)
+    (tiny_stories__story_022_p_happy ?v0 - object)
+    (tiny_stories__story_022_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_023_active)
+    (tiny_stories__story_023_type_animal ?x - object)
+    (tiny_stories__story_023_type_character ?x - object)
+    (tiny_stories__story_023_type_location ?x - object)
+    (tiny_stories__story_023_type_object ?x - object)
+    (tiny_stories__story_023_type_place ?x - object)
+    (tiny_stories__story_023_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_023_p_happy ?v0 - object)
+    (tiny_stories__story_023_p_can-fly ?v0 - object)
+    (tiny_stories__story_023_p_can-run ?v0 - object)
+    (tiny_stories__story_023_p_playing ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (tiny_stories__story_060_p_happy ?v0 - object)
+    (tiny_stories__story_060_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_party ?v0 - object)
+    (tiny_stories__story_060_p_cake ?v0 - object)
+    (writing_prompts__wp_092_active)
+    (writing_prompts__wp_092_type_character ?x - object)
+    (writing_prompts__wp_092_type_object ?x - object)
+    (writing_prompts__wp_092_type_place ?x - object)
+    (writing_prompts__wp_092_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_092_p_ready ?v0 - object)
+    (writing_prompts__wp_092_p_has-lover ?v0 - object)
+    (writing_prompts__wp_092_p_has-child ?v0 - object ?v1 - object)
+    (writing_prompts__wp_092_p_is-grandmother ?v0 - object)
+    (writing_prompts__wp_092_p_is-ill ?v0 - object)
+  )
+
+  (:action tiny_stories__story_022_a_move
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_022_active)
+        (tiny_stories__story_022_type_character ?character)
+        (tiny_stories__story_022_type_place ?from)
+        (tiny_stories__story_022_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_022_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_022_p_at ?character ?from))
+        (tiny_stories__story_022_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_022_a_search
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_022_active)
+        (tiny_stories__story_022_type_character ?character)
+        (tiny_stories__story_022_type_item ?item)
+        (tiny_stories__story_022_type_place ?place)
+        (and
+          (tiny_stories__story_022_p_at ?character ?place)
+          (not (tiny_stories__story_022_p_found ?item))
+        )
+      )
+    :effect
+      (when
+        (not (tiny_stories__story_022_p_foggy ?place))
+        (and
+          (tiny_stories__story_022_p_found ?item)
+          (tiny_stories__story_022_p_has ?character ?item)
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_022_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_022_active)
+        (tiny_stories__story_022_type_character ?character1)
+        (tiny_stories__story_022_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_022_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_022_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_022_active)
+        (tiny_stories__story_022_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_022_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_022_a_clear-fog
+    :parameters (?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_022_active)
+        (tiny_stories__story_022_type_place ?place)
+        (tiny_stories__story_022_p_foggy ?place)
+      )
+    :effect
+      (not (tiny_stories__story_022_p_foggy ?place))
+  )
+
+  (:action tiny_stories__story_023_a_play
+    :parameters (?character - object ?animal - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_type_location ?place)
+        (and
+          (tiny_stories__story_023_p_at ?character ?place)
+          (tiny_stories__story_023_p_at ?animal ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_023_p_playing ?character ?animal)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_stop-playing
+    :parameters (?character - object ?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+        (tiny_stories__story_023_type_animal ?animal)
+        (tiny_stories__story_023_p_playing ?character ?animal)
+      )
+    :effect
+      (not (tiny_stories__story_023_p_playing ?character ?animal))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_move
+    :parameters (?object - object ?from - object ?to - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_object ?object)
+        (tiny_stories__story_023_type_location ?from)
+        (tiny_stories__story_023_type_location ?to)
+        (and
+          (not (= ?from ?to))
+          (tiny_stories__story_023_p_at ?object ?from)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_023_p_at ?object ?from))
+        (tiny_stories__story_023_p_at ?object ?to)
+      )
+    :agents (?object)
+  )
+
+  (:action tiny_stories__story_023_a_can-run
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_character ?character)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-run ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_023_a_can-fly
+    :parameters (?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_023_active)
+        (tiny_stories__story_023_type_animal ?animal)
+      )
+    :effect
+      (tiny_stories__story_023_p_can-fly ?animal)
+    :agents (?animal)
+  )
+
+  (:action tiny_stories__story_060_a_make-cake
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_cake ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_put
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_item ?item)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_has ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_at ?item ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_start-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_party ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_enjoy-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_party ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_092_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_092_active)
+        (writing_prompts__wp_092_type_character ?character)
+        (writing_prompts__wp_092_type_place ?from)
+        (writing_prompts__wp_092_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (writing_prompts__wp_092_p_at ?character ?from)
+          (writing_prompts__wp_092_p_ready ?character)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_092_p_at ?character ?from))
+        (writing_prompts__wp_092_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_092_a_get-ready
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_092_active)
+        (writing_prompts__wp_092_type_character ?character)
+        (not (writing_prompts__wp_092_p_ready ?character))
+      )
+    :effect
+      (writing_prompts__wp_092_p_ready ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_092_a_become-grandmother
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_092_active)
+        (writing_prompts__wp_092_type_character ?character)
+        (and
+          (not (writing_prompts__wp_092_p_is-grandmother ?character))
+          (exists
+            (?child - object)
+            (and
+              (writing_prompts__wp_092_type_character ?child)
+              (writing_prompts__wp_092_p_has-child ?character ?child)
+            )
+          )
+        )
+      )
+    :effect
+      (writing_prompts__wp_092_p_is-grandmother ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_092_a_become-ill
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_092_active)
+        (writing_prompts__wp_092_type_character ?character)
+        (not (writing_prompts__wp_092_p_is-ill ?character))
+      )
+    :effect
+      (writing_prompts__wp_092_p_is-ill ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_092_a_recover
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_092_active)
+        (writing_prompts__wp_092_type_character ?character)
+        (writing_prompts__wp_092_p_is-ill ?character)
+      )
+    :effect
+      (not (writing_prompts__wp_092_p_is-ill ?character))
+    :agents (?character)
+  )
+)

@@ -1,0 +1,899 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (human_ab9663f1e67ea2f0_active)
+    (human_ab9663f1e67ea2f0_type_alley ?x - object)
+    (human_ab9663f1e67ea2f0_type_bank ?x - object)
+    (human_ab9663f1e67ea2f0_type_bar ?x - object)
+    (human_ab9663f1e67ea2f0_type_big-money ?x - object)
+    (human_ab9663f1e67ea2f0_type_bystanders ?x - object)
+    (human_ab9663f1e67ea2f0_type_cuffs ?x - object)
+    (human_ab9663f1e67ea2f0_type_evil ?x - object)
+    (human_ab9663f1e67ea2f0_type_guard ?x - object)
+    (human_ab9663f1e67ea2f0_type_gun ?x - object)
+    (human_ab9663f1e67ea2f0_type_horse ?x - object)
+    (human_ab9663f1e67ea2f0_type_mobile ?x - object)
+    (human_ab9663f1e67ea2f0_type_money ?x - object)
+    (human_ab9663f1e67ea2f0_type_mother-lode ?x - object)
+    (human_ab9663f1e67ea2f0_type_object ?x - object)
+    (human_ab9663f1e67ea2f0_type_pawn-broker ?x - object)
+    (human_ab9663f1e67ea2f0_type_person ?x - object)
+    (human_ab9663f1e67ea2f0_type_place ?x - object)
+    (human_ab9663f1e67ea2f0_type_poker-game ?x - object)
+    (human_ab9663f1e67ea2f0_type_seller ?x - object)
+    (human_ab9663f1e67ea2f0_type_sheriff ?x - object)
+    (human_ab9663f1e67ea2f0_type_small-goods ?x - object)
+    (human_ab9663f1e67ea2f0_type_store ?x - object)
+    (human_ab9663f1e67ea2f0_type_thing ?x - object)
+    (human_ab9663f1e67ea2f0_type_valuable ?x - object)
+    (tiny_stories__story_073_active)
+    (tiny_stories__story_073_type_character ?x - object)
+    (tiny_stories__story_073_type_object ?x - object)
+    (writing_prompts__wp_004_active)
+    (writing_prompts__wp_004_type_character ?x - object)
+    (writing_prompts__wp_004_type_object ?x - object)
+    (writing_prompts__wp_004_type_planet ?x - object)
+    (on-planet ?p0 ?p1)
+    (in-formation ?p0)
+    (in-airlock ?p0)
+    (wingsuit-active ?p0)
+    (suit-pressurized ?p0)
+    (reached-altitude ?p0)
+    (reached-speed ?p0)
+    (connected ?p0 ?p1)
+    (alley-of ?p0 ?p1)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (open ?p0)
+    (forsale ?p0 ?p1)
+    (hidden ?p0)
+    (drunk ?p0)
+    (sleeping ?p0)
+    (in-cuffs ?p0 ?p1)
+    (free-with-money ?p0)
+    (friendly ?p0 ?p1)
+    (blocking ?p0 ?p1)
+    (guard-of ?p0 ?p1)
+    (guarded ?p0)
+    (bet-at ?p0 ?p1)
+    (held-up ?p0 ?p1)
+    (arrested ?p0 ?p1)
+    (play-chess ?p0 ?p1)
+    (feel-better ?p0)
+    (sit-together ?p0 ?p1)
+    (sick ?p0)
+    (happy ?p0)
+  )
+
+  (:action enter-airlock
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_004_active)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_character ?character)
+        )
+        (not (in-airlock ?character))
+      )
+    :effect
+      (in-airlock ?character)
+  )
+
+  (:action pressurize-suit
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_004_active)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_character ?character)
+        )
+        (and
+          (in-airlock ?character)
+          (not (suit-pressurized ?character))
+        )
+      )
+    :effect
+      (suit-pressurized ?character)
+  )
+
+  (:action jump
+    :parameters (?character ?planet)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_004_active)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_planet ?planet)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_planet ?planet)
+        )
+        (and
+          (suit-pressurized ?character)
+          (not (on-planet ?character ?planet))
+        )
+      )
+    :effect
+      (and
+        (reached-altitude ?character)
+        (reached-speed ?character)
+      )
+  )
+
+  (:action activate-wingsuit
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_004_active)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_character ?character)
+        )
+        (and
+          (reached-altitude ?character)
+          (reached-speed ?character)
+          (not (wingsuit-active ?character))
+        )
+      )
+    :effect
+      (wingsuit-active ?character)
+  )
+
+  (:action land
+    :parameters (?character ?planet)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_004_active)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_planet ?planet)
+          (writing_prompts__wp_004_type_character ?character)
+          (writing_prompts__wp_004_type_planet ?planet)
+        )
+        (and
+          (wingsuit-active ?character)
+          (not (on-planet ?character ?planet))
+        )
+      )
+    :effect
+      (on-planet ?character ?planet)
+  )
+
+  (:action pick-up
+    :parameters (?person ?thing ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_thing ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_thing ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?thing ?place)
+        )
+      )
+    :effect
+      (and
+        (not (at ?thing ?place))
+        (has ?person ?thing)
+      )
+  )
+
+  (:action holster-gun
+    :parameters (?person ?gun ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?gun ?place)
+        )
+      )
+    :effect
+      (and
+        (not (at ?gun ?place))
+        (has ?person ?gun)
+      )
+  )
+
+  (:action withdraw-money
+    :parameters (?person ?bank ?money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+        )
+        (and
+          (at ?person ?bank)
+          (has ?bank ?money)
+        )
+      )
+    :effect
+      (and
+        (not (has ?bank ?money))
+        (has ?person ?money)
+      )
+  )
+
+  (:action open
+    :parameters (?person ?store)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+        )
+        (at ?person ?store)
+      )
+    :effect
+      (open ?store)
+  )
+
+  (:action sell
+    :parameters (?person ?buyer ?thing ?money ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?buyer)
+          (human_ab9663f1e67ea2f0_type_small-goods ?thing)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?buyer)
+          (human_ab9663f1e67ea2f0_type_small-goods ?thing)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+        )
+        (and
+          (at ?person ?place)
+          (has ?person ?thing)
+          (at ?buyer ?place)
+          (has ?buyer ?money)
+        )
+      )
+    :effect
+      (and
+        (not (has ?person ?thing))
+        (has ?person ?money)
+        (not (has ?buyer ?money))
+        (has ?buyer ?thing)
+      )
+  )
+
+  (:action buy-dress
+    :parameters (?person ?thing ?store ?money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+        )
+        (and
+          (open ?store)
+          (forsale ?thing ?store)
+          (at ?person ?store)
+          (has ?person ?money)
+        )
+      )
+    :effect
+      (and
+        (has ?person ?thing)
+        (not (forsale ?thing ?store))
+        (not (has ?person ?money))
+      )
+  )
+
+  (:action fail-buy-dress
+    :parameters (?person ?thing ?store ?money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_store ?store)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+        )
+        (and
+          (open ?store)
+          (forsale ?thing ?store)
+          (at ?person ?store)
+          (not (has ?person ?money))
+        )
+      )
+    :effect
+      (and)
+  )
+
+  (:action kick-out-of-way
+    :parameters (?person ?roadblock ?alley ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_person ?roadblock)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_person ?roadblock)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?roadblock ?place)
+          (blocking ?roadblock ?alley)
+        )
+      )
+    :effect
+      (not (blocking ?roadblock ?alley))
+  )
+
+  (:action hatch-plan
+    :parameters (?person ?gun ?horse ?bank ?mother-lode)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+        )
+        (has ?bank ?mother-lode)
+      )
+    :effect
+      (not (has ?person ?mother-lode))
+  )
+
+  (:action hide-in-dark-alley
+    :parameters (?person ?alley)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+        )
+        (at ?person ?alley)
+      )
+    :effect
+      (hidden ?person)
+  )
+
+  (:action pickpocket
+    :parameters (?person ?mark ?money ?place ?alley)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_person ?mark)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_person ?mark)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_alley ?alley)
+        )
+        (and
+          (alley-of ?alley ?place)
+          (at ?person ?alley)
+          (at ?mark ?place)
+          (hidden ?person)
+          (has ?mark ?money)
+        )
+      )
+    :effect
+      (and
+        (has ?person ?money)
+        (not (has ?mark ?money))
+        (not (hidden ?person))
+      )
+  )
+
+  (:action move-once
+    :parameters (?person ?from ?to)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_mobile ?person)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+          (human_ab9663f1e67ea2f0_type_mobile ?person)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+        )
+        (and
+          (connected ?from ?to)
+          (at ?person ?from)
+        )
+      )
+    :effect
+      (and
+        (at ?person ?to)
+        (not (at ?person ?from))
+      )
+  )
+
+  (:action buy-drinks-for
+    :parameters (?person ?drinker ?money ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?drinker)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_bar ?place)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?drinker)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_bar ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?drinker ?place)
+          (has ?person ?money)
+        )
+      )
+    :effect
+      (and
+        (friendly ?drinker ?person)
+        (drunk ?drinker)
+      )
+  )
+
+  (:action cheat-at-poker
+    :parameters (?person ?poker ?money ?winnings ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_poker-game ?poker)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_money ?winnings)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_poker-game ?poker)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_money ?winnings)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?poker ?place)
+          (has ?person ?money)
+          (bet-at ?winnings ?poker)
+        )
+      )
+    :effect
+      (has ?person ?winnings)
+  )
+
+  (:action escort-drunk-friend
+    :parameters (?person ?friend ?from ?to)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?friend)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?friend)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+        )
+        (and
+          (connected ?from ?to)
+          (at ?person ?from)
+          (at ?friend ?from)
+          (drunk ?friend)
+          (friendly ?friend ?person)
+        )
+      )
+    :effect
+      (and
+        (not (at ?person ?from))
+        (at ?person ?to)
+        (not (at ?friend ?from))
+        (at ?friend ?to)
+      )
+  )
+
+  (:action lay-to-rest-in-alley
+    :parameters (?person ?friend ?place ?bank)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_guard ?friend)
+          (human_ab9663f1e67ea2f0_type_alley ?place)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_guard ?friend)
+          (human_ab9663f1e67ea2f0_type_alley ?place)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+        )
+        (and
+          (at ?person ?place)
+          (at ?friend ?place)
+          (drunk ?friend)
+          (friendly ?friend ?person)
+          (guard-of ?friend ?bank)
+        )
+      )
+    :effect
+      (and
+        (sleeping ?friend)
+        (not (guarded ?bank))
+      )
+  )
+
+  (:action take-thing-off-sleeper
+    :parameters (?person ?sleeper ?thing ?place)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?sleeper)
+          (human_ab9663f1e67ea2f0_type_thing ?thing)
+          (human_ab9663f1e67ea2f0_type_alley ?place)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_person ?sleeper)
+          (human_ab9663f1e67ea2f0_type_thing ?thing)
+          (human_ab9663f1e67ea2f0_type_alley ?place)
+        )
+        (and
+          (at ?person ?place)
+          (at ?sleeper ?place)
+          (sleeping ?sleeper)
+          (has ?sleeper ?thing)
+        )
+      )
+    :effect
+      (and
+        (has ?person ?thing)
+        (not (has ?sleeper ?thing))
+      )
+  )
+
+  (:action pawn-valuable
+    :parameters (?person ?pawn-broker ?thing ?place ?big-money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_pawn-broker ?pawn-broker)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_big-money ?big-money)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_pawn-broker ?pawn-broker)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_big-money ?big-money)
+        )
+        (and
+          (at ?person ?place)
+          (at ?pawn-broker ?place)
+          (has ?person ?thing)
+          (has ?pawn-broker ?big-money)
+        )
+      )
+    :effect
+      (and
+        (not (has ?person ?thing))
+        (has ?pawn-broker ?thing)
+        (has ?person ?big-money)
+      )
+  )
+
+  (:action buy-valuable
+    :parameters (?person ?seller ?thing ?place ?big-money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_seller ?seller)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_big-money ?big-money)
+          (human_ab9663f1e67ea2f0_type_person ?person)
+          (human_ab9663f1e67ea2f0_type_seller ?seller)
+          (human_ab9663f1e67ea2f0_type_valuable ?thing)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_big-money ?big-money)
+        )
+        (and
+          (has ?seller ?thing)
+          (at ?person ?place)
+          (at ?seller ?place)
+          (has ?person ?big-money)
+        )
+      )
+    :effect
+      (and
+        (has ?person ?thing)
+        (not (has ?seller ?thing))
+        (not (has ?person ?big-money))
+      )
+  )
+
+  (:action ride-horse-to
+    :parameters (?person ?horse ?from ?to)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_mobile ?person)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+          (human_ab9663f1e67ea2f0_type_mobile ?person)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_place ?from)
+          (human_ab9663f1e67ea2f0_type_place ?to)
+        )
+        (and
+          (connected ?from ?to)
+          (at ?person ?from)
+          (at ?horse ?from)
+          (has ?person ?horse)
+        )
+      )
+    :effect
+      (and
+        (at ?person ?to)
+        (not (at ?person ?from))
+        (at ?horse ?to)
+        (not (at ?horse ?from))
+      )
+  )
+
+  (:action hold-up-bank
+    :parameters (?person ?gun ?bank ?sheriff)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_sheriff ?sheriff)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_gun ?gun)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_sheriff ?sheriff)
+        )
+        (and
+          (at ?person ?bank)
+          (has ?person ?gun)
+          (not (guarded ?bank))
+        )
+      )
+    :effect
+      (held-up ?person ?bank)
+  )
+
+  (:action collect-money-from-heist
+    :parameters (?person ?bank ?mother-lode)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_bank ?bank)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+        )
+        (and
+          (at ?person ?bank)
+          (held-up ?person ?bank)
+          (has ?bank ?mother-lode)
+        )
+      )
+    :effect
+      (and
+        (has ?person ?mother-lode)
+        (not (held-up ?person ?bank))
+        (not (has ?bank ?mother-lode))
+      )
+  )
+
+  (:action getaway-with-money
+    :parameters (?person ?mother-lode ?horse ?place ?dest)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_place ?dest)
+          (human_ab9663f1e67ea2f0_type_evil ?person)
+          (human_ab9663f1e67ea2f0_type_mother-lode ?mother-lode)
+          (human_ab9663f1e67ea2f0_type_horse ?horse)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_place ?dest)
+        )
+        (and
+          (connected ?place ?dest)
+          (at ?person ?place)
+          (at ?horse ?place)
+          (has ?person ?mother-lode)
+        )
+      )
+    :effect
+      (and
+        (not (at ?person ?place))
+        (not (at ?horse ?place))
+        (free-with-money ?person)
+        (at ?person ?dest)
+      )
+  )
+
+  (:action arrest
+    :parameters (?criminal ?sheriff ?place ?cuffs ?money)
+    :precondition
+      (and
+        (and
+          (human_ab9663f1e67ea2f0_active)
+          (human_ab9663f1e67ea2f0_type_evil ?criminal)
+          (human_ab9663f1e67ea2f0_type_sheriff ?sheriff)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_cuffs ?cuffs)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+          (human_ab9663f1e67ea2f0_type_evil ?criminal)
+          (human_ab9663f1e67ea2f0_type_sheriff ?sheriff)
+          (human_ab9663f1e67ea2f0_type_place ?place)
+          (human_ab9663f1e67ea2f0_type_cuffs ?cuffs)
+          (human_ab9663f1e67ea2f0_type_money ?money)
+        )
+        (and
+          (at ?sheriff ?place)
+          (at ?criminal ?place)
+          (has ?sheriff ?cuffs)
+          (has ?criminal ?money)
+        )
+      )
+    :effect
+      (and
+        (arrested ?sheriff ?criminal)
+        (in-cuffs ?criminal ?cuffs)
+        (has ?sheriff ?money)
+        (not (has ?criminal ?money))
+      )
+  )
+
+  (:action play-chess
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_073_active)
+          (tiny_stories__story_073_type_character ?character1)
+          (tiny_stories__story_073_type_character ?character2)
+          (tiny_stories__story_073_type_character ?character1)
+          (tiny_stories__story_073_type_character ?character2)
+        )
+        (and
+          (not (sick ?character1))
+          (not (sick ?character2))
+          (not (= ?character1 ?character2))
+          (sit-together ?character1 ?character2)
+        )
+      )
+    :effect
+      (and
+        (play-chess ?character1 ?character2)
+        (happy ?character1)
+        (happy ?character2)
+      )
+  )
+
+  (:action get-sick
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_073_active)
+          (tiny_stories__story_073_type_character ?character)
+          (tiny_stories__story_073_type_character ?character)
+        )
+        (and)
+      )
+    :effect
+      (sick ?character)
+  )
+
+  (:action feel-better
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_073_active)
+          (tiny_stories__story_073_type_character ?character)
+          (tiny_stories__story_073_type_character ?character)
+        )
+        (sick ?character)
+      )
+    :effect
+      (not (sick ?character))
+  )
+
+  (:action sit-together
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_073_active)
+          (tiny_stories__story_073_type_character ?character1)
+          (tiny_stories__story_073_type_character ?character2)
+          (tiny_stories__story_073_type_character ?character1)
+          (tiny_stories__story_073_type_character ?character2)
+        )
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (sit-together ?character1 ?character2)
+  )
+)

@@ -1,0 +1,429 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing :universal-preconditions)
+  (:types)
+  (:constants human_8fa5775aae174731_o_ark - object)
+  (:predicates
+    (human_7c98a61edf861243_active)
+    (human_7c98a61edf861243_type_character ?x - object)
+    (human_7c98a61edf861243_type_key ?x - object)
+    (human_7c98a61edf861243_type_letter ?x - object)
+    (human_7c98a61edf861243_type_object ?x - object)
+    (human_7c98a61edf861243_type_room ?x - object)
+    (human_7c98a61edf861243_type_star ?x - object)
+    (human_7c98a61edf861243_type_thing ?x - object)
+    (human_7c98a61edf861243_p_locked ?v0 - object)
+    (human_7c98a61edf861243_p_at ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_unlocked-by ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_in ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_hidden ?v0 - object)
+    (human_7c98a61edf861243_p_has ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-locked ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-at ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-unlocked-by ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-in ?v0 - object ?v1 - object ?v2 - object)
+    (human_7c98a61edf861243_p_believes-hidden ?v0 - object ?v1 - object)
+    (human_7c98a61edf861243_p_believes-has ?v0 - object ?v1 - object ?v2 - object)
+    (human_8fa5775aae174731_active)
+    (human_8fa5775aae174731_type_character ?x - object)
+    (human_8fa5775aae174731_type_item ?x - object)
+    (human_8fa5775aae174731_type_object ?x - object)
+    (human_8fa5775aae174731_type_place ?x - object)
+    (human_8fa5775aae174731_type_weapon ?x - object)
+    (human_8fa5775aae174731_p_open ?v0 - object)
+    (human_8fa5775aae174731_p_alive ?v0 - object)
+    (human_8fa5775aae174731_p_armed ?v0 - object)
+    (human_8fa5775aae174731_p_burried ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_p_knows-location ?v0 - object ?v1 - object ?v2 - object)
+    (human_8fa5775aae174731_p_at ?v0 - object ?v1 - object)
+    (human_8fa5775aae174731_p_has ?v0 - object ?v1 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (not (human_8fa5775aae174731_p_armed ?character)) (exists (?w - object) (and (human_8fa5775aae174731_type_weapon ?w) (human_8fa5775aae174731_p_has ?character ?w))))) :implies (human_8fa5775aae174731_p_armed ?character))
+  (:axiom :vars (?character - object) :context (and (human_8fa5775aae174731_active) (human_8fa5775aae174731_type_character ?character) (and (human_8fa5775aae174731_p_armed ?character) (forall (?w - object) (or (not (human_8fa5775aae174731_type_weapon ?w)) (not (human_8fa5775aae174731_p_has ?character ?w)))))) :implies (not (human_8fa5775aae174731_p_armed ?character)))
+
+  (:action human_7c98a61edf861243_a_enter-success
+    :parameters (?character - object ?roomfrom - object ?roomto - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_room ?roomfrom)
+        (human_7c98a61edf861243_type_room ?roomto)
+        (and
+          (not (human_7c98a61edf861243_p_believes-locked ?character ?roomto))
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom)
+          (not (human_7c98a61edf861243_p_locked ?roomto))
+          (human_7c98a61edf861243_p_at ?character ?roomfrom)
+        )
+      )
+    :effect
+      (and
+        (not (human_7c98a61edf861243_p_at ?character ?roomfrom))
+        (human_7c98a61edf861243_p_at ?character ?roomto)
+        (forall
+          (?char2 - object)
+          (when
+            (and
+              (human_7c98a61edf861243_type_character ?char2)
+              (human_7c98a61edf861243_p_at ?char2 ?roomto)
+            )
+            (and
+              (human_7c98a61edf861243_p_believes-at ?character ?char2 ?roomto)
+              (human_7c98a61edf861243_p_believes-at ?char2 ?character ?roomto)
+            )
+          )
+        )
+        (forall
+          (?thing - object)
+          (when
+            (and
+              (human_7c98a61edf861243_type_thing ?thing)
+              (and
+                (human_7c98a61edf861243_p_in ?thing ?roomto)
+                (not (human_7c98a61edf861243_p_hidden ?thing))
+              )
+            )
+            (human_7c98a61edf861243_p_believes-in ?character ?thing ?roomto)
+          )
+        )
+        (not (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom))
+        (human_7c98a61edf861243_p_believes-at ?character ?character ?roomto)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_enter-fail
+    :parameters (?character - object ?roomfrom - object ?roomto - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_room ?roomfrom)
+        (human_7c98a61edf861243_type_room ?roomto)
+        (and
+          (not (human_7c98a61edf861243_p_believes-locked ?character ?roomto))
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?roomfrom)
+          (not (and (not (human_7c98a61edf861243_p_locked ?roomto)) (human_7c98a61edf861243_p_at ?character ?roomfrom)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_locked ?roomto)
+          (human_7c98a61edf861243_p_at ?character ?roomfrom)
+        )
+        (human_7c98a61edf861243_p_believes-locked ?character ?roomto)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_speak-to-success_in
+    :parameters (?informant - object ?in_thing - object ?in_room - object ?informed - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?informant)
+        (human_7c98a61edf861243_type_thing ?in_thing)
+        (human_7c98a61edf861243_type_room ?in_room)
+        (human_7c98a61edf861243_type_character ?informed)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+          (human_7c98a61edf861243_p_believes-in ?informant ?in_thing ?in_room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informed ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informed ?room)
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+        )
+        (human_7c98a61edf861243_p_believes-in ?informed ?in_thing ?in_room)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_speak-to-success_unlocked-by
+    :parameters (?informant - object ?unlocked-by_room - object ?unlocked-by_key - object ?informed - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?informant)
+        (human_7c98a61edf861243_type_room ?unlocked-by_room)
+        (human_7c98a61edf861243_type_key ?unlocked-by_key)
+        (human_7c98a61edf861243_type_character ?informed)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?informant ?unlocked-by_room ?unlocked-by_key)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informant ?informed ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informant ?room)
+          (human_7c98a61edf861243_p_believes-at ?informed ?informed ?room)
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_at ?informant ?room)
+          (human_7c98a61edf861243_p_at ?informed ?room)
+        )
+        (human_7c98a61edf861243_p_believes-unlocked-by ?informed ?unlocked-by_room ?unlocked-by_key)
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_search-for-success
+    :parameters (?character - object ?thing - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_thing ?thing)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?room)
+          (human_7c98a61edf861243_p_believes-in ?character ?thing ?room)
+          (human_7c98a61edf861243_p_at ?character ?room)
+          (human_7c98a61edf861243_p_in ?thing ?room)
+        )
+      )
+    :effect
+      (and
+        (human_7c98a61edf861243_p_has ?character ?thing)
+        (not (human_7c98a61edf861243_p_in ?thing ?room))
+        (human_7c98a61edf861243_p_believes-has ?character ?character ?thing)
+        (not (human_7c98a61edf861243_p_believes-in ?character ?thing ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_search-for-fail
+    :parameters (?character - object ?thing - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_thing ?thing)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-at ?character ?character ?room)
+          (human_7c98a61edf861243_p_believes-in ?character ?thing ?room)
+          (not (and (human_7c98a61edf861243_p_at ?character ?room) (human_7c98a61edf861243_p_in ?thing ?room)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (not (human_7c98a61edf861243_p_in ?thing ?room))
+          (human_7c98a61edf861243_p_at ?character ?room)
+        )
+        (not (human_7c98a61edf861243_p_believes-in ?character ?thing ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_unlock-success
+    :parameters (?character - object ?key - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_key ?key)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-locked ?character ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key)
+          (human_7c98a61edf861243_p_believes-has ?character ?character ?key)
+          (human_7c98a61edf861243_p_locked ?room)
+          (human_7c98a61edf861243_p_unlocked-by ?room ?key)
+          (human_7c98a61edf861243_p_has ?character ?key)
+        )
+      )
+    :effect
+      (and
+        (not (human_7c98a61edf861243_p_locked ?room))
+        (not (human_7c98a61edf861243_p_believes-locked ?character ?room))
+      )
+  )
+
+  (:action human_7c98a61edf861243_a_unlock-fail
+    :parameters (?character - object ?key - object ?room - object)
+    :precondition
+      (and
+        (human_7c98a61edf861243_active)
+        (human_7c98a61edf861243_type_character ?character)
+        (human_7c98a61edf861243_type_key ?key)
+        (human_7c98a61edf861243_type_room ?room)
+        (and
+          (human_7c98a61edf861243_p_believes-locked ?character ?room)
+          (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key)
+          (human_7c98a61edf861243_p_believes-has ?character ?character ?key)
+          (not (and (human_7c98a61edf861243_p_locked ?room) (human_7c98a61edf861243_p_unlocked-by ?room ?key) (human_7c98a61edf861243_p_has ?character ?key)))
+        )
+      )
+    :effect
+      (when
+        (and
+          (human_7c98a61edf861243_p_locked ?room)
+          (human_7c98a61edf861243_p_has ?character ?key)
+          (not (human_7c98a61edf861243_p_unlocked-by ?room ?key))
+        )
+        (not (human_7c98a61edf861243_p_believes-unlocked-by ?character ?room ?key))
+      )
+  )
+
+  (:action human_8fa5775aae174731_a_travel
+    :parameters (?character - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_place ?from)
+        (human_8fa5775aae174731_type_place ?to)
+        (and
+          (not (= ?from ?to))
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_at ?character ?from))
+        (human_8fa5775aae174731_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_excavate
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_at ?character ?place)
+          (human_8fa5775aae174731_p_burried ?item ?place)
+          (human_8fa5775aae174731_p_knows-location ?character ?item ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_burried ?item ?place))
+        (human_8fa5775aae174731_p_has ?character ?item)
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_give
+    :parameters (?giver - object ?item - object ?receiver - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?giver)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?receiver)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?giver ?receiver))
+          (human_8fa5775aae174731_p_alive ?giver)
+          (human_8fa5775aae174731_p_at ?giver ?place)
+          (human_8fa5775aae174731_p_has ?giver ?item)
+          (human_8fa5775aae174731_p_alive ?receiver)
+          (human_8fa5775aae174731_p_at ?receiver ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?giver ?item))
+        (human_8fa5775aae174731_p_has ?receiver ?item)
+      )
+    :agents (?giver ?receiver)
+  )
+
+  (:action human_8fa5775aae174731_a_kill
+    :parameters (?killer - object ?weapon - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?killer)
+        (human_8fa5775aae174731_type_weapon ?weapon)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (human_8fa5775aae174731_p_alive ?killer)
+          (human_8fa5775aae174731_p_at ?killer ?place)
+          (human_8fa5775aae174731_p_has ?killer ?weapon)
+          (human_8fa5775aae174731_p_alive ?victim)
+          (human_8fa5775aae174731_p_at ?victim ?place)
+        )
+      )
+    :effect
+      (not (human_8fa5775aae174731_p_alive ?victim))
+    :agents (?killer)
+  )
+
+  (:action human_8fa5775aae174731_a_take
+    :parameters (?taker - object ?item - object ?victim - object ?place - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?taker)
+        (human_8fa5775aae174731_type_item ?item)
+        (human_8fa5775aae174731_type_character ?victim)
+        (human_8fa5775aae174731_type_place ?place)
+        (and
+          (not (= ?taker ?victim))
+          (human_8fa5775aae174731_p_alive ?taker)
+          (human_8fa5775aae174731_p_at ?taker ?place)
+          (or
+            (not (human_8fa5775aae174731_p_alive ?victim))
+            (and
+              (human_8fa5775aae174731_p_armed ?taker)
+              (not (human_8fa5775aae174731_p_armed ?victim))
+            )
+          )
+          (human_8fa5775aae174731_p_at ?victim ?place)
+          (human_8fa5775aae174731_p_has ?victim ?item)
+        )
+      )
+    :effect
+      (and
+        (not (human_8fa5775aae174731_p_has ?victim ?item))
+        (human_8fa5775aae174731_p_has ?taker ?item)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_8fa5775aae174731_a_open-ark
+    :parameters (?character - object)
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_type_character ?character)
+        (and
+          (human_8fa5775aae174731_p_alive ?character)
+          (human_8fa5775aae174731_p_has ?character human_8fa5775aae174731_o_ark)
+        )
+      )
+    :effect
+      (and
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+        (not (human_8fa5775aae174731_p_alive ?character))
+      )
+    :agents (?character)
+  )
+
+  (:action human_8fa5775aae174731_a_close-ark
+    :parameters ()
+    :precondition
+      (and
+        (human_8fa5775aae174731_active)
+        (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark)
+      )
+    :effect
+      (not (human_8fa5775aae174731_p_open human_8fa5775aae174731_o_ark))
+  )
+)

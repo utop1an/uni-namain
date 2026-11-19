@@ -1,0 +1,348 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_035_active)
+    (tiny_stories__story_035_type_character ?x - object)
+    (tiny_stories__story_035_type_object ?x - object)
+    (tiny_stories__story_072_active)
+    (tiny_stories__story_072_type_character ?x - object)
+    (tiny_stories__story_072_type_object ?x - object)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_011_type_character ?x - object)
+    (writing_prompts__wp_011_type_object ?x - object)
+    (writing_prompts__wp_011_type_place ?x - object)
+    (writing_prompts__wp_020_active)
+    (writing_prompts__wp_020_type_character ?x - object)
+    (writing_prompts__wp_020_type_object ?x - object)
+    (birthday ?p0)
+    (box-closed)
+    (box-open)
+    (cake-spoiled)
+    (cake-good)
+    (listened-to-mom ?p0)
+    (waited-for-birthday ?p0)
+    (at-party ?p0)
+    (fast ?p0)
+    (cake-transformed)
+    (has ?p0 ?p1)
+    (at ?p0 ?p1)
+    (alive ?p0)
+    (in-stasis ?p0)
+    (ancient-technology ?p0)
+    (propellant-device ?p0)
+    (shielded ?p0)
+    (requested-tow ?p0 ?p1)
+    (hurting ?p0)
+    (struggling ?p0)
+    (loved ?p0 ?p1)
+    (letting-go ?p0 ?p1)
+    (ready ?p0)
+    (better-times ?p0)
+  )
+  (:constants tiny_stories__story_035_o_tim - object)
+
+  (:action wait-for-birthday
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (not (birthday ?character))
+          (not (waited-for-birthday ?character))
+        )
+      )
+    :effect
+      (waited-for-birthday ?character)
+  )
+
+  (:action listen-to-mom
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (not (listened-to-mom ?character))
+          (waited-for-birthday ?character)
+        )
+      )
+    :effect
+      (listened-to-mom ?character)
+  )
+
+  (:action open-box
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_035_active)
+          (tiny_stories__story_035_type_character ?character)
+          (tiny_stories__story_035_type_character ?character)
+        )
+        (and
+          (box-closed)
+          (birthday ?character)
+        )
+      )
+    :effect
+      (and
+        (not (box-closed))
+        (box-open)
+      )
+  )
+
+  (:action spoil-cake
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (box-open)
+          (not (listened-to-mom tiny_stories__story_035_o_tim))
+          (cake-good)
+        )
+      )
+    :effect
+      (and
+        (not (cake-good))
+        (cake-spoiled)
+      )
+  )
+
+  (:action keep-cake-good
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_035_active)
+        (and
+          (box-open)
+          (listened-to-mom tiny_stories__story_035_o_tim)
+          (cake-good)
+        )
+      )
+    :effect
+      (cake-good)
+  )
+
+  (:action go-to-party
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_072_active)
+          (tiny_stories__story_072_type_character ?character)
+          (tiny_stories__story_072_type_character ?character)
+        )
+        (not (at-party ?character))
+      )
+    :effect
+      (at-party ?character)
+  )
+
+  (:action magic-trick
+    :parameters (?magician)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_072_active)
+          (tiny_stories__story_072_type_character ?magician)
+          (tiny_stories__story_072_type_character ?magician)
+        )
+        (and
+          (at-party ?magician)
+          (not (cake-transformed))
+        )
+      )
+    :effect
+      (cake-transformed)
+  )
+
+  (:action eat-cake
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_072_active)
+          (tiny_stories__story_072_type_character ?character)
+          (tiny_stories__story_072_type_character ?character)
+        )
+        (and
+          (at-party ?character)
+          (cake-transformed)
+        )
+      )
+    :effect
+      (fast ?character)
+  )
+
+  (:action play
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_072_active)
+          (tiny_stories__story_072_type_character ?character)
+          (tiny_stories__story_072_type_character ?character)
+        )
+        (and
+          (at-party ?character)
+          (fast ?character)
+        )
+      )
+    :effect
+      (and)
+  )
+
+  (:action request-tow
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (requested-tow ?character ?place)
+  )
+
+  (:action acknowledge-pain
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_020_active)
+          (writing_prompts__wp_020_type_character ?character)
+          (writing_prompts__wp_020_type_character ?character)
+        )
+        (and
+          (hurting ?character)
+          (struggling ?character)
+        )
+      )
+    :effect
+      (not (struggling ?character))
+  )
+
+  (:action let-go
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_020_active)
+          (writing_prompts__wp_020_type_character ?character1)
+          (writing_prompts__wp_020_type_character ?character2)
+          (writing_prompts__wp_020_type_character ?character1)
+          (writing_prompts__wp_020_type_character ?character2)
+        )
+        (and
+          (loved ?character1 ?character2)
+          (not (ready ?character2))
+        )
+      )
+    :effect
+      (letting-go ?character1 ?character2)
+  )
+
+  (:action believe-in-better-times
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_020_active)
+          (writing_prompts__wp_020_type_character ?character)
+          (writing_prompts__wp_020_type_character ?character)
+        )
+        (hurting ?character)
+      )
+    :effect
+      (better-times ?character)
+  )
+
+  (:action discover-technology
+    :parameters (?character ?object ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_place ?place)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (has ?character ?object)
+        (ancient-technology ?object)
+      )
+  )
+
+  (:action detect-stasis
+    :parameters (?character ?object)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (has ?character ?object)
+          (ancient-technology ?object)
+        )
+      )
+    :effect
+      (in-stasis ?object)
+  )
+
+  (:action transport-object
+    :parameters (?character ?object ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_place ?from)
+          (writing_prompts__wp_011_type_place ?to)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?from)
+          (writing_prompts__wp_011_type_place ?to)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?from)
+          (has ?character ?object)
+          (requested-tow ?character ?to)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+        (not (has ?character ?object))
+      )
+  )
+)

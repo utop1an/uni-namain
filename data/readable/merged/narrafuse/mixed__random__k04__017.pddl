@@ -1,0 +1,418 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:predicates
+    (human_281c51d26d5d4ff3_active)
+    (human_281c51d26d5d4ff3_type_allworker ?x - object)
+    (human_281c51d26d5d4ff3_type_axe ?x - object)
+    (human_281c51d26d5d4ff3_type_beast ?x - object)
+    (human_281c51d26d5d4ff3_type_blacksmith ?x - object)
+    (human_281c51d26d5d4ff3_type_cake ?x - object)
+    (human_281c51d26d5d4ff3_type_character ?x - object)
+    (human_281c51d26d5d4ff3_type_fox ?x - object)
+    (human_281c51d26d5d4ff3_type_girl ?x - object)
+    (human_281c51d26d5d4ff3_type_grandmother ?x - object)
+    (human_281c51d26d5d4ff3_type_house ?x - object)
+    (human_281c51d26d5d4ff3_type_human ?x - object)
+    (human_281c51d26d5d4ff3_type_hunter ?x - object)
+    (human_281c51d26d5d4ff3_type_object ?x - object)
+    (human_281c51d26d5d4ff3_type_thing ?x - object)
+    (human_281c51d26d5d4ff3_type_wolf ?x - object)
+    (human_281c51d26d5d4ff3_type_worker ?x - object)
+    (human_281c51d26d5d4ff3_p_monster ?v0 - object)
+    (human_281c51d26d5d4ff3_p_monster-alive)
+    (human_281c51d26d5d4ff3_p_rescuer ?v0 - object)
+    (human_281c51d26d5d4ff3_p_rescuer-at ?v0 - object)
+    (shared_p_consensus_119d01d706ed7448 ?v0 - object)
+    (human_281c51d26d5d4ff3_p_has ?v0 - object ?v1 - object)
+    (human_281c51d26d5d4ff3_p_eaten ?v0 - object)
+    (human_281c51d26d5d4ff3_p_rescued ?v0 - object)
+    (human_281c51d26d5d4ff3_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_017_active)
+    (tiny_stories__story_017_type_character ?x - object)
+    (tiny_stories__story_017_type_object ?x - object)
+    (tiny_stories__story_017_p_watches-tv ?v0 - object)
+    (shared_p_consensus_d356628e910bdb55 ?v0 - object)
+    (tiny_stories__story_017_p_rude ?v0 - object)
+    (tiny_stories__story_017_p_nice ?v0 - object)
+    (tiny_stories__story_017_p_wants-to-watch-tv ?v0 - object)
+    (tiny_stories__story_033_active)
+    (tiny_stories__story_033_type_character ?x - object)
+    (tiny_stories__story_033_type_object ?x - object)
+    (tiny_stories__story_033_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_033_p_sad ?v0 - object)
+    (tiny_stories__story_033_p_offered-snack ?v0 - object ?v1 - object)
+    (tiny_stories__story_033_p_snack-is-lie ?v0 - object ?v1 - object)
+    (tiny_stories__story_033_p_trusts ?v0 - object ?v1 - object)
+    (tiny_stories__story_033_p_compassionate ?v0 - object)
+    (writing_prompts__wp_016_active)
+    (writing_prompts__wp_016_type_character ?x - object)
+    (writing_prompts__wp_016_type_item ?x - object)
+    (writing_prompts__wp_016_type_object ?x - object)
+    (writing_prompts__wp_016_type_place ?x - object)
+    (writing_prompts__wp_016_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_016_p_has ?v0 - object ?v1 - object)
+    (writing_prompts__wp_016_p_knows-survival-skills ?v0 - object)
+    (writing_prompts__wp_016_p_computers-working)
+    (writing_prompts__wp_016_p_caused-apocalypse ?v0 - object)
+  )
+
+  (:action human_281c51d26d5d4ff3_a_walk
+    :parameters (?c - object ?h1 - object ?h2 - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_character ?c)
+        (human_281c51d26d5d4ff3_type_house ?h1)
+        (human_281c51d26d5d4ff3_type_house ?h2)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?c)
+          (human_281c51d26d5d4ff3_p_at ?c ?h1)
+          (not (human_281c51d26d5d4ff3_p_eaten ?c))
+        )
+      )
+    :effect
+      (and
+        (not (human_281c51d26d5d4ff3_p_at ?c ?h1))
+        (human_281c51d26d5d4ff3_p_at ?c ?h2)
+        (when
+          (human_281c51d26d5d4ff3_p_rescuer ?c)
+          (and
+            (human_281c51d26d5d4ff3_p_rescuer-at ?h2)
+            (not (human_281c51d26d5d4ff3_p_rescuer-at ?h1))
+          )
+        )
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_eat
+    :parameters (?m - object ?c - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_human ?c)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?m)
+          (shared_p_consensus_119d01d706ed7448 ?c)
+          (not (human_281c51d26d5d4ff3_p_eaten ?c))
+          (human_281c51d26d5d4ff3_p_at ?m ?h)
+          (human_281c51d26d5d4ff3_p_at ?c ?h)
+          (human_281c51d26d5d4ff3_p_monster ?m)
+        )
+      )
+    :effect
+      (human_281c51d26d5d4ff3_p_eaten ?c)
+  )
+
+  (:action human_281c51d26d5d4ff3_a_kill
+    :parameters (?c - object ?m - object ?a - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_worker ?c)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_axe ?a)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?c)
+          (shared_p_consensus_119d01d706ed7448 ?m)
+          (human_281c51d26d5d4ff3_p_has ?c ?a)
+          (human_281c51d26d5d4ff3_p_at ?c ?h)
+          (human_281c51d26d5d4ff3_p_at ?m ?h)
+          (human_281c51d26d5d4ff3_p_monster ?m)
+          (human_281c51d26d5d4ff3_p_monster-alive)
+          (human_281c51d26d5d4ff3_p_rescuer ?c)
+        )
+      )
+    :effect
+      (and
+        (not (shared_p_consensus_119d01d706ed7448 ?m))
+        (not (human_281c51d26d5d4ff3_p_monster-alive))
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_escape
+    :parameters (?c - object ?m - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_human ?c)
+        (human_281c51d26d5d4ff3_type_wolf ?m)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (human_281c51d26d5d4ff3_p_eaten ?c)
+          (not (shared_p_consensus_119d01d706ed7448 ?m))
+          (human_281c51d26d5d4ff3_p_at ?m ?h)
+        )
+      )
+    :effect
+      (and
+        (not (human_281c51d26d5d4ff3_p_eaten ?c))
+        (human_281c51d26d5d4ff3_p_rescued ?c)
+        (human_281c51d26d5d4ff3_p_at ?c ?h)
+      )
+  )
+
+  (:action human_281c51d26d5d4ff3_a_give
+    :parameters (?c1 - object ?c2 - object ?t - object ?h - object)
+    :precondition
+      (and
+        (human_281c51d26d5d4ff3_active)
+        (human_281c51d26d5d4ff3_type_human ?c1)
+        (human_281c51d26d5d4ff3_type_human ?c2)
+        (human_281c51d26d5d4ff3_type_thing ?t)
+        (human_281c51d26d5d4ff3_type_house ?h)
+        (and
+          (not (human_281c51d26d5d4ff3_p_eaten ?c2))
+          (shared_p_consensus_119d01d706ed7448 ?c1)
+          (shared_p_consensus_119d01d706ed7448 ?c2)
+          (human_281c51d26d5d4ff3_p_has ?c1 ?t)
+          (human_281c51d26d5d4ff3_p_at ?c1 ?h)
+          (human_281c51d26d5d4ff3_p_at ?c2 ?h)
+        )
+      )
+    :effect
+      (and
+        (human_281c51d26d5d4ff3_p_has ?c2 ?t)
+        (not (human_281c51d26d5d4ff3_p_has ?c1 ?t))
+      )
+  )
+
+  (:action tiny_stories__story_017_a_start-watching-tv
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+        (tiny_stories__story_017_p_wants-to-watch-tv ?character)
+      )
+    :effect
+      (tiny_stories__story_017_p_watches-tv ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_017_a_stop-watching-tv
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+        (tiny_stories__story_017_p_watches-tv ?character)
+      )
+    :effect
+      (not (tiny_stories__story_017_p_watches-tv ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_017_a_become-nice
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+        (tiny_stories__story_017_p_rude ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_017_p_rude ?character))
+        (tiny_stories__story_017_p_nice ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_017_a_become-rude
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+        (tiny_stories__story_017_p_nice ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_017_p_nice ?character))
+        (tiny_stories__story_017_p_rude ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_017_a_become-happy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+      )
+    :effect
+      (shared_p_consensus_d356628e910bdb55 ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_017_a_become-unhappy
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_017_active)
+        (tiny_stories__story_017_type_character ?character)
+        (shared_p_consensus_d356628e910bdb55 ?character)
+      )
+    :effect
+      (not (shared_p_consensus_d356628e910bdb55 ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_033_a_go-to-place
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_033_active)
+        (tiny_stories__story_033_type_character ?character1)
+        (tiny_stories__story_033_type_character ?character2)
+        (and
+          (not (tiny_stories__story_033_p_at ?character1 ?character2))
+          (shared_p_consensus_d356628e910bdb55 ?character1)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_033_p_at ?character1 ?character2)
+        (not (shared_p_consensus_d356628e910bdb55 ?character1))
+      )
+    :agents (?character1)
+  )
+
+  (:action tiny_stories__story_033_a_offer-snack
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_033_active)
+        (tiny_stories__story_033_type_character ?giver)
+        (tiny_stories__story_033_type_character ?receiver)
+        (and
+          (tiny_stories__story_033_p_at ?receiver ?giver)
+          (tiny_stories__story_033_p_compassionate ?giver)
+        )
+      )
+    :effect
+      (tiny_stories__story_033_p_offered-snack ?giver ?receiver)
+    :agents (?giver)
+  )
+
+  (:action tiny_stories__story_033_a_reveal-lie
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_033_active)
+        (tiny_stories__story_033_type_character ?giver)
+        (tiny_stories__story_033_type_character ?receiver)
+        (and
+          (tiny_stories__story_033_p_offered-snack ?giver ?receiver)
+          (not (tiny_stories__story_033_p_compassionate ?giver))
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_033_p_snack-is-lie ?giver ?receiver)
+        (not (shared_p_consensus_d356628e910bdb55 ?receiver))
+        (tiny_stories__story_033_p_sad ?receiver)
+      )
+    :agents (?giver)
+  )
+
+  (:action tiny_stories__story_033_a_run-away
+    :parameters (?runner - object ?from - object)
+    :precondition
+      (and
+        (tiny_stories__story_033_active)
+        (tiny_stories__story_033_type_character ?runner)
+        (tiny_stories__story_033_type_character ?from)
+        (and
+          (tiny_stories__story_033_p_at ?runner ?from)
+          (tiny_stories__story_033_p_sad ?runner)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_033_p_at ?runner ?from))
+        (not (tiny_stories__story_033_p_trusts ?runner ?from))
+      )
+    :agents (?runner)
+  )
+
+  (:action tiny_stories__story_033_a_learn-lesson
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_033_active)
+        (tiny_stories__story_033_type_character ?character)
+        (and
+          (tiny_stories__story_033_p_sad ?character)
+          (not (tiny_stories__story_033_p_trusts ?character ?character))
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_033_p_sad ?character))
+        (shared_p_consensus_d356628e910bdb55 ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_016_a_learn-survival-skills
+    :parameters (?learner - object ?teacher - object)
+    :precondition
+      (and
+        (writing_prompts__wp_016_active)
+        (writing_prompts__wp_016_type_character ?learner)
+        (writing_prompts__wp_016_type_character ?teacher)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?learner)
+          (shared_p_consensus_119d01d706ed7448 ?teacher)
+          (writing_prompts__wp_016_p_knows-survival-skills ?teacher)
+          (not (writing_prompts__wp_016_p_knows-survival-skills ?learner))
+        )
+      )
+    :effect
+      (writing_prompts__wp_016_p_knows-survival-skills ?learner)
+    :agents (?learner ?teacher)
+  )
+
+  (:action writing_prompts__wp_016_a_cause-apocalypse
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_016_active)
+        (writing_prompts__wp_016_type_character ?character)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?character)
+          (writing_prompts__wp_016_p_computers-working)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_016_p_computers-working))
+        (writing_prompts__wp_016_p_caused-apocalypse ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_016_a_kill
+    :parameters (?killer - object ?victim - object)
+    :precondition
+      (and
+        (writing_prompts__wp_016_active)
+        (writing_prompts__wp_016_type_character ?killer)
+        (writing_prompts__wp_016_type_character ?victim)
+        (and
+          (shared_p_consensus_119d01d706ed7448 ?killer)
+          (shared_p_consensus_119d01d706ed7448 ?victim)
+          (not (= ?killer ?victim))
+        )
+      )
+    :effect
+      (not (shared_p_consensus_119d01d706ed7448 ?victim))
+    :agents (?killer)
+  )
+)

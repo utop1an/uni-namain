@@ -1,0 +1,186 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_093_active)
+    (tiny_stories__story_093_type_character ?x - object)
+    (tiny_stories__story_093_type_item ?x - object)
+    (tiny_stories__story_093_type_mop ?x - object)
+    (tiny_stories__story_093_type_object ?x - object)
+    (tiny_stories__story_093_type_place ?x - object)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_011_type_character ?x - object)
+    (writing_prompts__wp_011_type_object ?x - object)
+    (writing_prompts__wp_011_type_place ?x - object)
+    (clean ?p0)
+    (pretty ?p0)
+    (disgusting ?p0)
+    (selected ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (alive ?p0)
+    (in-stasis ?p0)
+    (ancient-technology ?p0)
+    (propellant-device ?p0)
+    (shielded ?p0)
+    (requested-tow ?p0 ?p1)
+  )
+
+  (:action go-to
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_093_active)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_place ?place)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_place ?place)
+        )
+        (at ?character ?place)
+      )
+    :effect
+      (at ?character ?place)
+  )
+
+  (:action select-mop
+    :parameters (?character ?object ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_093_active)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_mop ?object)
+          (tiny_stories__story_093_type_place ?place)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_mop ?object)
+          (tiny_stories__story_093_type_place ?place)
+        )
+        (and
+          (at ?character ?place)
+          (has ?character ?object)
+        )
+      )
+    :effect
+      (selected ?object)
+  )
+
+  (:action receive-object
+    :parameters (?character ?dog ?object ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_093_active)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_character ?dog)
+          (tiny_stories__story_093_type_mop ?object)
+          (tiny_stories__story_093_type_place ?place)
+          (tiny_stories__story_093_type_character ?character)
+          (tiny_stories__story_093_type_character ?dog)
+          (tiny_stories__story_093_type_place ?place)
+        )
+        (and
+          (at ?character ?place)
+          (at ?dog ?place)
+          (has ?dog ?object)
+        )
+      )
+    :effect
+      (and
+        (not (has ?dog ?object))
+        (has ?character ?object)
+      )
+  )
+
+  (:action request-tow
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (requested-tow ?character ?place)
+  )
+
+  (:action detect-stasis
+    :parameters (?character ?object)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (has ?character ?object)
+          (ancient-technology ?object)
+        )
+      )
+    :effect
+      (in-stasis ?object)
+  )
+
+  (:action discover-technology
+    :parameters (?character ?object ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_place ?place)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (has ?character ?object)
+        (ancient-technology ?object)
+      )
+  )
+
+  (:action transport-object
+    :parameters (?character ?object ?from ?to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_011_active)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_object ?object)
+          (writing_prompts__wp_011_type_place ?from)
+          (writing_prompts__wp_011_type_place ?to)
+          (writing_prompts__wp_011_type_character ?character)
+          (writing_prompts__wp_011_type_place ?from)
+          (writing_prompts__wp_011_type_place ?to)
+        )
+        (and
+          (alive ?character)
+          (at ?character ?from)
+          (has ?character ?object)
+          (requested-tow ?character ?to)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+        (not (has ?character ?object))
+      )
+  )
+)

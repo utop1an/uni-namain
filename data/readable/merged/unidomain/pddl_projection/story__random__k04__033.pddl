@@ -1,0 +1,361 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_038_active)
+    (tiny_stories__story_038_type_character ?x - object)
+    (tiny_stories__story_038_type_object ?x - object)
+    (tiny_stories__story_038_type_place ?x - object)
+    (tiny_stories__story_075_active)
+    (tiny_stories__story_075_type_character ?x - object)
+    (tiny_stories__story_075_type_dress ?x - object)
+    (tiny_stories__story_075_type_item ?x - object)
+    (tiny_stories__story_075_type_object ?x - object)
+    (writing_prompts__wp_027_active)
+    (writing_prompts__wp_027_type_character ?x - object)
+    (writing_prompts__wp_027_type_object ?x - object)
+    (writing_prompts__wp_027_type_place ?x - object)
+    (writing_prompts__wp_042_active)
+    (writing_prompts__wp_042_type_character ?x - object)
+    (writing_prompts__wp_042_type_drink ?x - object)
+    (writing_prompts__wp_042_type_item ?x - object)
+    (writing_prompts__wp_042_type_object ?x - object)
+    (writing_prompts__wp_042_type_place ?x - object)
+    (hiding ?p0)
+    (seeking ?p0)
+    (found ?p0 ?p1)
+    (wearing ?p0 ?p1)
+    (damaged ?p0)
+    (happy ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (clothed ?p0)
+    (stuck ?p0)
+    (falling ?p0)
+    (aware-glitch ?p0)
+    (alive ?p0)
+    (drunk ?p0)
+    (night-show ?p0)
+    (vomit-stain ?p0)
+  )
+
+  (:action stop-seeking
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_038_active)
+          (tiny_stories__story_038_type_character ?character)
+          (tiny_stories__story_038_type_character ?character)
+        )
+        (seeking ?character)
+      )
+    :effect
+      (not (seeking ?character))
+  )
+
+  (:action slip
+    :parameters (?character ?dress)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?dress)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?dress)
+        )
+        (and
+          (wearing ?character ?dress)
+          (not (damaged ?dress))
+        )
+      )
+    :effect
+      (damaged ?dress)
+  )
+
+  (:action comfort
+    :parameters (?parent ?child)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?parent)
+          (tiny_stories__story_075_type_character ?child)
+          (tiny_stories__story_075_type_character ?parent)
+          (tiny_stories__story_075_type_character ?child)
+        )
+        (and
+          (not (happy ?child))
+          (not (= ?parent ?child))
+        )
+      )
+    :effect
+      (happy ?child)
+  )
+
+  (:action start-hiding
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_038_active)
+          (tiny_stories__story_038_type_character ?character)
+          (tiny_stories__story_038_type_place ?place)
+          (tiny_stories__story_038_type_character ?character)
+          (tiny_stories__story_038_type_place ?place)
+        )
+        (at ?character ?place)
+      )
+    :effect
+      (hiding ?character)
+  )
+
+  (:action start-seeking
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_038_active)
+          (tiny_stories__story_038_type_character ?character)
+          (tiny_stories__story_038_type_place ?place)
+          (tiny_stories__story_038_type_character ?character)
+          (tiny_stories__story_038_type_place ?place)
+        )
+        (at ?character ?place)
+      )
+    :effect
+      (seeking ?character)
+  )
+
+  (:action find
+    :parameters (?seeker ?hider ?place)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_038_active)
+          (tiny_stories__story_038_type_character ?seeker)
+          (tiny_stories__story_038_type_character ?hider)
+          (tiny_stories__story_038_type_place ?place)
+          (tiny_stories__story_038_type_character ?seeker)
+          (tiny_stories__story_038_type_character ?hider)
+          (tiny_stories__story_038_type_place ?place)
+        )
+        (and
+          (seeking ?seeker)
+          (hiding ?hider)
+          (at ?seeker ?place)
+          (at ?hider ?place)
+        )
+      )
+    :effect
+      (and
+        (found ?seeker ?hider)
+        (not (hiding ?hider))
+      )
+  )
+
+  (:action put-on-dress
+    :parameters (?character ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?item)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?item)
+        )
+        (and
+          (has ?character ?item)
+          (not (wearing ?character ?item))
+        )
+      )
+    :effect
+      (wearing ?character ?item)
+  )
+
+  (:action get-new-dress
+    :parameters (?character ?old-dress ?new-item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?old-dress)
+          (tiny_stories__story_075_type_dress ?new-item)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?old-dress)
+          (tiny_stories__story_075_type_item ?new-item)
+        )
+        (and
+          (damaged ?old-dress)
+          (wearing ?character ?old-dress)
+          (not (has ?character ?new-item))
+        )
+      )
+    :effect
+      (and
+        (not (wearing ?character ?old-dress))
+        (has ?character ?new-item)
+      )
+  )
+
+  (:action become-aware
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_027_active)
+          (writing_prompts__wp_027_type_character ?character)
+          (writing_prompts__wp_027_type_character ?character)
+        )
+        (alive ?character)
+      )
+    :effect
+      (aware-glitch ?character)
+  )
+
+  (:action lose-clothes
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_027_active)
+          (writing_prompts__wp_027_type_character ?character)
+          (writing_prompts__wp_027_type_character ?character)
+        )
+        (and
+          (alive ?character)
+          (clothed ?character)
+        )
+      )
+    :effect
+      (not (clothed ?character))
+  )
+
+  (:action sober-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_042_active)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_character ?character)
+        )
+        (drunk ?character)
+      )
+    :effect
+      (not (drunk ?character))
+  )
+
+  (:action help-stuck
+    :parameters (?helper ?stuck-character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_027_active)
+          (writing_prompts__wp_027_type_character ?helper)
+          (writing_prompts__wp_027_type_character ?stuck-character)
+          (writing_prompts__wp_027_type_character ?helper)
+          (writing_prompts__wp_027_type_character ?stuck-character)
+        )
+        (and
+          (alive ?helper)
+          (stuck ?stuck-character)
+          (at ?helper ?stuck-character)
+        )
+      )
+    :effect
+      (and
+        (not (stuck ?stuck-character))
+        (aware-glitch ?helper)
+      )
+  )
+
+  (:action fall
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_027_active)
+          (writing_prompts__wp_027_type_character ?character)
+          (writing_prompts__wp_027_type_place ?place)
+          (writing_prompts__wp_027_type_character ?character)
+          (writing_prompts__wp_027_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (falling ?character)
+        )
+      )
+    :effect
+      (and
+        (not (falling ?character))
+        (at ?character ?place)
+      )
+  )
+
+  (:action move
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_042_active)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_place ?place)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (not (at ?character ?place))
+        )
+      )
+    :effect
+      (at ?character ?place)
+  )
+
+  (:action vomit
+    :parameters (?character ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_042_active)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_place ?place)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_place ?place)
+        )
+        (and
+          (alive ?character)
+          (drunk ?character)
+          (at ?character ?place)
+        )
+      )
+    :effect
+      (vomit-stain ?place)
+  )
+
+  (:action drink
+    :parameters (?character ?drink)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_042_active)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_drink ?drink)
+          (writing_prompts__wp_042_type_character ?character)
+          (writing_prompts__wp_042_type_drink ?drink)
+        )
+        (and
+          (alive ?character)
+          (has ?character ?drink)
+        )
+      )
+    :effect
+      (and
+        (drunk ?character)
+        (not (has ?character ?drink))
+      )
+  )
+)

@@ -1,0 +1,234 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (human_4d95b598471c21ee_active)
+    (human_4d95b598471c21ee_type_book ?x - object)
+    (human_4d95b598471c21ee_type_character ?x - object)
+    (human_4d95b598471c21ee_type_item ?x - object)
+    (human_4d95b598471c21ee_type_location ?x - object)
+    (human_4d95b598471c21ee_type_object ?x - object)
+    (human_4d95b598471c21ee_type_ring ?x - object)
+    (human_4d95b598471c21ee_type_sword ?x - object)
+    (human_4d95b598471c21ee_type_thing ?x - object)
+    (tiny_stories__story_067_active)
+    (tiny_stories__story_067_type_character ?x - object)
+    (tiny_stories__story_067_type_object ?x - object)
+    (player ?p0)
+    (at ?p0 ?p1)
+    (has ?p0 ?p1)
+    (asleep ?p0)
+    (connected ?p0 ?p1)
+    (enchanted ?p0)
+    (is ?p0 ?p1)
+    (worker ?p0)
+    (clean ?p0)
+    (makes-toys ?p0)
+    (nervous ?p0)
+    (friends-with ?p0 ?p1)
+    (happy ?p0)
+  )
+  (:constants tiny_stories__story_067_o_factory - object)
+
+  (:action move-location
+    :parameters (?character ?to ?from)
+    :precondition
+      (and
+        (and
+          (human_4d95b598471c21ee_active)
+          (human_4d95b598471c21ee_type_character ?character)
+          (human_4d95b598471c21ee_type_location ?to)
+          (human_4d95b598471c21ee_type_location ?from)
+          (human_4d95b598471c21ee_type_character ?character)
+          (human_4d95b598471c21ee_type_location ?to)
+          (human_4d95b598471c21ee_type_location ?from)
+        )
+        (and
+          (connected ?to ?from)
+          (not (asleep ?character))
+          (at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?from))
+        (at ?character ?to)
+      )
+  )
+
+  (:action wake-person
+    :parameters (?waker ?woken ?location)
+    :precondition
+      (and
+        (and
+          (human_4d95b598471c21ee_active)
+          (human_4d95b598471c21ee_type_character ?waker)
+          (human_4d95b598471c21ee_type_character ?woken)
+          (human_4d95b598471c21ee_type_location ?location)
+          (human_4d95b598471c21ee_type_character ?waker)
+          (human_4d95b598471c21ee_type_character ?woken)
+          (human_4d95b598471c21ee_type_location ?location)
+        )
+        (and
+          (at ?waker ?location)
+          (at ?woken ?location)
+          (asleep ?woken)
+          (not (asleep ?waker))
+        )
+      )
+    :effect
+      (not (asleep ?woken))
+  )
+
+  (:action take-thing
+    :parameters (?taker ?thing ?location)
+    :precondition
+      (and
+        (and
+          (human_4d95b598471c21ee_active)
+          (human_4d95b598471c21ee_type_character ?taker)
+          (human_4d95b598471c21ee_type_item ?thing)
+          (human_4d95b598471c21ee_type_location ?location)
+          (human_4d95b598471c21ee_type_character ?taker)
+          (human_4d95b598471c21ee_type_item ?thing)
+          (human_4d95b598471c21ee_type_location ?location)
+        )
+        (and
+          (at ?taker ?location)
+          (at ?thing ?location)
+          (not (asleep ?taker))
+          (not (enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (at ?thing ?location))
+        (has ?taker ?thing)
+      )
+  )
+
+  (:action disenchant-thing
+    :parameters (?caster ?thing ?book ?location)
+    :precondition
+      (and
+        (and
+          (human_4d95b598471c21ee_active)
+          (human_4d95b598471c21ee_type_character ?caster)
+          (human_4d95b598471c21ee_type_item ?thing)
+          (human_4d95b598471c21ee_type_book ?book)
+          (human_4d95b598471c21ee_type_location ?location)
+          (human_4d95b598471c21ee_type_character ?caster)
+          (human_4d95b598471c21ee_type_item ?thing)
+          (human_4d95b598471c21ee_type_book ?book)
+          (human_4d95b598471c21ee_type_location ?location)
+        )
+        (and
+          (at ?caster ?location)
+          (at ?thing ?location)
+          (not (asleep ?caster))
+          (has ?caster ?book)
+          (enchanted ?thing)
+        )
+      )
+    :effect
+      (not (enchanted ?thing))
+  )
+
+  (:action start-working
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character)
+          (tiny_stories__story_067_type_character ?character)
+        )
+        (and)
+      )
+    :effect
+      (worker ?character)
+  )
+
+  (:action clean-factory
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character)
+          (tiny_stories__story_067_type_character ?character)
+        )
+        (worker ?character)
+      )
+    :effect
+      (clean tiny_stories__story_067_o_factory)
+  )
+
+  (:action make-toys
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character)
+          (tiny_stories__story_067_type_character ?character)
+        )
+        (worker ?character)
+      )
+    :effect
+      (makes-toys ?character)
+  )
+
+  (:action become-friends
+    :parameters (?character1 ?character2)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character1)
+          (tiny_stories__story_067_type_character ?character2)
+          (tiny_stories__story_067_type_character ?character1)
+          (tiny_stories__story_067_type_character ?character2)
+        )
+        (and
+          (worker ?character1)
+          (worker ?character2)
+          (not (= ?character1 ?character2))
+        )
+      )
+    :effect
+      (friends-with ?character1 ?character2)
+  )
+
+  (:action become-happy
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character)
+          (tiny_stories__story_067_type_character ?character)
+        )
+        (worker ?character)
+      )
+    :effect
+      (happy ?character)
+  )
+
+  (:action become-less-nervous
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_067_active)
+          (tiny_stories__story_067_type_character ?character)
+          (tiny_stories__story_067_type_character ?character)
+        )
+        (and
+          (worker ?character)
+          (nervous ?character)
+        )
+      )
+    :effect
+      (not (nervous ?character))
+  )
+)

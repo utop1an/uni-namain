@@ -1,0 +1,319 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_069_o_inner-zone - object writing_prompts__wp_069_o_outer-zone - object writing_prompts__wp_069_o_edge-zone - object)
+  (:predicates
+    (tiny_stories__story_076_active)
+    (tiny_stories__story_076_type_character ?x - object)
+    (tiny_stories__story_076_type_item ?x - object)
+    (tiny_stories__story_076_type_object ?x - object)
+    (tiny_stories__story_076_type_toy ?x - object)
+    (tiny_stories__story_076_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_076_p_playing-together ?v0 - object ?v1 - object)
+    (tiny_stories__story_076_p_shares ?v0 - object)
+    (tiny_stories__story_076_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_086_active)
+    (tiny_stories__story_086_type_character ?x - object)
+    (tiny_stories__story_086_type_object ?x - object)
+    (tiny_stories__story_086_p_helping ?v0 - object ?v1 - object)
+    (tiny_stories__story_086_p_scared ?v0 - object)
+    (tiny_stories__story_086_p_spider-on-wall)
+    (tiny_stories__story_086_p_happy ?v0 - object)
+    (tiny_stories__story_086_p_cake-made)
+    (writing_prompts__wp_013_active)
+    (writing_prompts__wp_013_type_character ?x - object)
+    (writing_prompts__wp_013_type_object ?x - object)
+    (writing_prompts__wp_013_p_human ?v0 - object)
+    (writing_prompts__wp_013_p_crow ?v0 - object)
+    (writing_prompts__wp_013_p_in-pain ?v0 - object)
+    (writing_prompts__wp_013_p_sunlight-available)
+    (writing_prompts__wp_013_p_transformed ?v0 - object)
+    (writing_prompts__wp_069_active)
+    (writing_prompts__wp_069_type_object ?x - object)
+    (writing_prompts__wp_069_type_zone ?x - object)
+    (writing_prompts__wp_069_p_habitable ?v0 - object)
+    (writing_prompts__wp_069_p_supports-life ?v0 - object)
+    (writing_prompts__wp_069_p_hot ?v0 - object)
+    (writing_prompts__wp_069_p_cold ?v0 - object)
+    (writing_prompts__wp_069_p_gaseous-state ?v0 - object)
+    (writing_prompts__wp_069_p_liquid-state ?v0 - object)
+    (writing_prompts__wp_069_p_solar-wind ?v0 - object)
+  )
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (not (writing_prompts__wp_069_p_supports-life ?zone)) (writing_prompts__wp_069_p_hot ?zone))) :implies (writing_prompts__wp_069_p_supports-life ?zone))
+  (:axiom :vars (?zone - object) :context (and (writing_prompts__wp_069_active) (writing_prompts__wp_069_type_zone ?zone) (and (writing_prompts__wp_069_p_supports-life ?zone) (writing_prompts__wp_069_p_cold ?zone))) :implies (not (writing_prompts__wp_069_p_supports-life ?zone)))
+
+  (:action tiny_stories__story_076_a_share
+    :parameters (?sharer - object ?item - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?sharer)
+        (tiny_stories__story_076_type_item ?item)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?sharer ?receiver))
+          (tiny_stories__story_076_p_has ?sharer ?item)
+          (tiny_stories__story_076_p_friends ?sharer ?receiver)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_076_p_shares ?sharer)
+        (tiny_stories__story_076_p_has ?receiver ?item)
+      )
+    :agents (?sharer)
+  )
+
+  (:action tiny_stories__story_076_a_play-together
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?character1)
+        (tiny_stories__story_076_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_076_p_friends ?character1 ?character2)
+          (tiny_stories__story_076_p_shares ?character1)
+        )
+      )
+    :effect
+      (tiny_stories__story_076_p_playing-together ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_076_a_apologize
+    :parameters (?apologizer - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?apologizer)
+        (tiny_stories__story_076_type_character ?receiver)
+        (and
+          (not (= ?apologizer ?receiver))
+          (tiny_stories__story_076_p_friends ?apologizer ?receiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_076_p_shares ?apologizer)
+    :agents (?apologizer)
+  )
+
+  (:action tiny_stories__story_076_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_076_active)
+        (tiny_stories__story_076_type_character ?character1)
+        (tiny_stories__story_076_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_076_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_086_a_help
+    :parameters (?helper - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?helper)
+        (tiny_stories__story_086_type_character ?helpee)
+        (and
+          (not (= ?helper ?helpee))
+          (tiny_stories__story_086_p_scared ?helpee)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_086_p_scared ?helpee))
+        (tiny_stories__story_086_p_happy ?helpee)
+        (tiny_stories__story_086_p_helping ?helper ?helpee)
+      )
+    :agents (?helper)
+  )
+
+  (:action tiny_stories__story_086_a_make-cake
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (and
+          (not (tiny_stories__story_086_p_cake-made))
+          (tiny_stories__story_086_p_happy ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_086_p_cake-made)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_086_a_see-spider
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (and
+          (not (tiny_stories__story_086_p_scared ?character))
+          (not (tiny_stories__story_086_p_spider-on-wall))
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_086_p_scared ?character)
+        (tiny_stories__story_086_p_spider-on-wall)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_086_a_remove-spider
+    :parameters (?character - object ?helpee - object)
+    :precondition
+      (and
+        (tiny_stories__story_086_active)
+        (tiny_stories__story_086_type_character ?character)
+        (tiny_stories__story_086_type_character ?helpee)
+        (and
+          (tiny_stories__story_086_p_spider-on-wall)
+          (tiny_stories__story_086_p_helping ?character ?helpee)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_086_p_spider-on-wall))
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_013_a_experience-pain
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (writing_prompts__wp_013_p_human ?character)
+      )
+    :effect
+      (writing_prompts__wp_013_p_in-pain ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_013_a_transform-into-crow
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (and
+          (writing_prompts__wp_013_p_human ?character)
+          (writing_prompts__wp_013_p_in-pain ?character)
+          (writing_prompts__wp_013_p_sunlight-available)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_013_p_human ?character))
+        (writing_prompts__wp_013_p_crow ?character)
+        (writing_prompts__wp_013_p_transformed ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_013_a_transform-back-into-human
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (writing_prompts__wp_013_p_crow ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_013_p_crow ?character))
+        (writing_prompts__wp_013_p_human ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_069_a_heat-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_hot ?zone))
+          (writing_prompts__wp_069_p_habitable ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_hot ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_cool-zone
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_cold ?zone))
+          (not (writing_prompts__wp_069_p_habitable ?zone))
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_cold ?zone)
+  )
+
+  (:action writing_prompts__wp_069_a_gaseous-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+          (writing_prompts__wp_069_p_liquid-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_gaseous-state ?zone)
+        (not (writing_prompts__wp_069_p_liquid-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_liquid-transition
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_liquid-state ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_069_p_liquid-state ?zone)
+        (not (writing_prompts__wp_069_p_gaseous-state ?zone))
+      )
+  )
+
+  (:action writing_prompts__wp_069_a_solar-wind-effect
+    :parameters (?zone - object)
+    :precondition
+      (and
+        (writing_prompts__wp_069_active)
+        (writing_prompts__wp_069_type_zone ?zone)
+        (and
+          (not (writing_prompts__wp_069_p_solar-wind ?zone))
+          (writing_prompts__wp_069_p_gaseous-state ?zone)
+        )
+      )
+    :effect
+      (writing_prompts__wp_069_p_solar-wind ?zone)
+  )
+)

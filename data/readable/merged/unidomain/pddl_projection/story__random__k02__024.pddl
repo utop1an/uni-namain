@@ -1,0 +1,156 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_090_active)
+    (tiny_stories__story_090_type_character ?x - object)
+    (tiny_stories__story_090_type_object ?x - object)
+    (tiny_stories__story_090_type_toy ?x - object)
+    (writing_prompts__wp_057_active)
+    (writing_prompts__wp_057_type_character ?x - object)
+    (writing_prompts__wp_057_type_object ?x - object)
+    (in-drawer ?p0)
+    (friends ?p0 ?p1)
+    (wants-to-take ?p0 ?p1)
+    (brave ?p0)
+    (liberated ?p0)
+    (defeated-illuminati)
+    (alien-exists ?p0)
+    (alien-gone ?p0)
+  )
+
+  (:action find-toy
+    :parameters (?character ?toy)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_090_active)
+          (tiny_stories__story_090_type_character ?character)
+          (tiny_stories__story_090_type_toy ?toy)
+          (tiny_stories__story_090_type_character ?character)
+          (tiny_stories__story_090_type_toy ?toy)
+        )
+        (in-drawer ?toy)
+      )
+    :effect
+      (and
+        (not (in-drawer ?toy))
+        (friends ?character ?toy)
+      )
+  )
+
+  (:action want-to-take
+    :parameters (?taker ?toy ?owner)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_090_active)
+          (tiny_stories__story_090_type_character ?taker)
+          (tiny_stories__story_090_type_toy ?toy)
+          (tiny_stories__story_090_type_character ?owner)
+          (tiny_stories__story_090_type_character ?taker)
+          (tiny_stories__story_090_type_toy ?toy)
+          (tiny_stories__story_090_type_character ?owner)
+        )
+        (and
+          (not (= ?taker ?owner))
+          (friends ?owner ?toy)
+        )
+      )
+    :effect
+      (wants-to-take ?taker ?toy)
+  )
+
+  (:action stand-up
+    :parameters (?defender ?taker ?toy)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_090_active)
+          (tiny_stories__story_090_type_character ?defender)
+          (tiny_stories__story_090_type_character ?taker)
+          (tiny_stories__story_090_type_toy ?toy)
+          (tiny_stories__story_090_type_character ?defender)
+          (tiny_stories__story_090_type_character ?taker)
+          (tiny_stories__story_090_type_toy ?toy)
+        )
+        (and
+          (not (= ?defender ?taker))
+          (wants-to-take ?taker ?toy)
+          (friends ?defender ?toy)
+        )
+      )
+    :effect
+      (and
+        (not (wants-to-take ?taker ?toy))
+        (brave ?defender)
+      )
+  )
+
+  (:action liberate
+    :parameters (?alien ?human)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_057_active)
+          (writing_prompts__wp_057_type_character ?alien)
+          (writing_prompts__wp_057_type_character ?human)
+          (writing_prompts__wp_057_type_character ?alien)
+          (writing_prompts__wp_057_type_character ?human)
+        )
+        (and
+          (alien-exists ?alien)
+          (not (liberated ?human))
+        )
+      )
+    :effect
+      (liberated ?human)
+  )
+
+  (:action defeat-illuminati
+    :parameters (?alien)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_057_active)
+          (writing_prompts__wp_057_type_character ?alien)
+          (writing_prompts__wp_057_type_character ?alien)
+        )
+        (and
+          (alien-exists ?alien)
+          (not (defeated-illuminati))
+        )
+      )
+    :effect
+      (defeated-illuminati)
+  )
+
+  (:action disappear
+    :parameters (?alien)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_057_active)
+          (writing_prompts__wp_057_type_character ?alien)
+          (writing_prompts__wp_057_type_character ?alien)
+        )
+        (alien-exists ?alien)
+      )
+    :effect
+      (alien-gone ?alien)
+  )
+
+  (:action reappear
+    :parameters (?alien)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_057_active)
+          (writing_prompts__wp_057_type_character ?alien)
+          (writing_prompts__wp_057_type_character ?alien)
+        )
+        (alien-gone ?alien)
+      )
+    :effect
+      (alien-exists ?alien)
+  )
+)

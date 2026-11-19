@@ -1,0 +1,385 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_047_o_nation1 - object writing_prompts__wp_047_o_nation2 - object writing_prompts__wp_047_o_nation3 - object)
+  (:predicates
+    (tiny_stories__story_011_active)
+    (tiny_stories__story_011_type_character ?x - object)
+    (tiny_stories__story_011_type_object ?x - object)
+    (tiny_stories__story_011_type_place ?x - object)
+    (tiny_stories__story_011_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_011_p_awake ?v0 - object)
+    (tiny_stories__story_011_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_011_p_interesting ?v0 - object)
+    (tiny_stories__story_011_p_singing ?v0 - object)
+    (tiny_stories__story_092_active)
+    (tiny_stories__story_092_type_character ?x - object)
+    (tiny_stories__story_092_type_object ?x - object)
+    (tiny_stories__story_092_p_worried ?v0 - object)
+    (tiny_stories__story_092_p_accepted-to-university ?v0 - object)
+    (tiny_stories__story_092_p_happy ?v0 - object)
+    (tiny_stories__story_092_p_applauding ?v0 - object)
+    (tiny_stories__story_092_p_hardworking ?v0 - object)
+    (tiny_stories__story_092_p_dreams-come-true ?v0 - object)
+    (writing_prompts__wp_047_active)
+    (writing_prompts__wp_047_type_nation ?x - object)
+    (writing_prompts__wp_047_type_object ?x - object)
+    (writing_prompts__wp_047_p_at-peace ?v0 - object)
+    (writing_prompts__wp_047_p_sharing-technology ?v0 - object ?v1 - object)
+    (writing_prompts__wp_047_p_advanced-technology ?v0 - object)
+    (writing_prompts__wp_047_p_facing-destruction)
+    (writing_prompts__wp_077_active)
+    (writing_prompts__wp_077_type_object ?x - object)
+    (writing_prompts__wp_077_type_poem ?x - object)
+    (writing_prompts__wp_077_type_reader ?x - object)
+    (writing_prompts__wp_077_p_read ?v0 - object ?v1 - object)
+    (writing_prompts__wp_077_p_alive ?v0 - object)
+    (writing_prompts__wp_077_p_dead ?v0 - object)
+    (writing_prompts__wp_077_p_echo ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_active)
+    (writing_prompts__wp_084_type_character ?x - object)
+    (writing_prompts__wp_084_type_object ?x - object)
+    (writing_prompts__wp_084_p_loves ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_confessed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_asked-question ?v0 - object ?v1 - object)
+    (writing_prompts__wp_084_p_took-pill ?v0 - object)
+  )
+
+  (:action tiny_stories__story_011_a_move
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_type_place ?place)
+        (and
+          (tiny_stories__story_011_p_awake ?character)
+          (not (tiny_stories__story_011_p_at ?character ?place))
+        )
+      )
+    :effect
+      (tiny_stories__story_011_p_at ?character ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_sleep
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_type_place ?place)
+        (and
+          (tiny_stories__story_011_p_awake ?character)
+          (tiny_stories__story_011_p_at ?character ?place)
+          (tiny_stories__story_011_p_interesting ?place)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_011_p_awake ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (not (tiny_stories__story_011_p_awake ?character))
+      )
+    :effect
+      (tiny_stories__story_011_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_sing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_p_awake ?character)
+      )
+    :effect
+      (tiny_stories__story_011_p_singing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_stop-singing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character)
+        (tiny_stories__story_011_p_singing ?character)
+      )
+    :effect
+      (not (tiny_stories__story_011_p_singing ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_011_a_make-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_011_active)
+        (tiny_stories__story_011_type_character ?character1)
+        (tiny_stories__story_011_type_character ?character2)
+        (and
+          (tiny_stories__story_011_p_awake ?character1)
+          (tiny_stories__story_011_p_awake ?character2)
+          (not (tiny_stories__story_011_p_friends ?character1 ?character2))
+          (not (= ?character1 ?character2))
+        )
+      )
+    :effect
+      (tiny_stories__story_011_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_092_a_get-accepted
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_worried ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (and
+        (tiny_stories__story_092_p_accepted-to-university ?character)
+        (not (tiny_stories__story_092_p_worried ?character))
+        (tiny_stories__story_092_p_happy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_start-applauding
+    :parameters (?character - object ?other - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_type_character ?other)
+        (and
+          (not (tiny_stories__story_092_p_applauding ?character))
+          (tiny_stories__story_092_p_happy ?other)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_applauding ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_stop-applauding
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (tiny_stories__story_092_p_applauding ?character)
+      )
+    :effect
+      (not (tiny_stories__story_092_p_applauding ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_092_a_make-dreams-come-true
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_092_active)
+        (tiny_stories__story_092_type_character ?character)
+        (and
+          (tiny_stories__story_092_p_accepted-to-university ?character)
+          (tiny_stories__story_092_p_hardworking ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_092_p_dreams-come-true ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_047_a_unite
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_facing-destruction)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_develop-technology
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_advanced-technology ?nation1)
+        (writing_prompts__wp_047_p_advanced-technology ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_avoid-destruction
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (and
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation1)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation2)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation3)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_047_p_facing-destruction))
+  )
+
+  (:action writing_prompts__wp_047_a_maintain-peace
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_at-peace ?nation1)
+          (writing_prompts__wp_047_p_at-peace ?nation2)
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_077_a_read-poem
+    :parameters (?reader - object ?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_reader ?reader)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (and
+          (not (writing_prompts__wp_077_p_read ?reader ?poem))
+          (writing_prompts__wp_077_p_alive ?poem)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_077_p_read ?reader ?poem)
+        (writing_prompts__wp_077_p_echo ?reader ?poem)
+      )
+    :agents (?reader)
+  )
+
+  (:action writing_prompts__wp_077_a_poem-dies
+    :parameters (?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (writing_prompts__wp_077_p_alive ?poem)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_077_p_alive ?poem))
+        (writing_prompts__wp_077_p_dead ?poem)
+      )
+  )
+
+  (:action writing_prompts__wp_077_a_echo-poem
+    :parameters (?reader - object ?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_reader ?reader)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (and
+          (writing_prompts__wp_077_p_read ?reader ?poem)
+          (not (writing_prompts__wp_077_p_echo ?reader ?poem))
+        )
+      )
+    :effect
+      (writing_prompts__wp_077_p_echo ?reader ?poem)
+    :agents (?reader)
+  )
+
+  (:action writing_prompts__wp_084_a_take-pill
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?character)
+        (not (writing_prompts__wp_084_p_took-pill ?character))
+      )
+    :effect
+      (writing_prompts__wp_084_p_took-pill ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_084_a_ask-love-question
+    :parameters (?asker - object ?asked - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?asker)
+        (writing_prompts__wp_084_type_character ?asked)
+        (not (writing_prompts__wp_084_p_asked-question ?asker ?asked))
+      )
+    :effect
+      (writing_prompts__wp_084_p_asked-question ?asker ?asked)
+    :agents (?asker)
+  )
+
+  (:action writing_prompts__wp_084_a_confess-love
+    :parameters (?confessor - object ?confessed-to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_084_active)
+        (writing_prompts__wp_084_type_character ?confessor)
+        (writing_prompts__wp_084_type_character ?confessed-to)
+        (and
+          (not (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to))
+          (writing_prompts__wp_084_p_asked-question ?confessed-to ?confessor)
+          (writing_prompts__wp_084_p_took-pill ?confessor)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_084_p_confessed ?confessor ?confessed-to)
+        (writing_prompts__wp_084_p_loves ?confessor ?confessed-to)
+      )
+    :agents (?confessor)
+  )
+)

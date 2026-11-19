@@ -1,0 +1,231 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_085_active)
+    (tiny_stories__story_085_type_character ?x - object)
+    (tiny_stories__story_085_type_item ?x - object)
+    (tiny_stories__story_085_type_object ?x - object)
+    (writing_prompts__wp_029_active)
+    (writing_prompts__wp_029_type_character ?x - object)
+    (writing_prompts__wp_029_type_gang ?x - object)
+    (writing_prompts__wp_029_type_object ?x - object)
+    (writing_prompts__wp_029_type_place ?x - object)
+    (broken ?p0)
+    (has ?p0 ?p1)
+    (playing ?p0 ?p1)
+    (apologized ?p0 ?p1)
+    (cleaned ?p0)
+    (forgiven ?p0 ?p1)
+    (asleep ?p0)
+    (awake ?p0)
+    (at ?p0 ?p1)
+    (has-hoard ?p0)
+    (robbed ?p0)
+    (soundproof-door ?p0)
+    (attacked ?p0)
+  )
+
+  (:action play
+    :parameters (?character ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_085_active)
+          (tiny_stories__story_085_type_character ?character)
+          (tiny_stories__story_085_type_item ?item)
+          (tiny_stories__story_085_type_character ?character)
+          (tiny_stories__story_085_type_item ?item)
+        )
+        (and
+          (not (broken ?item))
+          (has ?character ?item)
+        )
+      )
+    :effect
+      (playing ?character ?item)
+  )
+
+  (:action break-item
+    :parameters (?breaker ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_085_active)
+          (tiny_stories__story_085_type_character ?breaker)
+          (tiny_stories__story_085_type_item ?item)
+          (tiny_stories__story_085_type_character ?breaker)
+          (tiny_stories__story_085_type_item ?item)
+        )
+        (and
+          (not (broken ?item))
+          (playing ?breaker ?item)
+        )
+      )
+    :effect
+      (broken ?item)
+  )
+
+  (:action apologize
+    :parameters (?apologizer ?apologizee)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_085_active)
+          (tiny_stories__story_085_type_character ?apologizer)
+          (tiny_stories__story_085_type_character ?apologizee)
+          (tiny_stories__story_085_type_character ?apologizer)
+          (tiny_stories__story_085_type_character ?apologizee)
+        )
+        (not (= ?apologizer ?apologizee))
+      )
+    :effect
+      (apologized ?apologizer ?apologizee)
+  )
+
+  (:action clean
+    :parameters (?cleaner ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_085_active)
+          (tiny_stories__story_085_type_character ?cleaner)
+          (tiny_stories__story_085_type_item ?item)
+          (tiny_stories__story_085_type_character ?cleaner)
+          (tiny_stories__story_085_type_item ?item)
+        )
+        (broken ?item)
+      )
+    :effect
+      (cleaned ?cleaner)
+  )
+
+  (:action forgive
+    :parameters (?forgiver ?forgivee)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_085_active)
+          (tiny_stories__story_085_type_character ?forgiver)
+          (tiny_stories__story_085_type_character ?forgivee)
+          (tiny_stories__story_085_type_character ?forgiver)
+          (tiny_stories__story_085_type_character ?forgivee)
+        )
+        (and
+          (not (= ?forgiver ?forgivee))
+          (apologized ?forgivee ?forgiver)
+        )
+      )
+    :effect
+      (forgiven ?forgiver ?forgivee)
+  )
+
+  (:action sleep
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (awake ?character))
+        (asleep ?character)
+      )
+  )
+
+  (:action wake-up
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (asleep ?character)
+      )
+    :effect
+      (and
+        (not (asleep ?character))
+        (awake ?character)
+      )
+  )
+
+  (:action install-soundproof-door
+    :parameters (?gang ?place)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_place ?place)
+        )
+        (and
+          (awake ?gang)
+          (at ?gang ?place)
+          (not (soundproof-door ?place))
+        )
+      )
+    :effect
+      (soundproof-door ?place)
+  )
+
+  (:action rob
+    :parameters (?gang)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?gang)
+          (writing_prompts__wp_029_type_character ?gang)
+        )
+        (awake ?gang)
+      )
+    :effect
+      (robbed ?gang)
+  )
+
+  (:action attack
+    :parameters (?attacker ?victim)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+          (writing_prompts__wp_029_type_character ?attacker)
+          (writing_prompts__wp_029_type_character ?victim)
+        )
+        (and
+          (awake ?attacker)
+          (awake ?victim)
+        )
+      )
+    :effect
+      (attacked ?victim)
+  )
+
+  (:action clear-passage
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_029_active)
+          (writing_prompts__wp_029_type_character ?character)
+          (writing_prompts__wp_029_type_character ?character)
+        )
+        (awake ?character)
+      )
+    :effect
+      (and
+        (not (attacked ?character))
+        (has-hoard ?character)
+      )
+  )
+)

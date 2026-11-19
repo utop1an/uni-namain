@@ -1,0 +1,170 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (writing_prompts__wp_045_active)
+    (writing_prompts__wp_045_type_box ?x - object)
+    (writing_prompts__wp_045_type_character ?x - object)
+    (writing_prompts__wp_045_type_object ?x - object)
+    (writing_prompts__wp_045_type_place ?x - object)
+    (writing_prompts__wp_045_p_in-box ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_p_nervous ?v0 - object)
+    (writing_prompts__wp_045_p_composed ?v0 - object)
+    (writing_prompts__wp_045_p_noticed ?v0 - object ?v1 - object)
+    (writing_prompts__wp_045_p_opened ?v0 - object)
+    (writing_prompts__wp_049_active)
+    (writing_prompts__wp_049_type_character ?x - object)
+    (writing_prompts__wp_049_type_object ?x - object)
+    (writing_prompts__wp_049_p_needs-walk ?v0 - object)
+    (writing_prompts__wp_049_p_in-herenow ?v0 - object)
+    (writing_prompts__wp_049_p_ancient-oath ?v0 - object)
+    (writing_prompts__wp_049_p_guardian ?v0 - object)
+    (writing_prompts__wp_049_p_master ?v0 - object)
+    (writing_prompts__wp_049_p_time-of-passing)
+  )
+
+  (:action writing_prompts__wp_045_a_enter
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_place ?place)
+        (not (writing_prompts__wp_045_p_at ?character ?place))
+      )
+    :effect
+      (writing_prompts__wp_045_p_at ?character ?place)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_notice
+    :parameters (?character - object ?box - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_box ?box)
+        (writing_prompts__wp_045_type_place ?place)
+        (and
+          (writing_prompts__wp_045_p_at ?character ?place)
+          (writing_prompts__wp_045_p_at ?box ?place)
+        )
+      )
+    :effect
+      (writing_prompts__wp_045_p_noticed ?character ?box)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_open-box
+    :parameters (?character - object ?box - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+        (writing_prompts__wp_045_type_box ?box)
+        (writing_prompts__wp_045_type_place ?place)
+        (and
+          (writing_prompts__wp_045_p_at ?character ?place)
+          (writing_prompts__wp_045_p_at ?box ?place)
+          (writing_prompts__wp_045_p_noticed ?character ?box)
+          (not (writing_prompts__wp_045_p_opened ?box))
+        )
+      )
+    :effect
+      (writing_prompts__wp_045_p_opened ?box)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_become-nervous
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+      )
+    :effect
+      (writing_prompts__wp_045_p_nervous ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_045_a_become-composed
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_045_active)
+        (writing_prompts__wp_045_type_character ?character)
+      )
+    :effect
+      (writing_prompts__wp_045_p_composed ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_049_a_remind-ancient-oath
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_ancient-oath ?dog)
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_needs-walk ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_bring-to-herenow
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (not (writing_prompts__wp_049_p_in-herenow ?master))
+        )
+      )
+    :effect
+      (writing_prompts__wp_049_p_in-herenow ?master)
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_walk
+    :parameters (?dog - object ?master - object)
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (writing_prompts__wp_049_type_character ?dog)
+        (writing_prompts__wp_049_type_character ?master)
+        (and
+          (writing_prompts__wp_049_p_guardian ?dog)
+          (writing_prompts__wp_049_p_master ?master)
+          (writing_prompts__wp_049_p_needs-walk ?master)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_049_p_needs-walk ?master))
+        (writing_prompts__wp_049_p_in-herenow ?master)
+      )
+    :agents (?dog)
+  )
+
+  (:action writing_prompts__wp_049_a_time-of-passing
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_049_active)
+        (not (writing_prompts__wp_049_p_time-of-passing))
+      )
+    :effect
+      (writing_prompts__wp_049_p_time-of-passing)
+  )
+)

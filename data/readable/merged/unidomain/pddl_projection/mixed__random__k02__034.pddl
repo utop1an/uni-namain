@@ -1,0 +1,155 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (human_67ab241b327ccef0_active)
+    (human_67ab241b327ccef0_type_character ?x - object)
+    (human_67ab241b327ccef0_type_key ?x - object)
+    (human_67ab241b327ccef0_type_letter ?x - object)
+    (human_67ab241b327ccef0_type_object ?x - object)
+    (human_67ab241b327ccef0_type_room ?x - object)
+    (human_67ab241b327ccef0_type_star ?x - object)
+    (human_67ab241b327ccef0_type_thing ?x - object)
+    (writing_prompts__wp_084_active)
+    (writing_prompts__wp_084_type_character ?x - object)
+    (writing_prompts__wp_084_type_object ?x - object)
+    (locked ?p0)
+    (at ?p0 ?p1)
+    (unlocked-by ?p0 ?p1)
+    (in ?p0 ?p1)
+    (hidden ?p0)
+    (has ?p0 ?p1)
+    (loves ?p0 ?p1)
+    (confessed ?p0 ?p1)
+    (asked-question ?p0 ?p1)
+    (took-pill ?p0)
+  )
+
+  (:action enter
+    :parameters (?character ?roomfrom ?roomto)
+    :precondition
+      (and
+        (and
+          (human_67ab241b327ccef0_active)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_room ?roomfrom)
+          (human_67ab241b327ccef0_type_room ?roomto)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_room ?roomfrom)
+          (human_67ab241b327ccef0_type_room ?roomto)
+        )
+        (and
+          (not (locked ?roomto))
+          (at ?character ?roomfrom)
+        )
+      )
+    :effect
+      (and
+        (not (at ?character ?roomfrom))
+        (at ?character ?roomto)
+      )
+  )
+
+  (:action search-for
+    :parameters (?character ?thing ?room)
+    :precondition
+      (and
+        (and
+          (human_67ab241b327ccef0_active)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_thing ?thing)
+          (human_67ab241b327ccef0_type_room ?room)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_thing ?thing)
+          (human_67ab241b327ccef0_type_room ?room)
+        )
+        (and
+          (at ?character ?room)
+          (in ?thing ?room)
+        )
+      )
+    :effect
+      (and
+        (has ?character ?thing)
+        (not (in ?thing ?room))
+      )
+  )
+
+  (:action unlock
+    :parameters (?character ?key ?room)
+    :precondition
+      (and
+        (and
+          (human_67ab241b327ccef0_active)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_key ?key)
+          (human_67ab241b327ccef0_type_room ?room)
+          (human_67ab241b327ccef0_type_character ?character)
+          (human_67ab241b327ccef0_type_key ?key)
+          (human_67ab241b327ccef0_type_room ?room)
+        )
+        (and
+          (locked ?room)
+          (unlocked-by ?room ?key)
+          (has ?character ?key)
+        )
+      )
+    :effect
+      (not (locked ?room))
+  )
+
+  (:action take-pill
+    :parameters (?character)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_084_active)
+          (writing_prompts__wp_084_type_character ?character)
+          (writing_prompts__wp_084_type_character ?character)
+        )
+        (not (took-pill ?character))
+      )
+    :effect
+      (took-pill ?character)
+  )
+
+  (:action ask-love-question
+    :parameters (?asker ?asked)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_084_active)
+          (writing_prompts__wp_084_type_character ?asker)
+          (writing_prompts__wp_084_type_character ?asked)
+          (writing_prompts__wp_084_type_character ?asker)
+          (writing_prompts__wp_084_type_character ?asked)
+        )
+        (not (asked-question ?asker ?asked))
+      )
+    :effect
+      (asked-question ?asker ?asked)
+  )
+
+  (:action confess-love
+    :parameters (?confessor ?confessed-to)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_084_active)
+          (writing_prompts__wp_084_type_character ?confessor)
+          (writing_prompts__wp_084_type_character ?confessed-to)
+          (writing_prompts__wp_084_type_character ?confessor)
+          (writing_prompts__wp_084_type_character ?confessed-to)
+        )
+        (and
+          (not (confessed ?confessor ?confessed-to))
+          (asked-question ?confessed-to ?confessor)
+          (took-pill ?confessor)
+        )
+      )
+    :effect
+      (and
+        (confessed ?confessor ?confessed-to)
+        (loves ?confessor ?confessed-to)
+      )
+  )
+)

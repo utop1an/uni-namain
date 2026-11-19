@@ -1,0 +1,290 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_060_o_vase - object)
+  (:predicates
+    (tiny_stories__story_014_active)
+    (tiny_stories__story_014_type_character ?x - object)
+    (tiny_stories__story_014_type_object ?x - object)
+    (tiny_stories__story_014_p_at-park ?v0 - object)
+    (tiny_stories__story_014_p_on-swing ?v0 - object)
+    (tiny_stories__story_014_p_swinging ?v0 - object)
+    (tiny_stories__story_014_p_sharing ?v0 - object ?v1 - object)
+    (tiny_stories__story_014_p_happy ?v0 - object)
+    (tiny_stories__story_060_active)
+    (tiny_stories__story_060_type_character ?x - object)
+    (tiny_stories__story_060_type_item ?x - object)
+    (tiny_stories__story_060_type_object ?x - object)
+    (tiny_stories__story_060_p_happy ?v0 - object)
+    (tiny_stories__story_060_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_060_p_party ?v0 - object)
+    (tiny_stories__story_060_p_cake ?v0 - object)
+    (tiny_stories__story_087_active)
+    (tiny_stories__story_087_type_character ?x - object)
+    (tiny_stories__story_087_type_object ?x - object)
+    (tiny_stories__story_087_p_happy ?v0 - object)
+    (tiny_stories__story_087_p_party-prepared ?v0 - object)
+    (tiny_stories__story_087_p_has-balloons)
+    (tiny_stories__story_087_p_has-cake)
+    (tiny_stories__story_087_p_has-present ?v0 - object)
+    (tiny_stories__story_087_p_played-games)
+    (tiny_stories__story_087_p_thanked-parents ?v0 - object)
+  )
+  (:axiom :vars (?character - object) :context (and (tiny_stories__story_087_active) (tiny_stories__story_087_type_character ?character) (and (not (tiny_stories__story_087_p_happy ?character)) (tiny_stories__story_087_p_party-prepared ?character) (tiny_stories__story_087_p_has-balloons) (tiny_stories__story_087_p_has-cake) (tiny_stories__story_087_p_played-games) (tiny_stories__story_087_p_has-present ?character) (tiny_stories__story_087_p_thanked-parents ?character))) :implies (tiny_stories__story_087_p_happy ?character))
+
+  (:action tiny_stories__story_014_a_go-to-park
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character)
+        (not (tiny_stories__story_014_p_at-park ?character))
+      )
+    :effect
+      (tiny_stories__story_014_p_at-park ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_014_a_get-on-swing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character)
+        (and
+          (tiny_stories__story_014_p_at-park ?character)
+          (not (tiny_stories__story_014_p_on-swing ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_014_p_on-swing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_014_a_start-swinging
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character)
+        (and
+          (tiny_stories__story_014_p_on-swing ?character)
+          (not (tiny_stories__story_014_p_swinging ?character))
+        )
+      )
+    :effect
+      (tiny_stories__story_014_p_swinging ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_014_a_share-swing
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character1)
+        (tiny_stories__story_014_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_014_p_swinging ?character1)
+          (tiny_stories__story_014_p_swinging ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_014_p_sharing ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_014_a_get-off-swing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character)
+        (and
+          (tiny_stories__story_014_p_on-swing ?character)
+          (tiny_stories__story_014_p_swinging ?character)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_014_p_on-swing ?character))
+        (not (tiny_stories__story_014_p_swinging ?character))
+        (tiny_stories__story_014_p_happy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_014_a_thank
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_014_active)
+        (tiny_stories__story_014_type_character ?character1)
+        (tiny_stories__story_014_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_014_p_sharing ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_014_p_happy ?character1)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_060_a_make-cake
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_cake ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_put
+    :parameters (?character - object ?item - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_item ?item)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_has ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_at ?item ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_start-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (tiny_stories__story_060_p_happy ?character)
+      )
+    :effect
+      (tiny_stories__story_060_p_party ?place)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_060_a_enjoy-party
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (tiny_stories__story_060_active)
+        (tiny_stories__story_060_type_character ?character)
+        (tiny_stories__story_060_type_object ?place)
+        (and
+          (tiny_stories__story_060_p_happy ?character)
+          (tiny_stories__story_060_p_party ?place)
+        )
+      )
+    :effect
+      (tiny_stories__story_060_p_happy ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_prepare-party
+    :parameters (?preparer - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?preparer)
+        (tiny_stories__story_087_type_character ?receiver)
+        (not (tiny_stories__story_087_p_party-prepared ?receiver))
+      )
+    :effect
+      (tiny_stories__story_087_p_party-prepared ?receiver)
+    :agents (?preparer ?receiver)
+  )
+
+  (:action tiny_stories__story_087_a_decorate-with-balloons
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_has-balloons))
+          (tiny_stories__story_087_p_party-prepared ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-balloons)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_prepare-cake
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_has-cake))
+          (tiny_stories__story_087_p_party-prepared ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-cake)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_play-games
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (tiny_stories__story_087_p_party-prepared ?character)
+      )
+    :effect
+      (tiny_stories__story_087_p_played-games)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_087_a_give-present
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?giver)
+        (tiny_stories__story_087_type_character ?receiver)
+        (and
+          (not (tiny_stories__story_087_p_has-present ?receiver))
+          (tiny_stories__story_087_p_party-prepared ?receiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_has-present ?receiver)
+    :agents (?giver ?receiver)
+  )
+
+  (:action tiny_stories__story_087_a_thank-parents
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_087_active)
+        (tiny_stories__story_087_type_character ?character)
+        (and
+          (not (tiny_stories__story_087_p_thanked-parents ?character))
+          (tiny_stories__story_087_p_has-present ?character)
+        )
+      )
+    :effect
+      (tiny_stories__story_087_p_thanked-parents ?character)
+    :agents (?character)
+  )
+)

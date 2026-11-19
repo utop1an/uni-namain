@@ -1,0 +1,840 @@
+(define (domain revised_merged)
+  (:requirements :adl :equality :intentionality :negative-preconditions :strips :typing)
+  (:types)
+  (:constants human_df5671d8ba8d67d9_o_three - object human_df5671d8ba8d67d9_o_zero - object writing_prompts__wp_085_o_outside - object)
+  (:predicates
+    (human_1fe4b2f08d46fd1e_active)
+    (human_1fe4b2f08d46fd1e_type_creature ?x - object)
+    (human_1fe4b2f08d46fd1e_type_item ?x - object)
+    (human_1fe4b2f08d46fd1e_type_monster ?x - object)
+    (human_1fe4b2f08d46fd1e_type_object ?x - object)
+    (human_1fe4b2f08d46fd1e_type_person ?x - object)
+    (human_1fe4b2f08d46fd1e_type_place ?x - object)
+    (human_1fe4b2f08d46fd1e_type_valuable ?x - object)
+    (human_1fe4b2f08d46fd1e_p_alive ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_single ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_rich ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_happy ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_hungry ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_at ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_has ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_belongsto ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_loves ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasproposed ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasaccepted ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_marriedto ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_active)
+    (human_df5671d8ba8d67d9_type_character ?x - object)
+    (human_df5671d8ba8d67d9_type_doctor ?x - object)
+    (human_df5671d8ba8d67d9_type_drugloc ?x - object)
+    (human_df5671d8ba8d67d9_type_emergencyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_exteriorloc ?x - object)
+    (human_df5671d8ba8d67d9_type_family ?x - object)
+    (human_df5671d8ba8d67d9_type_familyloc ?x - object)
+    (human_df5671d8ba8d67d9_type_generalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_intern ?x - object)
+    (human_df5671d8ba8d67d9_type_level ?x - object)
+    (human_df5671d8ba8d67d9_type_location ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalcharacter ?x - object)
+    (human_df5671d8ba8d67d9_type_medicalloc ?x - object)
+    (human_df5671d8ba8d67d9_type_nurse ?x - object)
+    (human_df5671d8ba8d67d9_type_object ?x - object)
+    (human_df5671d8ba8d67d9_type_patient ?x - object)
+    (human_df5671d8ba8d67d9_type_staffloc ?x - object)
+    (human_df5671d8ba8d67d9_type_symptom ?x - object)
+    (human_df5671d8ba8d67d9_type_treatment ?x - object)
+    (human_df5671d8ba8d67d9_p_the-doctor ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-treating ?v0 - object)
+    (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+    (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+    (human_df5671d8ba8d67d9_p_has-symptom ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_conscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_unconscious ?v0 - object)
+    (human_df5671d8ba8d67d9_p_alive ?v0 - object)
+    (human_df5671d8ba8d67d9_p_patient-room ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_occupied ?v0 - object)
+    (human_df5671d8ba8d67d9_p_at ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-for ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_male ?v0 - object)
+    (human_df5671d8ba8d67d9_p_female ?v0 - object)
+    (human_df5671d8ba8d67d9_p_hospitalised ?v0 - object)
+    (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_treatment-prescribed ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_receiving-treatment ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_level-of-work ?v0 - object ?v1 - object)
+    (human_df5671d8ba8d67d9_p_connected ?v0 - object ?v1 - object)
+    (tiny_stories__story_036_active)
+    (tiny_stories__story_036_type_box ?x - object)
+    (tiny_stories__story_036_type_character ?x - object)
+    (tiny_stories__story_036_type_item ?x - object)
+    (tiny_stories__story_036_type_object ?x - object)
+    (tiny_stories__story_036_type_pin ?x - object)
+    (tiny_stories__story_036_p_in ?v0 - object ?v1 - object)
+    (tiny_stories__story_036_p_tidy ?v0 - object)
+    (tiny_stories__story_036_p_on-floor ?v0 - object)
+    (tiny_stories__story_036_p_scared ?v0 - object)
+    (tiny_stories__story_036_p_alive ?v0 - object)
+    (tiny_stories__story_036_p_at ?v0 - object ?v1 - object)
+    (tiny_stories__story_036_p_fairy ?v0 - object)
+    (writing_prompts__wp_007_active)
+    (writing_prompts__wp_007_type_item ?x - object)
+    (writing_prompts__wp_007_type_object ?x - object)
+    (writing_prompts__wp_007_type_room ?x - object)
+    (writing_prompts__wp_007_p_in ?v0 - object ?v1 - object)
+    (writing_prompts__wp_007_p_occupied ?v0 - object)
+    (writing_prompts__wp_007_p_plugged-in ?v0 - object)
+    (writing_prompts__wp_007_p_connected ?v0 - object ?v1 - object)
+    (writing_prompts__wp_007_p_well-lit ?v0 - object)
+    (writing_prompts__wp_007_p_morning)
+    (writing_prompts__wp_085_active)
+    (writing_prompts__wp_085_type_character ?x - object)
+    (writing_prompts__wp_085_type_device ?x - object)
+    (writing_prompts__wp_085_type_item ?x - object)
+    (writing_prompts__wp_085_type_object ?x - object)
+    (writing_prompts__wp_085_type_place ?x - object)
+    (writing_prompts__wp_085_p_awake ?v0 - object)
+    (writing_prompts__wp_085_p_wearing-clothes ?v0 - object)
+    (writing_prompts__wp_085_p_has-device ?v0 - object ?v1 - object)
+    (writing_prompts__wp_085_p_device-on ?v0 - object)
+    (writing_prompts__wp_085_p_device-connected ?v0 - object)
+    (writing_prompts__wp_085_p_electricity ?v0 - object)
+    (writing_prompts__wp_085_p_at ?v0 - object ?v1 - object)
+    (writing_prompts__wp_085_p_working ?v0 - object)
+    (writing_prompts__wp_085_p_school-canceled)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_travel
+    :parameters (?creature - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?from)
+        (human_1fe4b2f08d46fd1e_type_place ?to)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?from)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_at ?creature ?to)
+        (not (human_1fe4b2f08d46fd1e_p_at ?creature ?from))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_propose
+    :parameters (?proposer - object ?proposee - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_person ?proposee)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposee)
+          (human_1fe4b2f08d46fd1e_p_at ?proposee ?place)
+          (human_1fe4b2f08d46fd1e_p_loves ?proposer ?proposee)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?proposee)
+    :agents (?proposer)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_accept
+    :parameters (?accepter - object ?proposer - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?accepter)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?accepter)
+          (human_1fe4b2f08d46fd1e_p_at ?accepter ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?accepter)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasaccepted ?accepter ?proposer)
+    :agents (?accepter)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?groom)
+        (human_1fe4b2f08d46fd1e_type_person ?bride)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?groom)
+          (human_1fe4b2f08d46fd1e_p_at ?groom ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_single ?groom)
+          (human_1fe4b2f08d46fd1e_p_alive ?bride)
+          (human_1fe4b2f08d46fd1e_p_at ?bride ?place)
+          (human_1fe4b2f08d46fd1e_p_hasaccepted ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_single ?bride)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_marriedto ?groom ?bride)
+        (human_1fe4b2f08d46fd1e_p_marriedto ?bride ?groom)
+        (not (human_1fe4b2f08d46fd1e_p_single ?groom))
+        (not (human_1fe4b2f08d46fd1e_p_single ?bride))
+        (forall
+          (?v - object)
+          (when
+            (and
+              (human_1fe4b2f08d46fd1e_type_valuable ?v)
+              (human_1fe4b2f08d46fd1e_p_has ?groom ?v)
+            )
+            (human_1fe4b2f08d46fd1e_p_rich ?bride)
+          )
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_happy ?groom)
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_happy ?bride)
+        )
+      )
+    :agents (?groom ?bride)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_steal
+    :parameters (?thief - object ?victim - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?thief)
+        (human_1fe4b2f08d46fd1e_type_creature ?victim)
+        (human_1fe4b2f08d46fd1e_type_item ?item)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (not (= ?thief ?victim))
+          (human_1fe4b2f08d46fd1e_p_alive ?thief)
+          (human_1fe4b2f08d46fd1e_p_at ?thief ?place)
+          (human_1fe4b2f08d46fd1e_p_at ?item ?place)
+          (human_1fe4b2f08d46fd1e_p_belongsto ?item ?victim)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_has ?thief ?item)
+        (when
+          (human_1fe4b2f08d46fd1e_p_at ?victim ?place)
+          (intends ?victim (human_1fe4b2f08d46fd1e_p_has ?victim ?item))
+        )
+        (when
+          (forall
+            (?v - object)
+            (or
+              (not (human_1fe4b2f08d46fd1e_type_valuable ?v))
+              (not (human_1fe4b2f08d46fd1e_p_has ?victim ?v))
+            )
+          )
+          (not (human_1fe4b2f08d46fd1e_p_rich ?victim))
+        )
+      )
+    :agents (?thief)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_get-hungry
+    :parameters (?creature - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?creature))
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_hungry ?creature)
+        (intends ?creature (not (human_1fe4b2f08d46fd1e_p_hungry ?creature)))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_eat
+    :parameters (?monster - object ?creature - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_monster ?monster)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?monster)
+          (human_1fe4b2f08d46fd1e_p_at ?monster ?place)
+          (human_1fe4b2f08d46fd1e_p_hungry ?monster)
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?monster))
+        (not (human_1fe4b2f08d46fd1e_p_alive ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_rich ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_happy ?creature))
+      )
+    :agents (?monster)
+  )
+
+  (:action human_df5671d8ba8d67d9_a_admit
+    :parameters (?d - object ?p - object ?l - object ?w1 - object ?w2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w1)
+        (human_df5671d8ba8d67d9_type_level ?w2)
+        (and
+          (human_df5671d8ba8d67d9_p_alive ?d)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (not (human_df5671d8ba8d67d9_p_occupied ?l))
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?p))
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1)
+          (human_df5671d8ba8d67d9_p_connected ?w1 ?w2)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+        (human_df5671d8ba8d67d9_p_hospitalised ?p)
+        (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        (human_df5671d8ba8d67d9_p_occupied ?l)
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?w1))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d ?w2)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_walk
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_character ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (and
+          (human_df5671d8ba8d67d9_p_at ?c ?l1)
+          (not (human_df5671d8ba8d67d9_p_hospitalised ?c))
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_at ?c ?l2)
+        (not (human_df5671d8ba8d67d9_p_at ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_move
+    :parameters (?c - object ?l1 - object ?l2 - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?c)
+        (human_df5671d8ba8d67d9_type_location ?l1)
+        (human_df5671d8ba8d67d9_type_location ?l2)
+        (human_df5671d8ba8d67d9_p_at ?c ?l1)
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_at ?c ?l2)
+        (not (human_df5671d8ba8d67d9_p_at ?c ?l1))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (not (= ?w human_df5671d8ba8d67d9_o_three))
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+        )
+      )
+    :effect
+      (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+  )
+
+  (:action human_df5671d8ba8d67d9_a_get-work-help
+    :parameters (?d - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_level ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?l)
+          (not (= ?l human_df5671d8ba8d67d9_o_zero))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_level-of-work ?d ?l))
+        (human_df5671d8ba8d67d9_p_level-of-work ?d human_df5671d8ba8d67d9_o_zero)
+        (not (human_df5671d8ba8d67d9_p_the-doctor-overworked))
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_mistake-assess
+    :parameters (?d - object ?p - object ?s - object ?t - object ?l - object ?w - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (human_df5671d8ba8d67d9_type_level ?w)
+        (and
+          (human_df5671d8ba8d67d9_p_level-of-work ?d ?w)
+          (= ?w human_df5671d8ba8d67d9_o_three)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+          (human_df5671d8ba8d67d9_p_treatment-for ?t ?s)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_wrong-treatment-prescribed ?p ?t)
+        (human_df5671d8ba8d67d9_p_the-doctor-overworked)
+        (human_df5671d8ba8d67d9_p_the-doctor-mistake)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_treat
+    :parameters (?d - object ?p - object ?t - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_doctor ?d)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_the-doctor ?d)
+          (human_df5671d8ba8d67d9_p_the-doctor-treating ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_at ?d ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (not (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t))
+        )
+      )
+    :effect
+      (and
+        (not (human_df5671d8ba8d67d9_p_treatment-prescribed ?p ?t))
+        (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+      )
+  )
+
+  (:action human_df5671d8ba8d67d9_a_recover
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+          (human_df5671d8ba8d67d9_p_has-symptom ?p ?s)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_has-symptom ?p ?s))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_die
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_alive ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+          (human_df5671d8ba8d67d9_p_patient-room ?p ?l)
+        )
+      )
+    :effect
+      (not (human_df5671d8ba8d67d9_p_alive ?p))
+  )
+
+  (:action human_df5671d8ba8d67d9_a_lose-consciousness
+    :parameters (?p - object ?t - object ?s - object ?l - object)
+    :precondition
+      (and
+        (human_df5671d8ba8d67d9_active)
+        (human_df5671d8ba8d67d9_type_patient ?p)
+        (human_df5671d8ba8d67d9_type_treatment ?t)
+        (human_df5671d8ba8d67d9_type_symptom ?s)
+        (human_df5671d8ba8d67d9_type_medicalloc ?l)
+        (and
+          (human_df5671d8ba8d67d9_p_receiving-treatment ?p ?t)
+          (human_df5671d8ba8d67d9_p_conscious ?p)
+          (human_df5671d8ba8d67d9_p_at ?p ?l)
+        )
+      )
+    :effect
+      (and
+        (human_df5671d8ba8d67d9_p_unconscious ?p)
+        (not (human_df5671d8ba8d67d9_p_conscious ?p))
+      )
+  )
+
+  (:action tiny_stories__story_036_a_pick-up-pin
+    :parameters (?character - object ?pin - object ?box - object)
+    :precondition
+      (and
+        (tiny_stories__story_036_active)
+        (tiny_stories__story_036_type_character ?character)
+        (tiny_stories__story_036_type_pin ?pin)
+        (tiny_stories__story_036_type_box ?box)
+        (and
+          (tiny_stories__story_036_p_at ?character ?box)
+          (tiny_stories__story_036_p_on-floor ?pin)
+          (tiny_stories__story_036_p_tidy ?box)
+        )
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_036_p_on-floor ?pin))
+        (tiny_stories__story_036_p_in ?pin ?box)
+        (not (tiny_stories__story_036_p_scared ?pin))
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_036_a_open-box
+    :parameters (?character - object ?box - object)
+    :precondition
+      (and
+        (tiny_stories__story_036_active)
+        (tiny_stories__story_036_type_character ?character)
+        (tiny_stories__story_036_type_box ?box)
+        (and
+          (tiny_stories__story_036_p_at ?character ?box)
+          (tiny_stories__story_036_p_tidy ?box)
+        )
+      )
+    :effect
+      (forall
+        (?pin - object)
+        (when
+          (tiny_stories__story_036_type_pin ?pin)
+          (and
+            (not (tiny_stories__story_036_p_in ?pin ?box))
+            (tiny_stories__story_036_p_on-floor ?pin)
+            (tiny_stories__story_036_p_scared ?pin)
+          )
+        )
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_036_a_bring-to-life
+    :parameters (?fairy - object ?pin - object ?box - object)
+    :precondition
+      (and
+        (tiny_stories__story_036_active)
+        (tiny_stories__story_036_type_character ?fairy)
+        (tiny_stories__story_036_type_pin ?pin)
+        (tiny_stories__story_036_type_box ?box)
+        (and
+          (tiny_stories__story_036_p_fairy ?fairy)
+          (tiny_stories__story_036_p_in ?pin ?box)
+        )
+      )
+    :effect
+      (tiny_stories__story_036_p_alive ?pin)
+    :agents (?fairy)
+  )
+
+  (:action tiny_stories__story_036_a_become-friends
+    :parameters (?fairy - object ?pin - object ?box - object)
+    :precondition
+      (and
+        (tiny_stories__story_036_active)
+        (tiny_stories__story_036_type_character ?fairy)
+        (tiny_stories__story_036_type_pin ?pin)
+        (tiny_stories__story_036_type_box ?box)
+        (and
+          (tiny_stories__story_036_p_fairy ?fairy)
+          (tiny_stories__story_036_p_alive ?pin)
+        )
+      )
+    :effect
+      (intends ?fairy (tiny_stories__story_036_p_alive ?pin))
+    :agents (?fairy)
+  )
+
+  (:action writing_prompts__wp_007_a_move-item
+    :parameters (?item - object ?from - object ?to - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (writing_prompts__wp_007_type_room ?from)
+        (writing_prompts__wp_007_type_room ?to)
+        (and
+          (not (= ?from ?to))
+          (writing_prompts__wp_007_p_in ?item ?from)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_007_p_in ?item ?from))
+        (writing_prompts__wp_007_p_in ?item ?to)
+      )
+  )
+
+  (:action writing_prompts__wp_007_a_plug-in
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (not (writing_prompts__wp_007_p_plugged-in ?item))
+      )
+    :effect
+      (writing_prompts__wp_007_p_plugged-in ?item)
+  )
+
+  (:action writing_prompts__wp_007_a_connect
+    :parameters (?item1 - object ?item2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item1)
+        (writing_prompts__wp_007_type_item ?item2)
+        (and
+          (not (writing_prompts__wp_007_p_connected ?item1 ?item2))
+          (not (= ?item1 ?item2))
+        )
+      )
+    :effect
+      (writing_prompts__wp_007_p_connected ?item1 ?item2)
+  )
+
+  (:action writing_prompts__wp_007_a_morning-comes
+    :parameters (?room - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_room ?room)
+        (and
+          (not (writing_prompts__wp_007_p_well-lit ?room))
+          (writing_prompts__wp_007_p_morning)
+        )
+      )
+    :effect
+      (writing_prompts__wp_007_p_well-lit ?room)
+  )
+
+  (:action writing_prompts__wp_007_a_night-falls
+    :parameters (?room - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_room ?room)
+        (and
+          (writing_prompts__wp_007_p_well-lit ?room)
+          (not (writing_prompts__wp_007_p_morning))
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_007_p_well-lit ?room))
+  )
+
+  (:action writing_prompts__wp_007_a_occupy
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (not (writing_prompts__wp_007_p_occupied ?item))
+      )
+    :effect
+      (writing_prompts__wp_007_p_occupied ?item)
+  )
+
+  (:action writing_prompts__wp_007_a_unoccupy
+    :parameters (?item - object)
+    :precondition
+      (and
+        (writing_prompts__wp_007_active)
+        (writing_prompts__wp_007_type_item ?item)
+        (writing_prompts__wp_007_p_occupied ?item)
+      )
+    :effect
+      (not (writing_prompts__wp_007_p_occupied ?item))
+  )
+
+  (:action writing_prompts__wp_085_a_wake-up
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (not (writing_prompts__wp_085_p_awake ?character))
+      )
+    :effect
+      (writing_prompts__wp_085_p_awake ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_put-on-clothes
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (not (writing_prompts__wp_085_p_wearing-clothes ?character))
+        )
+      )
+    :effect
+      (writing_prompts__wp_085_p_wearing-clothes ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_turn-on-device
+    :parameters (?character - object ?device - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_device ?device)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_has-device ?character ?device)
+          (not (writing_prompts__wp_085_p_device-on ?device))
+        )
+      )
+    :effect
+      (writing_prompts__wp_085_p_device-on ?device)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_check-connectivity
+    :parameters (?character - object ?device - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_device ?device)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_device-on ?device)
+          (writing_prompts__wp_085_p_has-device ?character ?device)
+        )
+      )
+    :effect
+      (when
+        (writing_prompts__wp_085_p_device-connected ?device)
+        (writing_prompts__wp_085_p_working ?device)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_go-outside
+    :parameters (?character - object ?place - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?character)
+        (writing_prompts__wp_085_type_place ?place)
+        (and
+          (writing_prompts__wp_085_p_awake ?character)
+          (writing_prompts__wp_085_p_wearing-clothes ?character)
+          (writing_prompts__wp_085_p_at ?character ?place)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_085_p_at ?character ?place))
+        (writing_prompts__wp_085_p_at ?character writing_prompts__wp_085_o_outside)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_085_a_talk
+    :parameters (?speaker - object ?listener - object)
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (writing_prompts__wp_085_type_character ?speaker)
+        (writing_prompts__wp_085_type_character ?listener)
+        (and
+          (writing_prompts__wp_085_p_awake ?speaker)
+          (writing_prompts__wp_085_p_awake ?listener)
+          (writing_prompts__wp_085_p_at ?speaker writing_prompts__wp_085_o_outside)
+          (writing_prompts__wp_085_p_at ?listener writing_prompts__wp_085_o_outside)
+        )
+      )
+    :agents (?speaker ?listener)
+  )
+
+  (:action writing_prompts__wp_085_a_cancel-school
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_085_active)
+        (not (writing_prompts__wp_085_p_school-canceled))
+      )
+    :effect
+      (writing_prompts__wp_085_p_school-canceled)
+  )
+)

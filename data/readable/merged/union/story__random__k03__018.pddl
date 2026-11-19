@@ -1,0 +1,199 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (tiny_stories__story_030_active)
+    (tiny_stories__story_030_type_character ?x - object)
+    (tiny_stories__story_030_type_object ?x - object)
+    (tiny_stories__story_030_p_hungry ?v0 - object)
+    (tiny_stories__story_030_p_friend ?v0 - object ?v1 - object)
+    (tiny_stories__story_030_p_alive ?v0 - object)
+    (tiny_stories__story_030_p_food-available)
+    (writing_prompts__wp_013_active)
+    (writing_prompts__wp_013_type_character ?x - object)
+    (writing_prompts__wp_013_type_object ?x - object)
+    (writing_prompts__wp_013_p_human ?v0 - object)
+    (writing_prompts__wp_013_p_crow ?v0 - object)
+    (writing_prompts__wp_013_p_in-pain ?v0 - object)
+    (writing_prompts__wp_013_p_sunlight-available)
+    (writing_prompts__wp_013_p_transformed ?v0 - object)
+    (writing_prompts__wp_077_active)
+    (writing_prompts__wp_077_type_object ?x - object)
+    (writing_prompts__wp_077_type_poem ?x - object)
+    (writing_prompts__wp_077_type_reader ?x - object)
+    (writing_prompts__wp_077_p_read ?v0 - object ?v1 - object)
+    (writing_prompts__wp_077_p_alive ?v0 - object)
+    (writing_prompts__wp_077_p_dead ?v0 - object)
+    (writing_prompts__wp_077_p_echo ?v0 - object ?v1 - object)
+  )
+
+  (:action tiny_stories__story_030_a_ask-to-be-friends
+    :parameters (?asker - object ?askee - object)
+    :precondition
+      (and
+        (tiny_stories__story_030_active)
+        (tiny_stories__story_030_type_character ?asker)
+        (tiny_stories__story_030_type_character ?askee)
+        (and
+          (tiny_stories__story_030_p_alive ?asker)
+          (tiny_stories__story_030_p_alive ?askee)
+          (not (tiny_stories__story_030_p_friend ?asker ?askee))
+        )
+      )
+    :effect
+      (tiny_stories__story_030_p_friend ?asker ?askee)
+    :agents (?asker)
+  )
+
+  (:action tiny_stories__story_030_a_search-for-food
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_030_active)
+        (tiny_stories__story_030_type_character ?character)
+        (tiny_stories__story_030_p_alive ?character)
+      )
+    :effect
+      (tiny_stories__story_030_p_food-available)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_030_a_feed
+    :parameters (?feeder - object ?eater - object)
+    :precondition
+      (and
+        (tiny_stories__story_030_active)
+        (tiny_stories__story_030_type_character ?feeder)
+        (tiny_stories__story_030_type_character ?eater)
+        (and
+          (tiny_stories__story_030_p_alive ?feeder)
+          (tiny_stories__story_030_p_alive ?eater)
+          (tiny_stories__story_030_p_hungry ?eater)
+          (tiny_stories__story_030_p_food-available)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_030_p_hungry ?eater))
+    :agents (?feeder)
+  )
+
+  (:action tiny_stories__story_030_a_eat
+    :parameters (?eater - object ?eaten - object)
+    :precondition
+      (and
+        (tiny_stories__story_030_active)
+        (tiny_stories__story_030_type_character ?eater)
+        (tiny_stories__story_030_type_character ?eaten)
+        (and
+          (tiny_stories__story_030_p_alive ?eater)
+          (tiny_stories__story_030_p_hungry ?eater)
+          (tiny_stories__story_030_p_alive ?eaten)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_030_p_alive ?eaten))
+    :agents (?eater)
+  )
+
+  (:action writing_prompts__wp_013_a_experience-pain
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (writing_prompts__wp_013_p_human ?character)
+      )
+    :effect
+      (writing_prompts__wp_013_p_in-pain ?character)
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_013_a_transform-into-crow
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (and
+          (writing_prompts__wp_013_p_human ?character)
+          (writing_prompts__wp_013_p_in-pain ?character)
+          (writing_prompts__wp_013_p_sunlight-available)
+        )
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_013_p_human ?character))
+        (writing_prompts__wp_013_p_crow ?character)
+        (writing_prompts__wp_013_p_transformed ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_013_a_transform-back-into-human
+    :parameters (?character - object)
+    :precondition
+      (and
+        (writing_prompts__wp_013_active)
+        (writing_prompts__wp_013_type_character ?character)
+        (writing_prompts__wp_013_p_crow ?character)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_013_p_crow ?character))
+        (writing_prompts__wp_013_p_human ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action writing_prompts__wp_077_a_read-poem
+    :parameters (?reader - object ?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_reader ?reader)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (and
+          (not (writing_prompts__wp_077_p_read ?reader ?poem))
+          (writing_prompts__wp_077_p_alive ?poem)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_077_p_read ?reader ?poem)
+        (writing_prompts__wp_077_p_echo ?reader ?poem)
+      )
+    :agents (?reader)
+  )
+
+  (:action writing_prompts__wp_077_a_poem-dies
+    :parameters (?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (writing_prompts__wp_077_p_alive ?poem)
+      )
+    :effect
+      (and
+        (not (writing_prompts__wp_077_p_alive ?poem))
+        (writing_prompts__wp_077_p_dead ?poem)
+      )
+  )
+
+  (:action writing_prompts__wp_077_a_echo-poem
+    :parameters (?reader - object ?poem - object)
+    :precondition
+      (and
+        (writing_prompts__wp_077_active)
+        (writing_prompts__wp_077_type_reader ?reader)
+        (writing_prompts__wp_077_type_poem ?poem)
+        (and
+          (writing_prompts__wp_077_p_read ?reader ?poem)
+          (not (writing_prompts__wp_077_p_echo ?reader ?poem))
+        )
+      )
+    :effect
+      (writing_prompts__wp_077_p_echo ?reader ?poem)
+    :agents (?reader)
+  )
+)

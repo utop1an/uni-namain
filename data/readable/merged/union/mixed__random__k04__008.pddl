@@ -1,0 +1,416 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants writing_prompts__wp_047_o_nation1 - object writing_prompts__wp_047_o_nation2 - object writing_prompts__wp_047_o_nation3 - object)
+  (:predicates
+    (human_1fe4b2f08d46fd1e_active)
+    (human_1fe4b2f08d46fd1e_type_creature ?x - object)
+    (human_1fe4b2f08d46fd1e_type_item ?x - object)
+    (human_1fe4b2f08d46fd1e_type_monster ?x - object)
+    (human_1fe4b2f08d46fd1e_type_object ?x - object)
+    (human_1fe4b2f08d46fd1e_type_person ?x - object)
+    (human_1fe4b2f08d46fd1e_type_place ?x - object)
+    (human_1fe4b2f08d46fd1e_type_valuable ?x - object)
+    (human_1fe4b2f08d46fd1e_p_alive ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_single ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_rich ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_happy ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_hungry ?v0 - object)
+    (human_1fe4b2f08d46fd1e_p_at ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_has ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_belongsto ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_loves ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasproposed ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_hasaccepted ?v0 - object ?v1 - object)
+    (human_1fe4b2f08d46fd1e_p_marriedto ?v0 - object ?v1 - object)
+    (tiny_stories__story_009_active)
+    (tiny_stories__story_009_type_character ?x - object)
+    (tiny_stories__story_009_type_object ?x - object)
+    (tiny_stories__story_009_p_reading ?v0 - object)
+    (tiny_stories__story_009_p_playing ?v0 - object)
+    (tiny_stories__story_009_p_calm ?v0 - object)
+    (tiny_stories__story_009_p_books-fall)
+    (writing_prompts__wp_022_active)
+    (writing_prompts__wp_022_type_character ?x - object)
+    (writing_prompts__wp_022_type_object ?x - object)
+    (writing_prompts__wp_022_p_pranked ?v0 - object ?v1 - object)
+    (writing_prompts__wp_047_active)
+    (writing_prompts__wp_047_type_nation ?x - object)
+    (writing_prompts__wp_047_type_object ?x - object)
+    (writing_prompts__wp_047_p_at-peace ?v0 - object)
+    (writing_prompts__wp_047_p_sharing-technology ?v0 - object ?v1 - object)
+    (writing_prompts__wp_047_p_advanced-technology ?v0 - object)
+    (writing_prompts__wp_047_p_facing-destruction)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_travel
+    :parameters (?creature - object ?from - object ?to - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?from)
+        (human_1fe4b2f08d46fd1e_type_place ?to)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?from)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_at ?creature ?to)
+        (not (human_1fe4b2f08d46fd1e_p_at ?creature ?from))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_propose
+    :parameters (?proposer - object ?proposee - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_person ?proposee)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposee)
+          (human_1fe4b2f08d46fd1e_p_at ?proposee ?place)
+          (human_1fe4b2f08d46fd1e_p_loves ?proposer ?proposee)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?proposee)
+    :agents (?proposer)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_accept
+    :parameters (?accepter - object ?proposer - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?accepter)
+        (human_1fe4b2f08d46fd1e_type_person ?proposer)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?accepter)
+          (human_1fe4b2f08d46fd1e_p_at ?accepter ?place)
+          (human_1fe4b2f08d46fd1e_p_alive ?proposer)
+          (human_1fe4b2f08d46fd1e_p_at ?proposer ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?proposer ?accepter)
+        )
+      )
+    :effect
+      (human_1fe4b2f08d46fd1e_p_hasaccepted ?accepter ?proposer)
+    :agents (?accepter)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_marry
+    :parameters (?groom - object ?bride - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_person ?groom)
+        (human_1fe4b2f08d46fd1e_type_person ?bride)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?groom)
+          (human_1fe4b2f08d46fd1e_p_at ?groom ?place)
+          (human_1fe4b2f08d46fd1e_p_hasproposed ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_single ?groom)
+          (human_1fe4b2f08d46fd1e_p_alive ?bride)
+          (human_1fe4b2f08d46fd1e_p_at ?bride ?place)
+          (human_1fe4b2f08d46fd1e_p_hasaccepted ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_single ?bride)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_marriedto ?groom ?bride)
+        (human_1fe4b2f08d46fd1e_p_marriedto ?bride ?groom)
+        (not (human_1fe4b2f08d46fd1e_p_single ?groom))
+        (not (human_1fe4b2f08d46fd1e_p_single ?bride))
+        (forall
+          (?v - object)
+          (when
+            (and
+              (human_1fe4b2f08d46fd1e_type_valuable ?v)
+              (human_1fe4b2f08d46fd1e_p_has ?groom ?v)
+            )
+            (human_1fe4b2f08d46fd1e_p_rich ?bride)
+          )
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?groom ?bride)
+          (human_1fe4b2f08d46fd1e_p_happy ?groom)
+        )
+        (when
+          (human_1fe4b2f08d46fd1e_p_loves ?bride ?groom)
+          (human_1fe4b2f08d46fd1e_p_happy ?bride)
+        )
+      )
+    :agents (?groom ?bride)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_steal
+    :parameters (?thief - object ?victim - object ?item - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?thief)
+        (human_1fe4b2f08d46fd1e_type_creature ?victim)
+        (human_1fe4b2f08d46fd1e_type_item ?item)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (not (= ?thief ?victim))
+          (human_1fe4b2f08d46fd1e_p_alive ?thief)
+          (human_1fe4b2f08d46fd1e_p_at ?thief ?place)
+          (human_1fe4b2f08d46fd1e_p_at ?item ?place)
+          (human_1fe4b2f08d46fd1e_p_belongsto ?item ?victim)
+        )
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_has ?thief ?item)
+        (when
+          (human_1fe4b2f08d46fd1e_p_at ?victim ?place)
+          (intends ?victim (human_1fe4b2f08d46fd1e_p_has ?victim ?item))
+        )
+        (when
+          (forall
+            (?v - object)
+            (or
+              (not (human_1fe4b2f08d46fd1e_type_valuable ?v))
+              (not (human_1fe4b2f08d46fd1e_p_has ?victim ?v))
+            )
+          )
+          (not (human_1fe4b2f08d46fd1e_p_rich ?victim))
+        )
+      )
+    :agents (?thief)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_get-hungry
+    :parameters (?creature - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?creature))
+      )
+    :effect
+      (and
+        (human_1fe4b2f08d46fd1e_p_hungry ?creature)
+        (intends ?creature (not (human_1fe4b2f08d46fd1e_p_hungry ?creature)))
+      )
+    :agents (?creature)
+  )
+
+  (:action human_1fe4b2f08d46fd1e_a_eat
+    :parameters (?monster - object ?creature - object ?place - object)
+    :precondition
+      (and
+        (human_1fe4b2f08d46fd1e_active)
+        (human_1fe4b2f08d46fd1e_type_monster ?monster)
+        (human_1fe4b2f08d46fd1e_type_creature ?creature)
+        (human_1fe4b2f08d46fd1e_type_place ?place)
+        (and
+          (human_1fe4b2f08d46fd1e_p_alive ?monster)
+          (human_1fe4b2f08d46fd1e_p_at ?monster ?place)
+          (human_1fe4b2f08d46fd1e_p_hungry ?monster)
+          (human_1fe4b2f08d46fd1e_p_alive ?creature)
+          (human_1fe4b2f08d46fd1e_p_at ?creature ?place)
+        )
+      )
+    :effect
+      (and
+        (not (human_1fe4b2f08d46fd1e_p_hungry ?monster))
+        (not (human_1fe4b2f08d46fd1e_p_alive ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_rich ?creature))
+        (not (human_1fe4b2f08d46fd1e_p_happy ?creature))
+      )
+    :agents (?monster)
+  )
+
+  (:action tiny_stories__story_009_a_start-reading
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (not (tiny_stories__story_009_p_reading ?character))
+      )
+    :effect
+      (tiny_stories__story_009_p_reading ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_stop-reading
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (tiny_stories__story_009_p_reading ?character)
+      )
+    :effect
+      (not (tiny_stories__story_009_p_reading ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_start-playing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (not (tiny_stories__story_009_p_playing ?character))
+      )
+    :effect
+      (tiny_stories__story_009_p_playing ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_stop-playing
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (tiny_stories__story_009_p_playing ?character)
+      )
+    :effect
+      (not (tiny_stories__story_009_p_playing ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_become-calm
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (not (tiny_stories__story_009_p_calm ?character))
+      )
+    :effect
+      (tiny_stories__story_009_p_calm ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_become-uncalm
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (tiny_stories__story_009_type_character ?character)
+        (tiny_stories__story_009_p_calm ?character)
+      )
+    :effect
+      (not (tiny_stories__story_009_p_calm ?character))
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_009_a_books-fall
+    :parameters ()
+    :precondition
+      (and
+        (tiny_stories__story_009_active)
+        (not (tiny_stories__story_009_p_books-fall))
+      )
+    :effect
+      (tiny_stories__story_009_p_books-fall)
+  )
+
+  (:action writing_prompts__wp_022_a_prank
+    :parameters (?pranker - object ?target - object)
+    :precondition
+      (and
+        (writing_prompts__wp_022_active)
+        (writing_prompts__wp_022_type_character ?pranker)
+        (writing_prompts__wp_022_type_character ?target)
+      )
+    :effect
+      (writing_prompts__wp_022_p_pranked ?pranker ?target)
+    :agents (?pranker)
+  )
+
+  (:action writing_prompts__wp_047_a_unite
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_facing-destruction)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_develop-technology
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_advanced-technology ?nation1)
+        (writing_prompts__wp_047_p_advanced-technology ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+
+  (:action writing_prompts__wp_047_a_avoid-destruction
+    :parameters ()
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (and
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation1)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation2)
+          (writing_prompts__wp_047_p_advanced-technology writing_prompts__wp_047_o_nation3)
+        )
+      )
+    :effect
+      (not (writing_prompts__wp_047_p_facing-destruction))
+  )
+
+  (:action writing_prompts__wp_047_a_maintain-peace
+    :parameters (?nation1 - object ?nation2 - object)
+    :precondition
+      (and
+        (writing_prompts__wp_047_active)
+        (writing_prompts__wp_047_type_nation ?nation1)
+        (writing_prompts__wp_047_type_nation ?nation2)
+        (and
+          (not (= ?nation1 ?nation2))
+          (writing_prompts__wp_047_p_at-peace ?nation1)
+          (writing_prompts__wp_047_p_at-peace ?nation2)
+          (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+        )
+      )
+    :effect
+      (and
+        (writing_prompts__wp_047_p_at-peace ?nation1)
+        (writing_prompts__wp_047_p_at-peace ?nation2)
+        (writing_prompts__wp_047_p_sharing-technology ?nation1 ?nation2)
+      )
+    :agents (?nation1 ?nation2)
+  )
+)

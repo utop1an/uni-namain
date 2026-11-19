@@ -1,0 +1,383 @@
+(define (domain revised_merged)
+  (:requirements :adl :domain-axioms :intentionality :strips :typing)
+  (:types)
+  (:predicates
+    (human_72bec7307b121ea5_active)
+    (human_72bec7307b121ea5_type_book ?x - object)
+    (human_72bec7307b121ea5_type_character ?x - object)
+    (human_72bec7307b121ea5_type_item ?x - object)
+    (human_72bec7307b121ea5_type_location ?x - object)
+    (human_72bec7307b121ea5_type_object ?x - object)
+    (human_72bec7307b121ea5_type_ring ?x - object)
+    (human_72bec7307b121ea5_type_sword ?x - object)
+    (human_72bec7307b121ea5_type_thing ?x - object)
+    (human_72bec7307b121ea5_p_player ?v0 - object)
+    (human_72bec7307b121ea5_p_at ?v0 - object ?v1 - object)
+    (shared_p_consensus_c842ca42249a187d ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_asleep ?v0 - object)
+    (human_72bec7307b121ea5_p_connected ?v0 - object ?v1 - object)
+    (human_72bec7307b121ea5_p_enchanted ?v0 - object)
+    (human_72bec7307b121ea5_p_is ?v0 - object ?v1 - object)
+    (tiny_stories__story_049_active)
+    (tiny_stories__story_049_type_character ?x - object)
+    (tiny_stories__story_049_type_object ?x - object)
+    (tiny_stories__story_049_p_wearing-hat ?v0 - object)
+    (tiny_stories__story_049_p_is-dog ?v0 - object)
+    (tiny_stories__story_049_p_is-fairy ?v0 - object)
+    (tiny_stories__story_049_p_has-magic-flower ?v0 - object)
+    (tiny_stories__story_049_p_friends ?v0 - object ?v1 - object)
+    (tiny_stories__story_049_p_playing-together ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_active)
+    (tiny_stories__story_085_type_character ?x - object)
+    (tiny_stories__story_085_type_item ?x - object)
+    (tiny_stories__story_085_type_object ?x - object)
+    (tiny_stories__story_085_p_broken ?v0 - object)
+    (tiny_stories__story_085_p_playing ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_p_apologized ?v0 - object ?v1 - object)
+    (tiny_stories__story_085_p_cleaned ?v0 - object)
+    (tiny_stories__story_085_p_forgiven ?v0 - object ?v1 - object)
+    (tiny_stories__story_091_active)
+    (tiny_stories__story_091_type_animal ?x - object)
+    (tiny_stories__story_091_type_object ?x - object)
+    (tiny_stories__story_091_type_plant ?x - object)
+    (tiny_stories__story_091_type_sun ?x - object)
+    (tiny_stories__story_091_p_awake ?v0 - object)
+    (tiny_stories__story_091_p_happy ?v0 - object)
+    (tiny_stories__story_091_p_growing ?v0 - object)
+    (tiny_stories__story_091_p_strong ?v0 - object)
+    (tiny_stories__story_091_p_provides-shade ?v0 - object)
+    (tiny_stories__story_091_p_provides-home ?v0 - object)
+    (tiny_stories__story_091_p_generous ?v0 - object)
+    (tiny_stories__story_091_p_gives-heat ?v0 - object)
+  )
+  (:axiom :vars (?sun - object) :context (and (tiny_stories__story_091_active) (tiny_stories__story_091_type_sun ?sun) (and (not (tiny_stories__story_091_p_generous ?sun)) (tiny_stories__story_091_p_gives-heat ?sun))) :implies (tiny_stories__story_091_p_generous ?sun))
+
+  (:action human_72bec7307b121ea5_a_move-location
+    :parameters (?character - object ?to - object ?from - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?character)
+        (human_72bec7307b121ea5_type_location ?to)
+        (human_72bec7307b121ea5_type_location ?from)
+        (and
+          (human_72bec7307b121ea5_p_connected ?to ?from)
+          (not (human_72bec7307b121ea5_p_asleep ?character))
+          (human_72bec7307b121ea5_p_at ?character ?from)
+        )
+      )
+    :effect
+      (and
+        (not (human_72bec7307b121ea5_p_at ?character ?from))
+        (human_72bec7307b121ea5_p_at ?character ?to)
+      )
+    :agents (?character)
+  )
+
+  (:action human_72bec7307b121ea5_a_wake-person
+    :parameters (?waker - object ?woken - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?waker)
+        (human_72bec7307b121ea5_type_character ?woken)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?waker ?location)
+          (human_72bec7307b121ea5_p_at ?woken ?location)
+          (human_72bec7307b121ea5_p_asleep ?woken)
+          (not (human_72bec7307b121ea5_p_asleep ?waker))
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_asleep ?woken))
+    :agents (?waker)
+  )
+
+  (:action human_72bec7307b121ea5_a_take-thing
+    :parameters (?taker - object ?thing - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?taker)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?taker ?location)
+          (human_72bec7307b121ea5_p_at ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?taker))
+          (not (human_72bec7307b121ea5_p_enchanted ?thing))
+        )
+      )
+    :effect
+      (and
+        (not (human_72bec7307b121ea5_p_at ?thing ?location))
+        (shared_p_consensus_c842ca42249a187d ?taker ?thing)
+      )
+    :agents (?taker)
+  )
+
+  (:action human_72bec7307b121ea5_a_disenchant-thing
+    :parameters (?caster - object ?thing - object ?book - object ?location - object)
+    :precondition
+      (and
+        (human_72bec7307b121ea5_active)
+        (human_72bec7307b121ea5_type_character ?caster)
+        (human_72bec7307b121ea5_type_item ?thing)
+        (human_72bec7307b121ea5_type_book ?book)
+        (human_72bec7307b121ea5_type_location ?location)
+        (and
+          (human_72bec7307b121ea5_p_at ?caster ?location)
+          (human_72bec7307b121ea5_p_at ?thing ?location)
+          (not (human_72bec7307b121ea5_p_asleep ?caster))
+          (shared_p_consensus_c842ca42249a187d ?caster ?book)
+          (human_72bec7307b121ea5_p_enchanted ?thing)
+        )
+      )
+    :effect
+      (not (human_72bec7307b121ea5_p_enchanted ?thing))
+    :agents (?caster)
+  )
+
+  (:action tiny_stories__story_049_a_remove-hat
+    :parameters (?remover - object ?wearer - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?remover)
+        (tiny_stories__story_049_type_character ?wearer)
+        (and
+          (not (= ?remover ?wearer))
+          (tiny_stories__story_049_p_wearing-hat ?wearer)
+        )
+      )
+    :effect
+      (not (tiny_stories__story_049_p_wearing-hat ?wearer))
+    :agents (?remover)
+  )
+
+  (:action tiny_stories__story_049_a_transform
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character)
+        (tiny_stories__story_049_p_is-dog ?character)
+      )
+    :effect
+      (and
+        (not (tiny_stories__story_049_p_is-dog ?character))
+        (tiny_stories__story_049_p_is-fairy ?character)
+      )
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_049_a_give-magic-flower
+    :parameters (?giver - object ?receiver - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?giver)
+        (tiny_stories__story_049_type_character ?receiver)
+        (and
+          (not (= ?giver ?receiver))
+          (tiny_stories__story_049_p_is-fairy ?giver)
+        )
+      )
+    :effect
+      (tiny_stories__story_049_p_has-magic-flower ?receiver)
+    :agents (?giver)
+  )
+
+  (:action tiny_stories__story_049_a_become-friends
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character1)
+        (tiny_stories__story_049_type_character ?character2)
+        (not (= ?character1 ?character2))
+      )
+    :effect
+      (tiny_stories__story_049_p_friends ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_049_a_play-together
+    :parameters (?character1 - object ?character2 - object)
+    :precondition
+      (and
+        (tiny_stories__story_049_active)
+        (tiny_stories__story_049_type_character ?character1)
+        (tiny_stories__story_049_type_character ?character2)
+        (and
+          (not (= ?character1 ?character2))
+          (tiny_stories__story_049_p_friends ?character1 ?character2)
+        )
+      )
+    :effect
+      (tiny_stories__story_049_p_playing-together ?character1 ?character2)
+    :agents (?character1 ?character2)
+  )
+
+  (:action tiny_stories__story_085_a_play
+    :parameters (?character - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?character)
+        (tiny_stories__story_085_type_item ?item)
+        (and
+          (not (tiny_stories__story_085_p_broken ?item))
+          (shared_p_consensus_c842ca42249a187d ?character ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_playing ?character ?item)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_085_a_break-item
+    :parameters (?breaker - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?breaker)
+        (tiny_stories__story_085_type_item ?item)
+        (and
+          (not (tiny_stories__story_085_p_broken ?item))
+          (tiny_stories__story_085_p_playing ?breaker ?item)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_broken ?item)
+    :agents (?breaker)
+  )
+
+  (:action tiny_stories__story_085_a_apologize
+    :parameters (?apologizer - object ?apologizee - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?apologizer)
+        (tiny_stories__story_085_type_character ?apologizee)
+        (not (= ?apologizer ?apologizee))
+      )
+    :effect
+      (tiny_stories__story_085_p_apologized ?apologizer ?apologizee)
+    :agents (?apologizer)
+  )
+
+  (:action tiny_stories__story_085_a_clean
+    :parameters (?cleaner - object ?item - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?cleaner)
+        (tiny_stories__story_085_type_item ?item)
+        (tiny_stories__story_085_p_broken ?item)
+      )
+    :effect
+      (tiny_stories__story_085_p_cleaned ?cleaner)
+    :agents (?cleaner)
+  )
+
+  (:action tiny_stories__story_085_a_forgive
+    :parameters (?forgiver - object ?forgivee - object)
+    :precondition
+      (and
+        (tiny_stories__story_085_active)
+        (tiny_stories__story_085_type_character ?forgiver)
+        (tiny_stories__story_085_type_character ?forgivee)
+        (and
+          (not (= ?forgiver ?forgivee))
+          (tiny_stories__story_085_p_apologized ?forgivee ?forgiver)
+        )
+      )
+    :effect
+      (tiny_stories__story_085_p_forgiven ?forgiver ?forgivee)
+    :agents (?forgiver)
+  )
+
+  (:action tiny_stories__story_091_a_wake-up
+    :parameters (?sun - object ?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_091_active)
+        (tiny_stories__story_091_type_sun ?sun)
+        (tiny_stories__story_091_type_animal ?animal)
+        (and
+          (tiny_stories__story_091_p_generous ?sun)
+          (tiny_stories__story_091_p_gives-heat ?sun)
+          (not (tiny_stories__story_091_p_awake ?animal))
+        )
+      )
+    :effect
+      (tiny_stories__story_091_p_awake ?animal)
+    :agents (?sun)
+  )
+
+  (:action tiny_stories__story_091_a_make-happy
+    :parameters (?sun - object ?animal - object)
+    :precondition
+      (and
+        (tiny_stories__story_091_active)
+        (tiny_stories__story_091_type_sun ?sun)
+        (tiny_stories__story_091_type_animal ?animal)
+        (and
+          (tiny_stories__story_091_p_generous ?sun)
+          (tiny_stories__story_091_p_gives-heat ?sun)
+          (tiny_stories__story_091_p_awake ?animal)
+          (not (tiny_stories__story_091_p_happy ?animal))
+        )
+      )
+    :effect
+      (tiny_stories__story_091_p_happy ?animal)
+    :agents (?sun)
+  )
+
+  (:action tiny_stories__story_091_a_help-grow
+    :parameters (?sun - object ?plant - object)
+    :precondition
+      (and
+        (tiny_stories__story_091_active)
+        (tiny_stories__story_091_type_sun ?sun)
+        (tiny_stories__story_091_type_plant ?plant)
+        (and
+          (tiny_stories__story_091_p_generous ?sun)
+          (tiny_stories__story_091_p_gives-heat ?sun)
+          (not (tiny_stories__story_091_p_growing ?plant))
+        )
+      )
+    :effect
+      (tiny_stories__story_091_p_growing ?plant)
+    :agents (?sun)
+  )
+
+  (:action tiny_stories__story_091_a_become-strong
+    :parameters (?plant - object)
+    :precondition
+      (and
+        (tiny_stories__story_091_active)
+        (tiny_stories__story_091_type_plant ?plant)
+        (tiny_stories__story_091_p_growing ?plant)
+      )
+    :effect
+      (tiny_stories__story_091_p_strong ?plant)
+  )
+
+  (:action tiny_stories__story_091_a_provide-shade-and-home
+    :parameters (?plant - object)
+    :precondition
+      (and
+        (tiny_stories__story_091_active)
+        (tiny_stories__story_091_type_plant ?plant)
+        (tiny_stories__story_091_p_strong ?plant)
+      )
+    :effect
+      (and
+        (tiny_stories__story_091_p_provides-shade ?plant)
+        (tiny_stories__story_091_p_provides-home ?plant)
+      )
+  )
+)

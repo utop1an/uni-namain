@@ -1,0 +1,197 @@
+(define (domain revised_merged)
+  (:requirements :adl :typing :equality)
+  (:predicates
+    (tiny_stories__story_075_active)
+    (tiny_stories__story_075_type_character ?x - object)
+    (tiny_stories__story_075_type_dress ?x - object)
+    (tiny_stories__story_075_type_item ?x - object)
+    (tiny_stories__story_075_type_object ?x - object)
+    (writing_prompts__wp_036_active)
+    (writing_prompts__wp_036_type_character ?x - object)
+    (writing_prompts__wp_036_type_item ?x - object)
+    (writing_prompts__wp_036_type_lightbox ?x - object)
+    (writing_prompts__wp_036_type_object ?x - object)
+    (wearing ?p0 ?p1)
+    (damaged ?p0)
+    (happy ?p0)
+    (has ?p0 ?p1)
+    (alive ?p0)
+    (anchored ?p0)
+    (charged ?p0)
+    (created ?p0 ?p1)
+    (used ?p0 ?p1)
+  )
+
+  (:action slip
+    :parameters (?character ?dress)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?dress)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?dress)
+        )
+        (and
+          (wearing ?character ?dress)
+          (not (damaged ?dress))
+        )
+      )
+    :effect
+      (damaged ?dress)
+  )
+
+  (:action comfort
+    :parameters (?parent ?child)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?parent)
+          (tiny_stories__story_075_type_character ?child)
+          (tiny_stories__story_075_type_character ?parent)
+          (tiny_stories__story_075_type_character ?child)
+        )
+        (and
+          (not (happy ?child))
+          (not (= ?parent ?child))
+        )
+      )
+    :effect
+      (happy ?child)
+  )
+
+  (:action put-on-dress
+    :parameters (?character ?item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?item)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?item)
+        )
+        (and
+          (has ?character ?item)
+          (not (wearing ?character ?item))
+        )
+      )
+    :effect
+      (wearing ?character ?item)
+  )
+
+  (:action get-new-dress
+    :parameters (?character ?old-dress ?new-item)
+    :precondition
+      (and
+        (and
+          (tiny_stories__story_075_active)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?old-dress)
+          (tiny_stories__story_075_type_dress ?new-item)
+          (tiny_stories__story_075_type_character ?character)
+          (tiny_stories__story_075_type_dress ?old-dress)
+          (tiny_stories__story_075_type_item ?new-item)
+        )
+        (and
+          (damaged ?old-dress)
+          (wearing ?character ?old-dress)
+          (not (has ?character ?new-item))
+        )
+      )
+    :effect
+      (and
+        (not (wearing ?character ?old-dress))
+        (has ?character ?new-item)
+      )
+  )
+
+  (:action charge-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (anchored ?lightbox)
+          (created ?character ?lightbox)
+        )
+      )
+    :effect
+      (charged ?lightbox)
+  )
+
+  (:action create-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (alive ?character)
+      )
+    :effect
+      (and
+        (created ?character ?lightbox)
+        (has ?character ?lightbox)
+      )
+  )
+
+  (:action anchor-light
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (created ?character ?lightbox)
+          (has ?character ?lightbox)
+        )
+      )
+    :effect
+      (anchored ?lightbox)
+  )
+
+  (:action use-lightbox
+    :parameters (?character ?lightbox)
+    :precondition
+      (and
+        (and
+          (writing_prompts__wp_036_active)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+          (writing_prompts__wp_036_type_character ?character)
+          (writing_prompts__wp_036_type_lightbox ?lightbox)
+        )
+        (and
+          (alive ?character)
+          (charged ?lightbox)
+          (created ?character ?lightbox)
+          (has ?character ?lightbox)
+        )
+      )
+    :effect
+      (and
+        (used ?character ?lightbox)
+        (not (charged ?lightbox))
+      )
+  )
+)

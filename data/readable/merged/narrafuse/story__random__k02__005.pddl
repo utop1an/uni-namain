@@ -1,0 +1,141 @@
+(define (domain revised_merged)
+  (:requirements :adl :intentionality :strips :typing)
+  (:types)
+  (:constants tiny_stories__story_019_o_colors - object)
+  (:predicates
+    (tiny_stories__story_019_active)
+    (tiny_stories__story_019_type_character ?x - object)
+    (tiny_stories__story_019_type_object ?x - object)
+    (tiny_stories__story_019_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_019_p_found ?v0 - object ?v1 - object)
+    (tiny_stories__story_019_p_made-handprint ?v0 - object)
+    (tiny_stories__story_019_p_celebrated ?v0 - object)
+    (tiny_stories__story_072_active)
+    (tiny_stories__story_072_type_character ?x - object)
+    (tiny_stories__story_072_type_object ?x - object)
+    (tiny_stories__story_072_p_at-party ?v0 - object)
+    (tiny_stories__story_072_p_has ?v0 - object ?v1 - object)
+    (tiny_stories__story_072_p_fast ?v0 - object)
+    (tiny_stories__story_072_p_cake-transformed)
+  )
+
+  (:action tiny_stories__story_019_a_find
+    :parameters (?character - object ?object - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?character)
+        (tiny_stories__story_019_type_object ?object)
+        (not (tiny_stories__story_019_p_found ?character ?object))
+      )
+    :effect
+      (tiny_stories__story_019_p_found ?character ?object)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_019_a_make-handprint
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?character)
+        (tiny_stories__story_019_p_found ?character tiny_stories__story_019_o_colors)
+      )
+    :effect
+      (tiny_stories__story_019_p_made-handprint ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_019_a_show-handprint
+    :parameters (?shower - object ?viewer - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?shower)
+        (tiny_stories__story_019_type_character ?viewer)
+        (and
+          (tiny_stories__story_019_p_made-handprint ?shower)
+          (not (= ?shower ?viewer))
+        )
+      )
+    :effect
+      (tiny_stories__story_019_p_celebrated ?viewer)
+    :agents (?shower ?viewer)
+  )
+
+  (:action tiny_stories__story_019_a_celebrate
+    :parameters (?celebrator - object ?celebratee - object)
+    :precondition
+      (and
+        (tiny_stories__story_019_active)
+        (tiny_stories__story_019_type_character ?celebrator)
+        (tiny_stories__story_019_type_character ?celebratee)
+        (and
+          (tiny_stories__story_019_p_celebrated ?celebrator)
+          (not (= ?celebrator ?celebratee))
+        )
+      )
+    :effect
+      (tiny_stories__story_019_p_celebrated ?celebratee)
+    :agents (?celebrator ?celebratee)
+  )
+
+  (:action tiny_stories__story_072_a_go-to-party
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_072_active)
+        (tiny_stories__story_072_type_character ?character)
+        (not (tiny_stories__story_072_p_at-party ?character))
+      )
+    :effect
+      (tiny_stories__story_072_p_at-party ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_072_a_magic-trick
+    :parameters (?magician - object)
+    :precondition
+      (and
+        (tiny_stories__story_072_active)
+        (tiny_stories__story_072_type_character ?magician)
+        (and
+          (tiny_stories__story_072_p_at-party ?magician)
+          (not (tiny_stories__story_072_p_cake-transformed))
+        )
+      )
+    :effect
+      (tiny_stories__story_072_p_cake-transformed)
+    :agents (?magician)
+  )
+
+  (:action tiny_stories__story_072_a_eat-cake
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_072_active)
+        (tiny_stories__story_072_type_character ?character)
+        (and
+          (tiny_stories__story_072_p_at-party ?character)
+          (tiny_stories__story_072_p_cake-transformed)
+        )
+      )
+    :effect
+      (tiny_stories__story_072_p_fast ?character)
+    :agents (?character)
+  )
+
+  (:action tiny_stories__story_072_a_play
+    :parameters (?character - object)
+    :precondition
+      (and
+        (tiny_stories__story_072_active)
+        (tiny_stories__story_072_type_character ?character)
+        (and
+          (tiny_stories__story_072_p_at-party ?character)
+          (tiny_stories__story_072_p_fast ?character)
+        )
+      )
+    :agents (?character)
+  )
+)
