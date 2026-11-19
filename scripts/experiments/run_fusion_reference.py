@@ -25,7 +25,11 @@ def save(path, value):
     path.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
 
 
-def freeze(inputs, output, seconds, workers, model):
+def freeze(inputs, output, seconds, workers, model, namespace_policy='raw', record_http_attempts=False):
+    if type(record_http_attempts) is not bool:
+        raise ValueError('HTTP attempt recording must be an explicit boolean')
+    if namespace_policy not in ('raw', 'category_qualified'):
+        raise ValueError('Unknown namespace export policy')
     if not math.isfinite(seconds) or seconds <= 0 or type(workers) is not int or workers < 1:
         raise ValueError('Invalid runtime budget')
     if output.exists() and any(output.iterdir()):
@@ -38,7 +42,7 @@ def freeze(inputs, output, seconds, workers, model):
     snapshot.mkdir()
     for path in paths:
         shutil.copyfile(path, snapshot/path.name)
-    code = [ROOT/n for n in ('unidomain_ollama_fusion.py', 'rcnc/pddl.py', 'rcnc/pddl_checks.py', 'scripts/experiments/run_fusion_reference.py')]
+    code = [ROOT/n for n in ('rcnc/pddl.py', 'rcnc/pddl_checks.py', 'rcnc/namespace_export.py', 'scripts/experiments/run_fusion_reference.py')]
     code.extend(sorted((ROOT/'unidomain').glob('*.py')))
     code.extend(sorted((ROOT/'prompts/domain_fusion').glob('*.txt')))
     hashes = {}
@@ -60,6 +64,8 @@ def freeze(inputs, output, seconds, workers, model):
         'source_sha256': {p.name: sha(p) for p in paths}, 'implementation_sha256': hashes,
         'python': platform.python_version(), 'dependencies': versions,
         'budget_seconds': seconds, 'node_workers': workers, 'model': model,
+        'namespace_policy': namespace_policy,
+        'http_attempt_ledger': 'http_attempts.jsonl' if record_http_attempts else None,
         'embedding_model': 'sentence-transformers/all-mpnet-base-v2',
         'embedding_offline': True, 'predicate_threshold': 0.3, 'operator_threshold': 0.3,
         'cache_policy': 'new empty per-run cache; no historical answers imported',
@@ -74,8 +80,8 @@ def freeze(inputs, output, seconds, workers, model):
     return manifest
 
 
-def run(inputs, output, seconds=10800, workers=1, model='gemma3:4b'):
-    manifest = freeze(inputs, output, seconds, workers, model)
+def run(inputs, output, seconds=10800, workers=1, model='gemma3:4b', namespace_policy='raw', record_http_attempts=False):
+    manifest = freeze(inputs, output, seconds, workers, model, namespace_policy, record_http_attempts)
     start = time.monotonic()
     report = {'status': 'starting', 'source_count': manifest['source_count']}
     try:
@@ -90,14 +96,17 @@ def run(inputs, output, seconds=10800, workers=1, model='gemma3:4b'):
         environment = {**os.environ, 'HF_HUB_OFFLINE': '1', 'TRANSFORMERS_OFFLINE': '1',
                        'USE_TF': '0', 'TRANSFORMERS_NO_TF': '1', 'TOKENIZERS_PARALLELISM': 'false',
                        'OMP_NUM_THREADS': '4', 'MKL_NUM_THREADS': '4'}
-        command = [sys.executable, str(ROOT/'unidomain_ollama_fusion.py'),
+        command = [sys.executable, '-m', 'unidomain',
             '--input', str((output/'inputs').resolve()), '--output', str((output/'fusion').resolve()),
             '--cache-dir', str((output/'cache').resolve()), '--model', model,
-            '--num-workers', str(workers), '--predicate-threshold', '0.3', '--operator-threshold', '0.3']
+            '--num-workers', str(workers), '--predicate-threshold', '0.3', '--operator-threshold', '0.3',
+            '--namespace-policy', namespace_policy]
+        if record_http_attempts:
+            command.extend(['--attempt-ledger', str((output/'http_attempts.jsonl').resolve())])
         save(output/'command.json', {'argv': command, 'environment_overrides': {k: environment[k] for k in
               ('HF_HUB_OFFLINE', 'TRANSFORMERS_OFFLINE', 'USE_TF', 'TRANSFORMERS_NO_TF', 'TOKENIZERS_PARALLELISM', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS')}})
         with (output/'worker.log').open('w', encoding='utf-8') as log:
-            process = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=seconds, env=environment)
+            process = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=seconds, env=environment, cwd=ROOT)
         report.update(status='complete' if process.returncode == 0 else 'worker_error', returncode=process.returncode)
         validation = output/'fusion/validation.json'
         if validation.exists():
@@ -115,6 +124,11 @@ def run(inputs, output, seconds=10800, workers=1, model='gemma3:4b'):
         completed_fusion_nodes=len(list((output/'fusion/domain_fusion').glob('*/meta_domain.pddl'))),
         cached_responses=len(list((output/'cache/ollama').glob('*.json'))),
         limit='Parsing and full processing do not establish source preservation, alignment accuracy or narrative quality')
+    if record_http_attempts:
+        ledger = output/'http_attempts.jsonl'
+        report['http_attempt_ledger'] = {'path': 'http_attempts.jsonl',
+            'exists': ledger.exists(), 'sha256': sha(ledger) if ledger.exists() else None,
+            'scope': 'Opt-in observations; audit separately, retain incomplete intents. No historical cost reconstruction.'}
     save(output/'report.json', report)
     manifest.update(status=report['status'], finished_utc=report['finished_utc'])
     save(output/'manifest.json', manifest)
@@ -128,6 +142,9 @@ if __name__ == '__main__':
     parser.add_argument('--seconds', type=float, default=10800)
     parser.add_argument('--workers', type=int, default=1)
     parser.add_argument('--model', default='gemma3:4b')
+    parser.add_argument('--namespace-policy', choices=('raw', 'category_qualified'), default='raw')
+    parser.add_argument('--record-http-attempts', action='store_true',
+                        help='Freeze an opt-in fresh client attempt ledger, without prompts or answers')
     args = parser.parse_args()
-    result = run(args.inputs, args.output, args.seconds, args.workers, args.model)
+    result = run(args.inputs, args.output, args.seconds, args.workers, args.model, args.namespace_policy, args.record_http_attempts)
     print(json.dumps(result, indent=2))

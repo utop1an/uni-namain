@@ -8,8 +8,35 @@ from pathlib import Path
 from scripts.experiments.replay_source_probes import read, sha
 
 
+def resolve_report_path(path):
+    """Locate moved paper evidence without rewriting frozen index contents."""
+    path = Path(path)
+    if path.exists():
+        return path
+    root = Path(__file__).resolve().parents[2]
+    try:
+        relative = path.resolve().relative_to(root).as_posix()
+    except ValueError:
+        return path
+    if relative.startswith('data/'):
+        archive = root / 'archive/research-data-v1/data'
+        candidate = (archive / relative.removeprefix('data/')).resolve()
+        if candidate.is_relative_to(archive) and candidate.is_file():
+            return candidate
+    relocations = root / 'paper/records/relocation.json'
+    if not relative.startswith('paper/') or not relocations.is_file():
+        return path
+    for original, relocated in read(relocations)['paths'].items():
+        if relative == original or relative.startswith(original + '/'):
+            target = (root / (relocated + relative[len(original):])).resolve()
+            if not target.is_relative_to(root / 'paper'):
+                raise ValueError('Relocated evidence escapes paper folder')
+            return target
+    return path
+
+
 def checked_report(entry):
-    path=Path(entry['path'])
+    path=resolve_report_path(entry['path'])
     if sha(path)!=entry['sha256']:
         raise ValueError('Pinned report changed: '+str(path))
     report=read(path)
@@ -33,6 +60,7 @@ def checked_report(entry):
 def build(index_path,output):
     if output.exists() and any(output.iterdir()):
         raise ValueError('Use an empty output directory')
+    index_path=resolve_report_path(index_path)
     index=read(index_path)
     results={}
     for role,entry in index['reports'].items():

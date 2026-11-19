@@ -11,8 +11,14 @@ from .pddl import section
 
 
 def select_component(metadata, domain, problem, source):
+    """Select the union of components for explicitly declared goal sources.
+
+    A string retains the original single-source contract. A nonempty sequence
+    declares a composed goal; no source is inferred from names or initial facts.
+    """
     sources = set(metadata['sources'])
-    if source not in sources:
+    seeds = {source} if isinstance(source, str) else set(source)
+    if not seeds or not seeds <= sources:
         raise ValueError('Unknown original-world source')
     if metadata.get('method') != 'explicit_predicate_alignment_with_type_membership':
         raise ValueError('Selection requires membership-compiled provenance')
@@ -26,6 +32,18 @@ def select_component(metadata, domain, problem, source):
         raise ValueError('Explicit initial state required')
     roots = {s: metadata['type_guards'][metadata['namespaces'][s]['types']['object']]
              for s in sources}
+    positive_facts = {tuple(fact) for fact in facts[1:] if isinstance(fact, list)
+                      and all(isinstance(term, str) for term in fact)}
+    required_constants = {tuple(fact) for fact in metadata.get('constant_membership_facts', [])}
+    # Constant literals need no action-parameter guard. Their source roots must
+    # therefore be present before disjoint-universe pruning can be sound.
+    for owner, table in metadata.get('constant_maps', {}).items():
+        if owner not in roots:
+            raise ValueError('Unknown source constant owner')
+        required_constants.update((roots[owner], constant) for constant in table.values())
+    missing_constants = required_constants - positive_facts
+    if missing_constants:
+        raise ValueError('Declared source constant membership facts missing: ' + str(sorted(missing_constants)))
     universes = {s: {fact[1] for fact in facts[1:]
                      if isinstance(fact, list) and len(fact) == 2 and fact[0] == root}
                  for s, root in roots.items()}
@@ -35,12 +53,14 @@ def select_component(metadata, domain, problem, source):
         if any(fact[1] not in universes[s] for fact in facts[1:]
                if isinstance(fact, list) and len(fact) == 2 and fact[0] in local_guards):
             raise ValueError('Subtype membership lacks source-root membership')
-    # This policy is for an original source goal. A multi-source request needs
-    # multiple seed components, rather than silently discarding goal vocabulary.
+    # Validate each goal atom against a declared source, including its universe.
     if 'predicate_maps' in metadata:
-        allowed = set(metadata['predicate_maps'][source].values())
-        allowed.update(metadata['type_guards'][t]
-                       for t in metadata['namespaces'][source]['types'].values())
+        allowed_by_source = {}
+        for seed in seeds:
+            allowed = set(metadata['predicate_maps'][seed].values())
+            allowed.update(metadata['type_guards'][t]
+                           for t in metadata['namespaces'][seed]['types'].values())
+            allowed_by_source[seed] = allowed
         def check_goal(expr):
             head = expr[0]
             if head in ('and', 'or', 'not', 'imply'):
@@ -49,9 +69,11 @@ def select_component(metadata, domain, problem, source):
             elif head in ('forall', 'exists'):
                 check_goal(expr[2])
             else:
-                if head != '=' and head not in allowed:
+                owners = seeds if head == '=' else {s for s in seeds if head in allowed_by_source[s]}
+                if not owners:
                     raise ValueError('Goal is outside the original source component')
-                if any(not term.startswith('?') and term not in universes[source] for term in expr[1:]):
+                if not any(all(term.startswith('?') or term in universes[s]
+                               for term in expr[1:]) for s in owners):
                     raise ValueError('Goal contains a foreign object')
         goal = section(problem, ':goal')
         if goal is None:
@@ -76,7 +98,7 @@ def select_component(metadata, domain, problem, source):
                               'overlapping_objects': overlap, 'retain_dependency': active,
                               'reason': 'nullary_or_overlapping_universe' if active
                               else 'positive_arity_disjoint_static_source_universes'})
-    chosen = {source}
+    chosen = set(seeds)
     while True:
         expanded = chosen | set().union(*(adjacency[s] for s in chosen))
         if expanded == chosen:
@@ -94,9 +116,12 @@ def select_component(metadata, domain, problem, source):
         if len(members) >= 2:
             projected['type_groups'].append({**group, 'members': members})
     certificate = {'policy': 'static_source_universe_components_v1',
-        'source': source, 'selected_sources': sorted(chosen), 'excluded_sources': sorted(sources - chosen),
+        'source': source if isinstance(source, str) else None,
+        'goal_sources': sorted(seeds),
+        'selected_sources': sorted(chosen), 'excluded_sources': sorted(sources - chosen),
         'source_universes': {s: sorted(v) for s, v in sorted(universes.items())},
         'interface_edges': edges, 'action_subset_selection': False,
+        'required_constant_membership_facts_checked': len(required_constants),
         'scope': 'Requires compiler-enforced source scopes and immutable membership; no semantic interface labels. '
                  'Excluded components cannot read or write retained interface tuples. Foreign independent actions may be removed; '
                  'this is a goal-reachability component reduction, not full-state trace equivalence.'}

@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 from rcnc.validation import validate_artifacts
+from rcnc.domain_building import planning_domain_path
 
 
 def read(path):
@@ -39,7 +40,7 @@ def compare(composed, downward, output):
         original = composed/'runs'/key
         new = downward/'tasks'/key
         source_manifest = read(original/'manifest.json')
-        problems = [(original/'union/meta_domain.pddl', new/'domain.pddl', 'domain_sha256'),
+        problems = [(planning_domain_path(original, source_manifest), new/'domain.pddl', 'domain_sha256'),
                     (original/'mapped_problem.pddl', new/'problem.pddl', 'problem_sha256')]
         failures = []
         for source, target, field in problems:

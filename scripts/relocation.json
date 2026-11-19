@@ -18,7 +18,7 @@
     },
     {
       "original_path": "audit_conditional_prefixes.py",
-      "current_path": "scripts/audit/audit_conditional_prefixes.py",
+      "current_path": "archive/scripts/audit/audit_conditional_prefixes.py",
       "original_sha256": "de0ae3fa55b77d8395e2c478a52a839b2155063f06ce3394013597c37acac9f9"
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "original_path": "build_rcnc_frozen.py",
-      "current_path": "scripts/experiments/build_rcnc_frozen.py",
+      "current_path": "archive/rcnc/build_rcnc_frozen.py",
       "original_sha256": "d026f4795a9e7ec6768d9142e6c48b53e1bc6f4300fa7be07d3b58c38e34d91a"
     },
     {
@@ -173,7 +173,7 @@
     },
     {
       "original_path": "run_rcnc_frozen.py",
-      "current_path": "scripts/experiments/run_rcnc_frozen.py",
+      "current_path": "archive/rcnc/run_rcnc_frozen.py",
       "original_sha256": "a2508bed7eccf19f614782fcc6b8052021abe7406e19c443769b30a3b3ebc813"
     },
     {
@@ -240,6 +240,252 @@
       "original_path": "validate_type_encoding.py",
       "current_path": "scripts/validation/validate_type_encoding.py",
       "original_sha256": "a30b2006285b8eb64ddbd58e54f28d011f6e696a2c75bf45c9eac37854753eb9"
+    },
+    {
+      "original_path": "scripts/audit/audit_acco_birt_case.py",
+      "current_path": "archive/scripts/audit/audit_acco_birt_case.py",
+      "original_sha256": "126e9587c40d526228b5fbf478448a26927769439e6c522e08709c225607ea92"
+    },
+    {
+      "original_path": "scripts/audit/audit_conditional_prefixes.py",
+      "current_path": "archive/scripts/audit/audit_conditional_prefixes.py",
+      "original_sha256": "9d3aa5102fe703077b0f6b560249b2a0159acb912729cf8bbf249e2df491143e"
+    },
+    {
+      "original_path": "scripts/audit/audit_snow_long_case.py",
+      "current_path": "archive/scripts/audit/audit_snow_long_case.py",
+      "original_sha256": "68430c2dd994cc6084db875d3bff5931a1f6985d7c557913abb0c30b4cf17c8a"
+    },
+    {
+      "original_path": "scripts/audit/audit_snow_roles_case.py",
+      "current_path": "archive/scripts/audit/audit_snow_roles_case.py",
+      "original_sha256": "30b2799ef6c2a92d96e7ec5b2e03e8b9f1eb5d16a341a1e2fd18f2c70d6293d9"
+    },
+    {
+      "original_path": "scripts/audit/recheck_component_admission.py",
+      "current_path": "archive/scripts/audit/recheck_component_admission.py",
+      "original_sha256": "084cbbdb6e590acb3923a6ef3aef408c2121d62a2ecfc8dcb93fcd8397dcddc1"
+    },
+    {
+      "original_path": "scripts/evidence/build_composed_selection_results.py",
+      "current_path": "archive/scripts/evidence/build_composed_selection_results.py",
+      "original_sha256": "53ac1d88c12540745d505977a83d0d98792a7e2fd26bc249fefd4582e1a10f7c"
+    },
+    {
+      "original_path": "scripts/evidence/build_selection_results.py",
+      "current_path": "archive/scripts/evidence/build_selection_results.py",
+      "original_sha256": "adc235db85f53b35423e54be8067e662ac2dbfaff2a6d7a3eec176f018af346b"
+    },
+    {
+      "original_path": "scripts/evidence/build_snow_long_delivery.py",
+      "current_path": "archive/scripts/evidence/build_snow_long_delivery.py",
+      "original_sha256": "d33d03050385d9e17e86502b265e0d92788a7909938c73e3446dcb855d52099e"
+    },
+    {
+      "original_path": "scripts/evidence/render_acco_birt_case.py",
+      "current_path": "archive/scripts/evidence/render_acco_birt_case.py",
+      "original_sha256": "5d4ba75fd736256b375d46d5c299723650059963d67bece26e273480c672db3e"
+    },
+    {
+      "original_path": "scripts/evidence/render_meeting_brief.py",
+      "current_path": "archive/scripts/evidence/render_meeting_brief.py",
+      "original_sha256": "e626c727c4d55fc5fcc97013b07927b27f203c950970816b3b17d29c67c50752"
+    },
+    {
+      "original_path": "scripts/evidence/render_selection_brief.py",
+      "current_path": "archive/scripts/evidence/render_selection_brief.py",
+      "original_sha256": "37b3223f2940e9822fae3f3d4159f6ecc81e7ee205253e57439c1410b85ec0dd"
+    },
+    {
+      "original_path": "scripts/evidence/render_snow_long_case.py",
+      "current_path": "archive/scripts/evidence/render_snow_long_case.py",
+      "original_sha256": "385f6a2a968ec24fc0dc8dea42a00c67f80de4a49e8f94c08ba81bed9b3c5edf"
+    },
+    {
+      "original_path": "scripts/evidence/render_snow_roles_case.py",
+      "current_path": "archive/scripts/evidence/render_snow_roles_case.py",
+      "original_sha256": "b223b03e686ab509059a251236f750f810887b642ab06cb186ccc007f97bf26b"
+    },
+    {
+      "original_path": "scripts/experiments/build_rcnc_frozen.py",
+      "current_path": "archive/rcnc/build_rcnc_frozen.py",
+      "original_sha256": "fb827f1b71c97139672af8d5844d37cdf0ee854f0c013d8a76379b40bdd9fbbf"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_acco_birt_case.py",
+      "current_path": "archive/scripts/experiments/prepare_acco_birt_case.py",
+      "original_sha256": "73e6fc3a3f34faa4f1c97cff444f04c74b21ae6c022e10ed4a9b75072bb2d9e0"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_component_action_selection.py",
+      "current_path": "archive/scripts/experiments/prepare_component_action_selection.py",
+      "original_sha256": "2bd63ca2d2f42c33a198dbda255df1c8a4737615aad3f798a36a11b226ab1eb8"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_composed_selection.py",
+      "current_path": "archive/scripts/experiments/prepare_composed_selection.py",
+      "original_sha256": "26306e845309a5fd939b8d7ce93654d083cbc62fbf83eae5331b424bc1c079c5"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_meeting_selection.py",
+      "current_path": "archive/scripts/experiments/prepare_meeting_selection.py",
+      "original_sha256": "97f9d641b9e22406d6870723cec126dc1257c2f341edd53e7fe18cfaba8e17dc"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_snow_long_case.py",
+      "current_path": "archive/scripts/experiments/prepare_snow_long_case.py",
+      "original_sha256": "7bfde76f751fc81010953f2067db4cac0dc5a4f72c3484bc8a885c5ed89d1c07"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_snow_roles_case.py",
+      "current_path": "archive/scripts/experiments/prepare_snow_roles_case.py",
+      "original_sha256": "d4cdf6fa26a53734fd920ca1185ebe2c81325be6f0a5d1dbc25519ee1f36955a"
+    },
+    {
+      "original_path": "scripts/experiments/prepare_world_selection.py",
+      "current_path": "archive/scripts/experiments/prepare_world_selection.py",
+      "original_sha256": "dda0e8ef406df065202d40076e0b568698b9108a589666e3bb8bcd11acdbe309"
+    },
+    {
+      "original_path": "scripts/experiments/replay_meeting_original_goals.py",
+      "current_path": "archive/scripts/experiments/replay_meeting_original_goals.py",
+      "original_sha256": "a590af00393218431e2b00498e5ca44d1e1f22beb8bc8e56aafb316eaa368ee5"
+    },
+    {
+      "original_path": "scripts/experiments/replay_world_selected_goals.py",
+      "current_path": "archive/scripts/experiments/replay_world_selected_goals.py",
+      "original_sha256": "037eedef87f1b83a0b9e9e5252b11fa41adcaccdca35d2898eb64e97ff506b0f"
+    },
+    {
+      "original_path": "scripts/experiments/run_meeting_comparison.py",
+      "current_path": "archive/scripts/experiments/run_meeting_comparison.py",
+      "original_sha256": "7d4e53df8b7a324d41d8b3b1962b306592a239b055605abc6afb96b3e7d6bbed"
+    },
+    {
+      "original_path": "scripts/experiments/run_meeting_followups.py",
+      "current_path": "archive/scripts/experiments/run_meeting_followups.py",
+      "original_sha256": "4da9bb0f88cf54e1a4e6dad6d399da6b997f7a778172066c08ccf9c8c1a4f7ad"
+    },
+    {
+      "original_path": "scripts/experiments/run_rcnc_frozen.py",
+      "current_path": "archive/rcnc/run_rcnc_frozen.py",
+      "original_sha256": "84891810d0ae4dbddce1ec1f0fcd954ad19cd99ea9afc5286e5f6fbc8ca7da30"
+    },
+    {
+      "original_path": "build_aligned_domain.py",
+      "current_path": "archive/entrypoints/build_aligned_domain.py",
+      "original_sha256": "c079b3fe9fb376415250df6ab85bb75723d543b7421148222ed98bb8f640b8ce"
+    },
+    {
+      "original_path": "build_narrative_union.py",
+      "current_path": "archive/entrypoints/build_narrative_union.py",
+      "original_sha256": "c7c04e953067a624b4c63edd56cb7060c8bc728669e84c22ba8314fe0f84b675"
+    },
+    {
+      "original_path": "run_narrative_pipeline.py",
+      "current_path": "archive/entrypoints/run_narrative_pipeline.py",
+      "original_sha256": "626b96c22b40eb2d4562428e2c7cc6e6ac85c1faf3194ec4194f0a5ea67e27da"
+    },
+    {
+      "original_path": "unidomain_ollama_fusion.py",
+      "current_path": "archive/entrypoints/unidomain_ollama_fusion.py",
+      "original_sha256": "4e8c448cc5731c850219b6e09a507cb55edee9caea240376b061759003868a5c"
+    },
+    {
+      "original_path": "requirements-fusion.txt",
+      "current_path": "archive/requirements/requirements-fusion.txt",
+      "original_sha256": "dc2fee8fbefdac17df0994e64ca2ab961671f0591518c7e060dd4ff6f9071cab"
+    },
+    {
+      "original_path": "requirements-heuristic-planning.txt",
+      "current_path": "archive/requirements/requirements-heuristic-planning.txt",
+      "original_sha256": "62f09484a622310b3b70df6bf3ad338361bc9628c8d399728c6bfa3b670ef919"
+    },
+    {
+      "original_path": "requirements-planning.txt",
+      "current_path": "archive/requirements/requirements-planning.txt",
+      "original_sha256": "3db569ed0a99c71d008be2e07d96c804436de1df01d54e8c1fc3e86e6669b50a"
+    },
+    {
+      "original_path": "requirements-schema-validation.txt",
+      "current_path": "archive/requirements/requirements-schema-validation.txt",
+      "original_sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_clause_normalization.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_clause_normalization.py",
+      "original_sha256": "ac311231662ded916e60cecd9a0f7e282aa78bb25d3e4044b37e6b6818ac9543"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_cpocl_export.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_cpocl_export.py",
+      "original_sha256": "ee97290fcefbc64c0341e6dd65cdb26ce672603778d957c38b67aeba2725a3dc"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_grounded_initialization.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_grounded_initialization.py",
+      "original_sha256": "3a983739d3c355e8a3b8ed82926f450ba48f527aeda853f4fcbcfd308230272f"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_initialization.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_initialization.py",
+      "original_sha256": "65ad08b23a23ba63dbb49b520bac18354e0c1220080a446d098e325fddc43cdc"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_initialization_refined.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_initialization_refined.py",
+      "original_sha256": "90781667eeded77625cf4da51ca9209f4d3b29ceeb62dc3273acc9c6bf921739"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_intention_reader.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_intention_reader.py",
+      "original_sha256": "27701b905916dd6e25897e2efcb3c75f8f2d4a127a1bc436fcf91dcc7630103d"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_lazy_intentions.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_lazy_intentions.py",
+      "original_sha256": "1fa3c3967e36373ff52952c3a62324c5d6581900b46e2ce7ce13a3c1c4f4b32c"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_optimized.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_optimized.py",
+      "original_sha256": "4d97e3f71d6ff1b8e74fb390649302cec88271d5607bc5fcc71b5d8ab62f9daf"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_pressure_runtime.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_pressure_runtime.py",
+      "original_sha256": "58e59b06d3cf808e0744f51863d70b137432742c744a790dcf3ebf940365dac0"
+    },
+    {
+      "original_path": "scripts/experiments/build_glaive_step_hash.py",
+      "current_path": "archive/scripts/diagnostics/build_glaive_step_hash.py",
+      "original_sha256": "7c96d6ad935acb4f6d0e857b6bbeaf8931a6622d1c2edc51fb954ce37c1dff2e"
+    },
+    {
+      "original_path": "scripts/experiments/profile_glaive_presearch.py",
+      "current_path": "archive/scripts/diagnostics/profile_glaive_presearch.py",
+      "original_sha256": "b5fa085505b7f8e45859334327dd8c57b7b302dde957cad097f0c11884c7d194"
+    },
+    {
+      "original_path": "scripts/experiments/profile_glaive_remaining.py",
+      "current_path": "archive/scripts/diagnostics/profile_glaive_remaining.py",
+      "original_sha256": "0bbb94551043d5e897b89713a0f9eec7d7aeca5e8462c25e42f5d56f2013c005"
+    },
+    {
+      "original_path": "scripts/experiments/profile_state_projection.py",
+      "current_path": "archive/scripts/diagnostics/profile_state_projection.py",
+      "original_sha256": "1f99b6a5e32f8c0ff374fb79fab035260c818507e9ec3b232129bf2f30e99718"
+    },
+    {
+      "original_path": "scripts/evidence/render_revised_repeat_paper.py",
+      "current_path": "archive/scripts/evidence/render_revised_repeat_paper.py",
+      "original_sha256": "589987332802af1a02fbe6447fb8981446ab592f3a87d656de3463913aff6f16"
+    },
+    {
+      "original_path": "scripts/experiments/run_translation_diagnostics.py",
+      "current_path": "archive/scripts/diagnostics/run_translation_diagnostics.py",
+      "original_sha256": "6fc0cecc714fe5259a2c449e5c3759ac9c7131258b03707a4a5d8f967f0c9b14"
     }
-  ]
+  ],
+  "last_updated": "2026-11-18"
 }

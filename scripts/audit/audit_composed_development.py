@@ -3,6 +3,7 @@ import argparse
 from collections import Counter, defaultdict
 import hashlib
 import json
+from rcnc.domain_building import planning_domain_path
 from pathlib import Path
 
 from rcnc.pddl import parse_sexpr, section, serialize
@@ -77,7 +78,7 @@ def audit(directory, output):
             if result['status'] in ('rejected', 'error', 'worker_error', 'artifact_changed', 'running'):
                 failures.append('pipeline_did_not_produce_a_stable_search_result')
             frozen = read(run/'manifest.json')
-            domain, problem = run/'union/meta_domain.pddl', run/'mapped_problem.pddl'
+            domain, problem = planning_domain_path(run, frozen), run/'mapped_problem.pddl'
             if sha(domain) != frozen['domain_sha256'] or sha(problem) != frozen['problem_sha256']:
                 failures.append('export_hash_mismatch')
             model_hashes[(task['method'], task['policy'])].add(sha(domain))

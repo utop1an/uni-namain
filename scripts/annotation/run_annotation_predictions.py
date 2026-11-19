@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import hashlib
 import itertools
 import json
+import math
 from pathlib import Path
 import time
 import urllib.request
@@ -22,6 +23,10 @@ right_from_left[j] is the left argument index supplying right argument j. Give i
 Explain each role and limits in rationale. Cite supplied action record IDs and exact excerpts containing the predicate occurrence on BOTH sides for definite labels.
 Do not invent story facts. These are unverified machine hypotheses, never independent annotations or permission to merge.
 Return only the requested JSON object.'''
+
+
+class _TotalBudgetExhausted(Exception):
+    pass
 
 
 def response_schema(item, policy='free_fields'):
@@ -94,7 +99,12 @@ def request_json(url, payload=None, timeout=240):
         return json.load(result)
 
 
-def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free_fields'):
+def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free_fields', total_seconds=None):
+    if total_seconds is not None and (type(total_seconds) not in (int, float)
+                                      or not math.isfinite(total_seconds) or total_seconds <= 0):
+        raise ValueError('Total seconds budget must be finite and positive')
+    if replay and total_seconds is not None:
+        raise ValueError('Replay preserves original budget outcomes; do not impose a new live budget')
     if output.exists() and any(output.iterdir()):
         raise ValueError('Use an empty output directory')
     packet = json.loads(packet_path.read_text(encoding='utf-8'))
@@ -110,6 +120,11 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
              [Path(__file__), Path(__file__).resolve().parents[2]/'rcnc/interface_annotation.py']},
         'started_utc': datetime.now(timezone.utc).isoformat(), 'source': 'machine_predictions_not_human_annotations',
         'context_byte_limit': 48000, 'request_timeout_seconds': 240, 'automatic_alignment_adoption': False}
+    manifest.update(total_budget_seconds=total_seconds,
+        stop_rule='No new request after total deadline; unrequested candidates retained as budget_exhausted',
+        budget_enforcement='Request-admission deadline and remaining socket timeout; response processing or active I/O may finish after deadline',
+        workers=1, execution_kind='offline_replay' if replay else 'local_model',
+        row_request_attempted_provenance='origin_run' if replay else 'current_run')
     save(output/'manifest.json', manifest)
     save(output/'schemas.json', schemas)
     implementation = output/'implementation'
@@ -121,7 +136,9 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
             raise ValueError('Code changed while freezing prediction run')
         (implementation/path.name).write_bytes(content)
     start = time.perf_counter()
+    deadline = None if total_seconds is None else start + total_seconds
     rows = []
+    requests_attempted = 0
     try:
         if replay:
             old = json.loads((replay/'manifest.json').read_text(encoding='utf-8'))
@@ -130,8 +147,15 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
             if old.get('schema_policy', 'free_fields') != schema_policy:
                 raise ValueError('Replay schema policy mismatch')
             manifest['origin_manifest'] = old
+            origin = old
+            while isinstance(origin, dict):
+                if origin.get('model_digest'):
+                    manifest['model_digest'] = origin['model_digest']
+                    manifest['model_digest_provenance'] = 'replay_origin_not_live_verification'
+                    break
+                origin = origin.get('origin_manifest')
         else:
-            tags = request_json(base+'/api/tags', timeout=10)
+            tags = request_json(base+'/api/tags', timeout=min(10, total_seconds) if total_seconds else 10)
             installed = next((m for m in tags.get('models', []) if m['name'] == model), None)
             if installed is None or installed.get('remote_host') or installed.get('remote_model') or 'cloud' in model:
                 raise ValueError('Only an already installed local model is permitted')
@@ -141,11 +165,19 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
         for item in packet['items']:
             directory = output/item['id']
             directory.mkdir()
-            row = {'candidate_id': item['id']}
+            row = {'candidate_id': item['id'], 'request_attempted': False}
             context = json.dumps(item, ensure_ascii=False)
             try:
+                prior = json.loads((replay/item['id']/'report.json').read_text(encoding='utf-8')) if replay else None
+                if prior is not None:
+                    row['request_attempted'] = prior.get('request_attempted', prior['status'] not in ('budget_exhausted', 'context_budget_excluded'))
+                remaining = None if deadline is None else deadline - time.perf_counter()
                 if len(context.encode()) > manifest['context_byte_limit']:
                     row['status'] = 'context_budget_excluded'
+                elif prior and prior['status'] == 'budget_exhausted':
+                    row.update(status='budget_exhausted', reason=prior.get('reason', 'total_wall_budget_exhausted'))
+                elif remaining is not None and remaining <= 0:
+                    row.update(status='budget_exhausted', reason='total_wall_budget_exhausted')
                 else:
                     payload = {'model': model, 'stream': False, 'format': schemas[item['id']], 'options': options,
                         'messages': [{'role': 'system', 'content': PROMPT}, {'role': 'user', 'content': context}]}
@@ -154,13 +186,20 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
                         saved_request = json.loads((replay/item['id']/'request.json').read_text(encoding='utf-8'))
                         if saved_request != payload:
                             raise ValueError('Replay request/schema mismatch')
-                        prior = json.loads((replay/item['id']/'report.json').read_text(encoding='utf-8'))
                         if prior['status'] == 'failed':
                             row.update(status='failed', error=prior.get('error'), replayed_origin_failure=True)
                         else:
                             response = json.loads((replay/item['id']/'response.json').read_text(encoding='utf-8'))
                     else:
-                        raw = request_json(base+'/api/chat', payload)
+                        timeout = manifest['request_timeout_seconds']
+                        if deadline is not None:
+                            remaining = deadline - time.perf_counter()
+                            if remaining <= 0:
+                                raise _TotalBudgetExhausted()
+                            timeout = min(timeout, remaining)
+                        requests_attempted += 1
+                        row['request_attempted'] = True
+                        raw = request_json(base+'/api/chat', payload, timeout=timeout)
                         save(directory/'raw_response.json', raw)
                         if raw.get('done') is not True or raw.get('done_reason') == 'length':
                             raise ValueError('Incomplete or token-truncated response')
@@ -169,6 +208,8 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
                         save(directory/'response.json', response)
                         errors = check_response(packet, item, response)
                         row.update(status='invalid' if errors else 'checked', response=response, errors=errors)
+            except _TotalBudgetExhausted:
+                row.update(status='budget_exhausted', reason='total_wall_budget_exhausted')
             except Exception as exc:
                 row.update(status='failed', error=f'{type(exc).__name__}: {exc}')
             rows.append(row)
@@ -182,6 +223,10 @@ def run(packet_path, output, model='gemma3:4b', replay=None, schema_policy='free
     except Exception as exc:
         report = {'status': 'failed', 'error': f'{type(exc).__name__}: {exc}', 'total': len(packet['items']), 'processed': len(rows), 'rows': rows}
     report.update(elapsed_seconds=time.perf_counter()-start, packet_sha256=digest(packet),
+                  requests_attempted=requests_attempted, replay=bool(replay),
+                  budget_exhausted_count=sum(r['status'] == 'budget_exhausted' for r in rows),
+                  all_candidates_requested=not replay and report['status'] == 'complete' and not any(r['status'] in ('budget_exhausted', 'context_budget_excluded') for r in rows)
+                      and len(rows) == len(packet['items']),
                   limit='Full processing coverage is not semantic accuracy; no gold annotations available')
     save(output/'report.json', report)
     manifest.update(status=report['status'], finished_utc=datetime.now(timezone.utc).isoformat())
@@ -196,6 +241,7 @@ if __name__ == '__main__':
     parser.add_argument('--model', default='gemma3:4b')
     parser.add_argument('--replay', type=Path)
     parser.add_argument('--schema-policy', choices=['free_fields', 'coupled_fields'], default='free_fields')
+    parser.add_argument('--total-seconds', type=float, help='Total live-run budget; keep unrequested rows as budget_exhausted')
     args = parser.parse_args()
-    result = run(args.packet, args.output, args.model, args.replay, args.schema_policy)
+    result = run(args.packet, args.output, args.model, args.replay, args.schema_policy, args.total_seconds)
     print(json.dumps({k: v for k, v in result.items() if k != 'rows'}, indent=2))

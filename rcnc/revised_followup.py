@@ -89,6 +89,11 @@ def write_native_fixture(source, spec, problem_path, plan_path):
 
 def authored_problem(sources, meta, scenario, path, *, active_sources=None, separate_identity=False):
     """Export only an explicit scenario's facts, identity mapping and intentions."""
+    if meta.get('type_encoding') == 'native_shared':
+        if separate_identity:
+            raise ValueError('Shared-type worlds use explicit object identities; declare distinct objects in the world')
+        from .shared_types import map_world
+        return map_world(meta, scenario, path, active_sources=active_sources)
     if 'facts' not in scenario: raise ValueError('needs_initial_state')
     if 'objects' not in scenario or 'goal' not in scenario: raise ValueError('Explicit objects and goal required')
     sources={s.id:s for s in sources}

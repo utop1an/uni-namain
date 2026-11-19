@@ -65,7 +65,7 @@ def freeze(inputs, output, seconds=60):
                               'method': method, 'policy': policy, 'query': query})
     implementation = {p.relative_to(ROOT).as_posix(): sha(p) for p in
         [ROOT/'scripts/experiments/run_composed_development.py', ROOT/'rcnc/aligned_domain.py', ROOT/'rcnc/domain_union.py',
-         ROOT/'rcnc/pddl.py', ROOT/'rcnc/pddl_checks.py', ROOT/'run_narrative_pipeline.py',
+         ROOT/'rcnc/pddl.py', ROOT/'rcnc/pddl_checks.py', ROOT/'rcnc/__main__.py',
          *sorted((ROOT/'rcnc').glob('*.py'))]}
     manifest = {'version': 1, 'status': 'frozen_before_search', 'task_count': len(tasks),
         'scope': 'Authored matched-world development cases using observed source domains; not independent test or narrative-quality evaluation',

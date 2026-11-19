@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from rcnc.pddl import parse_sexpr, serialize
+from rcnc.domain_building import planning_domain_path
 from scripts.experiments.run_downward_reference import sha, save
 from unified_planning.io import PDDLReader
 
@@ -32,7 +33,7 @@ def freeze(origin, output):
         meta_path = source/'union/meta_domain.json'
         metadata = json.loads(meta_path.read_text(encoding='utf-8'))
         manifest = json.loads((source/'manifest.json').read_text(encoding='utf-8'))
-        domain, problem = source/'union/meta_domain.pddl', source/'mapped_problem.pddl'
+        domain, problem = planning_domain_path(source, manifest), source/'mapped_problem.pddl'
         if sha(domain) != manifest['domain_sha256'] or sha(problem) != manifest['problem_sha256']:
             raise ValueError('Origin exported task changed')
         if set(metadata['action_maps']) != {'ACCO', 'BIRT'}:

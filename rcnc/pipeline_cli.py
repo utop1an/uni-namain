@@ -7,8 +7,8 @@ from .narrative_pipeline import run
 from .planning_worker import run_worker
 
 
-def main():
-    p = argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, prog=None):
+    p = argparse.ArgumentParser(prog=prog, description=__doc__)
     p.add_argument('--input', type=Path, default=Path('data/narra-domains'))
     p.add_argument('--query', type=Path)
     p.add_argument('--alignment', type=Path, help='Optional explicit, versioned alignment assumptions')
@@ -17,9 +17,9 @@ def main():
     p.add_argument('--domain', type=Path, help=argparse.SUPPRESS)
     p.add_argument('--problem', type=Path, help=argparse.SUPPRESS)
     p.add_argument('--budget', help=argparse.SUPPRESS)
-    p.add_argument('--solver', choices=['typed_cartesian', 'pyperplan'], default='typed_cartesian', help=argparse.SUPPRESS)
+    p.add_argument('--solver', choices=['typed_cartesian', 'pyperplan', 'fast_downward', 'state_projected'], default='typed_cartesian', help=argparse.SUPPRESS)
     p.add_argument('--mode', choices=['initial_goal', 'initial_only'], default='initial_goal', help=argparse.SUPPRESS)
-    a = p.parse_args()
+    a = p.parse_args(argv)
     if a.worker:
         run_worker(a)
     else:

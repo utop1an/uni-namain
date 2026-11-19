@@ -2,6 +2,18 @@
 from pathlib import Path
 
 
+def reconstruct_plan(parents, state):
+    """Recover the discovery-order actions from a search's parent links."""
+    from unified_planning.plans import SequentialPlan
+
+    steps = []
+    while parents[state] is not None:
+        state, step = parents[state]
+        steps.append(step)
+    steps.reverse()
+    return SequentialPlan(steps)
+
+
 def prepare_artifacts(domain, problem_path, output):
     """Copy the unchanged model and problem before writing a candidate plan."""
     output = Path(output)

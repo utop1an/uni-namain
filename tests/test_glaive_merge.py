@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from rcnc.glaive_merge import Source, Unsupported, build, map_problem, translate_plan, action_fields
+from rcnc.glaive_merge import Source, Unsupported, build, map_problem, translate_plan, action_fields, rewrite
 from rcnc.conditional_merge import symbol_digest
 from rcnc.pddl import parse_domain, parse_sexpr, section, serialize
 
@@ -57,6 +57,36 @@ def environment_fixture(root):
 
 
 class GlaiveMergeTests(unittest.TestCase):
+    def test_singleton_junctions_preserve_nested_formula_meaning(self):
+        predicates = {'p': ('mapped_p', [0]), 'q': ('mapped_q', [0])}
+        expr = ['when', ['and', ['or', ['not', ['and', ['p', 'a']]]]],
+                ['and', ['intends', 'a', ['or', ['q', 'a']]]]]
+        self.assertEqual(rewrite(expr, None, predicates, {'a': 'mapped_a'}),
+                         ['when', ['not', ['mapped_p', 'mapped_a']],
+                          ['intends', 'mapped_a', ['mapped_q', 'mapped_a']]])
+        self.assertEqual(rewrite(['and'], None, predicates, {}), ['and'])
+        self.assertEqual(rewrite(['or'], None, predicates, {}), ['or'])
+        self.assertEqual(rewrite(['and', ['p', 'a'], ['q', 'a']], None, predicates, {}),
+                         ['and', ['mapped_p', 'a'], ['mapped_q', 'a']])
+
+    def test_singleton_export_in_actions_and_problem(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            sources, _ = environment_fixture(root)
+            s = sources[0]
+            s.domain_path.write_text(s.domain_path.read_text(encoding='utf-8').replace(
+                ':effect (done)', ':precondition (and (done)) :effect (and (done))'), encoding='utf-8')
+            s.problem_path.write_text(s.problem_path.read_text(encoding='utf-8').replace(
+                ':goal (done)', ':goal (and (or (done)))'), encoding='utf-8')
+            s = Source(s.id, s.domain_path, s.problem_path)
+            meta = build([s], root / 'merged')
+            map_problem([s], s.id, meta, root / 'problem.pddl')
+            f = action_fields(parse_domain(root / 'merged/domain.pddl').actions[s.id + '_a_happen'])
+            self.assertEqual(f[':effect'], [s.id + '_p_done'])
+            self.assertEqual(f[':precondition'], ['and', [s.id + '_active'], [s.id + '_p_done']])
+            goal = section(parse_sexpr((root / 'problem.pddl').read_text(encoding='utf-8')), ':goal')
+            self.assertEqual(goal, [':goal', [s.id + '_p_done']])
+
     def test_environment_actions_omit_empty_agents_and_default_true(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td); sources,groups=environment_fixture(root)
@@ -108,7 +138,10 @@ class GlaiveMergeTests(unittest.TestCase):
             root = Path(td); sources, _ = fixture(root); s = sources[0]
             text = s.domain_path.read_text()
             s.domain_path.write_text(text[:-1] + ' (:axiom :vars () :context (and) :implies (ready home)))')
-            with self.assertRaisesRegex(Unsupported, 'axioms'): Source(s.id, s.domain_path, s.problem_path)
+            with_axiom = Source(s.id, s.domain_path, s.problem_path)
+            m = build([with_axiom], root / 'with_axiom')
+            self.assertEqual(m['axiom_count'], 1)
+            self.assertIn(':axiom', (root / 'with_axiom/domain.pddl').read_text())
             s.domain_path.write_text(text)
             p = parse_sexpr(s.problem_path.read_text()); p.remove(section(p, ':init'))
             s.problem_path.write_text(serialize(p))

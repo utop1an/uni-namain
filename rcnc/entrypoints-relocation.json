@@ -8,11 +8,14 @@
     },
     {
       "original_path": "run_narrative_pipeline.py",
-      "current_path": "run_narrative_pipeline.py",
+      "current_path": "archive/entrypoints/run_narrative_pipeline.py",
       "original_sha256": "b0817591dddc81f9f916d12c2672f2936022dfd7f35f0eab493e0f6f05959160",
       "cli": "rcnc/pipeline_cli.py",
-      "worker": "rcnc/planning_worker.py"
+      "worker": "rcnc/planning_worker.py",
+      "active_entrypoint": "rcnc/__main__.py",
+      "active_command": "python -m rcnc plan"
     }
   ],
-  "scope": "Preserve structural checks, CLI arguments, worker dispatch, report/error and process-exit contracts; historical locks remain unchanged."
+  "scope": "Preserve structural checks, CLI arguments, worker dispatch, report/error and process-exit contracts; historical locks remain unchanged.",
+  "last_updated": "2026-11-02"
 }

@@ -33,7 +33,7 @@ def run(previous, output):
         tasks.append(task)
     implementations = ['scripts/experiments/run_initial_only_development.py', 'rcnc/outcome_planning.py',
         'rcnc/narrative_pipeline.py', 'rcnc/grounding.py', 'rcnc/state_grounding.py', 'rcnc/aligned_domain.py',
-        'rcnc/domain_union.py', 'rcnc/domain_building.py', 'run_narrative_pipeline.py', 'rcnc/pipeline_cli.py', 'rcnc/planning_worker.py', 'rcnc/validation.py']
+        'rcnc/domain_union.py', 'rcnc/domain_building.py', 'rcnc/__main__.py', 'rcnc/pipeline_cli.py', 'rcnc/planning_worker.py', 'rcnc/validation.py']
     manifest = {'parent_manifest_sha256': sha(previous/'frozen_tasks.json'),
                 'source_sha256': parent['source_sha256'], 'tasks': tasks,
                 'implementation_sha256': {p: sha(Path(p)) for p in implementations},

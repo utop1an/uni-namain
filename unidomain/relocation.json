@@ -8,5 +8,9 @@
     "pipeline": "unidomain/pipeline.py",
     "cli": "unidomain/cli.py"
   },
-  "scope": "Source organization only; preserve baseline prompts, cache keys, model options, fusion order and failure handling."
+  "scope": "Source organization only; preserve baseline prompts, cache keys, model options, fusion order and failure handling.",
+  "current_path": "archive/entrypoints/unidomain_ollama_fusion.py",
+  "active_entrypoint": "unidomain/__main__.py",
+  "active_command": "python -m unidomain",
+  "last_updated": "2026-11-02"
 }

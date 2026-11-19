@@ -18,7 +18,10 @@ def run(
     *,
     runtime: FusionRuntime,
     num_workers: int,
+    namespace_policy: str = 'raw',
 ) -> Domain:
+    if namespace_policy not in ('raw', 'category_qualified'):
+        raise ValueError('Unknown namespace export policy')
     paths = sorted(input_dir.glob("*_domainfile.pddl"), key=lambda path: path.name.lower())
     if not paths:
         raise ValueError(f"No domain files found in {input_dir}")
@@ -76,6 +79,7 @@ def run(
         "llm_provider": "Ollama",
         "node_workers": num_workers,
         "llm_model": runtime.llm.model,
+        "namespace_policy": namespace_policy,
     }
     (output_dir / "meta_domain.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False) + "\n",
@@ -95,13 +99,36 @@ def run(
         rewrite_problem(problem, merged, problem_dir / problem.name)
 
     errors = validate_domain(merged)
-    for problem in problem_dir.glob("*_problemfile.pddl"):
+    problems = sorted(problem_dir.glob("*_problemfile.pddl"))
+    for problem in problems:
         errors.extend(validate_problem(problem, merged))
-        from unified_planning.io import PDDLReader
+    planning_domain = output_dir / 'meta_domain.pddl'
+    planning_problems = problems
+    namespace_export = None
+    try:
+        if namespace_policy == 'category_qualified':
+            from rcnc.namespace_export import export_bundle
+            namespace_export = export_bundle(planning_domain, problems, output_dir / 'planning_export')
+            planning_domain = output_dir / 'planning_export/domain.pddl'
+            planning_problems = [output_dir / 'planning_export/problems' / p.name for p in problems]
+    except Exception as exc:
+        errors.append(f'namespace export failed: {type(exc).__name__}: {exc}')
+        planning_problems = []
+        planning_domain = None
+    from unified_planning.environment import Environment
+    from unified_planning.io import PDDLReader
+    parse_rows = []
+    for problem in ([None, *planning_problems] if planning_domain is not None else []):
+        identifier = problem.name if problem else 'domain_only'
         try:
-            PDDLReader().parse_problem(str(output_dir/'meta_domain.pddl'),str(problem))
+            environment = Environment()
+            environment.error_used_name = True
+            PDDLReader(environment=environment).parse_problem(str(planning_domain), str(problem) if problem else None)
+            parse_rows.append({'id': identifier, 'status': 'PARSED'})
         except Exception as exc:
-            errors.append(f'{problem.name}: independent parse failed: {exc}')
+            reason = f'{identifier}: independent parse failed: {exc}'
+            errors.append(reason)
+            parse_rows.append({'id': identifier, 'status': 'ERROR', 'reason': reason})
     validation = {
         "valid": not errors,
         "errors": errors,
@@ -109,9 +136,14 @@ def run(
         **summary["counts"],
         "problem_files": len(list(problem_dir.glob("*_problemfile.pddl"))),
         "llm_network_calls": runtime.llm.network_calls,
+        "llm_network_calls_scope": "JSON-decoded network responses, before contract validation; excludes failed HTTP/content decoding attempts",
         "llm_cache_hits": runtime.llm.cache_hits,
         "llm_duration_seconds": runtime.llm.total_duration_seconds,
         "algorithm": summary["algorithm"],
+        "namespace_export": namespace_export,
+        "planning_domain": planning_domain.relative_to(output_dir).as_posix() if planning_domain else None,
+        "planning_problems": [p.relative_to(output_dir).as_posix() for p in planning_problems],
+        "strict_parse_rows": parse_rows,
     }
     (output_dir / "validation.json").write_text(
         json.dumps(validation, indent=2, ensure_ascii=False) + "\n",

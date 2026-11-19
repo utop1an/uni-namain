@@ -15,6 +15,12 @@ def run_worker(a):
         elif a.solver == 'pyperplan':
             from rcnc.heuristic_planning import solve as heuristic_solve
             result = heuristic_solve(a.domain, a.problem, a.output)
+        elif a.solver == 'fast_downward':
+            from rcnc.downward_planning import solve as downward_solve
+            result = downward_solve(a.domain, a.problem, a.output, **json.loads(a.budget))
+        elif a.solver == 'state_projected':
+            from rcnc.state_projected_planning import solve as projected_solve
+            result = projected_solve(a.domain, a.problem, a.output, **json.loads(a.budget))
         else:
             result = solve(a.domain, a.problem, a.output, **json.loads(a.budget))
     except Exception as exc:

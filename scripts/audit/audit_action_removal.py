@@ -5,6 +5,7 @@ from pathlib import Path
 
 from rcnc.pddl import parse_sexpr
 from rcnc.validation import validate_artifacts
+from rcnc.domain_building import planning_domain_path
 from scripts.experiments.run_downward_reference import sha, save
 
 
@@ -39,7 +40,8 @@ def audit(bundle, run, origin):
     checks = []
     for key, task in tasks.items():
         original = origin/'runs'/task['origin_id']
-        domain, problem = original/'union/meta_domain.pddl', original/'mapped_problem.pddl'
+        original_manifest = json.loads((original/'manifest.json').read_text(encoding='utf-8'))
+        domain, problem = planning_domain_path(original, original_manifest), original/'mapped_problem.pddl'
         metadata_path = original/'union/meta_domain.json'
         metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
         removed = set(metadata['action_maps'][task['removed_source']].values()) if task['removed_source'] else set()

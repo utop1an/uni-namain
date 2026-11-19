@@ -6,6 +6,7 @@ import json
 import os
 import threading
 import time
+from contextlib import nullcontext
 from pathlib import Path
 from typing import Any, Callable
 
@@ -64,6 +65,7 @@ class OllamaClient:
         model: str,
         cache_dir: Path,
         max_retries: int = 5,
+        attempt_ledger: Path | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.model = model
@@ -73,6 +75,11 @@ class OllamaClient:
         self.network_calls = 0
         self.cache_hits = 0
         self.total_duration_seconds = 0.0
+        if attempt_ledger is None:
+            self.attempt_ledger = None
+        else:
+            from .attempt_ledger import AttemptLedger
+            self.attempt_ledger = AttemptLedger(attempt_ledger, model)
 
     def call(
         self,
@@ -101,28 +108,40 @@ class OllamaClient:
                 self.cache_hits += 1
             else:
                 started = time.perf_counter()
-                response = requests.post(
-                    f"{self.base_url}/api/chat",
-                    json={
-                        "model": self.model,
-                        "messages": [{"role": "user", "content": effective_prompt}],
-                        "format": schema,
-                        "stream": False,
-                        "keep_alive": "30m",
-                        "options": {"temperature": 0, "num_ctx": 8192, "num_predict": 1200},
-                    },
-                    timeout=600,
-                )
-                response.raise_for_status()
-                payload = response.json()
-                try:
-                    data = json.loads(payload["message"]["content"])
-                except json.JSONDecodeError as error:
-                    if attempt == self.max_retries:
-                        raise ValueError(
-                            f"Ollama returned invalid JSON for {task}: {error}"
-                        ) from error
-                    continue
+                observation = (self.attempt_ledger.attempt(task, digest)
+                               if self.attempt_ledger is not None else nullcontext({}))
+                with observation as record:
+                    response = requests.post(
+                        f"{self.base_url}/api/chat",
+                        json={
+                            "model": self.model,
+                            "messages": [{"role": "user", "content": effective_prompt}],
+                            "format": schema,
+                            "stream": False,
+                            "keep_alive": "30m",
+                            "options": {"temperature": 0, "num_ctx": 8192, "num_predict": 1200},
+                        },
+                        timeout=600,
+                    )
+                    status = getattr(response, 'status_code', None)
+                    record['http_status'] = status if type(status) is int else None
+                    record['stage'] = 'http_status'
+                    response.raise_for_status()
+                    record['stage'] = 'response_json'
+                    payload = response.json()
+                    from .attempt_ledger import returned_counts
+                    record.update(returned_counts(payload))
+                    record['stage'] = 'content_json'
+                    try:
+                        data = json.loads(payload["message"]["content"])
+                    except json.JSONDecodeError as error:
+                        record['outcome'] = 'invalid_content_json'
+                        if attempt == self.max_retries:
+                            raise ValueError(
+                                f"Ollama returned invalid JSON for {task}: {error}"
+                            ) from error
+                        continue
+                    record['outcome'] = 'decoded_json'
                 elapsed = time.perf_counter() - started
                 self.network_calls += 1
                 self.total_duration_seconds += elapsed

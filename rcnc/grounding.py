@@ -16,6 +16,11 @@ class StaticSafeGrounding:
                 self.true_tuples.setdefault(atom.fluent(), []).append(atom.args)
 
     def parameters(self, action):
+        choices = self.parameter_domains(action)
+        return iter(()) if choices is None else product(*choices)
+
+    def parameter_domains(self, action):
+        """Sound per-position candidate domains; None means no bindings."""
         em = self.problem.environment.expression_manager
         choices = []
         for parameter in action.parameters:
@@ -26,6 +31,8 @@ class StaticSafeGrounding:
         pending = list(action.preconditions)
         while pending:
             condition = pending.pop()
+            if condition.is_false():
+                return None
             if condition.is_and():
                 pending.extend(condition.args)
                 continue
@@ -50,9 +57,13 @@ class StaticSafeGrounding:
                         bindings[parameter] = value
                 if valid:
                     tuples.append(values)
+            # A known-false ground or nullary positive conjunct makes every
+            # binding inapplicable, even when it mentions no action parameter.
+            if not tuples:
+                return None
             for position, term in enumerate(condition.args):
                 if term.is_parameter_exp():
                     index = indexes[term.parameter()]
                     allowed = {values[position] for values in tuples}
                     choices[index] = [value for value in choices[index] if value in allowed]
-        return product(*choices)
+        return choices

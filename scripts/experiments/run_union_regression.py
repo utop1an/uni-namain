@@ -29,7 +29,7 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def translate_plan(source, inputs, union, original, output):
+def translate_plan(source, inputs, union, original, output, *, problem_path=None, object_map=None):
     """Map actual planner action instances; never infer object identity."""
     from unified_planning.io import PDDLReader, PDDLWriter
     from unified_planning.plans import ActionInstance, SequentialPlan
@@ -37,12 +37,27 @@ def translate_plan(source, inputs, union, original, output):
     src = reader.parse_problem(str(inputs / f'{source}_domainfile.pddl'),
                                str(inputs / f'{source}_problemfile.pddl'))
     plan = reader.parse_plan(src, str(original / 'plan.txt'))
-    dst = reader.parse_problem(str(union / 'meta_domain.pddl'),
-                               str(union / 'problems' / f'{source}_problemfile.pddl'))
+    target_problem = problem_path if problem_path is not None else union / 'problems' / f'{source}_problemfile.pddl'
+    dst = reader.parse_problem(str(union / 'meta_domain.pddl'), str(target_problem))
     meta = json.loads((union / 'meta_domain.json').read_text(encoding='utf-8'))
     actions = {k.lower(): v.lower() for k, v in meta['action_maps'][source].items()}
     terms = {k.lower(): v.lower() for k, v in meta['constant_maps'][source].items()}
-    terms.update({k.lower(): v.lower() for k, v in meta['namespaces'][source].get('objects', {}).items()})
+    if object_map is None:
+        terms.update({k.lower(): v.lower() for k, v in meta['namespaces'][source].get('objects', {}).items()})
+    else:
+        from rcnc.pddl import parse_sexpr, section, typed_symbols
+        problem = parse_sexpr((inputs / f'{source}_problemfile.pddl').read_text(encoding='utf-8'))
+        declared = section(problem, ':objects')
+        names = {name.lower() for name in typed_symbols(declared[1:])} if declared else set()
+        if (not isinstance(object_map, dict) or any(not isinstance(key, str) or not isinstance(value, str)
+                for key, value in object_map.items())):
+            raise ValueError('Explicit problem object map must contain named symbols')
+        provided = {key.lower(): value.lower() for key, value in object_map.items()}
+        if len(provided) != len(object_map) or set(provided) != names:
+            raise ValueError('Explicit map must cover every declared problem object exactly')
+        terms.update(provided)
+        if len(set(terms.values())) != len(terms):
+            raise ValueError('Source constant/problem object map must remain injective')
     mapped = []
     trace = []
     for step in plan.actions:
@@ -52,12 +67,16 @@ def translate_plan(source, inputs, union, original, output):
                 raise ValueError('Only object-valued action arguments are supported')
             names.append(terms[parameter.object().name.lower()])
         action = dst.action(actions[step.action.name.lower()])
+        positions = meta.get('action_parameter_maps', {}).get(source, {}).get(step.action.name.lower())
+        if positions is not None:
+            from rcnc.action_alpha import bind_full_arguments
+            names = bind_full_arguments(names, positions, len(action.parameters))
         instance = ActionInstance(action, tuple(dst.environment.expression_manager.ObjectExp(dst.object(n)) for n in names))
         mapped.append(instance)
         trace.append({'source': str(step), 'mapped': str(instance)})
     output.mkdir(parents=True, exist_ok=True)
     (output / 'domain.pddl').write_bytes((union / 'meta_domain.pddl').read_bytes())
-    (output / 'problem.pddl').write_bytes((union / 'problems' / f'{source}_problemfile.pddl').read_bytes())
+    (output / 'problem.pddl').write_bytes(Path(target_problem).read_bytes())
     PDDLWriter(dst).write_plan(SequentialPlan(mapped), str(output / 'plan.txt'))
     save(output / 'trace_mapping.json', trace)
     return {'length': len(mapped), 'validation': validate_artifacts(output)}

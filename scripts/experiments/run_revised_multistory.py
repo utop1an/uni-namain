@@ -263,7 +263,7 @@ def execute(root,repeat,state,state_path):
     violations=[{'id':r['id'],'status':r['transport']['status'],'evidence':replay_evidence(r['transport'])} for r in rows
         if r['transport']['status']!='unavailable_valid_native_plan' and replay_evidence(r['transport']) not in ('valid','unknown')]
     invalid_returned=[r['id'] for r in rows if r['search']['status']=='solved' and replay_evidence(r.get('replay',{})) not in ('valid','unknown')]
-    report={'status':'complete','native':native,'rows':rows,'sources':60,'groups':300,'source_query_slots':len(rows),
+    report={'status':'complete','native':native,'rows':rows,'sources':len(sources),'groups':protocol['groups'],'source_query_slots':len(rows),
         'native_counts':dict(Counter(r['status'] for r in native.values())),
         'search_calls':sum(r['search_calls'] for r in native.values())+sum(r['search']['search_calls'] for r in rows),
         'model_requests':read(repeat/'judgments/report.json')['requests_attempted'],
@@ -272,7 +272,7 @@ def execute(root,repeat,state,state_path):
         'returned_plan_unknowns':[r['id'] for r in rows if r['search']['status']=='solved' and replay_evidence(r.get('replay',{}))=='unknown'],
         'by_size_condition':{str(k):{c:{'search':dict(Counter(r['search']['status'] for r in rows if r['size']==k and r['condition']==c)),
             'transport':dict(Counter(r['transport']['status'] for r in rows if r['size']==k and r['condition']==c)),
-            'transport_passed':sum(valid(r['transport']) for r in rows if r['size']==k and r['condition']==c)} for c in CONDITIONS} for k in (2,3,4)},
+            'transport_passed':sum(valid(r['transport']) for r in rows if r['size']==k and r['condition']==c)} for c in CONDITIONS} for k in protocol['selected_sizes']},
         'inputs_unchanged':all(digest(Path(p))==h for p,h in comp['input_sha256'].items())}
     save(repeat/'report.json',report)
     return {k:v for k,v in report.items() if k not in ('native','rows')}

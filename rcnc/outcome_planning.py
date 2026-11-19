@@ -9,12 +9,12 @@ from pathlib import Path
 
 from unified_planning.engines.compilers.grounder import GrounderHelper
 from unified_planning.io import PDDLReader, PDDLWriter
-from unified_planning.plans import ActionInstance, SequentialPlan
+from unified_planning.plans import ActionInstance
 from unified_planning.shortcuts import SequentialSimulator
 
 from rcnc.pddl import parse_sexpr, section, serialize
-from rcnc.validation import validate_artifacts
-from rcnc.state_grounding import PositiveStateGrounding
+from rcnc.validation import reconstruct_plan, validate_artifacts
+from rcnc.state_grounding import PositiveStateGrounding, successor_atoms
 
 
 def explore(domain, problem_path, output, max_states=5000, max_depth=10,
@@ -77,23 +77,10 @@ def explore(domain, problem_path, output, max_states=5000, max_depth=10,
                     continue
                 if len(parents) >= max_states:
                     return finish('state_limit')
-                after_atoms = set(positive_atoms)
-                for effect in grounded.effects:
-                    for expanded in effect.expand_effect(problem):
-                        report['expanded_effect_instances'] += 1
-                        if simplifier.simplifier.simplify(expanded.condition).is_false():
-                            continue
-                        fact = expanded.fluent
-                        if fact not in targets:
-                            if len(targets) >= max_ground_fluents:
-                                return finish('ground_fluent_limit')
-                            targets.add(fact)
-                            report['ground_fluents_tracked'] = len(targets)
-                        if after.get_value(fact).bool_constant_value():
-                            after_atoms.add(fact)
-                        else:
-                            after_atoms.discard(fact)
-                after_atoms = frozenset(after_atoms)
+                after_atoms = successor_atoms(problem, grounded, after, positive_atoms,
+                    simplifier.simplifier, targets, max_ground_fluents, report)
+                if after_atoms is None:
+                    return finish('ground_fluent_limit')
                 parents[after] = (state, ActionInstance(action, params))
                 report['states'] = len(parents)
                 queue.append((after, depth + 1, after_atoms))
@@ -101,12 +88,7 @@ def explore(domain, problem_path, output, max_states=5000, max_depth=10,
                            for fact in sorted(initial_atoms ^ after_atoms, key=str)]
                 if not changed:
                     continue
-                steps = []
-                cursor = after
-                while parents[cursor] is not None:
-                    cursor, step = parents[cursor]
-                    steps.append(step)
-                steps.reverse()
+                plan = reconstruct_plan(parents, after)
                 directory = output / f'outcome_{len(report["outcomes"]):03d}'
                 directory.mkdir()
                 root = json.loads(json.dumps(original_root))
@@ -119,10 +101,10 @@ def explore(domain, problem_path, output, max_states=5000, max_depth=10,
                 section(root, ':goal')[1] = goal
                 (directory / 'domain.pddl').write_bytes(Path(domain).read_bytes())
                 (directory / 'problem.pddl').write_text(serialize(root) + '\n', encoding='utf-8')
-                PDDLWriter(problem).write_plan(SequentialPlan(steps), str(directory / 'plan.txt'))
+                PDDLWriter(problem).write_plan(plan, str(directory / 'plan.txt'))
                 validation = validate_artifacts(directory)
-                candidate = {'index': len(report['outcomes']), 'length': len(steps), 'changes': changes,
-                             'validation': validation, 'plan': str(SequentialPlan(steps))}
+                candidate = {'index': len(report['outcomes']), 'length': len(plan.actions), 'changes': changes,
+                             'validation': validation, 'plan': str(plan)}
                 report['outcomes'].append(candidate)
                 if validation['status'] != 'VALID':
                     report['status'] = 'validation_failed'

@@ -8,10 +8,10 @@ from collections import deque
 
 from unified_planning.engines.compilers.grounder import GrounderHelper
 from unified_planning.io import PDDLReader
-from unified_planning.plans import ActionInstance, SequentialPlan
+from unified_planning.plans import ActionInstance
 from unified_planning.shortcuts import SequentialSimulator
 
-from rcnc.validation import prepare_artifacts, write_validated_plan
+from rcnc.validation import prepare_artifacts, reconstruct_plan, write_validated_plan
 from rcnc.grounding import StaticSafeGrounding
 
 
@@ -31,12 +31,7 @@ def solve(domain, problem_path, output, max_states=5000, max_depth=30,
         parents = {start: None}
 
         def finish(state):
-            steps = []
-            while parents[state] is not None:
-                state, step = parents[state]
-                steps.append(step)
-            steps.reverse()
-            plan = SequentialPlan(steps)
+            plan = reconstruct_plan(parents, state)
             return {**stats, **write_validated_plan(problem, plan, output)}
 
         if simulator.is_goal(start):

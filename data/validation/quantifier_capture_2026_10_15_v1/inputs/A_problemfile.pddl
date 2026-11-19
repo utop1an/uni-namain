@@ -1,1 +1,0 @@
-(define (problem p) (:domain shadow) (:init (p a)) (:goal (and (q a) (q b))))

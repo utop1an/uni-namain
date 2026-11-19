@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from rcnc.aligned_domain import build
-from rcnc.domain_building import require_empty_output, save
+from rcnc.domain_building import require_empty_output, save, snapshot_implementation
 from rcnc.pddl import parse_domain
 from scripts.audit.audit_interface_graph import audit
 
@@ -99,10 +99,13 @@ def run(packet_path, prediction_path, inputs, output, infer_role_types=False, co
     # deliberately absent: candidates cannot import source initial worlds.
     save(output / 'alignment.json', spec)
     report['alignment_sha256'] = sha(output / 'alignment.json')
-    report['input_sha256'] = {'packet': sha(output / 'packet.json'), 'predictions': sha(output / 'predictions.json')}
-    report['implementation_sha256'] = {str(p): sha(p) for p in (
+    report['input_sha256'] = {'packet': sha(output / 'packet.json'), 'predictions': sha(output / 'predictions.json'),
+                             'prediction_manifest': sha(output / 'prediction_manifest.json')}
+    report['implementation_sha256'] = snapshot_implementation(output, (
         Path(__file__), Path('rcnc/interface_graph.py'), Path('scripts/audit/audit_interface_graph.py'),
-        Path('scripts/annotation/run_annotation_predictions.py'), Path('rcnc/interface_annotation.py'))}
+        Path('scripts/annotation/run_annotation_predictions.py'), Path('rcnc/interface_annotation.py'),
+        Path('rcnc/aligned_domain.py'), Path('rcnc/domain_union.py'), Path('rcnc/domain_building.py'),
+        Path('rcnc/pddl.py'), Path('rcnc/pddl_checks.py')))
     report['compilation'] = {'status': 'not_requested'}
     save(output / 'report.json', report)
     if compile_domain:
@@ -115,6 +118,11 @@ def run(packet_path, prediction_path, inputs, output, infer_role_types=False, co
             report['status'] = 'compilation_failed'
             report['compilation'] = {'status': 'failed', 'error': f'{type(exc).__name__}: {exc}'}
     report['alignment_unchanged'] = sha(output / 'alignment.json') == report['alignment_sha256']
+    report['inputs_unchanged'] = all(sha(output / (key + '.json')) == value
+        for key, value in report['input_sha256'].items()) and all(
+        sha(snapshot / name) == expected for name, expected in spec['source_sha256'].items())
+    report['implementation_unchanged'] = all(sha(Path(name)) == expected
+        for name, expected in report['implementation_sha256'].items())
     report['scope'] = 'Machine hypothesis development condition, not reviewed alignment or semantic evaluation; no planning or source world pooling'
     save(output / 'report.json', report)
     return report

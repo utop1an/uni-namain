@@ -1,128 +1,75 @@
 # Repository tools
 
-Run tools **from the repository root** using the project Python environment and
-`-m`. Direct execution of files inside these subdirectories is not supported.
+Run Python tools **from the repository root**, using `.venv/Scripts/python.exe -m`.
+Use `--help` for the public CLI entry points and a fresh output directory for every run.
+Direct execution of files in these subdirectories is not supported.
+Some historical preparation scripts use positional arguments or fixed protocol
+paths; inspect their source before invoking them. Do not assume `--help` is supported.
+
+The main request runner and domain builders use `python -m rcnc`; the UniDomain
+reference uses `python -m unidomain`. Reusable compilation, planning and validation
+code lives in `rcnc/`, and dependencies are declared in `pyproject.toml`.
+The [project guide](../README.md) links shared-type compilation, planning and paper evidence.
+
+## Find a tool
+
+| Directory | Purpose | Starting points |
+| --- | --- | --- |
+| `experiments/` | Registered experiment runners, solver adapters and replay workers | `run_causal_multistory`, `run_causal_chains`, `run_revised_multistory`, `run_union_regression` |
+| `audit/` | Saved-plan, provenance, mapping and experiment checks | `audit_saved_physical_plans`, `audit_story_opportunities`, `audit_fusion_mapping` |
+| `data/` | Source intake, task preparation and protocol freezing | `freeze_revised_multistory`, `snapshot_external_pddl`, `prepare_source_probes` |
+| `annotation/` | Blind review packets, model predictions and agreement | `prepare_interface_annotations`, `evaluate_interface_predictions`, `build_annotation_viewer` |
+| `evidence/` | Verified result inventories, checkpoints and working-paper tables | `build_paper_results`, `check_submission_checkpoint`, `recheck_frozen_artifacts` |
+| `validation/` | Synthetic controls for model and compiler contracts | `validate_transition_preservation`, `validate_type_encoding`, `validate_world_compatibility` |
+| `java/` | Glaive inspection and runtime regression helpers | `GlaiveProbe.java`, `GlaiveRuntimeRegression.java` |
+
+List available Python tools with `rg --files scripts -g '*.py'`.
+Experiment runners and their corresponding auditors share a topic suffix.
+Existing comparison and diagnostic tools remain available for their protocols.
+`evidence/build_meeting_results.py` also supplies phase and resource-limit helpers
+used by current audits, so it remains here.
+
+The [5 November selection handoff](../docs/dev-notes/2026-11-05-causal-path-domain-selection.md)
+records the inputs, budgets and results of that causal-path experiment.
+
+## Common entry points
 
 ```powershell
+.venv/Scripts/python.exe -m rcnc build-shared --help
+.venv/Scripts/python.exe -m rcnc plan-shared --help
+.venv/Scripts/python.exe -m scripts.experiments.run_shared_type_rescue --help
+.venv/Scripts/python.exe -m scripts.experiments.run_causal_multistory --help
+.venv/Scripts/python.exe -m scripts.experiments.run_causal_chains --help
+.venv/Scripts/python.exe -m scripts.experiments.run_revised_multistory --help
 .venv/Scripts/python.exe -m scripts.experiments.run_union_regression --help
+.venv/Scripts/python.exe -m scripts.audit.audit_saved_physical_plans --help
 .venv/Scripts/python.exe -m scripts.evidence.build_paper_results --help
 ```
 
-The root retains the request runner, two reusable-domain builders, the UniDomain
-adapter and the historical merge command. All five root Python files are CLI
-entries; structural checks now live in `rcnc/pddl_checks.py`, and request worker
-handling lives in `rcnc/planning_worker.py`. Shared
-PDDL parsing/export now lives in `rcnc/pddl.py`; domain construction lives in
-`rcnc/domain_union.py` and `rcnc/aligned_domain.py`. Both root builder commands
-remain available with the same arguments. Earlier RCNC commands remain
-in `archive/rcnc/`. Inputs, historical results and frozen inventories stay in place.
+Commands that call models, download sources or execute planners still require
+explicit inputs and budgets. Continuations remain separate conditions.
 
-| Directory | Purpose |
-| --- | --- |
-| `audit/` | Evidence, provenance, mappings, comparisons and diagnostics |
-| `validation/` | Synthetic controls and preservation checks |
-| `experiments/` | Bounded runners, solver adapters and trace replays |
-| `annotation/` | Blind annotation pages, machine predictions and agreement |
-| `data/` | Task/probe preparation and external problem packaging |
-| `evidence/` | Paper result inventory verification |
+For offline annotation, start with `scripts/annotation/prepare_interface_annotations.py`.
+Only independent labels can support semantic agreement scores.
 
-[relocation.json](relocation.json) records each original path and its pre-move hash.
-New runs record current source paths/hashes. The freezing protocol can locate
-relocated implementation files referenced by old locks, but still requires the
-original expected bytes; code drift is never accepted as exact reproduction.
-Old dated commands in handoffs and saved snapshots describe their original layout.
-Use the commands below for new runs and always choose a fresh output directory.
+## Historical tools and path recovery
 
-## Commands
-
-### annotation
-
-Offline comparison against two independent annotation files (no model calls):
+Authored Snow/ACCO/BIRT cases, meeting deliveries and fixed selection follow-ups
+are in [archive/scripts](../archive/scripts/README.md). Early frozen RCNC commands
+are beside their implementation in `archive/rcnc/`:
 
 ```powershell
-.venv/Scripts/python.exe -m scripts.annotation.evaluate_interface_predictions --packet <packet.json> --annotations <rater-a.json> <rater-b.json> --predictions <run/report.json> --prediction-manifest <run/manifest.json> --output <fresh-report.json>
+.venv/Scripts/python.exe -m archive.scripts.experiments.prepare_snow_roles_case --help
+.venv/Scripts/python.exe -m archive.rcnc.build_rcnc_frozen --help
+.venv/Scripts/python.exe -m archive.rcnc.run_rcnc_frozen --help
 ```
 
-Missing or invalid annotation files cannot produce semantic scores. Exact two-rater
-consensus is a descriptive reference, not semantic certification. Missing,
-disagreement and uncertain judgments remain coverage categories; model failures
-remain in the definite-reference scoring denominator. The existing stratified
-development sample does not estimate population prevalence or unseen-family
-generalization. New-run design: `paper/evaluation_protocol_2026_10_19_v1.json`;
-budgets and test inputs still require a separate execution freeze.
+[relocation.json](relocation.json) maps former paths to current locations, retaining
+pre-move hashes. Historical locks and saved commands keep their original paths;
+relocation still requires the expected bytes and never excuses code drift.
+The [cleanup recovery inventory](../archive/maintenance/2026_11_02_scripts_cleanup_v1/README.md)
+preserves exact pre-cleanup files. Inputs, results and frozen evidence stay in place.
 
-```powershell
-.venv/Scripts/python.exe -m scripts.annotation.build_annotation_viewer --help
-.venv/Scripts/python.exe -m scripts.annotation.compare_annotation_predictions --help
-.venv/Scripts/python.exe -m scripts.annotation.prepare_interface_annotations --help
-.venv/Scripts/python.exe -m scripts.annotation.run_annotation_predictions --help
-.venv/Scripts/python.exe -m scripts.annotation.summarize_interface_agreement --help
-```
-
-### audit
-
-```powershell
-.venv/Scripts/python.exe -m scripts.audit.audit_action_reachability --help
-.venv/Scripts/python.exe -m scripts.audit.audit_action_removal --help
-.venv/Scripts/python.exe -m scripts.audit.audit_composed_development --help
-.venv/Scripts/python.exe -m scripts.audit.audit_conditional_prefixes --help
-.venv/Scripts/python.exe -m scripts.audit.audit_external_worlds --help
-.venv/Scripts/python.exe -m scripts.audit.audit_fusion_mapping --help
-.venv/Scripts/python.exe -m scripts.audit.audit_initial_only_development --help
-.venv/Scripts/python.exe -m scripts.audit.audit_interface_graph --help
-.venv/Scripts/python.exe -m scripts.audit.audit_probe_trace_states --help
-.venv/Scripts/python.exe -m scripts.audit.audit_source_provenance --help
-.venv/Scripts/python.exe -m scripts.audit.audit_trace_coverage --help
-.venv/Scripts/python.exe -m scripts.audit.audit_union_preservation --help
-.venv/Scripts/python.exe -m scripts.audit.compare_solver_exports --help
-.venv/Scripts/python.exe -m scripts.audit.diagnose_source_support --help
-.venv/Scripts/python.exe -m scripts.audit.diagnose_transport_failure --help
-.venv/Scripts/python.exe -m scripts.audit.summarize_action_reachability --help
-```
-
-### data
-
-```powershell
-.venv/Scripts/python.exe -m scripts.data.package_external_problem --help
-.venv/Scripts/python.exe -m scripts.data.prepare_action_reachability --help
-.venv/Scripts/python.exe -m scripts.data.prepare_action_removal --help
-.venv/Scripts/python.exe -m scripts.data.prepare_source_probes --help
-```
-
-### evidence
-
-```powershell
-.venv/Scripts/python.exe -m scripts.evidence.build_paper_results --help
-```
-
-### experiments
-
-```powershell
-.venv/Scripts/python.exe -m scripts.experiments.build_rcnc_frozen --help
-.venv/Scripts/python.exe -m scripts.experiments.probe_fusion_source_plans --help
-.venv/Scripts/python.exe -m scripts.experiments.replay_action_reachability --help
-.venv/Scripts/python.exe -m scripts.experiments.replay_downward_preservation --help
-.venv/Scripts/python.exe -m scripts.experiments.replay_external_problems --help
-.venv/Scripts/python.exe -m scripts.experiments.replay_source_probes --help
-.venv/Scripts/python.exe -m scripts.experiments.run_composed_development --help
-.venv/Scripts/python.exe -m scripts.experiments.run_downward_reference --help
-.venv/Scripts/python.exe -m scripts.experiments.run_fusion_reference --help
-.venv/Scripts/python.exe -m scripts.experiments.run_initial_only_development --help
-.venv/Scripts/python.exe -m scripts.experiments.run_rcnc_frozen --help
-.venv/Scripts/python.exe -m scripts.experiments.run_union_regression --help
-```
-
-### validation
-
-```powershell
-.venv/Scripts/python.exe -m scripts.validation.validate_capture_states --help
-.venv/Scripts/python.exe -m scripts.validation.validate_formula_boundaries --help
-.venv/Scripts/python.exe -m scripts.validation.validate_formula_mutation --help
-.venv/Scripts/python.exe -m scripts.validation.validate_pipeline_modes --help
-.venv/Scripts/python.exe -m scripts.validation.validate_prediction_schemas --help
-.venv/Scripts/python.exe -m scripts.validation.validate_semantic_negative_control --help
-.venv/Scripts/python.exe -m scripts.validation.validate_sparse_outcomes --help
-.venv/Scripts/python.exe -m scripts.validation.validate_transition_mutations --help
-.venv/Scripts/python.exe -m scripts.validation.validate_transition_preservation --help
-.venv/Scripts/python.exe -m scripts.validation.validate_type_encoding --help
-```
+One-off Glaive runtime builders and profiling entry points are now in
+[archive/scripts/diagnostics](../archive/scripts/diagnostics/README.md).
+Their exact bytes and old paths are recorded in `scripts/relocation.json`.

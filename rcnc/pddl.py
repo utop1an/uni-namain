@@ -129,8 +129,14 @@ class Domain:
     decisions: list[dict[str, Any]] = field(default_factory=list)
 
 
-def parse_domain(path: Path) -> Domain:
-    root = parse_sexpr(path.read_text(encoding="utf-8"))
+def parse_domain(path: Path, *, root: SExpr | None = None) -> Domain:
+    """Read a source model, optionally from a caller-normalized syntax tree.
+
+    The default preserves original spelling for existing clients. Callers using
+    a normalized tree own its validation and record the normalization separately.
+    """
+    if root is None:
+        root = parse_sexpr(path.read_text(encoding="utf-8"))
     if not isinstance(root, list) or not root or root[0] != "define":
         raise ValueError(f"{path}: not a PDDL define expression")
     header = root[1]

@@ -167,12 +167,14 @@ class FusionRuntime:
         predicate_threshold: float,
         operator_threshold: float,
         cache_dir: Path,
+        attempt_ledger: Path | None = None,
     ) -> None:
         self.embedding = EmbeddingService(embedding_model)
         self.llm = OllamaClient(
             base_url=base_url,
             model=model,
             cache_dir=cache_dir / "ollama",
+            attempt_ledger=attempt_ledger,
         )
         self.embedding_model = embedding_model
         self.predicate_threshold = predicate_threshold
