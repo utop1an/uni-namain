@@ -1,0 +1,44 @@
+(define (problem human__random__k02__022)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_281c51d26d5d4ff3_active)
+    (human_4d95b598471c21ee_active)
+    (human_281c51d26d5d4ff3_type_character r0)
+    (human_281c51d26d5d4ff3_type_human r0)
+    (human_281c51d26d5d4ff3_type_object r0)
+    (human_4d95b598471c21ee_type_character r0)
+    (human_4d95b598471c21ee_type_object r0)
+    (human_281c51d26d5d4ff3_type_house r1)
+    (human_281c51d26d5d4ff3_type_object r1)
+    (human_281c51d26d5d4ff3_type_beast r2)
+    (human_281c51d26d5d4ff3_type_character r2)
+    (human_281c51d26d5d4ff3_type_object r2)
+    (human_281c51d26d5d4ff3_type_wolf r2)
+    (human_281c51d26d5d4ff3_type_house r3)
+    (human_281c51d26d5d4ff3_type_object r3)
+    (human_4d95b598471c21ee_type_location r3)
+    (human_4d95b598471c21ee_type_object r3)
+    (human_281c51d26d5d4ff3_type_beast r4)
+    (human_281c51d26d5d4ff3_type_character r4)
+    (human_281c51d26d5d4ff3_type_object r4)
+    (human_281c51d26d5d4ff3_type_wolf r4)
+    (human_4d95b598471c21ee_type_location r5)
+    (human_4d95b598471c21ee_type_object r5)
+    (human_281c51d26d5d4ff3_p_alive r2)
+    (human_281c51d26d5d4ff3_p_alive r0)
+    (human_281c51d26d5d4ff3_p_at r2 r1)
+    (human_281c51d26d5d4ff3_p_at r0 r1)
+    (human_281c51d26d5d4ff3_p_monster r2)
+    (human_281c51d26d5d4ff3_p_at r4 r3)
+    (human_4d95b598471c21ee_p_connected r5 r3)
+  )
+  (:goal (human_4d95b598471c21ee_p_at r0 r5))
+)

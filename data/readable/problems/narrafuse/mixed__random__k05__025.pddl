@@ -1,0 +1,32 @@
+(define (problem mixed__random__k05__025)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+  )
+  (:init
+    (human_72bec7307b121ea5_active)
+    (tiny_stories__story_001_active)
+    (tiny_stories__story_029_active)
+    (writing_prompts__wp_017_active)
+    (writing_prompts__wp_020_active)
+    (tiny_stories__story_029_type_character r0)
+    (tiny_stories__story_029_type_object r0)
+    (tiny_stories__story_001_type_character r0)
+    (tiny_stories__story_001_type_object r0)
+    (tiny_stories__story_029_type_object r1)
+    (tiny_stories__story_029_type_place r1)
+    (tiny_stories__story_029_type_object r2)
+    (tiny_stories__story_029_type_place r2)
+    (tiny_stories__story_001_type_object r2)
+    (tiny_stories__story_001_type_place r2)
+    (tiny_stories__story_001_type_object tiny_stories__story_001_o_outside)
+    (tiny_stories__story_001_type_place tiny_stories__story_001_o_outside)
+    (tiny_stories__story_029_p_alive r0)
+    (shared_p_consensus_003957feff1a1efb r0 r1)
+    (tiny_stories__story_001_p_muddy r2)
+    (intends r0 (tiny_stories__story_001_p_playing r0))
+  )
+  (:goal (tiny_stories__story_001_p_playing r0))
+)

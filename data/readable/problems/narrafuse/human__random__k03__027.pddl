@@ -1,0 +1,40 @@
+(define (problem human__random__k03__027)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+  )
+  (:init
+    (human_281c51d26d5d4ff3_active)
+    (human_7c98a61edf861243_active)
+    (human_cf10335d299ae37f_active)
+    (human_7c98a61edf861243_type_character r0)
+    (human_7c98a61edf861243_type_object r0)
+    (human_281c51d26d5d4ff3_type_character r0)
+    (human_281c51d26d5d4ff3_type_human r0)
+    (human_281c51d26d5d4ff3_type_object r0)
+    (human_7c98a61edf861243_type_object r1)
+    (human_7c98a61edf861243_type_room r1)
+    (human_7c98a61edf861243_type_object r2)
+    (human_7c98a61edf861243_type_thing r2)
+    (human_281c51d26d5d4ff3_type_object r2)
+    (human_281c51d26d5d4ff3_type_thing r2)
+    (human_281c51d26d5d4ff3_type_character r3)
+    (human_281c51d26d5d4ff3_type_human r3)
+    (human_281c51d26d5d4ff3_type_object r3)
+    (human_281c51d26d5d4ff3_type_house r4)
+    (human_281c51d26d5d4ff3_type_object r4)
+    (human_7c98a61edf861243_p_believes-at r0 r0 r1)
+    (human_7c98a61edf861243_p_believes-in r0 r2 r1)
+    (human_7c98a61edf861243_p_at r0 r1)
+    (human_7c98a61edf861243_p_in r2 r1)
+    (shared_p_consensus_d4f1e6ea8e5c4a23 r0)
+    (shared_p_consensus_d4f1e6ea8e5c4a23 r3)
+    (shared_p_consensus_25aacc556262368d r0 r4)
+    (shared_p_consensus_25aacc556262368d r3 r4)
+  )
+  (:goal (shared_p_consensus_57a059f8013afca3 r3 r2))
+)

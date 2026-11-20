@@ -1,0 +1,30 @@
+(define (problem mixed__causal_link__k02__047)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+  )
+  (:init
+    (human_8fa5775aae174731_active)
+    (writing_prompts__wp_011_active)
+    (human_8fa5775aae174731_type_character r0)
+    (human_8fa5775aae174731_type_object r0)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (human_8fa5775aae174731_type_item r1)
+    (human_8fa5775aae174731_type_object r1)
+    (writing_prompts__wp_011_type_object r1)
+    (human_8fa5775aae174731_type_object r2)
+    (human_8fa5775aae174731_type_place r2)
+    (human_8fa5775aae174731_type_item human_8fa5775aae174731_o_ark)
+    (human_8fa5775aae174731_type_object human_8fa5775aae174731_o_ark)
+    (shared_p_consensus_b7506fa70d09fc7e r0)
+    (shared_p_consensus_2a3b3c17c574f9e5 r0 r2)
+    (human_8fa5775aae174731_p_burried r1 r2)
+    (human_8fa5775aae174731_p_knows-location r0 r1 r2)
+    (writing_prompts__wp_011_p_ancient-technology r1)
+    (intends r0 (writing_prompts__wp_011_p_in-stasis r1))
+  )
+  (:goal (writing_prompts__wp_011_p_in-stasis r1))
+)

@@ -1,0 +1,58 @@
+(define (problem human__causal_link__k02__033)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+    r7 - object
+  )
+  (:init
+    (human_62959785b3ec220a_active)
+    (human_7c98a61edf861243_active)
+    (human_62959785b3ec220a_type_character r0)
+    (human_62959785b3ec220a_type_object r0)
+    (human_62959785b3ec220a_type_thing r0)
+    (human_62959785b3ec220a_type_character r1)
+    (human_62959785b3ec220a_type_object r1)
+    (human_62959785b3ec220a_type_thing r1)
+    (human_62959785b3ec220a_type_location r2)
+    (human_62959785b3ec220a_type_object r2)
+    (human_62959785b3ec220a_type_thing r2)
+    (human_62959785b3ec220a_type_location r3)
+    (human_62959785b3ec220a_type_object r3)
+    (human_62959785b3ec220a_type_thing r3)
+    (human_62959785b3ec220a_type_location r4)
+    (human_62959785b3ec220a_type_object r4)
+    (human_62959785b3ec220a_type_thing r4)
+    (human_62959785b3ec220a_type_location r5)
+    (human_62959785b3ec220a_type_object r5)
+    (human_62959785b3ec220a_type_thing r5)
+    (human_7c98a61edf861243_type_object r5)
+    (human_7c98a61edf861243_type_room r5)
+    (human_62959785b3ec220a_type_character r6)
+    (human_62959785b3ec220a_type_object r6)
+    (human_62959785b3ec220a_type_thing r6)
+    (human_7c98a61edf861243_type_character r6)
+    (human_7c98a61edf861243_type_object r6)
+    (human_7c98a61edf861243_type_object r7)
+    (human_7c98a61edf861243_type_thing r7)
+    (human_62959785b3ec220a_p_player r1)
+    (shared_p_consensus_148ce3586898cf94 r1 r2)
+    (shared_p_consensus_148ce3586898cf94 r0 r2)
+    (human_62959785b3ec220a_p_apprehended r0)
+    (human_62959785b3ec220a_p_connected r4 r3)
+    (shared_p_consensus_148ce3586898cf94 r1 r3)
+    (human_62959785b3ec220a_p_henchman r1)
+    (human_62959785b3ec220a_p_has r1 r6)
+    (human_62959785b3ec220a_p_connected r5 r4)
+    (human_7c98a61edf861243_p_believes-at r6 r6 r5)
+    (human_7c98a61edf861243_p_believes-in r6 r7 r5)
+    (human_7c98a61edf861243_p_in r7 r5)
+    (intends r1 (human_7c98a61edf861243_p_has r6 r7))
+  )
+  (:goal (human_7c98a61edf861243_p_has r6 r7))
+)

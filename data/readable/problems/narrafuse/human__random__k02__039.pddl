@@ -1,0 +1,47 @@
+(define (problem human__random__k02__039)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_662247ec644ef452_active)
+    (human_7c98a61edf861243_active)
+    (human_662247ec644ef452_type_object r0)
+    (human_662247ec644ef452_type_place r0)
+    (human_662247ec644ef452_type_living r1)
+    (human_662247ec644ef452_type_object r1)
+    (human_662247ec644ef452_type_person r1)
+    (human_7c98a61edf861243_type_character r1)
+    (human_7c98a61edf861243_type_object r1)
+    (human_662247ec644ef452_type_object r2)
+    (human_662247ec644ef452_type_place r2)
+    (human_662247ec644ef452_type_living r3)
+    (human_662247ec644ef452_type_object r3)
+    (human_662247ec644ef452_type_person r3)
+    (human_662247ec644ef452_type_object r4)
+    (human_662247ec644ef452_type_place r4)
+    (human_7c98a61edf861243_type_object r4)
+    (human_7c98a61edf861243_type_room r4)
+    (human_7c98a61edf861243_type_object r5)
+    (human_7c98a61edf861243_type_thing r5)
+    (human_662247ec644ef452_type_object human_662247ec644ef452_o_jailhouse)
+    (human_662247ec644ef452_type_place human_662247ec644ef452_o_jailhouse)
+    (human_662247ec644ef452_type_object human_662247ec644ef452_o_snakebite)
+    (human_662247ec644ef452_type_sickness human_662247ec644ef452_o_snakebite)
+    (human_662247ec644ef452_p_alive r1)
+    (human_662247ec644ef452_p_free r1)
+    (shared_p_consensus_3cb6594bb0c79baf r1 r0)
+    (human_662247ec644ef452_p_alive r3)
+    (shared_p_consensus_3cb6594bb0c79baf r3 r0)
+    (human_7c98a61edf861243_p_believes-at r1 r1 r4)
+    (human_7c98a61edf861243_p_believes-in r1 r5 r4)
+    (human_7c98a61edf861243_p_in r5 r4)
+    (intends r1 (shared_p_consensus_ac9923e2db5ab6ad r1 r5))
+  )
+  (:goal (shared_p_consensus_ac9923e2db5ab6ad r1 r5))
+)

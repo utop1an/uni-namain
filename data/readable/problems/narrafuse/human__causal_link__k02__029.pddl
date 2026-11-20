@@ -1,0 +1,37 @@
+(define (problem human__causal_link__k02__029)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+  )
+  (:init
+    (human_3cd8b87ba572801b_active)
+    (human_72bec7307b121ea5_active)
+    (human_72bec7307b121ea5_type_character r0)
+    (human_72bec7307b121ea5_type_object r0)
+    (human_3cd8b87ba572801b_type_canmarry r0)
+    (human_3cd8b87ba572801b_type_object r0)
+    (human_72bec7307b121ea5_type_location r1)
+    (human_72bec7307b121ea5_type_object r1)
+    (human_72bec7307b121ea5_type_location r2)
+    (human_72bec7307b121ea5_type_object r2)
+    (human_3cd8b87ba572801b_type_location r2)
+    (human_3cd8b87ba572801b_type_object r2)
+    (human_3cd8b87ba572801b_type_character r3)
+    (human_3cd8b87ba572801b_type_female r3)
+    (human_3cd8b87ba572801b_type_object r3)
+    (human_3cd8b87ba572801b_type_person r3)
+    (human_72bec7307b121ea5_p_connected r2 r1)
+    (shared_p_consensus_165440fec9583ed1 r0 r1)
+    (human_3cd8b87ba572801b_p_bachelor r0)
+    (shared_p_consensus_165440fec9583ed1 r3 r2)
+    (human_3cd8b87ba572801b_p_single r0)
+    (human_3cd8b87ba572801b_p_alive r0)
+    (human_3cd8b87ba572801b_p_alive r3)
+    (human_3cd8b87ba572801b_p_beautiful r3)
+    (intends r0 (human_3cd8b87ba572801b_p_loves r0 r3))
+  )
+  (:goal (human_3cd8b87ba572801b_p_loves r0 r3))
+)

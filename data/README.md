@@ -27,6 +27,12 @@ For other merged PDDL files, prefix the catalog path with `readable/` to open
 the multiline copy. The catalog links to the original experiment exports.
 The official method's status for this group appears in `groups.csv`.
 
+The 892 groups with a constructed diagnostic problem have paired multiline files
+under [NarraFuse](readable/problems/narrafuse/) and [Union](readable/problems/union/).
+Each diagnostic problem uses the same `<group>.pddl` filename as its merged domain.
+The [ten-step running example](readable/problems/narrafuse/human__random__k03__022_rescue.pddl)
+is an additional authored problem for group `human__random__k03__022`.
+
 [sources.csv](sources.csv) gives collection identities and provenance.
 [artifacts.csv](artifacts.csv) lists the SHA-256 and original research path for
 each individually exported domain. Registered input files can also occur in

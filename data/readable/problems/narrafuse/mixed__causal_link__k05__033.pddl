@@ -1,0 +1,62 @@
+(define (problem mixed__causal_link__k05__033)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+    r7 - object
+    r8 - object
+  )
+  (:init
+    (human_1e91389e12439414_active)
+    (tiny_stories__story_075_active)
+    (tiny_stories__story_093_active)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_035_active)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (tiny_stories__story_093_type_character r0)
+    (tiny_stories__story_093_type_object r0)
+    (human_1e91389e12439414_type_character r0)
+    (human_1e91389e12439414_type_humanoid r0)
+    (human_1e91389e12439414_type_object r0)
+    (human_1e91389e12439414_type_protagonist r0)
+    (writing_prompts__wp_011_type_object r1)
+    (writing_prompts__wp_011_type_object r2)
+    (writing_prompts__wp_011_type_place r2)
+    (writing_prompts__wp_011_type_object r3)
+    (writing_prompts__wp_011_type_place r3)
+    (writing_prompts__wp_011_type_object r4)
+    (writing_prompts__wp_011_type_place r4)
+    (tiny_stories__story_093_type_object r4)
+    (tiny_stories__story_093_type_place r4)
+    (tiny_stories__story_093_type_character r5)
+    (tiny_stories__story_093_type_object r5)
+    (tiny_stories__story_093_type_item r6)
+    (tiny_stories__story_093_type_mop r6)
+    (tiny_stories__story_093_type_object r6)
+    (human_1e91389e12439414_type_alchemy_spell r6)
+    (human_1e91389e12439414_type_item r6)
+    (human_1e91389e12439414_type_object r6)
+    (human_1e91389e12439414_type_spell r6)
+    (human_1e91389e12439414_type_item r7)
+    (human_1e91389e12439414_type_object r7)
+    (human_1e91389e12439414_type_item r8)
+    (human_1e91389e12439414_type_money r8)
+    (human_1e91389e12439414_type_object r8)
+    (shared_p_consensus_e73092573dea8363 r0)
+    (shared_p_consensus_2efb2ed4ff373188 r0 r2)
+    (shared_p_consensus_2efb2ed4ff373188 r0 r3)
+    (writing_prompts__wp_011_p_requested-tow r0 r4)
+    (shared_p_consensus_2efb2ed4ff373188 r5 r4)
+    (shared_p_consensus_1b717bbfbf1962fd r5 r6)
+    (shared_p_consensus_1b717bbfbf1962fd r0 r7)
+    (human_1e91389e12439414_p_summons r6 r8)
+    (intends r0 (shared_p_consensus_1b717bbfbf1962fd r0 r8))
+  )
+  (:goal (shared_p_consensus_1b717bbfbf1962fd r0 r8))
+)

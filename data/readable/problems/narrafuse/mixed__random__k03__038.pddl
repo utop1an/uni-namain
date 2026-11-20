@@ -1,0 +1,31 @@
+(define (problem mixed__random__k03__038)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+  )
+  (:init
+    (human_8fa5775aae174731_active)
+    (tiny_stories__story_011_active)
+    (writing_prompts__wp_037_active)
+    (tiny_stories__story_011_type_character r0)
+    (tiny_stories__story_011_type_object r0)
+    (human_8fa5775aae174731_type_character r0)
+    (human_8fa5775aae174731_type_object r0)
+    (tiny_stories__story_011_type_object r1)
+    (tiny_stories__story_011_type_place r1)
+    (human_8fa5775aae174731_type_object r1)
+    (human_8fa5775aae174731_type_place r1)
+    (human_8fa5775aae174731_type_item r2)
+    (human_8fa5775aae174731_type_object r2)
+    (human_8fa5775aae174731_type_item human_8fa5775aae174731_o_ark)
+    (human_8fa5775aae174731_type_object human_8fa5775aae174731_o_ark)
+    (tiny_stories__story_011_p_awake r0)
+    (human_8fa5775aae174731_p_alive r0)
+    (human_8fa5775aae174731_p_burried r2 r1)
+    (human_8fa5775aae174731_p_knows-location r0 r2 r1)
+    (intends r0 (human_8fa5775aae174731_p_has r0 r2))
+  )
+  (:goal (human_8fa5775aae174731_p_has r0 r2))
+)

@@ -1,0 +1,48 @@
+(define (problem human__random__k02__033)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_4d95b598471c21ee_active)
+    (human_df5671d8ba8d67d9_active)
+    (human_4d95b598471c21ee_type_character r0)
+    (human_4d95b598471c21ee_type_object r0)
+    (human_df5671d8ba8d67d9_type_character r0)
+    (human_df5671d8ba8d67d9_type_object r0)
+    (human_df5671d8ba8d67d9_type_patient r0)
+    (human_4d95b598471c21ee_type_location r1)
+    (human_4d95b598471c21ee_type_object r1)
+    (human_4d95b598471c21ee_type_location r2)
+    (human_4d95b598471c21ee_type_object r2)
+    (human_df5671d8ba8d67d9_type_location r2)
+    (human_df5671d8ba8d67d9_type_medicalloc r2)
+    (human_df5671d8ba8d67d9_type_object r2)
+    (human_df5671d8ba8d67d9_type_character r3)
+    (human_df5671d8ba8d67d9_type_doctor r3)
+    (human_df5671d8ba8d67d9_type_medicalcharacter r3)
+    (human_df5671d8ba8d67d9_type_object r3)
+    (human_df5671d8ba8d67d9_type_level r4)
+    (human_df5671d8ba8d67d9_type_object r4)
+    (human_df5671d8ba8d67d9_type_level r5)
+    (human_df5671d8ba8d67d9_type_object r5)
+    (human_df5671d8ba8d67d9_type_level human_df5671d8ba8d67d9_o_three)
+    (human_df5671d8ba8d67d9_type_object human_df5671d8ba8d67d9_o_three)
+    (human_df5671d8ba8d67d9_type_level human_df5671d8ba8d67d9_o_zero)
+    (human_df5671d8ba8d67d9_type_object human_df5671d8ba8d67d9_o_zero)
+    (human_4d95b598471c21ee_p_connected r2 r1)
+    (shared_p_consensus_1171cd85af76c595 r0 r1)
+    (human_df5671d8ba8d67d9_p_alive r3)
+    (human_df5671d8ba8d67d9_p_alive r0)
+    (shared_p_consensus_1171cd85af76c595 r3 r2)
+    (human_df5671d8ba8d67d9_p_level-of-work r3 r4)
+    (human_df5671d8ba8d67d9_p_connected r4 r5)
+    (human_df5671d8ba8d67d9_p_the-doctor r3)
+  )
+  (:goal (human_df5671d8ba8d67d9_p_the-doctor-treating r0))
+)

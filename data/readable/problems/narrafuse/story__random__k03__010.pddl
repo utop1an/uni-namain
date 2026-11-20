@@ -1,0 +1,26 @@
+(define (problem story__random__k03__010)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+  )
+  (:init
+    (tiny_stories__story_018_active)
+    (writing_prompts__wp_037_active)
+    (writing_prompts__wp_085_active)
+    (writing_prompts__wp_037_type_character r0)
+    (writing_prompts__wp_037_type_object r0)
+    (tiny_stories__story_018_type_character r0)
+    (tiny_stories__story_018_type_object r0)
+    (writing_prompts__wp_037_type_character r1)
+    (writing_prompts__wp_037_type_object r1)
+    (tiny_stories__story_018_type_item r1)
+    (tiny_stories__story_018_type_object r1)
+    (writing_prompts__wp_085_type_object writing_prompts__wp_085_o_outside)
+    (writing_prompts__wp_085_type_place writing_prompts__wp_085_o_outside)
+    (writing_prompts__wp_037_p_searching r0 r1)
+    (writing_prompts__wp_037_p_missing r1)
+    (intends r0 (tiny_stories__story_018_p_open r1))
+  )
+  (:goal (tiny_stories__story_018_p_open r1))
+)

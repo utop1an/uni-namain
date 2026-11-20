@@ -1,0 +1,51 @@
+(define (problem mixed__causal_link__k02__038)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+  )
+  (:init
+    (human_281c51d26d5d4ff3_active)
+    (writing_prompts__wp_011_active)
+    (human_281c51d26d5d4ff3_type_character r0)
+    (human_281c51d26d5d4ff3_type_human r0)
+    (human_281c51d26d5d4ff3_type_object r0)
+    (human_281c51d26d5d4ff3_type_house r1)
+    (human_281c51d26d5d4ff3_type_object r1)
+    (human_281c51d26d5d4ff3_type_beast r2)
+    (human_281c51d26d5d4ff3_type_character r2)
+    (human_281c51d26d5d4ff3_type_object r2)
+    (human_281c51d26d5d4ff3_type_wolf r2)
+    (human_281c51d26d5d4ff3_type_house r3)
+    (human_281c51d26d5d4ff3_type_object r3)
+    (human_281c51d26d5d4ff3_type_beast r4)
+    (human_281c51d26d5d4ff3_type_character r4)
+    (human_281c51d26d5d4ff3_type_object r4)
+    (human_281c51d26d5d4ff3_type_wolf r4)
+    (human_281c51d26d5d4ff3_type_character r5)
+    (human_281c51d26d5d4ff3_type_human r5)
+    (human_281c51d26d5d4ff3_type_object r5)
+    (writing_prompts__wp_011_type_character r5)
+    (writing_prompts__wp_011_type_object r5)
+    (human_281c51d26d5d4ff3_type_object r6)
+    (human_281c51d26d5d4ff3_type_thing r6)
+    (writing_prompts__wp_011_type_object r6)
+    (shared_p_consensus_3877afabc20a3ea9 r2)
+    (shared_p_consensus_3877afabc20a3ea9 r0)
+    (shared_p_consensus_7b2c4786141ff719 r2 r1)
+    (shared_p_consensus_7b2c4786141ff719 r0 r1)
+    (human_281c51d26d5d4ff3_p_monster r2)
+    (shared_p_consensus_7b2c4786141ff719 r4 r3)
+    (shared_p_consensus_3877afabc20a3ea9 r5)
+    (shared_p_consensus_0278a011f293c177 r0 r6)
+    (shared_p_consensus_7b2c4786141ff719 r5 r3)
+    (writing_prompts__wp_011_p_ancient-technology r6)
+    (intends r5 (writing_prompts__wp_011_p_in-stasis r6))
+  )
+  (:goal (writing_prompts__wp_011_p_in-stasis r6))
+)

@@ -1,0 +1,46 @@
+(define (problem mixed__random__k03__027)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_662247ec644ef452_active)
+    (tiny_stories__story_087_active)
+    (writing_prompts__wp_064_active)
+    (human_662247ec644ef452_type_object r0)
+    (human_662247ec644ef452_type_place r0)
+    (human_662247ec644ef452_type_living r1)
+    (human_662247ec644ef452_type_object r1)
+    (human_662247ec644ef452_type_person r1)
+    (writing_prompts__wp_064_type_character r1)
+    (writing_prompts__wp_064_type_object r1)
+    (human_662247ec644ef452_type_object r2)
+    (human_662247ec644ef452_type_place r2)
+    (human_662247ec644ef452_type_living r3)
+    (human_662247ec644ef452_type_object r3)
+    (human_662247ec644ef452_type_person r3)
+    (human_662247ec644ef452_type_object r4)
+    (human_662247ec644ef452_type_place r4)
+    (writing_prompts__wp_064_type_object r4)
+    (writing_prompts__wp_064_type_place r4)
+    (writing_prompts__wp_064_type_item r5)
+    (writing_prompts__wp_064_type_object r5)
+    (human_662247ec644ef452_type_object human_662247ec644ef452_o_jailhouse)
+    (human_662247ec644ef452_type_place human_662247ec644ef452_o_jailhouse)
+    (human_662247ec644ef452_type_object human_662247ec644ef452_o_snakebite)
+    (human_662247ec644ef452_type_sickness human_662247ec644ef452_o_snakebite)
+    (shared_p_consensus_7e4c8d8e146133d4 r1)
+    (human_662247ec644ef452_p_free r1)
+    (shared_p_consensus_20311dd53e3c9ae2 r1 r0)
+    (shared_p_consensus_7e4c8d8e146133d4 r3)
+    (shared_p_consensus_20311dd53e3c9ae2 r3 r0)
+    (shared_p_consensus_2d2cc090f7c038cc r1 r5)
+    (intends r1 (writing_prompts__wp_064_p_delivered r5))
+  )
+  (:goal (writing_prompts__wp_064_p_delivered r5))
+)

@@ -1,0 +1,27 @@
+(define (problem story__random__k04__039)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+  )
+  (:init
+    (tiny_stories__story_053_active)
+    (tiny_stories__story_072_active)
+    (tiny_stories__story_078_active)
+    (tiny_stories__story_092_active)
+    (tiny_stories__story_078_type_character r0)
+    (tiny_stories__story_078_type_object r0)
+    (tiny_stories__story_092_type_character r0)
+    (tiny_stories__story_092_type_object r0)
+    (tiny_stories__story_092_type_character r1)
+    (tiny_stories__story_092_type_object r1)
+    (tiny_stories__story_053_type_item tiny_stories__story_053_o_spade)
+    (tiny_stories__story_053_type_object tiny_stories__story_053_o_spade)
+    (tiny_stories__story_053_type_item tiny_stories__story_053_o_small-box)
+    (tiny_stories__story_053_type_object tiny_stories__story_053_o_small-box)
+    (tiny_stories__story_078_p_alive r0)
+    (intends r0 (tiny_stories__story_092_p_applauding r1))
+    (intends r1 (tiny_stories__story_092_p_applauding r1))
+  )
+  (:goal (tiny_stories__story_092_p_applauding r1))
+)

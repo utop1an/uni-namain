@@ -1,0 +1,37 @@
+(define (problem story__causal_link__k02__032)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_045_active)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (writing_prompts__wp_045_type_character r0)
+    (writing_prompts__wp_045_type_object r0)
+    (writing_prompts__wp_011_type_object r1)
+    (writing_prompts__wp_011_type_object r2)
+    (writing_prompts__wp_011_type_place r2)
+    (writing_prompts__wp_011_type_object r3)
+    (writing_prompts__wp_011_type_place r3)
+    (writing_prompts__wp_011_type_object r4)
+    (writing_prompts__wp_011_type_place r4)
+    (writing_prompts__wp_045_type_object r4)
+    (writing_prompts__wp_045_type_place r4)
+    (writing_prompts__wp_045_type_box r5)
+    (writing_prompts__wp_045_type_object r5)
+    (writing_prompts__wp_011_p_alive r0)
+    (shared_p_consensus_a879862271161eb5 r0 r2)
+    (shared_p_consensus_a879862271161eb5 r0 r3)
+    (writing_prompts__wp_011_p_requested-tow r0 r4)
+    (shared_p_consensus_a879862271161eb5 r5 r4)
+    (intends r0 (writing_prompts__wp_045_p_noticed r0 r5))
+  )
+  (:goal (writing_prompts__wp_045_p_noticed r0 r5))
+)

@@ -1,0 +1,31 @@
+(define (problem mixed__random__k04__009)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+  )
+  (:init
+    (human_1fe4b2f08d46fd1e_active)
+    (tiny_stories__story_080_active)
+    (writing_prompts__wp_012_active)
+    (writing_prompts__wp_032_active)
+    (human_1fe4b2f08d46fd1e_type_creature r0)
+    (human_1fe4b2f08d46fd1e_type_object r0)
+    (writing_prompts__wp_032_type_character r0)
+    (writing_prompts__wp_032_type_object r0)
+    (human_1fe4b2f08d46fd1e_type_object r1)
+    (human_1fe4b2f08d46fd1e_type_place r1)
+    (human_1fe4b2f08d46fd1e_type_object r2)
+    (human_1fe4b2f08d46fd1e_type_place r2)
+    (writing_prompts__wp_032_type_object r2)
+    (writing_prompts__wp_032_type_place r2)
+    (writing_prompts__wp_012_type_object writing_prompts__wp_012_o_garage)
+    (writing_prompts__wp_012_type_object writing_prompts__wp_012_o_house)
+    (shared_p_consensus_7d37c410ead202e2 r0)
+    (shared_p_consensus_402e605c88abb696 r0 r1)
+    (writing_prompts__wp_032_p_wolves-attack r2)
+    (intends r0 (writing_prompts__wp_032_p_wolves-killed r0))
+  )
+  (:goal (writing_prompts__wp_032_p_wolves-killed r0))
+)

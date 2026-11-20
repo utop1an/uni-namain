@@ -1,0 +1,40 @@
+(define (problem mixed__random__k05__024)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+  )
+  (:init
+    (human_67ab241b327ccef0_active)
+    (tiny_stories__story_034_active)
+    (tiny_stories__story_049_active)
+    (writing_prompts__wp_033_active)
+    (writing_prompts__wp_035_active)
+    (human_67ab241b327ccef0_type_character r0)
+    (human_67ab241b327ccef0_type_object r0)
+    (tiny_stories__story_034_type_character r0)
+    (tiny_stories__story_034_type_object r0)
+    (writing_prompts__wp_035_type_character r0)
+    (writing_prompts__wp_035_type_object r0)
+    (human_67ab241b327ccef0_type_object r1)
+    (human_67ab241b327ccef0_type_room r1)
+    (human_67ab241b327ccef0_type_object r2)
+    (human_67ab241b327ccef0_type_room r2)
+    (human_67ab241b327ccef0_type_object r3)
+    (human_67ab241b327ccef0_type_thing r3)
+    (tiny_stories__story_034_type_object r3)
+    (writing_prompts__wp_035_type_item r3)
+    (writing_prompts__wp_035_type_object r3)
+    (writing_prompts__wp_035_type_item r4)
+    (writing_prompts__wp_035_type_object r4)
+    (shared_p_consensus_6b19507d34dc251a r0 r1)
+    (human_67ab241b327ccef0_p_in r3 r2)
+    (shared_p_consensus_97b5e6041ae75f45 r0)
+    (shared_p_consensus_ea378ff6756b65f5 r0 r4)
+    (intends r0 (shared_p_consensus_2500567f3da0f8a2 r0 r4))
+  )
+  (:goal (shared_p_consensus_2500567f3da0f8a2 r0 r4))
+)

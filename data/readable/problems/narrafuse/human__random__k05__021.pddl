@@ -1,0 +1,56 @@
+(define (problem human__random__k05__021)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+    r7 - object
+  )
+  (:init
+    (human_1fe4b2f08d46fd1e_active)
+    (human_230a940d5d5977a6_active)
+    (human_67ab241b327ccef0_active)
+    (human_72bec7307b121ea5_active)
+    (human_7c98a61edf861243_active)
+    (human_1fe4b2f08d46fd1e_type_creature r0)
+    (human_1fe4b2f08d46fd1e_type_object r0)
+    (human_72bec7307b121ea5_type_character r0)
+    (human_72bec7307b121ea5_type_object r0)
+    (human_230a940d5d5977a6_type_actor r0)
+    (human_230a940d5d5977a6_type_citizen r0)
+    (human_230a940d5d5977a6_type_object r0)
+    (human_1fe4b2f08d46fd1e_type_object r1)
+    (human_1fe4b2f08d46fd1e_type_place r1)
+    (human_1fe4b2f08d46fd1e_type_object r2)
+    (human_1fe4b2f08d46fd1e_type_place r2)
+    (human_72bec7307b121ea5_type_location r2)
+    (human_72bec7307b121ea5_type_object r2)
+    (human_72bec7307b121ea5_type_location r3)
+    (human_72bec7307b121ea5_type_object r3)
+    (human_72bec7307b121ea5_type_item r4)
+    (human_72bec7307b121ea5_type_object r4)
+    (human_230a940d5d5977a6_type_item r4)
+    (human_230a940d5d5977a6_type_object r4)
+    (human_230a940d5d5977a6_type_actor r5)
+    (human_230a940d5d5977a6_type_object r5)
+    (human_230a940d5d5977a6_type_police r5)
+    (human_230a940d5d5977a6_type_crime r6)
+    (human_230a940d5d5977a6_type_object r6)
+    (human_230a940d5d5977a6_type_object r7)
+    (human_230a940d5d5977a6_type_place r7)
+    (shared_p_consensus_20b59d59d1ce64bf r0)
+    (shared_p_consensus_897198bbfa4e4b4d r0 r1)
+    (human_72bec7307b121ea5_p_connected r3 r2)
+    (shared_p_consensus_897198bbfa4e4b4d r4 r3)
+    (shared_p_consensus_c62101cda8c0d677 r5 r7)
+    (shared_p_consensus_20b59d59d1ce64bf r5)
+    (shared_p_consensus_c62101cda8c0d677 r0 r7)
+    (human_230a940d5d5977a6_p_knows-clue r5 r6 r4)
+    (intends r0 (human_230a940d5d5977a6_p_suspect r0 r6))
+  )
+  (:goal (human_230a940d5d5977a6_p_suspect r0 r6))
+)

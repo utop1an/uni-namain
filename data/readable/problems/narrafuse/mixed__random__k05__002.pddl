@@ -1,0 +1,32 @@
+(define (problem mixed__random__k05__002)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+  )
+  (:init
+    (human_1fe4b2f08d46fd1e_active)
+    (tiny_stories__story_003_active)
+    (tiny_stories__story_046_active)
+    (tiny_stories__story_070_active)
+    (writing_prompts__wp_042_active)
+    (human_1fe4b2f08d46fd1e_type_creature r0)
+    (human_1fe4b2f08d46fd1e_type_object r0)
+    (writing_prompts__wp_042_type_character r0)
+    (writing_prompts__wp_042_type_object r0)
+    (human_1fe4b2f08d46fd1e_type_object r1)
+    (human_1fe4b2f08d46fd1e_type_place r1)
+    (human_1fe4b2f08d46fd1e_type_object r2)
+    (human_1fe4b2f08d46fd1e_type_place r2)
+    (writing_prompts__wp_042_type_object r2)
+    (writing_prompts__wp_042_type_place r2)
+    (tiny_stories__story_046_type_object tiny_stories__story_046_o_ball)
+    (tiny_stories__story_046_type_object tiny_stories__story_046_o_perfume)
+    (shared_p_consensus_39ebbe44d33a3c4c r0)
+    (shared_p_consensus_d3b6005731aece96 r0 r1)
+    (writing_prompts__wp_042_p_drunk r0)
+    (intends r0 (writing_prompts__wp_042_p_vomit-stain r2))
+  )
+  (:goal (writing_prompts__wp_042_p_vomit-stain r2))
+)

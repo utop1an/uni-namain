@@ -1,0 +1,47 @@
+(define (problem human__causal_link__k04__031)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_281c51d26d5d4ff3_active)
+    (human_62959785b3ec220a_active)
+    (human_72bec7307b121ea5_active)
+    (human_87bbd0acdf4611c5_active)
+    (human_281c51d26d5d4ff3_type_character r0)
+    (human_281c51d26d5d4ff3_type_human r0)
+    (human_281c51d26d5d4ff3_type_object r0)
+    (human_72bec7307b121ea5_type_character r0)
+    (human_72bec7307b121ea5_type_object r0)
+    (human_281c51d26d5d4ff3_type_house r1)
+    (human_281c51d26d5d4ff3_type_object r1)
+    (human_281c51d26d5d4ff3_type_beast r2)
+    (human_281c51d26d5d4ff3_type_character r2)
+    (human_281c51d26d5d4ff3_type_object r2)
+    (human_281c51d26d5d4ff3_type_wolf r2)
+    (human_281c51d26d5d4ff3_type_house r3)
+    (human_281c51d26d5d4ff3_type_object r3)
+    (human_72bec7307b121ea5_type_location r3)
+    (human_72bec7307b121ea5_type_object r3)
+    (human_281c51d26d5d4ff3_type_beast r4)
+    (human_281c51d26d5d4ff3_type_character r4)
+    (human_281c51d26d5d4ff3_type_object r4)
+    (human_281c51d26d5d4ff3_type_wolf r4)
+    (human_72bec7307b121ea5_type_location r5)
+    (human_72bec7307b121ea5_type_object r5)
+    (human_281c51d26d5d4ff3_p_alive r2)
+    (human_281c51d26d5d4ff3_p_alive r0)
+    (shared_p_consensus_24a89b50550672ed r2 r1)
+    (shared_p_consensus_24a89b50550672ed r0 r1)
+    (human_281c51d26d5d4ff3_p_monster r2)
+    (shared_p_consensus_24a89b50550672ed r4 r3)
+    (human_72bec7307b121ea5_p_connected r5 r3)
+    (intends r0 (shared_p_consensus_24a89b50550672ed r0 r5))
+  )
+  (:goal (shared_p_consensus_24a89b50550672ed r0 r5))
+)

@@ -1,0 +1,36 @@
+(define (problem human__random__k02__027)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+  )
+  (:init
+    (human_3cd8b87ba572801b_active)
+    (human_4d95b598471c21ee_active)
+    (human_4d95b598471c21ee_type_character r0)
+    (human_4d95b598471c21ee_type_object r0)
+    (human_3cd8b87ba572801b_type_canmarry r0)
+    (human_3cd8b87ba572801b_type_object r0)
+    (human_4d95b598471c21ee_type_location r1)
+    (human_4d95b598471c21ee_type_object r1)
+    (human_4d95b598471c21ee_type_location r2)
+    (human_4d95b598471c21ee_type_object r2)
+    (human_3cd8b87ba572801b_type_location r2)
+    (human_3cd8b87ba572801b_type_object r2)
+    (human_3cd8b87ba572801b_type_character r3)
+    (human_3cd8b87ba572801b_type_female r3)
+    (human_3cd8b87ba572801b_type_object r3)
+    (human_3cd8b87ba572801b_type_person r3)
+    (human_4d95b598471c21ee_p_connected r2 r1)
+    (human_4d95b598471c21ee_p_at r0 r1)
+    (human_3cd8b87ba572801b_p_bachelor r0)
+    (human_3cd8b87ba572801b_p_at r3 r2)
+    (human_3cd8b87ba572801b_p_single r0)
+    (human_3cd8b87ba572801b_p_alive r0)
+    (human_3cd8b87ba572801b_p_alive r3)
+    (human_3cd8b87ba572801b_p_beautiful r3)
+  )
+  (:goal (human_3cd8b87ba572801b_p_loves r0 r3))
+)

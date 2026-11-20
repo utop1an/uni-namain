@@ -1,0 +1,41 @@
+(define (problem mixed__random__k04__044)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+  )
+  (:init
+    (human_df5671d8ba8d67d9_active)
+    (tiny_stories__story_029_active)
+    (tiny_stories__story_035_active)
+    (writing_prompts__wp_006_active)
+    (human_df5671d8ba8d67d9_type_character r0)
+    (human_df5671d8ba8d67d9_type_object r0)
+    (human_df5671d8ba8d67d9_type_patient r0)
+    (tiny_stories__story_029_type_character r0)
+    (tiny_stories__story_029_type_object r0)
+    (human_df5671d8ba8d67d9_type_location r1)
+    (human_df5671d8ba8d67d9_type_object r1)
+    (human_df5671d8ba8d67d9_type_location r2)
+    (human_df5671d8ba8d67d9_type_object r2)
+    (human_df5671d8ba8d67d9_type_location r3)
+    (human_df5671d8ba8d67d9_type_object r3)
+    (tiny_stories__story_029_type_object r3)
+    (tiny_stories__story_029_type_place r3)
+    (tiny_stories__story_029_type_object r4)
+    (tiny_stories__story_029_type_place r4)
+    (human_df5671d8ba8d67d9_type_level human_df5671d8ba8d67d9_o_three)
+    (human_df5671d8ba8d67d9_type_object human_df5671d8ba8d67d9_o_three)
+    (human_df5671d8ba8d67d9_type_level human_df5671d8ba8d67d9_o_zero)
+    (human_df5671d8ba8d67d9_type_object human_df5671d8ba8d67d9_o_zero)
+    (tiny_stories__story_035_type_character tiny_stories__story_035_o_tim)
+    (tiny_stories__story_035_type_object tiny_stories__story_035_o_tim)
+    (human_df5671d8ba8d67d9_p_at r0 r1)
+    (tiny_stories__story_029_p_alive r0)
+    (intends r0 (tiny_stories__story_029_p_at r0 r4))
+  )
+  (:goal (tiny_stories__story_029_p_at r0 r4))
+)

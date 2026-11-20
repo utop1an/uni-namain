@@ -1,0 +1,40 @@
+(define (problem story__causal_link__k03__048)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+  )
+  (:init
+    (tiny_stories__story_045_active)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_054_active)
+    (tiny_stories__story_045_type_character r0)
+    (tiny_stories__story_045_type_object r0)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (writing_prompts__wp_054_type_character r0)
+    (writing_prompts__wp_054_type_object r0)
+    (tiny_stories__story_045_type_object r1)
+    (writing_prompts__wp_011_type_object r1)
+    (writing_prompts__wp_011_type_object r2)
+    (writing_prompts__wp_011_type_place r2)
+    (writing_prompts__wp_011_type_object r3)
+    (writing_prompts__wp_011_type_place r3)
+    (writing_prompts__wp_054_type_object r3)
+    (writing_prompts__wp_054_type_place r3)
+    (writing_prompts__wp_054_type_item r4)
+    (writing_prompts__wp_054_type_object r4)
+    (tiny_stories__story_045_type_object tiny_stories__story_045_o_mirror)
+    (writing_prompts__wp_054_type_item writing_prompts__wp_054_o_crucifix)
+    (writing_prompts__wp_054_type_object writing_prompts__wp_054_o_crucifix)
+    (shared_p_consensus_e8b8896763c573ac r0)
+    (shared_p_consensus_8cd1facae5ce6c3e r0 r2)
+    (writing_prompts__wp_011_p_requested-tow r0 r3)
+    (writing_prompts__wp_054_p_has r0 r4)
+    (intends r0 (writing_prompts__wp_054_p_hidden r4 r3))
+  )
+  (:goal (writing_prompts__wp_054_p_hidden r4 r3))
+)

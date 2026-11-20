@@ -1,0 +1,53 @@
+(define (problem mixed__causal_link__k02__020)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+    r7 - object
+  )
+  (:init
+    (human_87bbd0acdf4611c5_active)
+    (tiny_stories__story_065_active)
+    (human_87bbd0acdf4611c5_type_character r0)
+    (human_87bbd0acdf4611c5_type_object r0)
+    (human_87bbd0acdf4611c5_type_thing r0)
+    (human_87bbd0acdf4611c5_type_character r1)
+    (human_87bbd0acdf4611c5_type_object r1)
+    (human_87bbd0acdf4611c5_type_thing r1)
+    (human_87bbd0acdf4611c5_type_location r2)
+    (human_87bbd0acdf4611c5_type_object r2)
+    (human_87bbd0acdf4611c5_type_thing r2)
+    (human_87bbd0acdf4611c5_type_location r3)
+    (human_87bbd0acdf4611c5_type_object r3)
+    (human_87bbd0acdf4611c5_type_thing r3)
+    (human_87bbd0acdf4611c5_type_location r4)
+    (human_87bbd0acdf4611c5_type_object r4)
+    (human_87bbd0acdf4611c5_type_thing r4)
+    (human_87bbd0acdf4611c5_type_location r5)
+    (human_87bbd0acdf4611c5_type_object r5)
+    (human_87bbd0acdf4611c5_type_thing r5)
+    (tiny_stories__story_065_type_object r5)
+    (human_87bbd0acdf4611c5_type_character r6)
+    (human_87bbd0acdf4611c5_type_object r6)
+    (human_87bbd0acdf4611c5_type_thing r6)
+    (tiny_stories__story_065_type_character r6)
+    (tiny_stories__story_065_type_object r6)
+    (tiny_stories__story_065_type_object r7)
+    (human_87bbd0acdf4611c5_p_player r1)
+    (human_87bbd0acdf4611c5_p_at r1 r2)
+    (human_87bbd0acdf4611c5_p_at r0 r2)
+    (human_87bbd0acdf4611c5_p_apprehended r0)
+    (human_87bbd0acdf4611c5_p_connected r4 r3)
+    (human_87bbd0acdf4611c5_p_at r1 r3)
+    (human_87bbd0acdf4611c5_p_henchman r1)
+    (human_87bbd0acdf4611c5_p_has r1 r6)
+    (human_87bbd0acdf4611c5_p_connected r5 r4)
+    (intends r6 (tiny_stories__story_065_p_touching r6 r7))
+  )
+  (:goal (tiny_stories__story_065_p_touching r6 r7))
+)

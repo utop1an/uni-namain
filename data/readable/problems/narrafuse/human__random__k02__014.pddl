@@ -1,0 +1,50 @@
+(define (problem human__random__k02__014)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+  )
+  (:init
+    (human_230a940d5d5977a6_active)
+    (human_62959785b3ec220a_active)
+    (human_62959785b3ec220a_type_character r0)
+    (human_62959785b3ec220a_type_object r0)
+    (human_62959785b3ec220a_type_thing r0)
+    (human_62959785b3ec220a_type_character r1)
+    (human_62959785b3ec220a_type_object r1)
+    (human_62959785b3ec220a_type_thing r1)
+    (human_230a940d5d5977a6_type_actor r1)
+    (human_230a940d5d5977a6_type_object r1)
+    (human_230a940d5d5977a6_type_police r1)
+    (human_62959785b3ec220a_type_location r2)
+    (human_62959785b3ec220a_type_object r2)
+    (human_62959785b3ec220a_type_thing r2)
+    (human_62959785b3ec220a_type_location r3)
+    (human_62959785b3ec220a_type_object r3)
+    (human_62959785b3ec220a_type_thing r3)
+    (human_62959785b3ec220a_type_location r4)
+    (human_62959785b3ec220a_type_object r4)
+    (human_62959785b3ec220a_type_thing r4)
+    (human_230a940d5d5977a6_type_object r4)
+    (human_230a940d5d5977a6_type_place r4)
+    (human_230a940d5d5977a6_type_crime r5)
+    (human_230a940d5d5977a6_type_object r5)
+    (human_230a940d5d5977a6_type_item r6)
+    (human_230a940d5d5977a6_type_object r6)
+    (human_62959785b3ec220a_p_player r1)
+    (shared_p_consensus_ccf9a5b9df9a5d76 r1 r2)
+    (shared_p_consensus_ccf9a5b9df9a5d76 r0 r2)
+    (human_62959785b3ec220a_p_apprehended r0)
+    (human_62959785b3ec220a_p_connected r4 r3)
+    (shared_p_consensus_ccf9a5b9df9a5d76 r1 r3)
+    (shared_p_consensus_f54c270eddd253f8 r1)
+    (human_230a940d5d5977a6_p_clue r5 r6 r4)
+    (intends r1 (human_230a940d5d5977a6_p_knows-clue r1 r5 r6))
+  )
+  (:goal (human_230a940d5d5977a6_p_knows-clue r1 r5 r6))
+)

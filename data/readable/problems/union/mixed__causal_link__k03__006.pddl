@@ -1,0 +1,35 @@
+(define (problem mixed__causal_link__k03__006)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+  )
+  (:init
+    (human_1e91389e12439414_active)
+    (tiny_stories__story_075_active)
+    (writing_prompts__wp_035_active)
+    (writing_prompts__wp_035_type_character r0)
+    (writing_prompts__wp_035_type_object r0)
+    (human_1e91389e12439414_type_character r0)
+    (human_1e91389e12439414_type_humanoid r0)
+    (human_1e91389e12439414_type_object r0)
+    (human_1e91389e12439414_type_protagonist r0)
+    (writing_prompts__wp_035_type_object r1)
+    (writing_prompts__wp_035_type_place r1)
+    (human_1e91389e12439414_type_location r1)
+    (human_1e91389e12439414_type_object r1)
+    (human_1e91389e12439414_type_item r2)
+    (human_1e91389e12439414_type_object r2)
+    (human_1e91389e12439414_type_spell r2)
+    (human_1e91389e12439414_type_teleport_spell r2)
+    (human_1e91389e12439414_type_location r3)
+    (human_1e91389e12439414_type_object r3)
+    (writing_prompts__wp_035_p_alive r0)
+    (human_1e91389e12439414_p_has r0 r2)
+    (human_1e91389e12439414_p_leads_to r2 r3)
+    (intends r0 (human_1e91389e12439414_p_at r0 r3))
+  )
+  (:goal (human_1e91389e12439414_p_at r0 r3))
+)

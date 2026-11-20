@@ -1,0 +1,45 @@
+(define (problem mixed__random__k03__010)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_230a940d5d5977a6_active)
+    (tiny_stories__story_084_active)
+    (writing_prompts__wp_037_active)
+    (tiny_stories__story_084_type_character r0)
+    (tiny_stories__story_084_type_object r0)
+    (human_230a940d5d5977a6_type_actor r0)
+    (human_230a940d5d5977a6_type_citizen r0)
+    (human_230a940d5d5977a6_type_object r0)
+    (tiny_stories__story_084_type_item r1)
+    (tiny_stories__story_084_type_object r1)
+    (human_230a940d5d5977a6_type_item r1)
+    (human_230a940d5d5977a6_type_object r1)
+    (tiny_stories__story_084_type_object r2)
+    (tiny_stories__story_084_type_place r2)
+    (human_230a940d5d5977a6_type_actor r3)
+    (human_230a940d5d5977a6_type_object r3)
+    (human_230a940d5d5977a6_type_police r3)
+    (human_230a940d5d5977a6_type_crime r4)
+    (human_230a940d5d5977a6_type_object r4)
+    (human_230a940d5d5977a6_type_object r5)
+    (human_230a940d5d5977a6_type_place r5)
+    (tiny_stories__story_084_type_item tiny_stories__story_084_o_rocket)
+    (tiny_stories__story_084_type_object tiny_stories__story_084_o_rocket)
+    (tiny_stories__story_084_type_toy tiny_stories__story_084_o_rocket)
+    (tiny_stories__story_084_p_at r0 r2)
+    (human_230a940d5d5977a6_p_at r3 r5)
+    (human_230a940d5d5977a6_p_alive r3)
+    (human_230a940d5d5977a6_p_at r0 r5)
+    (human_230a940d5d5977a6_p_alive r0)
+    (human_230a940d5d5977a6_p_knows-clue r3 r4 r1)
+    (intends r0 (human_230a940d5d5977a6_p_suspect r0 r4))
+  )
+  (:goal (human_230a940d5d5977a6_p_suspect r0 r4))
+)

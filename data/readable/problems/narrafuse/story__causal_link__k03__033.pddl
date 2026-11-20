@@ -1,0 +1,46 @@
+(define (problem story__causal_link__k03__033)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+    r6 - object
+  )
+  (:init
+    (tiny_stories__story_048_active)
+    (tiny_stories__story_060_active)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (tiny_stories__story_048_type_character r0)
+    (tiny_stories__story_048_type_object r0)
+    (writing_prompts__wp_011_type_object r1)
+    (writing_prompts__wp_011_type_object r2)
+    (writing_prompts__wp_011_type_place r2)
+    (writing_prompts__wp_011_type_object r3)
+    (writing_prompts__wp_011_type_place r3)
+    (writing_prompts__wp_011_type_object r4)
+    (writing_prompts__wp_011_type_place r4)
+    (tiny_stories__story_048_type_object r4)
+    (tiny_stories__story_048_type_place r4)
+    (tiny_stories__story_048_type_character r5)
+    (tiny_stories__story_048_type_object r5)
+    (tiny_stories__story_060_type_character r5)
+    (tiny_stories__story_060_type_object r5)
+    (tiny_stories__story_060_type_object r6)
+    (tiny_stories__story_060_type_item tiny_stories__story_060_o_vase)
+    (tiny_stories__story_060_type_object tiny_stories__story_060_o_vase)
+    (writing_prompts__wp_011_p_alive r0)
+    (shared_p_consensus_b6f6af615ea2a263 r0 r2)
+    (shared_p_consensus_b6f6af615ea2a263 r0 r3)
+    (writing_prompts__wp_011_p_requested-tow r0 r4)
+    (tiny_stories__story_048_p_wet r4)
+    (shared_p_consensus_b6f6af615ea2a263 r5 r4)
+    (intends r0 (tiny_stories__story_060_p_cake r6))
+    (intends r5 (tiny_stories__story_060_p_cake r6))
+  )
+  (:goal (tiny_stories__story_060_p_cake r6))
+)

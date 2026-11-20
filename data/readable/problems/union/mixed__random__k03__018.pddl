@@ -1,0 +1,45 @@
+(define (problem mixed__random__k03__018)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+    r5 - object
+  )
+  (:init
+    (human_3cd8b87ba572801b_active)
+    (writing_prompts__wp_011_active)
+    (writing_prompts__wp_014_active)
+    (writing_prompts__wp_011_type_character r0)
+    (writing_prompts__wp_011_type_object r0)
+    (human_3cd8b87ba572801b_type_canmarry r0)
+    (human_3cd8b87ba572801b_type_object r0)
+    (writing_prompts__wp_011_type_object r1)
+    (writing_prompts__wp_011_type_object r2)
+    (writing_prompts__wp_011_type_place r2)
+    (writing_prompts__wp_011_type_object r3)
+    (writing_prompts__wp_011_type_place r3)
+    (writing_prompts__wp_011_type_object r4)
+    (writing_prompts__wp_011_type_place r4)
+    (human_3cd8b87ba572801b_type_location r4)
+    (human_3cd8b87ba572801b_type_object r4)
+    (human_3cd8b87ba572801b_type_character r5)
+    (human_3cd8b87ba572801b_type_female r5)
+    (human_3cd8b87ba572801b_type_object r5)
+    (human_3cd8b87ba572801b_type_person r5)
+    (writing_prompts__wp_011_p_alive r0)
+    (writing_prompts__wp_011_p_at r0 r2)
+    (writing_prompts__wp_011_p_at r0 r3)
+    (writing_prompts__wp_011_p_requested-tow r0 r4)
+    (human_3cd8b87ba572801b_p_bachelor r0)
+    (human_3cd8b87ba572801b_p_at r5 r4)
+    (human_3cd8b87ba572801b_p_single r0)
+    (human_3cd8b87ba572801b_p_alive r0)
+    (human_3cd8b87ba572801b_p_alive r5)
+    (human_3cd8b87ba572801b_p_beautiful r5)
+    (intends r0 (human_3cd8b87ba572801b_p_loves r0 r5))
+  )
+  (:goal (human_3cd8b87ba572801b_p_loves r0 r5))
+)

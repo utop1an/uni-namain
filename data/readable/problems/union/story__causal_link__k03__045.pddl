@@ -1,0 +1,41 @@
+(define (problem story__causal_link__k03__045)
+  (:domain revised_merged)
+  (:objects
+    r0 - object
+    r1 - object
+    r2 - object
+    r3 - object
+    r4 - object
+  )
+  (:init
+    (tiny_stories__story_075_active)
+    (writing_prompts__wp_054_active)
+    (writing_prompts__wp_089_active)
+    (writing_prompts__wp_054_type_character r0)
+    (writing_prompts__wp_054_type_object r0)
+    (writing_prompts__wp_054_type_item r1)
+    (writing_prompts__wp_054_type_object r1)
+    (writing_prompts__wp_089_type_item r1)
+    (writing_prompts__wp_089_type_object r1)
+    (writing_prompts__wp_089_type_thing r1)
+    (writing_prompts__wp_054_type_object r2)
+    (writing_prompts__wp_054_type_place r2)
+    (writing_prompts__wp_054_type_character r3)
+    (writing_prompts__wp_054_type_object r3)
+    (writing_prompts__wp_089_type_character r3)
+    (writing_prompts__wp_089_type_object r3)
+    (writing_prompts__wp_089_type_object r4)
+    (writing_prompts__wp_089_type_room r4)
+    (writing_prompts__wp_054_type_item writing_prompts__wp_054_o_crucifix)
+    (writing_prompts__wp_054_type_object writing_prompts__wp_054_o_crucifix)
+    (writing_prompts__wp_054_p_alive r0)
+    (writing_prompts__wp_054_p_at r0 r2)
+    (writing_prompts__wp_054_p_has r0 r1)
+    (writing_prompts__wp_054_p_alive r3)
+    (writing_prompts__wp_054_p_at r3 r2)
+    (writing_prompts__wp_089_p_at r3 r4)
+    (intends r0 (writing_prompts__wp_089_p_in r1 r4))
+    (intends r3 (writing_prompts__wp_089_p_in r1 r4))
+  )
+  (:goal (writing_prompts__wp_089_p_in r1 r4))
+)
