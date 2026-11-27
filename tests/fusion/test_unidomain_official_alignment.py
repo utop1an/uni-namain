@@ -17,7 +17,7 @@ from unidomain.pipeline import run
 
 
 ROOT = Path(__file__).resolve().parents[2]
-PROMPT_DIR = ROOT / "prompts" / "domain_fusion"
+PROMPT_DIR = ROOT / "prompts" / "unidomain"
 
 
 def empty_domain(source: str) -> Domain:

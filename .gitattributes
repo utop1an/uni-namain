@@ -3,6 +3,13 @@ data/research_release/** -text
 data/sources/** -text
 data/merged/** -text
 data/narra-domains/*.pddl -text
+prompts/unidomain/*.txt -text
+prompts/narrafuse/*/*.txt text eol=lf
+
+# The relocation inventory pins the exact working-copy bytes of these archives.
+archive/scripts/experiments/prepare_role_identity_followup.py -text
+archive/scripts/experiments/prepare_explicit_semantic_contract.py -text
+archive/scripts/experiments/resume_frozen_timeout_retry.py -text
 
 # Vector source assets use stable line endings; PDF figures are binary sources.
 paper/figures*/*.svg text eol=lf

@@ -65,12 +65,33 @@ class RevisedMultistoryTests(unittest.TestCase):
             self.assertTrue(all(len(g['members'])==2 for g in groups))
             self.assertIn('inconsistent_role_cycle',[c.get('reason') for c in audit['checks']])
 
-    def test_conflicting_concepts_reject_triple(self):
+    def test_disagreement_within_a_pair_rejects_triple(self):
         with tempfile.TemporaryDirectory() as td:
             sources,raw=fixture(Path(td),3)
             edge=next(g for g in raw if g['id']=='predicate_s0_s2')
-            for m in edge['members']:m['semantics']['concept']='different_specific_concept'
+            edge['members'][1]['semantics']['concept']='different_specific_concept'
             groups,_=select_groups(sources,raw,'predicate');self.assertTrue(all(len(g['members'])==2 for g in groups))
+
+    def test_independent_pair_descriptions_compile_with_consistent_permutations(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            sources, raw = fixture(root, 3)
+            for edge in raw:
+                for member in edge['members']:
+                    if 'predicate' not in member:
+                        continue
+                    roles = ['occupant', 'site']
+                    if member['predicate'].startswith('s2:'):
+                        member['order'] = [1, 0]
+                        roles.reverse()
+                    member['semantics'].update(concept='location ' + edge['id'],
+                                               scope='scope ' + edge['id'], roles=roles)
+            groups, _ = select_groups(sources, raw, 'predicate')
+            group, = groups
+            self.assertEqual(group['pair_judgments'], [e for e in raw if 'predicate' in e['members'][0]])
+            maps = build(sources, root/'compiled', groups=groups)['predicate_maps']
+            self.assertEqual(len({maps[s.id]['at'][0] for s in sources}), 1)
+            self.assertEqual(maps['s2']['at'][1], [1, 0])
 
     def test_input_order_and_raw_judgments_unchanged(self):
         with tempfile.TemporaryDirectory() as td:

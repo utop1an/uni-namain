@@ -28,8 +28,8 @@ REFERENCE_ENTRYPOINTS = {'unidomain_ollama_fusion.py', 'unidomain/__main__.py'}
 REFERENCE_ARCHIVE = {'rcnc/pddl.py', 'rcnc/pddl_checks.py',
     'rcnc/namespace_export.py', 'scripts/experiments/run_fusion_reference.py',
     'unidomain/__init__.py', 'unidomain/cli.py', 'unidomain/fusion.py', 'unidomain/models.py',
-    'unidomain/pipeline.py', 'prompts/domain_fusion/check_merge_actions.txt',
-    'prompts/domain_fusion/check_merge_predicates.txt', 'prompts/domain_fusion/update_action_string.txt'}
+    'unidomain/pipeline.py'}
+REFERENCE_PROMPTS = {'check_merge_actions.txt', 'check_merge_predicates.txt', 'update_action_string.txt'}
 
 
 def read(path):
@@ -84,7 +84,10 @@ def parent_admission(parent, protocol):
             or manifest.get('condition', 'fresh') != 'fresh'):
         raise ValueError('Parent differs from the registered fresh build condition')
     implementation = manifest.get('implementation_sha256', {})
-    if (not REFERENCE_ARCHIVE.issubset(implementation)
+    complete_prompts = any(
+        all(f'prompts/{directory}/{name}' in implementation for name in REFERENCE_PROMPTS)
+        for directory in ('unidomain', 'domain_fusion'))
+    if (not complete_prompts or not REFERENCE_ARCHIVE.issubset(implementation)
             or not REFERENCE_ENTRYPOINTS.intersection(implementation)):
         raise ValueError('Parent has no complete archived export implementation')
     checked_inventory(parent / 'implementation', implementation)

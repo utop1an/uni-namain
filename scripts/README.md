@@ -54,6 +54,10 @@ Only independent labels can support semantic agreement scores.
 
 ## Historical tools and path recovery
 
+The [archived experiment entry points](../archive/scripts/README.md#archived-experiment-entry-points)
+include the role-identity clarification, explicit-schema preparation, and frozen
+timeout-retry continuation. Run them as modules under `archive.scripts.experiments`.
+
 Authored Snow/ACCO/BIRT cases, meeting deliveries and fixed selection follow-ups
 are in [archive/scripts](../archive/scripts/README.md). Early frozen RCNC commands
 are beside their implementation in `archive/rcnc/`:

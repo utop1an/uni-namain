@@ -29,8 +29,11 @@ include-package-data = false
 
 [tool.setuptools.packages.find]
 include = [
-    "rcnc", "unidomain", "scripts", "scripts.*",
+    "rcnc", "unidomain", "prompts", "scripts", "scripts.*",
     "archive", "archive.rcnc", "archive.scripts", "archive.scripts.*",
     "archive.entrypoints",
 ]
 namespaces = false
+
+[tool.setuptools.package-data]
+prompts = ["narrafuse/*/*.txt", "unidomain/*.txt"]

@@ -4,6 +4,9 @@ NarraFuse compiles narrative planning domains into a reusable, parameterized
 domain before search. The compiler records source mappings and provenance.
 Planning takes an explicit initial state and an optional goal.
 
+The [prompt catalog](prompts/README.md) links the NarraFuse alignment prompts,
+their experiment configurations, and the UniDomain baseline templates.
+
 The [domain catalog](data/README.md) links source domains and merged models by
 experiment group. For the Arthur, Batman and Little Red example, look up
 `human__random__k03__022` in `data/groups.csv`.

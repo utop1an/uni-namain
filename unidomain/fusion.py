@@ -12,7 +12,7 @@ from rcnc.pddl import (
 from .models import EmbeddingService, OllamaClient
 
 
-PROMPT_DIR = Path(__file__).resolve().parents[1] / "prompts" / "domain_fusion"
+PROMPT_DIR = Path(__file__).resolve().parents[1] / "prompts" / "unidomain"
 
 PREDICATE_SCHEMA = {
     "type": "object",

@@ -10,6 +10,8 @@ import shutil
 import time
 import traceback
 
+from prompts import prompt_sources
+
 from rcnc.domain_building import digest,save,snapshot_implementation
 from rcnc.glaive_merge import Source,build,map_problem,translate_plan
 from rcnc.glaive_runtime import invoke
@@ -26,7 +28,7 @@ RUNTIME=Path('data/validation/glaive_runtime_correction_2026_11_01_v5')
 MODEL='glm-5.3:cloud'
 MODEL_DIGEST='8477dab3e25bb0f93c468af220186f55394262ee5e9f39262af4b60b54a8c4ba'
 CONDITIONS=('union','predicate_only','full')
-IMPLEMENTATION=[Path(__file__),*[Path('rcnc')/(n+'.py') for n in (
+IMPLEMENTATION=[*prompt_sources(),Path(__file__),*[Path('rcnc')/(n+'.py') for n in (
     'revised_multistory','revised_sampling','glaive_merge','glaive_runtime','domain_building','pddl','conditional_merge',
     'model_semantics','model_semantics_schema','model_semantics_facets','model_semantics_role_contract',
     'model_semantics_compact','model_semantics_contract','saved_plan_validation','revised_probe_validation')],

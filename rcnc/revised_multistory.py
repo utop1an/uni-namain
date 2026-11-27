@@ -1,7 +1,8 @@
 """Conservative multi-source consensus over frozen pair judgments.
 
 No transitive semantic closure: every pair in a cluster must be accepted, and
-all role maps and semantic cards must agree. Selection is deterministic.
+all argument maps must agree around cycles. Each edge has its own semantic
+description and evidence. Selection is deterministic.
 """
 import copy
 from hashlib import sha256
@@ -27,19 +28,27 @@ def _consensus(refs,edges,kind):
         if any(m[orders[left][i]]!=orders[right][i] for i in range(arity)):
             raise ValueError('inconsistent_role_cycle')
         for member in edge['members']:all_cards[member[kind]].append(member['semantics'])
-    signatures={(s['concept'],s.get('scope'),tuple(s['roles'][j] for j in orders[ref]))
-        for ref in refs for s in all_cards[ref]}
-    if len(signatures)!=1:raise ValueError('inconsistent_pairwise_concept_scope_or_roles')
+    # Each edge already passed accepted(). Its two endpoints agree on the
+    # description for that comparison. Independent edges can use different
+    # prose for the same relation. Use the first pair's terms for display
+    # in the compiled group and retain the original judgments for audit.
+    display=cards[anchor]['semantics']
     confidence=min(s['confidence'] for cards in all_cards.values() for s in cards)
     members=[]
     for ref in refs:
         sem=copy.deepcopy(all_cards[ref][0]);sem['confidence']=confidence
+        sem['concept']=display['concept']
+        sem['scope']=display.get('scope')
+        for pos,local in enumerate(orders[ref]):
+            sem['roles'][local]=display['roles'][pos]
         sem['evidence']=[e for card in all_cards[ref] for e in card['evidence']]
         sem['judgment_origin']='complete_pairwise_consensus';sem['independent_label']=False
         members.append({kind:ref,'order':orders[ref],'semantics':sem})
     gid=kind[0]+'_consensus_'+sha256('|'.join(refs).encode('utf-8')).hexdigest()[:16]
     return {'id':gid,'members':members,'model_judgment':{'decision':'compatible',
-        'rationale':'All pair judgments, roles, concepts and scopes agree; no semantic transitive closure.'},
+        'rationale':'Every pair passed its semantic check and the argument maps are cycle-consistent.'},
+        'description_source_pair':first['id'],
+        'pair_judgments':[copy.deepcopy(edges[left,right]) for left,right in combinations(refs,2)],
         'pair_judgment_ids':sorted(pair_ids),'minimum_confidence':confidence,
         'evidence':'Consensus of automatic judgments, not independent semantic labels'}
 

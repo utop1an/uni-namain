@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 
+from prompts import prompt_sources
+
 from rcnc.domain_building import require_empty_output, save, snapshot_implementation
 from rcnc.interface_annotation import digest
 from scripts.annotation.compare_annotation_predictions import compare
@@ -33,7 +35,7 @@ def prepare(protocol_path, output):
                 'options': protocol['options'], 'messages': [{'role': 'system', 'content': PROMPT},
                     {'role': 'user', 'content': json.dumps(item, ensure_ascii=False)}]}
             save(output / 'frozen_requests' / policy / (item['id'] + '.json'), payload)
-    implementation = snapshot_implementation(output, [Path(__file__), Path('scripts/annotation/run_annotation_predictions.py'),
+    implementation = snapshot_implementation(output, [*prompt_sources(), Path(__file__), Path('scripts/annotation/run_annotation_predictions.py'),
         Path('scripts/annotation/compare_annotation_predictions.py'), Path('rcnc/interface_annotation.py'),
         Path('rcnc/domain_building.py')])
     files = [p for p in output.rglob('*') if p.is_file() and 'implementation' not in p.relative_to(output).parts]

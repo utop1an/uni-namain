@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 
+from prompts import load_prompt
+
 from .domain_building import digest, save, snapshot_implementation
 
 
@@ -20,8 +22,8 @@ def include_output_contract(output):
     original=(output/'requests.json').read_bytes()
     for request in requests.values():
         instruction, data=request['messages'][0]['content'].rsplit('\n',1)
-        request['messages'][0]['content']=(instruction+'\nRequired output JSON schema (all required fields, exact names and types; '
-            'no markdown fences, no extra prose):\n'+json.dumps(request['format'])+'\nInput data:\n'+data)
+        request['messages'][0]['content'] = load_prompt('main/output_contract').format(
+            instruction=instruction, schema=json.dumps(request['format']), data=data)
     (output/'requests_before_contract.json').write_bytes(original)
     save(output/'requests.json',requests)
     manifest['requests_sha256']=digest(output/'requests.json')

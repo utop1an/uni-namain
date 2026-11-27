@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 import shutil
 
+from prompts import prompt_sources
+
 from rcnc.conditional_merge import build
 from rcnc.domain_building import digest, require_empty_output, save, snapshot_implementation
 from rcnc.model_semantics import prepare as prepare_model, run as run_model
@@ -85,7 +87,7 @@ def write_native_query(query, domain_path, path):
 
 
 def implementation_paths():
-    return [Path(p) for p in [__file__, 'rcnc/conditional_merge.py', 'rcnc/aligned_domain.py',
+    return [Path(p) for p in [*prompt_sources(), __file__, 'rcnc/conditional_merge.py', 'rcnc/aligned_domain.py',
         'rcnc/domain_union.py', 'rcnc/domain_building.py', 'rcnc/pddl.py', 'rcnc/pddl_checks.py',
         'rcnc/narrative_pipeline.py', 'rcnc/validation.py', 'rcnc/model_semantics.py',
         'rcnc/model_semantics_facets.py', 'rcnc/model_semantics_schema.py', 'rcnc/model_semantics_contract.py',

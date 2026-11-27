@@ -18,6 +18,8 @@ import time
 import traceback
 
 from rcnc import model_semantics, model_semantics_parallel
+from prompts import prompt_sources
+
 from rcnc.domain_building import digest, save, snapshot_implementation
 from rcnc.glaive_intake import casefold_tree
 from rcnc.glaive_merge import Source, build, map_problem, translate_plan
@@ -256,7 +258,7 @@ def prepare(root, gate):
                 row.update(adapter_status='unsupported', reason=str(exc))
             baselines.append(row)
     frozen_json(root / 'baseline_tasks.json', {'worlds': baselines})
-    implementation = [*REPO.glob('rcnc/*.py'), *REPO.glob('unidomain/*.py'),
+    implementation = [*prompt_sources(), *REPO.glob('prompts/unidomain/*.txt'), *REPO.glob('rcnc/*.py'), *REPO.glob('unidomain/*.py'),
                       *REPO.glob('scripts/**/*.py'), REPO / 'tests/test_selection_campaign.py']
     impl = snapshot_implementation(root, sorted(set(implementation)), root=REPO)
     inputs_sha = {str(p.resolve()): digest(p) for p in root.rglob('*') if p.is_file()}

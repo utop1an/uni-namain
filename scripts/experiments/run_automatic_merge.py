@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 import shutil
 
+from prompts import prompt_sources
+
 from rcnc.conditional_merge import build
 from rcnc.domain_building import digest, require_empty_output, save, snapshot_implementation
 from rcnc.model_semantics import prepare as prepare_model, run as run_model
@@ -153,7 +155,7 @@ def compile_tasks(output):
     assert len(tasks) == protocol['solver_tasks'], len(tasks)
     save(output / 'bundle/manifest.json', {'status': 'frozen_before_search', 'mode': 'external_source_preservation', 'task_count': len(tasks), 'tasks': tasks})
     save(output / 'compilation.json', {'status': 'complete', 'models': admissions})
-    code = [Path(p) for p in ['rcnc/model_semantics.py', 'rcnc/model_semantics_schema.py', 'rcnc/model_semantics_facets.py', 'rcnc/conditional_merge.py', 'rcnc/aligned_domain.py', 'rcnc/domain_union.py',
+    code = [Path(p) for p in [*prompt_sources(), 'rcnc/model_semantics.py', 'rcnc/model_semantics_schema.py', 'rcnc/model_semantics_facets.py', 'rcnc/conditional_merge.py', 'rcnc/aligned_domain.py', 'rcnc/domain_union.py',
             'rcnc/domain_building.py', 'rcnc/pddl.py', 'rcnc/pddl_checks.py', 'rcnc/narrative_pipeline.py', 'rcnc/validation.py',
             'scripts/experiments/run_automatic_merge.py', 'scripts/experiments/run_conditional_merge.py',
             'scripts/experiments/run_union_regression.py', 'scripts/experiments/run_downward_reference.py',

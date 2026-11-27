@@ -23,7 +23,7 @@ Python callers should import `FusionRuntime`/`fuse_pair` from `unidomain.fusion`
 `unidomain.pipeline`.
 The current request pipeline remains in `rcnc/`, independently of this baseline.
 
-Prompt files remain in `prompts/domain_fusion/`. Model options, strict threshold
+Prompt files remain in `prompts/unidomain/`. Model options, strict threshold
 comparison, candidate ordering, odd-node placement, predicate-first fusion,
 constant identities, structural rollback, cache formats and retry behavior are
 retained. This source split does not claim new semantic accuracy or completion

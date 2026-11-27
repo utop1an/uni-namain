@@ -1,4 +1,6 @@
 """Separate predeclared prompt clarification; never replace prior responses."""
+from prompts import load_prompt
+
 import argparse
 import copy
 from datetime import datetime, timezone
@@ -12,7 +14,7 @@ from scripts.experiments.run_role_contract_merge import read, code_paths
 from scripts.experiments.run_transport_merge import MODEL_DIGEST
 
 OLD_SENTENCE = 'A different prerequisite or required object does not by itself change the event. Record such a difference as preconditions_only.'
-CLARIFICATION = '''First check EVERY declared parameter, including parameters occurring only in preconditions. A preconditions_only difference is admissible only AFTER a complete correspondence of specific participant kinds and functions has been established. Different restrictions on the SAME participant role may be applicability-only; different semantic roles are NOT applicability-only. Use unary constraints and relational positions in the source formula as evidence. Agents, locations, vehicles, cargo, instruments and resources do not become interchangeable merely because they are required for an event. Do not rename distinct roles as a generic precondition witness, context, required object, entity, or unchanged argument. An argument absent from effects still requires the same semantic role on both sides. If any role fails to correspond, report roles_correspond=false, difference_kind=meaning_or_participants, relation=different and empty role/order arrays, even when the core movement or transfer effects coincide. Only after this check, record differing applicability conditions as preconditions_only.'''
+CLARIFICATION = load_prompt('historical_alignment/role_identity_clarification')
 
 
 def prepare(parent, output):

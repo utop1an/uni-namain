@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from scripts.experiments.resume_frozen_timeout_retry import combine_rows, partition_jobs
+from archive.scripts.experiments.resume_frozen_timeout_retry import combine_rows, partition_jobs
 
 
 class ResumeFrozenRetryTests(unittest.TestCase):

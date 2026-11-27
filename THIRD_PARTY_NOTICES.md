@@ -11,8 +11,8 @@ license or default configuration. The external annotation pilot retains source
 URLs and lineage descriptions; auxiliary classical domains are not relabeled
 as narrative benchmarks.
 
-The prompt wording under `prompts/domain_fusion/` is adapted from the MIT-licensed
-UniDomain project:
+The three templates under `prompts/unidomain/` match the wording in the
+MIT-licensed UniDomain project at commit `db46419732d5c8949f85c0dbcce5ab9c8a8a4d5c`.
 
 - Project: https://github.com/RoboticSJTU/UniDomain
 - Copyright: UniDomain contributors

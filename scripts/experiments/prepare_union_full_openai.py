@@ -11,6 +11,8 @@ import json
 from pathlib import Path
 import shutil
 
+from prompts import load_prompt, prompt_sources
+
 SELECTOR_PATH = Path(__file__).with_name('frozen_union_full.py')
 spec = importlib.util.spec_from_file_location('frozen_selection_adapter', SELECTOR_PATH)
 selection_adapter = importlib.util.module_from_spec(spec)
@@ -32,10 +34,9 @@ def verify_selection(root):
 
 def request_body(item, *, model, reasoning, max_output_tokens, compact_prompt, compact_schema):
     schema = compact_schema(item)
-    content = (compact_prompt(item['kind']) + '\nRequired output JSON schema '
-               '(all required fields, exact names and types; no markdown fences, no extra prose):\n'
-               + json.dumps(schema) + '\nInput data:\n'
-               + json.dumps({k: item[k] for k in ('kind', 'sides')}))
+    content = load_prompt('main/output_contract').format(
+        instruction=compact_prompt(item['kind']), schema=json.dumps(schema),
+        data=json.dumps({k: item[k] for k in ('kind', 'sides')}))
     return {'model': model, 'input': [{'role': 'user', 'content': content}],
             'reasoning': {'effort': reasoning}, 'max_output_tokens': max_output_tokens,
             'text': {'format': {'type': 'json_schema', 'name': 'semantic_alignment',
@@ -92,6 +93,10 @@ def prepare(dataset, root, model, reasoning, max_output_tokens):
         target = root / 'implementation' / filename.name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(filename, target)
+    for relative in prompt_sources():
+        target = root / 'implementation' / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(Path(__file__).resolve().parents[2] / relative, target)
     inputs = root / 'semantic_inputs'
     inputs.mkdir()
     for sid, source in sources.items():

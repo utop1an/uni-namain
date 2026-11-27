@@ -30,6 +30,8 @@ def main():
     parser.add_argument('--primary', type=Path, required=True)
     parser.add_argument('--official', type=Path, required=True)
     parser.add_argument('--archive', type=Path, required=True)
+    parser.add_argument('--campaign-state', type=Path,
+                        help='Separate coordinator receipt when recovering an unstarted follow-up stage')
     a = parser.parse_args()
     a.primary, a.official, a.archive = (p.resolve() for p in (a.primary, a.official, a.archive))
     status = a.primary / 'postprocess_status.json'
@@ -37,7 +39,7 @@ def main():
         raise ValueError('Postprocessing already launched')
     save(status, {'status': 'waiting_for_campaign', 'implementation_sha256': sha(Path(__file__))})
     while True:
-        state = read(a.primary / 'campaign.json')
+        state = read(a.campaign_state or a.primary / 'campaign.json')
         if state['status'] == 'complete':
             break
         if state['status'] == 'failed':
@@ -135,7 +137,7 @@ def main():
                                ('official_physical', review / 'report.json', report, ['registered', 'counts', 'matched_composition'])]:
         index['reports'][name] = {'path': str(f), 'sha256': sha(f), 'terminal_status': r['status'],
               'denominator': 'registered', 'required_true': ['inputs_unchanged'], 'metrics': metrics,
-              'scope': 'Fresh shared-type campaign; main intentional and matched physical conditions kept separate. Ontology assumptions are not independent semantic labels.'}
+              'scope': 'Shared-type campaign; main intentional and matched physical conditions kept separate. A manual-pause receipt, if present, requires the separately reviewed continuation report before reporting primary counts. Ontology assumptions are not independent semantic labels.'}
     save(a.primary / 'campaign_evidence_index.json', index)
     build(a.primary / 'campaign_evidence_index.json', a.primary / 'verified_campaign')
     save(status, {'status': 'complete', 'official_interface_review': str(review / 'report.json'),

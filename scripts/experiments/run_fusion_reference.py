@@ -44,7 +44,7 @@ def freeze(inputs, output, seconds, workers, model, namespace_policy='raw', reco
         shutil.copyfile(path, snapshot/path.name)
     code = [ROOT/n for n in ('rcnc/pddl.py', 'rcnc/pddl_checks.py', 'rcnc/namespace_export.py', 'scripts/experiments/run_fusion_reference.py')]
     code.extend(sorted((ROOT/'unidomain').glob('*.py')))
-    code.extend(sorted((ROOT/'prompts/domain_fusion').glob('*.txt')))
+    code.extend(sorted((ROOT/'prompts/unidomain').glob('*.txt')))
     hashes = {}
     for path in code:
         relative = path.relative_to(ROOT)

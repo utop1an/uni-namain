@@ -92,6 +92,12 @@ class NamespaceReferenceEvaluationTests(unittest.TestCase):
         archived = self.parent / 'implementation' / legacy_name
         archived.write_bytes(source.read_bytes())
         implementation = self.manifest['implementation_sha256']
+        # This archived entry point stored its templates under the original path.
+        prompt_root = self.parent / 'implementation' / 'prompts'
+        (prompt_root / 'unidomain').rename(prompt_root / 'domain_fusion')
+        for path in (prompt_root / 'domain_fusion').glob('*.txt'):
+            implementation['prompts/domain_fusion/' + path.name] = implementation.pop(
+                'prompts/unidomain/' + path.name)
         implementation.pop('unidomain/__main__.py')
         implementation[legacy_name] = digest(archived)
         write(self.parent / 'manifest.json', self.manifest)
